@@ -1,0 +1,134 @@
+﻿<UserControl x:Class="PresentationWPF.BaoCao._BTV.BCTH.BCTH_DU_TRU_NGAN_QUY"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:uc="clr-namespace:PresentationWPF.CustomControl;assembly=PresentationWPF.CustomControl" 
+             mc:Ignorable="d" 
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:ribbon="http://schemas.microsoft.com/winfx/2006/xaml/presentation/ribbon" 
+             xmlns:telerikMaskInput="clr-namespace:Telerik.Windows.Controls.MaskedInput;assembly=Telerik.Windows.Controls.Input"  
+             d:DesignHeight="720" d:DesignWidth="1024" xmlns:my="clr-namespace:System;assembly=mscorlib">
+    <UserControl.Resources>
+        <!--<my:String x:Key="U.BaoCao._BTV.BCTH.BCTH_DU_TRU_NGAN_QUY.ThangDuTru">Tháng dự trù:</my:String>
+        <my:String x:Key="U.BaoCao._BTV.BCTH.BCTH_DU_TRU_NGAN_QUY.TyLeChung">Tỷ lệ chung</my:String>
+        <my:String x:Key="U.BaoCao._BTV.BCTH.BCTH_DU_TRU_NGAN_QUY.TyLeRieng">Tỷ lệ riêng</my:String>
+        <my:String x:Key="U.BaoCao._BTV.BCTH.BCTH_DU_TRU_NGAN_QUY.TongHopDuLieu">Tổng hợp dữ liệu</my:String>
+        <my:String x:Key="U.BaoCao._BTV.BCTH.BCTH_DU_TRU_NGAN_QUY.{DynamicResource U.DungChung.STT}">{DynamicResource U.DungChung.STT}</my:String>
+        <my:String x:Key="U.BaoCao._BTV.BCTH.BCTH_DU_TRU_NGAN_QUY.NoiDung">Nội dung</my:String>
+        <my:String x:Key="U.BaoCao._BTV.BCTH.BCTH_DU_TRU_NGAN_QUY.SoTienThucHienThang">Số tiền thực hiện tháng</my:String>
+        <my:String x:Key="U.BaoCao._BTV.BCTH.BCTH_DU_TRU_NGAN_QUY.TyLe">Tỷ lệ</my:String>
+        <my:String x:Key="U.BaoCao._BTV.BCTH.BCTH_DU_TRU_NGAN_QUY.SoTienDuTru">Số tiền dự trù</my:String>
+        <my:String x:Key="U.BaoCao._BTV.BCTH.BCTH_DU_TRU_NGAN_QUY.GhiChu">Ghi chú</my:String>
+        <my:String x:Key="U.BaoCao._BTV.BCTH.BCTH_DU_TRU_NGAN_QUY.SoTon">Số tồn</my:String>
+        <my:String x:Key="U.BaoCao._BTV.BCTH.BCTH_DU_TRU_NGAN_QUY.SoThuTien">Số thu tiền</my:String>
+        <my:String x:Key="U.BaoCao._BTV.BCTH.BCTH_DU_TRU_NGAN_QUY.SoChiTien">Số chi tiền</my:String>-->        
+    </UserControl.Resources>
+    <Grid>
+        <DockPanel>
+            <Grid>
+                <DockPanel>
+                    <Expander Header="{DynamicResource U.BaoCao._BTV.BCTH.BCTH_DU_TRU_NGAN_QUY}" Margin="3,10,3,3" DockPanel.Dock="Top" >
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="150" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="20" />
+                                <ColumnDefinition Width="150" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="6" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="6" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Label Name="lblChiNhanh" Content="{DynamicResource U.BaoCao.ChiNhanh}" />
+                            <telerik:RadComboBox IsEditable="True" Name="cmbChiNhanh" Grid.Row="0" Grid.Column="1" />
+                            <Label Content="{DynamicResource U.BaoCao.PhongGiaoDich}" Grid.Row="0" Grid.Column="3"/>
+                            <telerik:RadComboBox IsEditable="True" Name="cmbPhongGD" Grid.Row="0" Grid.Column="4" />
+                            <Label Content="{DynamicResource U.BaoCao._BTV.BCTH.BCTH_DU_TRU_NGAN_QUY.ThangDuTru}" Grid.Row="2" Grid.Column="0"/>
+                            <telerik:RadMaskedDateTimeInput Name="raddtThangBC" Grid.Row="2" Grid.Column="1" Mask="MM/yyyy" HorizontalAlignment="Stretch" Margin="0,0,35,0"/>
+                            <DatePicker Grid.Row="2" Grid.Column="1" HorizontalAlignment="Right" Width="30" SelectedDate="{Binding Path=Value,ElementName=raddtThangBC}" />
+                            <Label Content="{DynamicResource U.BaoCao.NgayBaoCao}" Grid.Row="2" Grid.Column="3"/>
+                            <telerik:RadMaskedDateTimeInput Name="raddtNgayBC" Grid.Row="2" Grid.Column="4" Mask="MM/yyyy" HorizontalAlignment="Stretch" Margin="0,0,35,0"/>
+                            <DatePicker Grid.Row="2" Grid.Column="4" HorizontalAlignment="Right" Width="30" SelectedDate="{Binding Path=Value,ElementName=raddtNgayBC}" />
+
+                            <Grid Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                <StackPanel  Orientation="Horizontal">
+                                    <RadioButton Margin="10,5,0,0" Content="{DynamicResource U.BaoCao._BTV.BCTH.BCTH_DU_TRU_NGAN_QUY.TyLeChung}" GroupName="grbTyLe" IsChecked="True" Name="rdoTyLeChung"/>
+                                    <RadioButton Margin="10,5,0,0" Content="{DynamicResource U.BaoCao._BTV.BCTH.BCTH_DU_TRU_NGAN_QUY.TyLeRieng}" GroupName="grbTyLe" Name="rdoTyLeRieng"/>
+                                </StackPanel>
+                                <telerik:RadNumericUpDown Grid.Column="1" IsInteger="True" HorizontalAlignment="Stretch" Value="100" Name="numTyLe" Minimum="1"/>
+                        </Grid>
+                                
+                                
+                            
+                            <ribbon:RibbonButton Name="tlbTongHop" Label="{DynamicResource U.BaoCao._BTV.BCTH.BCTH_DU_TRU_NGAN_QUY.TongHopDuLieu}" Grid.Row="4" Grid.Column="3"  Style="{DynamicResource RibbonButton}" SmallImageSource="/Utilities.Common;component/Images/Action/detail_process.png"/>
+                            <!--Design control input form for report-->
+                        </Grid>
+                    </Expander>
+                    <GroupBox Header="" Margin="3,10,3,3" DockPanel.Dock="Top">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="100" />
+                                <RowDefinition Height="20" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="20" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <GroupBox Header="{DynamicResource U.BaoCao._BTV.BCTH.BCTH_DU_TRU_NGAN_QUY.SoTon}">
+                                <telerik:RadGridView Name="grdSoTien" ShowGroupPanel="False" Margin="3,0" ItemsSource="{Binding}" SelectionMode="Extended" 
+                    AutoGenerateColumns="False" CanUserFreezeColumns="False" RowIndicatorVisibility="Collapsed" DockPanel.Dock="Top" TabIndex="26" >
+                                    <telerik:RadGridView.Columns>
+                                        <telerik:GridViewDataColumn Header="ID" IsVisible="False" IsReadOnly="True" DataMemberBinding="{Binding ID_CHITIEU}"/>
+                                        <uc:MyColumn Header="{DynamicResource U.BaoCao._BTV.BCTH.BCTH_DU_TRU_NGAN_QUY.{DynamicResource U.DungChung.STT}}" Width="50" IsReadOnly="True" />
+                                        <telerik:GridViewDataColumn Header="{DynamicResource U.BaoCao._BTV.BCTH.BCTH_DU_TRU_NGAN_QUY.NoiDung}" Width="*" DataMemberBinding="{Binding TEN_CHITIEU}" IsReadOnly="True"/>
+                                        <telerik:GridViewDataColumn Header="{DynamicResource U.BaoCao._BTV.BCTH.BCTH_DU_TRU_NGAN_QUY.SoTienThucHienThang}" Width="150" UniqueName="TON_THUCHIENTHANG" DataMemberBinding="{Binding GIA_TRI}" DataFormatString="{}{0:N0}" IsReadOnly="True"/>
+                                        <telerik:GridViewDataColumn Header="{DynamicResource U.BaoCao._BTV.BCTH.BCTH_DU_TRU_NGAN_QUY.TyLe}" Width="50" DataFormatString="{}{0:N0}" DataMemberBinding="{Binding TY_LE}" UniqueName="TY_LE"  IsVisible="False"/>
+                                        <telerik:GridViewDataColumn Header="{DynamicResource U.BaoCao._BTV.BCTH.BCTH_DU_TRU_NGAN_QUY.SoTienDuTru}" Width="150" DataFormatString="{}{0:N0}" DataMemberBinding="{Binding DU_TRU}" IsReadOnly="True"/>
+                                        <telerik:GridViewDataColumn Header="{DynamicResource U.BaoCao._BTV.BCTH.BCTH_DU_TRU_NGAN_QUY.GhiChu}" Width="200" DataMemberBinding="{Binding GHI_CHU}" />
+                                    </telerik:RadGridView.Columns>
+                                </telerik:RadGridView>
+                            </GroupBox>
+                            <GroupBox Header="{DynamicResource U.BaoCao._BTV.BCTH.BCTH_DU_TRU_NGAN_QUY.SoThuTien}" Grid.Row="2">
+                                <telerik:RadGridView Name="grdThuTien" ShowGroupPanel="False" Margin="3,0" ItemsSource="{Binding}" SelectionMode="Extended" 
+                    AutoGenerateColumns="False" CanUserFreezeColumns="False" RowIndicatorVisibility="Collapsed" DockPanel.Dock="Top" TabIndex="26" >
+                                    <telerik:RadGridView.Columns>
+                                        <telerik:GridViewDataColumn Header="ID" IsVisible="False" IsReadOnly="True" DataMemberBinding="{Binding ID_CHITIEU}"/>
+                                        <uc:MyColumn Header="{DynamicResource U.BaoCao._BTV.BCTH.BCTH_DU_TRU_NGAN_QUY.{DynamicResource U.DungChung.STT}}" Width="50" IsReadOnly="True" />
+                                        <telerik:GridViewDataColumn Header="{DynamicResource U.BaoCao._BTV.BCTH.BCTH_DU_TRU_NGAN_QUY.NoiDung}" Width="*" DataMemberBinding="{Binding TEN_CHITIEU}" IsReadOnly="True"/>
+                                        <telerik:GridViewDataColumn Header="{DynamicResource U.BaoCao._BTV.BCTH.BCTH_DU_TRU_NGAN_QUY.SoTienThucHienThang}" Width="150" UniqueName="TON_THUCHIENTHANG" DataMemberBinding="{Binding GIA_TRI}" DataFormatString="{}{0:N0}" IsReadOnly="True"/>
+                                        <telerik:GridViewDataColumn Header="{DynamicResource U.BaoCao._BTV.BCTH.BCTH_DU_TRU_NGAN_QUY.TyLe}" Width="50" DataFormatString="{}{0:N0}" DataMemberBinding="{Binding TY_LE}" UniqueName="TY_LE" IsReadOnly="True" IsVisible="False"/>
+                                        <telerik:GridViewDataColumn Header="{DynamicResource U.BaoCao._BTV.BCTH.BCTH_DU_TRU_NGAN_QUY.SoTienDuTru}" Width="150" DataFormatString="{}{0:N0}" DataMemberBinding="{Binding DU_TRU}" />
+                                        <telerik:GridViewDataColumn Header="{DynamicResource U.BaoCao._BTV.BCTH.BCTH_DU_TRU_NGAN_QUY.GhiChu}" Width="200" DataMemberBinding="{Binding GHI_CHU}" />
+                                    </telerik:RadGridView.Columns>
+                                </telerik:RadGridView>
+                            </GroupBox>
+                            <GroupBox Header="{DynamicResource U.BaoCao._BTV.BCTH.BCTH_DU_TRU_NGAN_QUY.SoChiTien}" Grid.Row="4">
+                                <telerik:RadGridView Name="grdChiTien" ShowGroupPanel="False" Margin="3,0" ItemsSource="{Binding}" SelectionMode="Extended" 
+                    AutoGenerateColumns="False" CanUserFreezeColumns="False" RowIndicatorVisibility="Collapsed" DockPanel.Dock="Top" TabIndex="26" >
+                                    <telerik:RadGridView.Columns>
+                                        <telerik:GridViewDataColumn Header="ID" IsVisible="False" IsReadOnly="True" DataMemberBinding="{Binding ID_CHITIEU}"/>
+                                        <uc:MyColumn Header="{DynamicResource U.BaoCao._BTV.BCTH.BCTH_DU_TRU_NGAN_QUY.{DynamicResource U.DungChung.STT}}" Width="50" IsReadOnly="True" />
+                                        <telerik:GridViewDataColumn Header="{DynamicResource U.BaoCao._BTV.BCTH.BCTH_DU_TRU_NGAN_QUY.NoiDung}" Width="*" DataMemberBinding="{Binding TEN_CHITIEU}" IsReadOnly="True"/>
+                                        <telerik:GridViewDataColumn Header="{DynamicResource U.BaoCao._BTV.BCTH.BCTH_DU_TRU_NGAN_QUY.SoTienThucHienThang}" Width="150" UniqueName="TON_THUCHIENTHANG" DataMemberBinding="{Binding GIA_TRI}" DataFormatString="{}{0:N0}" IsReadOnly="True"/>
+                                        <telerik:GridViewDataColumn Header="{DynamicResource U.BaoCao._BTV.BCTH.BCTH_DU_TRU_NGAN_QUY.TyLe}" Width="50" DataFormatString="{}{0:N0}" DataMemberBinding="{Binding TY_LE}" UniqueName="TY_LE"  IsVisible="False"/>
+                                        <telerik:GridViewDataColumn Header="{DynamicResource U.BaoCao._BTV.BCTH.BCTH_DU_TRU_NGAN_QUY.GhiChu}" Width="150" DataFormatString="{}{0:N0}" DataMemberBinding="{Binding DU_TRU}" IsReadOnly="True"/>
+                                        <telerik:GridViewDataColumn Header="{DynamicResource U.BaoCao._BTV.BCTH.BCTH_DU_TRU_NGAN_QUY.GhiChu}" Width="200" DataMemberBinding="{Binding GHI_CHU}" />
+                                    </telerik:RadGridView.Columns>
+                                </telerik:RadGridView>
+                            </GroupBox>
+                        </Grid>
+                    </GroupBox>
+                </DockPanel>
+                
+            </Grid>
+        </DockPanel>
+    </Grid>
+</UserControl>

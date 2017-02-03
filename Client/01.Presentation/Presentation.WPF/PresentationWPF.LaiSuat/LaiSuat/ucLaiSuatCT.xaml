@@ -1,0 +1,322 @@
+﻿<UserControl x:Class="PresentationWPF.LaiSuat.LaiSuat.ucLaiSuatCT"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:uc="clr-namespace:PresentationWPF.CustomControl;assembly=PresentationWPF.CustomControl"
+             xmlns:local="clr-namespace:PresentationWPF.LaiSuat.LaiSuat"
+             xmlns:ribbon="http://schemas.microsoft.com/winfx/2006/xaml/presentation/ribbon" 
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"             
+             mc:Ignorable="d" 
+             xmlns:my="clr-namespace:System;assembly=mscorlib"
+             d:DesignHeight="768" d:DesignWidth="1024" KeyDown="UserControl_KeyDown" Loaded="UserControl_Loaded">
+    <UserControl.Resources>
+        <DataTemplate x:Key="HeaderTemplate" DataType="{x:Type my:String}">
+            <Grid HorizontalAlignment="Left" Height="45">
+                <AccessText Text="{Binding}" TextWrapping="Wrap" VerticalAlignment="Center"/>
+            </Grid>
+        </DataTemplate>
+        <Style x:Key="GridViewCellStyle1" TargetType="{x:Type telerik:GridViewCell}">
+            <Setter Property="Background" Value="GhostWhite" />
+            <Setter Property="Padding" Value="0" />
+            <Setter Property="Margin" Value="0" />
+        </Style>
+        <!--<my:String x:Key="U.LaiSuat.LaiSuat.ucLaiSuatCT.Label.MaLaiSuat">Mã lãi suất:</my:String>
+        <my:String x:Key="U.LaiSuat.LaiSuat.ucLaiSuatCT.Label.TenLaiSuat">Tên lãi suất:</my:String>
+        <my:String x:Key="U.LaiSuat.LaiSuat.ucLaiSuatCT.Label.NgayHieuLuc">Ngày hiệu lực:</my:String>
+        <my:String x:Key="U.LaiSuat.LaiSuat.ucLaiSuatCT.Label.NgayHetHieuLuc">Ngày hết hiệu lực:</my:String>
+        <my:String x:Key="U.LaiSuat.LaiSuat.ucLaiSuatCT.Label.PhanHe">Phân hệ:</my:String>
+        <my:String x:Key="U.LaiSuat.LaiSuat.ucLaiSuatCT.Label.LoaiTien">Loại tiền:</my:String>
+        <my:String x:Key="U.LaiSuat.LaiSuat.ucLaiSuatCT.Label.LaiSuatTheo">Lãi suất theo:</my:String>
+        <my:String x:Key="U.LaiSuat.LaiSuat.ucLaiSuatCT.Label.PPhapTinh">Phương pháp tính:</my:String>
+        <my:String x:Key="U.LaiSuat.LaiSuat.ucLaiSuatCT.Label.LaiSuat">Lãi suất (%):</my:String>
+        <my:String x:Key="U.LaiSuat.LaiSuat.ucLaiSuatCT.Label.BacThangTheo">Bậc thang theo:</my:String>
+        <my:String x:Key="U.LaiSuat.LaiSuat.ucLaiSuatCT.Label.KyHanTheo">Kỳ hạn theo:</my:String>
+        <my:String x:Key="U.LaiSuat.LaiSuat.ucLaiSuatCT.Button.Them">Thêm</my:String>
+        <my:String x:Key="U.LaiSuat.LaiSuat.ucLaiSuatCT.Button.Xoa">Xóa</my:String>
+        <my:String x:Key="U.LaiSuat.LaiSuat.ucLaiSuatCT.GroupBox.ThongTinChung">Thông tin chung</my:String>
+        <my:String x:Key="U.LaiSuat.LaiSuat.ucLaiSuatCT.GroupBox.LaiSuatBacThang">Thông tin lãi suất bậc thang</my:String>
+        <my:String x:Key="U.LaiSuat.LaiSuat.ucLaiSuatCT.Header.STT">STT</my:String>
+        <my:String x:Key="U.LaiSuat.LaiSuat.ucLaiSuatCT.Header.KyHanTu">Kỳ hạn từ</my:String>
+        <my:String x:Key="U.LaiSuat.LaiSuat.ucLaiSuatCT.Header.SoTienTu">Số tiền từ</my:String>
+        <my:String x:Key="U.LaiSuat.LaiSuat.ucLaiSuatCT.Header.LaiSuat">Lãi suất(%)</my:String>
+        <my:String x:Key="U.LaiSuat.LaiSuat.ucLaiSuatCT.Header.NgayHieuLuc">Ngày hiệu lực</my:String>
+        <my:String x:Key="U.LaiSuat.LaiSuat.ucLaiSuatCT.Header.NgayHetHieuLuc">Ngày hết hiệu lực</my:String>
+        <my:String x:Key="U.LaiSuat.LaiSuat.ucLaiSuatCT.Header.KyHan">Kỳ hạn</my:String>
+        <my:String x:Key="U.LaiSuat.LaiSuat.ucLaiSuatCT.Header.DonViTinh">Đơn vị tính</my:String>
+        <my:String x:Key="U.LaiSuat.LaiSuat.ucLaiSuatCT.Header.SoTien">Số tiền</my:String>
+        <my:String x:Key="U.LaiSuat.LaiSuat.ucLaiSuatCT.GroupBox.TrangThaiBanGhi">Trạng thái bản ghi</my:String>
+        <my:String x:Key="U.LaiSuat.LaiSuat.ucLaiSuatCT.Label.TThaiBGhi">Trạng thái bản ghi:</my:String>
+        <my:String x:Key="U.LaiSuat.LaiSuat.ucLaiSuatCT.Label.NgayLap">Ngày lập:</my:String>
+        <my:String x:Key="U.LaiSuat.LaiSuat.ucLaiSuatCT.Label.NguoiLap">Người lập:</my:String>
+        <my:String x:Key="U.LaiSuat.LaiSuat.ucLaiSuatCT.Label.NgayCapNhat">Ngày cập nhật:</my:String>
+        <my:String x:Key="U.LaiSuat.LaiSuat.ucLaiSuatCT.Label.NguoiCapNhat">Người cập nhật:</my:String>
+        <my:String x:Key="U.LaiSuat.LaiSuat.ucLaiSuatCT.Label.TrangThai">Trạng thái:</my:String>
+        <my:String x:Key="U.LaiSuat.LaiSuat.ucLaiSuatCT.TabHeader.ThongTinChung">_1. Thông tin chung</my:String>
+        <my:String x:Key="U.LaiSuat.LaiSuat.ucLaiSuatCT.TabHeader.LichSu">_2. Lịch sử lãi suất</my:String>
+        <my:String x:Key="U.LaiSuat.LaiSuat.ucLaiSuatCT.TabHeader.KiemSoat">_3. Thông tin kiểm soát</my:String>-->
+    </UserControl.Resources>
+    <UserControl.CommandBindings>
+        <CommandBinding CanExecute="AddCommand_CanExecute" Executed="AddCommand_Executed" Command="{x:Static local:ucLaiSuatCT.AddCommand}">
+        </CommandBinding>
+        <CommandBinding CanExecute="HoldCommand_CanExecute" Executed="HoldCommand_Executed" Command="{x:Static local:ucLaiSuatCT.HoldCommand}">
+        </CommandBinding>
+        <CommandBinding CanExecute="SaveCommand_CanExecute" Executed="SaveCommand_Executed" Command="{x:Static local:ucLaiSuatCT.SaveCommand}">
+        </CommandBinding>
+        <CommandBinding CanExecute="ModifyCommand_CanExecute" Executed="ModifyCommand_Executed" Command="{x:Static local:ucLaiSuatCT.ModifyCommand}">
+        </CommandBinding>
+        <CommandBinding CanExecute="DeleteCommand_CanExecute" Executed="DeleteCommand_Executed" Command="{x:Static local:ucLaiSuatCT.DeleteCommand}">
+        </CommandBinding>
+        <CommandBinding CanExecute="ApproveCommand_CanExecute" Executed="ApproveCommand_Executed" Command="{x:Static local:ucLaiSuatCT.ApproveCommand}">
+        </CommandBinding>
+        <CommandBinding CanExecute="RefuseCommand_CanExecute" Executed="RefuseCommand_Executed" Command="{x:Static local:ucLaiSuatCT.RefuseCommand}">
+        </CommandBinding>
+        <CommandBinding CanExecute="CancelCommand_CanExecute" Executed="CancelCommand_Executed" Command="{x:Static local:ucLaiSuatCT.CancelCommand}">
+        </CommandBinding>
+        <CommandBinding CanExecute="HelpCommand_CanExecute" Executed="HelpCommand_Executed" Command="{x:Static local:ucLaiSuatCT.HelpCommand}">
+        </CommandBinding>
+        <CommandBinding CanExecute="CloseCommand_CanExecute" Executed="CloseCommand_Executed" Command="{x:Static local:ucLaiSuatCT.CloseCommand}">
+        </CommandBinding>
+    </UserControl.CommandBindings>
+
+    <UserControl.ContextMenu>
+        <ContextMenu Name="mnuMain">
+        </ContextMenu>
+    </UserControl.ContextMenu>
+
+    <Grid Name="grMain">
+        <DockPanel Name="dockMain">
+            <DockPanel HorizontalAlignment="Stretch" DockPanel.Dock="Top" Margin="3,3,0,3" LastChildFill="False" Name="docToolbar">
+                <WrapPanel Name="Toolbar">
+                    <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbAdd" DockPanel.Dock="Left" Label="{DynamicResource U.DungChung.Button.Them}" SmallImageSource="/Utilities.Common;component/Images/Action/add.png" Style="{StaticResource RibbonButton}" Click="tlbHotKey_Click"/>
+                    <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbModify" DockPanel.Dock="Left" Label="{DynamicResource U.DungChung.Button.Sua}"  SmallImageSource="/Utilities.Common;component/Images/Action/modify.png" Style="{DynamicResource RibbonButton}" Click="tlbHotKey_Click" />
+                    <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbDelete" DockPanel.Dock="Left" Label="{DynamicResource U.DungChung.Button.Xoa}"  SmallImageSource="/Utilities.Common;component/Images/Action/delete.png" Style="{DynamicResource RibbonButton}" Click="tlbHotKey_Click" />
+                    <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbHold" DockPanel.Dock="Left" Label="{DynamicResource U.DungChung.Button.LuuTam}" SmallImageSource="/Utilities.Common;component/Images/Action/hold.png" Style="{DynamicResource RibbonButton}" Click="tlbHotKey_Click" />
+                    <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbSave" DockPanel.Dock="Left" Label="{DynamicResource U.DungChung.Button.TrinhDuyet}"  SmallImageSource="/Utilities.Common;component/Images/Action/save.png" Style="{DynamicResource RibbonButton}" Click="tlbHotKey_Click" />
+                    <Label Name="lbl1" Margin="3,0,0,0" DockPanel.Dock="Left" BorderThickness="3" Width="2" BorderBrush="#FF170404" />
+                    <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbApprove" DockPanel.Dock="Left" Label="{DynamicResource U.DungChung.Button.Duyet}"  SmallImageSource="/Utilities.Common;component/Images/Action/approve.png" Style="{DynamicResource RibbonButton}" Click="tlbHotKey_Click" />
+                    <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbRefuse" DockPanel.Dock="Left" Label="{DynamicResource U.DungChung.Button.TuChoi}"  SmallImageSource="/Utilities.Common;component/Images/Action/refuse.png" Style="{DynamicResource RibbonButton}" Click="tlbHotKey_Click" />
+                    <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbCancel" DockPanel.Dock="Left" Label="{DynamicResource U.DungChung.Button.ThoaiDuyet}"  SmallImageSource="/Utilities.Common;component/Images/Action/cancel.png" Style="{DynamicResource RibbonButton}" Click="tlbHotKey_Click" IsEnabled="False"/>
+                    <Label Name="lbl2" Margin="3,0,0,0" DockPanel.Dock="Left" BorderThickness="3" Width="2" BorderBrush="#FF170404" />
+                    <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbHelp" DockPanel.Dock="Left" Label="{DynamicResource U.DungChung.Button.TroGiup}"  SmallImageSource="/Utilities.Common;component/Images/Action/help.png" Style="{DynamicResource RibbonButton}" Click="tlbHotKey_Click" />
+                    <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbClose" DockPanel.Dock="Left" Label="{DynamicResource U.DungChung.Button.Dong}"  SmallImageSource="/Utilities.Common;component/Images/Action/close.png" Style="{DynamicResource RibbonButton}" Click="tlbHotKey_Click" />
+                </WrapPanel>
+                <CheckBox Margin="0,0,3,5" VerticalAlignment="Bottom" DockPanel.Dock="Right" Content="{DynamicResource U.DungChung.Checkbox.ThemNhieuLan}" Height="16" Name="cbMultiAdd" />
+            </DockPanel>
+            <telerik:RadTabControl Name="tabNSDCT" TabStripPlacement="Left" TabOrientation="Vertical" Align="Right">
+                <telerik:RadTabItem Header="{DynamicResource U.LaiSuat.LaiSuat.ucLaiSuatCT.TabHeader.ThongTinChung}" Name="titemThongTinChung" HeaderTemplate="{DynamicResource HeaderTemplate}" HorizontalContentAlignment="Left" Height="{Binding ElementName=grMain, Path=ActualWidth,
+                Converter={uc:MathConverter}, ConverterParameter=x/5}" IsSelected="True">
+                    <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Auto">
+                        <DockPanel LastChildFill="True">
+
+                            <DockPanel>
+                                <Border DockPanel.Dock="Top" BorderThickness="1" CornerRadius="4" Margin="3" Height="50" Padding="5" BorderBrush="LightGray">
+                                    <Grid VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,5,0,5">
+                                        <StackPanel Orientation="Horizontal">
+                                            <Label Name="lblLabelTrangThai" Content="{DynamicResource U.LaiSuat.LaiSuat.ucLaiSuatCT.Label.TrangThai}" />
+                                            <Label Name="lblTrangThai" ></Label>
+                                        </StackPanel>
+                                    </Grid>
+                                </Border>
+                                <GroupBox DockPanel.Dock="Top" Header="{DynamicResource U.LaiSuat.LaiSuat.ucLaiSuatCT.GroupBox.ThongTinChung}" Margin="3" Padding="10,5,10,5">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="140"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="20"/>
+                                            <ColumnDefinition Width="140"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*"/>
+                                            <RowDefinition Height="6"/>
+                                            <RowDefinition Height="*"/>
+                                            <RowDefinition Height="6"/>
+                                            <RowDefinition Height="*"/>
+                                            <RowDefinition Height="6"/>
+                                            <RowDefinition Height="*"/>
+                                            <RowDefinition Height="6"/>
+                                            <RowDefinition Height="*"/>
+                                            <RowDefinition Height="6"/>
+                                            <RowDefinition Height="*"/>
+                                            <RowDefinition Height="6"/>
+                                            <RowDefinition Height="*"/>
+                                        </Grid.RowDefinitions>
+
+                                        <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" >
+                                            <Label Content="{DynamicResource U.LaiSuat.LaiSuat.ucLaiSuatCT.Label.PhanHe}" />
+                                            <Label Content="(*)" Foreground="Red" />
+                                        </StackPanel>
+                                        <telerik:RadComboBox Grid.Row="0" Grid.Column="1" Name="cmbPhanHe" IsEditable="True" />
+
+                                        <StackPanel Grid.Row="2" Grid.Column="0" Orientation="Horizontal">
+                                            <Label Content="{DynamicResource U.LaiSuat.LaiSuat.ucLaiSuatCT.Label.MaLaiSuat}" />
+                                            <Label Content="(*)" Foreground="Red" />
+                                        </StackPanel>
+                                        <TextBox Grid.Row="2" Grid.Column="1" Name="txtMaLS" IsEnabled="False" />
+
+                                        <StackPanel Grid.Row="2" Grid.Column="3" Orientation="Horizontal">
+                                            <Label Content="{DynamicResource U.LaiSuat.LaiSuat.ucLaiSuatCT.Label.TenLaiSuat}" Name="lblTenLaiSuat"/>
+                                            <Label Content="(*)" Foreground="Red" />
+                                        </StackPanel>
+                                        <TextBox Grid.Row="2" Grid.Column="4" Name="txtTenLS" />
+
+
+                                        <StackPanel Grid.Row="4" Grid.Column="0" Orientation="Horizontal" >
+                                            <Label Content="{DynamicResource U.LaiSuat.LaiSuat.ucLaiSuatCT.Label.NgayHieuLuc}" Name="lblNgayHieuLuc"/>
+                                            <Label Content="(*)" Foreground="Red" />
+                                        </StackPanel>
+                                        <telerik:RadMaskedDateTimeInput Grid.Row="4" Grid.Column="1" Mask="dd/MM/yyyy" Name="raddtNgayHL" HorizontalAlignment="Stretch" Margin="0,0,35,0" />
+                                        <DatePicker Grid.Row="4" Grid.Column="1" Name="dtpNgayHL" HorizontalAlignment="Right" Width="30" SelectedDate="{Binding Path=Value,ElementName=raddtNgayHL}" />
+
+
+
+                                        <StackPanel Grid.Row="4" Grid.Column="3" Orientation="Horizontal">
+                                            <Label Content="{DynamicResource U.LaiSuat.LaiSuat.ucLaiSuatCT.Label.NgayHetHieuLuc}" />
+                                        </StackPanel>
+                                        <telerik:RadMaskedDateTimeInput Grid.Row="4" Grid.Column="4" Mask="dd/MM/yyyy" Name="raddtNgayHetHL" HorizontalAlignment="Stretch" Margin="0,0,35,0" Text="" />
+                                        <DatePicker Grid.Row="4" Grid.Column="4" Name="dtpNgayHetHL" HorizontalAlignment="Right" Width="30" SelectedDate="{Binding Path=Value,ElementName=raddtNgayHetHL}" IsEnabled="False"/>
+
+
+                                        <StackPanel Grid.Row="6" Grid.Column="0" Orientation="Horizontal">
+                                            <Label Content="{DynamicResource U.LaiSuat.LaiSuat.ucLaiSuatCT.Label.LaiSuatTheo}" />
+                                            <Label Content="(*)" Foreground="Red" />
+                                        </StackPanel>
+                                        <telerik:RadComboBox Grid.Row="6" Grid.Column="1" Name="cmbLSDonViTinh" IsEditable="True" />
+
+                                        
+
+                                        <StackPanel Grid.Row="6" Grid.Column="3" Orientation="Horizontal" >
+                                            <Label Content="{DynamicResource U.LaiSuat.LaiSuat.ucLaiSuatCT.Label.LoaiTien}" />
+                                            <Label Content="(*)" Foreground="Red" />
+                                        </StackPanel>
+                                        <telerik:RadComboBox Grid.Row="6" Grid.Column="4" Name="cmbLoaiTien" IsEditable="True"/>
+
+
+                                        <StackPanel Grid.Row="8" Grid.Column="0" Orientation="Horizontal">
+                                            <Label Content="{DynamicResource U.LaiSuat.LaiSuat.ucLaiSuatCT.Label.PPhapTinh}" />
+                                            <Label Content="(*)" Foreground="Red" />
+                                        </StackPanel>
+                                        <telerik:RadComboBox Grid.Row="8" Grid.Column="1" Name="cmbLSLoai"  IsEditable="True" />
+
+                                        <Label Grid.Row="8" Grid.Column="3" Name="lblLaiSuat" Content="{DynamicResource U.LaiSuat.LaiSuat.ucLaiSuatCT.Label.LaiSuat}"  />
+                                        <telerik:RadMaskedNumericInput Grid.Row="8" Grid.Column="4" Name="radnumLaiSuat" HorizontalAlignment="Stretch" Mask="#2.2" Text="0.00" />
+                                        
+                                        
+                                        <Label Grid.Row="10" Grid.Column="0" Content="{DynamicResource U.LaiSuat.LaiSuat.ucLaiSuatCT.Label.BacThangTheo}" />
+                                        <telerik:RadComboBox Grid.Row="10" Grid.Column="1" Name="cmbLSLoaiBacThang"  IsEnabled="False" IsEditable="True" />
+                                                                                
+                                        <Label Grid.Row="10" Grid.Column="3" Content="{DynamicResource U.LaiSuat.LaiSuat.ucLaiSuatCT.Label.KyHanTheo}" />
+                                        <telerik:RadComboBox Grid.Row="10" Grid.Column="4" Name="cmbKHDonViTinh"  IsEnabled="False" IsEditable="True" />
+                                        
+                                    </Grid>
+                                </GroupBox>
+                                <GroupBox Header="{DynamicResource U.LaiSuat.LaiSuat.ucLaiSuatCT.GroupBox.LaiSuatBacThang}" Name="grbLSBacThang" Margin="3" Padding="10,5,10,5">
+                                    <DockPanel LastChildFill="True" >
+                                        <WrapPanel DockPanel.Dock="Top" Margin="3">
+                                            <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbAddLSBacThang" DockPanel.Dock="Left" Label="{DynamicResource U.LaiSuat.LaiSuat.ucLaiSuatCT.Button.Them}"  SmallImageSource="/Utilities.Common;component/Images/Action/detail_add.png" Style="{DynamicResource RibbonButton}" Click="tlbAddLSBacThang_Click" />
+                                            <!--<ribbon:RibbonButton Margin="3,0,0,0" Name="tlbModifyLSBacThang" DockPanel.Dock="Left" Label="Sửa"  SmallImageSource="/Utilities.Common;component/Images/Action/detail_edit.png" Style="{DynamicResource RibbonButton}" TabIndex="14" Click="tlbModifyLSBacThang_Click" />-->
+                                            <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbDeleteLSBacThang" DockPanel.Dock="Left" Label="{DynamicResource U.LaiSuat.LaiSuat.ucLaiSuatCT.Button.Xoa}"  SmallImageSource="/Utilities.Common;component/Images/Action/detail_delete.png" Style="{DynamicResource RibbonButton}" Click="tlbDeleteLSBacThang_Click" />
+                                        </WrapPanel>
+                                        <telerik:RadGridView Name="raddgrLSBacThangDS" Margin="0,5,0,0"
+                                                AutoGenerateColumns="False" CanUserFreezeColumns="False" ColumnWidth="*" RowIndicatorVisibility="Collapsed" ShowGroupPanel="False" SelectionUnit="Cell" SelectionMode="Extended" Loaded="raddgrLSBacThangDS_Loaded">
+                                            <telerik:RadGridView.Columns>
+                                                <telerik:GridViewSelectColumn />
+                                                <telerik:GridViewDataColumn Header="{DynamicResource U.LaiSuat.LaiSuat.ucLaiSuatCT.Header.STT}" Width="50" DataMemberBinding="{Binding STT}" />
+                                                <telerik:GridViewDataColumn Header="{DynamicResource U.LaiSuat.LaiSuat.ucLaiSuatCT.Header.KyHanTu}" Width="*" CellStyle="{DynamicResource GridViewCellStyle1}">
+                                                    <telerik:GridViewDataColumn.CellTemplate>
+                                                        <DataTemplate>
+                                                            <telerik:RadMaskedNumericInput Mask="#3" SpinMode="None" HorizontalAlignment="Stretch" Name="radGridNumKyHan" IsClearButtonVisible="False" Value="{Binding KY_HAN}"/>
+                                                        </DataTemplate>
+                                                    </telerik:GridViewDataColumn.CellTemplate>
+                                                </telerik:GridViewDataColumn>
+                                                <telerik:GridViewDataColumn Header="{DynamicResource U.LaiSuat.LaiSuat.ucLaiSuatCT.Header.SoTienTu}" Width="*" CellStyle="{DynamicResource GridViewCellStyle1}">
+                                                    <telerik:GridViewDataColumn.CellTemplate>
+                                                        <DataTemplate>
+                                                            <telerik:RadMaskedNumericInput Mask="#18" SpinMode="None" HorizontalAlignment="Stretch" Name="radGridNumSoTien" IsClearButtonVisible="False" Value="{Binding SO_TIEN}" TextMode="PlainText" Text="0" />
+                                                        </DataTemplate>
+                                                    </telerik:GridViewDataColumn.CellTemplate>
+                                                </telerik:GridViewDataColumn>
+                                                <telerik:GridViewDataColumn Header="{DynamicResource U.LaiSuat.LaiSuat.ucLaiSuatCT.Header.LaiSuat}" Width="*" CellStyle="{DynamicResource GridViewCellStyle1}">
+                                                    <telerik:GridViewDataColumn.CellTemplate>
+                                                        <DataTemplate>
+                                                            <telerik:RadMaskedNumericInput Mask="#2.2" SpinMode="None" HorizontalAlignment="Stretch" Name="radGridNumLaiSuat" IsClearButtonVisible="False" Value="{Binding LAI_SUAT}" KeyDown="radGridNumLaiSuat_KeyDown" SelectionStart="1" />
+                                                        </DataTemplate>
+                                                    </telerik:GridViewDataColumn.CellTemplate>
+                                                </telerik:GridViewDataColumn>
+                                            </telerik:RadGridView.Columns>
+                                        </telerik:RadGridView>
+                                    </DockPanel>
+                                </GroupBox>
+                            </DockPanel>
+                        </DockPanel>
+                    </ScrollViewer>
+                </telerik:RadTabItem>
+                <telerik:RadTabItem Header="{DynamicResource U.LaiSuat.LaiSuat.ucLaiSuatCT.TabHeader.LichSu}" HeaderTemplate="{DynamicResource HeaderTemplate}" HorizontalContentAlignment="Left" Height="{Binding ElementName=grMain, Path=ActualWidth,
+                Converter={uc:MathConverter}, ConverterParameter=x/5}" IsSelected="True">
+                    <ScrollViewer ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Auto">
+                        <Grid>
+                            <telerik:RadGridView Name="raddgrLSLaiSuatDS" DockPanel.Dock="Top" ColumnWidth="*" IsReadOnly="True"
+                                                AutoGenerateColumns="False" CanUserFreezeColumns="False" RowIndicatorVisibility="Collapsed" ShowGroupPanel="False">
+                                <telerik:RadGridView.Columns>
+                                    <telerik:GridViewDataColumn Header="{DynamicResource U.LaiSuat.LaiSuat.ucLaiSuatCT.Header.STT}" Width="40" DataMemberBinding="{Binding STT}" />
+                                    <telerik:GridViewDataColumn Header="{DynamicResource U.LaiSuat.LaiSuat.ucLaiSuatCT.Header.NgayHieuLuc}" Width="*" DataMemberBinding="{Binding NGAY_ADUNG}" />
+                                    <telerik:GridViewDataColumn Header="{DynamicResource U.LaiSuat.LaiSuat.ucLaiSuatCT.Header.NgayHetHieuLuc}" Width="*" DataMemberBinding="{Binding NGAY_HHAN}" />
+                                    <telerik:GridViewDataColumn Header="{DynamicResource U.LaiSuat.LaiSuat.ucLaiSuatCT.Header.KyHan}" Width="*" IsVisible="False" DataMemberBinding="{Binding KY_HAN}" />
+                                    <telerik:GridViewDataColumn Header="{DynamicResource U.LaiSuat.LaiSuat.ucLaiSuatCT.Header.DonViTinh}" Width="*" IsVisible="False" DataMemberBinding="{Binding KY_HAN_DVI_TINH}" />
+                                    <telerik:GridViewDataColumn Header="{DynamicResource U.LaiSuat.LaiSuat.ucLaiSuatCT.Header.SoTien}" Width="*" IsVisible="False" DataMemberBinding="{Binding SO_TIEN}" />
+                                    <telerik:GridViewDataColumn Header="{DynamicResource U.LaiSuat.LaiSuat.ucLaiSuatCT.Header.LaiSuat}" Width="*" DataMemberBinding="{Binding LAI_SUAT}" />
+                                </telerik:RadGridView.Columns>
+                            </telerik:RadGridView>
+                        </Grid>
+                    </ScrollViewer>
+                </telerik:RadTabItem>
+                <telerik:RadTabItem Header="{DynamicResource U.LaiSuat.LaiSuat.ucLaiSuatCT.TabHeader.KiemSoat}" HeaderTemplate="{DynamicResource HeaderTemplate}" HorizontalContentAlignment="Left" Height="{Binding ElementName=grMain, Path=ActualWidth,
+                Converter={uc:MathConverter}, ConverterParameter=x/5}" IsSelected="True">
+                    <ScrollViewer ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Auto">
+                        <Grid>
+                            <GroupBox Header="{DynamicResource U.LaiSuat.LaiSuat.ucLaiSuatCT.GroupBox.TrangThaiBanGhi}" Margin="3" Padding="10,10,10,5">
+                                <StackPanel>
+                                    <Grid >
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="130"/>
+                                            <ColumnDefinition Width="2*"/>
+                                            <ColumnDefinition Width="2*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*"/>
+                                            <RowDefinition Height="6"/>
+                                            <RowDefinition Height="*"/>
+                                            <RowDefinition Height="6"/>
+                                            <RowDefinition Height="*"/>
+                                            <RowDefinition Height="6"/>
+                                            <RowDefinition Height="*"/>
+                                            <RowDefinition Height="6"/>
+                                            <RowDefinition Height="*"/>
+                                        </Grid.RowDefinitions>
+
+                                        <Label Grid.Row="0" Grid.Column="0" Content="{DynamicResource U.LaiSuat.LaiSuat.ucLaiSuatCT.Label.TThaiBGhi}" Margin="0,-2,0,0" />
+                                        <TextBox Grid.Row="0" Grid.Column="1" Name="txtTrangThaiBanGhi" />
+
+                                        <Label Grid.Row="2" Grid.Column="0" Content="{DynamicResource U.LaiSuat.LaiSuat.ucLaiSuatCT.Label.NgayLap}"/>
+                                        <telerik:RadMaskedDateTimeInput Grid.Row="2" Grid.Column="1" HorizontalAlignment="Stretch" Mask="dd/MM/yyyy" Name="txtNgayLap"/>
+
+                                        <Label Grid.Row="4" Grid.Column="0" Content="{DynamicResource U.LaiSuat.LaiSuat.ucLaiSuatCT.Label.NguoiLap}" Margin="0,-2,0,0"/>
+                                        <TextBox Grid.Row="4" Grid.Column="1" Name="txtNguoiLap"/>
+
+                                        <Label Grid.Row="6" Grid.Column="0" Content="{DynamicResource U.LaiSuat.LaiSuat.ucLaiSuatCT.Label.NgayCapNhat}"/>
+                                        <telerik:RadMaskedDateTimeInput Grid.Row="6" Grid.Column="1" HorizontalAlignment="Stretch" Mask="dd/MM/yyyy" Name="txtNgayCapNhat"/>
+
+                                        <Label Grid.Row="8" Grid.Column="0" Content="{DynamicResource U.LaiSuat.LaiSuat.ucLaiSuatCT.Label.NguoiCapNhat}" Margin="0,-2,0,0"/>
+                                        <TextBox Grid.Row="8" Grid.Column="1" Name="txtNguoiCapNhat"/>
+
+                                    </Grid>
+                                </StackPanel>
+                            </GroupBox>
+                        </Grid>
+                    </ScrollViewer>
+                </telerik:RadTabItem>
+            </telerik:RadTabControl>
+        </DockPanel>
+    </Grid>
+</UserControl>

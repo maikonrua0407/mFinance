@@ -1,0 +1,16 @@
+MaChiNhanh	string	255
+TenChiNhanh	string	255
+NgayMoSo	string	255
+SoHieuChungTu	string	255
+NgayChungTu	string	255
+DienGiai	string	255
+SoTaiKhoanDU	string	255
+NoVonGop	number
+NoThangDu	number
+NoVonKhac	number
+CoVonGop	number
+CoThangDu	number
+CoVonKhac	number
+DuVonGop	number
+DuThangDu	number
+DuVonKhac	number

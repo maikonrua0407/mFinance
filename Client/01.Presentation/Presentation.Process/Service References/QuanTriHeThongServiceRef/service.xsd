@@ -1,0 +1,732 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/CommunicationServices.QuanTriHeThong.Messages" />
+  <xs:element name="returnHello">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="returnHelloResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="returnHelloResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LayChucNangTheoMa">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="maChucNang" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LayChucNangTheoMaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="LayChucNangTheoMaResult" nillable="true" type="q1:HT_CNANG" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LayChucNangTheoMaCha">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="maChucNangCha" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LayChucNangTheoMaChaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="LayChucNangTheoMaChaResult" nillable="true" type="q2:ArrayOfHT_CNANG" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LayChucNangTheoQuyen">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="maDangNhap" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="passWord" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LayChucNangTheoQuyenResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="LayChucNangTheoQuyenResult" nillable="true" type="q3:ArrayOfHT_CNANG" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LayDSNgayLamViec">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/CommunicationServices.QuanTriHeThong.Messages" minOccurs="0" name="layDSNgayLamViecRequest" nillable="true" type="q4:LayDSNgayLamViecRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LayDSNgayLamViecResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/CommunicationServices.QuanTriHeThong.Messages" minOccurs="0" name="LayDSNgayLamViecResult" nillable="true" type="q5:LayDSNgayLamViecResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LuuLich">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/CommunicationServices.QuanTriHeThong.Messages" minOccurs="0" name="luuLichRequest" nillable="true" type="q6:LuuLichRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LuuLichResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/CommunicationServices.QuanTriHeThong.Messages" minOccurs="0" name="LuuLichResult" nillable="true" type="q7:LuuLichResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="layCNangTNang">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/CommunicationServices.QuanTriHeThong.Messages" minOccurs="0" name="phanQuyenRequest" nillable="true" type="q8:PhanQuyenRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="layCNangTNangResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/CommunicationServices.QuanTriHeThong.Messages" minOccurs="0" name="layCNangTNangResult" nillable="true" type="q9:PhanQuyenResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="layCNangTNangTheoListIdChucNang">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/CommunicationServices.QuanTriHeThong.Messages" minOccurs="0" name="phanQuyenRequest" nillable="true" type="q10:PhanQuyenRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="layCNangTNangTheoListIdChucNangResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/CommunicationServices.QuanTriHeThong.Messages" minOccurs="0" name="layCNangTNangTheoListIdChucNangResult" nillable="true" type="q11:PhanQuyenResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="layCNangTNangTheoListIdMenu">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/CommunicationServices.QuanTriHeThong.Messages" minOccurs="0" name="phanQuyenRequest" nillable="true" type="q12:PhanQuyenRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="layCNangTNangTheoListIdMenuResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/CommunicationServices.QuanTriHeThong.Messages" minOccurs="0" name="layCNangTNangTheoListIdMenuResult" nillable="true" type="q13:PhanQuyenResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="layTNangDuocPhanQuyen">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/CommunicationServices.QuanTriHeThong.Messages" minOccurs="0" name="phanQuyenRequest" nillable="true" type="q14:PhanQuyenRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="layTNangDuocPhanQuyenResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/CommunicationServices.QuanTriHeThong.Messages" minOccurs="0" name="layTNangDuocPhanQuyenResult" nillable="true" type="q15:PhanQuyenResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="layCNang">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/CommunicationServices.QuanTriHeThong.Messages" minOccurs="0" name="phanQuyenRequest" nillable="true" type="q16:PhanQuyenRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="layCNangResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/CommunicationServices.QuanTriHeThong.Messages" minOccurs="0" name="layCNangResult" nillable="true" type="q17:PhanQuyenResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="layCNangTheoPhanHe">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/CommunicationServices.QuanTriHeThong.Messages" minOccurs="0" name="phanQuyenRequest" nillable="true" type="q18:PhanQuyenRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="layCNangTheoPhanHeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/CommunicationServices.QuanTriHeThong.Messages" minOccurs="0" name="layCNangTheoPhanHeResult" nillable="true" type="q19:PhanQuyenResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="layCNangThietLapAPTheoPhanHe">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/CommunicationServices.QuanTriHeThong.Messages" minOccurs="0" name="phanQuyenRequest" nillable="true" type="q20:PhanQuyenRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="layCNangThietLapAPTheoPhanHeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/CommunicationServices.QuanTriHeThong.Messages" minOccurs="0" name="layCNangThietLapAPTheoPhanHeResult" nillable="true" type="q21:PhanQuyenResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="layCNangPQuyen">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/CommunicationServices.QuanTriHeThong.Messages" minOccurs="0" name="request" nillable="true" type="q22:PhanQuyenRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="layCNangPQuyenResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/CommunicationServices.QuanTriHeThong.Messages" minOccurs="0" name="layCNangPQuyenResult" nillable="true" type="q23:PhanQuyenResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="layCNangPQuyenTheoDoiTuong">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/CommunicationServices.QuanTriHeThong.Messages" minOccurs="0" name="request" nillable="true" type="q24:PhanQuyenRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="layCNangPQuyenTheoDoiTuongResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/CommunicationServices.QuanTriHeThong.Messages" minOccurs="0" name="layCNangPQuyenTheoDoiTuongResult" nillable="true" type="q25:PhanQuyenResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="layCNangPQuyenTheoDoiTuongChucNang">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/CommunicationServices.QuanTriHeThong.Messages" minOccurs="0" name="request" nillable="true" type="q26:PhanQuyenRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="layCNangPQuyenTheoDoiTuongChucNangResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/CommunicationServices.QuanTriHeThong.Messages" minOccurs="0" name="layCNangPQuyenTheoDoiTuongChucNangResult" nillable="true" type="q27:PhanQuyenResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="layTNang">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/CommunicationServices.QuanTriHeThong.Messages" minOccurs="0" name="phanQuyenRequest" nillable="true" type="q28:PhanQuyenRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="layTNangResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/CommunicationServices.QuanTriHeThong.Messages" minOccurs="0" name="layTNangResult" nillable="true" type="q29:PhanQuyenResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="layTNangTheoListIdTinhNang">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/CommunicationServices.QuanTriHeThong.Messages" minOccurs="0" name="phanQuyenRequest" nillable="true" type="q30:PhanQuyenRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="layTNangTheoListIdTinhNangResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/CommunicationServices.QuanTriHeThong.Messages" minOccurs="0" name="layTNangTheoListIdTinhNangResult" nillable="true" type="q31:PhanQuyenResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="layTNguyen">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/CommunicationServices.QuanTriHeThong.Messages" minOccurs="0" name="phanQuyenRequest" nillable="true" type="q32:PhanQuyenRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="layTNguyenResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/CommunicationServices.QuanTriHeThong.Messages" minOccurs="0" name="layTNguyenResult" nillable="true" type="q33:PhanQuyenResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="layDSTNguyenKThac">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/CommunicationServices.QuanTriHeThong.Messages" minOccurs="0" name="phanQuyenRequest" nillable="true" type="q34:PhanQuyenRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="layDSTNguyenKThacResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/CommunicationServices.QuanTriHeThong.Messages" minOccurs="0" name="layDSTNguyenKThacResult" nillable="true" type="q35:PhanQuyenResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="luuPhanQuyen">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/CommunicationServices.QuanTriHeThong.Messages" minOccurs="0" name="phanQuyenRequest" nillable="true" type="q36:PhanQuyenRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="luuPhanQuyenResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/CommunicationServices.QuanTriHeThong.Messages" minOccurs="0" name="luuPhanQuyenResult" nillable="true" type="q37:PhanQuyenResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="luuPhanQuyenChucNang">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/CommunicationServices.QuanTriHeThong.Messages" minOccurs="0" name="phanQuyenRequest" nillable="true" type="q38:PhanQuyenRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="luuPhanQuyenChucNangResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/CommunicationServices.QuanTriHeThong.Messages" minOccurs="0" name="luuPhanQuyenChucNangResult" nillable="true" type="q39:PhanQuyenResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="layDanhSachDonVi">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/CommunicationServices.QuanTriHeThong.Messages" minOccurs="0" name="nguoiSuDungRequest" nillable="true" type="q40:NguoiDungRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="layDanhSachDonViResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/CommunicationServices.QuanTriHeThong.Messages" minOccurs="0" name="layDanhSachDonViResult" nillable="true" type="q41:NguoiDungResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="layThongTinCaNhan">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/CommunicationServices.QuanTriHeThong.Messages" minOccurs="0" name="nguoiSuDungRequest" nillable="true" type="q42:NguoiDungRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="layThongTinCaNhanResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/CommunicationServices.QuanTriHeThong.Messages" minOccurs="0" name="layThongTinCaNhanResult" nillable="true" type="q43:NguoiDungResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="layNSD">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/CommunicationServices.QuanTriHeThong.Messages" minOccurs="0" name="nguoiSuDungRequest" nillable="true" type="q44:NguoiDungRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="layNSDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/CommunicationServices.QuanTriHeThong.Messages" minOccurs="0" name="layNSDResult" nillable="true" type="q45:NguoiDungResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="layNhomNSD">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/CommunicationServices.QuanTriHeThong.Messages" minOccurs="0" name="nguoiSuDungRequest" nillable="true" type="q46:NguoiDungRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="layNhomNSDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/CommunicationServices.QuanTriHeThong.Messages" minOccurs="0" name="layNhomNSDResult" nillable="true" type="q47:NguoiDungResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="layNSDTheoNhom">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/CommunicationServices.QuanTriHeThong.Messages" minOccurs="0" name="nguoiSuDungRequest" nillable="true" type="q48:NguoiDungRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="layNSDTheoNhomResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/CommunicationServices.QuanTriHeThong.Messages" minOccurs="0" name="layNSDTheoNhomResult" nillable="true" type="q49:NguoiDungResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="layNhomTheoNSD">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/CommunicationServices.QuanTriHeThong.Messages" minOccurs="0" name="nguoiSuDungRequest" nillable="true" type="q50:NguoiDungRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="layNhomTheoNSDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q51="http://schemas.datacontract.org/2004/07/CommunicationServices.QuanTriHeThong.Messages" minOccurs="0" name="layNhomTheoNSDResult" nillable="true" type="q51:NguoiDungResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="layTruyCapTheoNSD">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/CommunicationServices.QuanTriHeThong.Messages" minOccurs="0" name="nguoiSuDungRequest" nillable="true" type="q52:NguoiDungRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="layTruyCapTheoNSDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/CommunicationServices.QuanTriHeThong.Messages" minOccurs="0" name="layTruyCapTheoNSDResult" nillable="true" type="q53:NguoiDungResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="layTruyCapTheoNhomNSD">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q54="http://schemas.datacontract.org/2004/07/CommunicationServices.QuanTriHeThong.Messages" minOccurs="0" name="nguoiSuDungRequest" nillable="true" type="q54:NguoiDungRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="layTruyCapTheoNhomNSDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q55="http://schemas.datacontract.org/2004/07/CommunicationServices.QuanTriHeThong.Messages" minOccurs="0" name="layTruyCapTheoNhomNSDResult" nillable="true" type="q55:NguoiDungResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="layPhamViPhongGDTheoNSDVaMaLoaiPhamVi">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q56="http://schemas.datacontract.org/2004/07/CommunicationServices.QuanTriHeThong.Messages" minOccurs="0" name="nguoiSuDungRequest" nillable="true" type="q56:NguoiDungRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="layPhamViPhongGDTheoNSDVaMaLoaiPhamViResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/CommunicationServices.QuanTriHeThong.Messages" minOccurs="0" name="layPhamViPhongGDTheoNSDVaMaLoaiPhamViResult" nillable="true" type="q57:NguoiDungResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ThemNSD">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q58="http://schemas.datacontract.org/2004/07/CommunicationServices.QuanTriHeThong.Messages" minOccurs="0" name="request" nillable="true" type="q58:NguoiDungRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ThemNSDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q59="http://schemas.datacontract.org/2004/07/CommunicationServices.QuanTriHeThong.Messages" minOccurs="0" name="ThemNSDResult" nillable="true" type="q59:NguoiDungResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SuaNSD">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q60="http://schemas.datacontract.org/2004/07/CommunicationServices.QuanTriHeThong.Messages" minOccurs="0" name="request" nillable="true" type="q60:NguoiDungRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SuaNSDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q61="http://schemas.datacontract.org/2004/07/CommunicationServices.QuanTriHeThong.Messages" minOccurs="0" name="SuaNSDResult" nillable="true" type="q61:NguoiDungResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="XoaListNSDTheoID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q62="http://schemas.datacontract.org/2004/07/CommunicationServices.QuanTriHeThong.Messages" minOccurs="0" name="request" nillable="true" type="q62:NguoiDungRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="XoaListNSDTheoIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q63="http://schemas.datacontract.org/2004/07/CommunicationServices.QuanTriHeThong.Messages" minOccurs="0" name="XoaListNSDTheoIDResult" nillable="true" type="q63:NguoiDungResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ThemNHNSD">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q64="http://schemas.datacontract.org/2004/07/CommunicationServices.QuanTriHeThong.Messages" minOccurs="0" name="request" nillable="true" type="q64:NguoiDungRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ThemNHNSDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q65="http://schemas.datacontract.org/2004/07/CommunicationServices.QuanTriHeThong.Messages" minOccurs="0" name="ThemNHNSDResult" nillable="true" type="q65:NguoiDungResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SuaNHNSD">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q66="http://schemas.datacontract.org/2004/07/CommunicationServices.QuanTriHeThong.Messages" minOccurs="0" name="request" nillable="true" type="q66:NguoiDungRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SuaNHNSDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q67="http://schemas.datacontract.org/2004/07/CommunicationServices.QuanTriHeThong.Messages" minOccurs="0" name="SuaNHNSDResult" nillable="true" type="q67:NguoiDungResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="XoaListNHNSDTheoID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q68="http://schemas.datacontract.org/2004/07/CommunicationServices.QuanTriHeThong.Messages" minOccurs="0" name="request" nillable="true" type="q68:NguoiDungRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="XoaListNHNSDTheoIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q69="http://schemas.datacontract.org/2004/07/CommunicationServices.QuanTriHeThong.Messages" minOccurs="0" name="XoaListNHNSDTheoIDResult" nillable="true" type="q69:NguoiDungResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="layThamSo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q70="http://schemas.datacontract.org/2004/07/CommunicationServices.QuanTriHeThong.Messages" minOccurs="0" name="thamSoRequest" nillable="true" type="q70:ThamSoRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="layThamSoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q71="http://schemas.datacontract.org/2004/07/CommunicationServices.QuanTriHeThong.Messages" minOccurs="0" name="layThamSoResult" nillable="true" type="q71:ThamSoResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="layThamSoHeThong">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q72="http://schemas.datacontract.org/2004/07/CommunicationServices.QuanTriHeThong.Messages" minOccurs="0" name="thamSoRequest" nillable="true" type="q72:ThamSoRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="layThamSoHeThongResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q73="http://schemas.datacontract.org/2004/07/CommunicationServices.QuanTriHeThong.Messages" minOccurs="0" name="layThamSoHeThongResult" nillable="true" type="q73:ThamSoResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="layLoaiThamSo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q74="http://schemas.datacontract.org/2004/07/CommunicationServices.QuanTriHeThong.Messages" minOccurs="0" name="thamSoRequest" nillable="true" type="q74:ThamSoRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="layLoaiThamSoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q75="http://schemas.datacontract.org/2004/07/CommunicationServices.QuanTriHeThong.Messages" minOccurs="0" name="layLoaiThamSoResult" nillable="true" type="q75:ThamSoResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="capNhatThamSo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q76="http://schemas.datacontract.org/2004/07/CommunicationServices.QuanTriHeThong.Messages" minOccurs="0" name="thamSoRequest" nillable="true" type="q76:ThamSoRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="capNhatThamSoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q77="http://schemas.datacontract.org/2004/07/CommunicationServices.QuanTriHeThong.Messages" minOccurs="0" name="capNhatThamSoResult" nillable="true" type="q77:ThamSoResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="capNhatGiaTriThamSo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q78="http://schemas.datacontract.org/2004/07/CommunicationServices.QuanTriHeThong.Messages" minOccurs="0" name="thamSoRequest" nillable="true" type="q78:ThamSoRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="capNhatGiaTriThamSoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q79="http://schemas.datacontract.org/2004/07/CommunicationServices.QuanTriHeThong.Messages" minOccurs="0" name="capNhatGiaTriThamSoResult" nillable="true" type="q79:ThamSoResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="capNhatLoaiThamSo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q80="http://schemas.datacontract.org/2004/07/CommunicationServices.QuanTriHeThong.Messages" minOccurs="0" name="thamSoRequest" nillable="true" type="q80:ThamSoRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="capNhatLoaiThamSoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q81="http://schemas.datacontract.org/2004/07/CommunicationServices.QuanTriHeThong.Messages" minOccurs="0" name="capNhatLoaiThamSoResult" nillable="true" type="q81:ThamSoResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DoiMatKhauNguoiDung">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q82="http://schemas.datacontract.org/2004/07/CommunicationServices.QuanTriHeThong.Messages" minOccurs="0" name="thamSoRequest" nillable="true" type="q82:NguoiDungRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DoiMatKhauNguoiDungResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q83="http://schemas.datacontract.org/2004/07/CommunicationServices.QuanTriHeThong.Messages" minOccurs="0" name="DoiMatKhauNguoiDungResult" nillable="true" type="q83:NguoiDungResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DoiMatKhauNguoiDungLucDangNhap">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q84="http://schemas.datacontract.org/2004/07/CommunicationServices.QuanTriHeThong.Messages" minOccurs="0" name="thamSoRequest" nillable="true" type="q84:NguoiDungRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DoiMatKhauNguoiDungLucDangNhapResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q85="http://schemas.datacontract.org/2004/07/CommunicationServices.QuanTriHeThong.Messages" minOccurs="0" name="DoiMatKhauNguoiDungLucDangNhapResult" nillable="true" type="q85:NguoiDungResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ThietLapMatKhauNguoiDung">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q86="http://schemas.datacontract.org/2004/07/CommunicationServices.QuanTriHeThong.Messages" minOccurs="0" name="thamSoRequest" nillable="true" type="q86:NguoiDungRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ThietLapMatKhauNguoiDungResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q87="http://schemas.datacontract.org/2004/07/CommunicationServices.QuanTriHeThong.Messages" minOccurs="0" name="ThietLapMatKhauNguoiDungResult" nillable="true" type="q87:NguoiDungResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckClientVersion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q88="http://schemas.datacontract.org/2004/07/CommunicationServices.QuanTriHeThong.Messages" minOccurs="0" name="request" nillable="true" type="q88:PhienBanRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckClientVersionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q89="http://schemas.datacontract.org/2004/07/CommunicationServices.QuanTriHeThong.Messages" minOccurs="0" name="CheckClientVersionResult" nillable="true" type="q89:PhienBanResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DownloadClientVersion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q90="http://schemas.datacontract.org/2004/07/CommunicationServices.QuanTriHeThong.Messages" minOccurs="0" name="request" nillable="true" type="q90:PhienBanRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DownloadClientVersionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q91="http://schemas.datacontract.org/2004/07/CommunicationServices.QuanTriHeThong.Messages" minOccurs="0" name="DownloadClientVersionResult" nillable="true" type="q91:PhienBanResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DownloadClientVersionItem">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q92="http://schemas.datacontract.org/2004/07/CommunicationServices.QuanTriHeThong.Messages" minOccurs="0" name="request" nillable="true" type="q92:PhienBanRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DownloadClientVersionItemResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q93="http://schemas.datacontract.org/2004/07/CommunicationServices.QuanTriHeThong.Messages" minOccurs="0" name="DownloadClientVersionItemResult" nillable="true" type="q93:PhienBanResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LayDanhSachPhongGD">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q94="http://schemas.datacontract.org/2004/07/CommunicationServices.QuanTriHeThong.Messages" minOccurs="0" name="request" nillable="true" type="q94:NguoiDungRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LayDanhSachPhongGDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q95="http://schemas.datacontract.org/2004/07/CommunicationServices.QuanTriHeThong.Messages" minOccurs="0" name="LayDanhSachPhongGDResult" nillable="true" type="q95:NguoiDungResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PhanQuyenPhamVi">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q96="http://schemas.datacontract.org/2004/07/CommunicationServices.QuanTriHeThong.Messages" minOccurs="0" name="request" nillable="true" type="q96:PhamViRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PhanQuyenPhamViResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q97="http://schemas.datacontract.org/2004/07/CommunicationServices.QuanTriHeThong.Messages" minOccurs="0" name="PhanQuyenPhamViResult" nillable="true" type="q97:PhamViResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChucNang">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q98="http://schemas.datacontract.org/2004/07/CommunicationServices.QuanTriHeThong.Messages" minOccurs="0" name="request" nillable="true" type="q98:ChucNangRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChucNangResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q99="http://schemas.datacontract.org/2004/07/CommunicationServices.QuanTriHeThong.Messages" minOccurs="0" name="ChucNangResult" nillable="true" type="q99:ChucNangResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

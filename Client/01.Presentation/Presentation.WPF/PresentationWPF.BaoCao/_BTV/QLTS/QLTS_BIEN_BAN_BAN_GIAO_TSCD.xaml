@@ -1,0 +1,35 @@
+﻿<UserControl x:Class="PresentationWPF.BaoCao._BTV.QLTS.QLTS_BIEN_BAN_BAN_GIAO_TSCD"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="100" d:DesignWidth="300" FontStyle="Italic" xmlns:my="clr-namespace:System;assembly=mscorlib">
+    <UserControl.Resources>
+        <!--<my:String x:Key="U.BaoCao.TaiSan.SoBienBan">Số biên bản:</my:String>-->
+    </UserControl.Resources>
+    <Grid>
+        <DockPanel>
+            <Grid>
+                <GroupBox Header="{DynamicResource U.BaoCao._BTV.QLTS.QLTS_BIEN_BAN_BAN_GIAO_TSCD}" Margin="3,10,3,3">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="2*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="6" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="{DynamicResource U.BaoCao.TaiSan.SoBienBan}" />
+                            <Label Content="(*)" Foreground="Red" Margin="-5,0,0,0" />
+                        </StackPanel>
+                        <TextBox Name="txtSoBienBan" Grid.Column="1" HorizontalAlignment="Stretch" Padding="3" />
+                    </Grid>
+                </GroupBox>
+            </Grid>
+        </DockPanel>
+    </Grid>
+</UserControl>

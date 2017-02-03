@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="fd46fbdf-97c0-4dc2-9abc-32eb6269f413" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:1234/TinDungService.svc/mex/mex/mex/mex/mex/mex/mex/mex/mex/mex/mex/mex/mex/mex/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service2.wsdl" MetadataType="Wsdl" ID="268af591-3315-4ee7-8ec5-57ecbc61f592" SourceId="1" SourceUrl="http://localhost:1234/TinDungService.svc/mex/mex/mex/mex/mex/mex/mex/mex/mex/mex/mex/mex/mex/mex/mex" />
+    <MetadataFile FileName="service4.xsd" MetadataType="Schema" ID="03719946-cee0-463f-b598-3b1f2f64c209" SourceId="1" SourceUrl="http://localhost:1234/TinDungService.svc/mex/mex/mex/mex/mex/mex/mex/mex/mex/mex/mex/mex/mex/mex/mex" />
+    <MetadataFile FileName="service5.xsd" MetadataType="Schema" ID="61792520-d96d-4a36-9f50-9df5464235a1" SourceId="1" SourceUrl="http://localhost:1234/TinDungService.svc/mex/mex/mex/mex/mex/mex/mex/mex/mex/mex/mex/mex/mex/mex/mex" />
+    <MetadataFile FileName="CommunicationServices.TinDung.Messages2.xsd" MetadataType="Schema" ID="9c901077-4001-48fd-892d-6b9ba7fee526" SourceId="1" SourceUrl="http://localhost:1234/TinDungService.svc/mex/mex/mex/mex/mex/mex/mex/mex/mex/mex/mex/mex/mex/mex/mex" />
+    <MetadataFile FileName="CommunicationMessages.Base.MessageBases2.xsd" MetadataType="Schema" ID="7ce62f6f-0a34-410b-8901-b9bdf5b3e45b" SourceId="1" SourceUrl="http://localhost:1234/TinDungService.svc/mex/mex/mex/mex/mex/mex/mex/mex/mex/mex/mex/mex/mex/mex/mex" />
+    <MetadataFile FileName="Utilities.Common2.xsd" MetadataType="Schema" ID="d0964a03-2ebd-40b5-b565-f339a02eff57" SourceId="1" SourceUrl="http://localhost:1234/TinDungService.svc/mex/mex/mex/mex/mex/mex/mex/mex/mex/mex/mex/mex/mex/mex/mex" />
+    <MetadataFile FileName="Arrays2.xsd" MetadataType="Schema" ID="0b79eaf1-dcc0-48f4-9fe7-5dd834995034" SourceId="1" SourceUrl="http://localhost:1234/TinDungService.svc/mex/mex/mex/mex/mex/mex/mex/mex/mex/mex/mex/mex/mex/mex/mex" />
+    <MetadataFile FileName="DataModel.EntityFramework2.xsd" MetadataType="Schema" ID="c6fa7802-a91e-49de-8f40-d7b10f6404ea" SourceId="1" SourceUrl="http://localhost:1234/TinDungService.svc/mex/mex/mex/mex/mex/mex/mex/mex/mex/mex/mex/mex/mex/mex/mex" />
+    <MetadataFile FileName="BusinessServices.TinDung.DTO2.xsd" MetadataType="Schema" ID="60cc720e-48ab-498a-9890-a06004a5d5bd" SourceId="1" SourceUrl="http://localhost:1234/TinDungService.svc/mex/mex/mex/mex/mex/mex/mex/mex/mex/mex/mex/mex/mex/mex/mex" />
+    <MetadataFile FileName="BusinessServices.Utilities.DTO2.xsd" MetadataType="Schema" ID="5b2b1f50-01ff-49db-9e5e-63055357ce47" SourceId="1" SourceUrl="http://localhost:1234/TinDungService.svc/mex/mex/mex/mex/mex/mex/mex/mex/mex/mex/mex/mex/mex/mex/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

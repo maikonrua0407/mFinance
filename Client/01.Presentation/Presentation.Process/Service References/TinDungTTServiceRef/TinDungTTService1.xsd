@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/BusinessServices.HanMuc.DTO" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/BusinessServices.HanMuc.DTO" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:1001/TinDungTTService.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" />
+  <xs:import schemaLocation="http://localhost:1001/TinDungTTService.svc?xsd=xsd9" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="HM_HAN_MUC_KHACH_HANG_CTIET">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DATA_SET" nillable="true">
+        <xs:complexType>
+          <xs:annotation>
+            <xs:appinfo>
+              <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+            </xs:appinfo>
+          </xs:annotation>
+          <xs:sequence>
+            <xs:element ref="xs:schema" />
+            <xs:any />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="LIST_HM_CTIET_LOAITS" nillable="true" type="q1:ArrayOfHM_CTIET_LOAITS" />
+      <xs:element minOccurs="0" name="MA_DVI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_GDICH" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_HMUC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_NHAP" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="OBJ_HM_CTIET" nillable="true" type="q2:HM_CTIET" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="OBJ_HM_TONG" nillable="true" type="q3:HM_TONG" />
+      <xs:element minOccurs="0" name="TEN_HMUC_TONG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TEN_KHANG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TEN_SAN_PHAM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_BGHI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_NVU" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="HM_HAN_MUC_KHACH_HANG_CTIET" nillable="true" type="tns:HM_HAN_MUC_KHACH_HANG_CTIET" />
+  <xs:complexType name="HM_HMUC_TONG">
+    <xs:sequence>
+      <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="lstID" nillable="true" type="q4:ArrayOfint" />
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstTongNhomSP" nillable="true" type="q5:ArrayOfHM_TONG_NHOMSP" />
+      <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objTong" nillable="true" type="q6:HM_TONG" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="HM_HMUC_TONG" nillable="true" type="tns:HM_HMUC_TONG" />
+</xs:schema>

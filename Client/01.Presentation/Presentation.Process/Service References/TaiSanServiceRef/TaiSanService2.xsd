@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/CommunicationServices.TaiSan.Messages" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/CommunicationServices.TaiSan.Messages" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:1001/TaiSanService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/BusinessServices.TaiSan.DTO" />
+  <xs:import schemaLocation="http://localhost:1001/TaiSanService.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" />
+  <xs:import schemaLocation="http://localhost:1001/TaiSanService.svc?xsd=xsd6" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://localhost:1001/TaiSanService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Utilities.Common" />
+  <xs:import schemaLocation="http://localhost:1001/TaiSanService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" />
+  <xs:complexType name="TaiSanRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" base="q1:RequestBase">
+        <xs:sequence>
+          <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/BusinessServices.TaiSan.DTO" minOccurs="0" name="dieuKien" nillable="true" type="q2:DIEU_KIEN_TIM_KIEM_DTO" />
+          <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/BusinessServices.TaiSan.DTO" minOccurs="0" name="dsBanGiaodto" nillable="true" type="q3:ArrayOfDANH_SACH_BAN_GIAO_DTO" />
+          <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/BusinessServices.TaiSan.DTO" minOccurs="0" name="dsDanhGiaDto" nillable="true" type="q4:ArrayOfDANH_SACH_DANH_GIA_DTO" />
+          <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/BusinessServices.TaiSan.DTO" minOccurs="0" name="dsGiamDto" nillable="true" type="q5:ArrayOfDANH_SACH_GIAM_DTO" />
+          <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/BusinessServices.TaiSan.DTO" minOccurs="0" name="dsKhauHaoDto" nillable="true" type="q6:ArrayOfDANH_SACH_KHAU_HAO_DTO" />
+          <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/BusinessServices.TaiSan.DTO" minOccurs="0" name="dsNangCapdto" nillable="true" type="q7:ArrayOfDANH_SACH_NANG_CAP_DTO" />
+          <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/BusinessServices.TaiSan.DTO" minOccurs="0" name="lstDanhMucDto" nillable="true" type="q8:ArrayOfDMUC_TSAN_DTO" />
+          <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstDanhMucLoai" nillable="true" type="q9:ArrayOfTS_DM_DMUC_LOAI" />
+          <xs:element xmlns:q10="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="lstID" nillable="true" type="q10:ArrayOfint" />
+          <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Utilities.Common" minOccurs="0" name="lstMaLoai" nillable="true" type="q11:ArrayOfDatabaseConstant.LOAI_DMUC_TSAN" />
+          <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstNhomTSan" nillable="true" type="q12:ArrayOfTS_DM_NHOM_TSCD" />
+          <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstPLoai" nillable="true" type="q13:ArrayOfKT_PHAN_HE_PLOAI" />
+          <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstTangNG" nillable="true" type="q14:ArrayOfTS_TANG_NG" />
+          <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/BusinessServices.TaiSan.DTO" minOccurs="0" name="objBanGiaodto" nillable="true" type="q15:BAN_GIAO_DTO" />
+          <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/BusinessServices.TaiSan.DTO" minOccurs="0" name="objBienDongDto" nillable="true" type="q16:BIEN_DONG_DTO" />
+          <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/BusinessServices.TaiSan.DTO" minOccurs="0" name="objDanhGiaDto" nillable="true" type="q17:DANH_GIA_DTO" />
+          <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/BusinessServices.TaiSan.DTO" minOccurs="0" name="objGiamDto" nillable="true" type="q18:GIAM_DTO" />
+          <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/BusinessServices.TaiSan.DTO" minOccurs="0" name="objKhauHaoDto" nillable="true" type="q19:KHAU_HAO_DTO" />
+          <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/BusinessServices.TaiSan.DTO" minOccurs="0" name="objNangCapdto" nillable="true" type="q20:NANG_CAP_DTO" />
+          <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objNhomTSCD" nillable="true" type="q21:TS_DM_NHOM_TSCD" />
+          <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objNhomTSCha" nillable="true" type="q22:TS_DM_NHOM_TSCD" />
+          <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/BusinessServices.TaiSan.DTO" minOccurs="0" name="objTS_Dto" nillable="true" type="q23:TS_TAI_SAN_DTO" />
+          <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/BusinessServices.TaiSan.DTO" minOccurs="0" name="objTangTS_Dto" nillable="true" type="q24:TAI_SAN_DTO" />
+          <xs:element minOccurs="0" name="sMaNhomCha" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TaiSanRequest" nillable="true" type="tns:TaiSanRequest" />
+  <xs:complexType name="TaiSanResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q25="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" base="q25:ResponseBase">
+        <xs:sequence>
+          <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/BusinessServices.TaiSan.DTO" minOccurs="0" name="dsBanGiaodto" nillable="true" type="q26:ArrayOfDANH_SACH_BAN_GIAO_DTO" />
+          <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/BusinessServices.TaiSan.DTO" minOccurs="0" name="dsDanhGiaDto" nillable="true" type="q27:ArrayOfDANH_SACH_DANH_GIA_DTO" />
+          <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/BusinessServices.TaiSan.DTO" minOccurs="0" name="dsGiamDto" nillable="true" type="q28:ArrayOfDANH_SACH_GIAM_DTO" />
+          <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/BusinessServices.TaiSan.DTO" minOccurs="0" name="dsKhauHaoDto" nillable="true" type="q29:ArrayOfDANH_SACH_KHAU_HAO_DTO" />
+          <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/BusinessServices.TaiSan.DTO" minOccurs="0" name="dsNangCapdto" nillable="true" type="q30:ArrayOfDANH_SACH_NANG_CAP_DTO" />
+          <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/BusinessServices.TaiSan.DTO" minOccurs="0" name="lstDanhMucDto" nillable="true" type="q31:ArrayOfDMUC_TSAN_DTO" />
+          <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstDanhMucLoai" nillable="true" type="q32:ArrayOfTS_DM_DMUC_LOAI" />
+          <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstNhomTSan" nillable="true" type="q33:ArrayOfTS_DM_NHOM_TSCD" />
+          <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstPLoai" nillable="true" type="q34:ArrayOfKT_PHAN_HE_PLOAI" />
+          <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstTangNG" nillable="true" type="q35:ArrayOfTS_TANG_NG" />
+          <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/BusinessServices.TaiSan.DTO" minOccurs="0" name="objBanGiaodto" nillable="true" type="q36:BAN_GIAO_DTO" />
+          <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/BusinessServices.TaiSan.DTO" minOccurs="0" name="objDanhGiaDto" nillable="true" type="q37:DANH_GIA_DTO" />
+          <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/BusinessServices.TaiSan.DTO" minOccurs="0" name="objGiamDto" nillable="true" type="q38:GIAM_DTO" />
+          <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/BusinessServices.TaiSan.DTO" minOccurs="0" name="objKhauHaoDto" nillable="true" type="q39:KHAU_HAO_DTO" />
+          <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/Utilities.Common" minOccurs="0" name="objKiemSoat" nillable="true" type="q40:KIEM_SOAT" />
+          <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/BusinessServices.TaiSan.DTO" minOccurs="0" name="objNangCapdto" nillable="true" type="q41:NANG_CAP_DTO" />
+          <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objNhomTSCD" nillable="true" type="q42:TS_DM_NHOM_TSCD" />
+          <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objNhomTSCha" nillable="true" type="q43:TS_DM_NHOM_TSCD" />
+          <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/BusinessServices.TaiSan.DTO" minOccurs="0" name="objTS_Dto" nillable="true" type="q44:TS_TAI_SAN_DTO" />
+          <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/BusinessServices.TaiSan.DTO" minOccurs="0" name="objTangTS_Dto" nillable="true" type="q45:TAI_SAN_DTO" />
+          <xs:element minOccurs="0" name="sMaNhomCha" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TaiSanResponse" nillable="true" type="tns:TaiSanResponse" />
+</xs:schema>

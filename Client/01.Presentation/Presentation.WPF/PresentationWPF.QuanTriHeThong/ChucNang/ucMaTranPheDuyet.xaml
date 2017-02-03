@@ -1,0 +1,109 @@
+﻿<UserControl x:Class="PresentationWPF.QuanTriHeThong.ChucNang.ucMaTranPheDuyet"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:ribbon="http://schemas.microsoft.com/winfx/2006/xaml/presentation/ribbon" 
+             xmlns:telerikMaskInput="clr-namespace:Telerik.Windows.Controls.MaskedInput;assembly=Telerik.Windows.Controls.Input"
+             xmlns:uc="clr-namespace:PresentationWPF.CustomControl;assembly=PresentationWPF.CustomControl"   
+             xmlns:local="clr-namespace:PresentationWPF.QuanTriHeThong.PhanQuyen"
+             xmlns:my="clr-namespace:System;assembly=mscorlib"
+             mc:Ignorable="d"
+             d:DesignHeight="768" d:DesignWidth="1024" Loaded="UserControl_Loaded">
+    <UserControl.Resources>
+        <uc:NullValueConverter x:Key="nullableConverter"/>
+        <uc:BoolToVisibilityConverter x:Key="boolToVisibilityConverter"/>
+        <uc:NullToVisibilityConverter x:Key="nullToVisibilityConverter"/>
+        <Style x:Key="GridViewCellStyle1" TargetType="{x:Type telerik:GridViewCell}">
+            <Setter Property="Background" Value="GhostWhite" />
+            <Setter Property="Padding" Value="0" />
+            <Setter Property="Margin" Value="0" />
+        </Style>
+        <!--<my:String x:Key="U.DungChung.Button.Luu">Lưu</my:String>
+        <my:String x:Key="U.DungChung.Button.XuatExcel">Xuất Excel</my:String>        
+        <my:String x:Key="U.DungChung.Button.TroGiup">Trợ giúp</my:String>
+        <my:String x:Key="U.DungChung.Button.Dong">Đóng</my:String>
+        <my:String x:Key="U.QuanTriHeThong.ucPhanQuyenChucNang.expDSDTuong">Danh sách đối tượng</my:String>
+        <my:String x:Key="U.QuanTriHeThong.ucPhanQuyenChucNang.LoaiDTuong">Loại đối tượng:</my:String>
+        <my:String x:Key="U.QuanTriHeThong.ucPhanQuyenChucNang.DSCNangPQuyen">Danh sách chức năng phân quyền</my:String>
+        <my:String x:Key="U.QuanTriHeThong.ucPhanQuyenChucNang.PhanHe">Phân hệ</my:String>
+        <my:String x:Key="U.QuanTriHeThong.ucPhanQuyenChucNang.Header.STT">STT</my:String>
+        <my:String x:Key="U.QuanTriHeThong.ucPhanQuyenChucNang.Header.MaChucNang">Mã chức năng</my:String>
+        <my:String x:Key="U.QuanTriHeThong.ucPhanQuyenChucNang.Header.TenChucNang">Chức năng</my:String>
+        <my:String x:Key="U.QuanTriHeThong.ucPhanQuyenChucNang.Header.Xem">Xem</my:String>
+        <my:String x:Key="U.QuanTriHeThong.ucPhanQuyenChucNang.Header.Them">Thêm</my:String>
+        <my:String x:Key="U.QuanTriHeThong.ucPhanQuyenChucNang.Header.Sua">Sửa</my:String>
+        <my:String x:Key="U.QuanTriHeThong.ucPhanQuyenChucNang.Header.Xoa">Xóa</my:String>
+        <my:String x:Key="U.QuanTriHeThong.ucPhanQuyenChucNang.Header.Duyet">Duyệt</my:String>
+        <my:String x:Key="U.QuanTriHeThong.ucPhanQuyenChucNang.Header.ThoaiDuyet">Thoái duyệt</my:String>
+        <my:String x:Key="U.QuanTriHeThong.ucPhanQuyenChucNang.Header.TuChoi">Từ chối</my:String>
+        <my:String x:Key="U.QuanTriHeThong.ucPhanQuyenChucNang.Header.XuLy">Xử lý</my:String>
+        <my:String x:Key="U.QuanTriHeThong.ucPhanQuyenChucNang.Header.ToanQuyen">Toàn quyền</my:String>-->
+    </UserControl.Resources>
+    <UserControl.CommandBindings>
+        <CommandBinding CanExecute="SaveCommand_CanExecute" Executed="SaveCommand_Executed" Command="{x:Static local:ucPhanQuyenCN.SaveCommand}" >
+        </CommandBinding>
+        <CommandBinding CanExecute="ExportCommand_CanExecute" Executed="ExportCommand_Executed" Command="{x:Static local:ucPhanQuyenCN.ExportCommand}">
+        </CommandBinding>
+        <CommandBinding CanExecute="HelpCommand_CanExecute" Executed="HelpCommand_Executed" Command="{x:Static local:ucPhanQuyenCN.HelpCommand}">
+        </CommandBinding>
+        <CommandBinding CanExecute="CloseCommand_CanExecute" Executed="CloseCommand_Executed" Command="{x:Static local:ucPhanQuyenCN.CloseCommand}">
+        </CommandBinding>
+    </UserControl.CommandBindings>
+    <Grid>
+        <DockPanel>
+            <DockPanel HorizontalAlignment="Stretch" DockPanel.Dock="Top" Margin="3,3,0,3" LastChildFill="False" Name="docToolbar">
+                <WrapPanel Name="Toolbar">
+                    <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbSave" DockPanel.Dock="Left" Label="{DynamicResource U.DungChung.Button.Luu}"  SmallImageSource="/Utilities.Common;component/Images/Action/modify.png" Style="{StaticResource RibbonButton}" Click="tlbHotKey_Click" />
+                    <Label Name="lbl1" Margin="3,0,0,0" DockPanel.Dock="Left"  BorderThickness="3" Width="2" BorderBrush="#FF170404" />
+                    <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbExport" DockPanel.Dock="Left" Label="{DynamicResource U.DungChung.Button.XuatExcel}"  SmallImageSource="/Utilities.Common;component/Images/Action/export.png" Style="{StaticResource RibbonButton}" Click="tlbHotKey_Click" />
+                    <Label Name="lbl3" Margin="3,0,0,0" DockPanel.Dock="Left" BorderThickness="3" Width="2" BorderBrush="#FF170404" />
+                    <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbHelp" DockPanel.Dock="Left" Label="{DynamicResource U.DungChung.Button.TroGiup}"  SmallImageSource="/Utilities.Common;component/Images/Action/help.png" Style="{StaticResource RibbonButton}" Click="tlbHotKey_Click" />
+                    <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbClose" DockPanel.Dock="Left" Label="{DynamicResource U.DungChung.Button.Dong}"  SmallImageSource="/Utilities.Common;component/Images/Action/close.png" Style="{StaticResource RibbonButton}" Click="tlbHotKey_Click" />
+                </WrapPanel>
+            </DockPanel>
+            <Grid Name="gridMain">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="40*"/>
+                    <ColumnDefinition Width="60*"/>
+                </Grid.ColumnDefinitions>
+                <DockPanel>
+                    <Grid>
+                        <GroupBox Header="{DynamicResource U.QuanTriHeThong.ucPhanQuyenChucNang.expDSDTuong}" Margin="3" VerticalAlignment="Stretch">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="2*" />
+                                    <ColumnDefinition Width="3*" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="25" />
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+                                <Label Grid.Row="0" Grid.Column="0" Content="{DynamicResource U.QuanTriHeThong.ucPhanQuyenChucNang.PhanHe}" />
+                                <telerik:RadComboBox Grid.Row="0" Grid.Column="1" IsEditable="True" Name="cmbPhanHeChucNang" />
+                                <telerik:RadGridView Grid.Row="1" Grid.ColumnSpan="2" Name="grDanhSach" ColumnWidth="*" SelectionMode="Single" ShowGroupPanel="False" CanUserFreezeColumns="False" RowIndicatorVisibility="Collapsed" HorizontalAlignment="Stretch" DockPanel.Dock="Top" Loaded="grDanhSach_Loaded" >
+                                </telerik:RadGridView>
+                            </Grid>
+                        </GroupBox>
+                    </Grid>
+                </DockPanel>
+                <GroupBox Grid.Column="1" Header="{DynamicResource U.QuanTriHeThong.ucPhanQuyenChucNang.DSCNangPQuyen}" Margin="3" VerticalAlignment="Stretch">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30" />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50" />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <ribbon:RibbonButton Name="btnAdd" SmallImageSource="pack://application:,,,/Utilities.Common;component/Images/Action/detail_add.png" Style="{StaticResource RibbonButton}" Click="btnAdd_Click" Width="30" />
+                        <ContentControl Name="CntContent" Grid.ColumnSpan="2" Grid.Row="1" VerticalAlignment="Top">
+                        </ContentControl>
+                    </Grid>
+                </GroupBox>
+            </Grid>
+        </DockPanel>
+    </Grid>
+</UserControl>

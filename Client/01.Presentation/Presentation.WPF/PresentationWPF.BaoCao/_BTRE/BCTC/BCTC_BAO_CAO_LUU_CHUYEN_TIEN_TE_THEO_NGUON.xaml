@@ -1,0 +1,72 @@
+﻿<UserControl x:Class="PresentationWPF.BaoCao._BTRE.BCTC.BCTC_BAO_CAO_LUU_CHUYEN_TIEN_TE_THEO_NGUON"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:ribbon="http://schemas.microsoft.com/winfx/2006/xaml/presentation/ribbon" 
+             xmlns:telerikMaskInput="clr-namespace:Telerik.Windows.Controls.MaskedInput;assembly=Telerik.Windows.Controls.Input"             
+             d:DesignHeight="300" d:DesignWidth="800">
+    <Grid>
+        <DockPanel>
+            <Grid>
+                <GroupBox Header="{DynamicResource U.BaoCao._BTRE.BCTC.BCTC_BAO_CAO_LUU_CHUYEN_TIEN_TE_THEO_NGUON}" Margin="3,10,3,3" Padding="0,10,0,0" >
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="2*" />
+                            <ColumnDefinition Width="20" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="2*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="6" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="6" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="6" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="15" />
+                        </Grid.RowDefinitions>
+
+                        <Label Content="Chi nhánh: " Grid.Row="0" Grid.Column="0"/>
+                        <telerik:RadComboBox IsEditable="True" IsEnabled="False" Name="cmbChiNhanh" Grid.Row="0" Grid.Column="1" />
+
+                        <Label Content="Định kỳ báo cáo: " Grid.Row="0" Grid.Column="3"/>
+                        <telerik:RadComboBox Name="cmbDinhKy" IsEnabled="False" Grid.Row="0" Grid.Column="4" SelectedValuePath="Tag" SelectedIndex="0">
+                            <telerik:RadComboBoxItem Content="Tháng" Tag="THANG" />
+                            <telerik:RadComboBoxItem Content="Quý" Tag="QUY" />
+                            <telerik:RadComboBoxItem Content="Năm" Tag="NAM" />
+                        </telerik:RadComboBox>
+
+                        <Label Content="Ngày chốt dữ liệu: " Grid.Row="2" Grid.Column="0"/>
+                        <DockPanel Grid.Row="2" Grid.Column="1" >
+                            <telerik:RadNumericUpDown Name="radQuyBaoCao" Minimum="1" Maximum="4" NumberDecimalDigits="0" Visibility="Collapsed" DockPanel.Dock="Left"/>
+
+                            <DatePicker HorizontalAlignment="Right" Width="30" SelectedDate="{Binding Path=Value,ElementName=raddtThangChot}" DockPanel.Dock="Right"/>
+                            <telerik:RadMaskedDateTimeInput Name="raddtThangChot" Grid.Row="2" Grid.Column="1" Mask="MM/yyyy" HorizontalAlignment="Stretch" Margin="0,0,6,0"  DockPanel.Dock="Left"/>
+                        </DockPanel>
+                        <Label Content="Ngày báo cáo: " Grid.Row="2" Grid.Column="3"/>
+                        <telerik:RadMaskedDateTimeInput Name="raddtNgayBaoCao" Grid.Row="2" Grid.Column="4" Mask="dd/MM/yyyy" HorizontalAlignment="Stretch" Margin="0,0,35,0"/>
+                        <DatePicker Grid.Row="2" Grid.Column="4" HorizontalAlignment="Right" Width="30" SelectedDate="{Binding Path=Value,ElementName=raddtNgayBaoCao}" />
+
+
+
+                        <Label Grid.Row="5" Grid.ColumnSpan="5" Height="0.5" Background="DarkGray" />
+
+                        <Label Content="Nguồn vốn: " Grid.Row="4" Grid.Column="0"/>
+                        <telerik:RadComboBox IsEditable="True" Name="cmbNguonVon" Grid.Row="4" Grid.Column="1" />
+
+                        <Label Content="Ngôn ngữ: " Grid.Row="6" Grid.Column="0"/>
+                        <telerik:RadComboBox IsEnabled="False" IsEditable="True" Name="cmbNgonNgu" Grid.Row="6" Grid.Column="1" />
+
+                        <Label Content="Định dạng: " Grid.Row="6" Grid.Column="3"/>
+                        <telerik:RadComboBox IsEnabled="False" IsEditable="True" Name="cmbDinhDang" Grid.Row="6" Grid.Column="4" />
+                    </Grid>
+                </GroupBox>
+            </Grid>
+        </DockPanel>
+    </Grid>
+</UserControl>

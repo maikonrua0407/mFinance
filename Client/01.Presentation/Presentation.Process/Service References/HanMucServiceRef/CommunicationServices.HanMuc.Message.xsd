@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/CommunicationServices.HanMuc.Message" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/CommunicationServices.HanMuc.Message" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/BusinessServices.HanMuc.DTO" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" />
+  <xs:complexType name="HanMucRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" base="q1:RequestBase">
+        <xs:sequence>
+          <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstHanMuc" nillable="true" type="q2:ArrayOfDC_HAN_MUC" />
+          <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/BusinessServices.HanMuc.DTO" minOccurs="0" name="lstHanMucKhachHangChiTiet" nillable="true" type="q3:ArrayOfHM_HAN_MUC_KHACH_HANG_CTIET" />
+          <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objHanMuc" nillable="true" type="q4:DC_HAN_MUC" />
+          <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/BusinessServices.HanMuc.DTO" minOccurs="0" name="objHanMucKhachHangChiTiet" nillable="true" type="q5:HM_HAN_MUC_KHACH_HANG_CTIET" />
+          <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/BusinessServices.HanMuc.DTO" minOccurs="0" name="objHanMucTong" nillable="true" type="q6:HM_HMUC_TONG" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="HanMucRequest" nillable="true" type="tns:HanMucRequest" />
+  <xs:complexType name="HanMucResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q7="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" base="q7:ResponseBase">
+        <xs:sequence>
+          <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstHanMuc" nillable="true" type="q8:ArrayOfDC_HAN_MUC" />
+          <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/BusinessServices.HanMuc.DTO" minOccurs="0" name="lstHanMucKhachHangChiTiet" nillable="true" type="q9:ArrayOfHM_HAN_MUC_KHACH_HANG_CTIET" />
+          <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objHanMuc" nillable="true" type="q10:DC_HAN_MUC" />
+          <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/BusinessServices.HanMuc.DTO" minOccurs="0" name="objHanMucKhachHangChiTiet" nillable="true" type="q11:HM_HAN_MUC_KHACH_HANG_CTIET" />
+          <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/BusinessServices.HanMuc.DTO" minOccurs="0" name="objHanMucTong" nillable="true" type="q12:HM_HMUC_TONG" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="HanMucResponse" nillable="true" type="tns:HanMucResponse" />
+</xs:schema>

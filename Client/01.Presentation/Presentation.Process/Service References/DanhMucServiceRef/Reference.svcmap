@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="2d03ee6b-d982-48e1-9b0a-867673a22a0e" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:1001/DanhMucService.svc/mex/mex/mex/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service1.wsdl" MetadataType="Wsdl" ID="f5f510fb-2acb-4548-84ac-8bff0726ad92" SourceId="1" SourceUrl="http://localhost:1001/DanhMucService.svc/mex/mex/mex/mex" />
+    <MetadataFile FileName="service3.xsd" MetadataType="Schema" ID="74561cf6-19e4-4b6c-afd4-b9088050f237" SourceId="1" SourceUrl="http://localhost:1001/DanhMucService.svc/mex/mex/mex/mex" />
+    <MetadataFile FileName="service31.xsd" MetadataType="Schema" ID="bab49b71-67e6-4ae3-a0bc-61ea9ff500e9" SourceId="1" SourceUrl="http://localhost:1001/DanhMucService.svc/mex/mex/mex/mex" />
+    <MetadataFile FileName="CommunicationServices.DanhMuc.Messages1.xsd" MetadataType="Schema" ID="35ddd558-09ec-4d3b-9524-3eabd464428d" SourceId="1" SourceUrl="http://localhost:1001/DanhMucService.svc/mex/mex/mex/mex" />
+    <MetadataFile FileName="CommunicationMessages.Base.MessageBases1.xsd" MetadataType="Schema" ID="8c8414f6-fbc2-4854-a864-317f0e54f5b4" SourceId="1" SourceUrl="http://localhost:1001/DanhMucService.svc/mex/mex/mex/mex" />
+    <MetadataFile FileName="Utilities.Common1.xsd" MetadataType="Schema" ID="2ec64488-254d-4af5-9e94-96e71454e8c5" SourceId="1" SourceUrl="http://localhost:1001/DanhMucService.svc/mex/mex/mex/mex" />
+    <MetadataFile FileName="Arrays1.xsd" MetadataType="Schema" ID="54e126f1-e4e6-4236-a1a3-4cd00210044c" SourceId="1" SourceUrl="http://localhost:1001/DanhMucService.svc/mex/mex/mex/mex" />
+    <MetadataFile FileName="DataModel.EntityFramework1.xsd" MetadataType="Schema" ID="875d9d47-7bd1-4004-bd10-c6518daad174" SourceId="1" SourceUrl="http://localhost:1001/DanhMucService.svc/mex/mex/mex/mex" />
+    <MetadataFile FileName="BusinessServices.DanhMuc.DTO1.xsd" MetadataType="Schema" ID="6ef0a1c6-7aa7-4fbf-8b7d-54f0627778b2" SourceId="1" SourceUrl="http://localhost:1001/DanhMucService.svc/mex/mex/mex/mex" />
+    <MetadataFile FileName="service32.xsd" MetadataType="Schema" ID="8fdc2530-d821-4586-ab52-5be92a2f3390" SourceId="1" SourceUrl="http://localhost:1001/DanhMucService.svc/mex/mex/mex/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

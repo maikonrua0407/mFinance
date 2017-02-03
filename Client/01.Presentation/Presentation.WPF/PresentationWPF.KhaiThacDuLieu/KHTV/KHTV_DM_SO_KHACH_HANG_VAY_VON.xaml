@@ -1,0 +1,121 @@
+﻿<UserControl x:Class="PresentationWPF.KhaiThacDuLieu.KHTV.KHTV_DM_SO_KHACH_HANG_VAY_VON"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:uc="clr-namespace:PresentationWPF.CustomControl;assembly=PresentationWPF.CustomControl"
+             xmlns:ribbon="http://schemas.microsoft.com/winfx/2006/xaml/presentation/ribbon" 
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             mc:Ignorable="d" 
+             xmlns:my="clr-namespace:System;assembly=mscorlib" 
+             d:DesignHeight="768" d:DesignWidth="1024">
+    <Grid>
+        <DockPanel>
+                <GroupBox Header="{DynamicResource BC.KHTV_DM_SO_KHACH_HANG_VAY_VON}" Margin="3,10,3,3" DockPanel.Dock="Top">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="150" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="20" />
+                        <ColumnDefinition Width="150" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="6"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="6"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Label Content="Chi nhánh:" />
+                    <Label Content="Phòng giao dịch:" Grid.Row="0" Grid.Column="3"/>
+                    <Label Content="Cụm:" Grid.Row="2" Grid.Column="0"/>
+                    <Label Content="Từ ngày:" Grid.Row="4" Grid.Column="0"/>
+                    <Label Content="Đến ngày:" Grid.Row="4" Grid.Column="3"/>
+                    <telerik:RadComboBox Name="cmbChiNhanh"  Grid.Column="1" Grid.Row="0" DropDownClosed="cmbChiNhanh_DropDownClosed" IsEditable="False" SelectedItem="0">
+                        <telerik:RadComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <CheckBox Content="{Binding Path=DislayMember}" IsChecked="{Binding Path=CheckedMember,Mode=TwoWay}" Height="16" HorizontalAlignment="Left" Margin="2" VerticalAlignment="Top" />
+                            </DataTemplate>
+                        </telerik:RadComboBox.ItemTemplate>
+                        <telerik:RadComboBox.SelectionBoxTemplate >
+                            <DataTemplate>
+                                <TextBlock Text="{Binding ElementName=cmbChiNhanh, Path=ItemsSource.SelectedItemsText}" />
+                            </DataTemplate>
+                        </telerik:RadComboBox.SelectionBoxTemplate>
+                    </telerik:RadComboBox>
+                    <telerik:RadComboBox Name="cmbPhongGD"  Grid.Column="4" Grid.Row="0" DropDownClosed="cmbPhongGD_DropDownClosed" IsEditable="False" SelectedItem="0">
+                        <telerik:RadComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <CheckBox Content="{Binding Path=DislayMember}" IsChecked="{Binding Path=CheckedMember,Mode=TwoWay}" Height="16" HorizontalAlignment="Left" Margin="2" VerticalAlignment="Top" />
+                            </DataTemplate>
+                        </telerik:RadComboBox.ItemTemplate>
+                        <telerik:RadComboBox.SelectionBoxTemplate >
+                            <DataTemplate>
+                                <TextBlock Text="{Binding ElementName=cmbPhongGD, Path=ItemsSource.SelectedItemsText}" />
+                            </DataTemplate>
+                        </telerik:RadComboBox.SelectionBoxTemplate>
+                    </telerik:RadComboBox>
+                    <telerik:RadComboBox Name="cmbCum"  Grid.Column="1" Grid.Row="2" DropDownClosed="cmbCum_DropDownClosed" IsEditable="False" SelectedItem="0">
+                        <telerik:RadComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <CheckBox Content="{Binding Path=DislayMember}" IsChecked="{Binding Path=CheckedMember,Mode=TwoWay}" Height="16" HorizontalAlignment="Left" Margin="2" VerticalAlignment="Top" />
+                            </DataTemplate>
+                        </telerik:RadComboBox.ItemTemplate>
+                        <telerik:RadComboBox.SelectionBoxTemplate >
+                            <DataTemplate>
+                                <TextBlock Text="{Binding ElementName=cmbCum, Path=ItemsSource.SelectedItemsText}" />
+                            </DataTemplate>
+                        </telerik:RadComboBox.SelectionBoxTemplate>
+                    </telerik:RadComboBox>
+                    <telerik:RadMaskedDateTimeInput Name="dtTuNgay" Grid.Column="1" Grid.Row="4" HorizontalAlignment="Stretch" Margin="0,0,40,0"/>
+                    <DatePicker Name="dtpTuNgay" Grid.Column="1" Grid.Row="4" HorizontalAlignment="Right" Width="30" SelectedDate="{Binding Path=Value,ElementName=dtTuNgay}"/>
+                    <telerik:RadMaskedDateTimeInput Name="dtDenNgay" Grid.Column="4" Grid.Row="4" HorizontalAlignment="Stretch" Margin="0,0,40,0"/>
+                    <DatePicker Name="dtpDenNgay" Grid.Column="4" Grid.Row="4" HorizontalAlignment="Right" Width="30" SelectedDate="{Binding Path=Value,ElementName=dtDenNgay}"/>
+                </Grid>
+                
+            </GroupBox>
+            <GroupBox Header="Dữ liệu thống kê">
+                <telerik:RadTabControl>
+                    <telerik:RadTabItem>
+                        <telerik:RadTabItem.HeaderTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="Báo cáo tổng hợp" />
+                            </DataTemplate>
+                        </telerik:RadTabItem.HeaderTemplate>
+                        <DockPanel>
+                            <TextBox Text="Tìm kiếm nâng cao..." DockPanel.Dock="Top"/>
+                            <telerik:RadGridView Grid.Column="0" Grid.Row="2"  ShowGroupPanel="False" ShowInsertRow="False" RowIndicatorVisibility="Collapsed" AutoGenerateColumns="False" IsReadOnly="True" Name="grvTongHop">
+                                <telerik:RadGridView.Columns>
+                                    <telerik:GridViewDataColumn Header="STT" DataMemberBinding="{Binding STT}" Width="30" MinWidth="30" IsFilterable="False"/>
+                                    <telerik:GridViewDataColumn Header="Nội dung" DataMemberBinding="{Binding TEN_CHI_TIEU}" Width="*" MinWidth="200" />
+                                    <telerik:GridViewDataColumn Header="Giá trị" DataMemberBinding="{Binding GIA_TRI}" Width="200" MinWidth="200" DataFormatString="{}{0:N0}"/>
+                                </telerik:RadGridView.Columns>
+                            </telerik:RadGridView>
+                        </DockPanel>
+                    </telerik:RadTabItem>
+                    <telerik:RadTabItem >
+                        <telerik:RadTabItem.HeaderTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="Báo cáo chi tiết" />
+                            </DataTemplate>
+                        </telerik:RadTabItem.HeaderTemplate>
+                        <DockPanel>
+                            <TextBox Text="Tìm kiếm nâng cao..." DockPanel.Dock="Top"/>
+                            <telerik:RadGridView Grid.Column="0" Grid.Row="2"  ShowGroupPanel="False" ShowInsertRow="False" RowIndicatorVisibility="Collapsed" AutoGenerateColumns="False" IsReadOnly="True" Name="grvChiTiet">
+                                <telerik:RadGridView.Columns>
+                                    <telerik:GridViewDataColumn Header="STT" DataMemberBinding="{Binding STT}" Width="30" MinWidth="30" IsFilterable="False"/>
+                                    <telerik:GridViewDataColumn Header="Mã khách hàng" DataMemberBinding="{Binding MA_KHANG}" Width="100" MinWidth="150" />
+                                    <telerik:GridViewDataColumn Header="Tên khách hàng" DataMemberBinding="{Binding TEN_KHANG}" Width="*" MinWidth="150" />
+                                    <telerik:GridViewDataColumn Header="Số giấy tờ" DataMemberBinding="{Binding DD_GTLQ_SO}" Width="50" MinWidth="50" />
+                                    <telerik:GridViewDataColumn Header="Địa chỉ" DataMemberBinding="{Binding DIA_CHI}" Width="*" MinWidth="200"/>
+                                    <telerik:GridViewDataColumn Header="Số dư" DataMemberBinding="{Binding SO_DU}" Width="150" MinWidth="150" DataFormatString="{}{0:N0}"/>
+                                </telerik:RadGridView.Columns>
+                            </telerik:RadGridView>
+                        </DockPanel>
+                    </telerik:RadTabItem>
+                </telerik:RadTabControl>
+            </GroupBox>
+        </DockPanel>
+    </Grid>
+</UserControl>

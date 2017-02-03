@@ -1,0 +1,215 @@
+﻿@using PresentationAspNet.MVC
+@using PresentationAspNet.MVC.LanguageManager
+@using Utilities.Common
+@model Presentation.Process.QuanTriHeThongServiceRef.HT_NHNSD
+@{
+    Layout = null;
+    var lstPhongGd = UserInformation.Session_User.ListPhongGD.OrderBy(e => e.MA_DVI).ToList();
+}
+
+<div class="portlet-body">
+    <div class="row">
+        <div class="col-md-3 col-sm-3 col-xs-3">
+            <ul class="nav nav-tabs tabs-left">
+                <li class="active">
+                    <a href="#tab_1" data-toggle="tab">
+                        Thông tin chung
+                    </a>
+                </li>
+                <li class="">
+                    <a href="#tab_2" data-toggle="tab">
+                        Thông tin thành viên
+                    </a>
+                </li>
+                <li class="">
+                    <a href="#tab_3" data-toggle="tab">
+                        Hạn chế truy cập
+                    </a>
+                </li>
+                <li class="">
+                    <a href="#tab_4" data-toggle="tab">
+                        Thông tin kiểm soát
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-md-9 col-sm-9 col-xs-9">
+            <div class="tab-content">
+                <div class="tab-pane active" id="tab_1">
+                    <div class="portlet-body form">
+                        <form class="form-horizontal" role="form">
+                            <div class="form-body">
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label">Trạng thái</label>
+                                    <label class="col-md-9" style="padding-top: 7px; font-weight: bold;">@(CommonLang.layNgonNguSuDung(Model.TTHAI_BGHI))</label>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="portlet-body form">
+                        <form class="form-horizontal" role="form">
+                            <fieldset>
+                                <legend>Thông tin chung</legend>
+                                <div class="form-body">
+                                    <div class="form-group">
+                                        <label class="col-md-3 control-label">
+                                            Đơn vị:
+                                            <span class="required" aria-required="true">*</span>
+                                        </label>
+                                        <div class="col-md-9">
+                                            <select id="MA_DVI_QLY" class="form-control">
+                                                @foreach (var d in lstPhongGd)
+                                                {
+                                                    if (d.MA_DVI == Model.MA_DVI_QLY)
+                                                    {
+                                                        <option value="@d.MA_DVI_QLY" selected="selected">@d.TEN_GDICH</option>
+                                                    }
+                                                    else
+                                                    {
+                                                        <option value="@d.MA_DVI_QLY">@d.TEN_GDICH</option>
+                                                    }
+                                                }
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-3 control-label">
+                                            Mã nhóm:
+                                            <span class="required" aria-required="true">*</span>
+                                        </label>
+                                        <div class="col-md-9">
+                                            <input type="hidden" id="ID_NHNSD" value="@Model.ID">
+                                            <input type="text" id="MA_NHNSD" class="form-control" placeholder="Mã nhóm" value="@Model.MA_NHNSD">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-3 control-label">
+                                            Tên nhóm:
+                                            <span class="required" aria-required="true">*</span>
+                                        </label>
+                                        <div class="col-md-9">
+                                            <input type="text" id="TEN_NHNSD" class="form-control" placeholder="Tên nhóm" value="@Model.TEN_NHNSD">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-3 control-label">Mô tả</label>
+                                        <div class="col-md-9">
+                                            <input type="text" id="MO_TA" class="form-control" placeholder="Mô tả" value="@Model.MO_TA">
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+                <div class="tab-pane" id="tab_2">
+                    <table class="table table-striped table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th style="width: 40px">
+                                    <input type="checkbox" id="chkAllThanhVien">
+                                </th>
+                                <th style="width: 40px">
+                                    STT
+                                </th>
+                                <th style="width: 35%">
+                                    Mã
+                                </th>
+                                <th>
+                                    Tên
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbodyThanhVien"></tbody>
+                    </table>
+                </div>
+                <div class="tab-pane" id="tab_3">
+                    @if (!Model.HAN_CHE_TRUY_CAP.IsNullOrEmpty() && Model.HAN_CHE_TRUY_CAP.Equals(BusinessConstant.CoKhong.CO.layGiaTri()))
+                    {
+                        <input type="checkbox" checked="checked" id="chkHanCheTruyCap" />
+                        <label for="chkHanCheTruyCap">Hạn chế truy cập</label>
+                    }
+                    else
+                    {
+                        <input type="checkbox" id="chkHanCheTruyCap" />
+                        <label for="chkHanCheTruyCap">Hạn chế truy cập</label>
+                    }
+                    <table class="table table-striped table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th style="width: 40px">
+                                    <input type="checkbox" id="chkAllHanCheTruyCap">
+                                </th>
+                                <th style="width: 40px">
+                                    STT
+                                </th>
+                                <th style="width: 30%">
+                                    Địa chỉ
+                                </th>
+                                <th>
+                                    Loại địa chỉ
+                                </th>
+                                <th style="width: 25%">
+                                    Cho phép
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbodyHanCheTruyCap"></tbody>
+                    </table>
+                </div>
+                <div class="tab-pane" id="tab_4">
+
+                    <div class="portlet-body form">
+                        <form class="form-horizontal" role="form">
+                            <fieldset>
+                                <legend>Trạng thái bản ghi</legend>
+                                <div class="form-body">
+                                    <div class="form-group">
+                                        <label class="col-md-3 control-label">
+                                            Trạng thái bản ghi:
+                                        </label>
+                                        <div class="col-md-9">
+                                            <input type="text" class="form-control" placeholder="Trạng thái bản ghi" value="@(CommonLang.layNgonNguSuDung(Model.TTHAI_BGHI))">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-3 control-label">
+                                            Ngày lập:
+                                        </label>
+                                        <div class="col-md-9">
+                                            <input type="text" class="form-control" placeholder="Ngày lập" value="@(LDateTime.StringToDate(Model.NGAY_NHAP, "yyyyMMdd"))">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-3 control-label">
+                                            Người lập:
+                                        </label>
+                                        <div class="col-md-9">
+                                            <input type="text" class="form-control" placeholder="Người lập" value="@Model.NGUOI_NHAP">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-3 control-label">
+                                            Ngày cập nhật:
+                                        </label>
+                                        <div class="col-md-9">
+                                            <input type="text" class="form-control" placeholder="Ngày cập nhật" value="@(LDateTime.StringToDate(Model.NGAY_CNHAT, "yyyyMMdd"))">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-3 control-label">
+                                            Người cập nhật:
+                                        </label>
+                                        <div class="col-md-9">
+                                            <input type="text" class="form-control" placeholder="Người cập nhật" value="@Model.NGUOI_CNHAT">
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

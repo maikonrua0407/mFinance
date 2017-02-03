@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:1001/JobService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="ArrayOfSYS_JOB_HIS">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SYS_JOB_HIS" nillable="true" type="tns:SYS_JOB_HIS" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSYS_JOB_HIS" nillable="true" type="tns:ArrayOfSYS_JOB_HIS" />
+  <xs:complexType name="SYS_JOB_HIS">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChangeTracker" nillable="true" type="tns:ObjectChangeTracker" />
+      <xs:element minOccurs="0" name="DESCRIPTION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HIS_DATETIME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HIS_EMAIL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HIS_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HIS_STATUS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="ID_JOB_QUEUE" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ID_JOB_SUB" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="JOB_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="JOB_NAME" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="SYS_JOB_HIS" nillable="true" type="tns:SYS_JOB_HIS" />
+  <xs:complexType name="ObjectChangeTracker">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ExtendedProperties" nillable="true" type="tns:ExtendedPropertiesDictionary" />
+      <xs:element minOccurs="0" name="ObjectsAddedToCollectionProperties" nillable="true" type="tns:ObjectsAddedToCollectionProperties" />
+      <xs:element minOccurs="0" name="ObjectsRemovedFromCollectionProperties" nillable="true" type="tns:ObjectsRemovedFromCollectionProperties" />
+      <xs:element minOccurs="0" name="OriginalValues" nillable="true" type="tns:OriginalValuesDictionary" />
+      <xs:element minOccurs="0" name="State" type="tns:ObjectState" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="ObjectChangeTracker" nillable="true" type="tns:ObjectChangeTracker" />
+  <xs:complexType name="ExtendedPropertiesDictionary">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsDictionary xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsDictionary>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ExtendedProperties">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Name" nillable="true" type="xs:string" />
+            <xs:element name="ExtendedProperty" nillable="true" type="xs:anyType" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ExtendedPropertiesDictionary" nillable="true" type="tns:ExtendedPropertiesDictionary" />
+  <xs:complexType name="ObjectsAddedToCollectionProperties">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsDictionary xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsDictionary>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AddedObjectsForProperty">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="CollectionPropertyName" nillable="true" type="xs:string" />
+            <xs:element name="AddedObjects" nillable="true" type="tns:ObjectList" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ObjectsAddedToCollectionProperties" nillable="true" type="tns:ObjectsAddedToCollectionProperties" />
+  <xs:complexType name="ObjectList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ObjectValue" nillable="true" type="xs:anyType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ObjectList" nillable="true" type="tns:ObjectList" />
+  <xs:complexType name="ObjectsRemovedFromCollectionProperties">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsDictionary xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsDictionary>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DeletedObjectsForProperty">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="CollectionPropertyName" nillable="true" type="xs:string" />
+            <xs:element name="DeletedObjects" nillable="true" type="tns:ObjectList" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ObjectsRemovedFromCollectionProperties" nillable="true" type="tns:ObjectsRemovedFromCollectionProperties" />
+  <xs:complexType name="OriginalValuesDictionary">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsDictionary xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsDictionary>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="OriginalValues">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Name" nillable="true" type="xs:string" />
+            <xs:element name="OriginalValue" nillable="true" type="xs:anyType" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OriginalValuesDictionary" nillable="true" type="tns:OriginalValuesDictionary" />
+  <xs:simpleType name="ObjectState">
+    <xs:list>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Unchanged" />
+          <xs:enumeration value="Added" />
+          <xs:enumeration value="Modified" />
+          <xs:enumeration value="Deleted" />
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:list>
+  </xs:simpleType>
+  <xs:element name="ObjectState" nillable="true" type="tns:ObjectState" />
+  <xs:complexType name="ArrayOfSYS_JOB_SUBSCRIBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SYS_JOB_SUBSCRIBE" nillable="true" type="tns:SYS_JOB_SUBSCRIBE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSYS_JOB_SUBSCRIBE" nillable="true" type="tns:ArrayOfSYS_JOB_SUBSCRIBE" />
+  <xs:complexType name="SYS_JOB_SUBSCRIBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChangeTracker" nillable="true" type="tns:ObjectChangeTracker" />
+      <xs:element minOccurs="0" name="DESCRIPTION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="JOB_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SUB_DATE_FROM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SUB_DATE_TO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SUB_EMAIL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SUB_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SUB_STATUS" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="SYS_JOB_SUBSCRIBE" nillable="true" type="tns:SYS_JOB_SUBSCRIBE" />
+  <xs:complexType name="SYS_JOB">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChangeTracker" nillable="true" type="tns:ObjectChangeTracker" />
+      <xs:element minOccurs="0" name="DESCRIPTION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="JOB_CAT_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="JOB_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="JOB_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="JOB_PERIOD_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="JOB_STATUS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="JOB_TYPE_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NEXT_JOB_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PREV_JOB_CODE" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="SYS_JOB" nillable="true" type="tns:SYS_JOB" />
+  <xs:complexType name="SYS_JOB_EMAIL">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChangeTracker" nillable="true" type="tns:ObjectChangeTracker" />
+      <xs:element minOccurs="0" name="DESCRIPTION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="MAIL_FROM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MAIL_HOST_ADDRESS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MAIL_HOST_PROTOCOL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MAIL_HOST_SMTP_PORT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MAIL_HOST_TIMEOUT" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="MAIL_PASSWORD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MAIL_USERNAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NAME" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="SYS_JOB_EMAIL" nillable="true" type="tns:SYS_JOB_EMAIL" />
+</xs:schema>

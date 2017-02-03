@@ -1,0 +1,29 @@
+﻿<Window x:Class="PresentationWPF.ZATestApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525" WindowState="Maximized" WindowStartupLocation="CenterScreen" KeyDown="Window_KeyDown">
+    <Grid>
+        <StatusBar Height="30" VerticalAlignment="Bottom"/>
+        <Menu Height="30" VerticalAlignment="Top">
+            <MenuItem Name="mnuHeThong" Header="Hệ thống" Click="mnuHeThong_Click" />
+            <MenuItem Name="mnuDanhMuc" Header="Danh mục">
+                <MenuItem Header="Danh mục tỉnh thành" Name="mnuTinhThanh" Click="mnuTinhThanh_Click"/>
+            </MenuItem>
+            <MenuItem Header="Thoát" Name="mnuThoat" Click="mnuThoat_Click" />
+        </Menu>
+        <ToolBar Height="30" VerticalAlignment="Top" Margin="0,30,0,0" d:LayoutOverrides="Width"/>
+        <DockPanel Height="295" HorizontalAlignment="Left" Margin="0,58,0,0" Name="dockPanel1" VerticalAlignment="Top" Width="830" >
+            <Calendar Height="168" Name="calendar" Width="186" DisplayDate="" DockPanel.Dock="Left" FontSize="12" DisplayDateChanged="calendar_DisplayDateChanged" DisplayDateStart="1/1/1753" IsTodayHighlighted="False" />
+        </DockPanel>
+        <DockPanel Height="295" HorizontalAlignment="Left" Margin="0,58,0,0" Name="dockPanel2" VerticalAlignment="Top" Width="830" >
+            <TabControl Margin="0,88,0,0" Name="tabControl1"></TabControl>
+            <Button Content="DS don vi" Height="23" HorizontalAlignment="Left" Margin="38,28,0,0" Name="button1" VerticalAlignment="Top" Width="75" Click="button1_Click" />
+            <Button Content="Button" Height="23" HorizontalAlignment="Left" Margin="144,28,0,0" Name="button2" VerticalAlignment="Top" Width="75" Click="button2_Click" />
+            <Button Content="Accordion" Height="23" HorizontalAlignment="Left" Margin="256,28,0,0" Name="button3" VerticalAlignment="Top" Width="75" Click="button3_Click" />
+            <Button Content="Hor Tab" Height="23" HorizontalAlignment="Left" Margin="363,28,0,0" Name="button4" VerticalAlignment="Top" Width="75" Click="button4_Click" />
+            <Button Content="Demo" Height="23" HorizontalAlignment="Left" Margin="38,59,0,0" Name="button5" VerticalAlignment="Top" Width="75" Click="button5_Click" />
+            <Button Content="Telerik" Height="23" HorizontalAlignment="Left" Margin="144,59,0,0" Name="button6" VerticalAlignment="Top" Width="75" Click="button6_Click" />
+        </DockPanel>
+    </Grid>
+</Window>

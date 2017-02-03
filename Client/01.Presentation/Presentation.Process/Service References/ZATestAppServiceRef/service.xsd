@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Utilities.Common" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/CommunicationServices.ZATestApp.Messages" />
+  <xs:element name="returnHello">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="returnHelloResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="returnHelloResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ClientIP" nillable="true" type="xs:string" />
+  <xs:element name="ClientMAC" nillable="true" type="xs:string" />
+  <xs:element name="RequestDateTime" nillable="true" type="xs:string" />
+  <xs:element name="RequestId" nillable="true" type="xs:string" />
+  <xs:element name="RequestSecurityKey" nillable="true" type="xs:string" />
+  <xs:element name="SessionId" nillable="true" type="xs:string" />
+  <xs:element name="UserName" nillable="true" type="xs:string" />
+  <xs:element name="code" nillable="true" type="xs:string" />
+  <xs:element name="name" nillable="true" type="xs:string" />
+  <xs:element name="ExceptionObject" nillable="true" type="xs:base64Binary" />
+  <xs:element name="ResponseDateTime" nillable="true" type="xs:string" />
+  <xs:element name="ResponseId" nillable="true" type="xs:string" />
+  <xs:element name="ResponseMessage" nillable="true" type="xs:string" />
+  <xs:element name="ResponseSecurityKey" nillable="true" type="xs:string" />
+  <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Utilities.Common" name="ResponseStatus" type="q1:ApplicationConstant.ResponseStatus" />
+  <xs:element name="desc" nillable="true" type="xs:string" />
+  <xs:element name="result" type="xs:boolean" />
+  <xs:element name="processDataTransfer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/CommunicationServices.ZATestApp.Messages" minOccurs="0" name="request" nillable="true" type="q2:DataTransferRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="processDataTransferResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/CommunicationServices.ZATestApp.Messages" minOccurs="0" name="processDataTransferResult" nillable="true" type="q3:DataTransferResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="processDataTransferMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/CommunicationServices.ZATestApp.Messages" minOccurs="0" name="inMessage" nillable="true" type="q4:DataTransferRequestMessage" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="processDataTransferMessageResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/CommunicationServices.ZATestApp.Messages" minOccurs="0" name="processDataTransferMessageResult" nillable="true" type="q5:DataTransferResponseMessage" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

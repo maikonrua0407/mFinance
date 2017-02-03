@@ -1,0 +1,216 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="TinDungService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/CommunicationServices.TinDung.Messages" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/Utilities.Common" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/BusinessServices.TinDung.DTO" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/BusinessServices.Utilities.DTO" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ITinDungService_returnHello_InputMessage">
+    <wsdl:part name="parameters" element="tns:returnHello" />
+  </wsdl:message>
+  <wsdl:message name="ITinDungService_returnHello_OutputMessage">
+    <wsdl:part name="parameters" element="tns:returnHelloResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITinDungService_LuuSanPham_InputMessage">
+    <wsdl:part name="parameters" element="tns:LuuSanPham" />
+  </wsdl:message>
+  <wsdl:message name="ITinDungService_LuuSanPham_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LuuSanPhamResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITinDungService_CapNhatSanPham_InputMessage">
+    <wsdl:part name="parameters" element="tns:CapNhatSanPham" />
+  </wsdl:message>
+  <wsdl:message name="ITinDungService_CapNhatSanPham_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CapNhatSanPhamResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITinDungService_XoaSanPham_InputMessage">
+    <wsdl:part name="parameters" element="tns:XoaSanPham" />
+  </wsdl:message>
+  <wsdl:message name="ITinDungService_XoaSanPham_OutputMessage">
+    <wsdl:part name="parameters" element="tns:XoaSanPhamResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITinDungService_TinhToanGocVay_InputMessage">
+    <wsdl:part name="parameters" element="tns:TinhToanGocVay" />
+  </wsdl:message>
+  <wsdl:message name="ITinDungService_TinhToanGocVay_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TinhToanGocVayResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITinDungService_LuuVongVay_InputMessage">
+    <wsdl:part name="parameters" element="tns:LuuVongVay" />
+  </wsdl:message>
+  <wsdl:message name="ITinDungService_LuuVongVay_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LuuVongVayResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITinDungService_CapNhatVongVay_InputMessage">
+    <wsdl:part name="parameters" element="tns:CapNhatVongVay" />
+  </wsdl:message>
+  <wsdl:message name="ITinDungService_CapNhatVongVay_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CapNhatVongVayResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITinDungService_XoaVongVay_InputMessage">
+    <wsdl:part name="parameters" element="tns:XoaVongVay" />
+  </wsdl:message>
+  <wsdl:message name="ITinDungService_XoaVongVay_OutputMessage">
+    <wsdl:part name="parameters" element="tns:XoaVongVayResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITinDungService_TinDungViMo_InputMessage">
+    <wsdl:part name="parameters" element="tns:TinDungViMo" />
+  </wsdl:message>
+  <wsdl:message name="ITinDungService_TinDungViMo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TinDungViMoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITinDungService_TinDungThongThuong_InputMessage">
+    <wsdl:part name="parameters" element="tns:TinDungThongThuong" />
+  </wsdl:message>
+  <wsdl:message name="ITinDungService_TinDungThongThuong_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TinDungThongThuongResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ITinDungService">
+    <wsdl:operation name="returnHello">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITinDungService/returnHello" message="tns:ITinDungService_returnHello_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITinDungService/returnHelloResponse" message="tns:ITinDungService_returnHello_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LuuSanPham">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITinDungService/LuuSanPham" message="tns:ITinDungService_LuuSanPham_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITinDungService/LuuSanPhamResponse" message="tns:ITinDungService_LuuSanPham_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CapNhatSanPham">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITinDungService/CapNhatSanPham" message="tns:ITinDungService_CapNhatSanPham_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITinDungService/CapNhatSanPhamResponse" message="tns:ITinDungService_CapNhatSanPham_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="XoaSanPham">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITinDungService/XoaSanPham" message="tns:ITinDungService_XoaSanPham_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITinDungService/XoaSanPhamResponse" message="tns:ITinDungService_XoaSanPham_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TinhToanGocVay">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITinDungService/TinhToanGocVay" message="tns:ITinDungService_TinhToanGocVay_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITinDungService/TinhToanGocVayResponse" message="tns:ITinDungService_TinhToanGocVay_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LuuVongVay">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITinDungService/LuuVongVay" message="tns:ITinDungService_LuuVongVay_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITinDungService/LuuVongVayResponse" message="tns:ITinDungService_LuuVongVay_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CapNhatVongVay">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITinDungService/CapNhatVongVay" message="tns:ITinDungService_CapNhatVongVay_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITinDungService/CapNhatVongVayResponse" message="tns:ITinDungService_CapNhatVongVay_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="XoaVongVay">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITinDungService/XoaVongVay" message="tns:ITinDungService_XoaVongVay_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITinDungService/XoaVongVayResponse" message="tns:ITinDungService_XoaVongVay_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TinDungViMo">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITinDungService/TinDungViMo" message="tns:ITinDungService_TinDungViMo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITinDungService/TinDungViMoResponse" message="tns:ITinDungService_TinDungViMo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TinDungThongThuong">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITinDungService/TinDungThongThuong" message="tns:ITinDungService_TinDungThongThuong_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITinDungService/TinDungThongThuongResponse" message="tns:ITinDungService_TinDungThongThuong_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="TinDungEndpoint" type="tns:ITinDungService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="returnHello">
+      <soap:operation soapAction="http://tempuri.org/ITinDungService/returnHello" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LuuSanPham">
+      <soap:operation soapAction="http://tempuri.org/ITinDungService/LuuSanPham" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CapNhatSanPham">
+      <soap:operation soapAction="http://tempuri.org/ITinDungService/CapNhatSanPham" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="XoaSanPham">
+      <soap:operation soapAction="http://tempuri.org/ITinDungService/XoaSanPham" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TinhToanGocVay">
+      <soap:operation soapAction="http://tempuri.org/ITinDungService/TinhToanGocVay" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LuuVongVay">
+      <soap:operation soapAction="http://tempuri.org/ITinDungService/LuuVongVay" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CapNhatVongVay">
+      <soap:operation soapAction="http://tempuri.org/ITinDungService/CapNhatVongVay" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="XoaVongVay">
+      <soap:operation soapAction="http://tempuri.org/ITinDungService/XoaVongVay" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TinDungViMo">
+      <soap:operation soapAction="http://tempuri.org/ITinDungService/TinDungViMo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TinDungThongThuong">
+      <soap:operation soapAction="http://tempuri.org/ITinDungService/TinDungThongThuong" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TinDungService">
+    <wsdl:port name="TinDungEndpoint" binding="tns:TinDungEndpoint">
+      <soap:address location="http://localhost:1234/TinDungService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

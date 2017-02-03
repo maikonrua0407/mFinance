@@ -1,0 +1,1610 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{160AC3ED-96F9-4568-94F3-37EBF30E7119}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Presentation.Process</RootNamespace>
+    <AssemblyName>Presentation.Process</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\Build\Build.Client\Dev\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=1.2.11.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Libraries\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Utilities.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Libraries\Utilities.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaoCaoProcess.cs" />
+    <Compile Include="BaoHiemProcess.cs" />
+    <Compile Include="ChiTieuProcess.cs" />
+    <Compile Include="Common\ClientInitProcess.cs" />
+    <Compile Include="Common\ClientInformation.cs" />
+    <Compile Include="Common\ClientResponseDetail.cs" />
+    <Compile Include="Common\UserInformation.cs" />
+    <Compile Include="Common\Utilities.cs" />
+    <Compile Include="DeliveryProcess.cs" />
+    <Compile Include="JobProcess.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ScheduleProcess.cs" />
+    <Compile Include="Service References\JobServiceRef\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SMSServiceRef\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\TinDungServiceRef\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\TinDungTDServiceRef\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\TinDungTTServiceRef\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\WebProcessServiceRef\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ZAMainAppServiceRef\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="SMSProcess.cs" />
+    <Compile Include="TinDungTDProcess.cs" />
+    <Compile Include="TinDungTTProcess.cs" />
+    <Compile Include="DanhMucProcess.cs" />
+    <Compile Include="DungChungProcess.cs" />
+    <Compile Include="HanMucProcess.cs" />
+    <Compile Include="HoaDonTienKyProcess.cs" />
+    <Compile Include="HoSoTinDungProcess.cs" />
+    <Compile Include="HoTroProcess.cs" />
+    <Compile Include="HuyDongVonProcess.cs" />
+    <Compile Include="KeToanProcess.cs" />
+    <Compile Include="KhachHangProcess.cs" />
+    <Compile Include="KhaiThacDuLieuProcess.cs" />
+    <Compile Include="LaiSuatProcess.cs" />
+    <Compile Include="NganQuyProcess.cs" />
+    <Compile Include="NhanSuProcess.cs" />
+    <Compile Include="NhomTaiSanProcess.cs" />
+    <Compile Include="PhiProcess.cs" />
+    <Compile Include="PhongToaProcess.cs" />
+    <Compile Include="PopupProcess.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuanTriHeThongProcess.cs" />
+    <Compile Include="Service References\BaoCaoServiceRef\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\BaoHiemServiceRef\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ChiTieuServiceRef\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\DanhMucServiceRef\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\HanMucServiceRef\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\HoSoTinDungServiceRef\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\HuyDongVonServiceRef\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\KeToanServiceRef\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\KhachHangServiceRef\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\KhaiThacDuLieuServiceRef\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\LaiSuatServiceRef\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\NganQuyServiceRef\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\NhanSuServiceRef\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\PhiServiceRef\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\PhongToaServiceRef\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\PopupServiceRef\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\QuanTriHeThongServiceRef\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\TaiSanDamBaoServiceRef\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\TaiSanServiceRef\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ThanhVienServiceRef\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\TyGiaServiceRef\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\UtilitiesServiceRef\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ZATestAppServiceRef\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="TaiSanDamBaoProcess.cs" />
+    <Compile Include="TaiSanProcess.cs" />
+    <Compile Include="ThanhVienProcess.cs" />
+    <Compile Include="TinDungProcess.cs" />
+    <Compile Include="TruyVanProcess.cs" />
+    <Compile Include="UpdateProcess.cs" />
+    <Compile Include="UtilitiesProcess.cs" />
+    <Compile Include="Service References\TruyVanServiceRef\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="WebProcess.cs" />
+    <Compile Include="ZAMainAppProcess.cs" />
+    <Compile Include="ZATestAppProcess.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\DataSources\System.Data.DataSet.datasource" />
+    <None Include="Service References\BaoCaoServiceRef\Arrays1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BaoCaoServiceRef\BaoCaoService.wsdl" />
+    <None Include="Service References\BaoCaoServiceRef\BaoCaoService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BaoCaoServiceRef\BaoCaoService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BaoCaoServiceRef\BaoCaoService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BaoCaoServiceRef\BaoCaoService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BaoCaoServiceRef\BaoCaoService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BaoCaoServiceRef\BaoCaoService5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BaoCaoServiceRef\BaoCaoService6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BaoCaoServiceRef\BaoCaoService7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BaoCaoServiceRef\BaoCaoService8.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BaoCaoServiceRef\BusinessServices.BaoCao.DoiTuong1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BaoCaoServiceRef\CommunicationMessages.Base.MessageBases1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BaoCaoServiceRef\CommunicationServices.BaoCao.Messages1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BaoCaoServiceRef\DataModel.EntityFramework1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BaoCaoServiceRef\Presentation.Process.BaoCaoServiceRef.BaoCaoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BaoCaoServiceRef\Presentation.Process.BaoCaoServiceRef.VanHanhGiaoDichResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BaoCaoServiceRef\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BaoCaoServiceRef\service1.wsdl" />
+    <None Include="Service References\BaoCaoServiceRef\service3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BaoCaoServiceRef\service31.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BaoCaoServiceRef\System.Data.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BaoCaoServiceRef\Utilities.Common1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BaoHiemServiceRef\service.wsdl" />
+    <None Include="Service References\BaoHiemServiceRef\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BaoHiemServiceRef\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ChiTieuServiceRef\service.wsdl" />
+    <None Include="Service References\ChiTieuServiceRef\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ChiTieuServiceRef\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DanhMucServiceRef\Arrays1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DanhMucServiceRef\BusinessServices.DanhMuc.DTO1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DanhMucServiceRef\CommunicationMessages.Base.MessageBases1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DanhMucServiceRef\CommunicationServices.DanhMuc.Messages1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DanhMucServiceRef\DataModel.EntityFramework1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DanhMucServiceRef\Presentation.Process.DanhMucServiceRef.DCTanSuatResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DanhMucServiceRef\Presentation.Process.DanhMucServiceRef.DMCumResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DanhMucServiceRef\Presentation.Process.DanhMucServiceRef.DMDiaBanResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DanhMucServiceRef\Presentation.Process.DanhMucServiceRef.DMDoiTuongLoaiResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DanhMucServiceRef\Presentation.Process.DanhMucServiceRef.DMDoiTuongResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DanhMucServiceRef\Presentation.Process.DanhMucServiceRef.DMDonViResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DanhMucServiceRef\Presentation.Process.DanhMucServiceRef.DMDungChungResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DanhMucServiceRef\Presentation.Process.DanhMucServiceRef.DMKhuVucResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DanhMucServiceRef\Presentation.Process.DanhMucServiceRef.DMNhomResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DanhMucServiceRef\Presentation.Process.DanhMucServiceRef.DMPhanHeGDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DanhMucServiceRef\Presentation.Process.DanhMucServiceRef.DMTinhTPResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DanhMucServiceRef\Presentation.Process.DanhMucServiceRef.DMToChucTinDungResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DanhMucServiceRef\Presentation.Process.DanhMucServiceRef.DMVungMienResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DanhMucServiceRef\service1.wsdl" />
+    <None Include="Service References\DanhMucServiceRef\service3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DanhMucServiceRef\service31.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DanhMucServiceRef\service32.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DanhMucServiceRef\Utilities.Common1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\HanMucServiceRef\Arrays.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\HanMucServiceRef\BusinessServices.HanMuc.DTO.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\HanMucServiceRef\CommunicationMessages.Base.MessageBases.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\HanMucServiceRef\CommunicationServices.HanMuc.Message.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\HanMucServiceRef\DataModel.EntityFramework.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\HanMucServiceRef\Presentation.Process.HanMucServiceRef.HanMucResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HanMucServiceRef\service.wsdl" />
+    <None Include="Service References\HanMucServiceRef\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\HanMucServiceRef\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\HanMucServiceRef\service2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\HanMucServiceRef\Utilities.Common.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\HoSoTinDungServiceRef\service.wsdl" />
+    <None Include="Service References\HoSoTinDungServiceRef\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\HoSoTinDungServiceRef\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\HuyDongVonServiceRef\Arrays.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\HuyDongVonServiceRef\BusinessServices.HuyDongVon.DTO.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\HuyDongVonServiceRef\BusinessServices.Utilities.DTO.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\HuyDongVonServiceRef\CommunicationMessages.Base.MessageBases.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\HuyDongVonServiceRef\CommunicationServices.HuyDongVon.Messages.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\HuyDongVonServiceRef\DataModel.EntityFramework.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\HuyDongVonServiceRef\Presentation.Process.HuyDongVonServiceRef.HuyDongVonResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HuyDongVonServiceRef\service.wsdl" />
+    <None Include="Service References\HuyDongVonServiceRef\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\HuyDongVonServiceRef\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\HuyDongVonServiceRef\Utilities.Common.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\JobServiceRef\JobService.wsdl" />
+    <None Include="Service References\JobServiceRef\JobService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\JobServiceRef\JobService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\JobServiceRef\JobService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\JobServiceRef\JobService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\JobServiceRef\JobService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\JobServiceRef\JobService5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\JobServiceRef\JobService6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\JobServiceRef\Presentation.Process.JobServiceRef.JobResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\KeToanServiceRef\Arrays1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\KeToanServiceRef\BusinessServices.HachToan.DTO1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\KeToanServiceRef\BusinessServices.KeToan.DTO1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\KeToanServiceRef\CommunicationMessages.Base.MessageBases1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\KeToanServiceRef\CommunicationServices.KeToan.Messages1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\KeToanServiceRef\DataModel.EntityFramework1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\KeToanServiceRef\Presentation.Process.KeToanServiceRef.GiaoDichKeToanResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\KeToanServiceRef\Presentation.Process.KeToanServiceRef.TaiKhoanResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\KeToanServiceRef\service1.wsdl" />
+    <None Include="Service References\KeToanServiceRef\service2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\KeToanServiceRef\service21.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\KeToanServiceRef\System.Data1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\KeToanServiceRef\Utilities.Common1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\KhachHangServiceRef\Arrays1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\KhachHangServiceRef\BusinessServices.KhachHang.DTO1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\KhachHangServiceRef\BusinessServices.Utilities.DTO1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\KhachHangServiceRef\CommunicationMessages.Base.MessageBases1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\KhachHangServiceRef\CommunicationServices.KhachHang.Messages1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\KhachHangServiceRef\DataModel.EntityFramework1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\KhachHangServiceRef\Presentation.Process.KhachHangServiceRef.ChuyenDiaBanResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\KhachHangServiceRef\Presentation.Process.KhachHangServiceRef.KhachHangResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\KhachHangServiceRef\service1.wsdl" />
+    <None Include="Service References\KhachHangServiceRef\service3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\KhachHangServiceRef\service31.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\KhachHangServiceRef\service32.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\KhachHangServiceRef\Utilities.Common1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\KhaiThacDuLieuServiceRef\Arrays1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\KhaiThacDuLieuServiceRef\CommunicationMessages.Base.MessageBases.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\KhaiThacDuLieuServiceRef\CommunicationServices.KhaiThacDuLieu.Messages.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\KhaiThacDuLieuServiceRef\DataModel.EntityFramework.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\KhaiThacDuLieuServiceRef\Presentation.Process.KhaiThacDuLieuServiceRef.KhaiThacDuLieuResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\KhaiThacDuLieuServiceRef\service.wsdl" />
+    <None Include="Service References\KhaiThacDuLieuServiceRef\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\KhaiThacDuLieuServiceRef\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\KhaiThacDuLieuServiceRef\service2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\KhaiThacDuLieuServiceRef\Utilities.Common.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LaiSuatServiceRef\Arrays.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LaiSuatServiceRef\CommunicationMessages.Base.MessageBases.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LaiSuatServiceRef\CommunicationServices.LaiSuat.Messages.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LaiSuatServiceRef\DataModel.EntityFramework.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LaiSuatServiceRef\Presentation.Process.LaiSuatServiceRef.LaiSuatResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LaiSuatServiceRef\service.wsdl" />
+    <None Include="Service References\LaiSuatServiceRef\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LaiSuatServiceRef\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LaiSuatServiceRef\Utilities.Common.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NganQuyServiceRef\service.wsdl" />
+    <None Include="Service References\NganQuyServiceRef\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NganQuyServiceRef\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NhanSuServiceRef\NhanSuService.wsdl" />
+    <None Include="Service References\NhanSuServiceRef\NhanSuService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NhanSuServiceRef\NhanSuService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NhanSuServiceRef\NhanSuService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NhanSuServiceRef\NhanSuService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NhanSuServiceRef\NhanSuService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NhanSuServiceRef\NhanSuService5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NhanSuServiceRef\NhanSuService6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NhanSuServiceRef\NhanSuService7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NhanSuServiceRef\NhanSuService8.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NhanSuServiceRef\NhanSuService9.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NhanSuServiceRef\Presentation.Process.NhanSuServiceRef.NhanSuResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PhiServiceRef\Arrays.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PhiServiceRef\CommunicationMessages.Base.MessageBases.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PhiServiceRef\CommunicationServices.Phi.Message.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PhiServiceRef\DataModel.EntityFramework.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PhiServiceRef\Presentation.Process.PhiServiceRef.PhiResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PhiServiceRef\service.wsdl" />
+    <None Include="Service References\PhiServiceRef\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PhiServiceRef\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PhiServiceRef\Utilities.Common.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PhongToaServiceRef\service.wsdl" />
+    <None Include="Service References\PhongToaServiceRef\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PhongToaServiceRef\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PopupServiceRef\Arrays.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PopupServiceRef\CommunicationMessages.Base.MessageBases.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PopupServiceRef\CommunicationServices.Popup.Messages.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PopupServiceRef\Presentation.Process.PopupServiceRef.SimplePopupResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PopupServiceRef\service.wsdl" />
+    <None Include="Service References\PopupServiceRef\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PopupServiceRef\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PopupServiceRef\service2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PopupServiceRef\Utilities.Common.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\QuanTriHeThongServiceRef\Arrays.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\QuanTriHeThongServiceRef\BusinessServices.QuanTriHeThong.DTO.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\QuanTriHeThongServiceRef\CommunicationMessages.Base.MessageBases.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\QuanTriHeThongServiceRef\CommunicationServices.QuanTriHeThong.Messages.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\QuanTriHeThongServiceRef\DataModel.EntityFramework.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\QuanTriHeThongServiceRef\Presentation.Process.QuanTriHeThongServiceRef.ChucNangResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\QuanTriHeThongServiceRef\Presentation.Process.QuanTriHeThongServiceRef.HT_CNANG.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\QuanTriHeThongServiceRef\Presentation.Process.QuanTriHeThongServiceRef.LayDSNgayLamViecResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\QuanTriHeThongServiceRef\Presentation.Process.QuanTriHeThongServiceRef.LuuLichResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\QuanTriHeThongServiceRef\Presentation.Process.QuanTriHeThongServiceRef.NguoiDungResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\QuanTriHeThongServiceRef\Presentation.Process.QuanTriHeThongServiceRef.PhamViResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\QuanTriHeThongServiceRef\Presentation.Process.QuanTriHeThongServiceRef.PhanQuyenResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\QuanTriHeThongServiceRef\Presentation.Process.QuanTriHeThongServiceRef.PhienBanResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\QuanTriHeThongServiceRef\Presentation.Process.QuanTriHeThongServiceRef.ThamSoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\QuanTriHeThongServiceRef\service.wsdl" />
+    <None Include="Service References\QuanTriHeThongServiceRef\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\QuanTriHeThongServiceRef\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\QuanTriHeThongServiceRef\Utilities.Common.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SMSServiceRef\Presentation.Process.SMSServiceRef.SMSResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SMSServiceRef\SMSService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SMSServiceRef\SMSService1.wsdl" />
+    <None Include="Service References\SMSServiceRef\SMSService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SMSServiceRef\SMSService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SMSServiceRef\SMSService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SMSServiceRef\SMSService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SMSServiceRef\SMSService5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SMSServiceRef\SMSService6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SMSServiceRef\SMSService7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SMSServiceRef\SMSService8.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TaiSanDamBaoServiceRef\Arrays1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TaiSanDamBaoServiceRef\BusinessServices.TaiSanDamBao.DTO.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TaiSanDamBaoServiceRef\CommunicationMessages.Base.MessageBases1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TaiSanDamBaoServiceRef\CommunicationServices.TaiSanDamBao.Messages1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TaiSanDamBaoServiceRef\DataModel.EntityFramework1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TaiSanDamBaoServiceRef\Presentation.Process.TaiSanDamBaoServiceRef.TaiSanDamBaoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TaiSanDamBaoServiceRef\service1.wsdl" />
+    <None Include="Service References\TaiSanDamBaoServiceRef\service3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TaiSanDamBaoServiceRef\service31.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TaiSanDamBaoServiceRef\service32.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TaiSanDamBaoServiceRef\Utilities.Common1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TaiSanServiceRef\Presentation.Process.TaiSanServiceRef.TaiSanResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TaiSanServiceRef\TaiSanService.wsdl" />
+    <None Include="Service References\TaiSanServiceRef\TaiSanService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TaiSanServiceRef\TaiSanService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TaiSanServiceRef\TaiSanService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TaiSanServiceRef\TaiSanService21.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TaiSanServiceRef\TaiSanService22.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TaiSanServiceRef\TaiSanService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TaiSanServiceRef\TaiSanService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TaiSanServiceRef\TaiSanService52.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ThanhVienServiceRef\service.wsdl" />
+    <None Include="Service References\ThanhVienServiceRef\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ThanhVienServiceRef\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TinDungServiceRef\Arrays2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TinDungServiceRef\BusinessServices.TinDung.DTO2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TinDungServiceRef\BusinessServices.Utilities.DTO2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TinDungServiceRef\CommunicationMessages.Base.MessageBases2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TinDungServiceRef\CommunicationServices.TinDung.Messages2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TinDungServiceRef\DataModel.EntityFramework2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TinDungServiceRef\Presentation.Process.TinDungServiceRef.TDSanPhamResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TinDungServiceRef\Presentation.Process.TinDungServiceRef.TDVongVayResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TinDungServiceRef\Presentation.Process.TinDungServiceRef.TinDungThongThuongResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TinDungServiceRef\Presentation.Process.TinDungServiceRef.TinDungViMoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TinDungServiceRef\service2.wsdl" />
+    <None Include="Service References\TinDungServiceRef\service21.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TinDungServiceRef\service4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TinDungServiceRef\service5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TinDungServiceRef\Utilities.Common2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TinDungTDServiceRef\Arrays1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TinDungTDServiceRef\BusinessServices.TinDungTD.DTO1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TinDungTDServiceRef\BusinessServices.Utilities.DTO.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TinDungTDServiceRef\CommunicationMessages.Base.MessageBases1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TinDungTDServiceRef\CommunicationServices.TinDungTD.Messages1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TinDungTDServiceRef\DataModel.EntityFramework1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TinDungTDServiceRef\Presentation.Process.TinDungTDServiceRef.TinDungTDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TinDungTDServiceRef\service1.wsdl" />
+    <None Include="Service References\TinDungTDServiceRef\service2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TinDungTDServiceRef\service21.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TinDungTDServiceRef\Utilities.Common1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TinDungTTServiceRef\Presentation.Process.TinDungTTServiceRef.TinDungTTResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TinDungTTServiceRef\TinDungTTService.wsdl" />
+    <None Include="Service References\TinDungTTServiceRef\TinDungTTService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TinDungTTServiceRef\TinDungTTService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TinDungTTServiceRef\TinDungTTService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TinDungTTServiceRef\TinDungTTService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TinDungTTServiceRef\TinDungTTService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TinDungTTServiceRef\TinDungTTService5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TinDungTTServiceRef\TinDungTTService6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TinDungTTServiceRef\TinDungTTService7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TinDungTTServiceRef\TinDungTTService8.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TinDungTTServiceRef\TinDungTTService9.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TruyVanServiceRef\Arrays.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TruyVanServiceRef\BusinessServices.TruyVan.DTO.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TruyVanServiceRef\CommunicationMessages.Base.MessageBases.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TruyVanServiceRef\CommunicationServices.TruyVan.Messages.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TruyVanServiceRef\Presentation.Process.TruyVanServiceRef.DanhSachResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TruyVanServiceRef\Presentation.Process.TruyVanServiceRef.TruyVanResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TruyVanServiceRef\service.wsdl" />
+    <None Include="Service References\TruyVanServiceRef\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TruyVanServiceRef\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TruyVanServiceRef\service2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TruyVanServiceRef\System.Data.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TruyVanServiceRef\Utilities.Common.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TyGiaServiceRef\Presentation.Process.TyGiaServiceRef.TyGiaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TyGiaServiceRef\TyGiaService.wsdl" />
+    <None Include="Service References\TyGiaServiceRef\TyGiaService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TyGiaServiceRef\TyGiaService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TyGiaServiceRef\TyGiaService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TyGiaServiceRef\TyGiaService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TyGiaServiceRef\TyGiaService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TyGiaServiceRef\TyGiaService5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TyGiaServiceRef\TyGiaService6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TyGiaServiceRef\TyGiaService7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\UtilitiesServiceRef\Arrays.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\UtilitiesServiceRef\CommunicationMessages.Base.MessageBases.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\UtilitiesServiceRef\CommunicationServices.Utilities.Messages.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\UtilitiesServiceRef\DataModel.EntityFramework.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\UtilitiesServiceRef\Presentation.Process.UtilitiesServiceRef.CheckDuplicateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\UtilitiesServiceRef\Presentation.Process.UtilitiesServiceRef.LockResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\UtilitiesServiceRef\Presentation.Process.UtilitiesServiceRef.ThamSoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\UtilitiesServiceRef\Presentation.Process.UtilitiesServiceRef.UnlockResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\UtilitiesServiceRef\Presentation.Process.UtilitiesServiceRef.UtilitiesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\UtilitiesServiceRef\service.wsdl" />
+    <None Include="Service References\UtilitiesServiceRef\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\UtilitiesServiceRef\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\UtilitiesServiceRef\Utilities.Common.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WebProcessServiceRef\Presentation.Process.WebProcessServiceRef.WebResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WebProcessServiceRef\WebProcessService.wsdl" />
+    <None Include="Service References\WebProcessServiceRef\WebProcessService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WebProcessServiceRef\WebProcessService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WebProcessServiceRef\WebProcessService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WebProcessServiceRef\WebProcessService21.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WebProcessServiceRef\WebProcessService22.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WebProcessServiceRef\WebProcessService23.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ZAMainAppServiceRef\Presentation.Process.ZAMainAppServiceRef.LoginResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ZAMainAppServiceRef\Presentation.Process.ZAMainAppServiceRef.LogoutResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ZAMainAppServiceRef\Presentation.Process.ZAMainAppServiceRef.SessionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ZAMainAppServiceRef\ZAMainAppService1.wsdl" />
+    <None Include="Service References\ZAMainAppServiceRef\ZAMainAppService8.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ZAMainAppServiceRef\ZAMainAppService81.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ZAMainAppServiceRef\ZAMainAppService82.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ZAMainAppServiceRef\ZAMainAppService83.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ZAMainAppServiceRef\ZAMainAppService84.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ZAMainAppServiceRef\ZAMainAppService85.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ZAMainAppServiceRef\ZAMainAppService86.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ZAMainAppServiceRef\ZAMainAppService87.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ZATestAppServiceRef\CommunicationMessages.Base.MessageBases.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ZATestAppServiceRef\CommunicationServices.ZATestApp.Messages.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ZATestAppServiceRef\Presentation.Process.ZATestAppServiceRef.ApplicationConstantResponseStatus1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ZATestAppServiceRef\Presentation.Process.ZATestAppServiceRef.DataTransferResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ZATestAppServiceRef\Presentation.Process.ZATestAppServiceRef.DataTransferResponseMessage.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ZATestAppServiceRef\service.wsdl" />
+    <None Include="Service References\ZATestAppServiceRef\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ZATestAppServiceRef\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ZATestAppServiceRef\System.IO.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ZATestAppServiceRef\System.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ZATestAppServiceRef\Utilities.Common.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\BaoCaoServiceRef\" />
+    <WCFMetadataStorage Include="Service References\BaoHiemServiceRef\" />
+    <WCFMetadataStorage Include="Service References\ChiTieuServiceRef\" />
+    <WCFMetadataStorage Include="Service References\DanhMucServiceRef\" />
+    <WCFMetadataStorage Include="Service References\HanMucServiceRef\" />
+    <WCFMetadataStorage Include="Service References\HoSoTinDungServiceRef\" />
+    <WCFMetadataStorage Include="Service References\HuyDongVonServiceRef\" />
+    <WCFMetadataStorage Include="Service References\JobServiceRef\" />
+    <WCFMetadataStorage Include="Service References\KeToanServiceRef\" />
+    <WCFMetadataStorage Include="Service References\KhachHangServiceRef\" />
+    <WCFMetadataStorage Include="Service References\KhaiThacDuLieuServiceRef\" />
+    <WCFMetadataStorage Include="Service References\LaiSuatServiceRef\" />
+    <WCFMetadataStorage Include="Service References\NganQuyServiceRef\" />
+    <WCFMetadataStorage Include="Service References\NhanSuServiceRef\" />
+    <WCFMetadataStorage Include="Service References\PhiServiceRef\" />
+    <WCFMetadataStorage Include="Service References\PhongToaServiceRef\" />
+    <WCFMetadataStorage Include="Service References\PopupServiceRef\" />
+    <WCFMetadataStorage Include="Service References\QuanTriHeThongServiceRef\" />
+    <WCFMetadataStorage Include="Service References\SMSServiceRef\" />
+    <WCFMetadataStorage Include="Service References\TaiSanDamBaoServiceRef\" />
+    <WCFMetadataStorage Include="Service References\TaiSanServiceRef\" />
+    <WCFMetadataStorage Include="Service References\ThanhVienServiceRef\" />
+    <WCFMetadataStorage Include="Service References\TinDungServiceRef\" />
+    <WCFMetadataStorage Include="Service References\TinDungTDServiceRef\" />
+    <WCFMetadataStorage Include="Service References\TinDungTTServiceRef\" />
+    <WCFMetadataStorage Include="Service References\TruyVanServiceRef\" />
+    <WCFMetadataStorage Include="Service References\TyGiaServiceRef\" />
+    <WCFMetadataStorage Include="Service References\UtilitiesServiceRef\" />
+    <WCFMetadataStorage Include="Service References\WebProcessServiceRef\" />
+    <WCFMetadataStorage Include="Service References\ZAMainAppServiceRef\" />
+    <WCFMetadataStorage Include="Service References\ZATestAppServiceRef\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\TruyVanServiceRef\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\TruyVanServiceRef\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\TruyVanServiceRef\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\UtilitiesServiceRef\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\UtilitiesServiceRef\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\UtilitiesServiceRef\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BaoHiemServiceRef\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BaoHiemServiceRef\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BaoHiemServiceRef\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ChiTieuServiceRef\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ChiTieuServiceRef\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ChiTieuServiceRef\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\HanMucServiceRef\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\HanMucServiceRef\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\HanMucServiceRef\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\HoSoTinDungServiceRef\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\HoSoTinDungServiceRef\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\HoSoTinDungServiceRef\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\HuyDongVonServiceRef\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\HuyDongVonServiceRef\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\HuyDongVonServiceRef\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\KeToanServiceRef\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\KeToanServiceRef\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\KeToanServiceRef\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\KhachHangServiceRef\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\KhachHangServiceRef\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\KhachHangServiceRef\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\KhaiThacDuLieuServiceRef\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\KhaiThacDuLieuServiceRef\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\KhaiThacDuLieuServiceRef\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\LaiSuatServiceRef\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\LaiSuatServiceRef\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\LaiSuatServiceRef\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\NganQuyServiceRef\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\NganQuyServiceRef\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\NganQuyServiceRef\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PhongToaServiceRef\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PhongToaServiceRef\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PhongToaServiceRef\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\TaiSanDamBaoServiceRef\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\TaiSanDamBaoServiceRef\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\TaiSanDamBaoServiceRef\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ThanhVienServiceRef\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ThanhVienServiceRef\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ThanhVienServiceRef\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PopupServiceRef\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PopupServiceRef\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PopupServiceRef\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ZATestAppServiceRef\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ZATestAppServiceRef\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ZATestAppServiceRef\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DanhMucServiceRef\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DanhMucServiceRef\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DanhMucServiceRef\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PhiServiceRef\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PhiServiceRef\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PhiServiceRef\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\QuanTriHeThongServiceRef\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\QuanTriHeThongServiceRef\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\QuanTriHeThongServiceRef\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\NhanSuServiceRef\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\NhanSuServiceRef\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\NhanSuServiceRef\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\TyGiaServiceRef\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\TyGiaServiceRef\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\TyGiaServiceRef\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\TaiSanServiceRef\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\TaiSanServiceRef\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\TaiSanServiceRef\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BaoCaoServiceRef\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BaoCaoServiceRef\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BaoCaoServiceRef\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\TinDungTTServiceRef\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\TinDungTTServiceRef\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\TinDungTTServiceRef\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\TinDungTDServiceRef\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\TinDungTDServiceRef\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\TinDungTDServiceRef\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\JobServiceRef\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\JobServiceRef\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\JobServiceRef\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ZAMainAppServiceRef\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ZAMainAppServiceRef\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ZAMainAppServiceRef\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\TinDungServiceRef\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\TinDungServiceRef\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\TinDungServiceRef\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SMSServiceRef\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SMSServiceRef\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SMSServiceRef\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SMSServiceRef\SMSService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WebProcessServiceRef\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WebProcessServiceRef\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WebProcessServiceRef\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

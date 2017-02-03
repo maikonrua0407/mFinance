@@ -1,0 +1,89 @@
+﻿<UserControl x:Class="PresentationWPF.NhanSu.PhuCapCongTacVien.ucPhanBoPhuCap"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:ribbon="http://schemas.microsoft.com/winfx/2006/xaml/presentation/ribbon" 
+             xmlns:uc="clr-namespace:PresentationWPF.CustomControl;assembly=PresentationWPF.CustomControl"
+             xmlns:my="clr-namespace:System;assembly=mscorlib"
+             xmlns:local="clr-namespace:PresentationWPF.NhanSu.PhuCapCongTacVien"
+             mc:Ignorable="d" 
+             d:DesignHeight="768" d:DesignWidth="1024" KeyDown="UserControl_KeyDown" Loaded="UserControl_Loaded" Unloaded="UserControl_Unloaded" MaxWidth="1366">
+    <UserControl.Resources>
+        <DataTemplate x:Key="HeaderTemplate" DataType="{x:Type my:String}">
+            <Grid HorizontalAlignment="Left" Height="45">
+                <AccessText Text="{Binding}" TextWrapping="Wrap" VerticalAlignment="Center"/>
+            </Grid>
+        </DataTemplate>
+        <!--<my:String x:Key="U.DungChung.Button.Sua">Sửa</my:String>
+        <my:String x:Key="U.DungChung.Button.Xoa">Xóa</my:String>
+        <my:String x:Key="U.DungChung.Button.Luu">Lưu</my:String>
+        <my:String x:Key="U.DungChung.Button.BangKe">Bảng kê</my:String>
+        <my:String x:Key="U.DungChung.Button.TimKiem">Tìm kiếm</my:String>
+        <my:String x:Key="U.DungChung.Button.XuatExcel">Xuất Excel</my:String>
+        <my:String x:Key="U.DungChung.Button.XemChungTu">Xem chứng từ</my:String>
+        <my:String x:Key="U.DungChung.Button.TroGiup">Trợ giúp</my:String>
+        <my:String x:Key="U.DungChung.Button.Dong">Đóng</my:String>
+        <my:String x:Key="U.DungChung.Checkbox.ThemNhieuLan">Thêm nhiều lần</my:String>-->
+
+    </UserControl.Resources>
+    <UserControl.CommandBindings>
+        <CommandBinding CanExecute="SaveCommand_CanExecute" Executed="SaveCommand_Executed" Command="{x:Static local:ucPhanBoPhuCap.SaveCommand}">
+        </CommandBinding>
+        <CommandBinding CanExecute="HelpCommand_CanExecute" Executed="HelpCommand_Executed" Command="{x:Static local:ucPhanBoPhuCap.HelpCommand}">
+        </CommandBinding>
+        <CommandBinding CanExecute="CloseCommand_CanExecute" Executed="CloseCommand_Executed" Command="{x:Static local:ucPhanBoPhuCap.CloseCommand}">
+        </CommandBinding>
+    </UserControl.CommandBindings>
+    <UserControl.ContextMenu>
+        <ContextMenu Name="mnuMain">
+        </ContextMenu>
+    </UserControl.ContextMenu>
+    <Grid>
+        <DockPanel>
+            <DockPanel HorizontalAlignment="Stretch" DockPanel.Dock="Top" Margin="3,3,0,3" LastChildFill="False" Name="docToolbar">
+                <WrapPanel Name="Toolbar">
+                    <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbSubmit" DockPanel.Dock="Left" Label="{DynamicResource U.DungChung.Button.Luu}"  SmallImageSource="/Utilities.Common;component/Images/Action/save.png" Style="{DynamicResource RibbonButton}" Click="tlbHotKey_Click" />
+                    <Label Name="lbl1" Margin="3,0,0,0" DockPanel.Dock="Left" BorderThickness="3" Width="2" BorderBrush="#FF170404" />
+                    <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbHelp" DockPanel.Dock="Left" Label="{DynamicResource U.DungChung.Button.TroGiup}"  SmallImageSource="/Utilities.Common;component/Images/Action/help.png" Style="{DynamicResource RibbonButton}" Click="tlbHotKey_Click" />
+                    <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbClose" DockPanel.Dock="Left" Label="{DynamicResource U.DungChung.Button.Dong}"  SmallImageSource="/Utilities.Common;component/Images/Action/close.png" Style="{DynamicResource RibbonButton}" Click="tlbHotKey_Click" />
+
+                </WrapPanel>
+            </DockPanel>
+            <Grid Name="grMain">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="4*"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <telerik:RadGridView DockPanel.Dock="Top"  Name="grNhanVien" SelectionMode="Extended"
+                                                AutoGenerateColumns="False" CanUserFreezeColumns="False" RowIndicatorVisibility="Collapsed" ShowGroupPanel="False" ItemsSource="{Binding}" Margin="6,0,0,0" SelectionChanged="grNhanVien_SelectionChanged">
+                        <telerik:RadGridView.Columns>
+                            <telerik:GridViewSelectColumn MinWidth="20" MaxWidth="20" />
+                            <telerik:GridViewDataColumn Name="STT" Header="STT" Width="50" DataMemberBinding="{Binding STT}" IsReadOnly="True"/>
+                            <telerik:GridViewDataColumn Name="ID_HSO" Header="ID_HSO" IsVisible="False" DataMemberBinding="{Binding ID_HSO}" IsReadOnly="True"/>
+                            <telerik:GridViewDataColumn Name="MA_HSO" Header="Mã nhân viên"  Width="*" DataMemberBinding="{Binding MA_HSO}" IsReadOnly="True"/>
+                            <telerik:GridViewDataColumn Name="TEN_HSO" Header="Tên nhân viên"  Width="2*" DataMemberBinding="{Binding TEN_HSO}" IsReadOnly="True"/>
+                            <telerik:GridViewDataColumn Name="TONG" Header="Số tiền" Width="*" DataMemberBinding="{Binding TONG}" IsReadOnly="False" DataFormatString="{}{0:N0}" TextAlignment="Right" />
+                        </telerik:RadGridView.Columns>
+                    </telerik:RadGridView>
+                </Grid>
+                <GridSplitter Grid.Column="1" Width="5" ResizeBehavior="PreviousAndNext"/>
+                <Grid Grid.Column="2">
+                    <telerik:RadGridView DockPanel.Dock="Top"  Name="grDuAn" SelectionMode="Extended" CellEditEnded="grDuAn_CellEditEnded"
+                                                AutoGenerateColumns="False" CanUserFreezeColumns="False" RowIndicatorVisibility="Collapsed" ShowGroupPanel="False"  ItemsSource="{Binding}">
+                        <telerik:RadGridView.Columns>
+                            <telerik:GridViewSelectColumn MinWidth="20" MaxWidth="20" />                            
+                            <telerik:GridViewDataColumn Header="ID_DU_AN" IsVisible="False" DataMemberBinding="{Binding ID_DU_AN}" IsReadOnly="True"/>
+                            <telerik:GridViewDataColumn Header="Dự án"  Width="2*" DataMemberBinding="{Binding TEN_DU_AN}" IsReadOnly="True"/>                            
+                            <telerik:GridViewDataColumn Header="Số tiền" Name="SO_TIEN" Width="*" DataMemberBinding="{Binding SO_TIEN}" IsReadOnly="False" DataFormatString="{}{0:N0}" TextAlignment="Right" />
+                        </telerik:RadGridView.Columns>
+                    </telerik:RadGridView>
+                </Grid>
+
+            </Grid>            
+        </DockPanel>
+    </Grid>
+</UserControl>

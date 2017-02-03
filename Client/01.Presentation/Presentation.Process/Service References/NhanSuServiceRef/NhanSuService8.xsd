@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/BusinessServices.HachToan.DTO" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/BusinessServices.HachToan.DTO" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:1001/NhanSuService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" />
+  <xs:complexType name="GDHT">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="LGIAO_DICH_PHI" nillable="true" type="q1:ArrayOfKT_GIAO_DICH_PHI" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="LPHAT_SINH" nillable="true" type="q2:ArrayOfKT_PHAT_SINH" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="LPHAT_SINH_CT" nillable="true" type="q3:ArrayOfKT_PHAT_SINH_CT" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="OGIAO_DICH" nillable="true" type="q4:KT_GIAO_DICH" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GDHT" nillable="true" type="tns:GDHT" />
+</xs:schema>

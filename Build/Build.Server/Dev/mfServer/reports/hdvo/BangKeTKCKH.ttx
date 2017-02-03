@@ -1,0 +1,22 @@
+STT	Number
+SO_HIEU	String	30
+HO_TEN	String	255
+PGD	String	255
+CUM	String	255
+NHOM	String	255
+LAI_SUAT	String	10
+NGAY_GUI	String	10
+NGAY_DH	String	10
+G_DK	Number
+G_G	Number
+G_L	Number
+G_R	Number
+G_CK	Number
+DC_DK	Number
+DC_TK	Number
+DC_TC	Number
+DC_CK	Number
+TL_PT	Number
+TL_DT	Number
+TL_TK	Number
+TL_CPT	Number

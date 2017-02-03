@@ -1,0 +1,161 @@
+﻿<UserControl x:Class="PresentationWPF.KeToan.TaiKhoanTongHop.ucHeThongTKTHDS"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:uc="clr-namespace:PresentationWPF.CustomControl;assembly=PresentationWPF.CustomControl"
+             xmlns:local="clr-namespace:PresentationWPF.KeToan.TaiKhoanTongHop"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:my="clr-namespace:System;assembly=mscorlib"
+             mc:Ignorable="d" 
+             xmlns:ribbon="http://schemas.microsoft.com/winfx/2006/xaml/presentation/ribbon" 
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation" 
+             d:DesignHeight="768" d:DesignWidth="1024" KeyDown="UserControl_KeyDown">
+    <UserControl.CommandBindings>
+        <CommandBinding CanExecute="AddCommand_CanExecute" Executed="AddCommand_Executed" Command="{x:Static local:ucHeThongTKTHDS.AddCommand}" >
+        </CommandBinding>
+        <CommandBinding CanExecute="ModifyCommand_CanExecute" Executed="ModifyCommand_Executed" Command="{x:Static local:ucHeThongTKTHDS.ModifyCommand}" >
+        </CommandBinding>
+        <CommandBinding CanExecute="DeleteCommand_CanExecute" Executed="DeleteCommand_Executed" Command="{x:Static local:ucHeThongTKTHDS.DeleteCommand}" >
+        </CommandBinding>
+        <CommandBinding CanExecute="ViewCommand_CanExecute" Executed="ViewCommand_Executed" Command="{x:Static local:ucHeThongTKTHDS.ViewCommand}">
+        </CommandBinding>
+        <CommandBinding CanExecute="SearchCommand_CanExecute" Executed="SearchCommand_Executed" Command="{x:Static local:ucHeThongTKTHDS.SearchCommand}">
+        </CommandBinding>
+        <!--<CommandBinding CanExecute="ReloadCommand_CanExecute" Executed="ReloadCommand_Executed" Command="{x:Static local:ucTaiKhoanDS.ReloadCommand}">
+        </CommandBinding>-->
+        <CommandBinding CanExecute="ExportCommand_CanExecute" Executed="ExportCommand_Executed" Command="{x:Static local:ucHeThongTKTHDS.ExportCommand}">
+        </CommandBinding>
+        <CommandBinding CanExecute="HelpCommand_CanExecute" Executed="HelpCommand_Executed" Command="{x:Static local:ucHeThongTKTHDS.HelpCommand}">
+        </CommandBinding>
+        <CommandBinding CanExecute="CloseCommand_CanExecute" Executed="CloseCommand_Executed" Command="{x:Static local:ucHeThongTKTHDS.CloseCommand}">
+        </CommandBinding>
+    </UserControl.CommandBindings>
+    <UserControl.Resources>
+        <uc:ConverterStringToDataTime x:Key="converter" />
+        <!--<my:String x:Key="U.DungChung.TimKiemNhanh">Tìm kiếm...</my:String>
+        <my:String x:Key="U.KeToan.TaiKhoan.ucTaiKhoanDS.ThongTinTaiKhoanChiTiet">Thông tin tài khoản chi tiết</my:String>
+        <my:String x:Key="U.KeToan.TaiKhoan.ucTaiKhoanDS.MaTaiKhoanCT:">Mã tài khoản chi tiết:</my:String>
+        <my:String x:Key="U.KeToan.TaiKhoan.ucTaiKhoanDS.ThongTinSoDuTaiKhoan">Thông tin số dư tài khoản</my:String>
+        <my:String x:Key="U.KeToan.TaiKhoan.ucTaiKhoanDS.SoDuNgay:">Số dư ngày:</my:String>
+        <my:String x:Key="U.KeToan.TaiKhoan.ucTaiKhoanDS.DanhSach">Danh sách</my:String>
+        <my:String x:Key="U.KeToan.TaiKhoan.ucTaiKhoanDS.TongSoTaiKhoan">Tổng số tài khoản:</my:String>
+        <my:String x:Key="U.KeToan.TaiKhoan.ucTaiKhoanDS.TongSoDu">Tổng số dư:</my:String>
+        <my:String x:Key="U.KeToan.TaiKhoan.ucTaiKhoanDS.MaTaiKhoan">Mã tài khoản</my:String>
+        <my:String x:Key="U.KeToan.TaiKhoan.ucTaiKhoanDS.TenTaiKhoan">Tên tài khoản</my:String>
+        <my:String x:Key="U.KeToan.TaiKhoan.ucTaiKhoanDS.SoDu">Số dư</my:String>
+        <my:String x:Key="U.KeToan.TaiKhoan.ucTaiKhoanDS.DuNoDuCo">Dư Nợ/Dư Có</my:String>
+        <my:String x:Key="U.KeToan.TaiKhoan.ucTaiKhoanDS.DuNo">Dư nợ</my:String>
+        <my:String x:Key="U.KeToan.TaiKhoan.ucTaiKhoanDS.DuCo">Dư có</my:String>
+        <my:String x:Key="U.KeToan.TaiKhoan.ucTaiKhoanDS.NgaySoLieu">Ngày số liệu</my:String>
+        <my:String x:Key="U.KeToan.TaiKhoan.ucTaiKhoanDS.TrangThai">Trạng thái</my:String>-->
+    </UserControl.Resources>
+    <Grid >
+        <DockPanel Name="dockMain">
+            <DockPanel HorizontalAlignment="Stretch" DockPanel.Dock="Top" Margin="3,3,0,3" LastChildFill="False" Name="docToolbar">
+                <WrapPanel Name="Toolbar">
+
+                    <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbAdd" DockPanel.Dock="Left" Label="{DynamicResource U.DungChung.Button.Them}" SmallImageSource="pack://application:,,,/Utilities.Common;component/Images/Action/add.png" Style="{StaticResource RibbonButton}" Click="tlbHotKey_Click" />
+                    <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbModify" DockPanel.Dock="Left" Label="{DynamicResource U.DungChung.Button.Sua}"  SmallImageSource="pack://application:,,,/Utilities.Common;component/Images/Action/modify.png" Style="{StaticResource RibbonButton}" Click="tlbHotKey_Click" />
+                    <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbDelete" DockPanel.Dock="Left" Label="{DynamicResource U.DungChung.Button.Xoa}"  SmallImageSource="pack://application:,,,/Utilities.Common;component/Images/Action/delete.png" Style="{StaticResource RibbonButton}" Click="tlbHotKey_Click" Visibility="Collapsed"/>
+                    <Label Name="lbl2" Margin="3,0,0,0" DockPanel.Dock="Left" BorderThickness="3" Width="2" BorderBrush="#FF170404" />
+                    <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbView" DockPanel.Dock="Left" Label="{DynamicResource U.DungChung.Button.Xem}" SmallImageSource="pack://application:,,,/Utilities.Common;component/Images/Action/view.png" Style="{StaticResource RibbonButton}" Click="tlbHotKey_Click" />
+                    <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbSearch" DockPanel.Dock="Left" Label="{DynamicResource U.DungChung.Button.TimKiem}"  SmallImageSource="pack://application:,,,/Utilities.Common;component/Images/Action/search.png" Style="{StaticResource RibbonButton}" Click="tlbHotKey_Click" />
+                    <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbExport" DockPanel.Dock="Left" Label="{DynamicResource U.DungChung.Button.XuatExcel}"  SmallImageSource="pack://application:,,,/Utilities.Common;component/Images/Action/export.png" Style="{StaticResource RibbonButton}" Click="tlbHotKey_Click" />
+                    <Label Name="lbl3" Margin="3,0,0,0" DockPanel.Dock="Left" BorderThickness="3" Width="2" BorderBrush="#FF170404" />
+                    <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbHelp" DockPanel.Dock="Left" Label="{DynamicResource U.DungChung.Button.TroGiup}"  SmallImageSource="pack://application:,,,/Utilities.Common;component/Images/Action/help.png" Style="{StaticResource RibbonButton}" Click="tlbHotKey_Click" />
+                    <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbClose" DockPanel.Dock="Left" Label="{DynamicResource U.DungChung.Button.Dong}"  SmallImageSource="pack://application:,,,/Utilities.Common;component/Images/Action/close.png" Style="{StaticResource RibbonButton}" Click="tlbHotKey_Click" />
+                </WrapPanel>
+            </DockPanel>
+            <!--<ScrollViewer ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Auto">-->
+            <Grid Name="grMain" HorizontalAlignment="Left" Width="{Binding ElementName=dockMain,Path=ActualWidth}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="5" />
+                    <ColumnDefinition Width="4*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <GridSplitter Grid.Column="1" ResizeDirection="Auto" Grid.RowSpan="3" Width="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" ShowsPreview="False"/>
+
+                <DockPanel Grid.Column="0" Margin="3">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="25" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <telerik:RadComboBox Name="cmbDonVi" Grid.Row="0" IsEditable="True" TextSearchMode="Contains" IsFilteringEnabled="True" IsTextSearchEnabled="True" OpenDropDownOnFocus="True"/>
+                        <Border Grid.Row="1" BorderBrush="LightGray" BorderThickness="1">
+                            <!--<telerik:RadTreeView  Name="trvPhanLoai" IsExpandOnSingleClickEnabled="True" IsLineEnabled="True" IsTriStateMode="True" IsVirtualizing="True" >
+                        </telerik:RadTreeView>-->
+
+                            <telerik:RadTreeView ItemsSource="{Binding}" Name="trvPhanLoai" IsExpandOnSingleClickEnabled="True" IsLineEnabled="True" IsTriStateMode="True" IsOptionElementsEnabled="True"  IsVirtualizing="False" >
+                                <telerik:RadTreeView.ItemTemplate>
+                                    <HierarchicalDataTemplate ItemsSource="{Binding Master2Detail}">
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Text="[" Margin="8,0,0,0"/>
+                                            <TextBlock Text="{Binding MA_PLOAI}" Tag="{Binding ID}"/>
+                                            <TextBlock Text="]"/>
+                                            <TextBlock Text="{Binding TEN_PLOAI}" Margin="8,0,0,0"/>
+                                        </StackPanel>
+                                    </HierarchicalDataTemplate>
+                                </telerik:RadTreeView.ItemTemplate>
+                            </telerik:RadTreeView>
+                        </Border>
+                    </Grid>
+                </DockPanel>
+                <Grid Grid.Column="2">
+                    <DockPanel Name="spnContent" >
+                        <!--<ScrollViewer ScrollViewer.HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled" DockPanel.Dock="Top">-->
+                        <!--</ScrollViewer>-->
+
+                        <GroupBox Header="{DynamicResource U.KeToan.TaiKhoan.ucTaiKhoanDS.DanhSach}" VerticalAlignment="Stretch" Margin="3" Padding="-5,10,-5,0">
+                            <DockPanel>
+                                <Grid DockPanel.Dock="Top">
+                                    <DockPanel Margin="2">
+                                        <telerik:RadNumericUpDown DockPanel.Dock="Right" Name="nudPageSize" Width="60" IsInteger="True" Value="10" TabIndex="41" ValueChanged="nudPageSize_ValueChanged" />
+                                        <TextBox Text="{DynamicResource U.DungChung.TimKiemNhanh}" Name="txtTimKiemNhanh" GotFocus="txtTimKiemNhanh_GotFocus" LostFocus="txtTimKiemNhanh_LostFocus" TextChanged="txtTimKiemNhanh_TextChanged" Padding="3" TabIndex="40"></TextBox>
+                                    </DockPanel>
+                                </Grid>
+                                <Grid DockPanel.Dock="Bottom">
+                                    <Grid.Background>
+                                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                            <GradientStop Color="#FF889393" Offset="0" />
+                                            <GradientStop Color="#FFDEDEDE" Offset="1" />
+                                        </LinearGradientBrush>
+                                    </Grid.Background>
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                        <Label Name="lblLabelSumTK" HorizontalAlignment="Left" Content="{DynamicResource U.KeToan.TaiKhoan.ucTaiKhoanDS.TongSoTaiKhoan}" />
+                                        <Label Name="lblSumSoTK" Content="0" HorizontalAlignment="Left"/>
+                                        <Label BorderBrush="Black" BorderThickness="1" Width="1" Height="20" />
+                                        <Label Name="lblLabelSumSoDu" HorizontalAlignment="Left" Content="{DynamicResource U.KeToan.TaiKhoan.ucTaiKhoanDS.TongSoDu}" />
+                                        <Label Name="lblSumSoDu" Content="0" HorizontalAlignment="Left"/>
+                                    </StackPanel>
+                                    <telerik:RadDataPager Name="radPage" PageSize="10" Grid.Row="1" Source="{Binding Items, ElementName=raddgrDanhSachTK}" IsTotalItemCountFixed="True" DisplayMode="All" HorizontalAlignment="Right" HorizontalContentAlignment="Right"/>
+                                </Grid>
+                                <telerik:RadGridView Name="raddgrDanhSachTK" MinHeight="150" ShowGroupPanel="False" SelectionMode="Extended"
+                AutoGenerateColumns="False" CanUserFreezeColumns="False" RowIndicatorVisibility="Collapsed" HorizontalAlignment="Stretch" DockPanel.Dock="Top" MaxHeight="700" MouseDoubleClick="grKhachHangDS_MouseDoubleClick">
+                                    <telerik:RadGridView.ContextMenu>
+                                        <ContextMenu Name="mnuGrid">
+                                        </ContextMenu>
+                                    </telerik:RadGridView.ContextMenu>
+                                    <telerik:RadGridView.Columns>
+                                        <telerik:GridViewDataColumn Header="ID" Width="0" IsReadOnly="True" DataMemberBinding="{Binding Id}" IsVisible="False" />
+                                        <telerik:GridViewSelectColumn Width="30" IsFilterable="False" IsSortable="False" IsEnabled="False" />
+                                        <uc:MyColumn Header="{DynamicResource U.DungChung.STT}" Width="50" />
+                                        <telerik:GridViewDataColumn IsReadOnly="True" Header="{DynamicResource U.KeToan.TaiKhoanTongHop.ucHeThongTKTHDS.MaHeThong}" DataMemberBinding="{Binding MA_HT_TKTH}" Width="100"/>
+                                        <telerik:GridViewDataColumn Width="*"  IsReadOnly="True" Header="{DynamicResource U.KeToan.TaiKhoanTongHop.ucHeThongTKTHDS.TenHeThong}" DataMemberBinding="{Binding TEN_HT_TKTH}"/>
+                                        <telerik:GridViewDataColumn Width="150"  IsReadOnly="True" Header="{DynamicResource U.KeToan.TaiKhoanTongHop.ucHeThongTKTHDS.NgayHieuLuc}" DataMemberBinding="{Binding NGAY_ADUNG,Converter={StaticResource converter}}"/>
+                                        <telerik:GridViewDataColumn Width="150"  IsReadOnly="True" Header="{DynamicResource U.KeToan.TaiKhoanTongHop.ucHeThongTKTHDS.NgayHetHieuLuc}" DataMemberBinding="{Binding NGAY_HET_HLUC,Converter={StaticResource converter}}"/>
+                                        
+                                    </telerik:RadGridView.Columns>
+                                </telerik:RadGridView>
+                            </DockPanel>
+                        </GroupBox>
+                    </DockPanel>
+                </Grid>
+            </Grid>
+            <!--</ScrollViewer>-->
+        </DockPanel>
+    </Grid>
+</UserControl>

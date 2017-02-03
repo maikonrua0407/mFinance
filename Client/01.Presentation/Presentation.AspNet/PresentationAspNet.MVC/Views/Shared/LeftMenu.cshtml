@@ -1,0 +1,84 @@
+﻿@{
+    ViewBag.Title = "LeftMenu";
+}
+<style type="text/css">
+    .active-menu {
+    background-color: #3399cc;
+    color:white;
+    font-weight:bold;
+    }
+</style>
+<script type="text/javascript">
+    function showChild(key) {
+        var upNarrow = 'url("/images/DXR.png") -130px 0px no-repeat';
+        var downNarrow = 'url("/images/DXR.png") -130px -24px no-repeat';
+        if ($("#" + key).css("display") != "none") {
+            $("#narrow_" + key).css("background", downNarrow);
+            $("#" + key).hide();
+        } else {
+            $(".nav-open").css("background", downNarrow);
+            $('.ul-child-menu').hide();
+            $("#narrow_" + key).css("background", upNarrow);
+            $("#" + key).show();
+        }
+    }
+
+    $(document).ready(function () {
+        var url = window.location.href + "/";
+        url = url.replace("ChiTiet", "");
+        var findId = "";
+        $("#menu-tree").each(function () {
+            if (findId == "") {
+                $(this).find("ul").each(function () {
+                    if (findId == "") {
+                        $(this).find("li").each(function () {
+                            if (findId == "") {
+                                if (url.indexOf($(this).find("a").attr("href").replace("~", "") + "/") > -1) {
+                                    findId = $(this).parent().attr("id");
+                                    $(this).find("a").children(".child-menu").addClass("active-menu");
+                                }
+                            }
+                        });
+                    }
+                });
+            }
+        });
+        showChild(findId);
+    });
+</script>
+<ul id="menu-tree">
+    @foreach (SiteMapNode item in SiteMap.RootNode.ChildNodes)
+    {
+        if (item["ShowHome"]== null || item["ShowHome"] != "1")
+        {
+            continue;
+        }
+        <li>
+            <a href="javascript:void(0);" onclick="showChild('@item.Key.Replace("-", "")');">
+                <div class="parent-menu">
+                    <img alt="@item.Title" src="@item["IconUrl"]" width="24" />
+                    <span>@item.Title</span>
+                    <div class="nav-open" id='narrow_@item.Key.Replace("-", "")'>
+                    </div>
+                </div>
+            </a>
+
+            <ul style="display: none; margin-left: 4px;" id='@item.Key.Replace("-", "")' class="ul-child-menu">
+                @foreach (SiteMapNode child in item.ChildNodes)
+                {
+                    if (child["ShowHome"] == null || child["ShowHome"] != "1")
+                    {
+                        continue;
+                    }
+                    <li class="active">
+                        <a href="@child.Url" class="child-link">
+                            <div class="child-menu">
+                                @child.Title
+                            </div>
+                        </a>
+                    </li>
+                }
+            </ul>
+        </li>
+    }
+</ul>

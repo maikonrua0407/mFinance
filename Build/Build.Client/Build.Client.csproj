@@ -1,0 +1,330 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C9C1CD20-8580-4FA0-AA32-6F464A771B8C}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Build.Client</RootNamespace>
+    <AssemblyName>Build.Client</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Dev\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="PresentationFramework.Classic" />
+    <Reference Include="PresentationWPF.CustomControl, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dev\PresentationWPF.CustomControl.dll</HintPath>
+    </Reference>
+    <Reference Include="ReachFramework" />
+    <Reference Include="RibbonControlsLibrary, Version=4.0.0.11019, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libraries\RibbonControlsLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Telerik.Windows.Controls, Version=2012.1.215.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libraries\Telerik.Windows.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Data, Version=2012.1.215.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libraries\Telerik.Windows.Controls.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.GridView, Version=2012.1.215.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libraries\Telerik.Windows.Controls.GridView.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Input, Version=2012.1.215.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libraries\Telerik.Windows.Controls.Input.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Navigation, Version=2012.1.215.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libraries\Telerik.Windows.Controls.Navigation.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Data, Version=2012.1.215.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libraries\Telerik.Windows.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Dev\languages\MessageResources_en.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Dev\languages\MessageResources_vi.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Dev\languages\UIResources_en.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Dev\languages\UIResources_vi.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Dev\themes\ThemeTest.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Dev\config\config.conf" />
+    <None Include="Dev\config\configPlainText.conf" />
+    <None Include="Dev\help\111_NHNSD_CT.docx" />
+    <None Include="Dev\help\112_NSD_CT.docx" />
+    <None Include="Dev\help\113_NHNSD_NSD_DS.docx" />
+    <None Include="Dev\help\121_PQ_CHUC_NANG.docx" />
+    <None Include="Dev\help\122_PQ_BAO_CAO.docx" />
+    <None Include="Dev\help\123_PQ_PHAM_VI.docx" />
+    <None Include="Dev\help\132_THAM_SO_DS.docx" />
+    <None Include="Dev\help\16_NSD_HIEN_THOI.docx" />
+    <None Include="Dev\help\19_DANG_NHAP_LAI.docx" />
+    <None Include="Dev\help\21101_TIEN_TE_CT.docx" />
+    <None Include="Dev\help\21102_TIEN_TE_DS.docx" />
+    <None Include="Dev\help\2111_TINH_THANH_CT.docx" />
+    <None Include="Dev\help\2112_TINH_THANH_DS.docx" />
+    <None Include="Dev\help\2121_DIA_BAN_CT.docx" />
+    <None Include="Dev\help\2122_DIA_BAN_DS.docx" />
+    <None Include="Dev\help\2131_DON_VI_CT.docx" />
+    <None Include="Dev\help\2132_DON_VI_DS.docx" />
+    <None Include="Dev\help\2171_DUNG_CHUNG_CT.docx" />
+    <None Include="Dev\help\2172_DUNG_CHUNG_DS.docx" />
+    <None Include="Dev\help\2191_QUOC_GIA_CT.docx" />
+    <None Include="Dev\help\2192_QUOC_GIA_DS.docx" />
+    <None Include="Dev\help\2211_LAI_SUAT_CT.docx" />
+    <None Include="Dev\help\2212_LAI_SUAT_DS.docx" />
+    <None Include="Dev\help\2421_TY_GIA_CT.docx" />
+    <None Include="Dev\help\2422_TY_GIA_DS.docx" />
+    <None Include="Dev\help\3111_KHU_VUC_KH_CT.docx" />
+    <None Include="Dev\help\3112_KHU_VUC_KH_DS.docx" />
+    <None Include="Dev\help\3121_AP_KH_CT.docx" />
+    <None Include="Dev\help\3121_CUM_KH_CT.docx" />
+    <None Include="Dev\help\3122_CUM_KH_DS.docx" />
+    <None Include="Dev\help\3131_NHOM_KH_CT.docx" />
+    <None Include="Dev\help\3132_NHOM_KH_DS.docx" />
+    <None Include="Dev\help\3141_KH_THANH_VIEN_CT.docx" />
+    <None Include="Dev\help\3142_KH_CA_NHAN_CT.docx" />
+    <None Include="Dev\help\3143_KH_TO_CHUC_CT.docx" />
+    <None Include="Dev\help\3144_KHACH_HANG_DS.docx" />
+    <None Include="Dev\help\4111_PHAN_LOAI_CT.docx" />
+    <None Include="Dev\help\4112_PHAN_LOAI_DS.docx" />
+    <None Include="Dev\help\4141_TAI_KHOAN_CT.docx" />
+    <None Include="Dev\help\4142_TAI_KHOAN_DS.docx" />
+    <None Include="Dev\help\4161_SO_TAI_KHOAN_KB.docx" />
+    <None Include="Dev\help\4163_SO_TAI_KHOAN_DS.docx" />
+    <None Include="Dev\help\4221_PHIEU_THU_CT.docx" />
+    <None Include="Dev\help\4231_PHIEU_CHI_CT.docx" />
+    <None Include="Dev\help\4241_PHIEU_KE_TOAN_CT.docx" />
+    <None Include="Dev\help\4251_NGOAI_BANG_CT.docx" />
+    <None Include="Dev\help\4261_DIEU_CHINH_CT.docx" />
+    <None Include="Dev\help\4271_PHIEU_UY_NHIEM_CHI_CT.docx" />
+    <None Include="Dev\help\4311_KET_CHUYEN_CT.docx" />
+    <None Include="Dev\help\451_KIEM_SOAT_GD.docx" />
+    <None Include="Dev\help\4612_KHOA_SO_TW.docx" />
+    <None Include="Dev\help\4622_KHOA_SO_DV.docx" />
+    <None Include="Dev\help\5111_SAN_PHAM_HDV_CT.docx" />
+    <None Include="Dev\help\5112_SAN_PHAM_HDV_DS.docx" />
+    <None Include="Dev\help\5211_DK_TKQD.docx" />
+    <None Include="Dev\help\5212_MO_SO_TKKKH.docx" />
+    <None Include="Dev\help\5215_MO_SO_DS.docx" />
+    <None Include="Dev\help\5216_MO_SO_TKCKH.docx" />
+    <None Include="Dev\help\5221_GUI_THEM_TIEN_CT.docx" />
+    <None Include="Dev\help\5222_GUI_THEM_TIEN_DS_CT.docx" />
+    <None Include="Dev\help\5231_RUT_BOT_GOC_CT.docx" />
+    <None Include="Dev\help\5232_RUT_BOT_GOC_DS_CT.docx" />
+    <None Include="Dev\help\5241_TAT_TOAN_CT.docx" />
+    <None Include="Dev\help\5243_TAT_TOAN_DS_CT.docx" />
+    <None Include="Dev\help\5251_PHONG_TOA_SD_CT.docx" />
+    <None Include="Dev\help\5252_PHONG_TOA_SD_DS.docx" />
+    <None Include="Dev\help\5311_TRA_LAI_CT.docx" />
+    <None Include="Dev\help\5313_TRA_LAI_DS_CT.docx" />
+    <None Include="Dev\help\5321_DU_CHI_CT.docx" />
+    <None Include="Dev\help\5341_LNG_TUNG_SO_CT.docx" />
+    <None Include="Dev\help\5342_LNG_DS_CT.docx" />
+    <None Include="Dev\help\5351_PHAN_BO_CT.docx" />
+    <None Include="Dev\help\5511_DIEU_CHINH_LS_CT.docx" />
+    <None Include="Dev\help\5512_DIEU_CHINH_LS_DS.docx" />
+    <None Include="Dev\help\6111_SAN_PHAM_TDVM_CT.docx" />
+    <None Include="Dev\help\6112_SAN_PHAM_TDVM_DS.docx" />
+    <None Include="Dev\help\6121_VONG_VAY_CT.docx" />
+    <None Include="Dev\help\6122_VONG_VAY_DS.docx" />
+    <None Include="Dev\help\6141_LICH_THU_PHAT_VON_CT.docx" />
+    <None Include="Dev\help\6151_DIA_BAN_SAN_PHAM_CT.docx" />
+    <None Include="Dev\help\6441_KHE_UOC_CT.docx" />
+    <None Include="Dev\help\6442_KHE_UOC_DS.docx" />
+    <None Include="Dev\help\6443_KHE_UOC_DS_CT.docx" />
+    <None Include="Dev\help\6461_DON_VAY_VON_CT.docx" />
+    <None Include="Dev\help\6462_DON_VAY_VON_DS.docx" />
+    <None Include="Dev\help\6511_TAM_UNG_CT.docx" />
+    <None Include="Dev\help\6521_HOAN_UNG_CT.docx" />
+    <None Include="Dev\help\6531_GIAI_NGAN_CT.docx" />
+    <None Include="Dev\help\6551_TRICH_LAP_DP_CT.docx" />
+    <None Include="Dev\help\6561_DIEU_CHINH_LS_CT.docx" />
+    <None Include="Dev\help\6562_DIEU_CHINH_LS_DS.docx" />
+    <None Include="Dev\help\6621_CHUYEN_HOAN_CT.docx" />
+    <None Include="Dev\help\6631_CHUYEN_NO_CT.docx" />
+    <None Include="Dev\help\6711_HOA_DON_TTK_CT.docx" />
+    <None Include="Dev\help\6721_PHAN_BO_LV_CT.docx" />
+    <None Include="Dev\help\801_DANH_MUC.docx" />
+    <None Include="Dev\help\8111_HO_SO_CT.docx" />
+    <None Include="Dev\help\8112_HO_SO_DS.docx" />
+    <None Include="Dev\help\8121_HOP_DONG_CT.docx" />
+    <None Include="Dev\help\8122_HOP_DONG_DS.docx" />
+    <None Include="Dev\help\8211_THUYEN_CHUYEN_CT.docx" />
+    <None Include="Dev\help\8212_THUYEN_CHUYEN_DS.docx" />
+    <None Include="Dev\help\8281_THOI_VIEC_CT.docx" />
+    <None Include="Dev\help\8282_THOI_VIEC_DS.docx" />
+    <None Include="Dev\help\8291_THAM_GIA_DU_AN_CT.docx" />
+    <None Include="Dev\help\8421_LUONG_CT.docx" />
+    <None Include="Dev\help\8422_LUONG_DS.docx" />
+    <None Include="Dev\help\8441_BANG_LUONG_CT.docx" />
+    <None Include="Dev\help\8451_TINH_LUONG_CT.docx" />
+    <None Include="Dev\help\8452_TINH_LUONG_DS.docx" />
+    <None Include="Dev\help\8461_BANG_PHU_CAP_CTV_CT.docx" />
+    <None Include="Dev\help\8471_TINH_PHU_CAP_CTV_CT.docx" />
+    <None Include="Dev\help\8472_TINH_PHU_CAP_CTV_DS.docx" />
+    <None Include="Dev\help\mFinance.chm" />
+    <None Include="Dev\help\mFinance.docx" />
+    <None Include="Dev\help\TS_BAN_GIAO_CT.docx" />
+    <None Include="Dev\help\TS_BAN_GIAO_DS.docx" />
+    <None Include="Dev\help\TS_DANH_GIA_LAI_CT.docx" />
+    <None Include="Dev\help\TS_DANH_GIA_LAI_DS.docx" />
+    <None Include="Dev\help\TS_GIAM_CT.docx" />
+    <None Include="Dev\help\TS_GIAM_DS.docx" />
+    <None Include="Dev\help\TS_KHAU_HAO_CT.docx" />
+    <None Include="Dev\help\TS_KHAU_HAO_DS.docx" />
+    <None Include="Dev\help\TS_NHOM_TS_CT.docx" />
+    <None Include="Dev\help\TS_NHOM_TS_DS.docx" />
+    <None Include="Dev\help\TS_SUA_CHUA_CT.docx" />
+    <None Include="Dev\help\TS_SUA_CHUA_DS.docx" />
+    <None Include="Dev\config\log.conf" />
+    <None Include="Dev\config\logUpd.conf" />
+    <None Include="PreWEB\Config\config.conf" />
+    <None Include="PreWEB\Config\configPlainText.conf" />
+    <None Include="PreWEB\Config\log.conf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Dev\logs\" />
+    <Folder Include="Dev\temp\" />
+    <Folder Include="Dev\version\backup\" />
+    <Folder Include="Dev\version\current\" />
+    <Folder Include="Dev\version\default\" />
+    <Folder Include="Dev\version\ota\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Dev\config\ShowConfig.xml" />
+    <Content Include="Dev\data\DC_CSO_TLAI.xml" />
+    <Content Include="Dev\data\DM_DMUC_GTRI.xml" />
+    <Content Include="Dev\data\DM_DMUC_LOAI.xml" />
+    <Content Include="Dev\data\DM_QUOC_GIA.xml" />
+    <Content Include="Dev\data\DM_TIEN_TE.xml" />
+    <Content Include="Dev\data\DM_TINH_TP.xml" />
+    <Content Include="Dev\data\KT_KY_HIEU.xml" />
+    <Content Include="Dev\data\KT_NHOM_PLOAI.xml" />
+    <Content Include="Dev\en-US\PresentationWPF.ZAMainApp.resources.dll" />
+    <Content Include="Dev\ICSharpCode.SharpZipLib.dll" />
+    <Content Include="Dev\itextsharp.dll" />
+    <Content Include="Dev\log4net.dll" />
+    <Content Include="Dev\Microsoft.Windows.Shell.dll" />
+    <Content Include="Dev\Presentation.Process.dll" />
+    <Content Include="Dev\PresentationWPF.BaoCao.dll" />
+    <Content Include="Dev\PresentationWPF.BaoHiem.dll" />
+    <Content Include="Dev\PresentationWPF.ChiTieu.dll" />
+    <Content Include="Dev\PresentationWPF.CustomControl.dll" />
+    <Content Include="Dev\PresentationWPF.DanhMuc.dll" />
+    <Content Include="Dev\PresentationWPF.HanMuc.dll" />
+    <Content Include="Dev\PresentationWPF.HoaDonTienKy.dll" />
+    <Content Include="Dev\PresentationWPF.HoSoTinDung.dll" />
+    <Content Include="Dev\PresentationWPF.HuyDongVon.dll" />
+    <Content Include="Dev\PresentationWPF.KeToan.dll" />
+    <Content Include="Dev\PresentationWPF.KhachHang.dll" />
+    <Content Include="Dev\PresentationWPF.KhaiThacDuLieu.dll" />
+    <Content Include="Dev\PresentationWPF.LaiSuat.dll" />
+    <Content Include="Dev\PresentationWPF.Login.exe" />
+    <Content Include="Dev\PresentationWPF.NganQuy.dll" />
+    <Content Include="Dev\PresentationWPF.NhanSu.dll" />
+    <Content Include="Dev\PresentationWPF.Phi.dll" />
+    <Content Include="Dev\PresentationWPF.PhongToa.dll" />
+    <Content Include="Dev\PresentationWPF.Popup.exe" />
+    <Content Include="Dev\PresentationWPF.QuanTriHeThong.dll" />
+    <Content Include="Dev\PresentationWPF.TaiSan.dll" />
+    <Content Include="Dev\PresentationWPF.TaiSanDamBao.dll" />
+    <Content Include="Dev\PresentationWPF.ThanhVien.dll" />
+    <Content Include="Dev\PresentationWPF.TinDung.dll" />
+    <Content Include="Dev\PresentationWPF.TyGia.dll" />
+    <Content Include="Dev\PresentationWPF.Update.exe" />
+    <Content Include="Dev\PresentationWPF.ZAMainApp.dll" />
+    <Content Include="Dev\PresentationWPF.ZATestApp.exe" />
+    <Content Include="Dev\RibbonControlsLibrary.dll" />
+    <Content Include="Dev\System.Windows.Controls.Layout.Toolkit.dll" />
+    <Content Include="Dev\Telerik.Windows.Controls.Data.dll" />
+    <Content Include="Dev\Telerik.Windows.Controls.DataVisualization.dll" />
+    <Content Include="Dev\Telerik.Windows.Controls.dll" />
+    <Content Include="Dev\Telerik.Windows.Controls.FixedDocumentViewers.dll" />
+    <Content Include="Dev\Telerik.Windows.Controls.GridView.dll" />
+    <Content Include="Dev\Telerik.Windows.Controls.Input.dll" />
+    <Content Include="Dev\Telerik.Windows.Controls.Navigation.dll" />
+    <Content Include="Dev\Telerik.Windows.Controls.ScheduleView.dll" />
+    <Content Include="Dev\Telerik.Windows.Data.dll" />
+    <Content Include="Dev\Telerik.Windows.Documents.Fixed.DLL" />
+    <Content Include="Dev\Telerik.Windows.Zip.dll" />
+    <Content Include="Dev\vhCalendar.dll" />
+    <Content Include="Dev\vi-VN\PresentationWPF.ZAMainApp.resources.dll" />
+    <Content Include="Dev\WPFToolkit.dll" />
+    <Content Include="Dev\images\Logo.ico" />
+    <Content Include="PreWEB\Logs\init.txt" />
+    <Content Include="PreWEB\Temp\init.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

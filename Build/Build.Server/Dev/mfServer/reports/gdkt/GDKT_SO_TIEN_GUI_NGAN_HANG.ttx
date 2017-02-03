@@ -1,0 +1,16 @@
+MaChiNhanh	string	255
+TenChiNhanh	string	255
+DiaChiChiNhanh	string	255
+MaPhongGD	string	255
+TenPhongGD	string	255
+SoTaiKhoan	string	255
+TenTaiKhoan	string	255
+NgayGhiSo	string	255
+SoChungTu	string	255
+NgayChungTu	string	255
+DienGiai	string	255
+SoTaiKhoanDU	string	255
+SoTienThu	number
+SoTienChi	number
+SoTienConLai	number
+GhiChu	string	255

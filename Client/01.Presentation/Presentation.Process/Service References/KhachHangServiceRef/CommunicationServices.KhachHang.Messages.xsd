@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/CommunicationServices.KhachHang.Messages" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/CommunicationServices.KhachHang.Messages" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/BusinessServices.Utilities.DTO" />
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/BusinessServices.KhachHang.DTO" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Utilities.Common" />
+  <xs:complexType name="KhachHangRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" base="q1:RequestBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="dsTTinh" nillable="true">
+            <xs:complexType>
+              <xs:annotation>
+                <xs:appinfo>
+                  <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+                </xs:appinfo>
+              </xs:annotation>
+              <xs:sequence>
+                <xs:element ref="xs:schema" />
+                <xs:any />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstChuKyHinhAnh" nillable="true" type="q2:ArrayOfVKH_CKY_HANH" />
+          <xs:element minOccurs="0" name="lstFileBase" nillable="true" type="q1:ArrayOfFileBase" />
+          <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/BusinessServices.Utilities.DTO" minOccurs="0" name="lstFileObject" nillable="true" type="q3:ArrayOfBS_FileObject" />
+          <xs:element minOccurs="0" name="lstHinhAnh" nillable="true" type="q1:ArrayOfImageBase" />
+          <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="lstIdKhachHang" nillable="true" type="q4:ArrayOfint" />
+          <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstKhachHang" nillable="true" type="q5:ArrayOfKH_KHANG_HSO" />
+          <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstTTinhGTri" nillable="true" type="q6:ArrayOfVKH_TTINH_GTRI" />
+          <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/BusinessServices.KhachHang.DTO" minOccurs="0" name="lstThongTinKhaoSat" nillable="true" type="q7:ArrayOfKH_THONG_TIN_KHAO_SAT" />
+          <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="obj" nillable="true" type="q8:KH_KHANG_HSO" />
+          <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/BusinessServices.KhachHang.DTO" minOccurs="0" name="objThongTinKhaoSat" nillable="true" type="q9:KH_THONG_TIN_KHAO_SAT" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="KhachHangRequest" nillable="true" type="tns:KhachHangRequest" />
+  <xs:complexType name="KhachHangResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q10="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" base="q10:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="countFail" type="xs:int" />
+          <xs:element minOccurs="0" name="countSuccess" type="xs:int" />
+          <xs:element minOccurs="0" name="dsTTinh" nillable="true">
+            <xs:complexType>
+              <xs:annotation>
+                <xs:appinfo>
+                  <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+                </xs:appinfo>
+              </xs:annotation>
+              <xs:sequence>
+                <xs:element ref="xs:schema" />
+                <xs:any />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element minOccurs="0" name="idTraVe" type="xs:int" />
+          <xs:element minOccurs="0" name="ketqua" type="xs:int" />
+          <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstChuKyHinhAnh" nillable="true" type="q11:ArrayOfVKH_CKY_HANH" />
+          <xs:element minOccurs="0" name="lstFileBase" nillable="true" type="q10:ArrayOfFileBase" />
+          <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/BusinessServices.Utilities.DTO" minOccurs="0" name="lstFileObject" nillable="true" type="q12:ArrayOfBS_FileObject" />
+          <xs:element minOccurs="0" name="lstHinhAnh" nillable="true" type="q10:ArrayOfImageBase" />
+          <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstKhachHang" nillable="true" type="q13:ArrayOfKH_KHANG_HSO" />
+          <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstTTinhGTri" nillable="true" type="q14:ArrayOfVKH_TTINH_GTRI" />
+          <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/BusinessServices.KhachHang.DTO" minOccurs="0" name="lstThongTinKhaoSat" nillable="true" type="q15:ArrayOfKH_THONG_TIN_KHAO_SAT" />
+          <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="obj" nillable="true" type="q16:KH_KHANG_HSO" />
+          <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/BusinessServices.KhachHang.DTO" minOccurs="0" name="objThongTinKhaoSat" nillable="true" type="q17:KH_THONG_TIN_KHAO_SAT" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="KhachHangResponse" nillable="true" type="tns:KhachHangResponse" />
+  <xs:complexType name="ChuyenDiaBanRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q18="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" base="q18:RequestBase">
+        <xs:sequence>
+          <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/Utilities.Common" minOccurs="0" name="Action" type="q19:DatabaseConstant.Action" />
+          <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstDiaBanCT" nillable="true" type="q20:ArrayOfKH_CHUYEN_DBAN_CTIET" />
+          <xs:element xmlns:q21="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="lstIDGiaoDich" nillable="true" type="q21:ArrayOfint" />
+          <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="obj" nillable="true" type="q22:KH_CHUYEN_DBAN" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ChuyenDiaBanRequest" nillable="true" type="tns:ChuyenDiaBanRequest" />
+  <xs:complexType name="ChuyenDiaBanResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q23="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" base="q23:ResponseBase">
+        <xs:sequence>
+          <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstChiTiet" nillable="true" type="q24:ArrayOfKH_CHUYEN_DBAN_CTIET" />
+          <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objGiaoDich" nillable="true" type="q25:KH_CHUYEN_DBAN" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ChuyenDiaBanResponse" nillable="true" type="tns:ChuyenDiaBanResponse" />
+</xs:schema>

@@ -1,0 +1,75 @@
+﻿@using Presentation.Process
+@using PresentationAspNet.MVC.App_Start
+@using Utilities.Common
+@{
+    Layout = null;
+}
+<style>
+    .actionColumn {
+        float: left;
+        margin-right: 4px;
+        margin-bottom: 5px;
+    }
+</style>
+<div class="page-bar">
+    <div class="page-toolbar">
+        <div class="btn-group">
+            @{
+                var curNode = AppConfig.GetCurModule();
+                if (curNode.lstTinhNang != null && curNode.lstTinhNang.Any())
+                {
+                    var fullControl = curNode.lstTinhNang.FirstOrDefault(e => e.MaTinhNang.Equals(DatabaseConstant.Action.TOAN_QUYEN.getValue()));
+                    if (fullControl.IsNullOrEmpty())
+                    {
+                        foreach (var func in curNode.lstTinhNang)
+                        {
+                            //if (!Convert.ToBoolean(func.IsButton)
+                            //    || (string.Equals(func.Code, Constant.TinhNangPhanQuyen.Reject.GetValue()) && !curNode.Module.FunctionList.IsApprove && !curNode.Module.FunctionList.IsApprove))
+                            //{
+                            //    continue;
+                            //}
+                            var id = func.MaTinhNang + "Process";
+                            var function = func.MaTinhNang + "Process();";
+                            <div class="actionColumn" id="@id">
+                                <a href="javascript:void(0);" onclick="@function" class="btn btn-sm blue">
+                                    <i class="fa fa-file-o"></i>
+                                    @func.MaTinhNang
+                                </a>
+                            </div>
+                        }
+                    }
+                    else
+                    {
+                        var qtht = new QuanTriHeThongProcess();
+                        // Lấy các tính năng được phân quyền trong hệ thống
+                        var dsCNangTNangAll = qtht.layCNangTNangTheoListIdMenu(new List<int> { curNode.IDChucNang });
+
+                        foreach (var func in dsCNangTNangAll)
+                        {
+                            if (func.MA_TNANG.Equals(DatabaseConstant.Action.TOAN_QUYEN.getValue())) { continue; }
+                            var id = func.MA_TNANG + "Process";
+                            var function = func.MA_TNANG + "Process();";
+                            var icon = "fa " + ApplicationConstant.layGiaTriIcon(func.MA_TNANG);
+                            <div class="actionColumn" id="@id">
+                                <a href="javascript:void(0);" onclick="@function" class="btn btn-sm blue">
+                                    <i class="@icon"></i>
+                                    @func.MA_TNANG
+                                </a>
+                            </div>
+                        }
+                    }
+                    @*var functionHelp = Request.Url.GetLeftPart(UriPartial.Authority) + "/Manual/" + curNode.Module.HelpUrl;
+                        <div class="actionColumn" id="help">
+                            <a href="javascript:void(0);" id="btnHelp" onclick='TaiLieuHuongDan("@functionHelp");'>
+                                <button class="btn btn-small btn-primary">
+                                    <i class="icon-question-sign bigger-125"></i>
+                                    <span style="font-size: 13px; line-height: 30px;">Trợ giúp</span>
+                                </button>
+                            </a>
+                        </div>*@
+                }
+            }
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="b247da29-6bbc-4e8f-8e34-10605ed2d744" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:1001/SMSService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="SMSService.xsd" MetadataType="Schema" ID="d965310f-3df6-4cf5-a810-c240daebe796" SourceId="1" SourceUrl="http://localhost:1001/SMSService.svc?xsd=xsd8" />
+    <MetadataFile FileName="SMSService6.xsd" MetadataType="Schema" ID="f0224f10-109a-49d2-bdfa-052645ca9fbd" SourceId="1" SourceUrl="http://localhost:1001/SMSService.svc?xsd=xsd3" />
+    <MetadataFile FileName="SMSService1.xsd" MetadataType="Schema" ID="f19b9276-ad4f-4ea3-9844-bf5661133fd4" SourceId="1" SourceUrl="http://localhost:1001/SMSService.svc?xsd=xsd6" />
+    <MetadataFile FileName="SMSService1.wsdl" MetadataType="Wsdl" ID="cf13a5e6-4dfa-4aa8-9143-62b3c86b3b30" SourceId="1" SourceUrl="http://localhost:1001/SMSService.svc?wsdl" />
+    <MetadataFile FileName="SMSService2.xsd" MetadataType="Schema" ID="b5349c30-9f14-47b3-bc01-9f7321f59e60" SourceId="1" SourceUrl="http://localhost:1001/SMSService.svc?xsd=xsd7" />
+    <MetadataFile FileName="SMSService3.xsd" MetadataType="Schema" ID="44ab798e-d699-471a-afc9-8fbf8f17b306" SourceId="1" SourceUrl="http://localhost:1001/SMSService.svc?xsd=xsd4" />
+    <MetadataFile FileName="SMSService4.xsd" MetadataType="Schema" ID="39f6ecaf-7e6b-4053-8f74-8dcb0206b272" SourceId="1" SourceUrl="http://localhost:1001/SMSService.svc?xsd=xsd5" />
+    <MetadataFile FileName="SMSService5.xsd" MetadataType="Schema" ID="1c3284a6-e0e4-471f-b8fe-77be3b5ed5a1" SourceId="1" SourceUrl="http://localhost:1001/SMSService.svc?xsd=xsd2" />
+    <MetadataFile FileName="SMSService.disco" MetadataType="Disco" ID="6d93d04a-4fc7-4fdb-bc82-f5473332414b" SourceId="1" SourceUrl="http://localhost:1001/SMSService.svc?disco" />
+    <MetadataFile FileName="SMSService7.xsd" MetadataType="Schema" ID="b34039a0-b5ad-4f0c-85f9-3d054f5355df" SourceId="1" SourceUrl="http://localhost:1001/SMSService.svc?xsd=xsd0" />
+    <MetadataFile FileName="SMSService8.xsd" MetadataType="Schema" ID="1763b935-7d91-4ca1-be12-958786c417e2" SourceId="1" SourceUrl="http://localhost:1001/SMSService.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

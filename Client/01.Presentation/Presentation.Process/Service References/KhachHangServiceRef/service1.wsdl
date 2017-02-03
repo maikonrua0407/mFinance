@@ -1,0 +1,350 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="KhachHangService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="" namespace="http://schemas.datacontract.org/2004/07/CommunicationServices.KhachHang.Messages" />
+      <xsd:import schemaLocation="" namespace="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" />
+      <xsd:import schemaLocation="" namespace="http://schemas.datacontract.org/2004/07/Utilities.Common" />
+      <xsd:import schemaLocation="" />
+      <xsd:import schemaLocation="" namespace="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" />
+      <xsd:import schemaLocation="" namespace="http://schemas.datacontract.org/2004/07/BusinessServices.Utilities.DTO" />
+      <xsd:import schemaLocation="" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="" namespace="http://schemas.datacontract.org/2004/07/BusinessServices.KhachHang.DTO" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IKhachHangService_returnHello_InputMessage">
+    <wsdl:part name="parameters" element="tns:returnHello" />
+  </wsdl:message>
+  <wsdl:message name="IKhachHangService_returnHello_OutputMessage">
+    <wsdl:part name="parameters" element="tns:returnHelloResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKhachHangService_ThemKhachHang_InputMessage">
+    <wsdl:part name="parameters" element="tns:ThemKhachHang" />
+  </wsdl:message>
+  <wsdl:message name="IKhachHangService_ThemKhachHang_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ThemKhachHangResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKhachHangService_SuaKhachHang_InputMessage">
+    <wsdl:part name="parameters" element="tns:SuaKhachHang" />
+  </wsdl:message>
+  <wsdl:message name="IKhachHangService_SuaKhachHang_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SuaKhachHangResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKhachHangService_XoaKhachHang_InputMessage">
+    <wsdl:part name="parameters" element="tns:XoaKhachHang" />
+  </wsdl:message>
+  <wsdl:message name="IKhachHangService_XoaKhachHang_OutputMessage">
+    <wsdl:part name="parameters" element="tns:XoaKhachHangResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKhachHangService_DuyetKhachHang_InputMessage">
+    <wsdl:part name="parameters" element="tns:DuyetKhachHang" />
+  </wsdl:message>
+  <wsdl:message name="IKhachHangService_DuyetKhachHang_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DuyetKhachHangResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKhachHangService_TuChoiKhachHang_InputMessage">
+    <wsdl:part name="parameters" element="tns:TuChoiKhachHang" />
+  </wsdl:message>
+  <wsdl:message name="IKhachHangService_TuChoiKhachHang_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TuChoiKhachHangResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKhachHangService_ThoaiDuyetKhachHang_InputMessage">
+    <wsdl:part name="parameters" element="tns:ThoaiDuyetKhachHang" />
+  </wsdl:message>
+  <wsdl:message name="IKhachHangService_ThoaiDuyetKhachHang_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ThoaiDuyetKhachHangResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKhachHangService_CheckSoCMND_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckSoCMND" />
+  </wsdl:message>
+  <wsdl:message name="IKhachHangService_CheckSoCMND_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckSoCMNDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKhachHangService_ChuyenDiaBan_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChuyenDiaBan" />
+  </wsdl:message>
+  <wsdl:message name="IKhachHangService_ChuyenDiaBan_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChuyenDiaBanResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKhachHangService_KhachHang01_InputMessage">
+    <wsdl:part name="parameters" element="tns:KhachHang01" />
+  </wsdl:message>
+  <wsdl:message name="IKhachHangService_KhachHang01_OutputMessage">
+    <wsdl:part name="parameters" element="tns:KhachHang01Response" />
+  </wsdl:message>
+  <wsdl:message name="IKhachHangService_KhachHang02_InputMessage">
+    <wsdl:part name="parameters" element="tns:KhachHang02" />
+  </wsdl:message>
+  <wsdl:message name="IKhachHangService_KhachHang02_OutputMessage">
+    <wsdl:part name="parameters" element="tns:KhachHang02Response" />
+  </wsdl:message>
+  <wsdl:message name="IKhachHangService_KhachHang04_InputMessage">
+    <wsdl:part name="parameters" element="tns:KhachHang04" />
+  </wsdl:message>
+  <wsdl:message name="IKhachHangService_KhachHang04_OutputMessage">
+    <wsdl:part name="parameters" element="tns:KhachHang04Response" />
+  </wsdl:message>
+  <wsdl:message name="IKhachHangService_KhachHang05_InputMessage">
+    <wsdl:part name="parameters" element="tns:KhachHang05" />
+  </wsdl:message>
+  <wsdl:message name="IKhachHangService_KhachHang05_OutputMessage">
+    <wsdl:part name="parameters" element="tns:KhachHang05Response" />
+  </wsdl:message>
+  <wsdl:message name="IKhachHangService_KhachHang07_InputMessage">
+    <wsdl:part name="parameters" element="tns:KhachHang07" />
+  </wsdl:message>
+  <wsdl:message name="IKhachHangService_KhachHang07_OutputMessage">
+    <wsdl:part name="parameters" element="tns:KhachHang07Response" />
+  </wsdl:message>
+  <wsdl:message name="IKhachHangService_QuanLyHinhAnh_InputMessage">
+    <wsdl:part name="parameters" element="tns:QuanLyHinhAnh" />
+  </wsdl:message>
+  <wsdl:message name="IKhachHangService_QuanLyHinhAnh_OutputMessage">
+    <wsdl:part name="parameters" element="tns:QuanLyHinhAnhResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKhachHangService_ThongTinKhaoSat_InputMessage">
+    <wsdl:part name="parameters" element="tns:ThongTinKhaoSat" />
+  </wsdl:message>
+  <wsdl:message name="IKhachHangService_ThongTinKhaoSat_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ThongTinKhaoSatResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKhachHangService_ThongTinKhaoSat05_InputMessage">
+    <wsdl:part name="parameters" element="tns:ThongTinKhaoSat05" />
+  </wsdl:message>
+  <wsdl:message name="IKhachHangService_ThongTinKhaoSat05_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ThongTinKhaoSat05Response" />
+  </wsdl:message>
+  <wsdl:portType name="IKhachHangService">
+    <wsdl:operation name="returnHello">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKhachHangService/returnHello" message="tns:IKhachHangService_returnHello_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKhachHangService/returnHelloResponse" message="tns:IKhachHangService_returnHello_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ThemKhachHang">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKhachHangService/ThemKhachHang" message="tns:IKhachHangService_ThemKhachHang_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKhachHangService/ThemKhachHangResponse" message="tns:IKhachHangService_ThemKhachHang_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SuaKhachHang">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKhachHangService/SuaKhachHang" message="tns:IKhachHangService_SuaKhachHang_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKhachHangService/SuaKhachHangResponse" message="tns:IKhachHangService_SuaKhachHang_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="XoaKhachHang">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKhachHangService/XoaKhachHang" message="tns:IKhachHangService_XoaKhachHang_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKhachHangService/XoaKhachHangResponse" message="tns:IKhachHangService_XoaKhachHang_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DuyetKhachHang">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKhachHangService/DuyetKhachHang" message="tns:IKhachHangService_DuyetKhachHang_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKhachHangService/DuyetKhachHangResponse" message="tns:IKhachHangService_DuyetKhachHang_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TuChoiKhachHang">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKhachHangService/TuChoiKhachHang" message="tns:IKhachHangService_TuChoiKhachHang_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKhachHangService/TuChoiKhachHangResponse" message="tns:IKhachHangService_TuChoiKhachHang_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ThoaiDuyetKhachHang">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKhachHangService/ThoaiDuyetKhachHang" message="tns:IKhachHangService_ThoaiDuyetKhachHang_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKhachHangService/ThoaiDuyetKhachHangResponse" message="tns:IKhachHangService_ThoaiDuyetKhachHang_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckSoCMND">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKhachHangService/CheckSoCMND" message="tns:IKhachHangService_CheckSoCMND_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKhachHangService/CheckSoCMNDResponse" message="tns:IKhachHangService_CheckSoCMND_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChuyenDiaBan">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKhachHangService/ChuyenDiaBan" message="tns:IKhachHangService_ChuyenDiaBan_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKhachHangService/ChuyenDiaBanResponse" message="tns:IKhachHangService_ChuyenDiaBan_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="KhachHang01">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKhachHangService/KhachHang01" message="tns:IKhachHangService_KhachHang01_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKhachHangService/KhachHang01Response" message="tns:IKhachHangService_KhachHang01_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="KhachHang02">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKhachHangService/KhachHang02" message="tns:IKhachHangService_KhachHang02_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKhachHangService/KhachHang02Response" message="tns:IKhachHangService_KhachHang02_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="KhachHang04">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKhachHangService/KhachHang04" message="tns:IKhachHangService_KhachHang04_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKhachHangService/KhachHang04Response" message="tns:IKhachHangService_KhachHang04_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="KhachHang05">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKhachHangService/KhachHang05" message="tns:IKhachHangService_KhachHang05_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKhachHangService/KhachHang05Response" message="tns:IKhachHangService_KhachHang05_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="KhachHang07">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKhachHangService/KhachHang07" message="tns:IKhachHangService_KhachHang07_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKhachHangService/KhachHang07Response" message="tns:IKhachHangService_KhachHang07_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="QuanLyHinhAnh">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKhachHangService/QuanLyHinhAnh" message="tns:IKhachHangService_QuanLyHinhAnh_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKhachHangService/QuanLyHinhAnhResponse" message="tns:IKhachHangService_QuanLyHinhAnh_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ThongTinKhaoSat">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKhachHangService/ThongTinKhaoSat" message="tns:IKhachHangService_ThongTinKhaoSat_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKhachHangService/ThongTinKhaoSatResponse" message="tns:IKhachHangService_ThongTinKhaoSat_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ThongTinKhaoSat05">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKhachHangService/ThongTinKhaoSat05" message="tns:IKhachHangService_ThongTinKhaoSat05_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKhachHangService/ThongTinKhaoSat05Response" message="tns:IKhachHangService_ThongTinKhaoSat05_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="KhachHangEndpoint" type="tns:IKhachHangService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="returnHello">
+      <soap:operation soapAction="http://tempuri.org/IKhachHangService/returnHello" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ThemKhachHang">
+      <soap:operation soapAction="http://tempuri.org/IKhachHangService/ThemKhachHang" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SuaKhachHang">
+      <soap:operation soapAction="http://tempuri.org/IKhachHangService/SuaKhachHang" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="XoaKhachHang">
+      <soap:operation soapAction="http://tempuri.org/IKhachHangService/XoaKhachHang" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DuyetKhachHang">
+      <soap:operation soapAction="http://tempuri.org/IKhachHangService/DuyetKhachHang" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TuChoiKhachHang">
+      <soap:operation soapAction="http://tempuri.org/IKhachHangService/TuChoiKhachHang" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ThoaiDuyetKhachHang">
+      <soap:operation soapAction="http://tempuri.org/IKhachHangService/ThoaiDuyetKhachHang" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckSoCMND">
+      <soap:operation soapAction="http://tempuri.org/IKhachHangService/CheckSoCMND" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChuyenDiaBan">
+      <soap:operation soapAction="http://tempuri.org/IKhachHangService/ChuyenDiaBan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="KhachHang01">
+      <soap:operation soapAction="http://tempuri.org/IKhachHangService/KhachHang01" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="KhachHang02">
+      <soap:operation soapAction="http://tempuri.org/IKhachHangService/KhachHang02" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="KhachHang04">
+      <soap:operation soapAction="http://tempuri.org/IKhachHangService/KhachHang04" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="KhachHang05">
+      <soap:operation soapAction="http://tempuri.org/IKhachHangService/KhachHang05" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="KhachHang07">
+      <soap:operation soapAction="http://tempuri.org/IKhachHangService/KhachHang07" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QuanLyHinhAnh">
+      <soap:operation soapAction="http://tempuri.org/IKhachHangService/QuanLyHinhAnh" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ThongTinKhaoSat">
+      <soap:operation soapAction="http://tempuri.org/IKhachHangService/ThongTinKhaoSat" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ThongTinKhaoSat05">
+      <soap:operation soapAction="http://tempuri.org/IKhachHangService/ThongTinKhaoSat05" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="KhachHangService">
+    <wsdl:port name="KhachHangEndpoint" binding="tns:KhachHangEndpoint">
+      <soap:address location="http://localhost:1001/KhachHangService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

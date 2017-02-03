@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/CommunicationServices.TinDungTD.Messages" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/CommunicationServices.TinDungTD.Messages" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/BusinessServices.TinDungTD.DTO" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" />
+  <xs:complexType name="TinDungTDRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" base="q1:RequestBase">
+        <xs:sequence>
+          <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/BusinessServices.TinDungTD.DTO" minOccurs="0" name="lstKheUoc" nillable="true" type="q2:ArrayOfTDTD_KHE_UOC" />
+          <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstKiemSoatRR" nillable="true" type="q3:ArrayOfTD_KIEM_SOAT_RR" />
+          <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstPhanLoai" nillable="true" type="q4:ArrayOfKT_PHAN_HE_PLOAI" />
+          <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstSanPham" nillable="true" type="q5:ArrayOfTDTD_SAN_PHAM" />
+          <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/BusinessServices.TinDungTD.DTO" minOccurs="0" name="objChuyenHoan" nillable="true" type="q6:TDTD_CHUYEN_HOAN_NO" />
+          <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/BusinessServices.TinDungTD.DTO" minOccurs="0" name="objChuyenNo" nillable="true" type="q7:TDTD_CHUYEN_NO_QHAN" />
+          <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/BusinessServices.TinDungTD.DTO" minOccurs="0" name="objDonXinVayVon" nillable="true" type="q8:TDTD_DON_XIN_VAY_VON" />
+          <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/BusinessServices.TinDungTD.DTO" minOccurs="0" name="objDuThu" nillable="true" type="q9:TDTD_DU_THU" />
+          <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/BusinessServices.TinDungTD.DTO" minOccurs="0" name="objGiaiNgan" nillable="true" type="q10:TDTD_GIAI_NGAN" />
+          <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/BusinessServices.TinDungTD.DTO" minOccurs="0" name="objGiaiNganDaiLy" nillable="true" type="q11:TDTD_GIAI_NGAN_DAI_LY" />
+          <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/BusinessServices.TinDungTD.DTO" minOccurs="0" name="objHopDongCN" nillable="true" type="q12:TD_HDTD_TD" />
+          <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/BusinessServices.TinDungTD.DTO" minOccurs="0" name="objKheUoc" nillable="true" type="q13:TDTD_KHE_UOC" />
+          <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/BusinessServices.TinDungTD.DTO" minOccurs="0" name="objThuGocLai" nillable="true" type="q14:TDTD_THU_GOC_LAI_VAY" />
+          <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/BusinessServices.TinDungTD.DTO" minOccurs="0" name="objTrichLapDP" nillable="true" type="q15:TDTD_TRICH_LAP_DU_PHONG" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TinDungTDRequest" nillable="true" type="tns:TinDungTDRequest" />
+  <xs:complexType name="TinDungTDResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q16="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" base="q16:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="bKetQua" type="xs:boolean" />
+          <xs:element minOccurs="0" name="iKetQua" type="xs:int" />
+          <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/BusinessServices.TinDungTD.DTO" minOccurs="0" name="lstKheUoc" nillable="true" type="q17:ArrayOfTDTD_KHE_UOC" />
+          <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstKiemSoatRR" nillable="true" type="q18:ArrayOfTD_KIEM_SOAT_RR" />
+          <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstSanPham" nillable="true" type="q19:ArrayOfTDTD_SAN_PHAM" />
+          <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/BusinessServices.TinDungTD.DTO" minOccurs="0" name="objChuyenHoan" nillable="true" type="q20:TDTD_CHUYEN_HOAN_NO" />
+          <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/BusinessServices.TinDungTD.DTO" minOccurs="0" name="objChuyenNo" nillable="true" type="q21:TDTD_CHUYEN_NO_QHAN" />
+          <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/BusinessServices.TinDungTD.DTO" minOccurs="0" name="objDonXinVayVon" nillable="true" type="q22:TDTD_DON_XIN_VAY_VON" />
+          <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/BusinessServices.TinDungTD.DTO" minOccurs="0" name="objDuThu" nillable="true" type="q23:TDTD_DU_THU" />
+          <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/BusinessServices.TinDungTD.DTO" minOccurs="0" name="objGiaiNgan" nillable="true" type="q24:TDTD_GIAI_NGAN" />
+          <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/BusinessServices.TinDungTD.DTO" minOccurs="0" name="objGiaiNganDaiLy" nillable="true" type="q25:TDTD_GIAI_NGAN_DAI_LY" />
+          <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/BusinessServices.TinDungTD.DTO" minOccurs="0" name="objHopDongCN" nillable="true" type="q26:TD_HDTD_TD" />
+          <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/BusinessServices.TinDungTD.DTO" minOccurs="0" name="objKheUoc" nillable="true" type="q27:TDTD_KHE_UOC" />
+          <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/BusinessServices.TinDungTD.DTO" minOccurs="0" name="objThuGocLai" nillable="true" type="q28:TDTD_THU_GOC_LAI_VAY" />
+          <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/BusinessServices.TinDungTD.DTO" minOccurs="0" name="objTrichLapDP" nillable="true" type="q29:TDTD_TRICH_LAP_DU_PHONG" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TinDungTDResponse" nillable="true" type="tns:TinDungTDResponse" />
+</xs:schema>

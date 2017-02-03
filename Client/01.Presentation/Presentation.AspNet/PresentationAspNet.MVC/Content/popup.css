@@ -1,0 +1,13 @@
+﻿/* css popup common */
+#dialog-container {
+	width:100%; 
+	height:1000%;
+	filter:alpha(opacity=50); 
+	opacity: 0.5; 
+	background:#000; 
+	position:fixed; 
+	top:0; left:0; 
+	z-index:50;
+    display:none
+}
+

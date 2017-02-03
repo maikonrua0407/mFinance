@@ -1,0 +1,52 @@
+﻿@using PresentationAspNet.MVC
+@{
+    Layout = null;
+}
+<div id="dialog-container"></div>
+<div id="modal-form" class="modal fade in" role="dialog" aria-hidden="false" style="display: none;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                <h4 id="pop_title" class="modal-title"></h4>
+            </div>
+            <div class="modal-body form">
+
+                <div class="row-fluid" style="min-height: 0px !important">
+                    <div id="alert-popup-bar" style="display: none;margin-top: 10px;">
+                        <div class="span12" style="margin: 0">
+                            <div id="alpError" class="alertPopup alert-error" style="display: none;">
+                                <strong><i class="icon-remove" style="padding-right:5px"></i>Lỗi!</strong>
+                                <span id="msgPopupError">Xảy ra lỗi trong quá trình xử lý.</span>
+                            </div>
+
+                            <div id="alpWarning" class="alertPopup alert-warning" style="display: none;">
+                                <strong><i class="icon-warning" style="padding-right:5px"></i>Cảnh báo!</strong>
+
+                                <span id="msgPopupWarning">Thông tin yêu cầu xử lý có thể phát sinh lỗi.</span>
+
+                            </div>
+
+                            <div id="alpSuccess" class="alertPopup alert-success" style="display: none;">
+                                <strong><i class="icon-ok" style="padding-right:5px"></i>Thông báo!</strong>
+                                <span id="msgPopupSuccess">Xử lý dữ liệu thành công.</span>
+
+                            </div>
+
+                            <div id="alpInfo" class="alertPopup alert-info" style="display: none;">
+                                <strong><i class="icon-info" style="padding-right:5px"></i>Thông tin!</strong>
+                                <span id="msgPopupInfo">Thông tin mở rộng.</span>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="data" style="margin: 8px 2px;line-height: 20px; text-align: left"></div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" id="btnPop_Save"><i class="icon-ok"></i><span id="sp_save">Lưu</span></button>
+                <button class="btn btn-danger" id="btnPop_Close" onclick="PopupSearchCancel()"><i class="icon-reply"></i><span id="sp_close">Đóng</span></button>
+            </div>
+        </div>
+    </div>
+</div>

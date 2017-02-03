@@ -1,0 +1,110 @@
+﻿<UserControl x:Class="PresentationWPF.TinDung.PopupNghiepVu.ucPopupSoTGui"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:PresentationWPF.TinDung.PopupNghiepVu"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:uc="clr-namespace:PresentationWPF.CustomControl;assembly=PresentationWPF.CustomControl"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             xmlns:ribbon="http://schemas.microsoft.com/winfx/2006/xaml/presentation/ribbon" 
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation" 
+             xmlns:telerikext="clr-namespace:Telerik.Windows.Controls.MaskedInput;assembly=Telerik.Windows.Controls.Input"
+             d:DesignHeight="768" d:DesignWidth="1224" KeyDown="UserControl_KeyDown" Loaded="UserControl_Loaded" Margin="0,3" xmlns:my="clr-namespace:System;assembly=mscorlib">
+    <UserControl.Resources>
+        <!--<my:String x:Key="U.HuyDongVon.Popup.ucPopupSoTGui.SanPham">Sản phẩm</my:String>
+        <my:String x:Key="U.HuyDongVon.Popup.ucPopupSoTGui.KhachHang">Khách hàng</my:String>
+        <my:String x:Key="U.HuyDongVon.Popup.ucPopupSoTGui.Chon">Chọn</my:String>
+        <my:String x:Key="U.HuyDongVon.Popup.ucPopupSoTGui.TongSoSo">Tổng số sổ:</my:String>
+        <my:String x:Key="U.HuyDongVon.Popup.ucPopupSoTGui.TongSoDu">Tổng số dư:</my:String>
+        <my:String x:Key="U.HuyDongVon.Popup.ucPopupSoTGui.SoDuBinhQuan">Số dư bình quân:</my:String>
+        <my:String x:Key="U.HuyDongVon.Popup.ucPopupSoTGui.TimKiem">Tìm kiếm...</my:String>
+        <my:String x:Key="U.HuyDongVon.Popup.ucPopupSoTGui.STT">STT</my:String>
+        <my:String x:Key="U.HuyDongVon.Popup.ucPopupSoTGui.SoSoTienGui">Số sổ tiền gửi</my:String>
+        <my:String x:Key="U.HuyDongVon.Popup.ucPopupSoTGui.MaKH">Mã KH</my:String>
+        <my:String x:Key="U.HuyDongVon.Popup.ucPopupSoTGui.TenKH">Tên KH</my:String>
+        <my:String x:Key="U.HuyDongVon.Popup.ucPopupSoTGui.NgayMoSo">Ngày mở sổ</my:String>
+        <my:String x:Key="U.HuyDongVon.Popup.ucPopupSoTGui.NgayDaoHan">Ngày đáo hạn</my:String>
+        <my:String x:Key="U.HuyDongVon.Popup.ucPopupSoTGui.SoDu">Số dư</my:String>
+        <my:String x:Key="U.HuyDongVon.Popup.ucPopupSoTGui.LaiSuat">Lãi suất</my:String>-->
+    </UserControl.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="5" />
+            <ColumnDefinition Width="4*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <GridSplitter Grid.Column="1" ResizeDirection="Auto" Grid.RowSpan="3" Width="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" ShowsPreview="False">
+        </GridSplitter>
+        <DockPanel LastChildFill="True"  Grid.Column="0" Margin="6,0,0,0">            
+            <telerik:RadTreeView IsLineEnabled="True" IsExpandOnSingleClickEnabled="True"
+				            IsOptionElementsEnabled="True"
+				            x:Name="tvwTree" Padding="5"
+				            IsTriStateMode="True">
+                <telerik:RadTreeViewItem Name="itemSanPham" Header="{DynamicResource U.HuyDongVon.Popup.ucPopupSoTGui.SanPham}" Tag="" />
+                <telerik:RadTreeViewItem Name="itemDonVi" Header="{DynamicResource U.HuyDongVon.Popup.ucPopupSoTGui.KhachHang}" Tag="" />
+            </telerik:RadTreeView>
+        </DockPanel>
+        <Grid Grid.Column="2">
+            <DockPanel Name="spnContent" >
+                <DockPanel HorizontalAlignment="Stretch" DockPanel.Dock="Top" Margin="0,3,0,0" LastChildFill="False" Name="docToolbar">
+                    <WrapPanel Name="Toolbar">
+                        <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbSelect" DockPanel.Dock="Left" Label="{DynamicResource U.HuyDongVon.Popup.ucPopupSoTGui.Chon}" SmallImageSource="/Utilities.Common;component/Images/Action/add.png" Style="{DynamicResource RibbonButton}" Click="tlbSelect_Click" />
+                        <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbSearch" DockPanel.Dock="Left" Label="{DynamicResource U.DungChung.Button.TimKiem}"  SmallImageSource="/Utilities.Common;component/Images/Action/search.png" Style="{DynamicResource RibbonButton}" Click="tlbSearch_Click" />                        
+                        <Label Name="lbl1" Margin="3,0,0,0" DockPanel.Dock="Left" BorderThickness="3" Width="2" BorderBrush="#FF170404" />
+                        <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbHelp" DockPanel.Dock="Left" Label="{DynamicResource U.DungChung.Button.TroGiup}"  SmallImageSource="/Utilities.Common;component/Images/Action/help.png" Style="{DynamicResource RibbonButton}" />
+                        <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbClose" DockPanel.Dock="Left" Label="{DynamicResource U.DungChung.Button.Dong}"  SmallImageSource="/Utilities.Common;component/Images/Action/close.png" Style="{DynamicResource RibbonButton}" Click="tlbClose_Click" />
+                    </WrapPanel>
+                </DockPanel>
+                <Grid DockPanel.Dock="Bottom" Margin="3">
+                    <Grid.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FF889393" Offset="0" />
+                            <GradientStop Color="#FFDEDEDE" Offset="1" />
+                        </LinearGradientBrush>
+                    </Grid.Background>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                        <Label Name="lblLabelSum" HorizontalAlignment="Left" Content="{DynamicResource U.HuyDongVon.Popup.ucPopupSoTGui.TongSoSo}" />
+                        <Label Name="lblSumSoSo" Content="0" HorizontalAlignment="Left"/>
+                        <Label Width="30"/>
+                        <Label HorizontalAlignment="Left" Content="{DynamicResource U.HuyDongVon.Popup.ucPopupSoTGui.TongSoDu}"/>
+                        <Label Name="lblSumSoDu" Content="0" HorizontalAlignment="Left"/>
+                        <Label Width="30"/>
+                        <Label HorizontalAlignment="Left" Content="{DynamicResource U.HuyDongVon.Popup.ucPopupSoTGui.SoDuBinhQuan}"/>
+                        <Label Name="lblSoDuBQ" Content="0" HorizontalAlignment="Left"/>
+                    </StackPanel>
+                    <telerik:RadDataPager Name="radpage" PageSize="10" Grid.Row="1" Source="{Binding Items, ElementName=grSoTienGuiDS}" IsTotalItemCountFixed="True" DisplayMode="All" HorizontalAlignment="Right" HorizontalContentAlignment="Right"/>
+                </Grid>
+                <DockPanel>
+                    <Grid DockPanel.Dock="Top" Margin="3" KeyDown="UserControl_KeyDown">
+                        <DockPanel>
+                            <telerik:RadNumericUpDown DockPanel.Dock="Right" Name="nudPageSize" Width="60" IsInteger="True" Value="10" TabIndex="25" ValueChanged="nudPageSize_ValueChanged" Minimum="1" />
+                            <TextBox Text="{DynamicResource U.HuyDongVon.Popup.ucPopupSoTGui.TimKiem}" Name="txtTimKiemNhanh" LostFocus="txtTimKiemNhanh_LostFocus" GotFocus="txtTimKiemNhanh_GotFocus" KeyDown="txtTimKiemNhanh_KeyDown" TabIndex="24" ></TextBox>
+                        </DockPanel>
+                    </Grid>
+                    <telerik:RadGridView Name="grSoTienGuiDS" ShowGroupPanel="False" Margin="3,0" ItemsSource="{Binding}" SelectionMode="Extended" 
+                AutoGenerateColumns="False" CanUserFreezeColumns="False" RowIndicatorVisibility="Collapsed" DockPanel.Dock="Top" TabIndex="26" MouseDoubleClick="grSoTienGuiDS_MouseDoubleClick">
+                        <telerik:RadGridView.ContextMenu>
+                            <ContextMenu Name="mnuGrid">
+                            </ContextMenu>
+                        </telerik:RadGridView.ContextMenu>
+                        <telerik:RadGridView.Columns>
+                            <telerik:GridViewSelectColumn MaxWidth="20" MinWidth="20" />
+                            <telerik:GridViewDataColumn Header="ID" IsVisible="False" DataMemberBinding="{Binding ID}" IsReadOnly="True"/>
+                            <telerik:GridViewDataColumn Header="{DynamicResource U.HuyDongVon.Popup.ucPopupSoTGui.STT}" DataMemberBinding="{Binding STT}" Width="50" IsReadOnly="True"/>
+                            <telerik:GridViewDataColumn Header="{DynamicResource U.HuyDongVon.Popup.ucPopupSoTGui.SoSoTienGui}" DataMemberBinding="{Binding SO_SO_TG}" Width="1.5*" IsReadOnly="True"/>
+                            <telerik:GridViewDataColumn Header="{DynamicResource U.HuyDongVon.Popup.ucPopupSoTGui.MaKH}"  DataMemberBinding="{Binding MA_KHANG}" Width="*" IsReadOnly="True"/>
+                            <telerik:GridViewDataColumn Header="{DynamicResource U.HuyDongVon.Popup.ucPopupSoTGui.TenKH}"  DataMemberBinding="{Binding TEN_KHANG}"  Width="2*" IsReadOnly="True"/>
+                            <telerik:GridViewDataColumn Header="{DynamicResource U.HuyDongVon.Popup.ucPopupSoTGui.NgayMoSo}"  DataMemberBinding="{Binding NGAY_MO_SO}"  Width="*" IsReadOnly="True"/>
+                            <telerik:GridViewDataColumn Header="{DynamicResource U.HuyDongVon.Popup.ucPopupSoTGui.NgayDaoHan}"  DataMemberBinding="{Binding NGAY_DEN_HAN}"  Width="*" IsReadOnly="True"/>
+                            <telerik:GridViewDataColumn Header="{DynamicResource U.HuyDongVon.Popup.ucPopupSoTGui.SoDu}" DataMemberBinding="{Binding SO_DU}"  Width="*" IsReadOnly="True" DataFormatString="{}{0:N0}" TextAlignment="Right" />
+                            <telerik:GridViewDataColumn Header="{DynamicResource U.HuyDongVon.Popup.ucPopupSoTGui.LaiSuat}" Width="*" DataMemberBinding="{Binding LAI_SUAT}" IsReadOnly="True" DataFormatString="#,##0.00" TextAlignment="Right" />                            
+                        </telerik:RadGridView.Columns>
+                    </telerik:RadGridView>
+                </DockPanel>
+            </DockPanel>
+        </Grid>
+    </Grid>
+</UserControl>

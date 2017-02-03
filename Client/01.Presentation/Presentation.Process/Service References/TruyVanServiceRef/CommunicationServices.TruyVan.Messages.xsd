@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/CommunicationServices.TruyVan.Messages" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/CommunicationServices.TruyVan.Messages" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" />
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/BusinessServices.TruyVan.DTO" />
+  <xs:complexType name="TruyVanRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" base="q1:RequestBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="dtThamSo" nillable="true">
+            <xs:complexType>
+              <xs:annotation>
+                <xs:appinfo>
+                  <ActualType Name="DataTable" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+                </xs:appinfo>
+              </xs:annotation>
+              <xs:sequence>
+                <xs:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                <xs:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element minOccurs="0" name="inquiryName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="objectName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="type" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="typePara" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TruyVanRequest" nillable="true" type="tns:TruyVanRequest" />
+  <xs:complexType name="TruyVanResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" base="q2:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="dsResult" nillable="true">
+            <xs:complexType>
+              <xs:annotation>
+                <xs:appinfo>
+                  <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+                </xs:appinfo>
+              </xs:annotation>
+              <xs:sequence>
+                <xs:element ref="xs:schema" />
+                <xs:any />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TruyVanResponse" nillable="true" type="tns:TruyVanResponse" />
+  <xs:complexType name="DanhSachRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" base="q3:RequestBase">
+        <xs:sequence>
+          <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ListParamValue" nillable="true" type="q4:ArrayOfstring" />
+          <xs:element minOccurs="0" name="MaTruyVan" nillable="true" type="xs:string" />
+          <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/BusinessServices.TruyVan.DTO" minOccurs="0" name="lstCSO" nillable="true" type="q5:ArrayOfCSO_TSO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DanhSachRequest" nillable="true" type="tns:DanhSachRequest" />
+  <xs:complexType name="DanhSachResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q6="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" base="q6:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DataSetSource" nillable="true">
+            <xs:complexType>
+              <xs:annotation>
+                <xs:appinfo>
+                  <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+                </xs:appinfo>
+              </xs:annotation>
+              <xs:sequence>
+                <xs:element ref="xs:schema" />
+                <xs:any />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element minOccurs="0" name="ListHeader" nillable="true" type="tns:ArrayOfHeaderDto" />
+          <xs:element minOccurs="0" name="PropQuantity" type="xs:int" />
+          <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DanhSachResponse" nillable="true" type="tns:DanhSachResponse" />
+  <xs:complexType name="ArrayOfHeaderDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="HeaderDto" nillable="true" type="tns:HeaderDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfHeaderDto" nillable="true" type="tns:ArrayOfHeaderDto" />
+  <xs:complexType name="HeaderDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="LanguageKey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WidthUnit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WidthValue" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="HeaderDto" nillable="true" type="tns:HeaderDto" />
+</xs:schema>

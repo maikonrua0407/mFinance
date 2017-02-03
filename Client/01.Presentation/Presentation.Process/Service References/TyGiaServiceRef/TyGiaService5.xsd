@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/CommunicationServices.TyGia.Messages" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/CommunicationServices.TyGia.Messages" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:1001/TyGiaService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" />
+  <xs:import schemaLocation="http://localhost:1001/TyGiaService.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/BusinessServices.TyGia.DTO" />
+  <xs:import schemaLocation="http://localhost:1001/TyGiaService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" />
+  <xs:complexType name="TyGiaRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" base="q1:RequestBase">
+        <xs:sequence>
+          <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstTyGia" nillable="true" type="q2:ArrayOfDC_TY_GIA" />
+          <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objTyGia" nillable="true" type="q3:DC_TY_GIA" />
+          <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/BusinessServices.TyGia.DTO" minOccurs="0" name="objTyGiaCT" nillable="true" type="q4:TY_GIA_CT" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TyGiaRequest" nillable="true" type="tns:TyGiaRequest" />
+  <xs:complexType name="TyGiaResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q5="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" base="q5:ResponseBase">
+        <xs:sequence>
+          <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstTyGia" nillable="true" type="q6:ArrayOfDC_TY_GIA" />
+          <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objTyGia" nillable="true" type="q7:DC_TY_GIA" />
+          <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/BusinessServices.TyGia.DTO" minOccurs="0" name="objTyGiaCT" nillable="true" type="q8:TY_GIA_CT" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TyGiaResponse" nillable="true" type="tns:TyGiaResponse" />
+</xs:schema>

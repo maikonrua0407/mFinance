@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="1627bd6e-f0da-4d37-9b19-7c49a954c322" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:1001/PhiService.svc/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="42247585-f07f-47bd-ac3a-2517168c4771" SourceId="1" SourceUrl="http://localhost:1001/PhiService.svc/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="5a8d148a-f876-43b5-918f-7ae093cd2342" SourceId="1" SourceUrl="http://localhost:1001/PhiService.svc/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="64265f79-1a19-4824-a1e9-42c71600340f" SourceId="1" SourceUrl="http://localhost:1001/PhiService.svc/mex" />
+    <MetadataFile FileName="CommunicationServices.Phi.Message.xsd" MetadataType="Schema" ID="1f829299-505f-48fc-8333-bf6bab4cd366" SourceId="1" SourceUrl="http://localhost:1001/PhiService.svc/mex" />
+    <MetadataFile FileName="CommunicationMessages.Base.MessageBases.xsd" MetadataType="Schema" ID="5a4b3c3d-a70e-4265-866f-fcb80d54787d" SourceId="1" SourceUrl="http://localhost:1001/PhiService.svc/mex" />
+    <MetadataFile FileName="Utilities.Common.xsd" MetadataType="Schema" ID="7da89a73-968e-4398-81bb-859b5e4d5ec3" SourceId="1" SourceUrl="http://localhost:1001/PhiService.svc/mex" />
+    <MetadataFile FileName="Arrays.xsd" MetadataType="Schema" ID="5ba95827-c8eb-44ba-b92e-182f71257e02" SourceId="1" SourceUrl="http://localhost:1001/PhiService.svc/mex" />
+    <MetadataFile FileName="DataModel.EntityFramework.xsd" MetadataType="Schema" ID="44f69384-7974-4ee8-9a05-ecc1a9e1441f" SourceId="1" SourceUrl="http://localhost:1001/PhiService.svc/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

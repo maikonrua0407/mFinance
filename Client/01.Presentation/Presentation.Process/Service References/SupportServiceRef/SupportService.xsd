@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/CommunicationServices.Support.Messages" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/CommunicationServices.Support.Messages" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:1001/SupportService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" />
+  <xs:import schemaLocation="http://localhost:1001/SupportService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" />
+  <xs:complexType name="SupportServiceRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" base="q1:RequestBase">
+        <xs:sequence>
+          <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstMenu" nillable="true" type="q2:ArrayOfHT_MENU" />
+          <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objMenu" nillable="true" type="q3:HT_MENU" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SupportServiceRequest" nillable="true" type="tns:SupportServiceRequest" />
+  <xs:complexType name="SupportServiceResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q4="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" base="q4:ResponseBase">
+        <xs:sequence>
+          <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstMenu" nillable="true" type="q5:ArrayOfHT_MENU" />
+          <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objMenu" nillable="true" type="q6:HT_MENU" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SupportServiceResponse" nillable="true" type="tns:SupportServiceResponse" />
+</xs:schema>

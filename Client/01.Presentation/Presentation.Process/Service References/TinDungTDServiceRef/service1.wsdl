@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="TinDungTDService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/CommunicationServices.TinDungTD.Messages" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/Utilities.Common" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/BusinessServices.TinDungTD.DTO" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/BusinessServices.Utilities.DTO" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ITinDungTDService_TinDungTieuDung_InputMessage">
+    <wsdl:part name="parameters" element="tns:TinDungTieuDung" />
+  </wsdl:message>
+  <wsdl:message name="ITinDungTDService_TinDungTieuDung_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TinDungTieuDungResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ITinDungTDService">
+    <wsdl:operation name="TinDungTieuDung">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITinDungTDService/TinDungTieuDung" message="tns:ITinDungTDService_TinDungTieuDung_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITinDungTDService/TinDungTieuDungResponse" message="tns:ITinDungTDService_TinDungTieuDung_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="TinDungTDEndpoint" type="tns:ITinDungTDService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="TinDungTieuDung">
+      <soap:operation soapAction="http://tempuri.org/ITinDungTDService/TinDungTieuDung" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TinDungTDService">
+    <wsdl:port name="TinDungTDEndpoint" binding="tns:TinDungTDEndpoint">
+      <soap:address location="http://localhost:1001/TinDungTDService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

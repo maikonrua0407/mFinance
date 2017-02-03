@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:1001/TinDungService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Utilities.Common" />
+  <xs:import schemaLocation="http://localhost:1001/TinDungService.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="RequestBase">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Utilities.Common" minOccurs="0" name="Action" type="q1:DatabaseConstant.Action" />
+      <xs:element minOccurs="0" name="ClientIP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ClientMAC" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Utilities.Common" minOccurs="0" name="ClientType" type="q2:ApplicationConstant.ClientType" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Utilities.Common" minOccurs="0" name="Company" type="q3:ApplicationConstant.DonViSuDung" />
+      <xs:element minOccurs="0" name="DeptCode" nillable="true" type="xs:string" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Utilities.Common" minOccurs="0" name="Function" type="q4:DatabaseConstant.Function" />
+      <xs:element minOccurs="0" name="MngDeptCode" nillable="true" type="xs:string" />
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Utilities.Common" minOccurs="0" name="Module" type="q5:DatabaseConstant.Module" />
+      <xs:element minOccurs="0" name="NgayLamViec" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OprDeptCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RequestDateTime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RequestId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RequestSecurityKey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SessionId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserId" type="xs:int" />
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+      <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Utilities.Common" minOccurs="0" name="UserType" type="q6:BusinessConstant.LoaiNguoiSuDung" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RequestBase" nillable="true" type="tns:RequestBase" />
+  <xs:complexType name="ResponseBase">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClientIP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ClientMAC" nillable="true" type="xs:string" />
+      <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Utilities.Common" minOccurs="0" name="ClientType" type="q7:ApplicationConstant.ClientType" />
+      <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Utilities.Common" minOccurs="0" name="Company" type="q8:ApplicationConstant.DonViSuDung" />
+      <xs:element minOccurs="0" name="DeptCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExceptionObject" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="ResponseDateTime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ResponseDetail" nillable="true" type="tns:ArrayOfResponseDetail" />
+      <xs:element minOccurs="0" name="ResponseId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ResponseMessage" nillable="true" type="xs:string" />
+      <xs:element xmlns:q9="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ResponseMessageData" nillable="true" type="q9:ArrayOfstring" />
+      <xs:element minOccurs="0" name="ResponseSecurityKey" nillable="true" type="xs:string" />
+      <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Utilities.Common" minOccurs="0" name="ResponseStatus" type="q10:ApplicationConstant.ResponseStatus" />
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResponseBase" nillable="true" type="tns:ResponseBase" />
+  <xs:complexType name="ArrayOfResponseDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ResponseDetail" nillable="true" type="tns:ResponseDetail" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfResponseDetail" nillable="true" type="tns:ArrayOfResponseDetail" />
+  <xs:complexType name="ResponseDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Detail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Object" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Operation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Result" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResponseDetail" nillable="true" type="tns:ResponseDetail" />
+</xs:schema>

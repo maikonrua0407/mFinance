@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/CommunicationServices.Utilities.Messages" />
+  <xs:element name="IsWorkingDay">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="value" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsWorkingDayResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IsWorkingDayResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LayNgayHopCum">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idCum" type="xs:int" />
+        <xs:element minOccurs="0" name="ngayDoiChieu" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LayNgayHopCumResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="LayNgayHopCumResult" nillable="true" type="q1:ArrayOfdateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LayNgayHopCumTheoMa">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="maCum" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="maDvi" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ngayDoiChieu" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LayNgayHopCumTheoMaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="LayNgayHopCumTheoMaResult" nillable="true" type="q2:ArrayOfdateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LockData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/CommunicationServices.Utilities.Messages" minOccurs="0" name="request" nillable="true" type="q3:LockRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LockDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/CommunicationServices.Utilities.Messages" minOccurs="0" name="LockDataResult" nillable="true" type="q4:LockResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UnlockData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/CommunicationServices.Utilities.Messages" minOccurs="0" name="request" nillable="true" type="q5:UnlockRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UnlockDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/CommunicationServices.Utilities.Messages" minOccurs="0" name="UnlockDataResult" nillable="true" type="q6:UnlockResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UnlockDataFromFunctionByUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/CommunicationServices.Utilities.Messages" minOccurs="0" name="request" nillable="true" type="q7:UnlockRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UnlockDataFromFunctionByUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/CommunicationServices.Utilities.Messages" minOccurs="0" name="UnlockDataFromFunctionByUserResult" nillable="true" type="q8:UnlockResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UnlockDataFromUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/CommunicationServices.Utilities.Messages" minOccurs="0" name="request" nillable="true" type="q9:UnlockRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UnlockDataFromUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/CommunicationServices.Utilities.Messages" minOccurs="0" name="UnlockDataFromUserResult" nillable="true" type="q10:UnlockResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckDuplicateData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/CommunicationServices.Utilities.Messages" minOccurs="0" name="request" nillable="true" type="q11:CheckDuplicateRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckDuplicateDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/CommunicationServices.Utilities.Messages" minOccurs="0" name="CheckDuplicateDataResult" nillable="true" type="q12:CheckDuplicateResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LayGiaTriThamSo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/CommunicationServices.Utilities.Messages" minOccurs="0" name="request" nillable="true" type="q13:ThamSoRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LayGiaTriThamSoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/CommunicationServices.Utilities.Messages" minOccurs="0" name="LayGiaTriThamSoResult" nillable="true" type="q14:ThamSoResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LayThamSo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/CommunicationServices.Utilities.Messages" minOccurs="0" name="request" nillable="true" type="q15:ThamSoRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LayThamSoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/CommunicationServices.Utilities.Messages" minOccurs="0" name="LayThamSoResult" nillable="true" type="q16:ThamSoResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Utilites">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/CommunicationServices.Utilities.Messages" minOccurs="0" name="request" nillable="true" type="q17:UtilitiesRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UtilitesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/CommunicationServices.Utilities.Messages" minOccurs="0" name="UtilitesResult" nillable="true" type="q18:UtilitiesResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

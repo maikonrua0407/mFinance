@@ -1,0 +1,13 @@
+MaChiNhanh	string	255
+TenChiNhanh	string	255
+MaPhongGD	string	255
+TenPhongGD	string	255
+SoTaiKhoan	string	255
+TenTaiKhoan	string	255
+SoTKDoiUng_No	string	255
+SoTKDoiUng_Co	string	255
+TenTKDoiUng	string	255
+SoTienPS_No	number
+SoTienPS_Co	number
+DuDauKy 	number
+DuCuoiKy	number

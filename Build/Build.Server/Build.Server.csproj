@@ -1,0 +1,836 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{28894BBE-980A-460D-90FE-780E7366C49D}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Build.Server</RootNamespace>
+    <AssemblyName>Build.Server</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Dev\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="Hosts.Startup, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dev\Hosts.Startup.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Dev\mfServer\app\bin\" />
+    <Folder Include="Dev\mfServer\logs\" />
+    <Folder Include="Dev\mfServer\reports\_BTRE\NSTL\" />
+    <Folder Include="Dev\mfServer\reports\_BTRE\QLTS\" />
+    <Folder Include="Dev\mfServer\reports\_DC\BCTH\" />
+    <Folder Include="Dev\mfServer\reports\_DC\KHTV\" />
+    <Folder Include="Dev\mfServer\reports\_DC\NSTL\" />
+    <Folder Include="Dev\mfServer\reports\_DC\QLTS\" />
+    <Folder Include="Dev\mfServer\temp\lapkehoach\" />
+    <Folder Include="Dev\mfServer\version\client\default\" />
+    <Folder Include="Dev\mfServer\version\client\ota\" />
+    <Folder Include="Dev\mfServer\version\server\backup\" />
+    <Folder Include="Dev\mfServer\version\server\current\" />
+    <Folder Include="Dev\mfServer\version\server\default\" />
+    <Folder Include="Dev\mfServer\version\server\ota\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Dev\mfServer\config\config.conf" />
+    <None Include="Dev\mfServer\config\configPlainText.conf" />
+    <None Include="Dev\mfServer\config\log.conf" />
+    <None Include="Dev\mfServer\config\logData.conf">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Dev\mfServer\reports\BCTC\BCTC_BANG_CAN_DOI_KE_TOAN_vi-VN.xls" />
+    <None Include="Dev\mfServer\reports\BCTC\BCTC_KET_QUA_HOAT_DONG_vi-VN.xls" />
+    <None Include="Dev\mfServer\reports\BCTC\BCTC_KET_QUA_HOAT_DONG_en-US.xls" />
+    <None Include="Dev\mfServer\reports\BCTC\BCTC_BANG_CAN_DOI_KE_TOAN_en-US.xls" />
+    <None Include="Dev\mfServer\reports\BCTH\BCTH_BANG_CHI_SO_PEAL_vi-VN.xls" />
+    <None Include="Dev\mfServer\reports\BCTH\BCTH_BANG_CHI_SO_PEAL_en-US.xls" />
+    <None Include="Dev\mfServer\reports\BCTH\BCTH_BAO_CAO_VAN_HANH.xls" />
+    <None Include="Dev\mfServer\reports\BCTH\BCTH_BC_TIEN_DO.xls" />
+    <None Include="Dev\mfServer\reports\BCTH\BCTH_BC_TIEN_DO_en-US.xls" />
+    <None Include="Dev\mfServer\reports\BCTH\BCTH_BC_TIEN_DO_vi-VN.xls" />
+    <None Include="Dev\mfServer\reports\BCTH\BCTH_BC_VAN_HANH_CNHANH.xls" />
+    <None Include="Dev\mfServer\reports\BCTH\BCTH_BC_VAN_HANH_CNHANH_en-US.xls" />
+    <None Include="Dev\mfServer\reports\BCTH\BCTH_BC_VAN_HANH_CNHANH_vi-VN.xls" />
+    <None Include="Dev\mfServer\reports\BCTH\BCTH_BC_VAN_HANH_DVI.xls" />
+    <None Include="Dev\mfServer\reports\BCTH\BCTH_BC_VAN_HANH_DVI_en-US.xls" />
+    <None Include="Dev\mfServer\reports\BCTH\BCTH_BC_VAN_HANH_DVI_vi-VN.xls" />
+    <None Include="Dev\mfServer\reports\BCTH\BCTH_KH_THU_CHI_TIEN_MAT_TRONG_THANG.xls" />
+    <None Include="Dev\mfServer\reports\BCTH\BCTH_KH_THU_CHI_TIEN_MAT_TRONG_THANG_en-US.xls" />
+    <None Include="Dev\mfServer\reports\BCTH\BCTH_THONG_KE_TH_vi-VN.xls" />
+    <None Include="Dev\mfServer\reports\BCTH\BCTH_THONG_KE_TH_en-US.xls" />
+    <None Include="Dev\mfServer\reports\BCTH\BCTH_KH_THU_CHI_TIEN_MAT_TRONG_THANG_vi-VN.xls" />
+    <None Include="Dev\mfServer\reports\BCTH\BCTH_TH_THU_CHI_vi-VN.xls" />
+    <None Include="Dev\mfServer\reports\BCTH\BCTH_TH_THU_CHI_en-US.xls" />
+    <None Include="Dev\mfServer\reports\BCTH\BCTH_TH_LICH_SU.xls" />
+    <None Include="Dev\mfServer\reports\BCTK\BCTK_THONG_KE_HO_NGHEO_CAN_NGHEO.xls" />
+    <None Include="Dev\mfServer\reports\BHTH\YeuCauBaoHiem.doc" />
+    <None Include="Dev\mfServer\reports\GDKT\BangCanDoiNoiBang_en-US.xls" />
+    <None Include="Dev\mfServer\reports\GDKT\BangCanDoiNoiBang_vi-VN.xls" />
+    <None Include="Dev\mfServer\reports\GDKT\GDKT_BANG_CAN_DOI_KE_TOAN.rpt" />
+    <None Include="Dev\mfServer\reports\GDKT\GDKT_KET_QUA_KINH_DOANH.rpt" />
+    <None Include="Dev\mfServer\reports\GDKT\GDKT_LUU_CHUYEN_TIEN_TE_vi-VN.xls" />
+    <None Include="Dev\mfServer\reports\GDKT\GDKT_LUU_CHUYEN_TIEN_TE_en-US.xls" />
+    <None Include="Dev\mfServer\reports\GDKT\GDKT_PHIEU_CHI.docx" />
+    <None Include="Dev\mfServer\reports\GDKT\GDKT_PHIEU_KE_TOAN.docx" />
+    <None Include="Dev\mfServer\reports\GDKT\GDKT_PHIEU_THU.docx" />
+    <None Include="Dev\mfServer\reports\GDKT\GDKT_SO_CT_TAI_KHOAN_CONG_NO.xls" />
+    <None Include="Dev\mfServer\reports\GDKT\GDKT_SO_CT_TAI_KHOAN_CONG_NO_vi-VN.rpt" />
+    <None Include="Dev\mfServer\reports\GDKT\GDKT_SO_CT_TAI_KHOAN_CONG_NO_en-US.rpt" />
+    <None Include="Dev\mfServer\reports\GDKT\GDKT_SO_NHAT_KY_CHUNG.xls" />
+    <None Include="Dev\mfServer\reports\GDKT\GDKT_SO_THEO_DOI_CT_NVON_KDOANH.xlsx" />
+    <None Include="Dev\mfServer\reports\GDKT\GDKT_SO_THEO_DOI_CT_NVON_KDOANH_en-US.rpt" />
+    <None Include="Dev\mfServer\reports\GDKT\GDKT_SO_THEO_DOI_CT_NVON_KDOANH_vi-VN.rpt" />
+    <None Include="Dev\mfServer\reports\BCTH\BCTH_BANG_CHI_SO_PEAL.xls" />
+    <None Include="Dev\mfServer\reports\GDKT\GDKT_SO_TH_CONG_NO_PHAI_THU.rpt" />
+    <None Include="Dev\mfServer\reports\GDKT\GDKT_SO_TH_CONG_NO_PHAI_THU_en-US.rpt" />
+    <None Include="Dev\mfServer\reports\GDKT\GDKT_SO_TH_CONG_NO_PHAI_THU_vi-VN.rpt" />
+    <None Include="Dev\mfServer\reports\GDKT\GDKT_SO_TH_CONG_NO_PHAI_TRA.rpt" />
+    <None Include="Dev\mfServer\reports\GDKT\GDKT_SO_TH_CONG_NO_PHAI_TRA_en-US.rpt" />
+    <None Include="Dev\mfServer\reports\GDKT\GDKT_SO_TH_CONG_NO_PHAI_TRA_vi-VN.rpt" />
+    <None Include="Dev\mfServer\reports\GDKT\GDKT_SO_TH_CONG_NO_TAM_UNG.rpt" />
+    <None Include="Dev\mfServer\reports\GDKT\GDKT_SO_TH_CONG_NO_TAM_UNG_en-US.rpt" />
+    <None Include="Dev\mfServer\reports\GDKT\GDKT_SO_TH_CONG_NO_TAM_UNG_vi-VN.rpt" />
+    <None Include="Dev\mfServer\reports\GDKT\GDKT_SO_TH_TKHOAN_THEO_DOI_UNG.rpt" />
+    <None Include="Dev\mfServer\reports\GDKT\GDKT_SO_TH_TKHOAN_THEO_DOI_UNG.xlsx" />
+    <None Include="Dev\mfServer\reports\GDKT\GDKT_SO_TH_TKHOAN_THEO_DOI_UNG_en-US.rpt" />
+    <None Include="Dev\mfServer\reports\GDKT\GDKT_SO_TH_TKHOAN_THEO_DOI_UNG_vi-VN.rpt" />
+    <None Include="Dev\mfServer\reports\GDKT\GDKT_SO_TIEN_GUI_NGAN_HANG.rpt" />
+    <None Include="Dev\mfServer\reports\GDKT\GDKT_SO_TIEN_GUI_NGAN_HANG.ttx" />
+    <None Include="Dev\mfServer\reports\GDKT\GDKT_UY_NHIEM_CHI.docx" />
+    <None Include="Dev\mfServer\reports\HDVO\HDVO_BANG_KE_TKCKH.xlsx" />
+    <None Include="Dev\mfServer\reports\HDVO\HDVO_BANG_KE_TKQD_TKKKH.xlsx" />
+    <None Include="Dev\mfServer\reports\HDVO\HDVO_BANG_THOP_CPHI_LAI_TGUI_CKH_THEO_CN.xls" />
+    <None Include="Dev\mfServer\reports\HDVO\HDVO_BANG_THOP_CPHI_LAI_TGUI_CKH_THEO_PGD.xls" />
+    <None Include="Dev\mfServer\reports\HDVO\HDVO_BANG_THOP_DCHI_TRA_TKIEM_CKH_THEO_CN.xls" />
+    <None Include="Dev\mfServer\reports\HDVO\HDVO_BANG_THOP_DCHI_TRA_TKIEM_CKH_THEO_PGD.xls" />
+    <None Include="Dev\mfServer\reports\HDVO\HDVO_BANG_THOP_SDU_GOC_TKIEM_CKH_THEO_XA.xls" />
+    <None Include="Dev\mfServer\reports\HDVO\HDVO_BANG_TINH_LAI_TGUI_CKH.xls" />
+    <None Include="Dev\mfServer\reports\HDVO\HDVO_BANG_TINH_LAI_TGUI_CKH_THEO_KH.xls" />
+    <None Include="Dev\mfServer\reports\HDVO\HDVO_BANG_XAC_NHAN_SO_DU_TK_NHOM_BB_KKH.rpt" />
+    <None Include="Dev\mfServer\reports\HDVO\HDVO_BANG_XAC_NHAN_SO_DU_TK_NHOM_BB_KKH_en-US.rpt" />
+    <None Include="Dev\mfServer\reports\HDVO\HDVO_BANG_XAC_NHAN_SO_DU_TK_NHOM_BB_KKH_vi-VN.rpt" />
+    <None Include="Dev\mfServer\reports\HDVO\HDVO_DS_TRA_TK.xls" />
+    <None Include="Dev\mfServer\reports\HDVO\HDVO_SO_PHU_TIEN_GUI.xlsx" />
+    <None Include="Dev\mfServer\reports\HDVO\HDVO_SO_THEO_DOI_TK_vi-VN.xls" />
+    <None Include="Dev\mfServer\reports\HDVO\HDVO_SO_THEO_DOI_TK_en-US.xls" />
+    <None Include="Dev\mfServer\reports\HDVO\HDVO_BANG_XAC_NHAN_SO_DU_TK_NHOM_vi-VN.rpt" />
+    <None Include="Dev\mfServer\reports\HDVO\HDVO_BANG_XAC_NHAN_SO_DU_TK_PGD_vi-VN.rpt" />
+    <None Include="Dev\mfServer\reports\HDVO\HDVO_BANG_XAC_NHAN_SO_DU_TK_NHOM_en-US.rpt" />
+    <None Include="Dev\mfServer\reports\HDVO\HDVO_BANG_XAC_NHAN_SO_DU_TK_PGD_en-US.rpt" />
+    <None Include="Dev\mfServer\reports\HDVO\HDVO_BANG_XAC_NHAN_SO_DU_TK_CUM_vi-VN.rpt" />
+    <None Include="Dev\mfServer\reports\HDVO\HDVO_BANG_XAC_NHAN_SO_DU_TK_CUM_en-US.rpt" />
+    <None Include="Dev\mfServer\reports\GDKT\GDKT_BANG_CAN_DOI_NGOAI_BANG.rpt" />
+    <None Include="Dev\mfServer\reports\GDKT\GDKT_BANG_CAN_DOI_NGOAI_BANG_en-US.rpt" />
+    <None Include="Dev\mfServer\reports\GDKT\GDKT_BANG_CAN_DOI_NGOAI_BANG_vi-VN.rpt" />
+    <None Include="Dev\mfServer\reports\BHTH\BaoVeVonVay.rpt" />
+    <None Include="Dev\mfServer\reports\BHTH\ChiTraNhanTho.rpt" />
+    <None Include="Dev\mfServer\reports\BHTH\ChiTraTuVong.rpt" />
+    <None Include="Dev\mfServer\reports\BHTH\HoTroMoDe.rpt" />
+    <None Include="Dev\mfServer\reports\BHTH\ThuChi.rpt" />
+    <None Include="Dev\mfServer\reports\BHTH\TienDo.rpt" />
+    <None Include="Dev\mfServer\reports\BHTH\XoaNoVonVay.rpt" />
+    <None Include="Dev\mfServer\reports\GDKT\BangCanDoiNoiBang.xls" />
+    <None Include="Dev\mfServer\reports\GDKT\BangCanDoiTaiKhoanKeToan.rpt" />
+    <None Include="Dev\mfServer\reports\GDKT\GDKT_BANG_KE_TIEN_MAT.rpt" />
+    <None Include="Dev\mfServer\reports\GDKT\GDKT_BANG_KE_TIEN_MAT.ttx" />
+    <None Include="Dev\mfServer\reports\GDKT\GDKT_BANG_CAN_DOI_NGOAI_BANG.ttx" />
+    <None Include="Dev\mfServer\reports\GDKT\DsTaiKhoanNgoaiBangCanDoi.rpt" />
+    <None Include="Dev\mfServer\reports\GDKT\DsTaiKhoanNgoaiBangCanDoi.ttx" />
+    <None Include="Dev\mfServer\reports\GDKT\GDKT_GIAY_GUI_TIEN_TIET_KIEM.rpt" />
+    <None Include="Dev\mfServer\reports\GDKT\GDKT_GIAY_GUI_TIEN_TIET_KIEM.ttx" />
+    <None Include="Dev\mfServer\reports\GDKT\GDKT_LUU_CHUYEN_TIEN_TE.xls" />
+    <None Include="Dev\mfServer\reports\GDKT\NhatKyThuTien.ttx" />
+    <None Include="Dev\mfServer\reports\GDKT\PhieuChi_en-US.rpt" />
+    <None Include="Dev\mfServer\reports\GDKT\PhieuChi_vi-VN.rpt" />
+    <None Include="Dev\mfServer\reports\GDKT\PhieuHachToan_en-US.rpt" />
+    <None Include="Dev\mfServer\reports\GDKT\PhieuHachToan_vi-VN.rpt" />
+    <None Include="Dev\mfServer\reports\GDKT\PhieuThu_en-US.rpt" />
+    <None Include="Dev\mfServer\reports\GDKT\PhieuThu_vi-VN.rpt" />
+    <None Include="Dev\mfServer\reports\GDKT\GDKT_SO_CT_TAI_KHOAN_CONG_NO.ttx" />
+    <None Include="Dev\mfServer\reports\GDKT\GDKT_SO_THEO_DOI_CT_NVON_KDOANH.ttx" />
+    <None Include="Dev\mfServer\reports\GDKT\SoTongHopTaiKhoanCongNo.rpt" />
+    <None Include="Dev\mfServer\reports\GDKT\SoTongHopTaiKhoanCongNo.ttx" />
+    <None Include="Dev\mfServer\reports\HDVO\HDVO_BANG_XAC_NHAN_SO_DU_TK.ttx" />
+    <None Include="Dev\mfServer\reports\HDVO\BangKeTKCKH.ttx" />
+    <None Include="Dev\mfServer\reports\HDVO\BangKeTKCKH_en-US.rpt" />
+    <None Include="Dev\mfServer\reports\HDVO\BangKeTKCKH_vi-VN.rpt" />
+    <None Include="Dev\mfServer\reports\HDVO\SoPhuTienGui.ttx" />
+    <None Include="Dev\mfServer\reports\HDVO\HDVO_SO_THEO_DOI_TK.xls" />
+    <None Include="Dev\mfServer\reports\HDVO\SoTietKiemCoKyHan.rpt" />
+    <None Include="Dev\mfServer\reports\HDVO\SoTietKiemCoKyHan_en-US.rpt" />
+    <None Include="Dev\mfServer\reports\GDKT\NhatKyChiTien.rpt" />
+    <None Include="Dev\mfServer\reports\GDKT\NhatKyChung.rpt" />
+    <None Include="Dev\mfServer\reports\GDKT\NhatKyThuTien.rpt" />
+    <None Include="Dev\mfServer\reports\GDKT\PhieuChi.rpt" />
+    <None Include="Dev\mfServer\reports\GDKT\PhieuHachToan.rpt" />
+    <None Include="Dev\mfServer\reports\GDKT\PhieuThu.rpt" />
+    <None Include="Dev\mfServer\reports\GDKT\SoCaiTaiKhoan.rpt" />
+    <None Include="Dev\mfServer\reports\GDKT\SoChiTietTaiKhoan.rpt" />
+    <None Include="Dev\mfServer\reports\GDKT\SoQuyTienMat.rpt" />
+    <None Include="Dev\mfServer\reports\HDVO\BangKeTKQDVaTKKKH.ttx" />
+    <None Include="Dev\mfServer\reports\HDVO\BangKeTKQDVaTKKKH_en-US.rpt" />
+    <None Include="Dev\mfServer\reports\HDVO\SoPhuTienGui.rpt" />
+    <None Include="Dev\mfServer\reports\HDVO\SoTietKiemCoKyHan_vi-VN.rpt" />
+    <None Include="Dev\mfServer\reports\HDVO\TongHopTKCKH.rpt" />
+    <None Include="Dev\mfServer\reports\HDVO\TongHopTKCKH.ttx" />
+    <None Include="Dev\mfServer\reports\KHTV\ChiTieuHoKHTV.rpt" />
+    <None Include="Dev\mfServer\reports\KHTV\ChiTieuHoKHTV.ttx" />
+    <None Include="Dev\mfServer\reports\KHTV\ChiTieuHoKHTV_vi-VN.rpt" />
+    <None Include="Dev\mfServer\reports\KHTV\DsKHCN.rpt" />
+    <None Include="Dev\mfServer\reports\KHTV\DsKHTC.rpt" />
+    <None Include="Dev\mfServer\reports\KHTV\DsKHTV.rpt" />
+    <None Include="Dev\mfServer\reports\KHTV\DsKHTVRaKhoiNhom_en-US.rpt" />
+    <None Include="Dev\mfServer\reports\KHTV\DsKHTVRaKhoiNhom_vi-VN.rpt" />
+    <None Include="Dev\mfServer\reports\KHTV\KHTV_CHI_TIEU_HOKHTV.xlsx" />
+    <None Include="Dev\mfServer\reports\KHTV\KHTV_DAC_DIEM_HOKHTV.rpt" />
+    <None Include="Dev\mfServer\reports\KHTV\KHTV_DAC_DIEM_HOKHTV.xlsx" />
+    <None Include="Dev\mfServer\reports\KHTV\KHTV_DAC_DIEM_HOKHTV_en-US.rpt" />
+    <None Include="Dev\mfServer\reports\KHTV\KHTV_DAC_DIEM_HOKHTV_vi-VN.rpt" />
+    <None Include="Dev\mfServer\reports\KHTV\DanhSachKhachHangLaToChuc_en-US.rpt" />
+    <None Include="Dev\mfServer\reports\KHTV\KHTV_DS_KHCN.xlsx" />
+    <None Include="Dev\mfServer\reports\KHTV\KHTV_DS_KHTC.xlsx" />
+    <None Include="Dev\mfServer\reports\KHTV\KHTV_DS_KHTV.xlsx" />
+    <None Include="Dev\mfServer\reports\KHTV\KHTV_DS_KHTV_RA_KHOI_NHOM.xlsx" />
+    <None Include="Dev\mfServer\reports\KHTV\KHTV_NGUYEN_NHAN_RA_KHOI_NHOM.xlsx" />
+    <None Include="Dev\mfServer\reports\KHTV\KHTV_PHIEU_XEP_HANG_TD.doc" />
+    <None Include="Dev\mfServer\reports\KHTV\KHTV_TANG_TRUONG_KT_KHTV.rpt" />
+    <None Include="Dev\mfServer\reports\KHTV\DanhSachKhachHangLaToChuc.ttx" />
+    <None Include="Dev\mfServer\reports\KHTV\DanhSachKhachHangLaToChuc_vi-VN.rpt" />
+    <None Include="Dev\mfServer\reports\KHTV\DsKHTC.ttx" />
+    <None Include="Dev\mfServer\reports\KHTV\DsKHTV.ttx" />
+    <None Include="Dev\mfServer\reports\KHTV\DsKHTVRaKhoiNhom.rpt" />
+    <None Include="Dev\mfServer\reports\KHTV\DsKHTV_en-US.rpt" />
+    <None Include="Dev\mfServer\reports\KHTV\DsKHTV_vi-VN.rpt" />
+    <None Include="Dev\mfServer\reports\KHTV\KHTV_TANG_TRUONG_KT_KHTV.xlsx" />
+    <None Include="Dev\mfServer\reports\KHTV\KHTV_TANG_TRUONG_KT_KHTV_en-US.rpt" />
+    <None Include="Dev\mfServer\reports\KHTV\KHTV_NGUYEN_NHAN_RA_KHOI_NHOM.rpt" />
+    <None Include="Dev\mfServer\reports\KHTV\KHTV_THU_NHAP_HOKHTV.xlsx" />
+    <None Include="Dev\mfServer\reports\KHTV\PhieuDanhGia.doc" />
+    <None Include="Dev\mfServer\reports\KHTV\PhieuDanhGia.rpt" />
+    <None Include="Dev\mfServer\reports\KHTV\PhieuKhaoSat.doc" />
+    <None Include="Dev\mfServer\reports\KHTV\PhieuKhaoSat.rpt" />
+    <None Include="Dev\mfServer\reports\KHTV\PhieuKhaoSat_en-US.doc" />
+    <None Include="Dev\mfServer\reports\KHTV\PhieuKhaoSat_vi-VN.doc" />
+    <None Include="Dev\mfServer\reports\KHTV\PhieuXepHangTD.rpt" />
+    <None Include="Dev\mfServer\reports\KHTV\KHTV_TANG_TRUONG_KT_KHTV.ttx" />
+    <None Include="Dev\mfServer\reports\KHTV\KHTV_TANG_TRUONG_KT_KHTV_vi-VN.rpt" />
+    <None Include="Dev\mfServer\reports\KHTV\subPhieuKhaoSat.rpt" />
+    <None Include="Dev\mfServer\reports\KHTV\subPhieuKhaoSat1.rpt" />
+    <None Include="Dev\mfServer\reports\KHTV\ThuNhapHoKHTV.rpt" />
+    <None Include="Dev\mfServer\reports\KHTV\ThuNhapHoKHTV.ttx" />
+    <None Include="Dev\mfServer\reports\KHTV\ThuNhapHoKHTV_vi-VN.rpt" />
+    <None Include="Dev\mfServer\reports\KHTV\KHTV_PHIEU_XEP_HANG_TD.rpt" />
+    <None Include="Dev\mfServer\reports\KHTV\KHTV_PHIEU_XEP_HANG_TD.ttx" />
+    <None Include="Dev\mfServer\reports\NSTL\MF_RT_NSTL_HOP_DONG_HOC_VIEC.doc" />
+    <None Include="Dev\mfServer\reports\NSTL\MF_RT_NSTL_HOP_DONG_HOC_VIEC_vi-VN.doc" />
+    <None Include="Dev\mfServer\reports\NSTL\MF_RT_NSTL_HOP_DONG_LAO_DONG.doc" />
+    <None Include="Dev\mfServer\reports\NSTL\MF_RT_NSTL_HOP_DONG_LAO_DONG_vi-VN.doc" />
+    <None Include="Dev\mfServer\reports\NSTL\MF_RT_NSTL_HOP_DONG_THU_VIEC.doc" />
+    <None Include="Dev\mfServer\reports\NSTL\MF_RT_NSTL_HOP_DONG_THU_VIEC_vi-VN.doc" />
+    <None Include="Dev\mfServer\reports\NSTL\NSTL_PHU_CAP_CUM_TRUONG.rpt" />
+    <None Include="Dev\mfServer\reports\NSTL\NSTL_PHU_CAP_CUM_TRUONG.xls" />
+    <None Include="Dev\mfServer\reports\QTHT\BaoCaoKiemSoat.rpt" />
+    <None Include="Dev\mfServer\reports\QTHT\BaoCaoKiemSoat.ttx" />
+    <None Include="Dev\mfServer\reports\GDKT\GDKT_SO_THEO_DOI_CT_NVON_KDOANH.rpt" />
+    <None Include="Dev\mfServer\reports\GDKT\GDKT_SO_CT_TAI_KHOAN_CONG_NO.rpt" />
+    <None Include="Dev\mfServer\reports\TDVM\BcChamTra.rpt" />
+    <None Include="Dev\mfServer\reports\TDVM\TDVM_BC_PHAN_LOAI_NO_en-US.xls" />
+    <None Include="Dev\mfServer\reports\TDVM\HDTD.doc" />
+    <None Include="Dev\mfServer\reports\TDVM\KheUocNhanNo.doc" />
+    <None Include="Dev\mfServer\reports\TDVM\RT_TDVM_KUOCVM_NHAN_NO_00.rpt" />
+    <None Include="Dev\mfServer\reports\TDVM\RT_TDVM_KUOCVM_PHAN_KY_00.rpt" />
+    <None Include="Dev\mfServer\reports\TDVM\TDVM_BANG_THOP_PHAT_VON_VAY_THEO_CN.xls" />
+    <None Include="Dev\mfServer\reports\TDVM\TDVM_BANG_THOP_PHAT_VON_VAY_THEO_PGD.xls" />
+    <None Include="Dev\mfServer\reports\TDVM\TDVM_BANG_THOP_TINH_LAI_THEO_CN.xls" />
+    <None Include="Dev\mfServer\reports\TDVM\TDVM_BANG_THOP_TINH_LAI_THEO_PGD.xls" />
+    <None Include="Dev\mfServer\reports\TDVM\TDVM_BANG_XAC_NHAN_SO_DU_VAY_VON.ttx" />
+    <None Include="Dev\mfServer\reports\TDVM\TDVM_BANG_XAC_NHAN_SO_DU_VAY_VON_CN.rpt" />
+    <None Include="Dev\mfServer\reports\TDVM\TDVM_BANG_XAC_NHAN_SO_DU_VAY_VON_CUM.rpt" />
+    <None Include="Dev\mfServer\reports\TDVM\TDVM_BANG_XAC_NHAN_SO_DU_VAY_VON_PGD.rpt" />
+    <None Include="Dev\mfServer\reports\TDVM\TDVM_BAO_NO_CUM.xls" />
+    <None Include="Dev\mfServer\reports\TDVM\TDVM_BAO_NO_THANH_VIEN.xls" />
+    <None Include="Dev\mfServer\reports\TDVM\TDVM_BAO_NO_TONG.xls" />
+    <None Include="Dev\mfServer\reports\TDVM\TDVM_BAO_NO_TONG_CHI_TIET.xls" />
+    <None Include="Dev\mfServer\reports\TDVM\TDVM_BC_PHAN_LOAI_NO_vi-VN.xls" />
+    <None Include="Dev\mfServer\reports\TDVM\TDVM_BC_PHAN_LOAI_NO_CN.rpt" />
+    <None Include="Dev\mfServer\reports\TDVM\TDVM_BC_PHAN_LOAI_NO_PGD.rpt" />
+    <None Include="Dev\mfServer\reports\TDVM\TDVM_BC_PHAN_LOAI_NO_THT.rpt" />
+    <None Include="Dev\mfServer\reports\TDVM\TDVM_BKE_CNO_TVIEN_THEO_CN.xls" />
+    <None Include="Dev\mfServer\reports\TDVM\TDVM_BKE_CNO_TVIEN_THEO_CUM.xls" />
+    <None Include="Dev\mfServer\reports\TDVM\TDVM_BKE_CNO_TVIEN_THEO_PGD.xls" />
+    <None Include="Dev\mfServer\reports\TDVM\TDVM_BKE_CNO_TVIEN_THEO_XA.xls" />
+    <None Include="Dev\mfServer\reports\TDVM\TDVM_DS_KHTV_NHAN_VON_00.xls" />
+    <None Include="Dev\mfServer\reports\TDVM\DsKHTVNhanVon.rpt" />
+    <None Include="Dev\mfServer\reports\TDVM\RT_TDVM_KUOCVM_00.rpt" />
+    <None Include="Dev\mfServer\reports\TDVM\RT_TDVM_KUOCVM_00.ttx" />
+    <None Include="Dev\mfServer\reports\TDVM\HDTD.rpt" />
+    <None Include="Dev\mfServer\reports\TDVM\HoaDonThuTienKy.rpt" />
+    <None Include="Dev\mfServer\reports\TDVM\HoaDonThuTienKy.ttx" />
+    <None Include="Dev\mfServer\reports\TDVM\HoaDonThuTienKy.xls" />
+    <None Include="Dev\mfServer\reports\TDVM\HoaDonThuTienKy_en-US.rpt" />
+    <None Include="Dev\mfServer\reports\TDVM\HoaDonThuTienKy_vi-VN.rpt" />
+    <None Include="Dev\mfServer\reports\TDVM\KheUocNhanNo.rpt" />
+    <None Include="Dev\mfServer\reports\TDVM\KheUocNhanNo_KeHoachTraNo.rpt" />
+    <None Include="Dev\mfServer\reports\TDVM\TDVM_PHIEU_THAM_DINH_VON_VAY.doc" />
+    <None Include="Dev\mfServer\reports\TDVM\TDVM_PHIEU_THAM_DINH_VON_VAY.rpt" />
+    <None Include="Dev\mfServer\reports\TDVM\TDVM_PHIEU_THAM_DINH_VON_VAY.ttx" />
+    <None Include="Dev\mfServer\reports\TDVM\TDVM_PHIEU_THEO_DOI_HOAN_TRA_CUM.xls" />
+    <None Include="Dev\mfServer\reports\TDVM\TDVM_PHIEU_THEO_DOI_HOAN_TRA_TVIEN.xls" />
+    <None Include="Dev\mfServer\reports\TDVM\SaoKeTH.ttx" />
+    <None Include="Dev\mfServer\reports\TDVM\SaoKeVonTietKiemCum.xls" />
+    <None Include="Dev\mfServer\reports\TDVM\SaoKeVonTietKiemKH.xls" />
+    <None Include="Dev\mfServer\reports\TDVM\ThongKeTH.rpt" />
+    <None Include="Dev\mfServer\reports\BCTH\BCTH_THONG_KE_TH.xls" />
+    <None Include="Dev\mfServer\reports\HDVO\HDVO_BANG_XAC_NHAN_SO_DU_TK_CUM.rpt" />
+    <None Include="Dev\mfServer\reports\HDVO\HDVO_BANG_XAC_NHAN_SO_DU_TK_NHOM.rpt" />
+    <None Include="Dev\mfServer\reports\HDVO\HDVO_BANG_XAC_NHAN_SO_DU_TK_PGD.rpt" />
+    <None Include="Dev\mfServer\reports\BCTH\BCTH_TH_THU_CHI.xls" />
+    <None Include="Dev\mfServer\reports\ttx\BCHD.ttx" />
+    <None Include="Dev\mfServer\reports\ttx\InSaoKe_KhuVuc.ttx" />
+    <None Include="Dev\mfServer\reports\ttx\NKQuy.ttx" />
+    <None Include="Dev\mfServer\reports\ttx\Reporst.ttx" />
+    <None Include="Dev\mfServer\reports\ttx\rptA01A.ttx" />
+    <None Include="Dev\mfServer\reports\ttx\rptB021.ttx" />
+    <None Include="Dev\mfServer\reports\_BIDV\BCTH\BCTH_BAO_CAO_PHAN_LOAI_NO.xlsx" />
+    <None Include="Dev\mfServer\reports\_BIDV\BCTH\BCTH_CREDIT_STATEMENT.xlsx" />
+    <None Include="Dev\mfServer\reports\_BIDV\BCTK\BCTK_NGANH_NGHE_MMSC.xlsx" />
+    <None Include="Dev\mfServer\reports\_BIDV\BCTK\BCTK_THEO_NGANH_NGHE_LUY_KE.xlsx" />
+    <None Include="Dev\mfServer\reports\_BIDV\BCTK\BCTK_THEO_NGANH_NGHE_THOI_DIEM.xlsx" />
+    <None Include="Dev\mfServer\reports\_BIDV\BCTK\BCTK_THEO_DOANH_SO_LUY_KE.xlsx" />
+    <None Include="Dev\mfServer\reports\_BIDV\BCTK\BCTK_THEO_DOANH_SO_THOI_DIEM.xlsx" />
+    <None Include="Dev\mfServer\reports\_BIDV\GDKT\GDKT_PHIEU_CHI.docx" />
+    <None Include="Dev\mfServer\reports\_BIDV\GDKT\GDKT_PHIEU_KE_TOAN.docx" />
+    <None Include="Dev\mfServer\reports\_BIDV\GDKT\GDKT_PHIEU_THU.docx" />
+    <None Include="Dev\mfServer\reports\_BIDV\HDVO\HDVO_DANH_SACH_KHTV.xlsx" />
+    <None Include="Dev\mfServer\reports\_BIDV\HDVO\HDVO_SO_PHU_TIEN_GUI.xlsx" />
+    <None Include="Dev\mfServer\reports\_BIDV\HDVO\HDVO_SO_TKCKH.docx" />
+    <None Include="Dev\mfServer\reports\_BIDV\KHTV\KHTV_DANH_SACH_KHTV.xlsx" />
+    <None Include="Dev\mfServer\reports\_BIDV\TDTT\TDTT_BAO_CAO_THAM_DINH_RUI_RO_TD.docx" />
+    <None Include="Dev\mfServer\reports\_BIDV\TDTT\TDTT_GIAY_DE_NGHI_VAY_VON_CA_NHAN.doc" />
+    <None Include="Dev\mfServer\reports\_BIDV\TDTT\TDTT_HOP_DONG_TIN_DUNG.doc" />
+    <None Include="Dev\mfServer\reports\_BIDV\TDTT\TDTT_SAO_KE_TIN_DUNG_TH.xlsx" />
+    <None Include="Dev\mfServer\reports\_BIDV\TDTT\TDTT_SO_VON_VAY_TIET_KIEM_KHTV.xlsx" />
+    <None Include="Dev\mfServer\reports\_BIDV\TDVM\TDVM_BANG_KE_RUT_VON.doc" />
+    <None Include="Dev\mfServer\reports\_BIDV\TDVM\TDVM_BANG_KHOACH_TRA_NO.xlsx" />
+    <None Include="Dev\mfServer\reports\_BIDV\TDVM\TDVM_BAO_CAO_DE_XUAT_TIN_DUNG.doc" />
+    <None Include="Dev\mfServer\reports\_BIDV\TDVM\TDVM_BAO_CAO_DE_XUAT_TIN_DUNG.xlsx" />
+    <None Include="Dev\mfServer\reports\_BIDV\TDVM\TDVM_BAO_CAO_THAM_DINH_RUI_RO_TD.doc" />
+    <None Include="Dev\mfServer\reports\_BIDV\TDVM\TDVM_DON_VAY_VON.doc" />
+    <None Include="Dev\mfServer\reports\_BIDV\TDVM\TDVM_DS_PHAT_VON.xlsx" />
+    <None Include="Dev\mfServer\reports\_BIDV\TDVM\TDVM_DS_THU_TIEN_VON_TRA_DAN_TK.xls" />
+    <None Include="Dev\mfServer\reports\_BIDV\TDVM\TDVM_HOP_DONG_VAY_VON.doc" />
+    <None Include="Dev\mfServer\reports\_BIDV\TDVM\TDVM_KHE_UOC_VAY_VON.doc" />
+    <None Include="Dev\mfServer\reports\_BIDV\TDVM\TDVM_PHU_LUC_HOP_DONG.doc" />
+    <None Include="Dev\mfServer\reports\_BIDV\TDVM\TDVM_SO_VON_VAY_TIET_KIEM_KHTV.xlsx" />
+    <None Include="Dev\mfServer\reports\_BIDV_BLF\BCTH\BCTH_BAO_CAO_PHAN_LOAI_NO.xlsx" />
+    <None Include="Dev\mfServer\reports\_BIDV_BLF\BCTH\BCTH_CREDIT_STATEMENT.xlsx" />
+    <None Include="Dev\mfServer\reports\_BIDV_BLF\BCTH\BCTH_SAO_KE_DU_NO_TIN_DUNG_TKIEM.xlsx" />
+    <None Include="Dev\mfServer\reports\_BIDV_BLF\BCTK\BCTK_DAILY_REPORT.xlsx" />
+    <None Include="Dev\mfServer\reports\_BIDV_BLF\BCTK\BCTK_MONTHLY_REPORT.xlsx" />
+    <None Include="Dev\mfServer\reports\_BIDV_BLF\BCTK\BCTK_NGANH_NGHE_MMSC.xlsx" />
+    <None Include="Dev\mfServer\reports\_BIDV_BLF\BCTK\BCTK_QUAN_LY_NO.xlsx" />
+    <None Include="Dev\mfServer\reports\_BIDV_BLF\BCTK\BCTK_THEO_DOANH_SO_LUY_KE.xlsx" />
+    <None Include="Dev\mfServer\reports\_BIDV_BLF\BCTK\BCTK_THEO_DOANH_SO_THOI_DIEM.xlsx" />
+    <None Include="Dev\mfServer\reports\_BIDV_BLF\BCTK\BCTK_THEO_NGANH_NGHE_LUY_KE.xlsx" />
+    <None Include="Dev\mfServer\reports\_BIDV_BLF\BCTK\BCTK_THEO_NGANH_NGHE_THOI_DIEM.xlsx" />
+    <None Include="Dev\mfServer\reports\_BIDV_BLF\GDKT\GDKT_BALANCE_SHEET.xlsx" />
+    <None Include="Dev\mfServer\reports\_BIDV_BLF\GDKT\GDKT_BANG_CAN_DOI_TKKT.xlsx" />
+    <None Include="Dev\mfServer\reports\_BIDV_BLF\GDKT\GDKT_PHIEU_CHI.doc" />
+    <None Include="Dev\mfServer\reports\_BIDV_BLF\GDKT\GDKT_PHIEU_CHI.docx" />
+    <None Include="Dev\mfServer\reports\_BIDV_BLF\GDKT\GDKT_PHIEU_CHI_KH.doc" />
+    <None Include="Dev\mfServer\reports\_BIDV_BLF\GDKT\GDKT_PHIEU_KE_TOAN.doc" />
+    <None Include="Dev\mfServer\reports\_BIDV_BLF\GDKT\GDKT_PHIEU_KE_TOAN.docx" />
+    <None Include="Dev\mfServer\reports\_BIDV_BLF\GDKT\GDKT_PHIEU_KE_TOAN_01.doc" />
+    <None Include="Dev\mfServer\reports\_BIDV_BLF\GDKT\GDKT_PHIEU_KE_TOAN_GDICH.doc" />
+    <None Include="Dev\mfServer\reports\_BIDV_BLF\GDKT\GDKT_PHIEU_THU.doc" />
+    <None Include="Dev\mfServer\reports\_BIDV_BLF\GDKT\GDKT_PHIEU_THU.docx" />
+    <None Include="Dev\mfServer\reports\_BIDV_BLF\GDKT\GDKT_PHIEU_THU_KH.doc" />
+    <None Include="Dev\mfServer\reports\_BIDV_BLF\GDKT\GDKT_PROFIT_AND_LOSS.xlsx" />
+    <None Include="Dev\mfServer\reports\_BIDV_BLF\GDKT\GDKT_SO_NHAP_XUAT_NGOAI_TE.xlsx" />
+    <None Include="Dev\mfServer\reports\_BIDV_BLF\HDVO\HDVO_DANH_SACH_KHTV.xlsx" />
+    <None Include="Dev\mfServer\reports\_BIDV_BLF\HDVO\HDVO_GUI_TIEN_DS.xlsx" />
+    <None Include="Dev\mfServer\reports\_BIDV_BLF\HDVO\HDVO_GUI_TIEN_DS_EXCEL.xlsx" />
+    <None Include="Dev\mfServer\reports\_BIDV_BLF\HDVO\HDVO_SO_PHU_TIEN_GUI.xlsx" />
+    <None Include="Dev\mfServer\reports\_BIDV_BLF\HDVO\HDVO_SO_TKCKH.docx" />
+    <None Include="Dev\mfServer\reports\_BIDV_BLF\KHTV\KHTV_BIEN_BAN_HOP_NHOM.doc" />
+    <None Include="Dev\mfServer\reports\_BIDV_BLF\KHTV\KHTV_DANH_SACH_KHTV.xlsx" />
+    <None Include="Dev\mfServer\reports\_BIDV_BLF\TDTT\TDTD_BANG_KHOACH_TRA_NO.xlsx" />
+    <None Include="Dev\mfServer\reports\_BIDV_BLF\TDTT\TDTT_BAO_CAO_DE_XUAT_TIN_DUNG.docx" />
+    <None Include="Dev\mfServer\reports\_BIDV_BLF\TDTT\TDTT_BAO_CAO_THAM_DINH_RUI_RO_TD.docx" />
+    <None Include="Dev\mfServer\reports\_BIDV_BLF\TDTT\TDTT_DANH_SACH_SAO_KE_GN_ACTIVE.xlsx" />
+    <None Include="Dev\mfServer\reports\_BIDV_BLF\TDTT\TDTT_DANH_SACH_SAO_KE_GN_PERIOD.xlsx" />
+    <None Include="Dev\mfServer\reports\_BIDV_BLF\TDTT\TDTT_DANH_SACH_THU_NO.xlsx" />
+    <None Include="Dev\mfServer\reports\_BIDV_BLF\TDTT\TDTT_DE_XUAT_PHE_DUYET_GIAI_NGAN.docx" />
+    <None Include="Dev\mfServer\reports\_BIDV_BLF\TDTT\TDTT_GIAY_DE_NGHI_VAY_VON_CA_NHAN.doc" />
+    <None Include="Dev\mfServer\reports\_BIDV_BLF\TDTT\TDTT_HOP_DONG_TIN_DUNG.doc" />
+    <None Include="Dev\mfServer\reports\_BIDV_BLF\TDTT\TDTT_HOP_DONG_TIN_DUNG_BLANH_BEN_THU_BA.doc" />
+    <None Include="Dev\mfServer\reports\_BIDV_BLF\TDTT\TDTT_KHE_UOC_RUT_VON.doc" />
+    <None Include="Dev\mfServer\reports\_BIDV_BLF\TDTT\TDTT_PHIEU_KHAO_SAT_KH_CA_NHAN.doc" />
+    <None Include="Dev\mfServer\reports\_BIDV_BLF\TDTT\TDTT_SAO_KE_TIN_DUNG_TH.xlsx" />
+    <None Include="Dev\mfServer\reports\_BIDV_BLF\TDTT\TDTT_SO_VON_VAY_TIET_KIEM_KHTV.xlsx" />
+    <None Include="Dev\mfServer\reports\_BIDV_BLF\TDVM\TDVM_BANG_KE_RUT_VON.doc" />
+    <None Include="Dev\mfServer\reports\_BIDV_BLF\TDVM\TDVM_BANG_KHOACH_TRA_NO.xlsx" />
+    <None Include="Dev\mfServer\reports\_BIDV_BLF\TDVM\TDVM_BAO_CAO_DE_XUAT_TIN_DUNG.doc" />
+    <None Include="Dev\mfServer\reports\_BIDV_BLF\TDVM\TDVM_BAO_CAO_DE_XUAT_TIN_DUNG.xlsx" />
+    <None Include="Dev\mfServer\reports\_BIDV_BLF\TDVM\TDVM_BAO_CAO_THAM_DINH_RUI_RO_TD.doc" />
+    <None Include="Dev\mfServer\reports\_BIDV_BLF\TDVM\TDVM_DON_VAY_VON.doc" />
+    <None Include="Dev\mfServer\reports\_BIDV_BLF\TDVM\TDVM_DS_PHAT_VON.xlsx" />
+    <None Include="Dev\mfServer\reports\_BIDV_BLF\TDVM\TDVM_DS_THU_TIEN_VON_TRA_DAN_TK.xls" />
+    <None Include="Dev\mfServer\reports\_BIDV_BLF\TDVM\TDVM_HOP_DONG_VAY_VON.doc" />
+    <None Include="Dev\mfServer\reports\_BIDV_BLF\TDVM\TDVM_KHE_UOC_VAY_VON.doc" />
+    <None Include="Dev\mfServer\reports\_BIDV_BLF\TDVM\TDVM_PHU_LUC_HOP_DONG.doc" />
+    <None Include="Dev\mfServer\reports\_BIDV_BLF\TDVM\TDVM_SO_VON_VAY_TIET_KIEM_KHTV.xlsx" />
+    <None Include="Dev\mfServer\reports\_BTRE\BCTC\BCTC_BANG_CAN_DOI_TKKT_THU.xlsx" />
+    <None Include="Dev\mfServer\reports\_BTRE\BCTC\BCTC_BANG_CAN_DOI_CHUNG_TU.xlsx" />
+    <None Include="Dev\mfServer\reports\_BTRE\BCTH\BCTH_HOAT_DONG.xlsx" />
+    <None Include="Dev\mfServer\reports\_BTRE\GDKT\GDKT_SO_THEO_DOI_TAM_UNG.xlsx" />
+    <None Include="Dev\mfServer\reports\_BTRE\GDKT\GDKT_SO_TIEN_GUI_KHO_BAC.xlsx" />
+    <None Include="Dev\mfServer\reports\_BTRE\HDVO\HDVO_DANH_SACH_HOAN_TK.xlsx" />
+    <None Include="Dev\mfServer\reports\_BTRE\KHTV\KHTV_BAN_KHAO_SAT_HOAN_CANH_KTXH.xlsx" />
+    <None Include="Dev\mfServer\reports\_BTRE\KHTV\KHTV_BAN_KHAO_SAT_KH.xlsx" />
+    <None Include="Dev\mfServer\reports\_BTRE\KHTV\KHTV_PHIEU_THAM_HO_GD.xlsx" />
+    <None Include="Dev\mfServer\reports\_BTRE\KHTV\KHTV_PHIEU_DANH_GIA_RUI_RO_TD.xlsx" />
+    <None Include="Dev\mfServer\reports\_BTRE\TDVM\TDVM_DON_XIN_VAY_VON_NUOC_SACH.xls" />
+    <None Include="Dev\mfServer\reports\_BTRE\TDVM\TDVM_DON_XIN_VAY_VON_NHOM_BAO_LANH.xlsx" />
+    <None Include="Dev\mfServer\reports\_BTRE\TDVM\TDVM_DS_DE_NGHI_VAY_VON.xlsx" />
+    <None Include="Dev\mfServer\reports\_BTRE\TDVM\TDVM_DS_PHAT_VON.xlsx" />
+    <None Include="Dev\mfServer\reports\_BTRE\TDVM\TDVM_DS_THU_LAI_VON_MUA_VU.xlsx" />
+    <None Include="Dev\mfServer\reports\_BTRE\TDVM\TDVM_DS_THU_VON_MUA_VU.xlsx" />
+    <None Include="Dev\mfServer\reports\_BTRE\TDVM\TDVM_HOP_DONG_VAY_VON_NUOC_SACH.xlsx" />
+    <None Include="Dev\mfServer\reports\_DC\GDKT\GDKT_NX_NGOAI_BANG-QB.docx" />
+    <None Include="Dev\mfServer\reports\_DC\GDKT\GDKT_PHIEU_CHI-QB.docx" />
+    <None Include="Dev\mfServer\reports\_DC\GDKT\GDKT_PHIEU_KE_TOAN-QB.docx" />
+    <None Include="Dev\mfServer\reports\_DC\GDKT\GDKT_PHIEU_THU-QB.docx" />
+    <None Include="Dev\mfServer\reports\_QUANGBINH\HDVO\HDVO_GIAY_GUI_TIEN.docx" />
+    <None Include="Dev\mfServer\reports\_QUANGBINH\HDVO\HDVO_DANH_SACH_HOAN_TK.xlsx" />
+    <None Include="Dev\mfServer\reports\_QUANGBINH\KHTV\KHTV_BAN_KHAO_SAT_HOAN_CANH_KTXH.xlsx" />
+    <None Include="Dev\mfServer\reports\_QUANGBINH\KHTV\KHTV_QUYET_DINH_CONG_NHAN_TVIEN.doc" />
+    <None Include="Dev\mfServer\reports\_BTRE\TDVM\TDVM_LICH_THU_NO.xlsx" />
+    <None Include="Dev\mfServer\reports\_BTRE\TDVM\TDVM_PHIEU_KIEM_TRA_SU_DUNG_VON_VAY.xlsx" />
+    <None Include="Dev\mfServer\reports\_BTRE\TDVM\TDVM_SO_VON_VAY_TIET_KIEM_TVIEN.xlsx" />
+    <None Include="Dev\mfServer\reports\_BTV\BCTC\BCTC_BANG_CAN_DOI_KE_TOAN.xlsx" />
+    <None Include="Dev\mfServer\reports\_BTV\BCTC\BCTC_BANG_CAN_DOI_TKKT.xlsx" />
+    <None Include="Dev\mfServer\reports\_BTV\BCTC\BCTC_CHI_TIEU_CT_CHEVRON.xlsx" />
+    <None Include="Dev\mfServer\reports\_BTV\BCTC\BCTC_CHI_TIEU_CT_DISNEY.xlsx" />
+    <None Include="Dev\mfServer\reports\_BTV\BCTC\BCTC_CHI_TIEU_TH_CHEVRON.xlsx" />
+    <None Include="Dev\mfServer\reports\_BTV\BCTC\BCTC_CHI_TIEU_TH_DISNEY.xlsx" />
+    <None Include="Dev\mfServer\reports\_BTV\BCTC\BCTC_KET_QUA_HOAT_DONG.xlsx" />
+    <None Include="Dev\mfServer\reports\_BTV\BCTC\BCTC_LUU_CHUYEN_TIEN_TE.xlsx" />
+    <None Include="Dev\mfServer\reports\_BTV\BCTC\BCTC_LUU_CHUYEN_TIEN_TE_CHEVRON.xlsx" />
+    <None Include="Dev\mfServer\reports\_BTV\BCTC\BCTC_LUU_CHUYEN_TIEN_TE_DISNEY.xlsx" />
+    <None Include="Dev\mfServer\reports\_BTV\BCTC\BCTC_THUYET_MINH_TAI_CHINH.xlsx" />
+    <None Include="Dev\mfServer\reports\_BTV\BCTH\BCTH_CHI_SO_TAI_CHINH.xlsx" />
+    <None Include="Dev\mfServer\reports\_BTV\BCTH\BCTH_CONG_VIEC_CBTD.xlsx" />
+    <None Include="Dev\mfServer\reports\_BTV\BCTH\BCTH_DU_TRU_NGAN_QUY.xlsx" />
+    <None Include="Dev\mfServer\reports\_BTV\BCTH\BCTH_HOAT_DONG.xlsx" />
+    <None Include="Dev\mfServer\reports\_BTV\BCTH\BCTH_HOAT_DONG_CBTD.xlsx" />
+    <None Include="Dev\mfServer\reports\_BTV\BCTH\BCTH_HOAT_DONG_CBTD_SP.xlsx" />
+    <None Include="Dev\mfServer\reports\_BTV\BCTH\BCTH_HOAT_DONG_DB.xlsx" />
+    <None Include="Dev\mfServer\reports\_BTV\BCTH\BCTH_HOAT_DONG_KHCN_CBTD.xlsx" />
+    <None Include="Dev\mfServer\reports\_BTV\BCTH\BCTH_HOAT_DONG_KHCN_DB.xlsx" />
+    <None Include="Dev\mfServer\reports\_BTV\BCTH\BCTH_HOAT_DONG_KHTC_CBTD.xlsx" />
+    <None Include="Dev\mfServer\reports\_BTV\BCTH\BCTH_HOAT_DONG_KHTC_DB.xlsx" />
+    <None Include="Dev\mfServer\reports\_BTV\BCTH\BCTH_HOAT_DONG_TCVM.xlsx" />
+    <None Include="Dev\mfServer\reports\_BTV\BCTH\BCTH_THEO_DOI_RUI_RO.xlsx" />
+    <None Include="Dev\mfServer\reports\_BTV\GDKT\GDKT_CHUNG_TU_GHI_SO.xlsx" />
+    <None Include="Dev\mfServer\reports\_BTV\GDKT\GDKT_NX_NGOAI_BANG.docx" />
+    <None Include="Dev\mfServer\reports\_BTV\GDKT\GDKT_PHIEU_CHI.docx" />
+    <None Include="Dev\mfServer\reports\_BTV\GDKT\GDKT_PHIEU_KE_TOAN.docx" />
+    <None Include="Dev\mfServer\reports\_BTV\GDKT\GDKT_PHIEU_THU.docx" />
+    <None Include="Dev\mfServer\reports\_BTV\GDKT\GDKT_SO_DANG_KY_CTGS.xlsx" />
+    <None Include="Dev\mfServer\reports\_BTV\GDKT\GDKT_UY_NHIEM_CHI.docx" />
+    <None Include="Dev\mfServer\reports\_BTV\GDKT\GDKT_SO_CAI_CTGS.xlsx" />
+    <None Include="Dev\mfServer\reports\_BTV\GDKT\GDKT_SO_CHI_TIET_TKHOAN.xlsx" />
+    <None Include="Dev\mfServer\reports\_BTV\GDKT\GDKT_SO_QUY_TIEN_MAT.xlsx" />
+    <None Include="Dev\mfServer\reports\_BTV\GDKT\GDKT_SO_THEO_DOI_CONG_NO.xlsx" />
+    <None Include="Dev\mfServer\reports\_BTV\GDKT\GDKT_SO_THEO_DOI_TAM_UNG.xlsx" />
+    <None Include="Dev\mfServer\reports\_BTV\GDKT\GDKT_SO_TIEN_GUI_NGAN_HANG.xlsx" />
+    <None Include="Dev\mfServer\reports\_BTV\GDKT\GDKT_SO_TONG_HOP_NGHIEP_VU.xlsx" />
+    <None Include="Dev\mfServer\reports\_BTV\HDVO\HDVO_BANG_TINH_LAI_KHTV.xlsx" />
+    <None Include="Dev\mfServer\reports\_BTV\HDVO\HDVO_BAO_CAO_THEO_CAN_BO.xlsx" />
+    <None Include="Dev\mfServer\reports\_BTV\HDVO\HDVO_BAO_CAO_THEO_DIA_BAN.xlsx" />
+    <None Include="Dev\mfServer\reports\_BTV\HDVO\HDVO_DANH_SACH_HOAN_TK.xlsx" />
+    <None Include="Dev\mfServer\reports\_BTV\HDVO\HDVO_DANH_SACH_KHTV.xlsx" />
+    <None Include="Dev\mfServer\reports\_BTV\HDVO\HDVO_GIAY_GUI_TIEN.docx" />
+    <None Include="Dev\mfServer\reports\_BTV\HDVO\HDVO_GIAY_GUI_TIEN.xlsx" />
+    <None Include="Dev\mfServer\reports\_BTV\HDVO\HDVO_SAO_KE_TKCKH_CT.xlsx" />
+    <None Include="Dev\mfServer\reports\_BTV\HDVO\HDVO_SAO_KE_TKCKH_TH.xlsx" />
+    <None Include="Dev\mfServer\reports\_BTV\HDVO\HDVO_SO_PHU_TIEN_GUI.xlsx" />
+    <None Include="Dev\mfServer\reports\_BTV\HDVO\HDVO_SO_THEO_DOI_TK_KHTV.xlsx" />
+    <None Include="Dev\mfServer\reports\_BTV\KHTV\KHTV_HO_SO.xlsx" />
+    <None Include="Dev\mfServer\reports\_BTV\KHTV\KHTV_THAM_DINH.xlsx" />
+    <None Include="Dev\mfServer\reports\_BTV\NSTL\NSTL_BANG_LUONG.xlsx" />
+    <None Include="Dev\mfServer\reports\_BTV\NSTL\NSTL_CHI_TIEU_THUONG_CB.xlsx" />
+    <None Include="Dev\mfServer\reports\_BTV\NSTL\NSTL_CHI_TIEU_THUONG_DB.xlsx" />
+    <None Include="Dev\mfServer\reports\_BTV\NSTL\NSTL_DANH_SACH_CHUYEN_KHOAN.xlsx" />
+    <None Include="Dev\mfServer\reports\_BTV\NSTL\NSTL_PHU_CAP_CTV.xlsx" />
+    <None Include="Dev\mfServer\reports\_BTV\NSTL\NSTL_THE_LUONG.xlsx" />
+    <None Include="Dev\mfServer\reports\_BTV\NSTL\NSTL_THE_THUONG.xlsx" />
+    <None Include="Dev\mfServer\reports\_BTV\NSTL\NSTL_TONG_HOP_CHI_PHI_LUONG.xlsx" />
+    <None Include="Dev\mfServer\reports\_BTV\QLTS\QLTS_BANG_KHAU_HAO.xlsx" />
+    <None Include="Dev\mfServer\reports\_BTV\QLTS\QLTS_BANG_KIEM_KE_TSCD.xlsx" />
+    <None Include="Dev\mfServer\reports\_BTV\QLTS\QLTS_BIEN_BAN_BAN_GIAO_TSCD.xlsx" />
+    <None Include="Dev\mfServer\reports\_BTV\QLTS\QLTS_SO_CHI_TIET_TSCD.xlsx" />
+    <None Include="Dev\mfServer\reports\_BTV\TDVM\TDVM_BANG_PHAN_BO_LAI_TRA_TRUOC.xlsx" />
+    <None Include="Dev\mfServer\reports\_BTV\TDVM\TDVM_DON_VAY_VON.xlsx" />
+    <None Include="Dev\mfServer\reports\_BTV\TDVM\TDVM_DS_DE_NGHI_VAY_VON_CBTD.xlsx" />
+    <None Include="Dev\mfServer\reports\_BTV\TDVM\TDVM_DS_DE_NGHI_VAY_VON_TCN.xlsx" />
+    <None Include="Dev\mfServer\reports\_BTV\TDVM\TDVM_DS_PHAT_VON.xlsx" />
+    <None Include="Dev\mfServer\reports\_BTV\TDVM\TDVM_DS_THU_LAI_VON_MUA_VU.xlsx" />
+    <None Include="Dev\mfServer\reports\_BTV\TDVM\TDVM_DS_THU_TIEN_PHAT_HANH.xlsx" />
+    <None Include="Dev\mfServer\reports\_BTV\TDVM\TDVM_DS_THU_TIEN_VON_TRA_DAN_TK.xlsx" />
+    <None Include="Dev\mfServer\reports\_BTV\TDVM\TDVM_DS_THU_VON_MUA_VU.xlsx" />
+    <None Include="Dev\mfServer\reports\_BTV\TDVM\TDVM_HOP_DONG_VAY_VON.xlsx" />
+    <None Include="Dev\mfServer\reports\_BTV\TDVM\TDVM_LICH_THU_NO.xlsx" />
+    <None Include="Dev\mfServer\reports\_BTV\TDVM\TDVM_PHAN_LOAI_NO_TLDP.xlsx" />
+    <None Include="Dev\mfServer\reports\_BTV\TDVM\TDVM_PHIEU_THAM_KHTV.docx" />
+    <None Include="Dev\mfServer\reports\_BTV\TDVM\TDVM_PHIEU_THAM_KHTV.xlsx" />
+    <None Include="Dev\mfServer\reports\_BTV\TDVM\TDVM_PHU_LUC_HOP_DONG.xlsx" />
+    <None Include="Dev\mfServer\reports\_BTV\TDVM\TDVM_SAO_KE_TH.xlsx" />
+    <None Include="Dev\mfServer\reports\_BTV\TDVM\TDVM_SO_THEO_DOI_KHTV.xlsx" />
+    <None Include="Dev\mfServer\reports\_BTV\TDVM\TDVM_SO_THEO_DOI_NO_RUI_RO.xlsx" />
+    <None Include="Dev\mfServer\reports\_BTV\TDVM\TDVM_SO_THEO_DOI_VON_VAY.xlsx" />
+    <None Include="Dev\mfServer\reports\_BTV\TDVM\TDVM_SO_VON_VAY_TIET_KIEM_KHTV.xlsx" />
+    <None Include="Dev\mfServer\reports\_BTV\TDVM\TDVM_SO_VON_VAY_TIET_KIEM_KHTV_VON_MUA_VU.xlsx" />
+    <None Include="Dev\mfServer\reports\_BTV\TDVM\TDVM_XU_LY_NO.xlsx" />
+    <None Include="Dev\mfServer\reports\_BTRE\BCTC\BCTC_BANG_CAN_DOI_KE_TOAN.xlsx" />
+    <None Include="Dev\mfServer\reports\_DC\BCTC\BCTC_BANG_CAN_DOI_TKKT.xlsx" />
+    <None Include="Dev\mfServer\reports\_BTRE\BCTC\BCTC_KET_QUA_HOAT_DONG.xlsx" />
+    <None Include="Dev\mfServer\reports\_BTRE\BCTC\BCTC_LUU_CHUYEN_TIEN_TE.xlsx" />
+    <None Include="Dev\mfServer\reports\_DC\GDKT\GDKT_BANG_CAN_DOI_TKKT.xlsx" />
+    <None Include="Dev\mfServer\reports\_DC\GDKT\GDKT_NX_NGOAI_BANG-PHUTHO.docx" />
+    <None Include="Dev\mfServer\reports\_DC\GDKT\GDKT_PHIEU_KE_TOAN-PHUTHO.docx" />
+    <None Include="Dev\mfServer\reports\_DC\GDKT\GDKT_NX_NGOAI_BANG.docx" />
+    <None Include="Dev\mfServer\reports\_DC\GDKT\GDKT_PHIEU_CHI-PHUTHO.docx" />
+    <None Include="Dev\mfServer\reports\_DC\GDKT\GDKT_PHIEU_CHI.docx" />
+    <None Include="Dev\mfServer\reports\_DC\GDKT\GDKT_PHIEU_KE_TOAN.docx" />
+    <None Include="Dev\mfServer\reports\_DC\GDKT\GDKT_PHIEU_THU-PHUTHO.docx" />
+    <None Include="Dev\mfServer\reports\_DC\GDKT\GDKT_PHIEU_THU.docx" />
+    <None Include="Dev\mfServer\reports\_DC\GDKT\GDKT_SO_CAI_TAI_KHOAN.xlsx" />
+    <None Include="Dev\mfServer\reports\_DC\GDKT\GDKT_SO_CHI_TIET_TAI_KHOAN.xlsx" />
+    <None Include="Dev\mfServer\reports\_DC\GDKT\GDKT_SO_NHAT_KY_CHI.xlsx" />
+    <None Include="Dev\mfServer\reports\_DC\GDKT\GDKT_SO_NHAT_KY_CHUNG.xlsx" />
+    <None Include="Dev\mfServer\reports\_DC\GDKT\GDKT_SO_NHAT_KY_THU.xlsx" />
+    <None Include="Dev\mfServer\reports\_DC\GDKT\GDKT_SO_QUY_TIEN_MAT.xlsx" />
+    <None Include="Dev\mfServer\reports\_DC\GDKT\GDKT_SO_TIEN_GUI_NGAN_HANG.xlsx" />
+    <None Include="Dev\mfServer\reports\_DC\HDVO\HDVO_BANG_KE_LAI_NHAP_GOC.xlsx" />
+    <None Include="Dev\mfServer\reports\_DC\HDVO\HDVO_BANG_TINH_LAI_KHTV.xlsx" />
+    <None Include="Dev\mfServer\reports\_DC\HDVO\HDVO_BAO_CAO_THEO_CAN_BO.xlsx" />
+    <None Include="Dev\mfServer\reports\_DC\HDVO\HDVO_BAO_CAO_THEO_DIA_BAN.xlsx" />
+    <None Include="Dev\mfServer\reports\_DC\HDVO\HDVO_DANH_SACH_HOAN_TK.xlsx" />
+    <None Include="Dev\mfServer\reports\_DC\HDVO\HDVO_DANH_SACH_KHTV.xlsx" />
+    <None Include="Dev\mfServer\reports\_DC\HDVO\HDVO_GIAY_GUI_TIEN.docx" />
+    <None Include="Dev\mfServer\reports\_DC\HDVO\HDVO_SAO_KE_TKCKH_CT.xlsx" />
+    <None Include="Dev\mfServer\reports\_DC\HDVO\HDVO_SAO_KE_TKCKH_TH.xlsx" />
+    <None Include="Dev\mfServer\reports\_DC\HDVO\HDVO_SO_PHU_TIEN_GUI.xlsx" />
+    <None Include="Dev\mfServer\reports\_DC\HDVO\HDVO_SO_THEO_DOI_TK_KHTV.xlsx" />
+    <None Include="Dev\mfServer\reports\_DC\TDVM\TDVM_DS_THU_TIEN_PHAT_HANH.xlsx" />
+    <None Include="Dev\mfServer\reports\_DC\TDVM\TDVM_DS_THU_TIEN_VON_TRA_DAN_TK.xlsx" />
+    <None Include="Dev\mfServer\reports\_DC\TDVM\TDVM_PHAN_LOAI_NO_TLDP.xlsx" />
+    <None Include="Dev\mfServer\reports\_DC\TDVM\TDVM_SAO_KE_TH.xlsx" />
+    <None Include="Dev\mfServer\reports\_DC\TDVM\TDVM_SAO_KE_VON_DAI_HAN_en-US.xlsx" />
+    <None Include="Dev\mfServer\reports\_DC\TDVM\TDVM_SAO_KE_VON_DAI_HAN_vi-VN.xlsx" />
+    <None Include="Dev\mfServer\reports\_DC\TDVM\TDVM_SAO_KE_VON_NGAN_HAN_en-US.xlsx" />
+    <None Include="Dev\mfServer\reports\_DC\TDVM\TDVM_SAO_KE_VON_NGAN_HAN_vi-VN.xlsx" />
+    <None Include="Dev\mfServer\reports\_DC\TDVM\TDVM_SAO_KE_VON_TONG_HOP_en-US.xlsx" />
+    <None Include="Dev\mfServer\reports\_DC\TDVM\TDVM_SAO_KE_VON_TONG_HOP_vi-VN.xlsx" />
+    <None Include="Dev\mfServer\reports\_DC\TDVM\TDVM_SAO_KE_VON_TRUNG_HAN_en-US.xlsx" />
+    <None Include="Dev\mfServer\reports\_DC\TDVM\TDVM_SAO_KE_VON_TRUNG_HAN_vi-VN.xlsx" />
+    <None Include="Dev\mfServer\reports\_DC\TDVM\TDVM_SO_THEO_DOI_KHTV.xlsx" />
+    <None Include="Dev\mfServer\reports\_DC\TDVM\TDVM_SO_THEO_DOI_NO_RUI_RO.xlsx" />
+    <None Include="Dev\mfServer\reports\_DC\TDVM\TDVM_SO_THEO_DOI_VON_VAY.xlsx" />
+    <None Include="Dev\mfServer\reports\_DC\TDVM\TDVM_XU_LY_NO.xlsx" />
+    <None Include="Dev\mfServer\reports\_HVNH\KHTV\KHTV_DANH_GIA_XEP_HANG_NGHEO.xlsx" />
+    <None Include="Dev\mfServer\reports\_HVNH\KHTV\KHTV_DANH_SACH_KHACH_HANG_RA_KHOI_CHUONG_TRINH.xlsx" />
+    <None Include="Dev\mfServer\reports\_HVNH\KHTV\KHTV_DANH_SACH_KHTV.xlsx" />
+    <None Include="Dev\mfServer\reports\_HVNH\KHTV\KHTV_HO_SO_KHACH_HANG_THAM_DINH_THONG_TIN.xlsx" />
+    <None Include="Dev\mfServer\reports\_HVNH\KHTV\KHTV_QUYET_DINH_CONG_NHAN_THANH_VIEN.xlsx" />
+    <None Include="Dev\mfServer\reports\_HVNH\KHTV\KHTV_THAM_DINH_KHACH_HANG.xlsx" />
+    <None Include="Dev\mfServer\reports\_PHUTHO\BCTH\BCTH_BAO_CAO_SO_THANH_VIEN.xlsx" />
+    <None Include="Dev\mfServer\reports\_PHUTHO\BCTH\BCTH_SO_TONG_HOP_TIET_KIEM.xlsx" />
+    <None Include="Dev\mfServer\reports\_PHUTHO\BCTH\BCTH_SO_TONG_HOP_TUONG_TRO.xlsx" />
+    <None Include="Dev\mfServer\reports\_PHUTHO\BCTH\BCTH_SO_TONG_HOP_VAY_VON.xlsx" />
+    <None Include="Dev\mfServer\reports\_PHUTHO\BCTH\BCTH_BAO_CAO_LAI_VON_VAY.xlsx" />
+    <None Include="Dev\mfServer\reports\_PHUTHO\TDVM\TDVM_BAO_CAO_NO_QUA_HAN.xlsx" />
+    <None Include="Dev\mfServer\reports\_PHUTHO\TDVM\TDVM_DANH_SACH_THANH_TOAN_TIET_KIEM.xlsx" />
+    <None Include="Dev\mfServer\reports\_PHUTHO\TDVM\TDVM_DANH_SACH_THANH_VIEN_NHAN_TIEN.xlsx" />
+    <None Include="Dev\mfServer\reports\_PHUTHO\TDVM\TDVM_DS_XET_DUYET_THANH_VIEN_VAY_VON.xlsx" />
+    <None Include="Dev\mfServer\reports\_PHUTHO\TDVM\TDVM_HOA_DON_THU_TIEN_KY.xlsx" />
+    <None Include="Dev\mfServer\reports\_PHUTHO\TDVM\TDVM_KE_HOACH_TRA_NO.doc" />
+    <None Include="Dev\mfServer\reports\_PHUTHO\TDVM\TDVM_DON_VAY_VON.xlsx" />
+    <None Include="Dev\mfServer\reports\_PHUTHO\TDVM\TDVM_DS_PHAT_VON.xlsx" />
+    <None Include="Dev\mfServer\reports\_PHUTHO\TDVM\TDVM_HOP_DONG_VAY_VON.doc" />
+    <None Include="Dev\mfServer\reports\_PHUTHO\TDVM\TDVM_PHU_LUC_HOP_DONG.xlsx" />
+    <None Include="Dev\mfServer\reports\_QUANGBINH\KHTV\KHTV_DK_THAM_GIA_THANH_VIEN_QUY.doc" />
+    <None Include="Dev\mfServer\reports\_QUANGBINH\KHTV\KHTV_HOP_DONG_BAO_LANH_NHOM.xls" />
+    <None Include="Dev\mfServer\reports\_QUANGBINH\TDVM\TDVM_SAO_KE_VON_TONG_HOP.xlsx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Dev\mfServer\reports\KHTV\DsKHCN.ttx" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Dev\mfServer\reports\BCTK\BCChoVayDoiVoiKHVuotSoVoiQD.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dev\mfServer\reports\BCTK\DuNoTheoNganhKinhTe.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dev\mfServer\reports\BCTK\DuNoTheoToChucVaCaNhan.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dev\mfServer\reports\BCTK\HoatDongHuyDongVon.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dev\mfServer\reports\BCTK\PhanLoaiNoTrichLapDuPhong.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dev\mfServer\reports\BCTK\SuDungDuPhongDeXuLyRuiRo.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dev\mfServer\reports\BCTK\TinhHinhThucHienMotSoTyLeDamBaoAnToan.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dev\mfServer\reports\HDVO\BangKeTKQDVaTKKKH_vi-VN.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>BangKeTKQDVaTKKKH_vi-VN.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dev\mfServer\reports\KHTV\ChiTieuHoKHTV_en-US.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ChiTieuHoKHTV_en-US.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dev\mfServer\reports\KHTV\DsKHCN_en-US.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>DsKHCN_en-US.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dev\mfServer\reports\KHTV\DsKHCN_vi-VN.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>DsKHCN_vi-VN.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dev\mfServer\reports\KHTV\DsKHTC_en-US.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>DsKHTC_en-US.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dev\mfServer\reports\KHTV\DsKHTC_vi-VN.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>DsKHTC_vi-VN.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dev\mfServer\reports\KHTV\ThuNhapHoKHTV_en-US.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ThuNhapHoKHTV_en-US.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dev\mfServer\reports\TDVM\SaoKeTH_en-US.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>SaoKeTH_en-US.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dev\mfServer\reports\TDVM\SaoKeTH_vi-VN.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>SaoKeTH_vi-VN.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dev\mfServer\reports\TDVM\SaoKeVonDH_en-US.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>SaoKeVonDH_en-US.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dev\mfServer\reports\TDVM\SaoKeVonDH_vi-VN.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>SaoKeVonDH_vi-VN.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dev\mfServer\reports\TDVM\SaoKeVonNH_en-US.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>SaoKeVonNH_en-US.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dev\mfServer\reports\TDVM\SaoKeVonNH_vi-VN.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>SaoKeVonNH_vi-VN.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dev\mfServer\reports\TDVM\SaoKeVonTH_en-US.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>SaoKeVonTH_en-US.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dev\mfServer\reports\TDVM\SaoKeVonTH_vi-VN.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>SaoKeVonTH_vi-VN.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Dev\Aspose.Cells.dll" />
+    <Content Include="Dev\Aspose.Words.dll" />
+    <Content Include="Dev\BusinessServices.BaoCao.dll" />
+    <Content Include="Dev\BusinessServices.BaoHiem.dll" />
+    <Content Include="Dev\BusinessServices.ChiTieu.dll" />
+    <Content Include="Dev\BusinessServices.DanhMuc.dll" />
+    <Content Include="Dev\BusinessServices.DungChung.dll" />
+    <Content Include="Dev\BusinessServices.EFBaoCao.dll" />
+    <Content Include="Dev\BusinessServices.HachToan.dll" />
+    <Content Include="Dev\BusinessServices.HanMuc.dll" />
+    <Content Include="Dev\BusinessServices.HoSoTinDung.dll" />
+    <Content Include="Dev\BusinessServices.HuyDongVon.dll" />
+    <Content Include="Dev\BusinessServices.KeToan.dll" />
+    <Content Include="Dev\BusinessServices.KhachHang.dll" />
+    <Content Include="Dev\BusinessServices.KhaiThacDuLieu.dll" />
+    <Content Include="Dev\BusinessServices.LaiSuat.dll" />
+    <Content Include="Dev\BusinessServices.NganQuy.dll" />
+    <Content Include="Dev\BusinessServices.NhanSu.dll" />
+    <Content Include="Dev\BusinessServices.Phi.dll" />
+    <Content Include="Dev\BusinessServices.PhongToa.dll" />
+    <Content Include="Dev\BusinessServices.Popup.dll" />
+    <Content Include="Dev\BusinessServices.QuanTriHeThong.dll" />
+    <Content Include="Dev\BusinessServices.TaiSan.dll" />
+    <Content Include="Dev\BusinessServices.TaiSanDamBao.dll" />
+    <Content Include="Dev\BusinessServices.ThanhVien.dll" />
+    <Content Include="Dev\BusinessServices.TinDung.dll" />
+    <Content Include="Dev\BusinessServices.TruyVan.dll" />
+    <Content Include="Dev\BusinessServices.TyGia.dll" />
+    <Content Include="Dev\BusinessServices.Utilities.dll" />
+    <Content Include="Dev\BusinessServices.ZAMainApp.dll" />
+    <Content Include="Dev\CommunicationContracts.Base.dll" />
+    <Content Include="Dev\CommunicationMessages.Base.dll" />
+    <Content Include="Dev\CommunicationServices.BaoCao.dll" />
+    <Content Include="Dev\CommunicationServices.BaoHiem.dll" />
+    <Content Include="Dev\CommunicationServices.ChiTieu.dll" />
+    <Content Include="Dev\CommunicationServices.DanhMuc.dll" />
+    <Content Include="Dev\CommunicationServices.EFBaoCao.dll" />
+    <Content Include="Dev\CommunicationServices.HanMuc.dll" />
+    <Content Include="Dev\CommunicationServices.HoSoTinDung.dll" />
+    <Content Include="Dev\CommunicationServices.HuyDongVon.dll" />
+    <Content Include="Dev\CommunicationServices.KeToan.dll" />
+    <Content Include="Dev\CommunicationServices.KhachHang.dll" />
+    <Content Include="Dev\CommunicationServices.KhaiThacDuLieu.dll" />
+    <Content Include="Dev\CommunicationServices.LaiSuat.dll" />
+    <Content Include="Dev\CommunicationServices.NganQuy.dll" />
+    <Content Include="Dev\CommunicationServices.NhanSu.dll" />
+    <Content Include="Dev\CommunicationServices.Phi.dll" />
+    <Content Include="Dev\CommunicationServices.PhongToa.dll" />
+    <Content Include="Dev\CommunicationServices.Popup.dll" />
+    <Content Include="Dev\CommunicationServices.QuanTriHeThong.dll" />
+    <Content Include="Dev\CommunicationServices.TaiSan.dll" />
+    <Content Include="Dev\CommunicationServices.TaiSanDamBao.dll" />
+    <Content Include="Dev\CommunicationServices.ThanhVien.dll" />
+    <Content Include="Dev\CommunicationServices.TinDung.dll" />
+    <Content Include="Dev\CommunicationServices.TruyVan.dll" />
+    <Content Include="Dev\CommunicationServices.TyGia.dll" />
+    <Content Include="Dev\CommunicationServices.Utilities.dll" />
+    <Content Include="Dev\CommunicationServices.ZAMainApp.dll" />
+    <Content Include="Dev\DataModel.ADO.dll" />
+    <Content Include="Dev\DataModel.EntityFramework.dll" />
+    <Content Include="Dev\DataServices.BaoCao.dll" />
+    <Content Include="Dev\DataServices.BaoHiem.dll" />
+    <Content Include="Dev\DataServices.ChiTieu.dll" />
+    <Content Include="Dev\DataServices.DanhMuc.dll" />
+    <Content Include="Dev\DataServices.DungChung.dll" />
+    <Content Include="Dev\DataServices.HanMuc.dll" />
+    <Content Include="Dev\DataServices.HoSoTinDung.dll" />
+    <Content Include="Dev\DataServices.HuyDongVon.dll" />
+    <Content Include="Dev\DataServices.KeToan.dll" />
+    <Content Include="Dev\DataServices.KhachHang.dll" />
+    <Content Include="Dev\DataServices.KhaiThacDuLieu.dll" />
+    <Content Include="Dev\DataServices.LaiSuat.dll" />
+    <Content Include="Dev\DataServices.NganQuy.dll" />
+    <Content Include="Dev\DataServices.NhanSu.dll" />
+    <Content Include="Dev\DataServices.PhongToa.dll" />
+    <Content Include="Dev\DataServices.Popup.dll" />
+    <Content Include="Dev\DataServices.QuanTriHeThong.dll" />
+    <Content Include="Dev\DataServices.TaiSan.dll" />
+    <Content Include="Dev\DataServices.TaiSanDamBao.dll" />
+    <Content Include="Dev\DataServices.ThanhVien.dll" />
+    <Content Include="Dev\DataServices.TinDung.dll" />
+    <Content Include="Dev\DataServices.TruyVan.dll" />
+    <Content Include="Dev\DataServices.Utilities.dll" />
+    <Content Include="Dev\DataServices.ZAMainApp.dll" />
+    <Content Include="Dev\Hosts.Startup.dll" />
+    <Content Include="Dev\log4net.dll" />
+    <Content Include="Dev\mfServer\app\init.txt" />
+    <Content Include="Dev\mfServer\images\M7.png" />
+    <Content Include="Dev\mfServer\images\NGV.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

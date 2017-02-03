@@ -1,0 +1,72 @@
+﻿<UserControl x:Class="PresentationWPF.BaoCao.GDKT.ucXacNhanSoDuTietKiem"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:ribbon="http://schemas.microsoft.com/winfx/2006/xaml/presentation/ribbon" 
+             xmlns:telerikMaskInput="clr-namespace:Telerik.Windows.Controls.MaskedInput;assembly=Telerik.Windows.Controls.Input"
+             xmlns:uc="clr-namespace:PresentationWPF.CustomControl;assembly=PresentationWPF.CustomControl"     
+             xmlns:local="clr-namespace:PresentationWPF.BaoCao.GDKT"  
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="800">
+    <Grid>
+        <DockPanel>
+            <Grid>
+                <DockPanel>
+                    <GroupBox Header="{DynamicResource BC.9236_SO_CHI_TIET_TAI_KHOAN}" Margin="3,10,3,3" DockPanel.Dock="Top">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="2*" />
+                                <ColumnDefinition Width="20" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="2*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="6" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="6" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="6" />
+                                <RowDefinition Height="Auto" />                              
+                            </Grid.RowDefinitions>
+                            <Label Content="Chi nhánh: " Grid.Row="0" Grid.Column="0"/>
+                            <Label Content="Phòng GD: " Grid.Row="0" Grid.Column="3"/>
+                            <Label Content="Số liệu đến ngày: " Grid.Row="2" Grid.Column="0"/>
+                            <Label Content="Ngày báo cáo: " Grid.Row="2" Grid.Column="3"/>
+                            <Label Content="Loại báo cáo: " Grid.Row="4" Grid.Column="0"/>
+                            <Label Grid.Row="7" Grid.ColumnSpan="5" Height="0.5" Background="DarkGray" />
+                            <Label Content="Ngôn ngữ: " Grid.Row="6" Grid.Column="0"/>
+                            <Label Content="Định dạng báo cáo: " Grid.Row="6" Grid.Column="3"/>
+                            <telerik:RadComboBox IsEditable="True" Name="cmbChiNhanh" Grid.Row="0" Grid.Column="1" SelectionChanged="cmbChiNhanh_SelectionChanged" />
+                            <telerik:RadComboBox IsEditable="True" Name="cmbPhongGD" Grid.Row="0" Grid.Column="4" SelectionChanged="cmbPhongGD_SelectionChanged" />
+                            <telerik:RadMaskedDateTimeInput Name="raddtDenNgay" Grid.Row="2" Grid.Column="1" Mask="dd/MM/yyyy" HorizontalAlignment="Stretch" Margin="0,0,35,0"/>
+                            <DatePicker Grid.Row="2" Grid.Column="1" HorizontalAlignment="Right" Width="30" SelectedDate="{Binding Path=Value,ElementName=raddtDenNgay}" />
+                            <telerik:RadMaskedDateTimeInput Name="raddtNgayBaoCao" Grid.Row="2" Grid.Column="4" Mask="dd/MM/yyyy" HorizontalAlignment="Stretch" Margin="0,0,35,0"/>
+                            <DatePicker Grid.Row="2" Grid.Column="4" HorizontalAlignment="Right" Width="30" SelectedDate="{Binding Path=Value,ElementName=raddtNgayBaoCao}" />
+                            <telerik:RadComboBox IsEditable="True" Name="cmbLoaiBaoCao" Grid.Row="4" Grid.Column="1" SelectionChanged="cmbLoaiBaoCao_SelectionChanged" />
+                            <telerik:RadComboBox IsEditable="True" Name="cmbNgonNgu" Grid.Row="6" Grid.Column="1" />
+                            <telerik:RadComboBox IsEditable="True" Name="cmbDinhDang" Grid.Row="6" Grid.Column="4" />
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox Header="Thông tin Cụm" Margin="3,10,3,3" DockPanel.Dock="Top" Name="grbCum">
+                        <Grid>
+                            <telerik:RadGridView Name="grCum" ShowGroupPanel="False" Margin="3,0" ItemsSource="{Binding}" SelectionMode="Extended" 
+                AutoGenerateColumns="False" CanUserFreezeColumns="False" RowIndicatorVisibility="Collapsed" DockPanel.Dock="Top" TabIndex="26" >
+                                <telerik:RadGridView.Columns>
+                                    <telerik:GridViewSelectColumn MaxWidth="20" MinWidth="20" />
+                                    <telerik:GridViewDataColumn Header="ID" IsVisible="False" IsReadOnly="True" DataMemberBinding="{Binding ID}"/>
+                                    <telerik:GridViewDataColumn Header="STT" Width="50" IsReadOnly="True" DataMemberBinding="{Binding STT}"/>
+                                    <telerik:GridViewDataColumn Header="Mã Cụm" Width="*" IsReadOnly="True" DataMemberBinding="{Binding MA_CUM}"/>
+                                    <telerik:GridViewDataColumn Header="Tên Cụm"  Width="2*" IsReadOnly="True" DataMemberBinding="{Binding TEN_CUM}"/>
+                                </telerik:RadGridView.Columns>
+                            </telerik:RadGridView>
+                        </Grid>
+                    </GroupBox>
+                </DockPanel>
+            </Grid>
+        </DockPanel>
+    </Grid>
+</UserControl>

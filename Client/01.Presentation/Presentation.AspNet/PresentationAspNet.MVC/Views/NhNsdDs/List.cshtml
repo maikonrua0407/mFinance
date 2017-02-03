@@ -1,0 +1,67 @@
+﻿@using PresentationAspNet.MVC.LanguageManager
+@using Utilities.Common
+@model PresentationAspNet.MVC.Models.SysUsers
+@{
+    Layout = null;
+}
+
+@if (!Model.LstNhNsd.IsNullOrEmpty() && Model.LstNhNsd.Count > 0)
+{
+    foreach (var item in Model.LstNhNsd)
+    {
+        <tr>
+            <td>
+                <span>
+                    <div class="checker" id="uniform-@item.ID" onclick="CheckDiv('uniform-@item.ID');">
+                        <span>
+                            <input type="checkbox" id="@item.ID" name="chkNhNsd" />
+                        </span>
+                    </div>
+                </span>
+            </td>
+            <td>@(Model.LstNhNsd.IndexOf(item) + 1)</td>
+            <td>
+                @item.MA_NHNSD
+            </td>
+            <td>
+                @item.TEN_NHNSD
+            </td>
+            <td>
+                @item.MA_DVI_QLY
+            </td>
+            <td>
+                @CommonLang.layNgonNguNghiepVu(item.TTHAI_NVU)
+            </td>
+        </tr>
+    }
+}
+else if (!Model.LstNsd.IsNullOrEmpty() && Model.LstNsd.Count > 0)
+{
+    foreach (var item in Model.LstNsd)
+    {
+        <tr>
+            <td>
+                <span>
+                    <div class="checker" id="uniform-@item.ID" onclick="CheckDiv('uniform-@item.ID');">
+                        <span>
+                            <input type="checkbox" id="@item.ID" name="chkNhNsd" />
+                        </span>
+                    </div>
+                </span>
+            </td>
+            <td>@(Model.LstNsd.IndexOf(item) + 1)</td>
+            <td>
+                @item.MA_NSD
+            </td>
+            <td>
+                @item.TEN_DAY_DU
+            </td>
+            <td>
+                @item.MA_DVI_QLY
+            </td>
+            <td>
+                @CommonLang.layNgonNguNghiepVu(item.TTHAI_NVU)
+            </td>
+        </tr>
+    }
+}

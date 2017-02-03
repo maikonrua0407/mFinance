@@ -1,0 +1,156 @@
+﻿@using PresentationAspNet.MVC
+@{
+    //var listTask = new List<HT_ThongBaoBo>();
+    //new HtThongBaoBl().GetTaskByUser(new ThongBao_GetTaskByUserPara
+    //    {
+    //        TuKhoa = null,
+    //        TuNgay = null,
+    //        DenNgay = null,
+    //        NotRead = false,
+    //        Loai = string.Empty,
+    //        UserName = PresentationAspNet.MVC.Common.GetUserName(),
+    //        CurrentPage = 1,
+    //        PageSize = 10,
+    //        TongSoBanGhi = 0
+    //    });
+}
+<script type="text/javascript">
+    function RedirectLinkThongBao(link, id, act) {
+        //cap nhat lai trang thai da doc cua tin do
+        $.getJSON("@Html.Raw(Url.Action("CapNhatThongBao", "Home"))", {
+            idThongBao: id,
+            act: act
+        }, function (data) {
+            if (data == WARNING_SUCCESS) {
+                if (link != '#') {
+                    window.location.href = link;
+                }
+                if (act != '') {
+                    window.location.href = '/HeThong/ThongBaoCaNhan/';
+                }
+            }
+        });
+    }
+
+    function CheckDataCache() {
+        var lstObj = [];
+        CheckDataIndexedDb(InitListTableIndexed(), 0, lstObj);
+    }
+</script>
+<ul class="nav navbar-nav user_menu pull-right" style="line-height: 22px;">
+    @*@if (!listTask.IsNullOrEmpty() && listTask.Count > 0)
+        {
+            <li>
+                <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                    <i class="icon-bell-alt icon-animated-bell"></i>
+                    <span class="badge badge-important">@listTask.Count</span>
+                </a>
+                <ul class="pull-right dropdown-navbar navbar-red dropdown-menu dropdown-caret dropdown-closer dropdown-menu-div" style="top: 45px; right: 35px;">
+                    <li class="nav-header">
+                        <i class="icon-warning-sign"></i>
+                        Có @listTask.Count việc cần xử lý
+                    </li>
+                    @foreach (var item in listTask)
+                    {
+                        var link = !string.IsNullOrEmpty(item.Link) ? item.Link : "#";
+                        <li>
+                            <a href="javascript:void(0);" onclick="RedirectLinkThongBao('@link', '@item.ID','')">
+                                <div class="clearfix">
+                                    <span class="pull-left" style="white-space: normal">
+                                        - @item.NoiDung
+                                    </span>
+                                </div>
+                            </a>
+                        </li>
+                    }
+
+                    <li>
+                        <a href="javascript:void(0);" onclick="RedirectLinkThongBao('','','1')">
+                            Xem tất cả ...<i class="icon-arrow-right"></i>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        }*@
+    <li>
+        @if (UserInformation.Session_User != null && UserInformation.Session_User.TenDonViGiaoDich != null)
+        {
+            <a href="javascript:void(0);" onclick=" DanhSachKho() ">
+                <span style="color: forestgreen !important; font-size: 13px;">
+                    @UserInformation.Session_User.TenDonViGiaoDich
+                    <i class="icon-th"></i>
+                </span>
+            </a>
+        }
+    </li>
+    <li style="padding-right: 10px">
+        @if (UserInformation.Session_User != null && UserInformation.Session_User.TenDonVi != null)
+        {
+            <a href="javascript:void(0);" onclick=" DanhSachKho() ">
+                <span style="color: mediumturquoise !important; margin-left: 15px; font-size: 13px;">
+                    @UserInformation.Session_User.TenDonVi
+                    <i class="icon-laptop"></i>
+                </span>
+            </a>
+        }
+    </li>
+    <li class="dropdown" style="padding-top: 5px;">
+        <span class="dropdown-toggle" data-toggle="dropdown" style="color: dodgerblue; cursor: pointer;">
+            @(UserInformation.Session_User != null ? UserInformation.Session_User.HoTen : string.Empty)
+            <i class="icon-user"></i>
+        </span>
+        <ul class="dropdown-menu dropdown-menu-div">
+            @*<li>
+                    <a href="javascript:void(0);" onclick="ShowPhimTat()">
+                        <i class="icon-cut blue"></i>
+                        Bảng phím tắt
+                    </a>
+                </li>*@
+            <li>
+                <a href="javascript:void(0);" onclick=" CauHinhMacDinh() ">
+                    <i class="icon-cogs blue"></i>
+                    Cấu hình mặc định
+                </a>
+            </li>
+            <li>
+                <a href="javascript:void(0);" onclick=" DanhSachKho() ">
+                    <i class="icon-exchange blue"></i>
+                    Chuyển đơn vị làm việc
+                </a>
+            </li>
+            <li>
+                <a href="javascript:void(0);" onclick=" ChangInfor() ">
+                    <i class="icon-key blue"></i>
+                    Đổi mật khẩu
+                </a>
+            </li>
+            <li>
+                <a href="javascript:void(0);" onclick=" CheckDataCache() ">
+                    <i class="fa fa-refresh blue"></i>
+                    Kiểm tra dữ liệu
+                </a>
+            </li>
+            @*<li>
+                    <a href="javascript:void(0);" onclick="reloadDB()">
+                        <i class="icon-key blue"></i>
+                        Tải lại dữ liệu
+                    </a>
+                </li>*@
+            <li>
+                <a href="javascript:void(0);" onclick=" LogOff(); ">
+                    <i class="fa fa-sign-out red"></i>
+                    Đăng xuất
+                </a>
+            </li>
+        </ul>
+    </li>
+</ul>
+<style type="text/css">
+    .icon-username {
+        background-image: url("/Content/assets/img/iconset.png");
+        background-position: 0 -1225px;
+        width: 27px !important;
+        height: 30px !important;
+        display: inline-block !important;
+    }
+</style>

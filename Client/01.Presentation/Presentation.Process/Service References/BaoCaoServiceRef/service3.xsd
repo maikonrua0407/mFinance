@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="" namespace="http://schemas.datacontract.org/2004/07/CommunicationServices.BaoCao.Messages" />
+  <xs:element name="returnHello">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="returnHelloResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="returnHelloResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LayDanhSachBaoCaoTheoPhanHe">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/CommunicationServices.BaoCao.Messages" minOccurs="0" name="request" nillable="true" type="q1:BaoCaoRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LayDanhSachBaoCaoTheoPhanHeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/CommunicationServices.BaoCao.Messages" minOccurs="0" name="LayDanhSachBaoCaoTheoPhanHeResult" nillable="true" type="q2:BaoCaoResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LayThongTinBaoCao">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/CommunicationServices.BaoCao.Messages" minOccurs="0" name="request" nillable="true" type="q3:BaoCaoRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LayThongTinBaoCaoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/CommunicationServices.BaoCao.Messages" minOccurs="0" name="LayThongTinBaoCaoResult" nillable="true" type="q4:BaoCaoResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LayDuLieuBaoCao">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/CommunicationServices.BaoCao.Messages" minOccurs="0" name="request" nillable="true" type="q5:BaoCaoRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LayDuLieuBaoCaoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/CommunicationServices.BaoCao.Messages" minOccurs="0" name="LayDuLieuBaoCaoResult" nillable="true" type="q6:BaoCaoResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LayDuLieuBaoCaoTKe">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/CommunicationServices.BaoCao.Messages" minOccurs="0" name="request" nillable="true" type="q7:BaoCaoRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LayDuLieuBaoCaoTKeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/CommunicationServices.BaoCao.Messages" minOccurs="0" name="LayDuLieuBaoCaoTKeResult" nillable="true" type="q8:BaoCaoResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LayDuLieu">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/CommunicationServices.BaoCao.Messages" minOccurs="0" name="request" nillable="true" type="q9:BaoCaoRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LayDuLieuResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/CommunicationServices.BaoCao.Messages" minOccurs="0" name="LayDuLieuResult" nillable="true" type="q10:BaoCaoResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LayDuLieuVanHanhGiaoDich">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/CommunicationServices.BaoCao.Messages" minOccurs="0" name="request" nillable="true" type="q11:VanHanhGiaoDichRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LayDuLieuVanHanhGiaoDichResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/CommunicationServices.BaoCao.Messages" minOccurs="0" name="LayDuLieuVanHanhGiaoDichResult" nillable="true" type="q12:VanHanhGiaoDichResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="XuatExcel">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/CommunicationServices.BaoCao.Messages" minOccurs="0" name="request" nillable="true" type="q13:BaoCaoRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="XuatExcelResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/CommunicationServices.BaoCao.Messages" minOccurs="0" name="XuatExcelResult" nillable="true" type="q14:BaoCaoResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NhapDuLieuDauVaoBCTK">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/CommunicationServices.BaoCao.Messages" minOccurs="0" name="request" nillable="true" type="q15:BaoCaoRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NhapDuLieuDauVaoBCTKResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/CommunicationServices.BaoCao.Messages" minOccurs="0" name="NhapDuLieuDauVaoBCTKResult" nillable="true" type="q16:BaoCaoResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

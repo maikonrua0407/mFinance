@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/CommunicationContracts.Base.MessageBases" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/CommunicationContracts.Base.MessageBases" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:1001/BaoHiemService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Utilities.Common" />
+  <xs:import schemaLocation="http://localhost:1001/BaoHiemService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" />
+  <xs:complexType name="LockRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" base="q1:RequestBase">
+        <xs:sequence>
+          <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Utilities.Common" minOccurs="0" name="Action" type="q2:DatabaseConstant.Action" />
+          <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Utilities.Common" minOccurs="0" name="Function" type="q3:DatabaseConstant.Function" />
+          <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Utilities.Common" minOccurs="0" name="Module" type="q4:DatabaseConstant.Module" />
+          <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Utilities.Common" minOccurs="0" name="Table" type="q5:DatabaseConstant.Table" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LockRequest" nillable="true" type="tns:LockRequest" />
+  <xs:complexType name="LockResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q6="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" base="q6:ResponseBase">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LockResponse" nillable="true" type="tns:LockResponse" />
+  <xs:complexType name="UnlockRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q7="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" base="q7:RequestBase">
+        <xs:sequence>
+          <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Utilities.Common" minOccurs="0" name="Action" type="q8:DatabaseConstant.Action" />
+          <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Utilities.Common" minOccurs="0" name="Function" type="q9:DatabaseConstant.Function" />
+          <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Utilities.Common" minOccurs="0" name="Module" type="q10:DatabaseConstant.Module" />
+          <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Utilities.Common" minOccurs="0" name="Table" type="q11:DatabaseConstant.Table" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UnlockRequest" nillable="true" type="tns:UnlockRequest" />
+  <xs:complexType name="UnlockResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q12="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" base="q12:ResponseBase">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UnlockResponse" nillable="true" type="tns:UnlockResponse" />
+  <xs:complexType name="CheckDuplicateRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="GiaTri" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TenBang" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TenTruong" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CheckDuplicateRequest" nillable="true" type="tns:CheckDuplicateRequest" />
+  <xs:complexType name="CheckDuplicateResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="KetQua" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CheckDuplicateResponse" nillable="true" type="tns:CheckDuplicateResponse" />
+</xs:schema>

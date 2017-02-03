@@ -1,0 +1,48 @@
+﻿@using PresentationAspNet.MVC
+@using Utilities.Common
+@{
+    var lstPhongGd = UserInformation.Session_User.ListPhongGD.OrderBy(e => e.MA_DVI).ToList();
+    var brand = "";
+    var trans = "";
+    if (PresentationAspNet.MVC.UserInformation.Session_User.IsNullOrEmpty() || PresentationAspNet.MVC.UserInformation.Session_User.NgonNgu == "vi")
+    {
+        brand = "Chi nhánh";
+        trans = "Phòng giao dịch";
+    }
+    else
+    {
+        brand = "Brand";
+        trans = "Transaction office";
+    }
+}
+
+<div class="form-group">
+    <label class="span4">@brand: </label>
+    <label class="span8" style="font-size: 16px; color: #0C5173; ">@UserInformation.Session_User.TenDonVi</label>
+</div>
+<div class="row">
+    <label class="span4" style="padding-top: 4px !important;">
+        @trans :
+    </label>
+    <div id="dvDiemGd" class="span8">
+        @{
+            var data = lstPhongGd;
+
+            if (data != null && data.Count > 0)
+            {
+                <select name="cboDiemGD" id="cboDiemGD" style="width: 100%; height: 40px">
+                    @foreach (var d in data)
+                    {
+                        <option value="@d.ID">@d.TEN_GDICH</option>
+                    }
+                </select>
+            }
+        }
+    </div>
+
+</div>
+
+
+
+
+

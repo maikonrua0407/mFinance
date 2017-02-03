@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/CommunicationServices.Popup.Messages" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/CommunicationServices.Popup.Messages" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" />
+  <xs:complexType name="SimplePopupRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" base="q1:RequestBase">
+        <xs:sequence>
+          <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ListParamValue" nillable="true" type="q2:ArrayOfstring" />
+          <xs:element minOccurs="0" name="MaTruyVan" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SimplePopupRequest" nillable="true" type="tns:SimplePopupRequest" />
+  <xs:complexType name="SimplePopupResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" base="q3:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DataSetSource" nillable="true">
+            <xs:complexType>
+              <xs:annotation>
+                <xs:appinfo>
+                  <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+                </xs:appinfo>
+              </xs:annotation>
+              <xs:sequence>
+                <xs:element ref="xs:schema" />
+                <xs:any />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element minOccurs="0" name="FormatData" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ListHeader" nillable="true" type="tns:ArrayOfHeaderDto" />
+          <xs:element minOccurs="0" name="ListPopupRow" nillable="true" type="tns:ArrayOfPopupRowDto" />
+          <xs:element minOccurs="0" name="PopupTitle" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PropQuantity" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SimplePopupResponse" nillable="true" type="tns:SimplePopupResponse" />
+  <xs:complexType name="ArrayOfHeaderDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="HeaderDto" nillable="true" type="tns:HeaderDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfHeaderDto" nillable="true" type="tns:ArrayOfHeaderDto" />
+  <xs:complexType name="HeaderDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="LanguageKey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WidthUnit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WidthValue" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="HeaderDto" nillable="true" type="tns:HeaderDto" />
+  <xs:complexType name="ArrayOfPopupRowDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PopupRowDto" nillable="true" type="tns:PopupRowDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPopupRowDto" nillable="true" type="tns:ArrayOfPopupRowDto" />
+  <xs:complexType name="PopupRowDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ListPropValue" nillable="true" type="q4:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PopupRowDto" nillable="true" type="tns:PopupRowDto" />
+</xs:schema>

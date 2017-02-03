@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="a25f1c43-58c5-49ba-9e7e-52724a2e7453" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:1001/KhachHangService.svc/mex/mex/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service1.wsdl" MetadataType="Wsdl" ID="e5f3ffc8-0484-4c27-87bb-52f511382590" SourceId="1" SourceUrl="http://localhost:1001/KhachHangService.svc/mex/mex/mex" />
+    <MetadataFile FileName="service3.xsd" MetadataType="Schema" ID="ffd1b93e-27e3-4cf5-9135-9a9d6622a067" SourceId="1" SourceUrl="http://localhost:1001/KhachHangService.svc/mex/mex/mex" />
+    <MetadataFile FileName="service6.xsd" MetadataType="Schema" ID="da4f6cd5-14f7-4034-b809-c916f84afda1" SourceId="1" SourceUrl="http://localhost:1001/KhachHangService.svc/mex/mex/mex" />
+    <MetadataFile FileName="CommunicationServices.KhachHang.Messages1.xsd" MetadataType="Schema" ID="1d0663d6-80c2-43b4-be1f-06910297029e" SourceId="1" SourceUrl="http://localhost:1001/KhachHangService.svc/mex/mex/mex" />
+    <MetadataFile FileName="CommunicationMessages.Base.MessageBases1.xsd" MetadataType="Schema" ID="c8c85c6d-febe-4f0a-b5c1-141480ff4fa8" SourceId="1" SourceUrl="http://localhost:1001/KhachHangService.svc/mex/mex/mex" />
+    <MetadataFile FileName="Utilities.Common1.xsd" MetadataType="Schema" ID="2a318cab-90af-42c1-8414-199212054953" SourceId="1" SourceUrl="http://localhost:1001/KhachHangService.svc/mex/mex/mex" />
+    <MetadataFile FileName="service7.xsd" MetadataType="Schema" ID="d8b8b100-02c3-44f3-b821-3f433499d3ed" SourceId="1" SourceUrl="http://localhost:1001/KhachHangService.svc/mex/mex/mex" />
+    <MetadataFile FileName="DataModel.EntityFramework1.xsd" MetadataType="Schema" ID="bda495cd-87d3-4eb9-9b02-38fcf839c842" SourceId="1" SourceUrl="http://localhost:1001/KhachHangService.svc/mex/mex/mex" />
+    <MetadataFile FileName="BusinessServices.Utilities.DTO1.xsd" MetadataType="Schema" ID="4bf07b24-b0bb-43ec-9c7b-a3ec7ccd9746" SourceId="1" SourceUrl="http://localhost:1001/KhachHangService.svc/mex/mex/mex" />
+    <MetadataFile FileName="Arrays1.xsd" MetadataType="Schema" ID="4e1ea55f-d939-416b-9d0e-40b941cf2395" SourceId="1" SourceUrl="http://localhost:1001/KhachHangService.svc/mex/mex/mex" />
+    <MetadataFile FileName="BusinessServices.KhachHang.DTO1.xsd" MetadataType="Schema" ID="876f83f1-4d5e-4900-9a01-067af65bc0f3" SourceId="1" SourceUrl="http://localhost:1001/KhachHangService.svc/mex/mex/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

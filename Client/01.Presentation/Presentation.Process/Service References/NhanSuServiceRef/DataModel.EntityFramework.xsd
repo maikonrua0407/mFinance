@@ -1,0 +1,1624 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="ArrayOfNS_DM_BANG_CAP">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NS_DM_BANG_CAP" nillable="true" type="tns:NS_DM_BANG_CAP" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNS_DM_BANG_CAP" nillable="true" type="tns:ArrayOfNS_DM_BANG_CAP" />
+  <xs:complexType name="NS_DM_BANG_CAP">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChangeTracker" nillable="true" type="tns:ObjectChangeTracker" />
+      <xs:element minOccurs="0" name="FN001" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN002" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN003" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN004" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN005" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN006" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN007" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN008" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN009" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN010" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="MA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DOI_TUONG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_QLY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_TAO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MO_TA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TEN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_BGHI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_NVU" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="NS_DM_BANG_CAP" nillable="true" type="tns:NS_DM_BANG_CAP" />
+  <xs:complexType name="ObjectChangeTracker">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ExtendedProperties" nillable="true" type="tns:ExtendedPropertiesDictionary" />
+      <xs:element minOccurs="0" name="ObjectsAddedToCollectionProperties" nillable="true" type="tns:ObjectsAddedToCollectionProperties" />
+      <xs:element minOccurs="0" name="ObjectsRemovedFromCollectionProperties" nillable="true" type="tns:ObjectsRemovedFromCollectionProperties" />
+      <xs:element minOccurs="0" name="OriginalValues" nillable="true" type="tns:OriginalValuesDictionary" />
+      <xs:element minOccurs="0" name="State" type="tns:ObjectState" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="ObjectChangeTracker" nillable="true" type="tns:ObjectChangeTracker" />
+  <xs:complexType name="ExtendedPropertiesDictionary">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsDictionary xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsDictionary>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ExtendedProperties">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Name" nillable="true" type="xs:string" />
+            <xs:element name="ExtendedProperty" nillable="true" type="xs:anyType" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ExtendedPropertiesDictionary" nillable="true" type="tns:ExtendedPropertiesDictionary" />
+  <xs:complexType name="ObjectsAddedToCollectionProperties">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsDictionary xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsDictionary>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AddedObjectsForProperty">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="CollectionPropertyName" nillable="true" type="xs:string" />
+            <xs:element name="AddedObjects" nillable="true" type="tns:ObjectList" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ObjectsAddedToCollectionProperties" nillable="true" type="tns:ObjectsAddedToCollectionProperties" />
+  <xs:complexType name="ObjectList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ObjectValue" nillable="true" type="xs:anyType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ObjectList" nillable="true" type="tns:ObjectList" />
+  <xs:complexType name="ObjectsRemovedFromCollectionProperties">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsDictionary xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsDictionary>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DeletedObjectsForProperty">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="CollectionPropertyName" nillable="true" type="xs:string" />
+            <xs:element name="DeletedObjects" nillable="true" type="tns:ObjectList" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ObjectsRemovedFromCollectionProperties" nillable="true" type="tns:ObjectsRemovedFromCollectionProperties" />
+  <xs:complexType name="OriginalValuesDictionary">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsDictionary xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsDictionary>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="OriginalValues">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Name" nillable="true" type="xs:string" />
+            <xs:element name="OriginalValue" nillable="true" type="xs:anyType" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OriginalValuesDictionary" nillable="true" type="tns:OriginalValuesDictionary" />
+  <xs:simpleType name="ObjectState">
+    <xs:list>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Unchanged" />
+          <xs:enumeration value="Added" />
+          <xs:enumeration value="Modified" />
+          <xs:enumeration value="Deleted" />
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:list>
+  </xs:simpleType>
+  <xs:element name="ObjectState" nillable="true" type="tns:ObjectState" />
+  <xs:complexType name="ArrayOfNS_DM_BVIEN_KCB">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NS_DM_BVIEN_KCB" nillable="true" type="tns:NS_DM_BVIEN_KCB" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNS_DM_BVIEN_KCB" nillable="true" type="tns:ArrayOfNS_DM_BVIEN_KCB" />
+  <xs:complexType name="NS_DM_BVIEN_KCB">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChangeTracker" nillable="true" type="tns:ObjectChangeTracker" />
+      <xs:element minOccurs="0" name="FN001" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN002" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN003" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN004" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN005" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN006" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN007" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN008" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN009" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN010" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="MA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DOI_TUONG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_QLY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_TAO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MO_TA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TEN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_BGHI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_NVU" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="NS_DM_BVIEN_KCB" nillable="true" type="tns:NS_DM_BVIEN_KCB" />
+  <xs:complexType name="ArrayOfNS_DM_CHUC_VU">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NS_DM_CHUC_VU" nillable="true" type="tns:NS_DM_CHUC_VU" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNS_DM_CHUC_VU" nillable="true" type="tns:ArrayOfNS_DM_CHUC_VU" />
+  <xs:complexType name="NS_DM_CHUC_VU">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChangeTracker" nillable="true" type="tns:ObjectChangeTracker" />
+      <xs:element minOccurs="0" name="FN001" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN002" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN003" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN004" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN005" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN006" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN007" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN008" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN009" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN010" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="MA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DOI_TUONG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_QLY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_TAO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MO_TA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TEN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_BGHI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_NVU" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="NS_DM_CHUC_VU" nillable="true" type="tns:NS_DM_CHUC_VU" />
+  <xs:complexType name="ArrayOfNS_DM_CNGANH_DTAO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NS_DM_CNGANH_DTAO" nillable="true" type="tns:NS_DM_CNGANH_DTAO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNS_DM_CNGANH_DTAO" nillable="true" type="tns:ArrayOfNS_DM_CNGANH_DTAO" />
+  <xs:complexType name="NS_DM_CNGANH_DTAO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChangeTracker" nillable="true" type="tns:ObjectChangeTracker" />
+      <xs:element minOccurs="0" name="FN001" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN002" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN003" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN004" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN005" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN006" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN007" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN008" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN009" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN010" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="MA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DOI_TUONG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_QLY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_TAO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MO_TA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TEN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_BGHI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_NVU" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="NS_DM_CNGANH_DTAO" nillable="true" type="tns:NS_DM_CNGANH_DTAO" />
+  <xs:complexType name="ArrayOfNS_DM_CU_TRU">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NS_DM_CU_TRU" nillable="true" type="tns:NS_DM_CU_TRU" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNS_DM_CU_TRU" nillable="true" type="tns:ArrayOfNS_DM_CU_TRU" />
+  <xs:complexType name="NS_DM_CU_TRU">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChangeTracker" nillable="true" type="tns:ObjectChangeTracker" />
+      <xs:element minOccurs="0" name="FN001" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN002" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN003" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN004" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN005" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN006" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN007" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN008" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN009" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN010" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="MA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DOI_TUONG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_QLY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_TAO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MO_TA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TEN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_BGHI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_NVU" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="NS_DM_CU_TRU" nillable="true" type="tns:NS_DM_CU_TRU" />
+  <xs:complexType name="ArrayOfNS_DM_DAN_TOC">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NS_DM_DAN_TOC" nillable="true" type="tns:NS_DM_DAN_TOC" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNS_DM_DAN_TOC" nillable="true" type="tns:ArrayOfNS_DM_DAN_TOC" />
+  <xs:complexType name="NS_DM_DAN_TOC">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChangeTracker" nillable="true" type="tns:ObjectChangeTracker" />
+      <xs:element minOccurs="0" name="FN001" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN002" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN003" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN004" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN005" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN006" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN007" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN008" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN009" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN010" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="MA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DOI_TUONG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_QLY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_TAO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MO_TA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TEN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_BGHI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_NVU" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="NS_DM_DAN_TOC" nillable="true" type="tns:NS_DM_DAN_TOC" />
+  <xs:complexType name="ArrayOfNS_DM_DVI_CTAC">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NS_DM_DVI_CTAC" nillable="true" type="tns:NS_DM_DVI_CTAC" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNS_DM_DVI_CTAC" nillable="true" type="tns:ArrayOfNS_DM_DVI_CTAC" />
+  <xs:complexType name="NS_DM_DVI_CTAC">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChangeTracker" nillable="true" type="tns:ObjectChangeTracker" />
+      <xs:element minOccurs="0" name="FN001" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN002" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN003" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN004" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN005" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN006" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN007" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN008" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN009" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN010" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="MA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DOI_TUONG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_QLY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_TAO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MO_TA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TEN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_BGHI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_NVU" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="NS_DM_DVI_CTAC" nillable="true" type="tns:NS_DM_DVI_CTAC" />
+  <xs:complexType name="ArrayOfNS_DM_DVI_TGIAN">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NS_DM_DVI_TGIAN" nillable="true" type="tns:NS_DM_DVI_TGIAN" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNS_DM_DVI_TGIAN" nillable="true" type="tns:ArrayOfNS_DM_DVI_TGIAN" />
+  <xs:complexType name="NS_DM_DVI_TGIAN">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChangeTracker" nillable="true" type="tns:ObjectChangeTracker" />
+      <xs:element minOccurs="0" name="FN001" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN002" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN003" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN004" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN005" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN006" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN007" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN008" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN009" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN010" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="MA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DOI_TUONG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_QLY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_TAO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MO_TA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TEN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_BGHI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_NVU" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="NS_DM_DVI_TGIAN" nillable="true" type="tns:NS_DM_DVI_TGIAN" />
+  <xs:complexType name="ArrayOfNS_DM_GIOI_TINH">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NS_DM_GIOI_TINH" nillable="true" type="tns:NS_DM_GIOI_TINH" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNS_DM_GIOI_TINH" nillable="true" type="tns:ArrayOfNS_DM_GIOI_TINH" />
+  <xs:complexType name="NS_DM_GIOI_TINH">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChangeTracker" nillable="true" type="tns:ObjectChangeTracker" />
+      <xs:element minOccurs="0" name="FN001" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN002" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN003" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN004" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN005" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN006" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN007" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN008" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN009" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN010" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="MA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DOI_TUONG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_QLY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_TAO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MO_TA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TEN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_BGHI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_NVU" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="NS_DM_GIOI_TINH" nillable="true" type="tns:NS_DM_GIOI_TINH" />
+  <xs:complexType name="ArrayOfNS_DM_HTHUC_DTAO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NS_DM_HTHUC_DTAO" nillable="true" type="tns:NS_DM_HTHUC_DTAO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNS_DM_HTHUC_DTAO" nillable="true" type="tns:ArrayOfNS_DM_HTHUC_DTAO" />
+  <xs:complexType name="NS_DM_HTHUC_DTAO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChangeTracker" nillable="true" type="tns:ObjectChangeTracker" />
+      <xs:element minOccurs="0" name="FN001" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN002" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN003" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN004" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN005" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN006" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN007" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN008" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN009" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN010" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="MA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DOI_TUONG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_QLY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_TAO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MO_TA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TEN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_BGHI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_NVU" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="NS_DM_HTHUC_DTAO" nillable="true" type="tns:NS_DM_HTHUC_DTAO" />
+  <xs:complexType name="ArrayOfNS_DM_HTHUC_KTHUONG">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NS_DM_HTHUC_KTHUONG" nillable="true" type="tns:NS_DM_HTHUC_KTHUONG" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNS_DM_HTHUC_KTHUONG" nillable="true" type="tns:ArrayOfNS_DM_HTHUC_KTHUONG" />
+  <xs:complexType name="NS_DM_HTHUC_KTHUONG">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChangeTracker" nillable="true" type="tns:ObjectChangeTracker" />
+      <xs:element minOccurs="0" name="FN001" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN002" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN003" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN004" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN005" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN006" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN007" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN008" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN009" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN010" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="MA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DOI_TUONG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_QLY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_TAO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MO_TA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TEN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_BGHI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_NVU" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="NS_DM_HTHUC_KTHUONG" nillable="true" type="tns:NS_DM_HTHUC_KTHUONG" />
+  <xs:complexType name="ArrayOfNS_DM_HTHUC_KLUAT">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NS_DM_HTHUC_KLUAT" nillable="true" type="tns:NS_DM_HTHUC_KLUAT" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNS_DM_HTHUC_KLUAT" nillable="true" type="tns:ArrayOfNS_DM_HTHUC_KLUAT" />
+  <xs:complexType name="NS_DM_HTHUC_KLUAT">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChangeTracker" nillable="true" type="tns:ObjectChangeTracker" />
+      <xs:element minOccurs="0" name="FN001" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN002" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN003" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN004" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN005" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN006" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN007" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN008" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN009" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN010" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="MA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DOI_TUONG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_QLY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_TAO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MO_TA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TEN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_BGHI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_NVU" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="NS_DM_HTHUC_KLUAT" nillable="true" type="tns:NS_DM_HTHUC_KLUAT" />
+  <xs:complexType name="ArrayOfNS_DM_HTHUC_LVIEC">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NS_DM_HTHUC_LVIEC" nillable="true" type="tns:NS_DM_HTHUC_LVIEC" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNS_DM_HTHUC_LVIEC" nillable="true" type="tns:ArrayOfNS_DM_HTHUC_LVIEC" />
+  <xs:complexType name="NS_DM_HTHUC_LVIEC">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChangeTracker" nillable="true" type="tns:ObjectChangeTracker" />
+      <xs:element minOccurs="0" name="FN001" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN002" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN003" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN004" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN005" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN006" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN007" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN008" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN009" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN010" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="MA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DOI_TUONG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_QLY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_TAO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MO_TA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TEN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_BGHI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_NVU" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="NS_DM_HTHUC_LVIEC" nillable="true" type="tns:NS_DM_HTHUC_LVIEC" />
+  <xs:complexType name="ArrayOfNS_DM_HTHUC_TLUONG">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NS_DM_HTHUC_TLUONG" nillable="true" type="tns:NS_DM_HTHUC_TLUONG" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNS_DM_HTHUC_TLUONG" nillable="true" type="tns:ArrayOfNS_DM_HTHUC_TLUONG" />
+  <xs:complexType name="NS_DM_HTHUC_TLUONG">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChangeTracker" nillable="true" type="tns:ObjectChangeTracker" />
+      <xs:element minOccurs="0" name="FN001" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN002" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN003" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN004" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN005" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN006" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN007" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN008" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN009" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN010" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="MA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DOI_TUONG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_QLY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_TAO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MO_TA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TEN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_BGHI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_NVU" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="NS_DM_HTHUC_TLUONG" nillable="true" type="tns:NS_DM_HTHUC_TLUONG" />
+  <xs:complexType name="ArrayOfNS_DM_HOC_HAM">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NS_DM_HOC_HAM" nillable="true" type="tns:NS_DM_HOC_HAM" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNS_DM_HOC_HAM" nillable="true" type="tns:ArrayOfNS_DM_HOC_HAM" />
+  <xs:complexType name="NS_DM_HOC_HAM">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChangeTracker" nillable="true" type="tns:ObjectChangeTracker" />
+      <xs:element minOccurs="0" name="FN001" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN002" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN003" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN004" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN005" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN006" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN007" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN008" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN009" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN010" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="MA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DOI_TUONG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_QLY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_TAO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MO_TA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TEN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_BGHI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_NVU" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="NS_DM_HOC_HAM" nillable="true" type="tns:NS_DM_HOC_HAM" />
+  <xs:complexType name="ArrayOfNS_DM_HOC_VI">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NS_DM_HOC_VI" nillable="true" type="tns:NS_DM_HOC_VI" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNS_DM_HOC_VI" nillable="true" type="tns:ArrayOfNS_DM_HOC_VI" />
+  <xs:complexType name="NS_DM_HOC_VI">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChangeTracker" nillable="true" type="tns:ObjectChangeTracker" />
+      <xs:element minOccurs="0" name="FN001" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN002" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN003" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN004" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN005" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN006" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN007" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN008" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN009" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN010" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="MA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DOI_TUONG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_QLY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_TAO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MO_TA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TEN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_BGHI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_NVU" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="NS_DM_HOC_VI" nillable="true" type="tns:NS_DM_HOC_VI" />
+  <xs:complexType name="ArrayOfNS_DM_KHOA_DTAO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NS_DM_KHOA_DTAO" nillable="true" type="tns:NS_DM_KHOA_DTAO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNS_DM_KHOA_DTAO" nillable="true" type="tns:ArrayOfNS_DM_KHOA_DTAO" />
+  <xs:complexType name="NS_DM_KHOA_DTAO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChangeTracker" nillable="true" type="tns:ObjectChangeTracker" />
+      <xs:element minOccurs="0" name="FN001" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN002" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN003" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN004" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN005" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN006" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN007" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN008" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN009" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN010" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="MA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DOI_TUONG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_QLY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_TAO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MO_TA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TEN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_BGHI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_NVU" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="NS_DM_KHOA_DTAO" nillable="true" type="tns:NS_DM_KHOA_DTAO" />
+  <xs:complexType name="ArrayOfNS_DM_KHIEU_CCONG">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NS_DM_KHIEU_CCONG" nillable="true" type="tns:NS_DM_KHIEU_CCONG" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNS_DM_KHIEU_CCONG" nillable="true" type="tns:ArrayOfNS_DM_KHIEU_CCONG" />
+  <xs:complexType name="NS_DM_KHIEU_CCONG">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChangeTracker" nillable="true" type="tns:ObjectChangeTracker" />
+      <xs:element minOccurs="0" name="FN001" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN002" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN003" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN004" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN005" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN006" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN007" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN008" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN009" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN010" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="MA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DOI_TUONG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_QLY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_TAO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MO_TA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TEN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_BGHI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_NVU" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="NS_DM_KHIEU_CCONG" nillable="true" type="tns:NS_DM_KHIEU_CCONG" />
+  <xs:complexType name="ArrayOfNS_DM_KY_NANG">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NS_DM_KY_NANG" nillable="true" type="tns:NS_DM_KY_NANG" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNS_DM_KY_NANG" nillable="true" type="tns:ArrayOfNS_DM_KY_NANG" />
+  <xs:complexType name="NS_DM_KY_NANG">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChangeTracker" nillable="true" type="tns:ObjectChangeTracker" />
+      <xs:element minOccurs="0" name="FN001" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN002" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN003" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN004" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN005" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN006" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN007" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN008" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN009" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN010" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="MA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DOI_TUONG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_QLY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_TAO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MO_TA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TEN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_BGHI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_NVU" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="NS_DM_KY_NANG" nillable="true" type="tns:NS_DM_KY_NANG" />
+  <xs:complexType name="ArrayOfNS_DM_LOAI_CPHI">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NS_DM_LOAI_CPHI" nillable="true" type="tns:NS_DM_LOAI_CPHI" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNS_DM_LOAI_CPHI" nillable="true" type="tns:ArrayOfNS_DM_LOAI_CPHI" />
+  <xs:complexType name="NS_DM_LOAI_CPHI">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChangeTracker" nillable="true" type="tns:ObjectChangeTracker" />
+      <xs:element minOccurs="0" name="FN001" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN002" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN003" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN004" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN005" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN006" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN007" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN008" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN009" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN010" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="MA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DOI_TUONG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_QLY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_TAO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MO_TA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TEN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_BGHI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_NVU" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="NS_DM_LOAI_CPHI" nillable="true" type="tns:NS_DM_LOAI_CPHI" />
+  <xs:complexType name="ArrayOfNS_DM_LOAI_GTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NS_DM_LOAI_GTO" nillable="true" type="tns:NS_DM_LOAI_GTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNS_DM_LOAI_GTO" nillable="true" type="tns:ArrayOfNS_DM_LOAI_GTO" />
+  <xs:complexType name="NS_DM_LOAI_GTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChangeTracker" nillable="true" type="tns:ObjectChangeTracker" />
+      <xs:element minOccurs="0" name="FN001" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN002" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN003" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN004" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN005" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN006" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN007" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN008" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN009" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN010" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="MA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DOI_TUONG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_QLY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_TAO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MO_TA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TEN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_BGHI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_NVU" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="NS_DM_LOAI_GTO" nillable="true" type="tns:NS_DM_LOAI_GTO" />
+  <xs:complexType name="ArrayOfNS_DM_LOAI_HDLD">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NS_DM_LOAI_HDLD" nillable="true" type="tns:NS_DM_LOAI_HDLD" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNS_DM_LOAI_HDLD" nillable="true" type="tns:ArrayOfNS_DM_LOAI_HDLD" />
+  <xs:complexType name="NS_DM_LOAI_HDLD">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChangeTracker" nillable="true" type="tns:ObjectChangeTracker" />
+      <xs:element minOccurs="0" name="FN001" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN002" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN003" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN004" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN005" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN006" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN007" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN008" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN009" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN010" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="MA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DOI_TUONG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_QLY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_TAO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MO_TA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TEN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_BGHI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_NVU" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="NS_DM_LOAI_HDLD" nillable="true" type="tns:NS_DM_LOAI_HDLD" />
+  <xs:complexType name="ArrayOfNS_DM_LOAI_HSO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NS_DM_LOAI_HSO" nillable="true" type="tns:NS_DM_LOAI_HSO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNS_DM_LOAI_HSO" nillable="true" type="tns:ArrayOfNS_DM_LOAI_HSO" />
+  <xs:complexType name="NS_DM_LOAI_HSO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChangeTracker" nillable="true" type="tns:ObjectChangeTracker" />
+      <xs:element minOccurs="0" name="FN001" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN002" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN003" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN004" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN005" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN006" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN007" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN008" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN009" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN010" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="MA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DOI_TUONG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_QLY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_TAO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MO_TA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TEN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_BGHI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_NVU" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="NS_DM_LOAI_HSO" nillable="true" type="tns:NS_DM_LOAI_HSO" />
+  <xs:complexType name="ArrayOfNS_DM_LOAI_TNHAP">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NS_DM_LOAI_TNHAP" nillable="true" type="tns:NS_DM_LOAI_TNHAP" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNS_DM_LOAI_TNHAP" nillable="true" type="tns:ArrayOfNS_DM_LOAI_TNHAP" />
+  <xs:complexType name="NS_DM_LOAI_TNHAP">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChangeTracker" nillable="true" type="tns:ObjectChangeTracker" />
+      <xs:element minOccurs="0" name="FN001" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN002" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN003" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN004" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN005" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN006" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN007" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN008" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN009" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN010" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="MA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DOI_TUONG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_QLY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_TAO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MO_TA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TEN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_BGHI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_NVU" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="NS_DM_LOAI_TNHAP" nillable="true" type="tns:NS_DM_LOAI_TNHAP" />
+  <xs:complexType name="ArrayOfNS_DM_LDO_NPHEP">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NS_DM_LDO_NPHEP" nillable="true" type="tns:NS_DM_LDO_NPHEP" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNS_DM_LDO_NPHEP" nillable="true" type="tns:ArrayOfNS_DM_LDO_NPHEP" />
+  <xs:complexType name="NS_DM_LDO_NPHEP">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChangeTracker" nillable="true" type="tns:ObjectChangeTracker" />
+      <xs:element minOccurs="0" name="FN001" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN002" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN003" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN004" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN005" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN006" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN007" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN008" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN009" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN010" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="MA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DOI_TUONG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_QLY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_TAO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MO_TA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TEN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_BGHI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_NVU" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="NS_DM_LDO_NPHEP" nillable="true" type="tns:NS_DM_LDO_NPHEP" />
+  <xs:complexType name="ArrayOfNS_DM_LDO_TVIEC">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NS_DM_LDO_TVIEC" nillable="true" type="tns:NS_DM_LDO_TVIEC" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNS_DM_LDO_TVIEC" nillable="true" type="tns:ArrayOfNS_DM_LDO_TVIEC" />
+  <xs:complexType name="NS_DM_LDO_TVIEC">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChangeTracker" nillable="true" type="tns:ObjectChangeTracker" />
+      <xs:element minOccurs="0" name="FN001" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN002" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN003" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN004" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN005" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN006" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN007" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN008" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN009" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN010" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="MA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DOI_TUONG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_QLY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_TAO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MO_TA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TEN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_BGHI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_NVU" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="NS_DM_LDO_TVIEC" nillable="true" type="tns:NS_DM_LDO_TVIEC" />
+  <xs:complexType name="ArrayOfNS_DM_NGHE_NGHIEP">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NS_DM_NGHE_NGHIEP" nillable="true" type="tns:NS_DM_NGHE_NGHIEP" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNS_DM_NGHE_NGHIEP" nillable="true" type="tns:ArrayOfNS_DM_NGHE_NGHIEP" />
+  <xs:complexType name="NS_DM_NGHE_NGHIEP">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChangeTracker" nillable="true" type="tns:ObjectChangeTracker" />
+      <xs:element minOccurs="0" name="FN001" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN002" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN003" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN004" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN005" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN006" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN007" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN008" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN009" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN010" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="MA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DOI_TUONG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_QLY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_TAO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MO_TA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TEN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_BGHI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_NVU" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="NS_DM_NGHE_NGHIEP" nillable="true" type="tns:NS_DM_NGHE_NGHIEP" />
+  <xs:complexType name="ArrayOfNS_DM_PHUONG_XA">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NS_DM_PHUONG_XA" nillable="true" type="tns:NS_DM_PHUONG_XA" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNS_DM_PHUONG_XA" nillable="true" type="tns:ArrayOfNS_DM_PHUONG_XA" />
+  <xs:complexType name="NS_DM_PHUONG_XA">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChangeTracker" nillable="true" type="tns:ObjectChangeTracker" />
+      <xs:element minOccurs="0" name="FN001" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN002" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN003" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN004" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN005" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN006" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN007" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN008" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN009" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN010" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="MA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DOI_TUONG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_QLY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_TAO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MO_TA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TEN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_BGHI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_NVU" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="NS_DM_PHUONG_XA" nillable="true" type="tns:NS_DM_PHUONG_XA" />
+  <xs:complexType name="ArrayOfNS_DM_QHE_GDINH">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NS_DM_QHE_GDINH" nillable="true" type="tns:NS_DM_QHE_GDINH" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNS_DM_QHE_GDINH" nillable="true" type="tns:ArrayOfNS_DM_QHE_GDINH" />
+  <xs:complexType name="NS_DM_QHE_GDINH">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChangeTracker" nillable="true" type="tns:ObjectChangeTracker" />
+      <xs:element minOccurs="0" name="FN001" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN002" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN003" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN004" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN005" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN006" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN007" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN008" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN009" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN010" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="MA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DOI_TUONG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_QLY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_TAO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MO_TA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TEN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_BGHI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_NVU" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="NS_DM_QHE_GDINH" nillable="true" type="tns:NS_DM_QHE_GDINH" />
+  <xs:complexType name="ArrayOfNS_DM_QUAN_HUYEN">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NS_DM_QUAN_HUYEN" nillable="true" type="tns:NS_DM_QUAN_HUYEN" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNS_DM_QUAN_HUYEN" nillable="true" type="tns:ArrayOfNS_DM_QUAN_HUYEN" />
+  <xs:complexType name="NS_DM_QUAN_HUYEN">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChangeTracker" nillable="true" type="tns:ObjectChangeTracker" />
+      <xs:element minOccurs="0" name="FN001" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN002" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN003" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN004" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN005" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN006" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN007" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN008" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN009" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN010" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="MA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DOI_TUONG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_QLY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_TAO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MO_TA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TEN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_BGHI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_NVU" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="NS_DM_QUAN_HUYEN" nillable="true" type="tns:NS_DM_QUAN_HUYEN" />
+  <xs:complexType name="ArrayOfNS_DM_QUOC_TICH">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NS_DM_QUOC_TICH" nillable="true" type="tns:NS_DM_QUOC_TICH" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNS_DM_QUOC_TICH" nillable="true" type="tns:ArrayOfNS_DM_QUOC_TICH" />
+  <xs:complexType name="NS_DM_QUOC_TICH">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChangeTracker" nillable="true" type="tns:ObjectChangeTracker" />
+      <xs:element minOccurs="0" name="FN001" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN002" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN003" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN004" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN005" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN006" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN007" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN008" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN009" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN010" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="MA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DOI_TUONG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_QLY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_TAO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MO_TA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TEN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_BGHI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_NVU" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="NS_DM_QUOC_TICH" nillable="true" type="tns:NS_DM_QUOC_TICH" />
+  <xs:complexType name="ArrayOfNS_DM_THAN_HDLD">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NS_DM_THAN_HDLD" nillable="true" type="tns:NS_DM_THAN_HDLD" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNS_DM_THAN_HDLD" nillable="true" type="tns:ArrayOfNS_DM_THAN_HDLD" />
+  <xs:complexType name="NS_DM_THAN_HDLD">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChangeTracker" nillable="true" type="tns:ObjectChangeTracker" />
+      <xs:element minOccurs="0" name="FN001" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN002" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN003" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN004" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN005" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN006" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN007" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN008" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN009" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN010" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="MA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DOI_TUONG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_QLY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_TAO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MO_TA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TEN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_BGHI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_NVU" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="NS_DM_THAN_HDLD" nillable="true" type="tns:NS_DM_THAN_HDLD" />
+  <xs:complexType name="ArrayOfNS_DM_TINH_TP">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NS_DM_TINH_TP" nillable="true" type="tns:NS_DM_TINH_TP" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNS_DM_TINH_TP" nillable="true" type="tns:ArrayOfNS_DM_TINH_TP" />
+  <xs:complexType name="NS_DM_TINH_TP">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChangeTracker" nillable="true" type="tns:ObjectChangeTracker" />
+      <xs:element minOccurs="0" name="FN001" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN002" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN003" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN004" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN005" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN006" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN007" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN008" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN009" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN010" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="MA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DOI_TUONG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_QLY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_TAO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MO_TA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TEN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_BGHI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_NVU" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="NS_DM_TINH_TP" nillable="true" type="tns:NS_DM_TINH_TP" />
+  <xs:complexType name="ArrayOfNS_DM_TTRANG_HNHAN">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NS_DM_TTRANG_HNHAN" nillable="true" type="tns:NS_DM_TTRANG_HNHAN" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNS_DM_TTRANG_HNHAN" nillable="true" type="tns:ArrayOfNS_DM_TTRANG_HNHAN" />
+  <xs:complexType name="NS_DM_TTRANG_HNHAN">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChangeTracker" nillable="true" type="tns:ObjectChangeTracker" />
+      <xs:element minOccurs="0" name="FN001" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN002" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN003" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN004" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN005" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN006" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN007" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN008" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN009" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN010" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="MA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DOI_TUONG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_QLY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_TAO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MO_TA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TEN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_BGHI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_NVU" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="NS_DM_TTRANG_HNHAN" nillable="true" type="tns:NS_DM_TTRANG_HNHAN" />
+  <xs:complexType name="ArrayOfNS_DM_TON_GIAO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NS_DM_TON_GIAO" nillable="true" type="tns:NS_DM_TON_GIAO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNS_DM_TON_GIAO" nillable="true" type="tns:ArrayOfNS_DM_TON_GIAO" />
+  <xs:complexType name="NS_DM_TON_GIAO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChangeTracker" nillable="true" type="tns:ObjectChangeTracker" />
+      <xs:element minOccurs="0" name="FN001" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN002" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN003" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN004" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN005" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN006" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN007" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN008" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN009" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN010" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="MA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DOI_TUONG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_QLY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_TAO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MO_TA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TEN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_BGHI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_NVU" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="NS_DM_TON_GIAO" nillable="true" type="tns:NS_DM_TON_GIAO" />
+  <xs:complexType name="ArrayOfNS_DM_TDO_CTRI">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NS_DM_TDO_CTRI" nillable="true" type="tns:NS_DM_TDO_CTRI" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNS_DM_TDO_CTRI" nillable="true" type="tns:ArrayOfNS_DM_TDO_CTRI" />
+  <xs:complexType name="NS_DM_TDO_CTRI">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChangeTracker" nillable="true" type="tns:ObjectChangeTracker" />
+      <xs:element minOccurs="0" name="FN001" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN002" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN003" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN004" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN005" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN006" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN007" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN008" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN009" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN010" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="MA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DOI_TUONG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_QLY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_TAO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MO_TA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TEN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_BGHI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_NVU" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="NS_DM_TDO_CTRI" nillable="true" type="tns:NS_DM_TDO_CTRI" />
+  <xs:complexType name="ArrayOfNS_DM_TDO_HVAN">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NS_DM_TDO_HVAN" nillable="true" type="tns:NS_DM_TDO_HVAN" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNS_DM_TDO_HVAN" nillable="true" type="tns:ArrayOfNS_DM_TDO_HVAN" />
+  <xs:complexType name="NS_DM_TDO_HVAN">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChangeTracker" nillable="true" type="tns:ObjectChangeTracker" />
+      <xs:element minOccurs="0" name="FN001" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN002" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN003" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN004" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN005" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN006" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN007" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN008" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN009" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN010" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="MA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DOI_TUONG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_QLY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_TAO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MO_TA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TEN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_BGHI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_NVU" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="NS_DM_TDO_HVAN" nillable="true" type="tns:NS_DM_TDO_HVAN" />
+  <xs:complexType name="ArrayOfNS_DM_TDO_TANH">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NS_DM_TDO_TANH" nillable="true" type="tns:NS_DM_TDO_TANH" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNS_DM_TDO_TANH" nillable="true" type="tns:ArrayOfNS_DM_TDO_TANH" />
+  <xs:complexType name="NS_DM_TDO_TANH">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChangeTracker" nillable="true" type="tns:ObjectChangeTracker" />
+      <xs:element minOccurs="0" name="FN001" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN002" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN003" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN004" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN005" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN006" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN007" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN008" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN009" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN010" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="MA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DOI_TUONG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_QLY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_TAO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MO_TA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TEN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_BGHI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_NVU" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="NS_DM_TDO_TANH" nillable="true" type="tns:NS_DM_TDO_TANH" />
+  <xs:complexType name="ArrayOfNS_DM_TDO_THOC">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NS_DM_TDO_THOC" nillable="true" type="tns:NS_DM_TDO_THOC" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNS_DM_TDO_THOC" nillable="true" type="tns:ArrayOfNS_DM_TDO_THOC" />
+  <xs:complexType name="NS_DM_TDO_THOC">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChangeTracker" nillable="true" type="tns:ObjectChangeTracker" />
+      <xs:element minOccurs="0" name="FN001" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN002" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN003" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN004" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN005" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN006" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN007" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN008" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN009" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN010" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="MA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DOI_TUONG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_QLY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_TAO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MO_TA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TEN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_BGHI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_NVU" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="NS_DM_TDO_THOC" nillable="true" type="tns:NS_DM_TDO_THOC" />
+  <xs:complexType name="ArrayOfNS_DM_TRUONG_DTAO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NS_DM_TRUONG_DTAO" nillable="true" type="tns:NS_DM_TRUONG_DTAO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNS_DM_TRUONG_DTAO" nillable="true" type="tns:ArrayOfNS_DM_TRUONG_DTAO" />
+  <xs:complexType name="NS_DM_TRUONG_DTAO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChangeTracker" nillable="true" type="tns:ObjectChangeTracker" />
+      <xs:element minOccurs="0" name="FN001" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN002" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN003" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN004" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN005" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN006" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN007" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN008" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN009" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN010" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="MA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DOI_TUONG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_QLY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_TAO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MO_TA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TEN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_BGHI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_NVU" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="NS_DM_TRUONG_DTAO" nillable="true" type="tns:NS_DM_TRUONG_DTAO" />
+  <xs:complexType name="ArrayOfNS_DM_XEP_LOAI">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NS_DM_XEP_LOAI" nillable="true" type="tns:NS_DM_XEP_LOAI" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNS_DM_XEP_LOAI" nillable="true" type="tns:ArrayOfNS_DM_XEP_LOAI" />
+  <xs:complexType name="NS_DM_XEP_LOAI">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChangeTracker" nillable="true" type="tns:ObjectChangeTracker" />
+      <xs:element minOccurs="0" name="FN001" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN002" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN003" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN004" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN005" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN006" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN007" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN008" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN009" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FN010" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="MA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DOI_TUONG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_QLY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_TAO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MO_TA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TEN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_BGHI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_NVU" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="NS_DM_XEP_LOAI" nillable="true" type="tns:NS_DM_XEP_LOAI" />
+</xs:schema>

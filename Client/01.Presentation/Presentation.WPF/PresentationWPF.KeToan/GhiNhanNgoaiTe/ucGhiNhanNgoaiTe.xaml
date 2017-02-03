@@ -1,0 +1,105 @@
+﻿<UserControl x:Class="PresentationWPF.KeToan.GhiNhanNgoaiTe.ucGhiNhanNgoaiTe"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:ribbon="http://schemas.microsoft.com/winfx/2006/xaml/presentation/ribbon" 
+             xmlns:telerikext="clr-namespace:Telerik.Windows.Controls.MaskedInput;assembly=Telerik.Windows.Controls.Input"
+             xmlns:uc="clr-namespace:PresentationWPF.CustomControl;assembly=PresentationWPF.CustomControl"
+             xmlns:my="clr-namespace:System;assembly=mscorlib"
+             xmlns:local="clr-namespace:PresentationWPF.KeToan.GhiNhanNgoaiTe"
+             d:DesignHeight="500" d:DesignWidth="1024">
+    <UserControl.Resources>
+        <DataTemplate x:Key="HeaderTemplate" DataType="{x:Type my:String}">
+            <Grid HorizontalAlignment="Left" Height="45">
+                <AccessText Text="{Binding}" TextWrapping="Wrap" VerticalAlignment="Center"/>
+            </Grid>
+        </DataTemplate>
+
+        <my:String x:Key="U.KeToan.PhieuKeToan.ucPhieuKeToanCT.MaPhanLoai">Mã phân loại</my:String>
+        <my:String x:Key="U.KeToan.PhieuKeToan.ucPhieuKeToanCT.SoTaiKhoan">Số tài khoản</my:String>
+        <my:String x:Key="U.KeToan.PhieuKeToan.ucPhieuKeToanCT.TenTaiKhoan">Tên tài khoản</my:String>
+        <my:String x:Key="U.KeToan.PhieuKeToan.ucPhieuKeToanCT.GhiNo">Ghi nợ</my:String>
+        <my:String x:Key="U.KeToan.PhieuKeToan.ucPhieuKeToanCT.GhiCo">Ghi có</my:String>
+        <my:String x:Key="U.KeToan.PhieuKeToan.ucPhieuKeToanCT.NhomDinhKhoan">Nhóm định khoản</my:String>
+        <my:String x:Key="U.KeToan.PhieuKeToan.ucPhieuKeToanCT.MaDoiTuong">Mã đối tượng</my:String>
+        <my:String x:Key="U.KeToan.PhieuKeToan.ucPhieuKeToanCT.Tong:">Tổng:</my:String>
+        
+    </UserControl.Resources>
+    <UserControl.CommandBindings>
+        <CommandBinding CanExecute="SaveCommand_CanExecute" Executed="SaveCommand_Executed" Command="{x:Static local:ucGhiNhanNgoaiTe.SaveCommand}">
+        </CommandBinding>
+        <CommandBinding CanExecute="CloseCommand_CanExecute" Executed="CloseCommand_Executed" Command="{x:Static local:ucGhiNhanNgoaiTe.CloseCommand}">
+        </CommandBinding>
+    </UserControl.CommandBindings>
+    <UserControl.ContextMenu>
+        <ContextMenu Name="mnuMain">
+        </ContextMenu>
+    </UserControl.ContextMenu>
+    <Grid>
+        <DockPanel>
+            <DockPanel HorizontalAlignment="Stretch" DockPanel.Dock="Top" Margin="3,3,0,3" LastChildFill="False" Name="docToolbar">
+                <WrapPanel Name="Toolbar">
+                    <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbSubmit" DockPanel.Dock="Left" Label="{DynamicResource U.DungChung.Button.TrinhDuyet}"  SmallImageSource="/Utilities.Common;component/Images/Action/save.png" Style="{DynamicResource RibbonButton}" Click="tlbHotKey_Click" />
+                    <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbHelp" DockPanel.Dock="Left" Label="{DynamicResource U.DungChung.Button.TroGiup}"  SmallImageSource="/Utilities.Common;component/Images/Action/help.png" Style="{DynamicResource RibbonButton}" Click="tlbHotKey_Click" />
+                    <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbClose" DockPanel.Dock="Left" Label="{DynamicResource U.DungChung.Button.Dong}"  SmallImageSource="/Utilities.Common;component/Images/Action/close.png" Style="{DynamicResource RibbonButton}" Click="tlbHotKey_Click" />
+                </WrapPanel>
+            </DockPanel>
+            <Grid Name="grMain">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="20"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="6"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="6"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Label Grid.Column="0" Grid.Row="0" Content="Loại tiền:" />
+                <telerik:RadComboBox Name="cmbLoaiTien" Grid.Column="1" Grid.Row="0" IsEditable="False"/>
+                
+                <Label Grid.Column="3" Grid.Row="0" Content="Tỷ giá:"/>
+                <telerik:RadMaskedNumericInput Mask="#18,3" telerikext:MaskedInputExtensions.Minimum="0" Name="numSoTien" Grid.Row="0" Grid.Column="4" HorizontalAlignment="Stretch" Placeholder=" " Text="0" TextMode="PlainText"/>
+
+                <telerik:RadGridView Name="raddgrHachToan" Grid.Row="2" Grid.ColumnSpan="6" MinHeight="150" ShowGroupPanel="False" ShowColumnFooters="True" ItemsSource="{Binding}"
+                                       RowIndicatorVisibility="Collapsed" AutoGenerateColumns="False" CanUserFreezeColumns="False" MaxHeight="700" IsFilteringAllowed="False" KeyDown="raddgrHachToan_KeyDown" Deleting="raddgrHachToan_Deleting" 
+                                       CellValidating="raddgrHachToan_CellValidating" TabIndex="28" ActionOnLostFocus="None" CellEditEnded="raddgrHachToan_CellEditEnded">
+                    <telerik:RadGridView.Columns>
+                        <uc:MyColumn Header="{DynamicResource U.DungChung.HeaderDataColumn.STT}" IsFilterable="False" Width="40" MinWidth="40" IsReadOnly="True"/>
+                        <telerik:GridViewDataColumn IsReadOnly="True" IsFilterable="False" IsSortable="False" Header="{DynamicResource U.KeToan.PhieuKeToan.ucPhieuKeToanCT.MaPhanLoai}" DataMemberBinding="{Binding MA_PLOAI}" UniqueName="MA_PLOAI"/>
+                        <telerik:GridViewDataColumn IsReadOnly="True" IsFilterable="False" IsSortable="False" Header="{DynamicResource U.KeToan.PhieuKeToan.ucPhieuKeToanCT.SoTaiKhoan}" DataMemberBinding="{Binding SO_TAI_KHOAN}" UniqueName="SO_TAI_KHOAN"/>
+                        <telerik:GridViewDataColumn Width="*"  IsReadOnly="True" IsFilterable="False" IsSortable="False" Header="{DynamicResource U.KeToan.PhieuKeToan.ucPhieuKeToanCT.TenTaiKhoan}" DataMemberBinding="{Binding TEN_TAI_KHOAN}" Footer="{StaticResource U.KeToan.PhieuKeToan.ucPhieuKeToanCT.Tong:}" FooterTextAlignment="Center"/>
+                        <telerik:GridViewDataColumn Header="{DynamicResource U.KeToan.PhieuKeToan.ucPhieuKeToanCT.GhiNo}" IsFilterable="False" IsSortable="False" DataFormatString="{}{0:N0}"  Width="*" DataMemberBinding="{Binding GHI_NO}" FooterTextAlignment="Right" TextAlignment="Right" UniqueName="GHI_NO">
+                            <telerik:GridViewDataColumn.AggregateFunctions>
+                                <telerik:SumFunction ResultFormatString="{}{0:N0}" />
+                            </telerik:GridViewDataColumn.AggregateFunctions>
+                        </telerik:GridViewDataColumn>
+                        <telerik:GridViewDataColumn Header="{DynamicResource U.KeToan.PhieuKeToan.ucPhieuKeToanCT.GhiCo}" IsFilterable="False" IsSortable="False" Width="*" DataFormatString="{}{0:N0}" DataMemberBinding="{Binding GHI_CO}" FooterTextAlignment="Right" TextAlignment="Right" UniqueName="GHI_CO">
+                            <telerik:GridViewDataColumn.AggregateFunctions>
+                                <telerik:SumFunction ResultFormatString="{}{0:N0}"/>
+                            </telerik:GridViewDataColumn.AggregateFunctions>
+                        </telerik:GridViewDataColumn>
+                        <telerik:GridViewDataColumn Header="Ghi nợ ngoại tệ" IsFilterable="False" IsSortable="False" DataFormatString="{}{0:N0}"  Width="*" DataMemberBinding="{Binding GHI_NO_NGOAI_TE}" FooterTextAlignment="Right" TextAlignment="Right" UniqueName="GHI_NO_NGOAI_TE">
+                            <telerik:GridViewDataColumn.AggregateFunctions>
+                                <telerik:SumFunction ResultFormatString="{}{0:N5}" />
+                            </telerik:GridViewDataColumn.AggregateFunctions>
+                        </telerik:GridViewDataColumn>
+                        <telerik:GridViewDataColumn Header="Ghi có ngoại tệ" IsFilterable="False" IsSortable="False" Width="*" DataFormatString="{}{0:N0}" DataMemberBinding="{Binding GHI_CO_NGOAI_TE}" FooterTextAlignment="Right" TextAlignment="Right" UniqueName="GHI_CO_NGOAI_TE">
+                            <telerik:GridViewDataColumn.AggregateFunctions>
+                                <telerik:SumFunction ResultFormatString="{}{0:N5}"/>
+                            </telerik:GridViewDataColumn.AggregateFunctions>
+                        </telerik:GridViewDataColumn>
+                        
+                    </telerik:RadGridView.Columns>
+                </telerik:RadGridView>
+            </Grid>
+        </DockPanel>
+    </Grid>
+</UserControl>

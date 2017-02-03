@@ -1,0 +1,1828 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5A5E48D3-3217-4544-A813-99F9A2FF1A6D}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Presentation.WebClient</RootNamespace>
+    <AssemblyName>Presentation.WebClient</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Interop.Microsoft.Office.Interop.Excel">
+      <HintPath>..\..\..\..\Libraries\Interop.Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Presentation.Process, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Build\Build.Client\Dev\Presentation.Process.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Utilities.Common">
+      <HintPath>..\..\..\..\Libraries\Utilities.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Config\config.conf" />
+    <Content Include="Config\configPlainText.conf" />
+    <Content Include="Config\log.conf" />
+    <Content Include="Config\logUpd.conf" />
+    <Content Include="Config\Template\NGV\Attach\btn_style.css" />
+    <Content Include="Config\Template\NGV\Attach\demo_table.css" />
+    <Content Include="Config\Template\NGV\Attach\fnCommon.js" />
+    <Content Include="Config\Template\NGV\Attach\funtion.js" />
+    <Content Include="Config\Template\NGV\Attach\jquery-1.12.4.js" />
+    <Content Include="Config\Template\NGV\Attach\jquery-ui.css" />
+    <Content Include="Config\Template\NGV\Attach\jquery-ui.js" />
+    <Content Include="Config\Template\NGV\Attach\jstree.js" />
+    <Content Include="Config\Template\NGV\Attach\jstree.min.js" />
+    <Content Include="Config\Template\NGV\Attach\style.css" />
+    <Content Include="Config\Template\NGV\Attach\style.min.css" />
+    <Content Include="Config\Template\NGV\IMG\accep.png" />
+    <Content Include="Config\Template\NGV\IMG\acc_but.gif" />
+    <Content Include="Config\Template\NGV\IMG\acc_but_add.gif" />
+    <Content Include="Config\Template\NGV\IMG\acc_but_commom.gif" />
+    <Content Include="Config\Template\NGV\IMG\acc_but_del.gif" />
+    <Content Include="Config\Template\NGV\IMG\acc_but_disabled.gif" />
+    <Content Include="Config\Template\NGV\IMG\acc_but_edit.gif" />
+    <Content Include="Config\Template\NGV\IMG\acc_but_ok.gif" />
+    <Content Include="Config\Template\NGV\IMG\acc_but_ok_hover.gif" />
+    <Content Include="Config\Template\NGV\IMG\acc_but_orange.gif" />
+    <Content Include="Config\Template\NGV\IMG\active.gif" />
+    <Content Include="Config\Template\NGV\IMG\amnu.gif" />
+    <Content Include="Config\Template\NGV\IMG\approve.png" />
+    <Content Include="Config\Template\NGV\IMG\arrow.gif" />
+    <Content Include="Config\Template\NGV\IMG\back_disabled.jpg" />
+    <Content Include="Config\Template\NGV\IMG\back_enabled.jpg" />
+    <Content Include="Config\Template\NGV\IMG\bgBackground.jpg" />
+    <Content Include="Config\Template\NGV\IMG\bgFooter.jpg" />
+    <Content Include="Config\Template\NGV\IMG\bgMenu.jpg" />
+    <Content Include="Config\Template\NGV\IMG\bg_ocs.gif" />
+    <Content Include="Config\Template\NGV\IMG\bright.png" />
+    <Content Include="Config\Template\NGV\IMG\Calendar\cal.gif" />
+    <Content Include="Config\Template\NGV\IMG\Calendar\close.gif" />
+    <Content Include="Config\Template\NGV\IMG\Calendar\close_over.gif" />
+    <Content Include="Config\Template\NGV\IMG\Calendar\down.gif" />
+    <Content Include="Config\Template\NGV\IMG\Calendar\down_over.gif" />
+    <Content Include="Config\Template\NGV\IMG\Calendar\down_time.gif" />
+    <Content Include="Config\Template\NGV\IMG\Calendar\down_time_over.gif" />
+    <Content Include="Config\Template\NGV\IMG\Calendar\left.gif" />
+    <Content Include="Config\Template\NGV\IMG\Calendar\left_over.gif" />
+    <Content Include="Config\Template\NGV\IMG\Calendar\right.gif" />
+    <Content Include="Config\Template\NGV\IMG\Calendar\right_over.gif" />
+    <Content Include="Config\Template\NGV\IMG\delete.png" />
+    <Content Include="Config\Template\NGV\IMG\edit.png" />
+    <Content Include="Config\Template\NGV\IMG\form_bg.jpg" />
+    <Content Include="Config\Template\NGV\IMG\forward_disabled.jpg" />
+    <Content Include="Config\Template\NGV\IMG\forward_enabled.jpg" />
+    <Content Include="Config\Template\NGV\IMG\full.png" />
+    <Content Include="Config\Template\NGV\IMG\ful_hoverl.png" />
+    <Content Include="Config\Template\NGV\IMG\grid.png" />
+    <Content Include="Config\Template\NGV\IMG\header.gif" />
+    <Content Include="Config\Template\NGV\IMG\header_over.gif" />
+    <Content Include="Config\Template\NGV\IMG\help.gif" />
+    <Content Include="Config\Template\NGV\IMG\home.png" />
+    <Content Include="Config\Template\NGV\IMG\Icon\Accept.png" />
+    <Content Include="Config\Template\NGV\IMG\Icon\Accept2.png" />
+    <Content Include="Config\Template\NGV\IMG\Icon\add_sh.png" />
+    <Content Include="Config\Template\NGV\IMG\Icon\checked.png" />
+    <Content Include="Config\Template\NGV\IMG\Icon\conduit.png" />
+    <Content Include="Config\Template\NGV\IMG\Icon\distributions-ubuntu_studio.png" />
+    <Content Include="Config\Template\NGV\IMG\Icon\edit_sh.png" />
+    <Content Include="Config\Template\NGV\IMG\Icon\Ethnic_Icon.png" />
+    <Content Include="Config\Template\NGV\IMG\Icon\Group_icon.png" />
+    <Content Include="Config\Template\NGV\IMG\Icon\kchart-3.png" />
+    <Content Include="Config\Template\NGV\IMG\Icon\list_sh.png" />
+    <Content Include="Config\Template\NGV\IMG\Icon\Nationaly_Icon.png" />
+    <Content Include="Config\Template\NGV\IMG\Icon\Part_Icon.png" />
+    <Content Include="Config\Template\NGV\IMG\Icon\report.png" />
+    <Content Include="Config\Template\NGV\IMG\Icon\Securities_Icon.png" />
+    <Content Include="Config\Template\NGV\IMG\Icon\Se_Code_Icon.png" />
+    <Content Include="Config\Template\NGV\IMG\Icon\unchecked.png" />
+    <Content Include="Config\Template\NGV\IMG\Icon\User_icon.png" />
+    <Content Include="Config\Template\NGV\IMG\img_login.jpg" />
+    <Content Include="Config\Template\NGV\IMG\important.gif" />
+    <Content Include="Config\Template\NGV\IMG\info.gif" />
+    <Content Include="Config\Template\NGV\IMG\loading.gif" />
+    <Content Include="Config\Template\NGV\IMG\lock.png" />
+    <Content Include="Config\Template\NGV\IMG\Login\1.gif" />
+    <Content Include="Config\Template\NGV\IMG\Login\2.gif" />
+    <Content Include="Config\Template\NGV\IMG\Login\3.gif" />
+    <Content Include="Config\Template\NGV\IMG\Login\4.gif" />
+    <Content Include="Config\Template\NGV\IMG\Login\bg_1.gif" />
+    <Content Include="Config\Template\NGV\IMG\Login\bg_3.gif" />
+    <Content Include="Config\Template\NGV\IMG\Login\bg_bottom.gif" />
+    <Content Include="Config\Template\NGV\IMG\Login\bg_center.gif" />
+    <Content Include="Config\Template\NGV\IMG\Login\bg_l.gif" />
+    <Content Include="Config\Template\NGV\IMG\Login\bg_r.gif" />
+    <Content Include="Config\Template\NGV\IMG\Login\bg_top.gif" />
+    <Content Include="Config\Template\NGV\IMG\Login\lock.gif" />
+    <Content Include="Config\Template\NGV\IMG\logo.png" />
+    <Content Include="Config\Template\NGV\IMG\log_out.png" />
+    <Content Include="Config\Template\NGV\IMG\log_out_hover.png" />
+    <Content Include="Config\Template\NGV\IMG\nologo.jpg" />
+    <Content Include="Config\Template\NGV\IMG\print.png" />
+    <Content Include="Config\Template\NGV\IMG\reject.png" />
+    <Content Include="Config\Template\NGV\IMG\rights.png" />
+    <Content Include="Config\Template\NGV\IMG\sort_asc.png" />
+    <Content Include="Config\Template\NGV\IMG\sort_asc_disabled.png" />
+    <Content Include="Config\Template\NGV\IMG\sort_both.png" />
+    <Content Include="Config\Template\NGV\IMG\sort_desc.png" />
+    <Content Include="Config\Template\NGV\IMG\sort_desc_disabled.png" />
+    <Content Include="Config\Template\NGV\IMG\spanMnu.gif" />
+    <Content Include="Config\Template\NGV\IMG\title.gif" />
+    <Content Include="Config\Template\NGV\IMG\undo.png" />
+    <Content Include="Config\Template\NGV\IMG\waiting.gif" />
+    <Content Include="Config\Template\NGV\IMG\warning.png" />
+    <Content Include="Config\Template\NGV\Page\pgPopup.ascx" />
+    <Content Include="CSS\jquery-ui.css" />
+    <Content Include="CSS\jquery.modal.min.css" />
+    <Content Include="Images\icons\bb\Descr.WD3" />
+    <Content Include="Images\icons\bs\Descr.WD3" />
+    <Content Include="Images\icons\wb\Descr.WD3" />
+    <Content Include="Images\icons\ws\Descr.WD3" />
+    <None Include="Properties\PublishProfiles\mfClient.pubxml" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Config\Template\NGV\Container\ctBox.ascx" />
+    <Content Include="Config\Template\NGV\Container\ctLine.ascx" />
+    <Content Include="Config\Template\NGV\Page\pgBox.ascx" />
+    <Content Include="Files\init.txt" />
+    <Content Include="Images\banner.png" />
+    <Content Include="Images\box-head.jpg" />
+    <Content Include="Images\btn.png" />
+    <Content Include="Images\form-sprite.png" />
+    <Content Include="Images\glyphicons-halflings.png" />
+    <Content Include="Images\icon-document.png" />
+    <Content Include="Images\icons\bb\ic_archive.png" />
+    <Content Include="Images\icons\bb\ic_attachment.png" />
+    <Content Include="Images\icons\bb\ic_bookmark.png" />
+    <Content Include="Images\icons\bb\ic_brush.png" />
+    <Content Include="Images\icons\bb\ic_calc.png" />
+    <Content Include="Images\icons\bb\ic_calendar.png" />
+    <Content Include="Images\icons\bb\ic_cancel.png" />
+    <Content Include="Images\icons\bb\ic_chat.png" />
+    <Content Include="Images\icons\bb\ic_chats.png" />
+    <Content Include="Images\icons\bb\ic_cloud.png" />
+    <Content Include="Images\icons\bb\ic_documents.png" />
+    <Content Include="Images\icons\bb\ic_down.png" />
+    <Content Include="Images\icons\bb\ic_download.png" />
+    <Content Include="Images\icons\bb\ic_down_circle.png" />
+    <Content Include="Images\icons\bb\ic_edit.png" />
+    <Content Include="Images\icons\bb\ic_empty_document.png" />
+    <Content Include="Images\icons\bb\ic_favorite.png" />
+    <Content Include="Images\icons\bb\ic_folder.png" />
+    <Content Include="Images\icons\bb\ic_fullscreen.png" />
+    <Content Include="Images\icons\bb\ic_graph.png" />
+    <Content Include="Images\icons\bb\ic_grid.png" />
+    <Content Include="Images\icons\bb\ic_left.png" />
+    <Content Include="Images\icons\bb\ic_left_circle.png" />
+    <Content Include="Images\icons\bb\ic_list.png" />
+    <Content Include="Images\icons\bb\ic_lock.png" />
+    <Content Include="Images\icons\bb\ic_mail.png" />
+    <Content Include="Images\icons\bb\ic_minus.png" />
+    <Content Include="Images\icons\bb\ic_ok.png" />
+    <Content Include="Images\icons\bb\ic_picture.png" />
+    <Content Include="Images\icons\bb\ic_pin.png" />
+    <Content Include="Images\icons\bb\ic_plus.png" />
+    <Content Include="Images\icons\bb\ic_power.png" />
+    <Content Include="Images\icons\bb\ic_print.png" />
+    <Content Include="Images\icons\bb\ic_refresh.png" />
+    <Content Include="Images\icons\bb\ic_right.png" />
+    <Content Include="Images\icons\bb\ic_right_circle.png" />
+    <Content Include="Images\icons\bb\ic_settings.png" />
+    <Content Include="Images\icons\bb\ic_sound.png" />
+    <Content Include="Images\icons\bb\ic_sync.png" />
+    <Content Include="Images\icons\bb\ic_tag.png" />
+    <Content Include="Images\icons\bb\ic_target.png" />
+    <Content Include="Images\icons\bb\ic_text_document.png" />
+    <Content Include="Images\icons\bb\ic_time.png" />
+    <Content Include="Images\icons\bb\ic_unlock.png" />
+    <Content Include="Images\icons\bb\ic_up.png" />
+    <Content Include="Images\icons\bb\ic_up_circle.png" />
+    <Content Include="Images\icons\bb\ic_user.png" />
+    <Content Include="Images\icons\bb\ic_users.png" />
+    <Content Include="Images\icons\bb\ic_zoom.png" />
+    <Content Include="Images\icons\bs\ic_archive.png" />
+    <Content Include="Images\icons\bs\ic_attachment.png" />
+    <Content Include="Images\icons\bs\ic_bookmark.png" />
+    <Content Include="Images\icons\bs\ic_brush.png" />
+    <Content Include="Images\icons\bs\ic_calc.png" />
+    <Content Include="Images\icons\bs\ic_calendar.png" />
+    <Content Include="Images\icons\bs\ic_cancel.png" />
+    <Content Include="Images\icons\bs\ic_chat.png" />
+    <Content Include="Images\icons\bs\ic_chats.png" />
+    <Content Include="Images\icons\bs\ic_cloud.png" />
+    <Content Include="Images\icons\bs\ic_documents.png" />
+    <Content Include="Images\icons\bs\ic_down.png" />
+    <Content Include="Images\icons\bs\ic_download.png" />
+    <Content Include="Images\icons\bs\ic_down_circle.png" />
+    <Content Include="Images\icons\bs\ic_edit.png" />
+    <Content Include="Images\icons\bs\ic_empty_document.png" />
+    <Content Include="Images\icons\bs\ic_favorite.png" />
+    <Content Include="Images\icons\bs\ic_folder.png" />
+    <Content Include="Images\icons\bs\ic_fullscreen.png" />
+    <Content Include="Images\icons\bs\ic_graph.png" />
+    <Content Include="Images\icons\bs\ic_grid.png" />
+    <Content Include="Images\icons\bs\ic_left.png" />
+    <Content Include="Images\icons\bs\ic_left_circle.png" />
+    <Content Include="Images\icons\bs\ic_list.png" />
+    <Content Include="Images\icons\bs\ic_lock.png" />
+    <Content Include="Images\icons\bs\ic_mail.png" />
+    <Content Include="Images\icons\bs\ic_minus.png" />
+    <Content Include="Images\icons\bs\ic_ok.png" />
+    <Content Include="Images\icons\bs\ic_picture.png" />
+    <Content Include="Images\icons\bs\ic_pin.png" />
+    <Content Include="Images\icons\bs\ic_plus.png" />
+    <Content Include="Images\icons\bs\ic_power.png" />
+    <Content Include="Images\icons\bs\ic_print.png" />
+    <Content Include="Images\icons\bs\ic_refresh.png" />
+    <Content Include="Images\icons\bs\ic_right.png" />
+    <Content Include="Images\icons\bs\ic_right_circle.png" />
+    <Content Include="Images\icons\bs\ic_settings.png" />
+    <Content Include="Images\icons\bs\ic_sound.png" />
+    <Content Include="Images\icons\bs\ic_sync.png" />
+    <Content Include="Images\icons\bs\ic_tag.png" />
+    <Content Include="Images\icons\bs\ic_target.png" />
+    <Content Include="Images\icons\bs\ic_text_document.png" />
+    <Content Include="Images\icons\bs\ic_time.png" />
+    <Content Include="Images\icons\bs\ic_unlock.png" />
+    <Content Include="Images\icons\bs\ic_up.png" />
+    <Content Include="Images\icons\bs\ic_up_circle.png" />
+    <Content Include="Images\icons\bs\ic_user.png" />
+    <Content Include="Images\icons\bs\ic_users.png" />
+    <Content Include="Images\icons\bs\ic_zoom.png" />
+    <Content Include="Images\icons\wb\ic_archive.png" />
+    <Content Include="Images\icons\wb\ic_attachment.png" />
+    <Content Include="Images\icons\wb\ic_bookmark.png" />
+    <Content Include="Images\icons\wb\ic_brush.png" />
+    <Content Include="Images\icons\wb\ic_calc.png" />
+    <Content Include="Images\icons\wb\ic_calendar.png" />
+    <Content Include="Images\icons\wb\ic_cancel.png" />
+    <Content Include="Images\icons\wb\ic_chat.png" />
+    <Content Include="Images\icons\wb\ic_chats.png" />
+    <Content Include="Images\icons\wb\ic_cloud.png" />
+    <Content Include="Images\icons\wb\ic_documents.png" />
+    <Content Include="Images\icons\wb\ic_down.png" />
+    <Content Include="Images\icons\wb\ic_download.png" />
+    <Content Include="Images\icons\wb\ic_down_circle.png" />
+    <Content Include="Images\icons\wb\ic_edit.png" />
+    <Content Include="Images\icons\wb\ic_empty_document.png" />
+    <Content Include="Images\icons\wb\ic_favorite.png" />
+    <Content Include="Images\icons\wb\ic_folder.png" />
+    <Content Include="Images\icons\wb\ic_fullscreen.png" />
+    <Content Include="Images\icons\wb\ic_graph.png" />
+    <Content Include="Images\icons\wb\ic_grid.png" />
+    <Content Include="Images\icons\wb\ic_left.png" />
+    <Content Include="Images\icons\wb\ic_left_circle.png" />
+    <Content Include="Images\icons\wb\ic_list.png" />
+    <Content Include="Images\icons\wb\ic_lock.png" />
+    <Content Include="Images\icons\wb\ic_mail.png" />
+    <Content Include="Images\icons\wb\ic_minus.png" />
+    <Content Include="Images\icons\wb\ic_ok.png" />
+    <Content Include="Images\icons\wb\ic_picture.png" />
+    <Content Include="Images\icons\wb\ic_pin.png" />
+    <Content Include="Images\icons\wb\ic_plus.png" />
+    <Content Include="Images\icons\wb\ic_power.png" />
+    <Content Include="Images\icons\wb\ic_print.png" />
+    <Content Include="Images\icons\wb\ic_refresh.png" />
+    <Content Include="Images\icons\wb\ic_right.png" />
+    <Content Include="Images\icons\wb\ic_right_circle.png" />
+    <Content Include="Images\icons\wb\ic_settings.png" />
+    <Content Include="Images\icons\wb\ic_sound.png" />
+    <Content Include="Images\icons\wb\ic_sync.png" />
+    <Content Include="Images\icons\wb\ic_tag.png" />
+    <Content Include="Images\icons\wb\ic_target.png" />
+    <Content Include="Images\icons\wb\ic_text_document.png" />
+    <Content Include="Images\icons\wb\ic_time.png" />
+    <Content Include="Images\icons\wb\ic_unlock.png" />
+    <Content Include="Images\icons\wb\ic_up.png" />
+    <Content Include="Images\icons\wb\ic_up_circle.png" />
+    <Content Include="Images\icons\wb\ic_user.png" />
+    <Content Include="Images\icons\wb\ic_users.png" />
+    <Content Include="Images\icons\wb\ic_zoom.png" />
+    <Content Include="Images\icons\ws\ic_archive.png" />
+    <Content Include="Images\icons\ws\ic_attachment.png" />
+    <Content Include="Images\icons\ws\ic_bookmark.png" />
+    <Content Include="Images\icons\ws\ic_brush.png" />
+    <Content Include="Images\icons\ws\ic_calc.png" />
+    <Content Include="Images\icons\ws\ic_calendar.png" />
+    <Content Include="Images\icons\ws\ic_cancel.png" />
+    <Content Include="Images\icons\ws\ic_chat.png" />
+    <Content Include="Images\icons\ws\ic_chats.png" />
+    <Content Include="Images\icons\ws\ic_cloud.png" />
+    <Content Include="Images\icons\ws\ic_documents.png" />
+    <Content Include="Images\icons\ws\ic_down.png" />
+    <Content Include="Images\icons\ws\ic_download.png" />
+    <Content Include="Images\icons\ws\ic_down_circle.png" />
+    <Content Include="Images\icons\ws\ic_edit.png" />
+    <Content Include="Images\icons\ws\ic_empty_document.png" />
+    <Content Include="Images\icons\ws\ic_favorite.png" />
+    <Content Include="Images\icons\ws\ic_folder.png" />
+    <Content Include="Images\icons\ws\ic_fullscreen.png" />
+    <Content Include="Images\icons\ws\ic_graph.png" />
+    <Content Include="Images\icons\ws\ic_grid.png" />
+    <Content Include="Images\icons\ws\ic_left.png" />
+    <Content Include="Images\icons\ws\ic_left_circle.png" />
+    <Content Include="Images\icons\ws\ic_list.png" />
+    <Content Include="Images\icons\ws\ic_lock.png" />
+    <Content Include="Images\icons\ws\ic_mail.png" />
+    <Content Include="Images\icons\ws\ic_minus.png" />
+    <Content Include="Images\icons\ws\ic_ok.png" />
+    <Content Include="Images\icons\ws\ic_picture.png" />
+    <Content Include="Images\icons\ws\ic_pin.png" />
+    <Content Include="Images\icons\ws\ic_plus.png" />
+    <Content Include="Images\icons\ws\ic_power.png" />
+    <Content Include="Images\icons\ws\ic_print.png" />
+    <Content Include="Images\icons\ws\ic_refresh.png" />
+    <Content Include="Images\icons\ws\ic_right.png" />
+    <Content Include="Images\icons\ws\ic_right_circle.png" />
+    <Content Include="Images\icons\ws\ic_settings.png" />
+    <Content Include="Images\icons\ws\ic_sound.png" />
+    <Content Include="Images\icons\ws\ic_sync.png" />
+    <Content Include="Images\icons\ws\ic_tag.png" />
+    <Content Include="Images\icons\ws\ic_target.png" />
+    <Content Include="Images\icons\ws\ic_text_document.png" />
+    <Content Include="Images\icons\ws\ic_time.png" />
+    <Content Include="Images\icons\ws\ic_unlock.png" />
+    <Content Include="Images\icons\ws\ic_up.png" />
+    <Content Include="Images\icons\ws\ic_up_circle.png" />
+    <Content Include="Images\icons\ws\ic_user.png" />
+    <Content Include="Images\icons\ws\ic_users.png" />
+    <Content Include="Images\icons\ws\ic_zoom.png" />
+    <Content Include="Images\lock.gif" />
+    <Content Include="Images\nav.jpg" />
+    <Content Include="Images\progress_bar.gif" />
+    <Content Include="Images\ui-icons_222222_5F256x240.png" />
+    <Content Include="Images\user_48.png" />
+    <Content Include="Logs\init.txt" />
+    <Content Include="Modules\DMDC\DiaBan\ucDiaBanCT.ascx" />
+    <Content Include="Modules\DMDC\DiaBan\ucDiaBanDS.ascx" />
+    <Content Include="Modules\DMDC\DonVi\ucDonViCT.ascx" />
+    <Content Include="Modules\DMDC\DonVi\ucDonViDS.ascx" />
+    <Content Include="Modules\DMDC\DungChung\ucDungChungCT.ascx" />
+    <Content Include="Modules\DMDC\DungChung\ucDungChungDS.ascx" />
+    <Content Include="Modules\DMDC\LaiSuat\ucLaiSuatCT.ascx" />
+    <Content Include="Modules\DMDC\LaiSuat\ucLaiSuatDS.ascx" />
+    <Content Include="Modules\DMDC\Phi\ucPhiCT.ascx" />
+    <Content Include="Modules\DMDC\Phi\ucPhiDS.ascx" />
+    <Content Include="Modules\DMDC\QuocGia\ucQuocGiaCT.ascx" />
+    <Content Include="Modules\DMDC\QuocGia\ucQuocGiaDS.ascx" />
+    <Content Include="Modules\DMDC\TienTe\ucTienTeCT.ascx" />
+    <Content Include="Modules\DMDC\TienTe\ucTienTeDS.ascx" />
+    <Content Include="Modules\DMDC\TinhTP\ucTinhTPCT.ascx" />
+    <Content Include="Modules\DMDC\TinhTP\ucTinhTPDS.ascx" />
+    <Content Include="Modules\DMDC\ToChucTD\ucToChucTDCT.ascx" />
+    <Content Include="Modules\DMDC\ToChucTD\ucToChucTDDS.ascx" />
+    <Content Include="Modules\DMDC\TyGia\ucTyGiaCT.ascx" />
+    <Content Include="Modules\DMDC\TyGia\ucTyGiaDS.ascx" />
+    <Content Include="Modules\GDKT\ButToan\ucButToanCT.ascx" />
+    <Content Include="Modules\GDKT\ButToan\ucButToanDS.ascx" />
+    <Content Include="Modules\GDKT\CuoiNgay\ucCuoiNgayCT.ascx" />
+    <Content Include="Modules\GDKT\CuoiNgay\ucCuoiNgayDS.ascx" />
+    <Content Include="Modules\GDKT\DieuChinh\ucDieuChinhCT.ascx" />
+    <Content Include="Modules\GDKT\DieuChinh\ucDieuChinhDS.ascx" />
+    <Content Include="Modules\GDKT\DieuChuyenQuy\ucDieuChuyenQuyDS.ascx" />
+    <Content Include="Modules\GDKT\DieuChuyenQuy\ucHoanQuyCT.ascx" />
+    <Content Include="Modules\GDKT\DieuChuyenQuy\ucTiepQuyCT.ascx" />
+    <Content Include="Modules\GDKT\DoiTuongTK\ucDoiTuongCT.ascx" />
+    <Content Include="Modules\GDKT\DoiTuongTK\ucDoiTuongDS.ascx" />
+    <Content Include="Modules\GDKT\DoiTuongTK\ucLoaiDoiTuongCT.ascx" />
+    <Content Include="Modules\GDKT\DoiTuongTK\ucLoaiDoiTuongDS.ascx" />
+    <Content Include="Modules\GDKT\DoiTuongTK\ucSoDuCT.ascx" />
+    <Content Include="Modules\GDKT\DoiTuongTK\ucSoDuDS.ascx" />
+    <Content Include="Modules\GDKT\KetChuyen\ucKetChuyenCT.ascx" />
+    <Content Include="Modules\GDKT\KetChuyen\ucKetChuyenDS.ascx" />
+    <Content Include="Modules\GDKT\KiemSoat\ucKiemSoatCT.ascx" />
+    <Content Include="Modules\GDKT\KiemSoat\ucKiemSoatDS.ascx" />
+    <Content Include="Modules\GDKT\PhanLoai\ucPhanLoaiDS.ascx" />
+    <Content Include="Modules\GDKT\PhieuChi\ucPhieuChiCT.ascx" />
+    <Content Include="Modules\GDKT\PhieuChi\ucPhieuChiDS.ascx" />
+    <Content Include="Modules\GDKT\PhieuKeToan\ucPhieuKeToanCT.ascx" />
+    <Content Include="Modules\GDKT\PhieuKeToan\ucPhieuKeToanDS.ascx" />
+    <Content Include="Modules\GDKT\PhieuNXNB\ucPhieuNXNBCT.ascx" />
+    <Content Include="Modules\GDKT\PhieuNXNB\ucPhieuNXNBDS.ascx" />
+    <Content Include="Modules\GDKT\PhieuThu\ucPhieuThuCT.ascx" />
+    <Content Include="Modules\GDKT\PhieuThu\ucPhieuThuDS.ascx" />
+    <Content Include="Modules\GDKT\PhieuUNC\ucPhieuUNCCT.ascx" />
+    <Content Include="Modules\GDKT\PhieuUNC\ucPhieuUNCDS.ascx" />
+    <Content Include="Modules\GDKT\TaiKhoan\ucTaiKhoanCT.ascx" />
+    <Content Include="Modules\GDKT\TaiKhoan\ucTaiKhoanDS.ascx" />
+    <Content Include="Modules\GDKT\TongHop\ucTongHopCT.ascx" />
+    <Content Include="Modules\GDKT\TongHop\ucTongHopDS.ascx" />
+    <Content Include="Modules\HDVO\DangKyRutGoc\ucDangKyRutGocCT.ascx" />
+    <Content Include="Modules\HDVO\DangKyRutGoc\ucDangKyRutGocDS.ascx" />
+    <Content Include="Modules\HDVO\DongMoTK\ucDongMoTKDS.ascx" />
+    <Content Include="Modules\HDVO\DongMoTK\ucDongTKCT.ascx" />
+    <Content Include="Modules\HDVO\DongMoTK\ucDongTKDS.ascx" />
+    <Content Include="Modules\HDVO\DongMoTK\ucMoTKCT.ascx" />
+    <Content Include="Modules\HDVO\DongMoTK\ucMoTKDS.ascx" />
+    <Content Include="Modules\HDVO\DuChi\ucDuChiCT.ascx" />
+    <Content Include="Modules\HDVO\GiaiToa\ucGiaiToaCT.ascx" />
+    <Content Include="Modules\HDVO\GuiThem\ucGuiThemCT.ascx" />
+    <Content Include="Modules\HDVO\GuiThem\ucGuiThemExcelCT.ascx" />
+    <Content Include="Modules\HDVO\GuiThem\ucGuiThemTheoDSCT.ascx" />
+    <Content Include="Modules\HDVO\LaiNhapGoc\ucLaiNhapGocCT.ascx" />
+    <Content Include="Modules\HDVO\LaiNhapGoc\ucLaiNhapGocTheoDSCT.ascx" />
+    <Content Include="Modules\HDVO\MoSo\ucMoSoCT.ascx" />
+    <Content Include="Modules\HDVO\MoSo\ucMoSoDS.ascx" />
+    <Content Include="Modules\HDVO\PhanBo\ucPhanBoCT.ascx" />
+    <Content Include="Modules\HDVO\PhongToa\ucPhongToaCT.ascx" />
+    <Content Include="Modules\HDVO\Popup\ucPopupSoTGui.aspx" />
+    <Content Include="Modules\HDVO\RutGoc\ucRutGocTheoDSCT.ascx" />
+    <Content Include="Modules\HDVO\RutGoc\ucRutGocCT.ascx" />
+    <Content Include="Modules\HDVO\SanPham\ucSanPhamCT.ascx" />
+    <Content Include="Modules\HDVO\SanPham\ucSanPhamDS.ascx" />
+    <Content Include="Modules\HDVO\TatToan\ucTatToanCT.ascx" />
+    <Content Include="Modules\HDVO\TatToan\ucTatToanTheoDSCT.ascx" />
+    <Content Include="Modules\HDVO\ThayDoiLaiSuat\ucThayDoiLaiSuatCT.ascx" />
+    <Content Include="Modules\HDVO\ThayDoiLaiSuat\ucThayDoiLaiSuatDS.ascx" />
+    <Content Include="Modules\HDVO\TraLai\ucTraLaiCT.ascx" />
+    <Content Include="Modules\HDVO\TraLai\ucTraLaiTheoDSCT.ascx" />
+    <Content Include="Modules\KHTV\ChuyenDiaBan\ucChuyenDiaBanCT.ascx" />
+    <Content Include="Modules\KHTV\ChuyenDiaBan\ucChuyenDiaBanDS.ascx" />
+    <Content Include="Modules\KHTV\Cum\ucCumCT.ascx" />
+    <Content Include="Modules\KHTV\Cum\ucCumDS.ascx" />
+    <Content Include="Modules\KHTV\KhachHang\ucKhachHangCT.ascx" />
+    <Content Include="Modules\KHTV\KhachHang\ucKhachHangDS.ascx" />
+    <Content Include="Modules\KHTV\KhuVuc\ucKhuVucCT.ascx" />
+    <Content Include="Modules\KHTV\KhuVuc\ucKhuVucDS.ascx" />
+    <Content Include="Modules\KHTV\Nhom\ucNhomCT.ascx" />
+    <Content Include="Modules\KHTV\Nhom\ucNhomDS.ascx" />
+    <Content Include="Modules\KTDL\BaoCao\ucDanhSach.ascx" />
+    <Content Include="Modules\KTDL\TongHop\ucTongHop.ascx" />
+    <Content Include="Modules\Navigator\ctlHorizonalNavigator.ascx" />
+    <Content Include="Modules\Navigator\ctlLeftMenu.ascx" />
+    <Content Include="Modules\Navigator\ctlPopup.ascx" />
+    <Content Include="Modules\Navigator\ctlUserInfoWidget.ascx" />
+    <Content Include="Modules\QTHT\NguoiDung\ucNguoiDungCT.ascx" />
+    <Content Include="Modules\QTHT\NguoiDung\ucNguoiDungDS.ascx" />
+    <Content Include="Modules\QTHT\NguoiDung\ucNhomNguoiDungCT.ascx" />
+    <Content Include="Modules\QTHT\PhanQuyen\ucPhanQuyenBC.ascx" />
+    <Content Include="Modules\QTHT\PhanQuyen\ucPhanQuyenCN.ascx" />
+    <Content Include="Modules\QTHT\PhanQuyen\ucPhanQuyenPV.ascx" />
+    <Content Include="Modules\QTHT\ThamSo\ucThamSoCT.ascx" />
+    <Content Include="Modules\QTHT\ThamSo\ucThamSoDS.ascx" />
+    <Content Include="Modules\System\ctlChangePass.ascx" />
+    <Content Include="Modules\System\ctlLogout.ascx" />
+    <Content Include="Modules\System\ctlReLogin.ascx" />
+    <Content Include="Modules\System\ctlSwitchBranch.ascx" />
+    <Content Include="Modules\TDVM\AnHan\ucAnHanCT.ascx" />
+    <Content Include="Modules\TDVM\HoanNhomNo\ucHoanNhomNoCT.ascx" />
+    <Content Include="Modules\TDVM\DonVayVon\ucDonVayVonCT.ascx" />
+    <Content Include="Modules\TDVM\DonVayVon\ucDonVayVonDS.ascx" />
+    <Content Include="Modules\TDVM\DuThu\ucDuThuCT.ascx" />
+    <Content Include="Modules\TDVM\GiaHanNo\ucGiaHanNoCT.ascx" />
+    <Content Include="Modules\TDVM\GiaiNgan\ucGiaiNganCT.ascx" />
+    <Content Include="Modules\TDVM\HoanUng\ucHoanUngCT.ascx" />
+    <Content Include="Modules\TDVM\HopDong\ucHopDongCT.ascx" />
+    <Content Include="Modules\TDVM\HopDong\ucHopDongDS.ascx" />
+    <Content Include="Modules\TDVM\KheUoc\ucKheUocCT.ascx" />
+    <Content Include="Modules\TDVM\KheUoc\ucKheUocDS.ascx" />
+    <Content Include="Modules\TDVM\LichThuPhat\ucLichThuPhatCT.ascx" />
+    <Content Include="Modules\TDVM\LichThuPhat\ucLichThuPhatDS.ascx" />
+    <Content Include="Modules\TDVM\LichTraNo\ucLichTraNoCT.ascx" />
+    <Content Include="Modules\TDVM\NoQuaHan\ucNoQuaHanCT.ascx" />
+    <Content Include="Modules\TDVM\PhanBo\ucPhanBoCT.ascx" />
+    <Content Include="Modules\TDVM\PhanLoaiNo\ucPhanLoaiNo.ascx" />
+    <Content Include="Modules\TDVM\SanPham\ucSanPhamCT.ascx" />
+    <Content Include="Modules\TDVM\SanPham\ucSanPhamDS.ascx" />
+    <Content Include="Modules\TDVM\TamUng\ucTamUngCT.ascx" />
+    <Content Include="Modules\TDVM\ThayDoiLaiSuat\ucThayDoiLaiSuatCT.ascx" />
+    <Content Include="Modules\TDVM\ThayDoiLaiSuat\ucThayDoiLaiSuatDS.ascx" />
+    <Content Include="Modules\TDVM\ThuGocLai\ucThuGocLaiCT.ascx" />
+    <Content Include="Modules\TDVM\TrichLapDP\ucTrichLapDPCT.ascx" />
+    <Content Include="Modules\TDVM\VongVay\ucVongVayCT.ascx" />
+    <Content Include="Modules\TDVM\VongVay\ucVongVayDS.ascx" />
+    <Content Include="Modules\TDVM\XoaNo\ucXoaNoCT.ascx" />
+    <Content Include="Popup.aspx" />
+    <Content Include="PopupContent.aspx" />
+    <Content Include="Scripts\DataTables\ColReorder-1.3.2\css\colReorder.bootstrap.css" />
+    <Content Include="Scripts\DataTables\ColReorder-1.3.2\css\colReorder.bootstrap.min.css" />
+    <Content Include="Scripts\DataTables\ColReorder-1.3.2\css\colReorder.dataTables.css" />
+    <Content Include="Scripts\DataTables\ColReorder-1.3.2\css\colReorder.dataTables.min.css" />
+    <Content Include="Scripts\DataTables\ColReorder-1.3.2\css\colReorder.foundation.css" />
+    <Content Include="Scripts\DataTables\ColReorder-1.3.2\css\colReorder.foundation.min.css" />
+    <Content Include="Scripts\DataTables\ColReorder-1.3.2\css\colReorder.jqueryui.css" />
+    <Content Include="Scripts\DataTables\ColReorder-1.3.2\css\colReorder.jqueryui.min.css" />
+    <Content Include="Scripts\DataTables\ColReorder-1.3.2\js\dataTables.colReorder.js" />
+    <Content Include="Scripts\DataTables\ColReorder-1.3.2\js\dataTables.colReorder.min.js" />
+    <Content Include="Scripts\DataTables\DataTables-1.10.13\css\dataTables.bootstrap.css" />
+    <Content Include="Scripts\DataTables\DataTables-1.10.13\css\dataTables.bootstrap.min.css" />
+    <Content Include="Scripts\DataTables\DataTables-1.10.13\css\dataTables.foundation.css" />
+    <Content Include="Scripts\DataTables\DataTables-1.10.13\css\dataTables.foundation.min.css" />
+    <Content Include="Scripts\DataTables\DataTables-1.10.13\css\dataTables.jqueryui.css" />
+    <Content Include="Scripts\DataTables\DataTables-1.10.13\css\dataTables.jqueryui.min.css" />
+    <Content Include="Scripts\DataTables\DataTables-1.10.13\css\dataTables.semanticui.css" />
+    <Content Include="Scripts\DataTables\DataTables-1.10.13\css\dataTables.semanticui.min.css" />
+    <Content Include="Scripts\DataTables\DataTables-1.10.13\css\jquery.dataTables.css" />
+    <Content Include="Scripts\DataTables\DataTables-1.10.13\css\jquery.dataTables.min.css" />
+    <Content Include="Scripts\DataTables\DataTables-1.10.13\css\jquery.dataTables_themeroller.css" />
+    <Content Include="Scripts\DataTables\DataTables-1.10.13\images\sort_asc.png" />
+    <Content Include="Scripts\DataTables\DataTables-1.10.13\images\sort_asc_disabled.png" />
+    <Content Include="Scripts\DataTables\DataTables-1.10.13\images\sort_both.png" />
+    <Content Include="Scripts\DataTables\DataTables-1.10.13\images\sort_desc.png" />
+    <Content Include="Scripts\DataTables\DataTables-1.10.13\images\sort_desc_disabled.png" />
+    <Content Include="Scripts\DataTables\DataTables-1.10.13\js\dataTables.bootstrap.js" />
+    <Content Include="Scripts\DataTables\DataTables-1.10.13\js\dataTables.bootstrap.min.js" />
+    <Content Include="Scripts\DataTables\DataTables-1.10.13\js\dataTables.foundation.js" />
+    <Content Include="Scripts\DataTables\DataTables-1.10.13\js\dataTables.foundation.min.js" />
+    <Content Include="Scripts\DataTables\DataTables-1.10.13\js\dataTables.jqueryui.js" />
+    <Content Include="Scripts\DataTables\DataTables-1.10.13\js\dataTables.jqueryui.min.js" />
+    <Content Include="Scripts\DataTables\DataTables-1.10.13\js\dataTables.semanticui.js" />
+    <Content Include="Scripts\DataTables\DataTables-1.10.13\js\dataTables.semanticui.min.js" />
+    <Content Include="Scripts\DataTables\DataTables-1.10.13\js\jquery.dataTables.js" />
+    <Content Include="Scripts\DataTables\DataTables-1.10.13\js\jquery.dataTables.min.js" />
+    <Content Include="Scripts\DataTables\datatables.css" />
+    <Content Include="Scripts\DataTables\datatables.js" />
+    <Content Include="Scripts\DataTables\datatables.min.css" />
+    <Content Include="Scripts\DataTables\datatables.min.js" />
+    <Content Include="Scripts\DataTables\jQuery-2.2.4\jquery-2.2.4.js" />
+    <Content Include="Scripts\DataTables\jQuery-2.2.4\jquery-2.2.4.min.js" />
+    <Content Include="Scripts\DataTables\RowReorder-1.2.0\css\rowReorder.bootstrap.css" />
+    <Content Include="Scripts\DataTables\RowReorder-1.2.0\css\rowReorder.bootstrap.min.css" />
+    <Content Include="Scripts\DataTables\RowReorder-1.2.0\css\rowReorder.dataTables.css" />
+    <Content Include="Scripts\DataTables\RowReorder-1.2.0\css\rowReorder.dataTables.min.css" />
+    <Content Include="Scripts\DataTables\RowReorder-1.2.0\css\rowReorder.foundation.css" />
+    <Content Include="Scripts\DataTables\RowReorder-1.2.0\css\rowReorder.foundation.min.css" />
+    <Content Include="Scripts\DataTables\RowReorder-1.2.0\css\rowReorder.jqueryui.css" />
+    <Content Include="Scripts\DataTables\RowReorder-1.2.0\css\rowReorder.jqueryui.min.css" />
+    <Content Include="Scripts\DataTables\RowReorder-1.2.0\css\rowReorder.semanticui.css" />
+    <Content Include="Scripts\DataTables\RowReorder-1.2.0\css\rowReorder.semanticui.min.css" />
+    <Content Include="Scripts\DataTables\RowReorder-1.2.0\js\dataTables.rowReorder.js" />
+    <Content Include="Scripts\DataTables\RowReorder-1.2.0\js\dataTables.rowReorder.min.js" />
+    <Content Include="Scripts\DataTables\Scroller-1.4.2\css\scroller.bootstrap.css" />
+    <Content Include="Scripts\DataTables\Scroller-1.4.2\css\scroller.bootstrap.min.css" />
+    <Content Include="Scripts\DataTables\Scroller-1.4.2\css\scroller.dataTables.css" />
+    <Content Include="Scripts\DataTables\Scroller-1.4.2\css\scroller.dataTables.min.css" />
+    <Content Include="Scripts\DataTables\Scroller-1.4.2\css\scroller.foundation.css" />
+    <Content Include="Scripts\DataTables\Scroller-1.4.2\css\scroller.foundation.min.css" />
+    <Content Include="Scripts\DataTables\Scroller-1.4.2\css\scroller.jqueryui.css" />
+    <Content Include="Scripts\DataTables\Scroller-1.4.2\css\scroller.jqueryui.min.css" />
+    <Content Include="Scripts\DataTables\Scroller-1.4.2\js\dataTables.scroller.js" />
+    <Content Include="Scripts\DataTables\Scroller-1.4.2\js\dataTables.scroller.min.js" />
+    <Content Include="Scripts\DataTables\Select-1.2.0\css\select.bootstrap.css" />
+    <Content Include="Scripts\DataTables\Select-1.2.0\css\select.bootstrap.min.css" />
+    <Content Include="Scripts\DataTables\Select-1.2.0\css\select.dataTables.css" />
+    <Content Include="Scripts\DataTables\Select-1.2.0\css\select.dataTables.min.css" />
+    <Content Include="Scripts\DataTables\Select-1.2.0\css\select.foundation.css" />
+    <Content Include="Scripts\DataTables\Select-1.2.0\css\select.foundation.min.css" />
+    <Content Include="Scripts\DataTables\Select-1.2.0\css\select.jqueryui.css" />
+    <Content Include="Scripts\DataTables\Select-1.2.0\css\select.jqueryui.min.css" />
+    <Content Include="Scripts\DataTables\Select-1.2.0\js\dataTables.select.js" />
+    <Content Include="Scripts\DataTables\Select-1.2.0\js\dataTables.select.min.js" />
+    <Content Include="Scripts\jquery-1.2.6.min.js" />
+    <Content Include="Scripts\jquery-3.1.1.js" />
+    <Content Include="Scripts\jquery-3.1.1.min.js" />
+    <Content Include="Scripts\jquery-ui.css" />
+    <Content Include="Scripts\jquery-ui.js" />
+    <Content Include="Scripts\jquery-ui.min.js" />
+    <Content Include="Scripts\jquery.min.js" />
+    <Content Include="Scripts\jquery.modal.min.js" />
+    <Content Include="Temp\init.txt" />
+    <None Include="Web References\WebProcessService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WebProcessService\WebProcessService.wsdl" />
+    <None Include="Web References\WebProcessService\WebProcessService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WebProcessService\WebProcessService0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Config\SystemParam\PageConfig.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Config\Template\NGV\Attach\theme.css" />
+    <Content Include="Config\Template\NGV\Container\ctDefault.ascx" />
+    <Content Include="Config\Template\NGV\Page\pgDefault.ascx" />
+    <Content Include="CSS\Style.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Login.aspx" />
+    <Content Include="Modules\Navigator\ctlPageFooter.ascx" />
+    <Content Include="Modules\Navigator\ctlPageHeader.ascx" />
+    <Content Include="Modules\System\ctlLogin.ascx" />
+    <Content Include="Scripts\Common.js" />
+    <Content Include="Scripts\jquery.jmsajax.js" />
+    <Content Include="Scripts\jquery.jmsajax.min.js" />
+    <Content Include="Test.aspx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Business\Controller\BaoCaoController.cs" />
+    <Compile Include="Business\Controller\DanhMucController.cs" />
+    <Compile Include="Business\Controller\TruyVanController.cs" />
+    <Compile Include="Business\Controller\UserController.cs" />
+    <Compile Include="Business\CustomControl\AutoComboBox.cs" />
+    <Compile Include="Business\CustomControl\AutoCompleteEntry.cs" />
+    <Compile Include="Business\CustomControl\CommonFuntion.cs" />
+    <Compile Include="Business\CustomControl\ExportExcel.cs" />
+    <Compile Include="Business\CustomControl\Hethong.cs" />
+    <Compile Include="Business\Entity\Protal.cs" />
+    <Compile Include="Business\Entity\UserInfo.cs" />
+    <Compile Include="Business\System\AppConfig.cs" />
+    <Compile Include="Business\System\CacheService.cs" />
+    <Compile Include="Business\System\ControlBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Business\System\LanguageEngine.cs" />
+    <Compile Include="Business\System\TemplateBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Business\System\TemplatePopup.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\DMDC\DiaBan\ucDiaBanCT.ascx.cs">
+      <DependentUpon>ucDiaBanCT.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\DMDC\DiaBan\ucDiaBanCT.ascx.designer.cs">
+      <DependentUpon>ucDiaBanCT.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\DMDC\DiaBan\ucDiaBanDS.ascx.cs">
+      <DependentUpon>ucDiaBanDS.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\DMDC\DiaBan\ucDiaBanDS.ascx.designer.cs">
+      <DependentUpon>ucDiaBanDS.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\DMDC\DonVi\ucDonViCT.ascx.cs">
+      <DependentUpon>ucDonViCT.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\DMDC\DonVi\ucDonViCT.ascx.designer.cs">
+      <DependentUpon>ucDonViCT.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\DMDC\DonVi\ucDonViDS.ascx.cs">
+      <DependentUpon>ucDonViDS.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\DMDC\DonVi\ucDonViDS.ascx.designer.cs">
+      <DependentUpon>ucDonViDS.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\DMDC\DungChung\ucDungChungCT.ascx.cs">
+      <DependentUpon>ucDungChungCT.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\DMDC\DungChung\ucDungChungCT.ascx.designer.cs">
+      <DependentUpon>ucDungChungCT.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\DMDC\DungChung\ucDungChungDS.ascx.cs">
+      <DependentUpon>ucDungChungDS.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\DMDC\DungChung\ucDungChungDS.ascx.designer.cs">
+      <DependentUpon>ucDungChungDS.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\DMDC\LaiSuat\ucLaiSuatCT.ascx.cs">
+      <DependentUpon>ucLaiSuatCT.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\DMDC\LaiSuat\ucLaiSuatCT.ascx.designer.cs">
+      <DependentUpon>ucLaiSuatCT.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\DMDC\LaiSuat\ucLaiSuatDS.ascx.cs">
+      <DependentUpon>ucLaiSuatDS.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\DMDC\LaiSuat\ucLaiSuatDS.ascx.designer.cs">
+      <DependentUpon>ucLaiSuatDS.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\DMDC\Phi\ucPhiCT.ascx.cs">
+      <DependentUpon>ucPhiCT.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\DMDC\Phi\ucPhiCT.ascx.designer.cs">
+      <DependentUpon>ucPhiCT.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\DMDC\Phi\ucPhiDS.ascx.cs">
+      <DependentUpon>ucPhiDS.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\DMDC\Phi\ucPhiDS.ascx.designer.cs">
+      <DependentUpon>ucPhiDS.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\DMDC\QuocGia\ucQuocGiaCT.ascx.cs">
+      <DependentUpon>ucQuocGiaCT.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\DMDC\QuocGia\ucQuocGiaCT.ascx.designer.cs">
+      <DependentUpon>ucQuocGiaCT.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\DMDC\QuocGia\ucQuocGiaDS.ascx.cs">
+      <DependentUpon>ucQuocGiaDS.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\DMDC\QuocGia\ucQuocGiaDS.ascx.designer.cs">
+      <DependentUpon>ucQuocGiaDS.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\DMDC\TienTe\ucTienTeCT.ascx.cs">
+      <DependentUpon>ucTienTeCT.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\DMDC\TienTe\ucTienTeCT.ascx.designer.cs">
+      <DependentUpon>ucTienTeCT.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\DMDC\TienTe\ucTienTeDS.ascx.cs">
+      <DependentUpon>ucTienTeDS.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\DMDC\TienTe\ucTienTeDS.ascx.designer.cs">
+      <DependentUpon>ucTienTeDS.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\DMDC\TinhTP\ucTinhTPCT.ascx.cs">
+      <DependentUpon>ucTinhTPCT.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\DMDC\TinhTP\ucTinhTPCT.ascx.designer.cs">
+      <DependentUpon>ucTinhTPCT.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\DMDC\TinhTP\ucTinhTPDS.ascx.cs">
+      <DependentUpon>ucTinhTPDS.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\DMDC\TinhTP\ucTinhTPDS.ascx.designer.cs">
+      <DependentUpon>ucTinhTPDS.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\DMDC\ToChucTD\ucToChucTDCT.ascx.cs">
+      <DependentUpon>ucToChucTDCT.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\DMDC\ToChucTD\ucToChucTDCT.ascx.designer.cs">
+      <DependentUpon>ucToChucTDCT.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\DMDC\ToChucTD\ucToChucTDDS.ascx.cs">
+      <DependentUpon>ucToChucTDDS.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\DMDC\ToChucTD\ucToChucTDDS.ascx.designer.cs">
+      <DependentUpon>ucToChucTDDS.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\DMDC\TyGia\ucTyGiaCT.ascx.cs">
+      <DependentUpon>ucTyGiaCT.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\DMDC\TyGia\ucTyGiaCT.ascx.designer.cs">
+      <DependentUpon>ucTyGiaCT.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\DMDC\TyGia\ucTyGiaDS.ascx.cs">
+      <DependentUpon>ucTyGiaDS.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\DMDC\TyGia\ucTyGiaDS.ascx.designer.cs">
+      <DependentUpon>ucTyGiaDS.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\GDKT\ButToan\ucButToanCT.ascx.cs">
+      <DependentUpon>ucButToanCT.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\GDKT\ButToan\ucButToanCT.ascx.designer.cs">
+      <DependentUpon>ucButToanCT.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\GDKT\ButToan\ucButToanDS.ascx.cs">
+      <DependentUpon>ucButToanDS.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\GDKT\ButToan\ucButToanDS.ascx.designer.cs">
+      <DependentUpon>ucButToanDS.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\GDKT\CuoiNgay\ucCuoiNgayCT.ascx.cs">
+      <DependentUpon>ucCuoiNgayCT.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\GDKT\CuoiNgay\ucCuoiNgayCT.ascx.designer.cs">
+      <DependentUpon>ucCuoiNgayCT.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\GDKT\CuoiNgay\ucCuoiNgayDS.ascx.cs">
+      <DependentUpon>ucCuoiNgayDS.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\GDKT\CuoiNgay\ucCuoiNgayDS.ascx.designer.cs">
+      <DependentUpon>ucCuoiNgayDS.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\GDKT\DieuChinh\ucDieuChinhCT.ascx.cs">
+      <DependentUpon>ucDieuChinhCT.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\GDKT\DieuChinh\ucDieuChinhCT.ascx.designer.cs">
+      <DependentUpon>ucDieuChinhCT.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\GDKT\DieuChinh\ucDieuChinhDS.ascx.cs">
+      <DependentUpon>ucDieuChinhDS.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\GDKT\DieuChinh\ucDieuChinhDS.ascx.designer.cs">
+      <DependentUpon>ucDieuChinhDS.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\GDKT\DieuChuyenQuy\ucDieuChuyenQuyDS.ascx.cs">
+      <DependentUpon>ucDieuChuyenQuyDS.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\GDKT\DieuChuyenQuy\ucDieuChuyenQuyDS.ascx.designer.cs">
+      <DependentUpon>ucDieuChuyenQuyDS.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\GDKT\DieuChuyenQuy\ucHoanQuyCT.ascx.cs">
+      <DependentUpon>ucHoanQuyCT.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\GDKT\DieuChuyenQuy\ucHoanQuyCT.ascx.designer.cs">
+      <DependentUpon>ucHoanQuyCT.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\GDKT\DieuChuyenQuy\ucTiepQuyCT.ascx.cs">
+      <DependentUpon>ucTiepQuyCT.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\GDKT\DieuChuyenQuy\ucTiepQuyCT.ascx.designer.cs">
+      <DependentUpon>ucTiepQuyCT.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\GDKT\DoiTuongTK\ucDoiTuongCT.ascx.cs">
+      <DependentUpon>ucDoiTuongCT.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\GDKT\DoiTuongTK\ucDoiTuongCT.ascx.designer.cs">
+      <DependentUpon>ucDoiTuongCT.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\GDKT\DoiTuongTK\ucDoiTuongDS.ascx.cs">
+      <DependentUpon>ucDoiTuongDS.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\GDKT\DoiTuongTK\ucDoiTuongDS.ascx.designer.cs">
+      <DependentUpon>ucDoiTuongDS.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\GDKT\DoiTuongTK\ucLoaiDoiTuongCT.ascx.cs">
+      <DependentUpon>ucLoaiDoiTuongCT.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\GDKT\DoiTuongTK\ucLoaiDoiTuongCT.ascx.designer.cs">
+      <DependentUpon>ucLoaiDoiTuongCT.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\GDKT\DoiTuongTK\ucLoaiDoiTuongDS.ascx.cs">
+      <DependentUpon>ucLoaiDoiTuongDS.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\GDKT\DoiTuongTK\ucLoaiDoiTuongDS.ascx.designer.cs">
+      <DependentUpon>ucLoaiDoiTuongDS.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\GDKT\DoiTuongTK\ucSoDuCT.ascx.cs">
+      <DependentUpon>ucSoDuCT.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\GDKT\DoiTuongTK\ucSoDuCT.ascx.designer.cs">
+      <DependentUpon>ucSoDuCT.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\GDKT\DoiTuongTK\ucSoDuDS.ascx.cs">
+      <DependentUpon>ucSoDuDS.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\GDKT\DoiTuongTK\ucSoDuDS.ascx.designer.cs">
+      <DependentUpon>ucSoDuDS.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\GDKT\KetChuyen\ucKetChuyenCT.ascx.cs">
+      <DependentUpon>ucKetChuyenCT.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\GDKT\KetChuyen\ucKetChuyenCT.ascx.designer.cs">
+      <DependentUpon>ucKetChuyenCT.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\GDKT\KetChuyen\ucKetChuyenDS.ascx.cs">
+      <DependentUpon>ucKetChuyenDS.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\GDKT\KetChuyen\ucKetChuyenDS.ascx.designer.cs">
+      <DependentUpon>ucKetChuyenDS.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\GDKT\KiemSoat\ucKiemSoatCT.ascx.cs">
+      <DependentUpon>ucKiemSoatCT.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\GDKT\KiemSoat\ucKiemSoatCT.ascx.designer.cs">
+      <DependentUpon>ucKiemSoatCT.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\GDKT\KiemSoat\ucKiemSoatDS.ascx.cs">
+      <DependentUpon>ucKiemSoatDS.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\GDKT\KiemSoat\ucKiemSoatDS.ascx.designer.cs">
+      <DependentUpon>ucKiemSoatDS.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\GDKT\PhanLoai\ucPhanLoaiDS.ascx.cs">
+      <DependentUpon>ucPhanLoaiDS.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\GDKT\PhanLoai\ucPhanLoaiDS.ascx.designer.cs">
+      <DependentUpon>ucPhanLoaiDS.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\GDKT\PhieuChi\ucPhieuChiCT.ascx.cs">
+      <DependentUpon>ucPhieuChiCT.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\GDKT\PhieuChi\ucPhieuChiCT.ascx.designer.cs">
+      <DependentUpon>ucPhieuChiCT.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\GDKT\PhieuChi\ucPhieuChiDS.ascx.cs">
+      <DependentUpon>ucPhieuChiDS.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\GDKT\PhieuChi\ucPhieuChiDS.ascx.designer.cs">
+      <DependentUpon>ucPhieuChiDS.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\GDKT\PhieuKeToan\ucPhieuKeToanCT.ascx.cs">
+      <DependentUpon>ucPhieuKeToanCT.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\GDKT\PhieuKeToan\ucPhieuKeToanCT.ascx.designer.cs">
+      <DependentUpon>ucPhieuKeToanCT.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\GDKT\PhieuKeToan\ucPhieuKeToanDS.ascx.cs">
+      <DependentUpon>ucPhieuKeToanDS.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\GDKT\PhieuKeToan\ucPhieuKeToanDS.ascx.designer.cs">
+      <DependentUpon>ucPhieuKeToanDS.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\GDKT\PhieuNXNB\ucPhieuNXNBCT.ascx.cs">
+      <DependentUpon>ucPhieuNXNBCT.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\GDKT\PhieuNXNB\ucPhieuNXNBCT.ascx.designer.cs">
+      <DependentUpon>ucPhieuNXNBCT.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\GDKT\PhieuNXNB\ucPhieuNXNBDS.ascx.cs">
+      <DependentUpon>ucPhieuNXNBDS.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\GDKT\PhieuNXNB\ucPhieuNXNBDS.ascx.designer.cs">
+      <DependentUpon>ucPhieuNXNBDS.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\GDKT\PhieuThu\ucPhieuThuCT.ascx.cs">
+      <DependentUpon>ucPhieuThuCT.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\GDKT\PhieuThu\ucPhieuThuCT.ascx.designer.cs">
+      <DependentUpon>ucPhieuThuCT.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\GDKT\PhieuThu\ucPhieuThuDS.ascx.cs">
+      <DependentUpon>ucPhieuThuDS.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\GDKT\PhieuThu\ucPhieuThuDS.ascx.designer.cs">
+      <DependentUpon>ucPhieuThuDS.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\GDKT\PhieuUNC\ucPhieuUNCCT.ascx.cs">
+      <DependentUpon>ucPhieuUNCCT.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\GDKT\PhieuUNC\ucPhieuUNCCT.ascx.designer.cs">
+      <DependentUpon>ucPhieuUNCCT.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\GDKT\PhieuUNC\ucPhieuUNCDS.ascx.cs">
+      <DependentUpon>ucPhieuUNCDS.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\GDKT\PhieuUNC\ucPhieuUNCDS.ascx.designer.cs">
+      <DependentUpon>ucPhieuUNCDS.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\GDKT\TaiKhoan\ucTaiKhoanCT.ascx.cs">
+      <DependentUpon>ucTaiKhoanCT.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\GDKT\TaiKhoan\ucTaiKhoanCT.ascx.designer.cs">
+      <DependentUpon>ucTaiKhoanCT.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\GDKT\TaiKhoan\ucTaiKhoanDS.ascx.cs">
+      <DependentUpon>ucTaiKhoanDS.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\GDKT\TaiKhoan\ucTaiKhoanDS.ascx.designer.cs">
+      <DependentUpon>ucTaiKhoanDS.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\GDKT\TongHop\ucTongHopCT.ascx.cs">
+      <DependentUpon>ucTongHopCT.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\GDKT\TongHop\ucTongHopCT.ascx.designer.cs">
+      <DependentUpon>ucTongHopCT.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\GDKT\TongHop\ucTongHopDS.ascx.cs">
+      <DependentUpon>ucTongHopDS.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\GDKT\TongHop\ucTongHopDS.ascx.designer.cs">
+      <DependentUpon>ucTongHopDS.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\HDVO\DangKyRutGoc\ucDangKyRutGocCT.ascx.cs">
+      <DependentUpon>ucDangKyRutGocCT.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\HDVO\DangKyRutGoc\ucDangKyRutGocCT.ascx.designer.cs">
+      <DependentUpon>ucDangKyRutGocCT.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\HDVO\DangKyRutGoc\ucDangKyRutGocDS.ascx.cs">
+      <DependentUpon>ucDangKyRutGocDS.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\HDVO\DangKyRutGoc\ucDangKyRutGocDS.ascx.designer.cs">
+      <DependentUpon>ucDangKyRutGocDS.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\HDVO\DongMoTK\ucDongMoTKDS.ascx.cs">
+      <DependentUpon>ucDongMoTKDS.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\HDVO\DongMoTK\ucDongMoTKDS.ascx.designer.cs">
+      <DependentUpon>ucDongMoTKDS.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\HDVO\DongMoTK\ucDongTKCT.ascx.cs">
+      <DependentUpon>ucDongTKCT.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\HDVO\DongMoTK\ucDongTKCT.ascx.designer.cs">
+      <DependentUpon>ucDongTKCT.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\HDVO\DongMoTK\ucDongTKDS.ascx.cs">
+      <DependentUpon>ucDongTKDS.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\HDVO\DongMoTK\ucDongTKDS.ascx.designer.cs">
+      <DependentUpon>ucDongTKDS.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\HDVO\DongMoTK\ucMoTKCT.ascx.cs">
+      <DependentUpon>ucMoTKCT.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\HDVO\DongMoTK\ucMoTKCT.ascx.designer.cs">
+      <DependentUpon>ucMoTKCT.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\HDVO\DongMoTK\ucMoTKDS.ascx.cs">
+      <DependentUpon>ucMoTKDS.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\HDVO\DongMoTK\ucMoTKDS.ascx.designer.cs">
+      <DependentUpon>ucMoTKDS.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\HDVO\DuChi\ucDuChiCT.ascx.cs">
+      <DependentUpon>ucDuChiCT.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\HDVO\DuChi\ucDuChiCT.ascx.designer.cs">
+      <DependentUpon>ucDuChiCT.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\HDVO\GiaiToa\ucGiaiToaCT.ascx.cs">
+      <DependentUpon>ucGiaiToaCT.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\HDVO\GiaiToa\ucGiaiToaCT.ascx.designer.cs">
+      <DependentUpon>ucGiaiToaCT.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\HDVO\GuiThem\ucGuiThemCT.ascx.cs">
+      <DependentUpon>ucGuiThemCT.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\HDVO\GuiThem\ucGuiThemCT.ascx.designer.cs">
+      <DependentUpon>ucGuiThemCT.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\HDVO\GuiThem\ucGuiThemExcelCT.ascx.cs">
+      <DependentUpon>ucGuiThemExcelCT.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\HDVO\GuiThem\ucGuiThemExcelCT.ascx.designer.cs">
+      <DependentUpon>ucGuiThemExcelCT.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\HDVO\GuiThem\ucGuiThemTheoDSCT.ascx.cs">
+      <DependentUpon>ucGuiThemTheoDSCT.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\HDVO\GuiThem\ucGuiThemTheoDSCT.ascx.designer.cs">
+      <DependentUpon>ucGuiThemTheoDSCT.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\HDVO\LaiNhapGoc\ucLaiNhapGocCT.ascx.cs">
+      <DependentUpon>ucLaiNhapGocCT.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\HDVO\LaiNhapGoc\ucLaiNhapGocCT.ascx.designer.cs">
+      <DependentUpon>ucLaiNhapGocCT.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\HDVO\LaiNhapGoc\ucLaiNhapGocTheoDSCT.ascx.cs">
+      <DependentUpon>ucLaiNhapGocTheoDSCT.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\HDVO\LaiNhapGoc\ucLaiNhapGocTheoDSCT.ascx.designer.cs">
+      <DependentUpon>ucLaiNhapGocTheoDSCT.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\HDVO\MoSo\ucMoSoCT.ascx.cs">
+      <DependentUpon>ucMoSoCT.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\HDVO\MoSo\ucMoSoCT.ascx.designer.cs">
+      <DependentUpon>ucMoSoCT.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\HDVO\MoSo\ucMoSoDS.ascx.cs">
+      <DependentUpon>ucMoSoDS.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\HDVO\MoSo\ucMoSoDS.ascx.designer.cs">
+      <DependentUpon>ucMoSoDS.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\HDVO\PhanBo\ucPhanBoCT.ascx.cs">
+      <DependentUpon>ucPhanBoCT.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\HDVO\PhanBo\ucPhanBoCT.ascx.designer.cs">
+      <DependentUpon>ucPhanBoCT.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\HDVO\PhongToa\ucPhongToaCT.ascx.cs">
+      <DependentUpon>ucPhongToaCT.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\HDVO\PhongToa\ucPhongToaCT.ascx.designer.cs">
+      <DependentUpon>ucPhongToaCT.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\HDVO\Popup\ucPopupSoTGui.aspx.cs">
+      <DependentUpon>ucPopupSoTGui.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\HDVO\Popup\ucPopupSoTGui.aspx.designer.cs">
+      <DependentUpon>ucPopupSoTGui.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\HDVO\RutGoc\ucRutGocTheoDSCT.ascx.cs">
+      <DependentUpon>ucRutGocTheoDSCT.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\HDVO\RutGoc\ucRutGocTheoDSCT.ascx.designer.cs">
+      <DependentUpon>ucRutGocTheoDSCT.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\HDVO\RutGoc\ucRutGocCT.ascx.cs">
+      <DependentUpon>ucRutGocCT.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\HDVO\RutGoc\ucRutGocCT.ascx.designer.cs">
+      <DependentUpon>ucRutGocCT.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\HDVO\SanPham\ucSanPhamCT.ascx.cs">
+      <DependentUpon>ucSanPhamCT.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\HDVO\SanPham\ucSanPhamCT.ascx.designer.cs">
+      <DependentUpon>ucSanPhamCT.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\HDVO\SanPham\ucSanPhamDS.ascx.cs">
+      <DependentUpon>ucSanPhamDS.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\HDVO\SanPham\ucSanPhamDS.ascx.designer.cs">
+      <DependentUpon>ucSanPhamDS.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\HDVO\TatToan\ucTatToanCT.ascx.cs">
+      <DependentUpon>ucTatToanCT.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\HDVO\TatToan\ucTatToanCT.ascx.designer.cs">
+      <DependentUpon>ucTatToanCT.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\HDVO\TatToan\ucTatToanTheoDSCT.ascx.cs">
+      <DependentUpon>ucTatToanTheoDSCT.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\HDVO\TatToan\ucTatToanTheoDSCT.ascx.designer.cs">
+      <DependentUpon>ucTatToanTheoDSCT.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\HDVO\ThayDoiLaiSuat\ucThayDoiLaiSuatCT.ascx.cs">
+      <DependentUpon>ucThayDoiLaiSuatCT.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\HDVO\ThayDoiLaiSuat\ucThayDoiLaiSuatCT.ascx.designer.cs">
+      <DependentUpon>ucThayDoiLaiSuatCT.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\HDVO\ThayDoiLaiSuat\ucThayDoiLaiSuatDS.ascx.cs">
+      <DependentUpon>ucThayDoiLaiSuatDS.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\HDVO\ThayDoiLaiSuat\ucThayDoiLaiSuatDS.ascx.designer.cs">
+      <DependentUpon>ucThayDoiLaiSuatDS.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\HDVO\TraLai\ucTraLaiCT.ascx.cs">
+      <DependentUpon>ucTraLaiCT.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\HDVO\TraLai\ucTraLaiCT.ascx.designer.cs">
+      <DependentUpon>ucTraLaiCT.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\HDVO\TraLai\ucTraLaiTheoDSCT.ascx.cs">
+      <DependentUpon>ucTraLaiTheoDSCT.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\HDVO\TraLai\ucTraLaiTheoDSCT.ascx.designer.cs">
+      <DependentUpon>ucTraLaiTheoDSCT.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\KHTV\ChuyenDiaBan\ucChuyenDiaBanCT.ascx.cs">
+      <DependentUpon>ucChuyenDiaBanCT.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\KHTV\ChuyenDiaBan\ucChuyenDiaBanCT.ascx.designer.cs">
+      <DependentUpon>ucChuyenDiaBanCT.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\KHTV\ChuyenDiaBan\ucChuyenDiaBanDS.ascx.cs">
+      <DependentUpon>ucChuyenDiaBanDS.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\KHTV\ChuyenDiaBan\ucChuyenDiaBanDS.ascx.designer.cs">
+      <DependentUpon>ucChuyenDiaBanDS.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\KHTV\Cum\ucCumCT.ascx.cs">
+      <DependentUpon>ucCumCT.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\KHTV\Cum\ucCumCT.ascx.designer.cs">
+      <DependentUpon>ucCumCT.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\KHTV\Cum\ucCumDS.ascx.cs">
+      <DependentUpon>ucCumDS.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\KHTV\Cum\ucCumDS.ascx.designer.cs">
+      <DependentUpon>ucCumDS.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\KHTV\KhachHang\ucKhachHangCT.ascx.cs">
+      <DependentUpon>ucKhachHangCT.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\KHTV\KhachHang\ucKhachHangCT.ascx.designer.cs">
+      <DependentUpon>ucKhachHangCT.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\KHTV\KhachHang\ucKhachHangDS.ascx.cs">
+      <DependentUpon>ucKhachHangDS.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\KHTV\KhachHang\ucKhachHangDS.ascx.designer.cs">
+      <DependentUpon>ucKhachHangDS.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\KHTV\KhuVuc\ucKhuVucCT.ascx.cs">
+      <DependentUpon>ucKhuVucCT.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\KHTV\KhuVuc\ucKhuVucCT.ascx.designer.cs">
+      <DependentUpon>ucKhuVucCT.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\KHTV\KhuVuc\ucKhuVucDS.ascx.cs">
+      <DependentUpon>ucKhuVucDS.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\KHTV\KhuVuc\ucKhuVucDS.ascx.designer.cs">
+      <DependentUpon>ucKhuVucDS.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\KHTV\Nhom\ucNhomCT.ascx.cs">
+      <DependentUpon>ucNhomCT.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\KHTV\Nhom\ucNhomCT.ascx.designer.cs">
+      <DependentUpon>ucNhomCT.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\KHTV\Nhom\ucNhomDS.ascx.cs">
+      <DependentUpon>ucNhomDS.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\KHTV\Nhom\ucNhomDS.ascx.designer.cs">
+      <DependentUpon>ucNhomDS.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\KTDL\BaoCao\ucDanhSach.ascx.cs">
+      <DependentUpon>ucDanhSach.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\KTDL\BaoCao\ucDanhSach.ascx.designer.cs">
+      <DependentUpon>ucDanhSach.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\KTDL\TongHop\ucTongHop.ascx.cs">
+      <DependentUpon>ucTongHop.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\KTDL\TongHop\ucTongHop.ascx.designer.cs">
+      <DependentUpon>ucTongHop.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Navigator\ctlHorizonalNavigator.ascx.cs">
+      <DependentUpon>ctlHorizonalNavigator.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\Navigator\ctlHorizonalNavigator.ascx.designer.cs">
+      <DependentUpon>ctlHorizonalNavigator.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Navigator\ctlLeftMenu.ascx.cs">
+      <DependentUpon>ctlLeftMenu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\Navigator\ctlLeftMenu.ascx.designer.cs">
+      <DependentUpon>ctlLeftMenu.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Navigator\ctlPageFooter.ascx.cs">
+      <DependentUpon>ctlPageFooter.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\Navigator\ctlPageFooter.ascx.designer.cs">
+      <DependentUpon>ctlPageFooter.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Navigator\ctlPageHeader.ascx.cs">
+      <DependentUpon>ctlPageHeader.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\Navigator\ctlPageHeader.ascx.designer.cs">
+      <DependentUpon>ctlPageHeader.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Navigator\ctlPopup.ascx.cs">
+      <DependentUpon>ctlPopup.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\Navigator\ctlPopup.ascx.designer.cs">
+      <DependentUpon>ctlPopup.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Navigator\ctlUserInfoWidget.ascx.cs">
+      <DependentUpon>ctlUserInfoWidget.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\Navigator\ctlUserInfoWidget.ascx.designer.cs">
+      <DependentUpon>ctlUserInfoWidget.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\QTHT\NguoiDung\ucNguoiDungCT.ascx.cs">
+      <DependentUpon>ucNguoiDungCT.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\QTHT\NguoiDung\ucNguoiDungCT.ascx.designer.cs">
+      <DependentUpon>ucNguoiDungCT.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\QTHT\NguoiDung\ucNguoiDungDS.ascx.cs">
+      <DependentUpon>ucNguoiDungDS.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\QTHT\NguoiDung\ucNguoiDungDS.ascx.designer.cs">
+      <DependentUpon>ucNguoiDungDS.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\QTHT\NguoiDung\ucNhomNguoiDungCT.ascx.cs">
+      <DependentUpon>ucNhomNguoiDungCT.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\QTHT\NguoiDung\ucNhomNguoiDungCT.ascx.designer.cs">
+      <DependentUpon>ucNhomNguoiDungCT.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\QTHT\PhanQuyen\ucPhanQuyenBC.ascx.cs">
+      <DependentUpon>ucPhanQuyenBC.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\QTHT\PhanQuyen\ucPhanQuyenBC.ascx.designer.cs">
+      <DependentUpon>ucPhanQuyenBC.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\QTHT\PhanQuyen\ucPhanQuyenCN.ascx.cs">
+      <DependentUpon>ucPhanQuyenCN.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\QTHT\PhanQuyen\ucPhanQuyenCN.ascx.designer.cs">
+      <DependentUpon>ucPhanQuyenCN.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\QTHT\PhanQuyen\ucPhanQuyenPV.ascx.cs">
+      <DependentUpon>ucPhanQuyenPV.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\QTHT\PhanQuyen\ucPhanQuyenPV.ascx.designer.cs">
+      <DependentUpon>ucPhanQuyenPV.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\QTHT\ThamSo\ucThamSoCT.ascx.cs">
+      <DependentUpon>ucThamSoCT.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\QTHT\ThamSo\ucThamSoCT.ascx.designer.cs">
+      <DependentUpon>ucThamSoCT.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\QTHT\ThamSo\ucThamSoDS.ascx.cs">
+      <DependentUpon>ucThamSoDS.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\QTHT\ThamSo\ucThamSoDS.ascx.designer.cs">
+      <DependentUpon>ucThamSoDS.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\System\ctlChangePass.ascx.cs">
+      <DependentUpon>ctlChangePass.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\System\ctlChangePass.ascx.designer.cs">
+      <DependentUpon>ctlChangePass.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\System\ctlLogin.ascx.cs">
+      <DependentUpon>ctlLogin.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\System\ctlLogin.ascx.designer.cs">
+      <DependentUpon>ctlLogin.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\System\ctlLogout.ascx.cs">
+      <DependentUpon>ctlLogout.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\System\ctlLogout.ascx.designer.cs">
+      <DependentUpon>ctlLogout.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\System\ctlReLogin.ascx.cs">
+      <DependentUpon>ctlReLogin.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\System\ctlReLogin.ascx.designer.cs">
+      <DependentUpon>ctlReLogin.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\System\ctlSwitchBranch.ascx.cs">
+      <DependentUpon>ctlSwitchBranch.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\System\ctlSwitchBranch.ascx.designer.cs">
+      <DependentUpon>ctlSwitchBranch.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\TDVM\AnHan\ucAnHanCT.ascx.cs">
+      <DependentUpon>ucAnHanCT.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\TDVM\AnHan\ucAnHanCT.ascx.designer.cs">
+      <DependentUpon>ucAnHanCT.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\TDVM\HoanNhomNo\ucHoanNhomNoCT.ascx.cs">
+      <DependentUpon>ucHoanNhomNoCT.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\TDVM\HoanNhomNo\ucHoanNhomNoCT.ascx.designer.cs">
+      <DependentUpon>ucHoanNhomNoCT.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\TDVM\DonVayVon\ucDonVayVonCT.ascx.cs">
+      <DependentUpon>ucDonVayVonCT.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\TDVM\DonVayVon\ucDonVayVonCT.ascx.designer.cs">
+      <DependentUpon>ucDonVayVonCT.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\TDVM\DonVayVon\ucDonVayVonDS.ascx.cs">
+      <DependentUpon>ucDonVayVonDS.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\TDVM\DonVayVon\ucDonVayVonDS.ascx.designer.cs">
+      <DependentUpon>ucDonVayVonDS.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\TDVM\DuThu\ucDuThuCT.ascx.cs">
+      <DependentUpon>ucDuThuCT.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\TDVM\DuThu\ucDuThuCT.ascx.designer.cs">
+      <DependentUpon>ucDuThuCT.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\TDVM\GiaHanNo\ucGiaHanNoCT.ascx.cs">
+      <DependentUpon>ucGiaHanNoCT.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\TDVM\GiaHanNo\ucGiaHanNoCT.ascx.designer.cs">
+      <DependentUpon>ucGiaHanNoCT.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\TDVM\GiaiNgan\ucGiaiNganCT.ascx.cs">
+      <DependentUpon>ucGiaiNganCT.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\TDVM\GiaiNgan\ucGiaiNganCT.ascx.designer.cs">
+      <DependentUpon>ucGiaiNganCT.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\TDVM\HoanUng\ucHoanUngCT.ascx.cs">
+      <DependentUpon>ucHoanUngCT.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\TDVM\HoanUng\ucHoanUngCT.ascx.designer.cs">
+      <DependentUpon>ucHoanUngCT.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\TDVM\HopDong\ucHopDongCT.ascx.cs">
+      <DependentUpon>ucHopDongCT.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\TDVM\HopDong\ucHopDongCT.ascx.designer.cs">
+      <DependentUpon>ucHopDongCT.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\TDVM\HopDong\ucHopDongDS.ascx.cs">
+      <DependentUpon>ucHopDongDS.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\TDVM\HopDong\ucHopDongDS.ascx.designer.cs">
+      <DependentUpon>ucHopDongDS.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\TDVM\KheUoc\ucKheUocCT.ascx.cs">
+      <DependentUpon>ucKheUocCT.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\TDVM\KheUoc\ucKheUocCT.ascx.designer.cs">
+      <DependentUpon>ucKheUocCT.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\TDVM\KheUoc\ucKheUocDS.ascx.cs">
+      <DependentUpon>ucKheUocDS.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\TDVM\KheUoc\ucKheUocDS.ascx.designer.cs">
+      <DependentUpon>ucKheUocDS.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\TDVM\LichThuPhat\ucLichThuPhatCT.ascx.cs">
+      <DependentUpon>ucLichThuPhatCT.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\TDVM\LichThuPhat\ucLichThuPhatCT.ascx.designer.cs">
+      <DependentUpon>ucLichThuPhatCT.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\TDVM\LichThuPhat\ucLichThuPhatDS.ascx.cs">
+      <DependentUpon>ucLichThuPhatDS.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\TDVM\LichThuPhat\ucLichThuPhatDS.ascx.designer.cs">
+      <DependentUpon>ucLichThuPhatDS.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\TDVM\LichTraNo\ucLichTraNoCT.ascx.cs">
+      <DependentUpon>ucLichTraNoCT.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\TDVM\LichTraNo\ucLichTraNoCT.ascx.designer.cs">
+      <DependentUpon>ucLichTraNoCT.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\TDVM\NoQuaHan\ucNoQuaHanCT.ascx.cs">
+      <DependentUpon>ucNoQuaHanCT.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\TDVM\NoQuaHan\ucNoQuaHanCT.ascx.designer.cs">
+      <DependentUpon>ucNoQuaHanCT.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\TDVM\PhanBo\ucPhanBoCT.ascx.cs">
+      <DependentUpon>ucPhanBoCT.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\TDVM\PhanBo\ucPhanBoCT.ascx.designer.cs">
+      <DependentUpon>ucPhanBoCT.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\TDVM\PhanLoaiNo\ucPhanLoaiNo.ascx.cs">
+      <DependentUpon>ucPhanLoaiNo.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\TDVM\PhanLoaiNo\ucPhanLoaiNo.ascx.designer.cs">
+      <DependentUpon>ucPhanLoaiNo.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\TDVM\SanPham\ucSanPhamCT.ascx.cs">
+      <DependentUpon>ucSanPhamCT.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\TDVM\SanPham\ucSanPhamCT.ascx.designer.cs">
+      <DependentUpon>ucSanPhamCT.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\TDVM\SanPham\ucSanPhamDS.ascx.cs">
+      <DependentUpon>ucSanPhamDS.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\TDVM\SanPham\ucSanPhamDS.ascx.designer.cs">
+      <DependentUpon>ucSanPhamDS.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\TDVM\TamUng\ucTamUngCT.ascx.cs">
+      <DependentUpon>ucTamUngCT.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\TDVM\TamUng\ucTamUngCT.ascx.designer.cs">
+      <DependentUpon>ucTamUngCT.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\TDVM\ThayDoiLaiSuat\ucThayDoiLaiSuatCT.ascx.cs">
+      <DependentUpon>ucThayDoiLaiSuatCT.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\TDVM\ThayDoiLaiSuat\ucThayDoiLaiSuatCT.ascx.designer.cs">
+      <DependentUpon>ucThayDoiLaiSuatCT.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\TDVM\ThayDoiLaiSuat\ucThayDoiLaiSuatDS.ascx.cs">
+      <DependentUpon>ucThayDoiLaiSuatDS.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\TDVM\ThayDoiLaiSuat\ucThayDoiLaiSuatDS.ascx.designer.cs">
+      <DependentUpon>ucThayDoiLaiSuatDS.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\TDVM\ThuGocLai\ucThuGocLaiCT.ascx.cs">
+      <DependentUpon>ucThuGocLaiCT.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\TDVM\ThuGocLai\ucThuGocLaiCT.ascx.designer.cs">
+      <DependentUpon>ucThuGocLaiCT.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\TDVM\TrichLapDP\ucTrichLapDPCT.ascx.cs">
+      <DependentUpon>ucTrichLapDPCT.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\TDVM\TrichLapDP\ucTrichLapDPCT.ascx.designer.cs">
+      <DependentUpon>ucTrichLapDPCT.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\TDVM\VongVay\ucVongVayCT.ascx.cs">
+      <DependentUpon>ucVongVayCT.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\TDVM\VongVay\ucVongVayCT.ascx.designer.cs">
+      <DependentUpon>ucVongVayCT.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\TDVM\VongVay\ucVongVayDS.ascx.cs">
+      <DependentUpon>ucVongVayDS.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\TDVM\VongVay\ucVongVayDS.ascx.designer.cs">
+      <DependentUpon>ucVongVayDS.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\TDVM\XoaNo\ucXoaNoCT.ascx.cs">
+      <DependentUpon>ucXoaNoCT.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\TDVM\XoaNo\ucXoaNoCT.ascx.designer.cs">
+      <DependentUpon>ucXoaNoCT.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Popup.aspx.cs">
+      <DependentUpon>Popup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Popup.aspx.designer.cs">
+      <DependentUpon>Popup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PopupContent.aspx.cs">
+      <DependentUpon>PopupContent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PopupContent.aspx.designer.cs">
+      <DependentUpon>PopupContent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Test.aspx.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Test.aspx.designer.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI.Control\CurrentPage.cs" />
+    <Compile Include="UI.Control\Pager.cs" />
+    <Compile Include="Web References\WebProcessService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Config\Ref\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://ngvgroup.vn:9109/WebProcessService.svc">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WebProcessService\</RelPath>
+      <UpdateFromURL>http://ngvgroup.vn:9109/WebProcessService.svc</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Presentation_WebClient_WebProcessService_WebProcessService</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Languages\MessageResources_en.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Languages\MessageResources_gl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Languages\MessageResources_vi.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Languages\UIResources_en.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Languages\UIResources_gl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Languages\UIResources_vi.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>40117</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:40117/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>http://localhost:1000</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

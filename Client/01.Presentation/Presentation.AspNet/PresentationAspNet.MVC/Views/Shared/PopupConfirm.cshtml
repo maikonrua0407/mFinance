@@ -1,0 +1,19 @@
+﻿@model string
+<div id="dialog-confirm"></div>
+<div tabindex="-1" class="modal hide in" id="modal-form-confirm" style="display: none;" aria-hidden="false">
+    @Html.Partial("TitlePopup", "CẢNH BÁO")
+    <div class="row-fluid">
+        <div style="width: 98%; margin:auto;" class="cssC">
+            <span id="spConfirm" ></span>
+        </div>
+    </div>
+    
+    <div class="modal-footer">
+        <button class="btn btn-primary" ng-click="@Model"><i class="icon-ok"></i>Đồng ý</button>
+        <button class="btn btn-danger" onclick="$('#dialog-confirm').hide();$('#modal-form-confirm').hide();">
+            <i class="icon-reply"></i>Đóng
+        </button>
+    </div>
+</div>
+
+

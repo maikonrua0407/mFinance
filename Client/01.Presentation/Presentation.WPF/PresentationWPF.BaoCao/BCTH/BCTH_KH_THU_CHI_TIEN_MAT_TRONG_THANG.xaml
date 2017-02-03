@@ -1,0 +1,54 @@
+﻿<UserControl x:Class="PresentationWPF.BaoCao.BHTH.BCTH_KH_THU_CHI_TIEN_MAT_TRONG_THANG"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:ribbon="http://schemas.microsoft.com/winfx/2006/xaml/presentation/ribbon" 
+             xmlns:telerikMaskInput="clr-namespace:Telerik.Windows.Controls.MaskedInput;assembly=Telerik.Windows.Controls.Input"
+             xmlns:uc="clr-namespace:PresentationWPF.CustomControl;assembly=PresentationWPF.CustomControl"     
+             xmlns:local="clr-namespace:PresentationWPF.BaoCao.BHTH"  
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="800" xmlns:my="clr-namespace:System;assembly=mscorlib">
+    <UserControl.Resources>
+        <!--<my:String x:Key="U.BaoCao.BHTH.BCTH_KH_THU_CHI_TIEN_MAT_TRONG_THANG.NamTaiChinh">Năm tài chính:</my:String>
+        <my:String x:Key="U.BaoCao.BHTH.BCTH_KH_THU_CHI_TIEN_MAT_TRONG_THANG.Thang">Tháng:</my:String>-->
+    </UserControl.Resources>
+    <Grid>
+        <DockPanel>
+            <Grid>
+                <GroupBox Header="{DynamicResource BC.BCTH_KH_THU_CHI_TIEN_MAT_TRONG_THANG}" Margin="3,10,3,3">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="2*" />
+                            <ColumnDefinition Width="20" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="2*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="6" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="15"/>
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Label Content="{DynamicResource U.BaoCao.ChiNhanh}" Grid.Row="0" Grid.Column="0"/>
+                        <Label Content="{DynamicResource U.BaoCao.PhongGiaoDich}" Grid.Row="0" Grid.Column="3"/>
+                        <Label Content="{DynamicResource U.BaoCao.BHTH.BCTH_KH_THU_CHI_TIEN_MAT_TRONG_THANG.NamTaiChinh}" Grid.Row="2" Grid.Column="0"/>
+                        <Label Content="{DynamicResource U.BaoCao.Thang}" Grid.Row="2" Grid.Column="3"/>
+                        <Label Content="{DynamicResource U.BaoCao.NgonNgu}" Grid.Row="4" Grid.Column="0"/>
+                        <Label Grid.Row="3" Grid.ColumnSpan="5" Height="0.5" Background="DarkGray"/>
+                        <Label Content="{DynamicResource U.BaoCao.DinhDang}" Grid.Column="3" Grid.Row="4" />
+                        <telerik:RadComboBox IsEditable="True" Name="cmbChiNhanh" Grid.Row="0" Grid.Column="1" SelectionChanged="cmbChiNhanh_SelectionChanged" />
+                        <telerik:RadComboBox IsEditable="True" Name="cmbPhongGD" Grid.Row="0" Grid.Column="4" />
+                        <telerik:RadComboBox IsEditable="True" Name="cmbNamTaiChinh" Grid.Row="2" Grid.Column="1"/>
+                        <telerik:RadComboBox IsEditable="True" Name="cmbThang" Grid.Row="2" Grid.Column="4"/>
+                        <telerik:RadComboBox IsEditable="True" Name="cmbNgonNgu" Grid.Row="4" Grid.Column="1" />
+                        <telerik:RadComboBox Name="cmbDinhDang" Grid.Column="4" Grid.Row="4" IsEditable="True" />
+                    </Grid>
+                </GroupBox>
+            </Grid>
+        </DockPanel>
+    </Grid>
+</UserControl>

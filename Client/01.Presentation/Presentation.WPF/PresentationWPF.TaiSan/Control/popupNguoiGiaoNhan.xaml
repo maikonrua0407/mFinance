@@ -1,0 +1,67 @@
+﻿<UserControl x:Class="PresentationWPF.TaiSan.Control.popupNguoiGiaoNhan"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:ribbon="clr-namespace:Microsoft.Windows.Controls.Ribbon;assembly=RibbonControlsLibrary" 
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation" 
+             xmlns:my="clr-namespace:System;assembly=mscorlib"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="600" Loaded="UserControl_Loaded">
+    <UserControl.Resources>
+        <my:String x:Key="U.DungChung.TaiSan.Popup.ThongTinNguoiGiaoNhan">Thông tin người giao nhận</my:String>
+        <my:String x:Key="U.DungChung.TaiSan.Popup.HoVaTen">Họ và tên:</my:String>
+        <my:String x:Key="U.DungChung.TaiSan.Popup.ChucVu">Chức vụ</my:String>
+        <my:String x:Key="U.DungChung.TaiSan.Popup.DaiDien">Đại diện:</my:String>
+        <my:String x:Key="U.DungChung.TaiSan.Popup.DaiDienKhac">Đại diện khác:</my:String>
+        <my:String x:Key="U.DungChung.TaiSan.Popup.BenGiao">Bên giao</my:String>
+        <my:String x:Key="U.DungChung.TaiSan.Popup.BenNhan">Bên nhận</my:String>
+        <my:String x:Key="U.DungChung.TaiSan.Popup.Khac">Khác</my:String>
+    </UserControl.Resources>
+    <Grid Name="grMain">
+        <DockPanel Name="dockMain">
+            <DockPanel HorizontalAlignment="Stretch" DockPanel.Dock="Top" Margin="3,3,0,3" LastChildFill="False" Name="docToolbar">
+                <WrapPanel Name="Toolbar" >
+                    <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbSave" DockPanel.Dock="Left" Label="{DynamicResource U.DungChung.Button.Luu}"  SmallImageSource="/Utilities.Common;component/Images/Action/save.png" Style="{StaticResource RibbonButton}" Click="tlbSave_Click" />
+                    <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbClose" DockPanel.Dock="Left" Label="{DynamicResource U.DungChung.Button.Dong}"  SmallImageSource="/Utilities.Common;component/Images/Action/close.png" Style="{StaticResource RibbonButton}" Click="tlbClose_Click" />
+                </WrapPanel>
+            </DockPanel>
+            <GroupBox DockPanel.Dock="Top" Header="{DynamicResource U.DungChung.TaiSan.Popup.ThongTinNguoiGiaoNhan}" Name="grbChiTiet">
+                <Grid VerticalAlignment="Top">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="130"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="20" />
+                        <ColumnDefinition Width="20"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="6"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="6"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="6"/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Grid.Column="0" Grid.Row="0" Orientation="Horizontal">
+                        <Label Content="{DynamicResource U.DungChung.TaiSan.Popup.HoVaTen}" Name="lblHoTen"/>
+                        <Label Content="(*)" Foreground="Red" Margin="-5,0,0,0" />
+                    </StackPanel>
+                    <Label Name="lbChucVu" Content="{DynamicResource U.DungChung.TaiSan.Popup.ChucVu}" Grid.Column="3" Grid.ColumnSpan="2" FontWeight="Bold" FontStyle="Italic" />
+                    <StackPanel Grid.Column="0" Grid.Row="2" Orientation="Horizontal">
+                        <Label Content="{DynamicResource U.DungChung.TaiSan.Popup.DaiDien}" Name="lblDaiDien"/>
+                        <Label Content="(*)" Foreground="Red" Margin="-5,0,0,0" />
+                    </StackPanel>
+                    <Label Content="{DynamicResource U.DungChung.TaiSan.Popup.DaiDienKhac}" Grid.Row="4" Name="lblDaiDienKhac"/>
+                    <TextBox Name="txtDaiDienKhac" Grid.Column="1" Grid.ColumnSpan="4" Grid.Row="4" Padding="0,3,0,0" HorizontalAlignment="Stretch"  TabIndex="1" MaxLines="255" />
+                    <telerik:RadComboBox Grid.Row="0" Grid.Column="1" IsEditable="True" Name="cmbNSD" TabIndex="5" TextSearchMode="Contains" IsFilteringEnabled="True" IsTextSearchEnabled="True" OpenDropDownOnFocus="True" />
+                    <StackPanel Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="4" Orientation="Horizontal" VerticalAlignment="Center">
+                        <RadioButton Name="rbBenGiao" Content="{DynamicResource U.DungChung.TaiSan.Popup.BenGiao}" GroupName="groupDaiDien" Checked="rbBenGiao_Checked" />
+                        <RadioButton Name="rbBenNhan" Content="{DynamicResource U.DungChung.TaiSan.Popup.BenNhan}" Margin="20,0" GroupName="groupDaiDien" Checked="rbBenNhan_Checked" />
+                        <RadioButton Name="rbKhac" Content="{DynamicResource U.DungChung.TaiSan.Popup.Khac}" GroupName="groupDaiDien" Checked="rbKhac_Checked" />
+                    </StackPanel>
+                </Grid>
+            </GroupBox>
+        </DockPanel>
+    </Grid>
+</UserControl>

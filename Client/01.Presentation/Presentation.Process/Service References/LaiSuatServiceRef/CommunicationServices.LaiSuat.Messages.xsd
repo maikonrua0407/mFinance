@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/CommunicationServices.LaiSuat.Messages" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/CommunicationServices.LaiSuat.Messages" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" />
+  <xs:complexType name="LaiSuatRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" base="q1:RequestBase">
+        <xs:sequence>
+          <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="lstIDLaiSuat" nillable="true" type="q2:ArrayOfint" />
+          <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstLsuat" nillable="true" type="q3:ArrayOfDC_LSUAT" />
+          <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstLsuatCtiet" nillable="true" type="q4:ArrayOfDC_LSUAT_CTIET" />
+          <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstLsuatCtietLsu" nillable="true" type="q5:ArrayOfDC_LSUAT_CTIET_LSU" />
+          <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstLsuatLsu" nillable="true" type="q6:ArrayOfDC_LSUAT_LSU" />
+          <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objLsuat" nillable="true" type="q7:DC_LSUAT" />
+          <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objLsuatCtiet" nillable="true" type="q8:DC_LSUAT_CTIET" />
+          <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objLsuatCtietLsu" nillable="true" type="q9:DC_LSUAT_CTIET_LSU" />
+          <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objLsuatLsu" nillable="true" type="q10:DC_LSUAT_LSU" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LaiSuatRequest" nillable="true" type="tns:LaiSuatRequest" />
+  <xs:complexType name="LaiSuatResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q11="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" base="q11:ResponseBase">
+        <xs:sequence>
+          <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstLsuat" nillable="true" type="q12:ArrayOfDC_LSUAT" />
+          <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstLsuatCtiet" nillable="true" type="q13:ArrayOfDC_LSUAT_CTIET" />
+          <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstLsuatCtietLsu" nillable="true" type="q14:ArrayOfDC_LSUAT_CTIET_LSU" />
+          <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstLsuatLsu" nillable="true" type="q15:ArrayOfDC_LSUAT_LSU" />
+          <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objLsuat" nillable="true" type="q16:DC_LSUAT" />
+          <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objLsuatCtiet" nillable="true" type="q17:DC_LSUAT_CTIET" />
+          <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objLsuatCtietLsu" nillable="true" type="q18:DC_LSUAT_CTIET_LSU" />
+          <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objLsuatLsu" nillable="true" type="q19:DC_LSUAT_LSU" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LaiSuatResponse" nillable="true" type="tns:LaiSuatResponse" />
+</xs:schema>

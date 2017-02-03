@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="BaoCaoService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:1001/BaoCaoService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:1001/BaoCaoService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:1001/BaoCaoService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/CommunicationServices.BaoCao.Messages" />
+      <xsd:import schemaLocation="http://localhost:1001/BaoCaoService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" />
+      <xsd:import schemaLocation="http://localhost:1001/BaoCaoService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Utilities.Common" />
+      <xsd:import schemaLocation="http://localhost:1001/BaoCaoService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" />
+      <xsd:import schemaLocation="http://localhost:1001/BaoCaoService.svc?xsd=xsd6" />
+      <xsd:import schemaLocation="http://localhost:1001/BaoCaoService.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/BusinessServices.BaoCao.DoiTuong" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IBaoCaoService_returnHello_InputMessage">
+    <wsdl:part name="parameters" element="tns:returnHello" />
+  </wsdl:message>
+  <wsdl:message name="IBaoCaoService_returnHello_OutputMessage">
+    <wsdl:part name="parameters" element="tns:returnHelloResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBaoCaoService_LayDanhSachBaoCaoTheoPhanHe_InputMessage">
+    <wsdl:part name="parameters" element="tns:LayDanhSachBaoCaoTheoPhanHe" />
+  </wsdl:message>
+  <wsdl:message name="IBaoCaoService_LayDanhSachBaoCaoTheoPhanHe_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LayDanhSachBaoCaoTheoPhanHeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBaoCaoService_LayThongTinBaoCao_InputMessage">
+    <wsdl:part name="parameters" element="tns:LayThongTinBaoCao" />
+  </wsdl:message>
+  <wsdl:message name="IBaoCaoService_LayThongTinBaoCao_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LayThongTinBaoCaoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBaoCaoService_LayDuLieuBaoCao_InputMessage">
+    <wsdl:part name="parameters" element="tns:LayDuLieuBaoCao" />
+  </wsdl:message>
+  <wsdl:message name="IBaoCaoService_LayDuLieuBaoCao_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LayDuLieuBaoCaoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBaoCaoService_LayDuLieu_InputMessage">
+    <wsdl:part name="parameters" element="tns:LayDuLieu" />
+  </wsdl:message>
+  <wsdl:message name="IBaoCaoService_LayDuLieu_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LayDuLieuResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBaoCaoService_LayDuLieuVanHanhGiaoDich_InputMessage">
+    <wsdl:part name="parameters" element="tns:LayDuLieuVanHanhGiaoDich" />
+  </wsdl:message>
+  <wsdl:message name="IBaoCaoService_LayDuLieuVanHanhGiaoDich_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LayDuLieuVanHanhGiaoDichResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IBaoCaoService">
+    <wsdl:operation name="returnHello">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBaoCaoService/returnHello" message="tns:IBaoCaoService_returnHello_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBaoCaoService/returnHelloResponse" message="tns:IBaoCaoService_returnHello_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LayDanhSachBaoCaoTheoPhanHe">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBaoCaoService/LayDanhSachBaoCaoTheoPhanHe" message="tns:IBaoCaoService_LayDanhSachBaoCaoTheoPhanHe_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBaoCaoService/LayDanhSachBaoCaoTheoPhanHeResponse" message="tns:IBaoCaoService_LayDanhSachBaoCaoTheoPhanHe_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LayThongTinBaoCao">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBaoCaoService/LayThongTinBaoCao" message="tns:IBaoCaoService_LayThongTinBaoCao_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBaoCaoService/LayThongTinBaoCaoResponse" message="tns:IBaoCaoService_LayThongTinBaoCao_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LayDuLieuBaoCao">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBaoCaoService/LayDuLieuBaoCao" message="tns:IBaoCaoService_LayDuLieuBaoCao_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBaoCaoService/LayDuLieuBaoCaoResponse" message="tns:IBaoCaoService_LayDuLieuBaoCao_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LayDuLieu">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBaoCaoService/LayDuLieu" message="tns:IBaoCaoService_LayDuLieu_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBaoCaoService/LayDuLieuResponse" message="tns:IBaoCaoService_LayDuLieu_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LayDuLieuVanHanhGiaoDich">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBaoCaoService/LayDuLieuVanHanhGiaoDich" message="tns:IBaoCaoService_LayDuLieuVanHanhGiaoDich_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBaoCaoService/LayDuLieuVanHanhGiaoDichResponse" message="tns:IBaoCaoService_LayDuLieuVanHanhGiaoDich_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:service name="BaoCaoService" />
+</wsdl:definitions>

@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="TaiSanService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:1001/TaiSanService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:1001/TaiSanService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:1001/TaiSanService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/CommunicationServices.TaiSan.Messages" />
+      <xsd:import schemaLocation="http://localhost:1001/TaiSanService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" />
+      <xsd:import schemaLocation="http://localhost:1001/TaiSanService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Utilities.Common" />
+      <xsd:import schemaLocation="http://localhost:1001/TaiSanService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/BusinessServices.TaiSan.DTO" />
+      <xsd:import schemaLocation="http://localhost:1001/TaiSanService.svc?xsd=xsd6" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://localhost:1001/TaiSanService.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ITaiSanService_returnHello_InputMessage">
+    <wsdl:part name="parameters" element="tns:returnHello" />
+  </wsdl:message>
+  <wsdl:message name="ITaiSanService_returnHello_OutputMessage">
+    <wsdl:part name="parameters" element="tns:returnHelloResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITaiSanService_functionName_InputMessage">
+    <wsdl:part name="parameters" element="tns:functionName" />
+  </wsdl:message>
+  <wsdl:message name="ITaiSanService_functionName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:functionNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITaiSanService_NhomTaiSanCT_InputMessage">
+    <wsdl:part name="parameters" element="tns:NhomTaiSanCT" />
+  </wsdl:message>
+  <wsdl:message name="ITaiSanService_NhomTaiSanCT_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NhomTaiSanCTResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITaiSanService_QuanLyTaiSan_InputMessage">
+    <wsdl:part name="parameters" element="tns:QuanLyTaiSan" />
+  </wsdl:message>
+  <wsdl:message name="ITaiSanService_QuanLyTaiSan_OutputMessage">
+    <wsdl:part name="parameters" element="tns:QuanLyTaiSanResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITaiSanService_LayDanhMucLoai_InputMessage">
+    <wsdl:part name="parameters" element="tns:LayDanhMucLoai" />
+  </wsdl:message>
+  <wsdl:message name="ITaiSanService_LayDanhMucLoai_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LayDanhMucLoaiResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITaiSanService_LayDanhMucTheoLoai_InputMessage">
+    <wsdl:part name="parameters" element="tns:LayDanhMucTheoLoai" />
+  </wsdl:message>
+  <wsdl:message name="ITaiSanService_LayDanhMucTheoLoai_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LayDanhMucTheoLoaiResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITaiSanService_LayNhomTaiSanNhoNhat_InputMessage">
+    <wsdl:part name="parameters" element="tns:LayNhomTaiSanNhoNhat" />
+  </wsdl:message>
+  <wsdl:message name="ITaiSanService_LayNhomTaiSanNhoNhat_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LayNhomTaiSanNhoNhatResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITaiSanService_BanGiaoTaiSan_InputMessage">
+    <wsdl:part name="parameters" element="tns:BanGiaoTaiSan" />
+  </wsdl:message>
+  <wsdl:message name="ITaiSanService_BanGiaoTaiSan_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BanGiaoTaiSanResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITaiSanService_NangCapTaiSan_InputMessage">
+    <wsdl:part name="parameters" element="tns:NangCapTaiSan" />
+  </wsdl:message>
+  <wsdl:message name="ITaiSanService_NangCapTaiSan_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NangCapTaiSanResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITaiSanService_DanhGiaTaiSan_InputMessage">
+    <wsdl:part name="parameters" element="tns:DanhGiaTaiSan" />
+  </wsdl:message>
+  <wsdl:message name="ITaiSanService_DanhGiaTaiSan_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DanhGiaTaiSanResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITaiSanService_GiamTaiSan_InputMessage">
+    <wsdl:part name="parameters" element="tns:GiamTaiSan" />
+  </wsdl:message>
+  <wsdl:message name="ITaiSanService_GiamTaiSan_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GiamTaiSanResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITaiSanService_KhauHaoTaiSan_InputMessage">
+    <wsdl:part name="parameters" element="tns:KhauHaoTaiSan" />
+  </wsdl:message>
+  <wsdl:message name="ITaiSanService_KhauHaoTaiSan_OutputMessage">
+    <wsdl:part name="parameters" element="tns:KhauHaoTaiSanResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITaiSanService_LayThongTinGiaoDich_InputMessage">
+    <wsdl:part name="parameters" element="tns:LayThongTinGiaoDich" />
+  </wsdl:message>
+  <wsdl:message name="ITaiSanService_LayThongTinGiaoDich_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LayThongTinGiaoDichResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ITaiSanService">
+    <wsdl:operation name="returnHello">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITaiSanService/returnHello" message="tns:ITaiSanService_returnHello_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITaiSanService/returnHelloResponse" message="tns:ITaiSanService_returnHello_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="functionName">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITaiSanService/functionName" message="tns:ITaiSanService_functionName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITaiSanService/functionNameResponse" message="tns:ITaiSanService_functionName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NhomTaiSanCT">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITaiSanService/NhomTaiSanCT" message="tns:ITaiSanService_NhomTaiSanCT_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITaiSanService/NhomTaiSanCTResponse" message="tns:ITaiSanService_NhomTaiSanCT_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="QuanLyTaiSan">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITaiSanService/QuanLyTaiSan" message="tns:ITaiSanService_QuanLyTaiSan_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITaiSanService/QuanLyTaiSanResponse" message="tns:ITaiSanService_QuanLyTaiSan_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LayDanhMucLoai">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITaiSanService/LayDanhMucLoai" message="tns:ITaiSanService_LayDanhMucLoai_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITaiSanService/LayDanhMucLoaiResponse" message="tns:ITaiSanService_LayDanhMucLoai_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LayDanhMucTheoLoai">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITaiSanService/LayDanhMucTheoLoai" message="tns:ITaiSanService_LayDanhMucTheoLoai_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITaiSanService/LayDanhMucTheoLoaiResponse" message="tns:ITaiSanService_LayDanhMucTheoLoai_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LayNhomTaiSanNhoNhat">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITaiSanService/LayNhomTaiSanNhoNhat" message="tns:ITaiSanService_LayNhomTaiSanNhoNhat_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITaiSanService/LayNhomTaiSanNhoNhatResponse" message="tns:ITaiSanService_LayNhomTaiSanNhoNhat_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BanGiaoTaiSan">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITaiSanService/BanGiaoTaiSan" message="tns:ITaiSanService_BanGiaoTaiSan_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITaiSanService/BanGiaoTaiSanResponse" message="tns:ITaiSanService_BanGiaoTaiSan_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NangCapTaiSan">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITaiSanService/NangCapTaiSan" message="tns:ITaiSanService_NangCapTaiSan_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITaiSanService/NangCapTaiSanResponse" message="tns:ITaiSanService_NangCapTaiSan_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DanhGiaTaiSan">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITaiSanService/DanhGiaTaiSan" message="tns:ITaiSanService_DanhGiaTaiSan_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITaiSanService/DanhGiaTaiSanResponse" message="tns:ITaiSanService_DanhGiaTaiSan_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GiamTaiSan">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITaiSanService/GiamTaiSan" message="tns:ITaiSanService_GiamTaiSan_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITaiSanService/GiamTaiSanResponse" message="tns:ITaiSanService_GiamTaiSan_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="KhauHaoTaiSan">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITaiSanService/KhauHaoTaiSan" message="tns:ITaiSanService_KhauHaoTaiSan_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITaiSanService/KhauHaoTaiSanResponse" message="tns:ITaiSanService_KhauHaoTaiSan_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LayThongTinGiaoDich">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITaiSanService/LayThongTinGiaoDich" message="tns:ITaiSanService_LayThongTinGiaoDich_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITaiSanService/LayThongTinGiaoDichResponse" message="tns:ITaiSanService_LayThongTinGiaoDich_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="TaiSanEndpoint" type="tns:ITaiSanService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="returnHello">
+      <soap:operation soapAction="http://tempuri.org/ITaiSanService/returnHello" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="functionName">
+      <soap:operation soapAction="http://tempuri.org/ITaiSanService/functionName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NhomTaiSanCT">
+      <soap:operation soapAction="http://tempuri.org/ITaiSanService/NhomTaiSanCT" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QuanLyTaiSan">
+      <soap:operation soapAction="http://tempuri.org/ITaiSanService/QuanLyTaiSan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LayDanhMucLoai">
+      <soap:operation soapAction="http://tempuri.org/ITaiSanService/LayDanhMucLoai" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LayDanhMucTheoLoai">
+      <soap:operation soapAction="http://tempuri.org/ITaiSanService/LayDanhMucTheoLoai" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LayNhomTaiSanNhoNhat">
+      <soap:operation soapAction="http://tempuri.org/ITaiSanService/LayNhomTaiSanNhoNhat" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BanGiaoTaiSan">
+      <soap:operation soapAction="http://tempuri.org/ITaiSanService/BanGiaoTaiSan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NangCapTaiSan">
+      <soap:operation soapAction="http://tempuri.org/ITaiSanService/NangCapTaiSan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DanhGiaTaiSan">
+      <soap:operation soapAction="http://tempuri.org/ITaiSanService/DanhGiaTaiSan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GiamTaiSan">
+      <soap:operation soapAction="http://tempuri.org/ITaiSanService/GiamTaiSan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="KhauHaoTaiSan">
+      <soap:operation soapAction="http://tempuri.org/ITaiSanService/KhauHaoTaiSan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LayThongTinGiaoDich">
+      <soap:operation soapAction="http://tempuri.org/ITaiSanService/LayThongTinGiaoDich" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TaiSanService">
+    <wsdl:port name="TaiSanEndpoint" binding="tns:TaiSanEndpoint">
+      <soap:address location="http://localhost:1001/TaiSanService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

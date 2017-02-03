@@ -1,0 +1,120 @@
+﻿<UserControl x:Class="PresentationWPF.KhachHang.KhachHang.Popup.ucGiayToLienQuan"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:ribbon="clr-namespace:Microsoft.Windows.Controls.Ribbon;assembly=RibbonControlsLibrary" 
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation" 
+             mc:Ignorable="d" 
+             d:DesignHeight="768" d:DesignWidth="1024" Loaded="UserControl_Loaded" KeyDown="UserControl_KeyDown" xmlns:my="clr-namespace:System;assembly=mscorlib">
+    <UserControl.Resources>
+        <!--<my:String x:Key="U.KhachHang.KhachHang.Popup.ucGiayToLienQuan.GiayToLienQuan">Giấy tờ có liên quan</my:String>
+        <my:String x:Key="U.KhachHang.KhachHang.Popup.ucGiayToLienQuan.LoaiGiayTo:">Loại giấy tờ:</my:String>
+        <my:String x:Key="U.KhachHang.KhachHang.Popup.ucGiayToLienQuan.SoGiayTo:">Số giấy tờ:</my:String>
+        <my:String x:Key="U.KhachHang.KhachHang.Popup.ucGiayToLienQuan.NgayCap:">Ngày cấp:</my:String>
+        <my:String x:Key="U.KhachHang.KhachHang.Popup.ucGiayToLienQuan.NoiCap:">Nơi cấp:</my:String>
+        <my:String x:Key="U.KhachHang.KhachHang.Popup.ucGiayToLienQuan.NgayHetHan:">Ngày hết hạn:</my:String>
+        <my:String x:Key="U.KhachHang.KhachHang.Popup.ucGiayToLienQuan.DanhSachGiayToLienQuan">Danh sách giấy tờ liên quan</my:String>
+        <my:String x:Key="U.KhachHang.KhachHang.Popup.ucGiayToLienQuan.LoaiGiayTo">Loại giấy tờ</my:String>
+        <my:String x:Key="U.KhachHang.KhachHang.Popup.ucGiayToLienQuan.SoGiayTo">Số giấy tờ</my:String>
+        <my:String x:Key="U.KhachHang.KhachHang.Popup.ucGiayToLienQuan.NgayCap">Ngày cấp</my:String>
+        <my:String x:Key="U.KhachHang.KhachHang.Popup.ucGiayToLienQuan.NoiCap">Nơi cấp</my:String>
+        <my:String x:Key="U.KhachHang.KhachHang.Popup.ucGiayToLienQuan.NgayHetHan">Ngày hết hạn</my:String>-->
+    </UserControl.Resources>
+    <Grid Name="grMain">
+        <DockPanel Name="dockMain">
+            <DockPanel HorizontalAlignment="Stretch" DockPanel.Dock="Top" Margin="3,3,0,3" LastChildFill="False" Name="docToolbar">
+                <WrapPanel Name="Toolbar" >
+                    <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbSave" DockPanel.Dock="Left" Label="{DynamicResource U.DungChung.Button.Luu}"  SmallImageSource="/Utilities.Common;component/Images/Action/save.png" Style="{StaticResource RibbonButton}" Click="tlbSave_Click" />
+                    <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbClose" DockPanel.Dock="Left" Label="{DynamicResource U.DungChung.Button.Dong}"  SmallImageSource="/Utilities.Common;component/Images/Action/close.png" Style="{StaticResource RibbonButton}" Click="tlbClose_Click" />
+                </WrapPanel>
+            </DockPanel>
+            <GroupBox DockPanel.Dock="Top" Header="{DynamicResource U.KhachHang.KhachHang.Popup.ucGiayToLienQuan.GiayToLienQuan}" Name="grbChiTiet">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="130"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="20" />
+                        <ColumnDefinition Width="130"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="6"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="6"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="6"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Grid.Column="0" Grid.Row="0" Orientation="Horizontal">
+                        <Label Content="{DynamicResource U.KhachHang.KhachHang.Popup.ucGiayToLienQuan.LoaiGiayTo:}" Name="lblLoaiGiayTo"/>
+                        <Label Content="(*)" Foreground="Red" Margin="-5,0,0,0" />
+                    </StackPanel>
+                    <telerik:RadComboBox Grid.Row="0" Grid.Column="1" IsEditable="True" Name="cmbLoaiGiayTo" TabIndex="3" TextSearchMode="Contains" IsFilteringEnabled="True" IsTextSearchEnabled="True" OpenDropDownOnFocus="True"/>
+                    
+                    <StackPanel Grid.Column="3" Grid.Row="0" Orientation="Horizontal">
+                        <Label Content="{DynamicResource U.KhachHang.KhachHang.Popup.ucGiayToLienQuan.SoGiayTo:}" Name="lblSoGiayTo"/>
+                        <Label Content="(*)" Foreground="Red" Margin="-5,0,0,0" />
+                    </StackPanel>
+                    <TextBox Name="txtSoGiayTo" Grid.Column="4" Grid.Row="0" Padding="0,3,0,0" HorizontalAlignment="Stretch"  TabIndex="1" />
+                    <!--<telerik:RadMaskedDateTimeInput Name="raddtNgaySinh" Grid.Column="4" Grid.Row="0"  Margin="0,0,35,0" HorizontalAlignment="Stretch" Mask="dd/MM/yyyy" AcceptsReturn="False" TabIndex="2" ValueChanged="raddtNgaySinh_ValueChanged" />
+                    <DatePicker HorizontalAlignment="Right" Grid.Column="4" Grid.Row="0" Width="30" AllowDrop="True" FirstDayOfWeek="Monday" Name="dtpNgaySinh" SelectedDateChanged="dtpNgaySinh_SelectedDateChanged" />-->
+
+                    <StackPanel Grid.Column="0" Grid.Row="2" Orientation="Horizontal">
+                        <Label Content="{DynamicResource U.KhachHang.KhachHang.Popup.ucGiayToLienQuan.NgayCap:}" Name="lblNgayCap"/>
+                        <Label Content="(*)" Foreground="Red" Margin="-5,0,0,0" />
+                    </StackPanel>
+                    <telerik:RadMaskedDateTimeInput Name="raddtNgayCap" Grid.Column="1" Grid.Row="2"  Margin="0,0,35,0" HorizontalAlignment="Stretch" Mask="dd/MM/yyyy" AcceptsReturn="False" TabIndex="2" />
+                    <DatePicker HorizontalAlignment="Right" Grid.Column="1" Grid.Row="2" Width="30" AllowDrop="True" FirstDayOfWeek="Monday" Name="dtpNgayCap" SelectedDate="{Binding Path=Value, ElementName=raddtNgayCap}" />
+
+                    <StackPanel Grid.Column="0" Grid.Row="4" Orientation="Horizontal">
+                        <Label Content="{DynamicResource U.KhachHang.KhachHang.Popup.ucGiayToLienQuan.NoiCap:}" Name="lblNoiCap"/>
+                        <Label Content="(*)" Foreground="Red" Margin="-5,0,0,0" />
+                    </StackPanel>
+                    <telerik:RadComboBox Grid.Row="4" Grid.Column="1" IsEditable="True" Name="cmbNoiCap" TabIndex="5" TextSearchMode="Contains" IsFilteringEnabled="True" IsTextSearchEnabled="True" OpenDropDownOnFocus="True"/>
+
+                    <StackPanel Grid.Column="0" Grid.Row="6" Orientation="Horizontal">
+                        <Label Content="{DynamicResource U.KhachHang.KhachHang.Popup.ucGiayToLienQuan.NgayHetHan:}" Name="lblNgayHetHan"/>
+                        <Label Content="(*)" Foreground="Red" Margin="-5,0,0,0" />
+                    </StackPanel>
+                    <telerik:RadMaskedDateTimeInput Name="raddtNgayHetHan" Grid.Column="1" Grid.Row="6"  Margin="0,0,35,0" HorizontalAlignment="Stretch" Mask="dd/MM/yyyy" AcceptsReturn="False" TabIndex="2" />
+                    <DatePicker HorizontalAlignment="Right" Grid.Column="1" Grid.Row="6" Width="30" AllowDrop="True" FirstDayOfWeek="Monday" Name="dtpNgayHetHan" SelectedDate="{Binding Path=Value, ElementName=raddtNgayHetHan}" />
+                </Grid>
+            </GroupBox>
+            <GroupBox Header="{DynamicResource U.KhachHang.KhachHang.Popup.ucGiayToLienQuan.DanhSachGiayToLienQuan}" Padding="0,10" Margin="3">
+                <DockPanel>
+                    <Border DockPanel.Dock="Top" BorderThickness="1">
+                        <StackPanel Orientation="Horizontal" Margin="5,0,0,0" >
+                            <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbAddThongTin" DockPanel.Dock="Left" Label="{DynamicResource U.DungChung.Button.Them}" SmallImageSource="/Utilities.Common;component/Images/Action/add.png" Style="{StaticResource RibbonButton}" Click="tlbAddThongTin_Click" />
+                            <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbSaveThongTin" DockPanel.Dock="Left" Label="{DynamicResource U.DungChung.Button.Luu}"   SmallImageSource="/Utilities.Common;component/Images/Action/detail_edit.png" Style="{StaticResource RibbonButton}" Click="tlbSaveThongTin_Click" />
+                            <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbDeleteThongTin" DockPanel.Dock="Left" Label="{DynamicResource U.DungChung.Button.Xoa}"   SmallImageSource="/Utilities.Common;component/Images/Action/detail_delete.png" Style="{StaticResource RibbonButton}" Click="tlbDeleteThongTin_Click" />
+                        </StackPanel>
+                    </Border>
+                    <telerik:RadGridView Name="grGiayToLienQuanDS" ItemsSource="{Binding}"
+                AutoGenerateColumns="False" CanUserFreezeColumns="False" RowIndicatorVisibility="Collapsed" Margin="5" ShowGroupPanel="False" SelectionChanged="grGiayToLienQuanDS_SelectionChanged">
+                        <telerik:RadGridView.Columns>
+                            <telerik:GridViewDataColumn Header="ID" IsVisible="False" />
+                            <telerik:GridViewDataColumn Width="30">
+                                <telerik:GridViewDataColumn.Header>
+                                    <CheckBox HorizontalAlignment="Center" Name="chkAll" Click="chkAll_Click"></CheckBox>
+                                </telerik:GridViewDataColumn.Header>
+                                <telerik:GridViewDataColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <CheckBox IsChecked="{Binding CHON,UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                    </DataTemplate>
+                                </telerik:GridViewDataColumn.CellTemplate>
+                            </telerik:GridViewDataColumn>
+                            <telerik:GridViewDataColumn Header="{DynamicResource U.DungChung.STT}" Width="40" DataMemberBinding="{Binding STT}" IsReadOnly="True"/>
+                            <telerik:GridViewDataColumn Header="{DynamicResource U.KhachHang.KhachHang.Popup.ucGiayToLienQuan.LoaiGiayTo}" Width="*" DataMemberBinding="{Binding GTLQ_LOAI_TEXT}" IsReadOnly="True"/>
+                            <telerik:GridViewDataColumn Header="{DynamicResource U.KhachHang.KhachHang.Popup.ucGiayToLienQuan.SoGiayTo}" Width="*" DataMemberBinding="{Binding GTLQ_SO}" IsReadOnly="True"/>
+                            <telerik:GridViewDataColumn Header="{DynamicResource U.KhachHang.KhachHang.Popup.ucGiayToLienQuan.NgayCap}" Width="*" DataMemberBinding="{Binding GTLQ_NGAY_CAP_TEXT}" IsReadOnly="True"/>
+                            <telerik:GridViewDataColumn Header="{DynamicResource U.KhachHang.KhachHang.Popup.ucGiayToLienQuan.NoiCap}" Width="*" DataMemberBinding="{Binding GTLQ_NOI_CAP_TEXT}" IsReadOnly="True"/>
+                            <telerik:GridViewDataColumn Header="{DynamicResource U.KhachHang.KhachHang.Popup.ucGiayToLienQuan.NgayHetHan}" Width="*" DataMemberBinding="{Binding GTLQ_NGAY_HHAN_TEXT}" IsReadOnly="True"/>
+                        </telerik:RadGridView.Columns>
+                    </telerik:RadGridView>
+                </DockPanel>
+            </GroupBox>
+        </DockPanel>
+    </Grid>
+</UserControl>

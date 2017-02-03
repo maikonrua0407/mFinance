@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="cd73efe0-6a6d-4a1a-bea5-16c76a8cf135" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:1001/KhaiThacDuLieuService.svc/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="a640b79b-5c0b-4aa5-a2a7-a771f38f1444" SourceId="1" SourceUrl="http://localhost:1001/KhaiThacDuLieuService.svc/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="408a356d-9f24-41be-996d-606d02d9e38c" SourceId="1" SourceUrl="http://localhost:1001/KhaiThacDuLieuService.svc/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="646e61d7-ee10-405e-8adf-9109bc25772c" SourceId="1" SourceUrl="http://localhost:1001/KhaiThacDuLieuService.svc/mex" />
+    <MetadataFile FileName="CommunicationServices.KhaiThacDuLieu.Messages.xsd" MetadataType="Schema" ID="96569a54-0fdd-47bf-9c22-083698a30d42" SourceId="1" SourceUrl="http://localhost:1001/KhaiThacDuLieuService.svc/mex" />
+    <MetadataFile FileName="CommunicationMessages.Base.MessageBases.xsd" MetadataType="Schema" ID="3503d8f9-3f41-478f-995c-6ce420bae8a6" SourceId="1" SourceUrl="http://localhost:1001/KhaiThacDuLieuService.svc/mex" />
+    <MetadataFile FileName="Utilities.Common.xsd" MetadataType="Schema" ID="a87335fe-6758-497b-ae76-45bd0ef6e854" SourceId="1" SourceUrl="http://localhost:1001/KhaiThacDuLieuService.svc/mex" />
+    <MetadataFile FileName="service2.xsd" MetadataType="Schema" ID="6ff9f0cc-0550-4e88-a363-74b0b18cf21e" SourceId="1" SourceUrl="http://localhost:1001/KhaiThacDuLieuService.svc/mex" />
+    <MetadataFile FileName="DataModel.EntityFramework.xsd" MetadataType="Schema" ID="b4adeb9a-c62d-4b92-90dd-300027f038e3" SourceId="1" SourceUrl="http://localhost:1001/KhaiThacDuLieuService.svc/mex" />
+    <MetadataFile FileName="Arrays1.xsd" MetadataType="Schema" ID="a2a1beaa-a1ee-42c0-83e5-2fdd94b1ea2e" SourceId="1" SourceUrl="http://localhost:1001/KhaiThacDuLieuService.svc/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,1002 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E86BCD1E-B4C0-4630-9A39-E43D16B2B8FF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PresentationWPF.NhanSu</RootNamespace>
+    <AssemblyName>PresentationWPF.NhanSu</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\..\Build\Build.Client\Dev\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Presentation.Process, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Build\Build.Client\Dev\Presentation.Process.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework.Aero" />
+    <Reference Include="PresentationWPF.BaoCao, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Build\Build.Client\Dev\PresentationWPF.BaoCao.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationWPF.CustomControl, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Build\Build.Client\Dev\PresentationWPF.CustomControl.dll</HintPath>
+    </Reference>
+    <Reference Include="RibbonControlsLibrary, Version=4.0.0.11019, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Libraries\RibbonControlsLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls, Version=2012.1.215.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Libraries\Telerik.Windows.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Data, Version=2012.1.215.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Libraries\Telerik.Windows.Controls.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.GridView, Version=2012.1.215.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Libraries\Telerik.Windows.Controls.GridView.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Input, Version=2012.1.215.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Libraries\Telerik.Windows.Controls.Input.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Navigation, Version=2012.1.215.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Libraries\Telerik.Windows.Controls.Navigation.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Data, Version=2012.1.215.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Libraries\Telerik.Windows.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="UIAutomationTypes" />
+    <Reference Include="Utilities.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Libraries\Utilities.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WPFToolkit, Version=3.5.40128.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Converts\ConvertNhanSu.cs" />
+    <Compile Include="DanhMuc\ucDanhMucPL.xaml.cs">
+      <DependentUpon>ucDanhMucPL.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMuc\ucDmBenhVienKhamChuaBenhCT.xaml.cs">
+      <DependentUpon>ucDmBenhVienKhamChuaBenhCT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMuc\ucDmBenhVienKhamChuaBenhDS.xaml.cs">
+      <DependentUpon>ucDmBenhVienKhamChuaBenhDS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMuc\ucDmChucVuCongTacVienCT.xaml.cs">
+      <DependentUpon>ucDmChucVuCongTacVienCT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMuc\ucDmChucVuCongTacVienDS.xaml.cs">
+      <DependentUpon>ucDmChucVuCongTacVienDS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMuc\ucDmChucVuCT.xaml.cs">
+      <DependentUpon>ucDmChucVuCT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMuc\ucDmChucVuDS.xaml.cs">
+      <DependentUpon>ucDmChucVuDS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMuc\ucDmChucVuDuAnCT.xaml.cs">
+      <DependentUpon>ucDmChucVuDuAnCT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMuc\ucDmChucVuDuAnDS.xaml.cs">
+      <DependentUpon>ucDmChucVuDuAnDS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMuc\ucDmChuyenNganhDaoTaoCT.xaml.cs">
+      <DependentUpon>ucDmChuyenNganhDaoTaoCT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMuc\ucDanhMucCT.xaml.cs">
+      <DependentUpon>ucDanhMucCT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMuc\ucDmBangCapChungChiCT.xaml.cs">
+      <DependentUpon>ucDmBangCapChungChiCT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMuc\ucDmBangCapChungChiDS.xaml.cs">
+      <DependentUpon>ucDmBangCapChungChiDS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMuc\ucDmChuyenNganhDaoTaoDS.xaml.cs">
+      <DependentUpon>ucDmChuyenNganhDaoTaoDS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMuc\ucDmCuTruCT.xaml.cs">
+      <DependentUpon>ucDmCuTruCT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMuc\ucDmCuTruDS.xaml.cs">
+      <DependentUpon>ucDmCuTruDS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMuc\ucDmDanTocCT.xaml.cs">
+      <DependentUpon>ucDmDanTocCT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMuc\ucDmDanTocDS.xaml.cs">
+      <DependentUpon>ucDmDanTocDS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMuc\ucDmDonViCongTacCT.xaml.cs">
+      <DependentUpon>ucDmDonViCongTacCT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMuc\ucDmDonViCongTacDS.xaml.cs">
+      <DependentUpon>ucDmDonViCongTacDS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMuc\ucDmDonViThoiGianCT.xaml.cs">
+      <DependentUpon>ucDmDonViThoiGianCT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMuc\ucDmDonViThoiGianDS.xaml.cs">
+      <DependentUpon>ucDmDonViThoiGianDS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMuc\ucDmDuAnCT.xaml.cs">
+      <DependentUpon>ucDmDuAnCT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMuc\ucDmDuAnDS.xaml.cs">
+      <DependentUpon>ucDmDuAnDS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMuc\ucDmGioiTinhCT.xaml.cs">
+      <DependentUpon>ucDmGioiTinhCT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMuc\ucDmGioiTinhDS.xaml.cs">
+      <DependentUpon>ucDmGioiTinhDS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMuc\ucDmHinhThucDaoTaoCT.xaml.cs">
+      <DependentUpon>ucDmHinhThucDaoTaoCT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMuc\ucDmHinhThucDaoTaoDS.xaml.cs">
+      <DependentUpon>ucDmHinhThucDaoTaoDS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMuc\ucDmHinhThucKhenThuongCT.xaml.cs">
+      <DependentUpon>ucDmHinhThucKhenThuongCT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMuc\ucDmHinhThucKhenThuongDS.xaml.cs">
+      <DependentUpon>ucDmHinhThucKhenThuongDS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMuc\ucDmHinhThucKyLuatCT.xaml.cs">
+      <DependentUpon>ucDmHinhThucKyLuatCT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMuc\ucDmHinhThucKyLuatDS.xaml.cs">
+      <DependentUpon>ucDmHinhThucKyLuatDS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMuc\ucDmHinhThucLamViecCT.xaml.cs">
+      <DependentUpon>ucDmHinhThucLamViecCT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMuc\ucDmHinhThucLamViecDS.xaml.cs">
+      <DependentUpon>ucDmHinhThucLamViecDS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMuc\ucDmHinhThucTraLuongCT.xaml.cs">
+      <DependentUpon>ucDmHinhThucTraLuongCT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMuc\ucDmHinhThucTraLuongDS.xaml.cs">
+      <DependentUpon>ucDmHinhThucTraLuongDS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMuc\ucDmHocHamCT.xaml.cs">
+      <DependentUpon>ucDmHocHamCT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMuc\ucDmHocHamDS.xaml.cs">
+      <DependentUpon>ucDmHocHamDS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMuc\ucDmHocViCT.xaml.cs">
+      <DependentUpon>ucDmHocViCT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMuc\ucDmHocViDS.xaml.cs">
+      <DependentUpon>ucDmHocViDS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMuc\ucDmKhoaDaoTaoCT.xaml.cs">
+      <DependentUpon>ucDmKhoaDaoTaoCT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMuc\ucDmKhoaDaoTaoDS.xaml.cs">
+      <DependentUpon>ucDmKhoaDaoTaoDS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMuc\ucDmKyHieuChamCongCT.xaml.cs">
+      <DependentUpon>ucDmKyHieuChamCongCT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMuc\ucDmKyHieuChamCongDS.xaml.cs">
+      <DependentUpon>ucDmKyHieuChamCongDS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMuc\ucDmKyNangCT.xaml.cs">
+      <DependentUpon>ucDmKyNangCT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMuc\ucDmKyNangDS.xaml.cs">
+      <DependentUpon>ucDmKyNangDS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMuc\ucDmLoaiChiPhiCT.xaml.cs">
+      <DependentUpon>ucDmLoaiChiPhiCT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMuc\ucDmLoaiChiPhiDS.xaml.cs">
+      <DependentUpon>ucDmLoaiChiPhiDS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMuc\ucDmLoaiGiayToCT.xaml.cs">
+      <DependentUpon>ucDmLoaiGiayToCT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMuc\ucDmLoaiGiayToDS.xaml.cs">
+      <DependentUpon>ucDmLoaiGiayToDS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMuc\ucDmLoaiHdldCT.xaml.cs">
+      <DependentUpon>ucDmLoaiHdldCT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMuc\ucDmLoaiHdldDS.xaml.cs">
+      <DependentUpon>ucDmLoaiHdldDS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMuc\ucDmLoaiHoSoCT.xaml.cs">
+      <DependentUpon>ucDmLoaiHoSoCT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMuc\ucDmLoaiHoSoDS.xaml.cs">
+      <DependentUpon>ucDmLoaiHoSoDS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMuc\ucDmLoaiThuNhapCT.xaml.cs">
+      <DependentUpon>ucDmLoaiThuNhapCT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMuc\ucDmLoaiThuNhapDS.xaml.cs">
+      <DependentUpon>ucDmLoaiThuNhapDS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMuc\ucDmLyDoNghiPhepCT.xaml.cs">
+      <DependentUpon>ucDmLyDoNghiPhepCT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMuc\ucDmLyDoNghiPhepDS.xaml.cs">
+      <DependentUpon>ucDmLyDoNghiPhepDS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMuc\ucDmLyDoThoiViecCT.xaml.cs">
+      <DependentUpon>ucDmLyDoThoiViecCT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMuc\ucDmLyDoThoiViecDS.xaml.cs">
+      <DependentUpon>ucDmLyDoThoiViecDS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMuc\ucDmNgheNghiepCT.xaml.cs">
+      <DependentUpon>ucDmNgheNghiepCT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMuc\ucDmNgheNghiepDS.xaml.cs">
+      <DependentUpon>ucDmNgheNghiepDS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMuc\ucDmNhomCongTacVienCT.xaml.cs">
+      <DependentUpon>ucDmNhomCongTacVienCT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMuc\ucDmNhomCongTacVienDS.xaml.cs">
+      <DependentUpon>ucDmNhomCongTacVienDS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMuc\ucDmPhuCapCT.xaml.cs">
+      <DependentUpon>ucDmPhuCapCT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMuc\ucDmPhuCapDS.xaml.cs">
+      <DependentUpon>ucDmPhuCapDS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMuc\ucDmPhuongXaCT.xaml.cs">
+      <DependentUpon>ucDmPhuongXaCT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMuc\ucDmPhuongXaDS.xaml.cs">
+      <DependentUpon>ucDmPhuongXaDS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMuc\ucDmQuanHeGiaDinhCT.xaml.cs">
+      <DependentUpon>ucDmQuanHeGiaDinhCT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMuc\ucDmQuanHeGiaDinhDS.xaml.cs">
+      <DependentUpon>ucDmQuanHeGiaDinhDS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMuc\ucDmQuanHuyenCT.xaml.cs">
+      <DependentUpon>ucDmQuanHuyenCT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMuc\ucDmQuanHuyenDS.xaml.cs">
+      <DependentUpon>ucDmQuanHuyenDS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMuc\ucDmQuocTichCT.xaml.cs">
+      <DependentUpon>ucDmQuocTichCT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMuc\ucDmQuocTichDS.xaml.cs">
+      <DependentUpon>ucDmQuocTichDS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMuc\ucDmThoiHanHdldCT.xaml.cs">
+      <DependentUpon>ucDmThoiHanHdldCT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMuc\ucDmThoiHanHdldDS.xaml.cs">
+      <DependentUpon>ucDmThoiHanHdldDS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMuc\ucDmTinhThanhPhoCT.xaml.cs">
+      <DependentUpon>ucDmTinhThanhPhoCT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMuc\ucDmTinhThanhPhoDS.xaml.cs">
+      <DependentUpon>ucDmTinhThanhPhoDS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMuc\ucDmTinhTrangHonNhanCT.xaml.cs">
+      <DependentUpon>ucDmTinhTrangHonNhanCT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMuc\ucDmTinhTrangHonNhanDS.xaml.cs">
+      <DependentUpon>ucDmTinhTrangHonNhanDS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMuc\ucDmTonGiaoCT.xaml.cs">
+      <DependentUpon>ucDmTonGiaoCT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMuc\ucDmTonGiaoDS.xaml.cs">
+      <DependentUpon>ucDmTonGiaoDS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMuc\ucDmTrinhDoChinhTriCT.xaml.cs">
+      <DependentUpon>ucDmTrinhDoChinhTriCT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMuc\ucDmTrinhDoChinhTriDS.xaml.cs">
+      <DependentUpon>ucDmTrinhDoChinhTriDS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMuc\ucDmTrinhDoHocVanCT.xaml.cs">
+      <DependentUpon>ucDmTrinhDoHocVanCT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMuc\ucDmTrinhDoTiengAnhCT.xaml.cs">
+      <DependentUpon>ucDmTrinhDoTiengAnhCT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMuc\ucDmTrinhDoTiengAnhDS.xaml.cs">
+      <DependentUpon>ucDmTrinhDoTiengAnhDS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMuc\ucDmTrinhDoTinHocCT.xaml.cs">
+      <DependentUpon>ucDmTrinhDoTinHocCT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMuc\ucDmTrinhDoTinHocDS.xaml.cs">
+      <DependentUpon>ucDmTrinhDoTinHocDS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMuc\ucDmTruongDaoTaoCT.xaml.cs">
+      <DependentUpon>ucDmTruongDaoTaoCT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMuc\ucDmTruongDaoTaoDS.xaml.cs">
+      <DependentUpon>ucDmTruongDaoTaoDS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMuc\ucDmXepLoaiCT.xaml.cs">
+      <DependentUpon>ucDmXepLoaiCT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMuc\ucDmXepLoaiDS.xaml.cs">
+      <DependentUpon>ucDmXepLoaiDS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DuAn\ucDuAnCT.xaml.cs">
+      <DependentUpon>ucDuAnCT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DuAn\ucDuAnDS.xaml.cs">
+      <DependentUpon>ucDuAnDS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Luong\ucBangLuongDS.xaml.cs">
+      <DependentUpon>ucBangLuongDS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Luong\ucDieuChinhLuongCT.xaml.cs">
+      <DependentUpon>ucDieuChinhLuongCT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Luong\ucDieuChinhLuongDS.xaml.cs">
+      <DependentUpon>ucDieuChinhLuongDS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Luong\ucLuongCT.xaml.cs">
+      <DependentUpon>ucLuongCT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Luong\ucLuongDS.xaml.cs">
+      <DependentUpon>ucLuongDS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Luong\ucPhanBoLuong.xaml.cs">
+      <DependentUpon>ucPhanBoLuong.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Luong\ucTinhLuongCT.xaml.cs">
+      <DependentUpon>ucTinhLuongCT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Luong\ucTinhLuongDS.xaml.cs">
+      <DependentUpon>ucTinhLuongDS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PhuCapCongTacVien\ucPhanBoPhuCap.xaml.cs">
+      <DependentUpon>ucPhanBoPhuCap.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PhuCapCongTacVien\ucTieuChiPhuCap.xaml.cs">
+      <DependentUpon>ucTieuChiPhuCap.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PhuCapCongTacVien\ucTinhPhuCapCT.xaml.cs">
+      <DependentUpon>ucTinhPhuCapCT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PhuCapCongTacVien\ucTinhPhuCapDS.xaml.cs">
+      <DependentUpon>ucTinhPhuCapDS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ThoiViec\ucThoiViecCT.xaml.cs">
+      <DependentUpon>ucThoiViecCT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ThoiViec\ucThoiViecDS.xaml.cs">
+      <DependentUpon>ucThoiViecDS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMuc\ucDmTrinhDoHocVanDS.xaml.cs">
+      <DependentUpon>ucDmTrinhDoHocVanDS.xaml</DependentUpon>
+    </Compile>
+    <Page Include="ChuyenCongTac\ucChuyenCongTacCT.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ChuyenCongTac\ucChuyenCongTacDS.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DanhMuc\ucDanhMucPL.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DanhMuc\ucDmBenhVienKhamChuaBenhCT.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DanhMuc\ucDmBenhVienKhamChuaBenhDS.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DanhMuc\ucDmChucVuCongTacVienCT.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DanhMuc\ucDmChucVuCongTacVienDS.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DanhMuc\ucDmChucVuCT.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DanhMuc\ucDmChucVuDS.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DanhMuc\ucDmChucVuDuAnCT.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DanhMuc\ucDmChucVuDuAnDS.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DanhMuc\ucDmChuyenNganhDaoTaoCT.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DanhMuc\ucDanhMucCT.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DanhMuc\ucDanhMucDS.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DanhMuc\ucDmBangCapChungChiCT.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DanhMuc\ucDmBangCapChungChiDS.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DanhMuc\ucDmChuyenNganhDaoTaoDS.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DanhMuc\ucDmCuTruCT.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DanhMuc\ucDmCuTruDS.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DanhMuc\ucDmDanTocCT.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DanhMuc\ucDmDanTocDS.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DanhMuc\ucDmDonViCongTacCT.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DanhMuc\ucDmDonViCongTacDS.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DanhMuc\ucDmDonViThoiGianCT.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DanhMuc\ucDmDonViThoiGianDS.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DanhMuc\ucDmDuAnCT.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DanhMuc\ucDmDuAnDS.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DanhMuc\ucDmGioiTinhCT.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DanhMuc\ucDmGioiTinhDS.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DanhMuc\ucDmHinhThucDaoTaoCT.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DanhMuc\ucDmHinhThucDaoTaoDS.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DanhMuc\ucDmHinhThucKhenThuongCT.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DanhMuc\ucDmHinhThucKhenThuongDS.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DanhMuc\ucDmHinhThucKyLuatCT.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DanhMuc\ucDmHinhThucKyLuatDS.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DanhMuc\ucDmHinhThucLamViecCT.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DanhMuc\ucDmHinhThucLamViecDS.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DanhMuc\ucDmHinhThucTraLuongCT.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DanhMuc\ucDmHinhThucTraLuongDS.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DanhMuc\ucDmHocHamCT.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DanhMuc\ucDmHocHamDS.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DanhMuc\ucDmHocViCT.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DanhMuc\ucDmHocViDS.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DanhMuc\ucDmKhoaDaoTaoCT.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DanhMuc\ucDmKhoaDaoTaoDS.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DanhMuc\ucDmKyHieuChamCongCT.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DanhMuc\ucDmKyHieuChamCongDS.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DanhMuc\ucDmKyNangCT.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DanhMuc\ucDmKyNangDS.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DanhMuc\ucDmLoaiChiPhiCT.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DanhMuc\ucDmLoaiChiPhiDS.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DanhMuc\ucDmLoaiGiayToCT.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DanhMuc\ucDmLoaiGiayToDS.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DanhMuc\ucDmLoaiHdldCT.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DanhMuc\ucDmLoaiHdldDS.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DanhMuc\ucDmLoaiHoSoCT.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DanhMuc\ucDmLoaiHoSoDS.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DanhMuc\ucDmLoaiThuNhapCT.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DanhMuc\ucDmLoaiThuNhapDS.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DanhMuc\ucDmLyDoNghiPhepCT.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DanhMuc\ucDmLyDoNghiPhepDS.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DanhMuc\ucDmLyDoThoiViecCT.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DanhMuc\ucDmLyDoThoiViecDS.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DanhMuc\ucDmNgheNghiepCT.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DanhMuc\ucDmNgheNghiepDS.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DanhMuc\ucDmNhomCongTacVienCT.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DanhMuc\ucDmNhomCongTacVienDS.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DanhMuc\ucDmPhuCapCT.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DanhMuc\ucDmPhuCapDS.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DanhMuc\ucDmPhuongXaCT.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DanhMuc\ucDmPhuongXaDS.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DanhMuc\ucDmQuanHeGiaDinhCT.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DanhMuc\ucDmQuanHeGiaDinhDS.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DanhMuc\ucDmQuanHuyenCT.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DanhMuc\ucDmQuanHuyenDS.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DanhMuc\ucDmQuocTichCT.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DanhMuc\ucDmQuocTichDS.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DanhMuc\ucDmThoiHanHdldCT.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DanhMuc\ucDmThoiHanHdldDS.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DanhMuc\ucDmTinhThanhPhoCT.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DanhMuc\ucDmTinhThanhPhoDS.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DanhMuc\ucDmTinhTrangHonNhanCT.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DanhMuc\ucDmTinhTrangHonNhanDS.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DanhMuc\ucDmTonGiaoCT.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DanhMuc\ucDmTonGiaoDS.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DanhMuc\ucDmTrinhDoChinhTriCT.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DanhMuc\ucDmTrinhDoChinhTriDS.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DanhMuc\ucDmTrinhDoHocVanCT.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DanhMuc\ucDmTrinhDoTiengAnhCT.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DanhMuc\ucDmTrinhDoTiengAnhDS.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DanhMuc\ucDmTrinhDoTinHocCT.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DanhMuc\ucDmTrinhDoTinHocDS.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DanhMuc\ucDmTruongDaoTaoCT.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DanhMuc\ucDmTruongDaoTaoDS.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DanhMuc\ucDmXepLoaiCT.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DanhMuc\ucDmXepLoaiDS.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DuAn\ucDuAnCT.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DuAn\ucDuAnDS.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HopDong\ucHopDongLaoDongCT.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HopDong\ucHopDongLaoDongDS.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HoSo\ucHoSoNhanVienCT.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HoSo\ucHoSoNhanVienDS.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lich\ucKhaiBaoLichCT.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lich\ucKhaiBaoLichDS.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lich\ucLichThang.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Luong\ucBangLuongDS.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Luong\ucDieuChinhLuongCT.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Luong\ucDieuChinhLuongDS.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Luong\ucLuongCT.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Luong\ucLuongDS.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Luong\ucPhanBoLuong.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Luong\ucTinhLuongCT.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Luong\ucTinhLuongDS.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="ChuyenCongTac\ucChuyenCongTacCT.xaml.cs">
+      <DependentUpon>ucChuyenCongTacCT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChuyenCongTac\ucChuyenCongTacDS.xaml.cs">
+      <DependentUpon>ucChuyenCongTacDS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMuc\ucDanhMucDS.xaml.cs">
+      <DependentUpon>ucDanhMucDS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="HopDong\ucHopDongLaoDongCT.xaml.cs">
+      <DependentUpon>ucHopDongLaoDongCT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="HopDong\ucHopDongLaoDongDS.xaml.cs">
+      <DependentUpon>ucHopDongLaoDongDS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="HoSo\ucHoSoNhanVienCT.xaml.cs">
+      <DependentUpon>ucHoSoNhanVienCT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="HoSo\ucHoSoNhanVienDS.xaml.cs">
+      <DependentUpon>ucHoSoNhanVienDS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lich\ucKhaiBaoLichCT.xaml.cs">
+      <DependentUpon>ucKhaiBaoLichCT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lich\ucKhaiBaoLichDS.xaml.cs">
+      <DependentUpon>ucKhaiBaoLichDS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lich\ucLichThang.xaml.cs">
+      <DependentUpon>ucLichThang.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="PhuCapCongTacVien\ucPhanBoPhuCap.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PhuCapCongTacVien\ucTieuChiPhuCap.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PhuCapCongTacVien\ucTinhPhuCapCT.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PhuCapCongTacVien\ucTinhPhuCapDS.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ThoiViec\ucThoiViecCT.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ThoiViec\ucThoiViecDS.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DanhMuc\ucDmTrinhDoHocVanDS.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="..\..\Presentation.Process\app.config">
+      <Link>app.config</Link>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DaoTao\" />
+    <Folder Include="KThuongKLuat\" />
+    <Folder Include="NghiPhep\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

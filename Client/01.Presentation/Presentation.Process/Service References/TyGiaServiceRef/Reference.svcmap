@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="b0e1a064-9ea0-4a77-86e2-dd1ba66705fb" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:1001/TyGiaService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="TyGiaService.xsd" MetadataType="Schema" ID="d37cdf7f-ec14-47e5-94d6-92f031df41a1" SourceId="1" SourceUrl="http://localhost:1001/TyGiaService.svc?xsd=xsd7" />
+    <MetadataFile FileName="TyGiaService1.xsd" MetadataType="Schema" ID="b44022a5-1af1-47be-a7bb-4253a70e57bb" SourceId="1" SourceUrl="http://localhost:1001/TyGiaService.svc?xsd=xsd5" />
+    <MetadataFile FileName="TyGiaService.wsdl" MetadataType="Wsdl" ID="d784ea5b-f9bc-4066-9cd5-3ca456185398" SourceId="1" SourceUrl="http://localhost:1001/TyGiaService.svc" />
+    <MetadataFile FileName="TyGiaService2.xsd" MetadataType="Schema" ID="b9802967-0324-4951-b6d3-7fa940560a23" SourceId="1" SourceUrl="http://localhost:1001/TyGiaService.svc?xsd=xsd6" />
+    <MetadataFile FileName="TyGiaService3.xsd" MetadataType="Schema" ID="7d5d5e85-a221-4c42-a6d7-2c9110dc7260" SourceId="1" SourceUrl="http://localhost:1001/TyGiaService.svc?xsd=xsd3" />
+    <MetadataFile FileName="TyGiaService4.xsd" MetadataType="Schema" ID="0b0da477-100f-4c03-aeed-5b6559ddab94" SourceId="1" SourceUrl="http://localhost:1001/TyGiaService.svc?xsd=xsd0" />
+    <MetadataFile FileName="TyGiaService5.xsd" MetadataType="Schema" ID="ef07fcc6-0cf0-45b9-bfa1-75148388ad2a" SourceId="1" SourceUrl="http://localhost:1001/TyGiaService.svc?xsd=xsd2" />
+    <MetadataFile FileName="TyGiaService6.xsd" MetadataType="Schema" ID="48f54e57-6405-462c-a991-9d81fa96bdf1" SourceId="1" SourceUrl="http://localhost:1001/TyGiaService.svc?xsd=xsd4" />
+    <MetadataFile FileName="TyGiaService7.xsd" MetadataType="Schema" ID="f9b47f98-77df-4463-82f9-60736c5f96c8" SourceId="1" SourceUrl="http://localhost:1001/TyGiaService.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

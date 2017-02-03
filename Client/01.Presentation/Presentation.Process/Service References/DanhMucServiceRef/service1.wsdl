@@ -1,0 +1,1546 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="DanhMucService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/CommunicationServices.DanhMuc.Messages" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/Utilities.Common" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/BusinessServices.DanhMuc.DTO" />
+      <xsd:import />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IDanhMucService_returnHello_InputMessage">
+    <wsdl:part name="parameters" element="tns:returnHello" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_returnHello_OutputMessage">
+    <wsdl:part name="parameters" element="tns:returnHelloResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_LuuDonVi_InputMessage">
+    <wsdl:part name="parameters" element="tns:LuuDonVi" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_LuuDonVi_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LuuDonViResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_XoaListDonViTheoID_InputMessage">
+    <wsdl:part name="parameters" element="tns:XoaListDonViTheoID" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_XoaListDonViTheoID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:XoaListDonViTheoIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_SuaThongTinDonVi_InputMessage">
+    <wsdl:part name="parameters" element="tns:SuaThongTinDonVi" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_SuaThongTinDonVi_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SuaThongTinDonViResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_GetThongTinDonVi_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetThongTinDonVi" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_GetThongTinDonVi_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetThongTinDonViResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_LoadImageFormFile_InputMessage">
+    <wsdl:part name="parameters" element="tns:LoadImageFormFile" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_LoadImageFormFile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoadImageFormFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_GetDonViChaByMaDonVi_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDonViChaByMaDonVi" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_GetDonViChaByMaDonVi_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDonViChaByMaDonViResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_GetDonViByMaCum_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDonViByMaCum" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_GetDonViByMaCum_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDonViByMaCumResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_GetThongTinCum_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetThongTinCum" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_GetThongTinCum_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetThongTinCumResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_LuuCum_InputMessage">
+    <wsdl:part name="parameters" element="tns:LuuCum" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_LuuCum_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LuuCumResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_SuaThongTinCum_InputMessage">
+    <wsdl:part name="parameters" element="tns:SuaThongTinCum" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_SuaThongTinCum_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SuaThongTinCumResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_XoaListCumTheoID_InputMessage">
+    <wsdl:part name="parameters" element="tns:XoaListCumTheoID" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_XoaListCumTheoID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:XoaListCumTheoIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_Cum02_InputMessage">
+    <wsdl:part name="parameters" element="tns:Cum02" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_Cum02_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Cum02Response" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_LuuDiaBan_InputMessage">
+    <wsdl:part name="parameters" element="tns:LuuDiaBan" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_LuuDiaBan_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LuuDiaBanResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_SuaThongTinDiaBan_InputMessage">
+    <wsdl:part name="parameters" element="tns:SuaThongTinDiaBan" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_SuaThongTinDiaBan_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SuaThongTinDiaBanResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_GetThongTinDiaBan_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetThongTinDiaBan" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_GetThongTinDiaBan_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetThongTinDiaBanResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_XoaListDiaBanTheoID_InputMessage">
+    <wsdl:part name="parameters" element="tns:XoaListDiaBanTheoID" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_XoaListDiaBanTheoID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:XoaListDiaBanTheoIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_LuuDiaBan01_InputMessage">
+    <wsdl:part name="parameters" element="tns:LuuDiaBan01" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_LuuDiaBan01_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LuuDiaBan01Response" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_SuaThongTinDiaBan01_InputMessage">
+    <wsdl:part name="parameters" element="tns:SuaThongTinDiaBan01" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_SuaThongTinDiaBan01_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SuaThongTinDiaBan01Response" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_GetThongTinDiaBan01_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetThongTinDiaBan01" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_GetThongTinDiaBan01_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetThongTinDiaBan01Response" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_XoaListDiaBanTheoID01_InputMessage">
+    <wsdl:part name="parameters" element="tns:XoaListDiaBanTheoID01" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_XoaListDiaBanTheoID01_OutputMessage">
+    <wsdl:part name="parameters" element="tns:XoaListDiaBanTheoID01Response" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_LuuDoiTuong_InputMessage">
+    <wsdl:part name="parameters" element="tns:LuuDoiTuong" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_LuuDoiTuong_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LuuDoiTuongResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_SuaThongTinDoiTuong_InputMessage">
+    <wsdl:part name="parameters" element="tns:SuaThongTinDoiTuong" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_SuaThongTinDoiTuong_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SuaThongTinDoiTuongResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_GetThongTinDoiTuong_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetThongTinDoiTuong" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_GetThongTinDoiTuong_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetThongTinDoiTuongResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_XoaListDoiTuongTheoID_InputMessage">
+    <wsdl:part name="parameters" element="tns:XoaListDoiTuongTheoID" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_XoaListDoiTuongTheoID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:XoaListDoiTuongTheoIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_LuuDoiTuongLoai_InputMessage">
+    <wsdl:part name="parameters" element="tns:LuuDoiTuongLoai" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_LuuDoiTuongLoai_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LuuDoiTuongLoaiResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_SuaThongTinDoiTuongLoai_InputMessage">
+    <wsdl:part name="parameters" element="tns:SuaThongTinDoiTuongLoai" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_SuaThongTinDoiTuongLoai_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SuaThongTinDoiTuongLoaiResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_GetThongTinDoiTuongLoai_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetThongTinDoiTuongLoai" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_GetThongTinDoiTuongLoai_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetThongTinDoiTuongLoaiResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_XoaListDoiTuongLoaiTheoID_InputMessage">
+    <wsdl:part name="parameters" element="tns:XoaListDoiTuongLoaiTheoID" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_XoaListDoiTuongLoaiTheoID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:XoaListDoiTuongLoaiTheoIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_LuuDungChung_InputMessage">
+    <wsdl:part name="parameters" element="tns:LuuDungChung" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_LuuDungChung_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LuuDungChungResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_SuaThongTinDungChung_InputMessage">
+    <wsdl:part name="parameters" element="tns:SuaThongTinDungChung" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_SuaThongTinDungChung_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SuaThongTinDungChungResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_GetThongTinDungChung_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetThongTinDungChung" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_GetThongTinDungChung_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetThongTinDungChungResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_XoaListDungChungTheoID_InputMessage">
+    <wsdl:part name="parameters" element="tns:XoaListDungChungTheoID" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_XoaListDungChungTheoID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:XoaListDungChungTheoIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_LayDungChungLoai_InputMessage">
+    <wsdl:part name="parameters" element="tns:LayDungChungLoai" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_LayDungChungLoai_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LayDungChungLoaiResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_LuuDungChungLoai_InputMessage">
+    <wsdl:part name="parameters" element="tns:LuuDungChungLoai" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_LuuDungChungLoai_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LuuDungChungLoaiResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_SuaThongTinDungChungLoai_InputMessage">
+    <wsdl:part name="parameters" element="tns:SuaThongTinDungChungLoai" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_SuaThongTinDungChungLoai_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SuaThongTinDungChungLoaiResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_GetThongTinDungChungLoai_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetThongTinDungChungLoai" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_GetThongTinDungChungLoai_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetThongTinDungChungLoaiResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_XoaListDungChungLoaiTheoID_InputMessage">
+    <wsdl:part name="parameters" element="tns:XoaListDungChungLoaiTheoID" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_XoaListDungChungLoaiTheoID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:XoaListDungChungLoaiTheoIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_KhuVuc_InputMessage">
+    <wsdl:part name="parameters" element="tns:KhuVuc" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_KhuVuc_OutputMessage">
+    <wsdl:part name="parameters" element="tns:KhuVucResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_GetThongTinKhuVuc_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetThongTinKhuVuc" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_GetThongTinKhuVuc_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetThongTinKhuVucResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_GetThongTinKhuVucTheoDonVi_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetThongTinKhuVucTheoDonVi" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_GetThongTinKhuVucTheoDonVi_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetThongTinKhuVucTheoDonViResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_KhuVuc02_InputMessage">
+    <wsdl:part name="parameters" element="tns:KhuVuc02" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_KhuVuc02_OutputMessage">
+    <wsdl:part name="parameters" element="tns:KhuVuc02Response" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_LuuNhom_InputMessage">
+    <wsdl:part name="parameters" element="tns:LuuNhom" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_LuuNhom_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LuuNhomResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_SuaThongTinNhom_InputMessage">
+    <wsdl:part name="parameters" element="tns:SuaThongTinNhom" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_SuaThongTinNhom_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SuaThongTinNhomResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_GetThongTinNhom_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetThongTinNhom" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_GetThongTinNhom_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetThongTinNhomResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_XoaListNhomTheoID_InputMessage">
+    <wsdl:part name="parameters" element="tns:XoaListNhomTheoID" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_XoaListNhomTheoID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:XoaListNhomTheoIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_Nhom02_InputMessage">
+    <wsdl:part name="parameters" element="tns:Nhom02" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_Nhom02_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Nhom02Response" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_LuuPhanHeGD_InputMessage">
+    <wsdl:part name="parameters" element="tns:LuuPhanHeGD" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_LuuPhanHeGD_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LuuPhanHeGDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_SuaThongTinPhanHeGD_InputMessage">
+    <wsdl:part name="parameters" element="tns:SuaThongTinPhanHeGD" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_SuaThongTinPhanHeGD_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SuaThongTinPhanHeGDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_GetThongTinPhanHeGD_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetThongTinPhanHeGD" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_GetThongTinPhanHeGD_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetThongTinPhanHeGDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_XoaListPhanHeGDTheoID_InputMessage">
+    <wsdl:part name="parameters" element="tns:XoaListPhanHeGDTheoID" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_XoaListPhanHeGDTheoID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:XoaListPhanHeGDTheoIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_LayPhanHe_InputMessage">
+    <wsdl:part name="parameters" element="tns:LayPhanHe" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_LayPhanHe_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LayPhanHeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_LuuPhanHe_InputMessage">
+    <wsdl:part name="parameters" element="tns:LuuPhanHe" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_LuuPhanHe_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LuuPhanHeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_SuaThongTinPhanHe_InputMessage">
+    <wsdl:part name="parameters" element="tns:SuaThongTinPhanHe" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_SuaThongTinPhanHe_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SuaThongTinPhanHeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_GetThongTinPhanHe_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetThongTinPhanHe" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_GetThongTinPhanHe_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetThongTinPhanHeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_XoaListPhanHeTheoID_InputMessage">
+    <wsdl:part name="parameters" element="tns:XoaListPhanHeTheoID" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_XoaListPhanHeTheoID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:XoaListPhanHeTheoIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_LuuTinhTP_InputMessage">
+    <wsdl:part name="parameters" element="tns:LuuTinhTP" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_LuuTinhTP_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LuuTinhTPResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_SuaThongTinTinhTP_InputMessage">
+    <wsdl:part name="parameters" element="tns:SuaThongTinTinhTP" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_SuaThongTinTinhTP_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SuaThongTinTinhTPResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_GetThongTinTinhTP_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetThongTinTinhTP" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_GetThongTinTinhTP_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetThongTinTinhTPResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_XoaListTinhTPTheoID_InputMessage">
+    <wsdl:part name="parameters" element="tns:XoaListTinhTPTheoID" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_XoaListTinhTPTheoID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:XoaListTinhTPTheoIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_LuuTinhTP01_InputMessage">
+    <wsdl:part name="parameters" element="tns:LuuTinhTP01" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_LuuTinhTP01_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LuuTinhTP01Response" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_SuaThongTinTinhTP01_InputMessage">
+    <wsdl:part name="parameters" element="tns:SuaThongTinTinhTP01" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_SuaThongTinTinhTP01_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SuaThongTinTinhTP01Response" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_GetThongTinTinhTP01_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetThongTinTinhTP01" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_GetThongTinTinhTP01_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetThongTinTinhTP01Response" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_XoaListTinhTPTheoID01_InputMessage">
+    <wsdl:part name="parameters" element="tns:XoaListTinhTPTheoID01" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_XoaListTinhTPTheoID01_OutputMessage">
+    <wsdl:part name="parameters" element="tns:XoaListTinhTPTheoID01Response" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_LuuVungMien_InputMessage">
+    <wsdl:part name="parameters" element="tns:LuuVungMien" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_LuuVungMien_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LuuVungMienResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_SuaThongTinVungMien_InputMessage">
+    <wsdl:part name="parameters" element="tns:SuaThongTinVungMien" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_SuaThongTinVungMien_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SuaThongTinVungMienResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_GetThongTinVungMien_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetThongTinVungMien" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_GetThongTinVungMien_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetThongTinVungMienResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_XoaListVungMienTheoID_InputMessage">
+    <wsdl:part name="parameters" element="tns:XoaListVungMienTheoID" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_XoaListVungMienTheoID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:XoaListVungMienTheoIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_GetTanSuatbyID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTanSuatbyID" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_GetTanSuatbyID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTanSuatbyIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_GetTanSuatbyMaDonVi_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTanSuatbyMaDonVi" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_GetTanSuatbyMaDonVi_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTanSuatbyMaDonViResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_GetTanSuatbyIdCum_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTanSuatbyIdCum" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_GetTanSuatbyIdCum_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTanSuatbyIdCumResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_LuuTanSuat_InputMessage">
+    <wsdl:part name="parameters" element="tns:LuuTanSuat" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_LuuTanSuat_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LuuTanSuatResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_SuaThongTinTanSuat_InputMessage">
+    <wsdl:part name="parameters" element="tns:SuaThongTinTanSuat" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_SuaThongTinTanSuat_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SuaThongTinTanSuatResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_GetThongTinTanSuat_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetThongTinTanSuat" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_GetThongTinTanSuat_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetThongTinTanSuatResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_CapNhatTanSuat_InputMessage">
+    <wsdl:part name="parameters" element="tns:CapNhatTanSuat" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_CapNhatTanSuat_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CapNhatTanSuatResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_XoaListTanSuatTheoID_InputMessage">
+    <wsdl:part name="parameters" element="tns:XoaListTanSuatTheoID" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_XoaListTanSuatTheoID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:XoaListTanSuatTheoIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_DuyetTanSuat_InputMessage">
+    <wsdl:part name="parameters" element="tns:DuyetTanSuat" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_DuyetTanSuat_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DuyetTanSuatResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_ThoaiDuyetTanSuat_InputMessage">
+    <wsdl:part name="parameters" element="tns:ThoaiDuyetTanSuat" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_ThoaiDuyetTanSuat_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ThoaiDuyetTanSuatResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_TuChoiTanSuat_InputMessage">
+    <wsdl:part name="parameters" element="tns:TuChoiTanSuat" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_TuChoiTanSuat_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TuChoiTanSuatResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_ToChucTinDung_InputMessage">
+    <wsdl:part name="parameters" element="tns:ToChucTinDung" />
+  </wsdl:message>
+  <wsdl:message name="IDanhMucService_ToChucTinDung_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ToChucTinDungResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IDanhMucService">
+    <wsdl:operation name="returnHello">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDanhMucService/returnHello" message="tns:IDanhMucService_returnHello_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDanhMucService/returnHelloResponse" message="tns:IDanhMucService_returnHello_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LuuDonVi">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDanhMucService/LuuDonVi" message="tns:IDanhMucService_LuuDonVi_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDanhMucService/LuuDonViResponse" message="tns:IDanhMucService_LuuDonVi_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="XoaListDonViTheoID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDanhMucService/XoaListDonViTheoID" message="tns:IDanhMucService_XoaListDonViTheoID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDanhMucService/XoaListDonViTheoIDResponse" message="tns:IDanhMucService_XoaListDonViTheoID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SuaThongTinDonVi">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDanhMucService/SuaThongTinDonVi" message="tns:IDanhMucService_SuaThongTinDonVi_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDanhMucService/SuaThongTinDonViResponse" message="tns:IDanhMucService_SuaThongTinDonVi_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetThongTinDonVi">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDanhMucService/GetThongTinDonVi" message="tns:IDanhMucService_GetThongTinDonVi_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDanhMucService/GetThongTinDonViResponse" message="tns:IDanhMucService_GetThongTinDonVi_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadImageFormFile">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDanhMucService/LoadImageFormFile" message="tns:IDanhMucService_LoadImageFormFile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDanhMucService/LoadImageFormFileResponse" message="tns:IDanhMucService_LoadImageFormFile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDonViChaByMaDonVi">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDanhMucService/GetDonViChaByMaDonVi" message="tns:IDanhMucService_GetDonViChaByMaDonVi_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDanhMucService/GetDonViChaByMaDonViResponse" message="tns:IDanhMucService_GetDonViChaByMaDonVi_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDonViByMaCum">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDanhMucService/GetDonViByMaCum" message="tns:IDanhMucService_GetDonViByMaCum_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDanhMucService/GetDonViByMaCumResponse" message="tns:IDanhMucService_GetDonViByMaCum_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetThongTinCum">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDanhMucService/GetThongTinCum" message="tns:IDanhMucService_GetThongTinCum_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDanhMucService/GetThongTinCumResponse" message="tns:IDanhMucService_GetThongTinCum_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LuuCum">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDanhMucService/LuuCum" message="tns:IDanhMucService_LuuCum_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDanhMucService/LuuCumResponse" message="tns:IDanhMucService_LuuCum_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SuaThongTinCum">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDanhMucService/SuaThongTinCum" message="tns:IDanhMucService_SuaThongTinCum_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDanhMucService/SuaThongTinCumResponse" message="tns:IDanhMucService_SuaThongTinCum_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="XoaListCumTheoID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDanhMucService/XoaListCumTheoID" message="tns:IDanhMucService_XoaListCumTheoID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDanhMucService/XoaListCumTheoIDResponse" message="tns:IDanhMucService_XoaListCumTheoID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Cum02">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDanhMucService/Cum02" message="tns:IDanhMucService_Cum02_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDanhMucService/Cum02Response" message="tns:IDanhMucService_Cum02_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LuuDiaBan">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDanhMucService/LuuDiaBan" message="tns:IDanhMucService_LuuDiaBan_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDanhMucService/LuuDiaBanResponse" message="tns:IDanhMucService_LuuDiaBan_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SuaThongTinDiaBan">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDanhMucService/SuaThongTinDiaBan" message="tns:IDanhMucService_SuaThongTinDiaBan_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDanhMucService/SuaThongTinDiaBanResponse" message="tns:IDanhMucService_SuaThongTinDiaBan_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetThongTinDiaBan">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDanhMucService/GetThongTinDiaBan" message="tns:IDanhMucService_GetThongTinDiaBan_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDanhMucService/GetThongTinDiaBanResponse" message="tns:IDanhMucService_GetThongTinDiaBan_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="XoaListDiaBanTheoID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDanhMucService/XoaListDiaBanTheoID" message="tns:IDanhMucService_XoaListDiaBanTheoID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDanhMucService/XoaListDiaBanTheoIDResponse" message="tns:IDanhMucService_XoaListDiaBanTheoID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LuuDiaBan01">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDanhMucService/LuuDiaBan01" message="tns:IDanhMucService_LuuDiaBan01_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDanhMucService/LuuDiaBan01Response" message="tns:IDanhMucService_LuuDiaBan01_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SuaThongTinDiaBan01">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDanhMucService/SuaThongTinDiaBan01" message="tns:IDanhMucService_SuaThongTinDiaBan01_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDanhMucService/SuaThongTinDiaBan01Response" message="tns:IDanhMucService_SuaThongTinDiaBan01_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetThongTinDiaBan01">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDanhMucService/GetThongTinDiaBan01" message="tns:IDanhMucService_GetThongTinDiaBan01_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDanhMucService/GetThongTinDiaBan01Response" message="tns:IDanhMucService_GetThongTinDiaBan01_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="XoaListDiaBanTheoID01">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDanhMucService/XoaListDiaBanTheoID01" message="tns:IDanhMucService_XoaListDiaBanTheoID01_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDanhMucService/XoaListDiaBanTheoID01Response" message="tns:IDanhMucService_XoaListDiaBanTheoID01_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LuuDoiTuong">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDanhMucService/LuuDoiTuong" message="tns:IDanhMucService_LuuDoiTuong_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDanhMucService/LuuDoiTuongResponse" message="tns:IDanhMucService_LuuDoiTuong_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SuaThongTinDoiTuong">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDanhMucService/SuaThongTinDoiTuong" message="tns:IDanhMucService_SuaThongTinDoiTuong_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDanhMucService/SuaThongTinDoiTuongResponse" message="tns:IDanhMucService_SuaThongTinDoiTuong_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetThongTinDoiTuong">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDanhMucService/GetThongTinDoiTuong" message="tns:IDanhMucService_GetThongTinDoiTuong_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDanhMucService/GetThongTinDoiTuongResponse" message="tns:IDanhMucService_GetThongTinDoiTuong_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="XoaListDoiTuongTheoID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDanhMucService/XoaListDoiTuongTheoID" message="tns:IDanhMucService_XoaListDoiTuongTheoID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDanhMucService/XoaListDoiTuongTheoIDResponse" message="tns:IDanhMucService_XoaListDoiTuongTheoID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LuuDoiTuongLoai">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDanhMucService/LuuDoiTuongLoai" message="tns:IDanhMucService_LuuDoiTuongLoai_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDanhMucService/LuuDoiTuongLoaiResponse" message="tns:IDanhMucService_LuuDoiTuongLoai_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SuaThongTinDoiTuongLoai">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDanhMucService/SuaThongTinDoiTuongLoai" message="tns:IDanhMucService_SuaThongTinDoiTuongLoai_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDanhMucService/SuaThongTinDoiTuongLoaiResponse" message="tns:IDanhMucService_SuaThongTinDoiTuongLoai_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetThongTinDoiTuongLoai">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDanhMucService/GetThongTinDoiTuongLoai" message="tns:IDanhMucService_GetThongTinDoiTuongLoai_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDanhMucService/GetThongTinDoiTuongLoaiResponse" message="tns:IDanhMucService_GetThongTinDoiTuongLoai_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="XoaListDoiTuongLoaiTheoID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDanhMucService/XoaListDoiTuongLoaiTheoID" message="tns:IDanhMucService_XoaListDoiTuongLoaiTheoID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDanhMucService/XoaListDoiTuongLoaiTheoIDResponse" message="tns:IDanhMucService_XoaListDoiTuongLoaiTheoID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LuuDungChung">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDanhMucService/LuuDungChung" message="tns:IDanhMucService_LuuDungChung_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDanhMucService/LuuDungChungResponse" message="tns:IDanhMucService_LuuDungChung_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SuaThongTinDungChung">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDanhMucService/SuaThongTinDungChung" message="tns:IDanhMucService_SuaThongTinDungChung_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDanhMucService/SuaThongTinDungChungResponse" message="tns:IDanhMucService_SuaThongTinDungChung_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetThongTinDungChung">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDanhMucService/GetThongTinDungChung" message="tns:IDanhMucService_GetThongTinDungChung_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDanhMucService/GetThongTinDungChungResponse" message="tns:IDanhMucService_GetThongTinDungChung_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="XoaListDungChungTheoID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDanhMucService/XoaListDungChungTheoID" message="tns:IDanhMucService_XoaListDungChungTheoID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDanhMucService/XoaListDungChungTheoIDResponse" message="tns:IDanhMucService_XoaListDungChungTheoID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LayDungChungLoai">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDanhMucService/LayDungChungLoai" message="tns:IDanhMucService_LayDungChungLoai_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDanhMucService/LayDungChungLoaiResponse" message="tns:IDanhMucService_LayDungChungLoai_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LuuDungChungLoai">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDanhMucService/LuuDungChungLoai" message="tns:IDanhMucService_LuuDungChungLoai_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDanhMucService/LuuDungChungLoaiResponse" message="tns:IDanhMucService_LuuDungChungLoai_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SuaThongTinDungChungLoai">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDanhMucService/SuaThongTinDungChungLoai" message="tns:IDanhMucService_SuaThongTinDungChungLoai_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDanhMucService/SuaThongTinDungChungLoaiResponse" message="tns:IDanhMucService_SuaThongTinDungChungLoai_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetThongTinDungChungLoai">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDanhMucService/GetThongTinDungChungLoai" message="tns:IDanhMucService_GetThongTinDungChungLoai_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDanhMucService/GetThongTinDungChungLoaiResponse" message="tns:IDanhMucService_GetThongTinDungChungLoai_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="XoaListDungChungLoaiTheoID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDanhMucService/XoaListDungChungLoaiTheoID" message="tns:IDanhMucService_XoaListDungChungLoaiTheoID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDanhMucService/XoaListDungChungLoaiTheoIDResponse" message="tns:IDanhMucService_XoaListDungChungLoaiTheoID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="KhuVuc">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDanhMucService/KhuVuc" message="tns:IDanhMucService_KhuVuc_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDanhMucService/KhuVucResponse" message="tns:IDanhMucService_KhuVuc_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetThongTinKhuVuc">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDanhMucService/GetThongTinKhuVuc" message="tns:IDanhMucService_GetThongTinKhuVuc_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDanhMucService/GetThongTinKhuVucResponse" message="tns:IDanhMucService_GetThongTinKhuVuc_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetThongTinKhuVucTheoDonVi">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDanhMucService/GetThongTinKhuVucTheoDonVi" message="tns:IDanhMucService_GetThongTinKhuVucTheoDonVi_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDanhMucService/GetThongTinKhuVucTheoDonViResponse" message="tns:IDanhMucService_GetThongTinKhuVucTheoDonVi_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="KhuVuc02">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDanhMucService/KhuVuc02" message="tns:IDanhMucService_KhuVuc02_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDanhMucService/KhuVuc02Response" message="tns:IDanhMucService_KhuVuc02_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LuuNhom">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDanhMucService/LuuNhom" message="tns:IDanhMucService_LuuNhom_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDanhMucService/LuuNhomResponse" message="tns:IDanhMucService_LuuNhom_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SuaThongTinNhom">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDanhMucService/SuaThongTinNhom" message="tns:IDanhMucService_SuaThongTinNhom_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDanhMucService/SuaThongTinNhomResponse" message="tns:IDanhMucService_SuaThongTinNhom_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetThongTinNhom">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDanhMucService/GetThongTinNhom" message="tns:IDanhMucService_GetThongTinNhom_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDanhMucService/GetThongTinNhomResponse" message="tns:IDanhMucService_GetThongTinNhom_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="XoaListNhomTheoID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDanhMucService/XoaListNhomTheoID" message="tns:IDanhMucService_XoaListNhomTheoID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDanhMucService/XoaListNhomTheoIDResponse" message="tns:IDanhMucService_XoaListNhomTheoID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Nhom02">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDanhMucService/Nhom02" message="tns:IDanhMucService_Nhom02_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDanhMucService/Nhom02Response" message="tns:IDanhMucService_Nhom02_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LuuPhanHeGD">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDanhMucService/LuuPhanHeGD" message="tns:IDanhMucService_LuuPhanHeGD_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDanhMucService/LuuPhanHeGDResponse" message="tns:IDanhMucService_LuuPhanHeGD_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SuaThongTinPhanHeGD">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDanhMucService/SuaThongTinPhanHeGD" message="tns:IDanhMucService_SuaThongTinPhanHeGD_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDanhMucService/SuaThongTinPhanHeGDResponse" message="tns:IDanhMucService_SuaThongTinPhanHeGD_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetThongTinPhanHeGD">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDanhMucService/GetThongTinPhanHeGD" message="tns:IDanhMucService_GetThongTinPhanHeGD_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDanhMucService/GetThongTinPhanHeGDResponse" message="tns:IDanhMucService_GetThongTinPhanHeGD_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="XoaListPhanHeGDTheoID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDanhMucService/XoaListPhanHeGDTheoID" message="tns:IDanhMucService_XoaListPhanHeGDTheoID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDanhMucService/XoaListPhanHeGDTheoIDResponse" message="tns:IDanhMucService_XoaListPhanHeGDTheoID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LayPhanHe">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDanhMucService/LayPhanHe" message="tns:IDanhMucService_LayPhanHe_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDanhMucService/LayPhanHeResponse" message="tns:IDanhMucService_LayPhanHe_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LuuPhanHe">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDanhMucService/LuuPhanHe" message="tns:IDanhMucService_LuuPhanHe_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDanhMucService/LuuPhanHeResponse" message="tns:IDanhMucService_LuuPhanHe_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SuaThongTinPhanHe">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDanhMucService/SuaThongTinPhanHe" message="tns:IDanhMucService_SuaThongTinPhanHe_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDanhMucService/SuaThongTinPhanHeResponse" message="tns:IDanhMucService_SuaThongTinPhanHe_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetThongTinPhanHe">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDanhMucService/GetThongTinPhanHe" message="tns:IDanhMucService_GetThongTinPhanHe_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDanhMucService/GetThongTinPhanHeResponse" message="tns:IDanhMucService_GetThongTinPhanHe_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="XoaListPhanHeTheoID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDanhMucService/XoaListPhanHeTheoID" message="tns:IDanhMucService_XoaListPhanHeTheoID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDanhMucService/XoaListPhanHeTheoIDResponse" message="tns:IDanhMucService_XoaListPhanHeTheoID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LuuTinhTP">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDanhMucService/LuuTinhTP" message="tns:IDanhMucService_LuuTinhTP_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDanhMucService/LuuTinhTPResponse" message="tns:IDanhMucService_LuuTinhTP_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SuaThongTinTinhTP">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDanhMucService/SuaThongTinTinhTP" message="tns:IDanhMucService_SuaThongTinTinhTP_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDanhMucService/SuaThongTinTinhTPResponse" message="tns:IDanhMucService_SuaThongTinTinhTP_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetThongTinTinhTP">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDanhMucService/GetThongTinTinhTP" message="tns:IDanhMucService_GetThongTinTinhTP_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDanhMucService/GetThongTinTinhTPResponse" message="tns:IDanhMucService_GetThongTinTinhTP_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="XoaListTinhTPTheoID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDanhMucService/XoaListTinhTPTheoID" message="tns:IDanhMucService_XoaListTinhTPTheoID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDanhMucService/XoaListTinhTPTheoIDResponse" message="tns:IDanhMucService_XoaListTinhTPTheoID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LuuTinhTP01">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDanhMucService/LuuTinhTP01" message="tns:IDanhMucService_LuuTinhTP01_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDanhMucService/LuuTinhTP01Response" message="tns:IDanhMucService_LuuTinhTP01_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SuaThongTinTinhTP01">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDanhMucService/SuaThongTinTinhTP01" message="tns:IDanhMucService_SuaThongTinTinhTP01_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDanhMucService/SuaThongTinTinhTP01Response" message="tns:IDanhMucService_SuaThongTinTinhTP01_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetThongTinTinhTP01">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDanhMucService/GetThongTinTinhTP01" message="tns:IDanhMucService_GetThongTinTinhTP01_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDanhMucService/GetThongTinTinhTP01Response" message="tns:IDanhMucService_GetThongTinTinhTP01_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="XoaListTinhTPTheoID01">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDanhMucService/XoaListTinhTPTheoID01" message="tns:IDanhMucService_XoaListTinhTPTheoID01_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDanhMucService/XoaListTinhTPTheoID01Response" message="tns:IDanhMucService_XoaListTinhTPTheoID01_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LuuVungMien">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDanhMucService/LuuVungMien" message="tns:IDanhMucService_LuuVungMien_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDanhMucService/LuuVungMienResponse" message="tns:IDanhMucService_LuuVungMien_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SuaThongTinVungMien">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDanhMucService/SuaThongTinVungMien" message="tns:IDanhMucService_SuaThongTinVungMien_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDanhMucService/SuaThongTinVungMienResponse" message="tns:IDanhMucService_SuaThongTinVungMien_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetThongTinVungMien">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDanhMucService/GetThongTinVungMien" message="tns:IDanhMucService_GetThongTinVungMien_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDanhMucService/GetThongTinVungMienResponse" message="tns:IDanhMucService_GetThongTinVungMien_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="XoaListVungMienTheoID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDanhMucService/XoaListVungMienTheoID" message="tns:IDanhMucService_XoaListVungMienTheoID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDanhMucService/XoaListVungMienTheoIDResponse" message="tns:IDanhMucService_XoaListVungMienTheoID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTanSuatbyID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDanhMucService/GetTanSuatbyID" message="tns:IDanhMucService_GetTanSuatbyID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDanhMucService/GetTanSuatbyIDResponse" message="tns:IDanhMucService_GetTanSuatbyID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTanSuatbyMaDonVi">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDanhMucService/GetTanSuatbyMaDonVi" message="tns:IDanhMucService_GetTanSuatbyMaDonVi_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDanhMucService/GetTanSuatbyMaDonViResponse" message="tns:IDanhMucService_GetTanSuatbyMaDonVi_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTanSuatbyIdCum">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDanhMucService/GetTanSuatbyIdCum" message="tns:IDanhMucService_GetTanSuatbyIdCum_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDanhMucService/GetTanSuatbyIdCumResponse" message="tns:IDanhMucService_GetTanSuatbyIdCum_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LuuTanSuat">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDanhMucService/LuuTanSuat" message="tns:IDanhMucService_LuuTanSuat_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDanhMucService/LuuTanSuatResponse" message="tns:IDanhMucService_LuuTanSuat_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SuaThongTinTanSuat">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDanhMucService/SuaThongTinTanSuat" message="tns:IDanhMucService_SuaThongTinTanSuat_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDanhMucService/SuaThongTinTanSuatResponse" message="tns:IDanhMucService_SuaThongTinTanSuat_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetThongTinTanSuat">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDanhMucService/GetThongTinTanSuat" message="tns:IDanhMucService_GetThongTinTanSuat_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDanhMucService/GetThongTinTanSuatResponse" message="tns:IDanhMucService_GetThongTinTanSuat_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CapNhatTanSuat">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDanhMucService/CapNhatTanSuat" message="tns:IDanhMucService_CapNhatTanSuat_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDanhMucService/CapNhatTanSuatResponse" message="tns:IDanhMucService_CapNhatTanSuat_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="XoaListTanSuatTheoID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDanhMucService/XoaListTanSuatTheoID" message="tns:IDanhMucService_XoaListTanSuatTheoID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDanhMucService/XoaListTanSuatTheoIDResponse" message="tns:IDanhMucService_XoaListTanSuatTheoID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DuyetTanSuat">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDanhMucService/DuyetTanSuat" message="tns:IDanhMucService_DuyetTanSuat_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDanhMucService/DuyetTanSuatResponse" message="tns:IDanhMucService_DuyetTanSuat_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ThoaiDuyetTanSuat">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDanhMucService/ThoaiDuyetTanSuat" message="tns:IDanhMucService_ThoaiDuyetTanSuat_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDanhMucService/ThoaiDuyetTanSuatResponse" message="tns:IDanhMucService_ThoaiDuyetTanSuat_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TuChoiTanSuat">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDanhMucService/TuChoiTanSuat" message="tns:IDanhMucService_TuChoiTanSuat_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDanhMucService/TuChoiTanSuatResponse" message="tns:IDanhMucService_TuChoiTanSuat_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ToChucTinDung">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDanhMucService/ToChucTinDung" message="tns:IDanhMucService_ToChucTinDung_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDanhMucService/ToChucTinDungResponse" message="tns:IDanhMucService_ToChucTinDung_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="DanhMucEndpoint" type="tns:IDanhMucService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="returnHello">
+      <soap:operation soapAction="http://tempuri.org/IDanhMucService/returnHello" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LuuDonVi">
+      <soap:operation soapAction="http://tempuri.org/IDanhMucService/LuuDonVi" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="XoaListDonViTheoID">
+      <soap:operation soapAction="http://tempuri.org/IDanhMucService/XoaListDonViTheoID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SuaThongTinDonVi">
+      <soap:operation soapAction="http://tempuri.org/IDanhMucService/SuaThongTinDonVi" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetThongTinDonVi">
+      <soap:operation soapAction="http://tempuri.org/IDanhMucService/GetThongTinDonVi" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadImageFormFile">
+      <soap:operation soapAction="http://tempuri.org/IDanhMucService/LoadImageFormFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDonViChaByMaDonVi">
+      <soap:operation soapAction="http://tempuri.org/IDanhMucService/GetDonViChaByMaDonVi" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDonViByMaCum">
+      <soap:operation soapAction="http://tempuri.org/IDanhMucService/GetDonViByMaCum" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetThongTinCum">
+      <soap:operation soapAction="http://tempuri.org/IDanhMucService/GetThongTinCum" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LuuCum">
+      <soap:operation soapAction="http://tempuri.org/IDanhMucService/LuuCum" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SuaThongTinCum">
+      <soap:operation soapAction="http://tempuri.org/IDanhMucService/SuaThongTinCum" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="XoaListCumTheoID">
+      <soap:operation soapAction="http://tempuri.org/IDanhMucService/XoaListCumTheoID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Cum02">
+      <soap:operation soapAction="http://tempuri.org/IDanhMucService/Cum02" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LuuDiaBan">
+      <soap:operation soapAction="http://tempuri.org/IDanhMucService/LuuDiaBan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SuaThongTinDiaBan">
+      <soap:operation soapAction="http://tempuri.org/IDanhMucService/SuaThongTinDiaBan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetThongTinDiaBan">
+      <soap:operation soapAction="http://tempuri.org/IDanhMucService/GetThongTinDiaBan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="XoaListDiaBanTheoID">
+      <soap:operation soapAction="http://tempuri.org/IDanhMucService/XoaListDiaBanTheoID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LuuDiaBan01">
+      <soap:operation soapAction="http://tempuri.org/IDanhMucService/LuuDiaBan01" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SuaThongTinDiaBan01">
+      <soap:operation soapAction="http://tempuri.org/IDanhMucService/SuaThongTinDiaBan01" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetThongTinDiaBan01">
+      <soap:operation soapAction="http://tempuri.org/IDanhMucService/GetThongTinDiaBan01" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="XoaListDiaBanTheoID01">
+      <soap:operation soapAction="http://tempuri.org/IDanhMucService/XoaListDiaBanTheoID01" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LuuDoiTuong">
+      <soap:operation soapAction="http://tempuri.org/IDanhMucService/LuuDoiTuong" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SuaThongTinDoiTuong">
+      <soap:operation soapAction="http://tempuri.org/IDanhMucService/SuaThongTinDoiTuong" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetThongTinDoiTuong">
+      <soap:operation soapAction="http://tempuri.org/IDanhMucService/GetThongTinDoiTuong" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="XoaListDoiTuongTheoID">
+      <soap:operation soapAction="http://tempuri.org/IDanhMucService/XoaListDoiTuongTheoID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LuuDoiTuongLoai">
+      <soap:operation soapAction="http://tempuri.org/IDanhMucService/LuuDoiTuongLoai" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SuaThongTinDoiTuongLoai">
+      <soap:operation soapAction="http://tempuri.org/IDanhMucService/SuaThongTinDoiTuongLoai" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetThongTinDoiTuongLoai">
+      <soap:operation soapAction="http://tempuri.org/IDanhMucService/GetThongTinDoiTuongLoai" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="XoaListDoiTuongLoaiTheoID">
+      <soap:operation soapAction="http://tempuri.org/IDanhMucService/XoaListDoiTuongLoaiTheoID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LuuDungChung">
+      <soap:operation soapAction="http://tempuri.org/IDanhMucService/LuuDungChung" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SuaThongTinDungChung">
+      <soap:operation soapAction="http://tempuri.org/IDanhMucService/SuaThongTinDungChung" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetThongTinDungChung">
+      <soap:operation soapAction="http://tempuri.org/IDanhMucService/GetThongTinDungChung" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="XoaListDungChungTheoID">
+      <soap:operation soapAction="http://tempuri.org/IDanhMucService/XoaListDungChungTheoID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LayDungChungLoai">
+      <soap:operation soapAction="http://tempuri.org/IDanhMucService/LayDungChungLoai" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LuuDungChungLoai">
+      <soap:operation soapAction="http://tempuri.org/IDanhMucService/LuuDungChungLoai" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SuaThongTinDungChungLoai">
+      <soap:operation soapAction="http://tempuri.org/IDanhMucService/SuaThongTinDungChungLoai" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetThongTinDungChungLoai">
+      <soap:operation soapAction="http://tempuri.org/IDanhMucService/GetThongTinDungChungLoai" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="XoaListDungChungLoaiTheoID">
+      <soap:operation soapAction="http://tempuri.org/IDanhMucService/XoaListDungChungLoaiTheoID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="KhuVuc">
+      <soap:operation soapAction="http://tempuri.org/IDanhMucService/KhuVuc" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetThongTinKhuVuc">
+      <soap:operation soapAction="http://tempuri.org/IDanhMucService/GetThongTinKhuVuc" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetThongTinKhuVucTheoDonVi">
+      <soap:operation soapAction="http://tempuri.org/IDanhMucService/GetThongTinKhuVucTheoDonVi" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="KhuVuc02">
+      <soap:operation soapAction="http://tempuri.org/IDanhMucService/KhuVuc02" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LuuNhom">
+      <soap:operation soapAction="http://tempuri.org/IDanhMucService/LuuNhom" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SuaThongTinNhom">
+      <soap:operation soapAction="http://tempuri.org/IDanhMucService/SuaThongTinNhom" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetThongTinNhom">
+      <soap:operation soapAction="http://tempuri.org/IDanhMucService/GetThongTinNhom" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="XoaListNhomTheoID">
+      <soap:operation soapAction="http://tempuri.org/IDanhMucService/XoaListNhomTheoID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Nhom02">
+      <soap:operation soapAction="http://tempuri.org/IDanhMucService/Nhom02" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LuuPhanHeGD">
+      <soap:operation soapAction="http://tempuri.org/IDanhMucService/LuuPhanHeGD" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SuaThongTinPhanHeGD">
+      <soap:operation soapAction="http://tempuri.org/IDanhMucService/SuaThongTinPhanHeGD" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetThongTinPhanHeGD">
+      <soap:operation soapAction="http://tempuri.org/IDanhMucService/GetThongTinPhanHeGD" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="XoaListPhanHeGDTheoID">
+      <soap:operation soapAction="http://tempuri.org/IDanhMucService/XoaListPhanHeGDTheoID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LayPhanHe">
+      <soap:operation soapAction="http://tempuri.org/IDanhMucService/LayPhanHe" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LuuPhanHe">
+      <soap:operation soapAction="http://tempuri.org/IDanhMucService/LuuPhanHe" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SuaThongTinPhanHe">
+      <soap:operation soapAction="http://tempuri.org/IDanhMucService/SuaThongTinPhanHe" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetThongTinPhanHe">
+      <soap:operation soapAction="http://tempuri.org/IDanhMucService/GetThongTinPhanHe" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="XoaListPhanHeTheoID">
+      <soap:operation soapAction="http://tempuri.org/IDanhMucService/XoaListPhanHeTheoID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LuuTinhTP">
+      <soap:operation soapAction="http://tempuri.org/IDanhMucService/LuuTinhTP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SuaThongTinTinhTP">
+      <soap:operation soapAction="http://tempuri.org/IDanhMucService/SuaThongTinTinhTP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetThongTinTinhTP">
+      <soap:operation soapAction="http://tempuri.org/IDanhMucService/GetThongTinTinhTP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="XoaListTinhTPTheoID">
+      <soap:operation soapAction="http://tempuri.org/IDanhMucService/XoaListTinhTPTheoID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LuuTinhTP01">
+      <soap:operation soapAction="http://tempuri.org/IDanhMucService/LuuTinhTP01" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SuaThongTinTinhTP01">
+      <soap:operation soapAction="http://tempuri.org/IDanhMucService/SuaThongTinTinhTP01" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetThongTinTinhTP01">
+      <soap:operation soapAction="http://tempuri.org/IDanhMucService/GetThongTinTinhTP01" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="XoaListTinhTPTheoID01">
+      <soap:operation soapAction="http://tempuri.org/IDanhMucService/XoaListTinhTPTheoID01" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LuuVungMien">
+      <soap:operation soapAction="http://tempuri.org/IDanhMucService/LuuVungMien" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SuaThongTinVungMien">
+      <soap:operation soapAction="http://tempuri.org/IDanhMucService/SuaThongTinVungMien" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetThongTinVungMien">
+      <soap:operation soapAction="http://tempuri.org/IDanhMucService/GetThongTinVungMien" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="XoaListVungMienTheoID">
+      <soap:operation soapAction="http://tempuri.org/IDanhMucService/XoaListVungMienTheoID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTanSuatbyID">
+      <soap:operation soapAction="http://tempuri.org/IDanhMucService/GetTanSuatbyID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTanSuatbyMaDonVi">
+      <soap:operation soapAction="http://tempuri.org/IDanhMucService/GetTanSuatbyMaDonVi" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTanSuatbyIdCum">
+      <soap:operation soapAction="http://tempuri.org/IDanhMucService/GetTanSuatbyIdCum" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LuuTanSuat">
+      <soap:operation soapAction="http://tempuri.org/IDanhMucService/LuuTanSuat" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SuaThongTinTanSuat">
+      <soap:operation soapAction="http://tempuri.org/IDanhMucService/SuaThongTinTanSuat" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetThongTinTanSuat">
+      <soap:operation soapAction="http://tempuri.org/IDanhMucService/GetThongTinTanSuat" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CapNhatTanSuat">
+      <soap:operation soapAction="http://tempuri.org/IDanhMucService/CapNhatTanSuat" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="XoaListTanSuatTheoID">
+      <soap:operation soapAction="http://tempuri.org/IDanhMucService/XoaListTanSuatTheoID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DuyetTanSuat">
+      <soap:operation soapAction="http://tempuri.org/IDanhMucService/DuyetTanSuat" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ThoaiDuyetTanSuat">
+      <soap:operation soapAction="http://tempuri.org/IDanhMucService/ThoaiDuyetTanSuat" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TuChoiTanSuat">
+      <soap:operation soapAction="http://tempuri.org/IDanhMucService/TuChoiTanSuat" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ToChucTinDung">
+      <soap:operation soapAction="http://tempuri.org/IDanhMucService/ToChucTinDung" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DanhMucService">
+    <wsdl:port name="DanhMucEndpoint" binding="tns:DanhMucEndpoint">
+      <soap:address location="http://localhost:1001/DanhMucService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

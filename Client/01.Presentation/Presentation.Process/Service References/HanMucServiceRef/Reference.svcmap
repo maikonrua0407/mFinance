@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="76880c07-347c-41d3-a6f1-220eab1efe77" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:1001/HanMucService.svc/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="8508bd2c-b567-48bf-a8c8-2791360a4814" SourceId="1" SourceUrl="http://localhost:1001/HanMucService.svc/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="50effd8b-2fb6-4981-8bd2-ecd749525c23" SourceId="1" SourceUrl="http://localhost:1001/HanMucService.svc/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="00f27810-50d9-4e05-96a1-14e962a43155" SourceId="1" SourceUrl="http://localhost:1001/HanMucService.svc/mex" />
+    <MetadataFile FileName="CommunicationServices.HanMuc.Message.xsd" MetadataType="Schema" ID="a7b08176-4302-495b-806b-3dc5f51c67b5" SourceId="1" SourceUrl="http://localhost:1001/HanMucService.svc/mex" />
+    <MetadataFile FileName="CommunicationMessages.Base.MessageBases.xsd" MetadataType="Schema" ID="7ba778af-bffa-4f25-8036-da839e96450f" SourceId="1" SourceUrl="http://localhost:1001/HanMucService.svc/mex" />
+    <MetadataFile FileName="Utilities.Common.xsd" MetadataType="Schema" ID="7e65acf7-99e8-40b0-881b-cc42672286fe" SourceId="1" SourceUrl="http://localhost:1001/HanMucService.svc/mex" />
+    <MetadataFile FileName="DataModel.EntityFramework.xsd" MetadataType="Schema" ID="97940de7-871f-40e2-9d9b-967c3bdf1923" SourceId="1" SourceUrl="http://localhost:1001/HanMucService.svc/mex" />
+    <MetadataFile FileName="BusinessServices.HanMuc.DTO.xsd" MetadataType="Schema" ID="9e535b3f-20b3-4cb2-88fb-ac470571bc83" SourceId="1" SourceUrl="http://localhost:1001/HanMucService.svc/mex" />
+    <MetadataFile FileName="service2.xsd" MetadataType="Schema" ID="6e15a10e-80e1-42ae-823a-ab1b01216848" SourceId="1" SourceUrl="http://localhost:1001/HanMucService.svc/mex" />
+    <MetadataFile FileName="Arrays.xsd" MetadataType="Schema" ID="77401fdf-2055-42b5-a0dd-9063bce66a00" SourceId="1" SourceUrl="http://localhost:1001/HanMucService.svc/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

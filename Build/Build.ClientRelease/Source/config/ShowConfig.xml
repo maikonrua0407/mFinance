@@ -1,0 +1,4066 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<root>
+  <form Name="PresentationWPF.DanhMuc.DiaBan.ucDiaBanCT">
+    <case Name="MANAGE">
+      <control Name="cmbQuanHuyen">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="txtTenTat">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="txtMa">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="txtTen">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="cmbTinhTP">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="cmbLoaiDB">
+        <property Name="IsEnabled">1</property>
+      </control>
+    </case>
+    <case Name="XEM">
+      <control Name="txtTenTat">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="cmbQuanHuyen">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="txtMa">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="txtTen">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="cmbTinhTP">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="cmbLoaiDB">
+        <property Name="IsEnabled">0</property>
+      </control>
+    </case>
+  </form>
+  <form Name="PresentationWPF.DanhMuc.DungChung.ucDanhMucDS">
+    <case Name="SETVALUE">
+      <control Name="grLoai">
+        <property Name="Visibility">0</property>
+      </control>
+    </case>
+    <case Name="MANAGE">
+      <control Name="grLoai">
+        <property Name="Visibility">1</property>
+      </control>
+    </case>
+  </form>
+  <form Name="PresentationWPF.DanhMuc.Nhom.ucNhomCT">
+    <case Name="">
+      <control Name="btnNhomTruong">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="lblNhomTruong">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="txtNhomTruong">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="lblTenNhomTruong">
+        <property Name="Visibility">0</property>
+      </control>
+    </case>
+  </form>
+  <form Name="PresentationWPF.DanhMuc.PhanHeGiaoDich.ucPhanHeGDDS">
+    <case Name="MANAGE">
+      <control Name="grLoai">
+        <property Name="Visibility">1</property>
+      </control>
+    </case>
+    <case Name="SETVALUE">
+      <control Name="grLoai">
+        <property Name="Visibility">0</property>
+      </control>
+    </case>
+  </form>
+  <form Name="PresentationWPF.DanhMuc.TinhTP.ucTinhTPCT">
+    <case Name="MANAGE">
+      <control Name="txtMaTinh">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="cmbVung">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="cmbMien">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="txtTenDayDu">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="txtTenTat">
+        <property Name="IsEnabled">1</property>
+      </control>
+    </case>
+    <case Name="XEM">
+      <control Name="txtMaTinh">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="txtTenTat">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="txtTenDayDu">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="cmbMien">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="cmbVung">
+        <property Name="IsEnabled">0</property>
+      </control>
+    </case>
+  </form>
+  <form Name="PresentationWPF.HoaDonTienKy.HoaDon.ucThuGocLaiVay">
+    <case Name="">
+      <control Name="cmbCanBoThuTien">
+        <property Name="IsEnabled">1</property>
+      </control>
+    </case>
+  </form>
+  <form Name="PresentationWPF.HuyDongVon.MoSo.ucTienGuiCoKyHanCT">
+    <case Name="Loai1.1">
+      <control Name="tbiHanMucThauChi">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="txtTenTaiKhoan">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="raddtNgayDaoHan">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="gridKyHan">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="lblStarSoTien">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="lblSoKheUoc">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="lblStarSoKheUoc">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="btnSoKU">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="numSoDuGoc">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="txtSoTienGuiMoiKy">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiDCSH">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="txtSoKU">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiLapLichTraLai">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="stackTenTK">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="lblStarSoTGui">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="raddtNgayADKU">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiTraGop">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiLichSuLaiSuat">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="dtpNgayDHan">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="numSoTien">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="lblStarKyHan">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="lblSoTGuiKy">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="lblNgayADKU">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiChiThiDaoHan">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiLichSuGD">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="lblSoDuGoc">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiSoDuTienLai">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="lblEmty1">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="txtSoSoTG">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="tbiThongTinChung">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="tbiKiemSoat">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="lblSoTienCK">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="txtGD_TKhoan_KH">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="lblGD_TKhoan_NoiBo">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="lblSoTienBangTM">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="lblTaiKhoanKH">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="lblGD_TKhoan_KH">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="txtGD_TKhoan_NoiBo">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="lblEmtyCBQL">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="btnGD_TKhoan_KH">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="lblEmtyGDTKKhachHang">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="tlbPreviewXemCT">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="lblTaiKhoanNB">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="numGDTienMat">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="numGDTienCKhoan">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="btnGD_TKhoan_NoiBo">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="lblEmtyGDHinhThuc">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="lblEmtyGDTienMat">
+        <property Name="Visibility">1</property>
+      </control>
+    </case>
+    <case Name="Loai1.2">
+      <control Name="tbiHanMucThauChi">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiTraGop">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiLichSuLaiSuat">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiLichSuGD">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="raddtNgayDaoHan">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="dtpNgayDHan">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="lblStarKyHan">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="lblSoKheUoc">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="lblStarSoKheUoc">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="btnSoKU">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiDCSH">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="tbiKiemSoat">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="txtSoKU">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="txtSoTienGuiMoiKy">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="raddtNgayADKU">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="lblEmty1">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="numSoTien">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="numSoDuGoc">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiSoDuTienLai">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiLapLichTraLai">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="txtTenTaiKhoan">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="gridKyHan">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="lblStarSoTien">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="lblSoTGuiKy">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="lblNgayADKU">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiThongTinChung">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="tbiChiThiDaoHan">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="stackTenTK">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="lblSoDuGoc">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="lblEmtyCBQL">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="tlbPreviewXemCT">
+        <property Name="Visibility">1</property>
+      </control>
+    </case>
+    <case Name="Loai1.3">
+      <control Name="numSoTien">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="lblSoKheUoc">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="lblStarSoKheUoc">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="btnSoKU">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="lblTLai_DaTra">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="numDCLuyKe">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="lblEmty1">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="numSoDuGoc">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="raddtNgayADKU">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="grbPhanBo">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiSoDuTienLai">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="tbiLichSuLaiSuat">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="lblSoDuGoc">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="lblNgayADKU">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiTraGop">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiLichSuGD">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="raddtNgayDaoHan">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="gridKyHan">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="numLaiDaTra">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiThongTinChung">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="tbiChiThiDaoHan">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiDCSH">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="tbiKiemSoat">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="stackTenTK">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="txtTenTaiKhoan">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="dtpNgayDHan">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="grbLaiNhapGoc">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="lblTienLai2">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiHanMucThauChi">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="lblStarKyHan">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="txtSoTienGuiMoiKy">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="lblSoTGuiKy">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiLapLichTraLai">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="lblStarSoTien">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="txtSoKU">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="lblTienLai1">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="lblTLai_DCLuyKe">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tlbPreviewXemCT">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="lblEmtyCBQL">
+        <property Name="Visibility">1</property>
+      </control>
+    </case>
+    <case Name="Loai2.1">
+      <control Name="tbiKiemSoat">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="raddtNgayDaoHan">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="lblSoTGuiKy">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="lblEmty1">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="lblStarSoTien">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="raddtNgayADKU">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiSoDuTienLai">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="lblSoKheUoc">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiThongTinChung">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="txtSoSoTG">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="numSoTien">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="numSoDuGoc">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiHanMucThauChi">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiLapLichTraLai">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiTraGop">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiLichSuLaiSuat">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="lblStarSoTGui">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="gridKyHan">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="lblNgayADKU">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiDCSH">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="tbiLichSuGD">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="stackTenTK">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="lblSoDuGoc">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiChiThiDaoHan">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="txtTenTaiKhoan">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="dtpNgayDHan">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="lblStarKyHan">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="txtSoKU">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="txtSoTienGuiMoiKy">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="lblGD_TKhoan_KH">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="lblGD_TKhoan_NoiBo">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="lblTaiKhoanKH">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="lblTaiKhoanNB">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="lblEmtyGDHinhThuc">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="tlbPreviewXemCT">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="numGDTienCKhoan">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="txtGD_TKhoan_KH">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="lblSoTienCK">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="lblEmtyGDTienMat">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="numGDTienMat">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="txtGD_TKhoan_NoiBo">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="lblEmtyGDTKKhachHang">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="lblSoTienBangTM">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="btnGD_TKhoan_KH">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="btnGD_TKhoan_NoiBo">
+        <property Name="Visibility">1</property>
+      </control>
+    </case>
+    <case Name="Loai2.2">
+      <control Name="raddtNgayADKU">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="lblEmty1">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="gridKyHan">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="lblSoTGuiKy">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiDCSH">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="lblStarKyHan">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="numSoDuGoc">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiSoDuTienLai">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiLichSuGD">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="dtpNgayDHan">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="raddtNgayDaoHan">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="tbiThongTinChung">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="tbiLapLichTraLai">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiTraGop">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="lblStarSoTien">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="lblSoDuGoc">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="lblNgayADKU">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiChiThiDaoHan">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="stackTenTK">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="lblSoKheUoc">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="txtSoKU">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="txtSoTienGuiMoiKy">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiHanMucThauChi">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiLichSuLaiSuat">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiKiemSoat">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="txtTenTaiKhoan">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="numSoTien">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="lblGD_TKhoan_NoiBo">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="lblSoTienCK">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="btnGD_TKhoan_KH">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="lblTaiKhoanNB">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="lblEmtyGDHinhThuc">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="numGDTienMat">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="txtGD_TKhoan_KH">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="lblSoTienBangTM">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="lblTaiKhoanKH">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="txtGD_TKhoan_NoiBo">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="lblEmtyGDTienMat">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="tlbPreviewXemCT">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="numGDTienCKhoan">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="lblGD_TKhoan_KH">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="btnGD_TKhoan_NoiBo">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="lblEmtyGDTKKhachHang">
+        <property Name="Visibility">1</property>
+      </control>
+    </case>
+    <case Name="Loai2.3">
+      <control Name="tbiDCSH">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="dtpNgayDHan">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="lblSoDuGoc">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="numDCLuyKe">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiThongTinChung">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="tbiSoDuTienLai">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="lblEmty1">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="gridKyHan">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="numSoTien">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="numSoDuGoc">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="grbPhanBo">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiLapLichTraLai">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiLichSuGD">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="txtSoKU">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="lblTienLai1">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="txtTenTaiKhoan">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="raddtNgayDaoHan">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="tbiHanMucThauChi">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiKiemSoat">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="lblNgayADKU">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="grbLaiNhapGoc">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="stackTenTK">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="lblSoKheUoc">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="raddtNgayADKU">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="numLaiDaTra">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="lblTLai_DCLuyKe">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiChiThiDaoHan">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiTraGop">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="lblStarKyHan">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="txtSoTienGuiMoiKy">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiLichSuLaiSuat">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="lblStarSoTien">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="lblSoTGuiKy">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="lblTLai_DaTra">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="lblTienLai2">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="numGDTienCKhoan">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="lblGD_TKhoan_KH">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="tlbPreviewXemCT">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="lblSoTienCK">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="lblTaiKhoanNB">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="numGDTienMat">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="txtGD_TKhoan_NoiBo">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="btnGD_TKhoan_NoiBo">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="lblSoTienBangTM">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="btnGD_TKhoan_KH">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="lblEmtyGDHinhThuc">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="lblGD_TKhoan_NoiBo">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="lblTaiKhoanKH">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="lblEmtyGDTKKhachHang">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="txtGD_TKhoan_KH">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="lblEmtyGDTienMat">
+        <property Name="Visibility">1</property>
+      </control>
+    </case>
+    <case Name="Loai3.1">
+      <control Name="lblSoDuGoc">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiThongTinChung">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="tbiSoDuTienLai">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiChiThiDaoHan">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="tbiTraGop">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="lblEmty1">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="numSoDuGoc">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiKiemSoat">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="stackTenTK">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="txtSoKU">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiDCSH">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="lblSoKheUoc">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiLichSuGD">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="txtSoTienGuiMoiKy">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiHanMucThauChi">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiLichSuLaiSuat">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="txtTenTaiKhoan">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="lblNgayADKU">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="raddtNgayADKU">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="lblSoTGuiKy">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiLapLichTraLai">
+        <property Name="Visibility">0</property>
+      </control>
+    </case>
+    <case Name="Loai3.2">
+      <control Name="tbiKiemSoat">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="txtSoTienGuiMoiKy">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="lblNgayADKU">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="raddtNgayADKU">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiSoDuTienLai">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiTraGop">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="lblSoTGuiKy">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiChiThiDaoHan">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="tbiLapLichTraLai">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiLichSuLaiSuat">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiLichSuGD">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiDCSH">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="lblEmty1">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="lblSoDuGoc">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiHanMucThauChi">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="numSoDuGoc">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiThongTinChung">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="stackTenTK">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="txtSoKU">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="txtTenTaiKhoan">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="lblSoKheUoc">
+        <property Name="Visibility">0</property>
+      </control>
+    </case>
+    <case Name="Loai3.3">
+      <control Name="tbiHanMucThauChi">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="lblSoKheUoc">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiDCSH">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="raddtTLai_NgayKyMoi">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="txtSoTienGuiMoiKy">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="lblTienLai3">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiThongTinChung">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="tbiLapLichTraLai">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiKiemSoat">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="stackTenTK">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="lblNgayADKU">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="lblTLai_NgayKyMoi">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiLichSuLaiSuat">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="lblSoTGuiKy">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="lblEmty1">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="numSoDuGoc">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="raddtNgayADKU">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiSoDuTienLai">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="tbiTraGop">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="txtSoKU">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiChiThiDaoHan">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="tbiLichSuGD">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="txtTenTaiKhoan">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="lblSoDuGoc">
+        <property Name="Visibility">0</property>
+      </control>
+    </case>
+    <case Name="Loai4.1">
+      <control Name="tbiDCSH">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="txtSoKU">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="lblStarKyHan">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="lblSoKheUoc">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiHanMucThauChi">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="tbiTraGop">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiKiemSoat">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="gridKyHan">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="numSoTien">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="txtSoTienGuiMoiKy">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiThongTinChung">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="tbiChiThiDaoHan">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="raddtNgayDaoHan">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="lblStarSoTien">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="lblNgayADKU">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="raddtNgayADKU">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="dtpNgayDHan">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="lblSoTGuiKy">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiLapLichTraLai">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="numSoDuGoc">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiLichSuLaiSuat">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiLichSuGD">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="lblSoDuGoc">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiSoDuTienLai">
+        <property Name="Visibility">0</property>
+      </control>
+    </case>
+    <case Name="Loai4.2">
+      <control Name="tbiThongTinChung">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="tbiSoDuTienLai">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiKiemSoat">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="lblStarKyHan">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="txtSoTienGuiMoiKy">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="lblStarSoTien">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="raddtNgayKU">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="lblSoTGuiKy">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiLichSuGD">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="lblNgayLapKU">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiHanMucThauChi">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="numSoTien">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="dtpNgayDHan">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="btnSoKU">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiLichSuLaiSuat">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="gridKyHan">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="txtSoKU">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="raddtNgayADKU">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiChiThiDaoHan">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiTraGop">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="raddtNgayDaoHan">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="tbiDCSH">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="tbiLapLichTraLai">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="lblSoKheUoc">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="lblNgayADKU">
+        <property Name="Visibility">0</property>
+      </control>
+    </case>
+    <case Name="Loai4.3">
+      <control Name="tbiHanMucThauChi">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="tbiLichSuGD">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="lblSoTGuiKy">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiSoDuTienLai">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="gridKyHan">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="dtpNgayDHan">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="lblSoKheUoc">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="txtSoKU">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="btnSoKU">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="raddtNgayKU">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="txtSoTienGuiMoiKy">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="lblNgayADKU">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiLapLichTraLai">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="raddtNgayDaoHan">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="lblStarKyHan">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="lblTLai_DCLuyKe">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiChiThiDaoHan">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="lblNgayLapKU">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiThongTinChung">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="tbiKiemSoat">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="numLaiDaTra">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="lblTienLai2">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="numDCLuyKe">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiTraGop">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiLichSuLaiSuat">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="numSoTien">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="lblStarSoTien">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="raddtNgayADKU">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="grbPhanBo">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="grbLaiNhapGoc">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="lblTienLai1">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiDCSH">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="lblTLai_DaTra">
+        <property Name="Visibility">0</property>
+      </control>
+    </case>
+    <case Name="Loai5.1">
+      <control Name="tbiChiThiDaoHan">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="tbiLichSuLaiSuat">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiThongTinChung">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="stackTenTK">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiDCSH">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="txtSoKU">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="lblSoDuGoc">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="txtTenTaiKhoan">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="lblSoKheUoc">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="lblEmty1">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiSoDuTienLai">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiHanMucThauChi">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiLichSuGD">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiLapLichTraLai">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiTraGop">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="txtSoTienGuiMoiKy">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="lblNgayADKU">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiKiemSoat">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="numSoDuGoc">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="lblSoTGuiKy">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="raddtNgayADKU">
+        <property Name="Visibility">0</property>
+      </control>
+    </case>
+    <case Name="Loai5.2">
+      <control Name="tbiHanMucThauChi">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="numSoDuGoc">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="lblSoTGuiKy">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiSoDuTienLai">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="lblEmty1">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="txtTenTaiKhoan">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="txtSoKU">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiDCSH">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="stackTenTK">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiChiThiDaoHan">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="tbiTraGop">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="lblSoKheUoc">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="lblSoDuGoc">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiThongTinChung">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="tbiLichSuLaiSuat">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiKiemSoat">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="txtSoTienGuiMoiKy">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="lblNgayADKU">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiLapLichTraLai">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiLichSuGD">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="raddtNgayADKU">
+        <property Name="Visibility">0</property>
+      </control>
+    </case>
+    <case Name="Loai5.3">
+      <control Name="tbiThongTinChung">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="tbiDCSH">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="tbiTraGop">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="raddtNgayADKU">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiLichSuLaiSuat">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="txtTenTaiKhoan">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="txtSoKU">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="numSoDuGoc">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="lblSoTGuiKy">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="lblTienLai3">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="lblTLai_NgayKyMoi">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiHanMucThauChi">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="stackTenTK">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="txtSoTienGuiMoiKy">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="lblNgayADKU">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="raddtTLai_NgayKyMoi">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiSoDuTienLai">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="tbiLapLichTraLai">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="lblSoKheUoc">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="lblSoDuGoc">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="lblEmty1">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiKiemSoat">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="tbiChiThiDaoHan">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="tbiLichSuGD">
+        <property Name="Visibility">1</property>
+      </control>
+    </case>
+  </form>
+  <form Name="PresentationWPF.KeToan.DieuChinh.ucDieuChinhCT">
+    <case Name="">
+      <control Name="radGhiAm">
+        <property Name="Visibility">0</property>
+      </control>
+    </case>
+  </form>
+  <form Name="PresentationWPF.LaiSuat.LaiSuat.ucLaiSuatCT">
+    <case Name="XEM">
+      <control Name="txtTenLS">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="tlbDeleteLSBacThang">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="cmbPhanHe">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="txtNguoiLap">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="raddtNgayHetHL">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="cmbLSLoaiBacThang">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="cmbKHDonViTinh">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="txtTrangThaiBanGhi">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="cmbLSLoai">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="radnumLaiSuat">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="txtNguoiCapNhat">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="txtMaLS">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="dtpNgayHL">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="cmbLoaiTien">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="txtNgayCapNhat">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="raddtNgayHL">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="dtpNgayHetHL">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="cmbLSDonViTinh">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="raddgrLSBacThangDS">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="txtNgayLap">
+        <property Name="IsEnabled">0</property>
+      </control>
+    </case>
+    <case Name="MANAGE">
+      <control Name="txtTenLS">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="txtNguoiLap">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="txtNguoiCapNhat">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="raddtNgayHetHL">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="cmbLSLoaiBacThang">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="dtpNgayHL">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="cmbPhanHe">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="cmbLoaiTien">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="txtTrangThaiBanGhi">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="cmbLSDonViTinh">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="txtMaLS">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="tlbDeleteLSBacThang">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="txtNgayCapNhat">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="cmbKHDonViTinh">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="raddgrLSBacThangDS">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="txtNgayLap">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="raddtNgayHL">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="dtpNgayHetHL">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="cmbLSLoai">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="radnumLaiSuat">
+        <property Name="IsEnabled">1</property>
+      </control>
+    </case>
+  </form>
+  <form Name="PresentationWPF.Phi.Phi.ucPhiCT">
+    <case Name="XEM">
+      <control Name="txtTenPhi">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="cmbPhiTheo">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="radnumPhiToiDa">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="tlbDeleteLSBacThang">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="txtSoTaiKhoanPhi">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="btnMaLoaiGD">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="txtNgayLap">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="dtpNgayHL">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="radnumTyLeVAT">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="radnumSoTienPhi">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="txtSoTaiKhoanVATPhi">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="btnSoTaiKhoanHoaHong">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="btnSoTaiKhoanVATHoaHong">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="txtNgayCapNhat">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="raddtNgayHetHL">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="dtpNgayHetHL">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="radnumTyLePhi">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="radnumPhiToiThieu">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="cmbLoaiPhi">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="tlbAddLSBacThang">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="raddgrLSBacThangDS">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="btnSoTaiKhoanPhi">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="txtMaLoaiGD">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="txtTrangThaiBanGhi">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="btnSoTaiKhoanVATPhi">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="txtSoTaiKhoanHoaHong">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="txtSoTaiKhoanVATHoaHong">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="txtNguoiLap">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="txtNguoiCapNhat">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="txtMaPhi">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="cmbLoaiTien">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="cmbLoai">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="raddtNgayHL">
+        <property Name="IsEnabled">0</property>
+      </control>
+    </case>
+    <case Name="MANAGE">
+      <control Name="txtTenPhi">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="dtpNgayHetHL">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="cmbLoaiTien">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="btnSoTaiKhoanPhi">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="btnSoTaiKhoanVATPhi">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="btnSoTaiKhoanVATHoaHong">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="btnMaLoaiGD">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="txtNgayLap">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="radnumTyLePhi">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="btnSoTaiKhoanHoaHong">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="txtNguoiLap">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="txtNguoiCapNhat">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="dtpNgayHL">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="cmbLoaiPhi">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="cmbPhiTheo">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="tlbAddLSBacThang">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="raddgrLSBacThangDS">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="txtTrangThaiBanGhi">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="radnumSoTienPhi">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="tlbDeleteLSBacThang">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="txtSoTaiKhoanPhi">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="txtSoTaiKhoanVATPhi">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="txtSoTaiKhoanHoaHong">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="txtSoTaiKhoanVATHoaHong">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="txtMaLoaiGD">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="txtMaPhi">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="raddtNgayHetHL">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="radnumPhiToiThieu">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="txtNgayCapNhat">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="cmbLoai">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="radnumPhiToiDa">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="raddtNgayHL">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="radnumTyLeVAT">
+        <property Name="IsEnabled">1</property>
+      </control>
+    </case>
+  </form>
+  <form Name="PresentationWPF.QuanTriHeThong.NhomNSD.ucNhomNSDCT">
+    <case Name="MANAGE">
+      <control Name="grdTruyCap">
+        <property Name="IsEnabled">1</property>
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="txtMoTa">
+        <property Name="IsEnabled">1</property>
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="chkHoatDong">
+        <property Name="IsEnabled">1</property>
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="txtTenNhom">
+        <property Name="IsEnabled">1</property>
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="txtMaNhom">
+        <property Name="IsEnabled">1</property>
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="btnAddTruyCap">
+        <property Name="IsEnabled">1</property>
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="btnXoa">
+        <property Name="IsEnabled">1</property>
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="btnDeleteTruyCap">
+        <property Name="IsEnabled">1</property>
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="cmbDonVi">
+        <property Name="IsEnabled">1</property>
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="btnThem">
+        <property Name="IsEnabled">1</property>
+        <property Name="IsEnabled">1</property>
+      </control>
+    </case>
+    <case Name="SUA">
+      <control Name="btnThem">
+        <property Name="IsEnabled">1</property>
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="txtTenNhom">
+        <property Name="IsEnabled">1</property>
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="btnDeleteTruyCap">
+        <property Name="IsEnabled">1</property>
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="btnXoa">
+        <property Name="IsEnabled">1</property>
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="cmbDonVi">
+        <property Name="IsEnabled">0</property>
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="txtMoTa">
+        <property Name="IsEnabled">1</property>
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="chkHoatDong">
+        <property Name="IsEnabled">1</property>
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="txtMaNhom">
+        <property Name="IsEnabled">0</property>
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="grdTruyCap">
+        <property Name="IsEnabled">1</property>
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="btnAddTruyCap">
+        <property Name="IsEnabled">1</property>
+        <property Name="IsEnabled">1</property>
+      </control>
+    </case>
+    <case Name="XEM">
+      <control Name="txtMaNhom">
+        <property Name="IsEnabled">0</property>
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="btnAddTruyCap">
+        <property Name="IsEnabled">0</property>
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="txtTenNhom">
+        <property Name="IsEnabled">0</property>
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="btnThem">
+        <property Name="IsEnabled">0</property>
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="grdTruyCap">
+        <property Name="IsEnabled">0</property>
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="cmbDonVi">
+        <property Name="IsEnabled">0</property>
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="txtMoTa">
+        <property Name="IsEnabled">0</property>
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="btnDeleteTruyCap">
+        <property Name="IsEnabled">0</property>
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="btnXoa">
+        <property Name="IsEnabled">0</property>
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="chkHoatDong">
+        <property Name="IsEnabled">0</property>
+        <property Name="IsEnabled">0</property>
+      </control>
+    </case>
+  </form>
+  <form Name="PresentationWPF.QuanTriHeThong.NhomNSD.ucNSDCT">
+    <case Name="MANAGE">
+      <control Name="dtpNgayHieuLuc">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="btnAddPhongGD">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="spnMatKhau">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="lblMatKhau">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="pwbMatKhau">
+        <property Name="Visibility">1</property>
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="btnAddTruyCap">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="cmbPhanCap">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="txtTenGoi">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="raddtNgayHieuLuc">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="btnAdd">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="btnDelete">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="btnDeletePhongGD">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="tlbModify">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="tlbSave">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="cbMultiAdd">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="chkHoatDong">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="grdTruyCap">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="btnDeleteTruyCap">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="txtTenDangNhap">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="raddtNgayHetHan">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="txtNguoiLap">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="txtDienThoai">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="raddtNgayNhap">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="txtNguoiCapNhat">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="raddtNgayCNhat">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="tlbDelete">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="dtpNgaySinh">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="dtpNgayHetHan">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="txtEmail">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="raddtNgaySinh">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="telnumDoiMatKhau">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="txtTenDem">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="cmbGioiTinh">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="cmbDoiMatKhau">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="pwbNhapLaiMatKhau">
+        <property Name="IsEnabled">1</property>
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="chkMatKhauKhongHetHan">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="lblMatKhauReq">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="lblNhapLaiMatKhau">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="cmbDonVi">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="cmbTinhTrang">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="chkYeuCauDoiMatKhau">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="txtTrangThai">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="spnNhapLaiMatKhau">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="lblNhapLaiMatKhauReq">
+        <property Name="Visibility">1</property>
+      </control>
+    </case>
+    <case Name="PROFILE">
+      <control Name="cmbTinhTrang">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="raddtNgayHieuLuc">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="btnDelete">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="btnAddPhongGD">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="tlbDelete">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="cmbPhanCap">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="txtTenGoi">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="cmbGioiTinh">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="raddtNgayNhap">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="txtNguoiLap">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="txtNguoiCapNhat">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="tlbSave">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="cbMultiAdd">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="spnMatKhau">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="txtTenDem">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="raddtNgaySinh">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="chkMatKhauKhongHetHan">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="chkYeuCauDoiMatKhau">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="txtTrangThai">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="raddtNgayCNhat">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="btnAdd">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="lblMatKhau">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="lblMatKhauReq">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="pwbMatKhau">
+        <property Name="Visibility">0</property>
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="btnDeleteTruyCap">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="dtpNgaySinh">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="btnDeletePhongGD">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="txtDienThoai">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="telnumDoiMatKhau">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="cmbDoiMatKhau">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="pwbNhapLaiMatKhau">
+        <property Name="Visibility">0</property>
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="cmbDonVi">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="txtEmail">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="chkHoatDong">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="grdTruyCap">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="btnAddTruyCap">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="txtTenDangNhap">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="dtpNgayHieuLuc">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="tlbModify">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="lblNhapLaiMatKhauReq">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="raddtNgayHetHan">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="dtpNgayHetHan">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="spnNhapLaiMatKhau">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="lblNhapLaiMatKhau">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiHanCheTruyCap">
+        <property Name="Visibility">1</property>
+      </control>
+    </case>
+    <case Name="SUA">
+      <control Name="txtEmail">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="txtDienThoai">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="txtTrangThai">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="tlbSave">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="cbMultiAdd">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="pwbMatKhau">
+        <property Name="Visibility">0</property>
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="btnAddTruyCap">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="txtTenDangNhap">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="raddtNgayHieuLuc">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="dtpNgayHieuLuc">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="chkMatKhauKhongHetHan">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="tlbModify">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="lblNhapLaiMatKhauReq">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="chkHoatDong">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="txtTenDem">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="raddtNgaySinh">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="telnumDoiMatKhau">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="cmbTinhTrang">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="txtNguoiLap">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="btnDelete">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="btnDeletePhongGD">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="raddtNgayHetHan">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="raddtNgayNhap">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="tlbDelete">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="spnMatKhau">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="lblMatKhauReq">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="grdTruyCap">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="cmbDonVi">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="pwbNhapLaiMatKhau">
+        <property Name="IsEnabled">0</property>
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="chkYeuCauDoiMatKhau">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="raddtNgayCNhat">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="spnNhapLaiMatKhau">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="lblNhapLaiMatKhau">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="btnDeleteTruyCap">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="cmbPhanCap">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="dtpNgaySinh">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="dtpNgayHetHan">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="cmbDoiMatKhau">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="btnAddPhongGD">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="lblMatKhau">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="txtTenGoi">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="cmbGioiTinh">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="txtNguoiCapNhat">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="btnAdd">
+        <property Name="IsEnabled">1</property>
+      </control>
+    </case>
+    <case Name="XEM">
+      <control Name="txtTenDem">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="raddtNgayHetHan">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="txtNguoiLap">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="btnAddTruyCap">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="cmbPhanCap">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="cmbDoiMatKhau">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="chkYeuCauDoiMatKhau">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="raddtNgayCNhat">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="btnDelete">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="chkHoatDong">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="raddtNgayHieuLuc">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="lblMatKhau">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="pwbMatKhau">
+        <property Name="Visibility">0</property>
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="cmbGioiTinh">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="dtpNgayHetHan">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="pwbNhapLaiMatKhau">
+        <property Name="IsEnabled">0</property>
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="cbMultiAdd">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="spnNhapLaiMatKhau">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="lblNhapLaiMatKhauReq">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="txtDienThoai">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="chkMatKhauKhongHetHan">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="raddtNgayNhap">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="txtNguoiCapNhat">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="btnDeletePhongGD">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="btnDeleteTruyCap">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="txtTenGoi">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="raddtNgaySinh">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="dtpNgaySinh">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="telnumDoiMatKhau">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="txtTrangThai">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="btnAdd">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="btnAddPhongGD">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="grdTruyCap">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="cmbDonVi">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="txtEmail">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="dtpNgayHieuLuc">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="spnMatKhau">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="lblMatKhauReq">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="txtTenDangNhap">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="cmbTinhTrang">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="lblNhapLaiMatKhau">
+        <property Name="Visibility">0</property>
+      </control>
+    </case>
+  </form>
+  <form Name="PresentationWPF.QuanTriHeThong.NhomNSD.ucNSDCT01">
+    <case Name="MANAGE">
+      <control Name="cmbPhanCap">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="txtEmail">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="pwbNhapLaiMatKhau">
+        <property Name="IsEnabled">1</property>
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="txtTenDangNhap">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="txtNhanVien">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="txtTenDem">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="lblNhapLaiMatKhauReq">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="chkLayThongTin">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="btnNhanVien">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="cmbTinhTrang">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="raddtNgayHieuLuc">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="pwbMatKhau">
+        <property Name="IsEnabled">1</property>
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="chkMatKhauKhongHetHan">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="spnNhapLaiMatKhau">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="lblNhapLaiMatKhau">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="txtTenGoi">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="dtpNgayHetHan">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="telnumDoiMatKhau">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="cmbDoiMatKhau">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="txtNguoiLap">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="lblMatKhauReq">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="chkHoatDong">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="grdTruyCap">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="btnAddTruyCap">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="btnDeleteTruyCap">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="cmbDonVi">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="cmbGioiTinh">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="dtpNgayHieuLuc">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="raddtNgayHetHan">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="raddtNgayCNhat">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="btnAdd">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="tlbSave">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="cbMultiAdd">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="dtpNgaySinh">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="chkYeuCauDoiMatKhau">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="txtTrangThai">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="raddtNgayNhap">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="btnDelete">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="btnAddPhongGD">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="btnDeletePhongGD">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="lblMatKhau">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="txtDienThoai">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="txtNguoiCapNhat">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="tlbModify">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="tlbDelete">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="raddtNgaySinh">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="spnMatKhau">
+        <property Name="Visibility">1</property>
+      </control>
+    </case>
+    <case Name="PROFILE">
+      <control Name="txtDienThoai">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="lblMatKhau">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="lblMatKhauReq">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="cmbDonVi">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="txtNhanVien">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="txtEmail">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="raddtNgaySinh">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="dtpNgayHieuLuc">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="pwbMatKhau">
+        <property Name="Visibility">0</property>
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="spnNhapLaiMatKhau">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="lblNhapLaiMatKhauReq">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="dtpNgaySinh">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="raddtNgayHieuLuc">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="raddtNgayHetHan">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="dtpNgayHetHan">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="lblNhapLaiMatKhau">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiHanCheTruyCap">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="chkLayThongTin">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="cmbTinhTrang">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="raddtNgayCNhat">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="cmbPhanCap">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="cmbGioiTinh">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="telnumDoiMatKhau">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="cmbDoiMatKhau">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="pwbNhapLaiMatKhau">
+        <property Name="IsEnabled">0</property>
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="txtNguoiLap">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="txtNguoiCapNhat">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="btnAdd">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="tlbDelete">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="cbMultiAdd">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="spnMatKhau">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="btnNhanVien">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="txtTenGoi">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="chkYeuCauDoiMatKhau">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="btnDelete">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="btnAddPhongGD">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="txtTenDangNhap">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="txtTenDem">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="chkMatKhauKhongHetHan">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="txtTrangThai">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="raddtNgayNhap">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="btnDeletePhongGD">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="tlbModify">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tlbSave">
+        <property Name="IsEnabled">1</property>
+      </control>
+    </case>
+    <case Name="SUA">
+      <control Name="txtNguoiCapNhat">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="btnAdd">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="tlbModify">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="tlbSave">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="pwbMatKhau">
+        <property Name="Visibility">0</property>
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="lblNhapLaiMatKhau">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="pwbNhapLaiMatKhau">
+        <property Name="Visibility">0</property>
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="dtpNgaySinh">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="chkYeuCauDoiMatKhau">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="raddtNgayNhap">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="btnAddTruyCap">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="txtNhanVien">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="raddtNgayHetHan">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="telnumDoiMatKhau">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="btnDelete">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="spnMatKhau">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="lblMatKhau">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="cmbPhanCap">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="txtDienThoai">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="raddtNgaySinh">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="raddtNgayHieuLuc">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="cmbDonVi">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="btnNhanVien">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="txtTenGoi">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="txtEmail">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="cmbTinhTrang">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="raddtNgayCNhat">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="btnDeletePhongGD">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="tlbDelete">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="cbMultiAdd">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="lblMatKhauReq">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="spnNhapLaiMatKhau">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="lblNhapLaiMatKhauReq">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="txtTenDangNhap">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="cmbGioiTinh">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="chkMatKhauKhongHetHan">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="txtTrangThai">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="txtNguoiLap">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="chkHoatDong">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="grdTruyCap">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="btnDeleteTruyCap">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="txtTenDem">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="dtpNgayHetHan">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="cmbDoiMatKhau">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="btnAddPhongGD">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="chkLayThongTin">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="dtpNgayHieuLuc">
+        <property Name="IsEnabled">1</property>
+      </control>
+    </case>
+    <case Name="XEM">
+      <control Name="dtpNgayHieuLuc">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="lblNhapLaiMatKhau">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="cmbPhanCap">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="txtDienThoai">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="dtpNgayHetHan">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="cmbDoiMatKhau">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="raddtNgayCNhat">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="cbMultiAdd">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="lblMatKhau">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="pwbNhapLaiMatKhau">
+        <property Name="Visibility">0</property>
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="grdTruyCap">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="btnDeleteTruyCap">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="cmbDonVi">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="cmbTinhTrang">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="chkYeuCauDoiMatKhau">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="raddtNgayNhap">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="txtNguoiCapNhat">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="btnAddPhongGD">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="lblMatKhauReq">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="txtNhanVien">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="txtTenDem">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="raddtNgaySinh">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="raddtNgayHieuLuc">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="cmbGioiTinh">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="raddtNgayHetHan">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="telnumDoiMatKhau">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="btnAdd">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="btnDeletePhongGD">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="spnMatKhau">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="spnNhapLaiMatKhau">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="lblNhapLaiMatKhauReq">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="chkHoatDong">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="btnNhanVien">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="txtEmail">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="pwbMatKhau">
+        <property Name="IsEnabled">0</property>
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="txtTenDangNhap">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="chkLayThongTin">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="txtTenGoi">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="dtpNgaySinh">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="chkMatKhauKhongHetHan">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="txtTrangThai">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="txtNguoiLap">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="btnDelete">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="btnAddTruyCap">
+        <property Name="IsEnabled">0</property>
+      </control>
+    </case>
+  </form>
+  <form Name="PresentationWPF.QuanTriHeThong.ThamSoHeThong.ucThamSoCT">
+    <case Name="XEM">
+      <control Name="spKieuControl">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="txtTenThamSo">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="txtGiaTriMacDinh">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="cmbHanhDong">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="spDSGiaTri">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="spGiaTri">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="cmbHienThiTren">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="cmbThuocPhanHe">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="spMaThamSo">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="spGiaTriMacDinh">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="lblLoaiThamSo">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="spTenThamSo">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="spHanhDong">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="spMoTa">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="txtMoTaThamSo">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="spLoaiThamSo">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="spPhanHe">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="txtMaThamSo">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="cmbKieuDuLieu">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="spGiaTriDS">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="txtGiaTri">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="txtMaLoaiThamSo">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="btnPopupLoaiThamSo">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="spKieuDL">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="spPhamVi">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="cmbPhamViAHuong">
+        <property Name="IsEnabled">0</property>
+      </control>
+    </case>
+    <case Name="SUA">
+      <control Name="spMaThamSo">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="spKieuDL">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="btnPopupLoaiThamSo">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="cmbThuocPhanHe">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="spDSGiaTri">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="txtGiaTriMacDinh">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="spLoaiThamSo">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="spTenThamSo">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="spPhamVi">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="lblLoaiThamSo">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="txtTenThamSo">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="cmbHienThiTren">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="txtGiaTri">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="spGiaTriMacDinh">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="spKieuControl">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="spGiaTriDS">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="txtMaLoaiThamSo">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="txtMaThamSo">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="cmbPhamViAHuong">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="spMoTa">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="spGiaTri">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="spPhanHe">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="spHanhDong">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="txtMoTaThamSo">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="cmbKieuDuLieu">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="cmbHanhDong">
+        <property Name="Visibility">0</property>
+      </control>
+    </case>
+    <case Name="MANAGE">
+      <control Name="spHanhDong">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="cmbKieuDuLieu">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="txtMaThamSo">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="txtGiaTri">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="spKieuDL">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="spPhamVi">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="btnPopupLoaiThamSo">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="lblLoaiThamSo">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="spMoTa">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="txtGiaTriMacDinh">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="cmbHanhDong">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="spGiaTri">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="txtMaLoaiThamSo">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="txtMoTaThamSo">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="spGiaTriDS">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="cmbPhamViAHuong">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="spMaThamSo">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="txtTenThamSo">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="spKieuControl">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="spPhanHe">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="cmbThuocPhanHe">
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="spLoaiThamSo">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="spTenThamSo">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="spGiaTriMacDinh">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="spDSGiaTri">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="cmbHienThiTren">
+        <property Name="IsEnabled">0</property>
+      </control>
+    </case>
+  </form>
+  <form Name="PresentationWPF.QuanTriHeThong.ThamSoHeThong.ucThamSoDS">
+    <case Name="MANAGE">
+      <control Name="tlbDelete">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="lbl2">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="expLoai">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tlbAdd">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="exdTimKiemNangCao">
+        <property Name="Visibility">0</property>
+      </control>
+    </case>
+    <case Name="SETVALUE">
+      <control Name="lbl2">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="exdTimKiemNangCao">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tlbAdd">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="expLoai">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tlbDelete">
+        <property Name="Visibility">0</property>
+      </control>
+    </case>
+  </form>
+  <form Name="PresentationWPF.QuanTriHeThong.ThamSoHeThong.ucThamSoValue">
+    <case Name="XEM">
+      <control Name="spGiaTriMacDinh">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="spHanhDong">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="cmbMaLoaiThamSo">
+        <property Name="Visibility">1</property>
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="txtTenThamSo">
+        <property Name="Visibility">1</property>
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="cmbThuocPhanHe">
+        <property Name="IsEnabled">0</property>
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="spLoaiThamSo">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="spPhanHe">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="spPhamVi">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="spGiaTri">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="cmbHanhDong">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="raddtNgayNhap">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="spMoTa">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="spKieuControl">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="txtMaThamSo">
+        <property Name="Visibility">1</property>
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="txtMoTaThamSo">
+        <property Name="Visibility">1</property>
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="txtGiaTriMacDinh">
+        <property Name="Visibility">1</property>
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="cmbKieuDuLieu">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="cmbHienThiTren">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="txtGiaTri">
+        <property Name="Visibility">1</property>
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="cmbPhamViAHuong">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="txtNguoiCapNhat">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="spKieuDL">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="txtTrangThai">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="spTenThamSo">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="spDSGiaTri">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="txtNguoiLap">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="raddtNgayCNhat">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="spMaThamSo">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="spGiaTriDS">
+        <property Name="Visibility">0</property>
+      </control>
+    </case>
+    <case Name="SUA">
+      <control Name="spLoaiThamSo">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="spMoTa">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="spPhanHe">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="txtMaThamSo">
+        <property Name="IsEnabled">0</property>
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="txtGiaTriMacDinh">
+        <property Name="Visibility">1</property>
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="raddtNgayNhap">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="txtNguoiCapNhat">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="spPhamVi">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="spHanhDong">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="spKieuDL">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="cmbMaLoaiThamSo">
+        <property Name="Visibility">1</property>
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="txtGiaTri">
+        <property Name="Visibility">1</property>
+        <property Name="IsEnabled">1</property>
+      </control>
+      <control Name="cmbThuocPhanHe">
+        <property Name="Visibility">1</property>
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="cmbPhamViAHuong">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="cmbHanhDong">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="spKieuControl">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="spGiaTri">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="txtTenThamSo">
+        <property Name="IsEnabled">0</property>
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="cmbHienThiTren">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="spTenThamSo">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="txtMoTaThamSo">
+        <property Name="IsEnabled">0</property>
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="txtNguoiLap">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="raddtNgayCNhat">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="spMaThamSo">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="txtTrangThai">
+        <property Name="IsEnabled">0</property>
+      </control>
+      <control Name="spGiaTriMacDinh">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="spDSGiaTri">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="cmbKieuDuLieu">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="spGiaTriDS">
+        <property Name="Visibility">0</property>
+      </control>
+    </case>
+  </form>
+  <form Name="PresentationWPF.HuyDongVon.DangKySanPham.ucDangKySanPhamCT">
+    <case Name="">
+      <control Name="tbiHachToan">
+        <property Name="Visibility">1</property>
+      </control>
+    </case>
+  </form>
+  <form Name="PresentationWPF.HuyDongVon.GiaoDichGuiThem.ucGuiThemTienGuiCT">
+    <case Name="">
+      <control Name="txtGD_TaiKhoanKH">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="lbl2">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="numGD_SoTienCK">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="lblGD_TaiKhoanKH">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="txtGD_TaiKhoanNB">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="btnGD_TaiKhoanNB">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="lblGD_TaiKhoanNB">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="lblEmtyGDTienMat">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="tlbPreview">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="lblSoTienBangTM">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="lblSoTienCK">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="lblTaiKhoanKH">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="numGD_SoTienTM">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="btnGD_TaiKhoanKH">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="lblTaiKhoanNB">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="lblEmtyGDHinhThuc">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="lblEmtyGDTKKhachHang">
+        <property Name="Visibility">1</property>
+      </control>
+    </case>
+  </form>
+  <form Name="PresentationWPF.HuyDongVon.GiaoDichGuiThem.ucGuiThemTienGuiDS">
+    <case Name="">
+      <control Name="tblPreview">
+        <property Name="Visibility">1</property>
+      </control>
+    </case>
+  </form>
+  <form Name="PresentationWPF.HuyDongVon.RutGoc.ucRutGocCT">
+    <case Name="">
+      <control Name="tlbPreview">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="grRutLai">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="lblTaiKhoanKH">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="btnGD_TaiKhoanKH">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="lblEmtyGDHinhThuc">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="lblSoTienCK">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="lbl2">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="lblSoTienBangTM">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="numGD_SoTienTM">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="numGD_SoTienCK">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="txtGD_TaiKhoanKH">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="lblGD_TaiKhoanKH">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="lblEmtyGDTienMat">
+        <property Name="Visibility">1</property>
+      </control>
+    </case>
+  </form>
+  <form Name="PresentationWPF.HuyDongVon.RutGoc.ucRutGocDS">
+    <case Name="">
+      <control Name="tblPreview">
+        <property Name="Visibility">1</property>
+      </control>
+    </case>
+  </form>
+  <form Name="PresentationWPF.HuyDongVon.TatToan.ucTatToanCT">
+    <case Name="">
+      <control Name="lblGD_TaiKhoanNB">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="lblTongLaiDaTra">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="numLaiDaDC">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="numLaiDaThoaiChi">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="txtGD_TaiKhoanNB">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="tlbPreview">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="lblEmtyTongLaiDaTra">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="numTongLaiDaTra">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="numGD_SoTienTM">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="numGD_SoTienCK">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="lblTaiKhoanNB">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="btnGD_TaiKhoanNB">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="lblEmtyGDHinhThuc">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="lbl2">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="btnGD_TaiKhoanKH">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="lblEmtyGDTKKhachHang">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="txtGD_TaiKhoanKH">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="lblEmtyGDTienMat">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="lblLaiThoaiChi">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="lblSoTienCK">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="lblTaiKhoanKH">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="lblLaiDaDC">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="lblSoTienBangTM">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="lblGD_TaiKhoanKH">
+        <property Name="Visibility">1</property>
+      </control>
+    </case>
+  </form>
+  <form Name="PresentationWPF.HuyDongVon.TatToan.ucTatToanDS">
+    <case Name="">
+      <control Name="tlbPreview">
+        <property Name="Visibility">1</property>
+      </control>
+    </case>
+  </form>
+  <form Name="PresentationWPF.HuyDongVon.TraLaiTienGui.ucTraLaiCT">
+    <case Name="">
+      <control Name="lblTaiKhoanKH">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="btnGD_TaiKhoanKH">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="lblGD_TaiKhoanNB">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="lblEmtyGDHinhThuc">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="lblEmtyGDTKKhachHang">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="lblSoTienBangTM">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="lblSoTienCK">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="lbl2">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="lblTaiKhoanNB">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="numGD_SoTienTM">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="numGD_SoTienCK">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="grbThongTinPhanBo">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="lblEmtyGDTienMat">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="tlbPreview">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="grbThongTinTienLai">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="grbChuyenKyHan">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="txtGD_TaiKhoanKH">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="lblGD_TaiKhoanKH">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="txtGD_TaiKhoanNB">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="btnGD_TaiKhoanNB">
+        <property Name="Visibility">1</property>
+      </control>
+    </case>
+  </form>
+  <form Name="PresentationWPF.HuyDongVon.TraLaiTienGui.ucTraLaiDS">
+    <case Name="">
+      <control Name="tlbPreview">
+        <property Name="Visibility">1</property>
+      </control>
+    </case>
+  </form>
+  <form Name="PresentationWPF.KhachHang.ChuyenDiaBan.ucChuyenDiaBanCT">
+    <case Name="">
+      <control Name="stpNhom">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="cmbNhom">
+        <property Name="Visibility">1</property>
+      </control>
+    </case>
+  </form>
+  <form Name="PresentationWPF.TinDung.ChuyenQuaHan.ucChuyenQuaHanCT">
+    <case Name="RibbonButton">
+      <control Name="tlbPreview">
+        <property Name="Visibility">1</property>
+      </control>
+    </case>
+  </form>
+  <form Name="PresentationWPF.TinDung.GiaiNgan.ucGiaiNganCT">
+    <case Name="raddgrTUngCT">
+      <control Name="SO_TIEN_BH">
+        <property Name="IsVisible">1</property>
+      </control>
+      <control Name="SO_TIEN_KQUY">
+        <property Name="IsVisible">0</property>
+      </control>
+      <control Name="chkBaoHiem">
+        <property Name="IsVisible">1</property>
+      </control>
+    </case>
+    <case Name="RibbonButton">
+      <control Name="tlbPreview">
+        <property Name="Visibility">1</property>
+      </control>
+    </case>
+  </form>
+  <form Name="PresentationWPF.TinDung.HoaDon.ucHDThuTienKyCTBinhKhanh">
+    <case Name="RibbonButton">
+      <control Name="tlbPreview">
+        <property Name="Visibility">1</property>
+      </control>
+    </case>
+  </form>
+  <form Name="PresentationWPF.TinDung.KUOC.ucKheUocCT">
+    <case Name="RibbonButton">
+      <control Name="tlbPreviewKheUoc">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="tlbPreviewBaoHiem">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="tlbPreviewDanhGiaKH">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="tlbPreviewNhanNo">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tlbPreviewPhanKy">
+        <property Name="Visibility">0</property>
+      </control>
+    </case>
+  </form>
+  <form Name="PresentationWPF.TinDung.KUOC.ucLapKheUocDS">
+    <case Name="RibbonButton">
+      <control Name="tlbPreviewKheUoc">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="tlbPreviewBaoHiem">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="tlbPreviewDanhGiaKH">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="tlbPreviewNhanNo">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tlbPreviewPhanKy">
+        <property Name="Visibility">0</property>
+      </control>
+    </case>
+  </form>
+  <form Name="PresentationWPF.TinDung.SanPham.ucDangKySanPhamCT">
+    <case Name="">
+      <control Name="grbKyQuy">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="cmbLoaiTienGop">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="lblSoTienLai">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="numSoTienGop">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="cmbLoaiTienLai">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="lblSoTienGop">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="numSoTienLai">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="numSoTienGoc">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="cmbLoaiTienGoc">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="lblSoTienGoc">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="tbiHachToan">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="spnHinhThucVay">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="cmbHinhThucVay">
+        <property Name="Visibility">1</property>
+      </control>
+    </case>
+  </form>
+  <form Name="PresentationWPF.DanhMuc.Nhom.ucNhomCT_01">
+    <case Name="">
+      <control Name="stpLoaiNhom">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="stpNhomCha">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="cmbNhomCha">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="cmbLoaiNhom">
+        <property Name="Visibility">1</property>
+      </control>
+    </case>
+  </form>
+  <form Name="PresentationWPF.DanhMuc.Nhom.ucNhomCT_02">
+    <case Name="">
+      <control Name="stpLoaiNhom">
+        <property Name="Visibility">1</property>
+      </control>
+      <control Name="cmbLoaiNhom">
+        <property Name="Visibility">1</property>
+      </control>
+    </case>
+  </form>
+  <form Name="PresentationWPF.BaoCao.GDKT.GDKT_KET_QUA_KINH_DOANH">
+    <case Name="">
+      <control Name="lblDinhKy">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="cmbDinhKy">
+        <property Name="Visibility">0</property>
+      </control>
+    </case>
+  </form>
+  <form Name="PresentationWPF.BaoCao.GDKT.GDKT_BANG_CAN_DOI_KE_TOAN">
+    <case Name="">
+      <control Name="lblDinhKy">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="cmbDinhKy">
+        <property Name="Visibility">0</property>
+      </control>
+    </case>
+  </form>
+  <form Name="PresentationWPF.BaoCao.GDKT.GDKT_LUU_CHUYEN_TIEN_TE">
+    <case Name="">
+      <control Name="lblDinhKy">
+        <property Name="Visibility">0</property>
+      </control>
+      <control Name="cmbDinhKy">
+        <property Name="Visibility">0</property>
+      </control>
+    </case>
+  </form>
+</root>

@@ -1,0 +1,85 @@
+﻿<UserControl x:Class="PresentationWPF.KhachHang.KhachHang.Popup.ucTaiKhoanTCTDKhac"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:ribbon="clr-namespace:Microsoft.Windows.Controls.Ribbon;assembly=RibbonControlsLibrary" 
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation" 
+             mc:Ignorable="d" 
+             d:DesignHeight="768" d:DesignWidth="1024" Loaded="UserControl_Loaded" KeyDown="UserControl_KeyDown" xmlns:my="clr-namespace:System;assembly=mscorlib">
+    <UserControl.Resources>
+        <!--<my:String x:Key="U.KhachHang.KhachHang.Popup.ucTaiKhoanTCTDKhac.TKMoTaiTCTDKhac">Thông tin tài khoản mở tại tổ chức tín dụng khác</my:String>
+        <my:String x:Key="U.KhachHang.KhachHang.Popup.ucTaiKhoanTCTDKhac.SoTaiKhoan:">Số tài khoản:</my:String>
+        <my:String x:Key="U.KhachHang.KhachHang.Popup.ucTaiKhoanTCTDKhac.ToChucTD:">Tổ chức tín dụng:</my:String>
+        <my:String x:Key="U.KhachHang.KhachHang.Popup.ucTaiKhoanTCTDKhac.DSTaiKhoanMoTaiTCTDKhac">Danh sách tài khoản mở tại tổ chức tín dụng khác</my:String>
+        <my:String x:Key="U.KhachHang.KhachHang.Popup.ucTaiKhoanTCTDKhac.SoTaiKhoan">Số tài khoản</my:String>
+        <my:String x:Key="U.KhachHang.KhachHang.Popup.ucTaiKhoanTCTDKhac.TenTCTD">Tên tổ chức tín dụng</my:String>-->
+    </UserControl.Resources>
+    <Grid Name="grMain">
+        <DockPanel Name="dockMain">
+            <DockPanel HorizontalAlignment="Stretch" DockPanel.Dock="Top" Margin="3,3,0,3" LastChildFill="False" Name="docToolbar">
+                <WrapPanel Name="Toolbar" >
+                    <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbSave" DockPanel.Dock="Left" Label="{DynamicResource U.DungChung.Button.Luu}"  SmallImageSource="/Utilities.Common;component/Images/Action/save.png" Style="{StaticResource RibbonButton}" Click="tlbSave_Click" />
+                    <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbClose" DockPanel.Dock="Left" Label="{DynamicResource U.DungChung.Button.Dong}"  SmallImageSource="/Utilities.Common;component/Images/Action/close.png" Style="{StaticResource RibbonButton}" Click="tlbClose_Click" />
+                </WrapPanel>
+            </DockPanel>
+            <GroupBox DockPanel.Dock="Top" Header="{DynamicResource U.KhachHang.KhachHang.Popup.ucTaiKhoanTCTDKhac.TKMoTaiTCTDKhac}" Name="grbChiTiet">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="130"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="20" />
+                        <ColumnDefinition Width="130"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="6"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="6"/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Grid.Column="0" Grid.Row="0" Orientation="Horizontal">
+                        <Label Content="{DynamicResource U.KhachHang.KhachHang.Popup.ucTaiKhoanTCTDKhac.SoTaiKhoan:}" Name="lblSoTaiKhoan"/>
+                        <Label Content="(*)" Foreground="Red" Margin="-5,0,0,0" />
+                    </StackPanel>
+                    <TextBox Name="txtSoTaiKhoan" Grid.Column="1" Grid.Row="0" Padding="0,3,0,0" HorizontalAlignment="Stretch"  TabIndex="1" MaxLines="255" />
+                    <StackPanel Grid.Column="0" Grid.Row="2" Orientation="Horizontal">
+                        <Label Content="{DynamicResource U.KhachHang.KhachHang.Popup.ucTaiKhoanTCTDKhac.ToChucTD:}" Name="lblTenTCTD"/>
+                        <Label Content="(*)" Foreground="Red" Margin="-5,0,0,0" />
+                    </StackPanel>
+                    <TextBox Name="txtTCTD" Grid.Column="1" Grid.Row="2" Padding="0,3,0,0" HorizontalAlignment="Stretch"  TabIndex="1" MaxLines="255" />
+                </Grid>
+            </GroupBox>
+            <GroupBox Header="{DynamicResource U.KhachHang.KhachHang.Popup.ucTaiKhoanTCTDKhac.DSTaiKhoanMoTaiTCTDKhac}" Padding="0,10" Margin="3">
+                <DockPanel>
+                    <Border DockPanel.Dock="Top" BorderThickness="1">
+                        <StackPanel Orientation="Horizontal" Margin="5,0,0,0" >
+                            <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbAddThongTin" DockPanel.Dock="Left" Label="{DynamicResource U.DungChung.Button.Them}" SmallImageSource="/Utilities.Common;component/Images/Action/add.png" Style="{StaticResource RibbonButton}" Click="tlbAddThongTin_Click" />
+                            <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbSaveThongTin" DockPanel.Dock="Left" Label="{DynamicResource U.DungChung.Button.Luu}"   SmallImageSource="/Utilities.Common;component/Images/Action/detail_edit.png" Style="{StaticResource RibbonButton}" Click="tlbSaveThongTin_Click" />
+                            <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbDeleteThongTin" DockPanel.Dock="Left" Label="{DynamicResource U.DungChung.Button.Xoa}"   SmallImageSource="/Utilities.Common;component/Images/Action/detail_delete.png" Style="{StaticResource RibbonButton}" Click="tlbDeleteThongTin_Click" />
+                        </StackPanel>
+                    </Border>
+                    <telerik:RadGridView Name="grTaiKhoan" ItemsSource="{Binding}"
+                AutoGenerateColumns="False" CanUserFreezeColumns="False" RowIndicatorVisibility="Collapsed" Margin="5" ShowGroupPanel="False" CurrentCellChanged="grTaiKhoan_CurrentCellChanged" SelectionChanged="grTaiKhoan_SelectionChanged">
+                        <telerik:RadGridView.Columns>
+                            <telerik:GridViewDataColumn Header="ID" IsVisible="False" />
+                            <telerik:GridViewDataColumn Width="30">
+                                <telerik:GridViewDataColumn.Header>
+                                    <CheckBox HorizontalAlignment="Center" Name="chkAll" Click="chkAll_Click"></CheckBox>
+                                </telerik:GridViewDataColumn.Header>
+                                <telerik:GridViewDataColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <CheckBox IsChecked="{Binding CHON,UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                    </DataTemplate>
+                                </telerik:GridViewDataColumn.CellTemplate>
+                            </telerik:GridViewDataColumn>
+                            <telerik:GridViewDataColumn Header="{DynamicResource U.DungChung.STT}" Width="40" DataMemberBinding="{Binding STT}" IsReadOnly="True"/>
+                            <telerik:GridViewDataColumn Header="{DynamicResource U.KhachHang.KhachHang.Popup.ucTaiKhoanTCTDKhac.SoTaiKhoan}" Width="*" DataMemberBinding="{Binding TK_SO}" IsReadOnly="True"/>
+                            <telerik:GridViewDataColumn Header="{DynamicResource U.KhachHang.KhachHang.Popup.ucTaiKhoanTCTDKhac.TenTCTD}" Width="*" DataMemberBinding="{Binding TK_TEN_TCTD}" IsReadOnly="True"/>
+                        </telerik:RadGridView.Columns>
+                    </telerik:RadGridView>
+                </DockPanel>
+            </GroupBox>
+        </DockPanel>
+    </Grid>
+</UserControl>

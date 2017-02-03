@@ -1,0 +1,22 @@
+MaChiNhanh	string	255
+TenChiNhanh	string	255
+DiaChiChiNhanh	string	255
+MaPhongGD	string	255
+TenPhongGD	string	255
+MaCum	string	255
+TenCum	string	255
+TenCumTruong	string	255
+MaKhachHang	string	255
+TenKhachHang	string	255
+SoCMND	string	255
+KH03Thang	number
+KH06Thang	number
+KH18Thang	number
+KH24Thang	number
+KH25Thang	number
+KH36Thang	number
+KH48Thang	number
+KH50Thang	number
+KHKhac	number
+TongDuGoc	number
+LuyKe	number

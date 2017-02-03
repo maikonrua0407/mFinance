@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="386363b4-70d0-4159-bdd3-be5573f260f5" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:1001/NhanSuService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="NhanSuService.xsd" MetadataType="Schema" ID="eae2a733-7b66-42c8-9187-7ca5760a5fef" SourceId="1" SourceUrl="http://localhost:1001/NhanSuService.svc?xsd=xsd4" />
+    <MetadataFile FileName="NhanSuService6.xsd" MetadataType="Schema" ID="5ad99588-eb19-4dd9-a7c2-866c811bd68a" SourceId="1" SourceUrl="http://localhost:1001/NhanSuService.svc?xsd=xsd6" />
+    <MetadataFile FileName="NhanSuService.wsdl" MetadataType="Wsdl" ID="ff2de74f-fd71-41e3-ac51-8c3d6eaa9ae1" SourceId="1" SourceUrl="http://localhost:1001/NhanSuService.svc" />
+    <MetadataFile FileName="NhanSuService1.xsd" MetadataType="Schema" ID="e75077d4-0390-4897-a5f8-d056c7c1c2c6" SourceId="1" SourceUrl="http://localhost:1001/NhanSuService.svc?xsd=xsd1" />
+    <MetadataFile FileName="NhanSuService7.xsd" MetadataType="Schema" ID="af007e38-4af6-496c-a604-d7b14bd30034" SourceId="1" SourceUrl="http://localhost:1001/NhanSuService.svc?xsd=xsd7" />
+    <MetadataFile FileName="NhanSuService2.xsd" MetadataType="Schema" ID="c406388f-ea26-41e6-90ef-7a7e231d9cc1" SourceId="1" SourceUrl="http://localhost:1001/NhanSuService.svc?xsd=xsd5" />
+    <MetadataFile FileName="NhanSuService8.xsd" MetadataType="Schema" ID="02860044-1f5d-43c6-a098-8dc5eaad182c" SourceId="1" SourceUrl="http://localhost:1001/NhanSuService.svc?xsd=xsd8" />
+    <MetadataFile FileName="NhanSuService3.xsd" MetadataType="Schema" ID="cb62631c-604c-4ea4-8720-966ae043de51" SourceId="1" SourceUrl="http://localhost:1001/NhanSuService.svc?xsd=xsd3" />
+    <MetadataFile FileName="NhanSuService4.xsd" MetadataType="Schema" ID="48e4ba55-6f99-4fb5-a810-21881f82f94b" SourceId="1" SourceUrl="http://localhost:1001/NhanSuService.svc?xsd=xsd2" />
+    <MetadataFile FileName="NhanSuService5.xsd" MetadataType="Schema" ID="687ae0d9-7fd7-4290-a73e-297ed2108fc4" SourceId="1" SourceUrl="http://localhost:1001/NhanSuService.svc?xsd=xsd0" />
+    <MetadataFile FileName="NhanSuService9.xsd" MetadataType="Schema" ID="14a938f2-2dfd-413f-8765-fa3da8dd7235" SourceId="1" SourceUrl="http://localhost:1001/NhanSuService.svc?xsd=xsd9" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

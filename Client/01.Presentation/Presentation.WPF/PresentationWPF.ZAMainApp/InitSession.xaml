@@ -1,0 +1,56 @@
+﻿<Window x:Class="PresentationWPF.ZAMainApp.InitSession"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="{DynamicResource U.ZAMainApp.InitSession.Title}" Height="250" Width="600"
+        xmlns:my="clr-namespace:System;assembly=mscorlib"
+        xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+        xmlns:ribbon="http://schemas.microsoft.com/winfx/2006/xaml/presentation/ribbon"
+        xmlns:custom="clr-namespace:PresentationWPF.CustomControl;assembly=PresentationWPF.CustomControl"
+        >
+    <Window.Resources>
+        <!--<my:String x:Key="U.ZAMainApp.InitSession.Title">Lựa chọn phòng giao dịch</my:String>
+        <my:String x:Key="U.ZAMainApp.InitSession.Inform">Lựa chọn phòng giao dịch thực hiện tác nghiệp</my:String>
+        <my:String x:Key="U.ZAMainApp.InitSession.Warning">(!) Người dùng chưa được phân quyền tác nghiệp đến phòng giao dịch</my:String>
+        <my:String x:Key="U.ZAMainApp.InitSession.NguoiDung">Người dùng</my:String>
+        <my:String x:Key="U.ZAMainApp.InitSession.ChiNhanh">Chi nhánh</my:String>
+        <my:String x:Key="U.ZAMainApp.InitSession.PhongGD">Phòng giao dịch</my:String>
+        <my:String x:Key="U.ZAMainApp.InitSession.ThucHien">Thực hiện</my:String>
+        <my:String x:Key="U.ZAMainApp.InitSession.DangNhap">Đăng nhập lại</my:String>
+        <my:String x:Key="U.ZAMainApp.InitSession.Thoat">Thoát</my:String>-->
+    </Window.Resources>
+    <Grid Name="grdMain">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="6*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="6" />
+            <RowDefinition Height="6" />
+            <RowDefinition Height="0.8*" />
+            <RowDefinition Height="6" />
+            <RowDefinition Height="0.8*" />
+            <RowDefinition Height="6" />
+            <RowDefinition Height="0.8*" />
+            <RowDefinition Height="6" />
+            <RowDefinition Height="0.8*" />
+            <RowDefinition Height="6" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="6" />
+        </Grid.RowDefinitions>
+        <Label Content="{DynamicResource U.ZAMainApp.InitSession.Inform}" Height="25" HorizontalAlignment="Center" Name="lblInform" VerticalAlignment="Center" Width="424" Margin="10,3,0,0" HorizontalContentAlignment="Left" Grid.Column="1" Grid.Row="2"/>
+        <Label Content="{DynamicResource U.ZAMainApp.InitSession.Warning}" Height="25" HorizontalAlignment="Center" Name="lblWarning" VerticalAlignment="Center" Width="422" Margin="10,3,1,0" HorizontalContentAlignment="Left" Grid.Row="2" Foreground="Red" Grid.Column="1" />
+
+        <Label Content="{DynamicResource U.ZAMainApp.InitSession.NguoiDung}" Grid.Row="4" Height="25" HorizontalAlignment="Right" Name="lblNguoiDung" VerticalAlignment="Top" Width="137" Margin="0,0,5,0" HorizontalContentAlignment="Right"/>
+        <Label Content="{DynamicResource U.ZAMainApp.InitSession.ChiNhanh}" Grid.Row="6" Height="25" HorizontalAlignment="Right" Name="lblChiNhanh" VerticalAlignment="Top" Width="137" Margin="0,0,5,0" HorizontalContentAlignment="Right" />
+        <Label Content="{DynamicResource U.ZAMainApp.InitSession.PhongGD}" Grid.Row="8" Height="25" HorizontalAlignment="Right" Name="lblPhongGD" VerticalAlignment="Top" Width="137" Margin="0,0,5,0" HorizontalContentAlignment="Right" />
+
+        <Label Content="" Grid.Row="4" Height="25" HorizontalAlignment="Right" Name="lblNguoiDungValue" VerticalAlignment="Top" Width="434" HorizontalContentAlignment="Left" Margin="0,3,0,0" Grid.RowSpan="2" Grid.Column="1" />
+        <Label Content="" Grid.Row="6" Grid.Column="1" Height="25" HorizontalAlignment="Right" Name="lblChiNhanhValue" VerticalAlignment="Top" Width="434" HorizontalContentAlignment="Left" Margin="0,3,0,0"/>
+        <telerik:RadComboBox Grid.Row="8" HorizontalAlignment="Stretch" Name="cmbPhongGD" VerticalAlignment="Center" IsEditable="True" SelectedValuePath="Tag" Margin="10,1,68,6" Height="25" Grid.Column="1">
+        </telerik:RadComboBox>
+
+        <ribbon:RibbonButton Label="{DynamicResource U.ZAMainApp.InitSession.ThucHien}" Grid.Column="1" Grid.Row="10" HorizontalAlignment="Left" Name="btnProcess" VerticalAlignment="Top" Width="105" Style="{StaticResource RibbonButton}" IsDefault="True" SmallImageSource="pack://application:,,,/Utilities.Common;component/Images/Action/detail_process.png" Click="btnProcess_Click" Margin="10,0,0,0" />
+        <ribbon:RibbonButton Label="{DynamicResource U.ZAMainApp.InitSession.DangNhap}" Grid.Column="1" Grid.Row="10" HorizontalAlignment="Right" Name="btnLogin" VerticalAlignment="Top" Width="105" Style="{StaticResource RibbonButton}" IsDefault="True" SmallImageSource="pack://application:,,,/Utilities.Common;component/Images/Action/login.png" Click="btnLogin_Click" Margin="0,0,210,0" />
+        <ribbon:RibbonButton Label="{DynamicResource U.ZAMainApp.InitSession.Thoat}" Grid.Column="1" Grid.Row="10" HorizontalAlignment="Right" Margin="0,0,91,0" Name="btnClose" VerticalAlignment="Top" Width="105" Style="{StaticResource RibbonButton}" SmallImageSource="pack://application:,,,/Utilities.Common;component/Images/Action/close.png" Click="btnClose_Click" />
+    </Grid>
+</Window>

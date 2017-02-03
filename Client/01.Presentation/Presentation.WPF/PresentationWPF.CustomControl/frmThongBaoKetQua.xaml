@@ -1,0 +1,25 @@
+﻿<Window x:Class="PresentationWPF.CustomControl.frmThongBaoKetQua"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+        xmlns:rb="http://schemas.microsoft.com/winfx/2006/xaml/presentation/ribbon" 
+        Title="Message" Height="300" Width="670" Loaded="Window_Loaded" ResizeMode="CanResizeWithGrip" WindowStartupLocation="CenterScreen">
+    <Grid Name="grMain">
+        <DockPanel>
+            <rb:RibbonButton Margin="0,6,3,10" Width="70" Name="tlbClose" DockPanel.Dock="Bottom" HorizontalAlignment="Right" Label="{DynamicResource U.DungChung.OK}" Style="{StaticResource RibbonButton}" Click="btnButton_Click" />
+            <telerik:RadGridView Name="grThongBao" ItemsSource="{Binding}" Margin="3" SelectionMode="Single" AutoGenerateColumns="False" ShowGroupPanel="False" CanUserFreezeColumns="False" RowIndicatorVisibility="Collapsed">
+                <telerik:RadGridView.Columns>
+                    <telerik:GridViewDataColumn Header="{DynamicResource U.DungChung.STT}" Width="50" DataMemberBinding="{Binding Stt}" IsReadOnly="True" IsFilterable="False"/>
+                    <telerik:GridViewDataColumn Header="{DynamicResource U.DungChung.ID}" Width="50" DataMemberBinding="{Binding Id}" IsReadOnly="True" IsVisible="False" IsFilterable="False"/>
+                    <telerik:GridViewDataColumn Header="{DynamicResource U.DungChung.Data}" Width="2*" DataMemberBinding="{Binding Object}" IsReadOnly="True" IsFilterable="False"/>
+                    <telerik:GridViewDataColumn Header="{DynamicResource U.DungChung.Task}" Width="*" DataMemberBinding="{Binding Operation}" IsReadOnly="True" IsFilterable="False"/>
+                    <telerik:GridViewDataColumn Header="{DynamicResource U.DungChung.Result}" Width="*" DataMemberBinding="{Binding Result}" IsReadOnly="True" IsFilterable="False"/>
+                    <telerik:GridViewDataColumn Header="{DynamicResource U.DungChung.Description}" Width="2*" DataMemberBinding="{Binding Detail}" IsReadOnly="False" IsFilterable="False"/>
+                </telerik:RadGridView.Columns>
+            </telerik:RadGridView>
+        </DockPanel>
+        
+        
+        <!--<Button Content="Đóng" Name="btnButton" Margin="549,0,9,9" IsEnabled="True" IsDefault="True" Width="95" Click="btnButton_Click" Height="22" VerticalAlignment="Bottom" />-->
+    </Grid>
+</Window>

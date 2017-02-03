@@ -1,0 +1,24 @@
+MaChiNhanh	String	255
+TenChiNhanh	String	255
+DiaChiChiNhanh	String	255
+MaPhongGD	String	255
+TenPhongGD	String	255
+DiaChiPhongGD	String	255
+MaCum	String	255
+TenCum	String	255
+TenCumTruong	String	255
+KHMa	String	255
+KHTen	String	255
+KHDiaChi	String	255
+DGTruocSoNhanKhau	number
+DGTruocThuNhapBQHo	number
+DGTruocThuNhapBQKhau	number
+DGTruocTongGiaTriTS	number
+DGSauSoNhanKhau	number
+DGSauThuNhapBQHo	number
+DGSauThuNhapBQKhau	number
+DGSauTongGiaTriTS	number
+SoSanhSoNhanKhau	number
+SoSanhThuNhapBQHo	number
+SoSanhThuNhapBQKhau	number
+SoSanhTongGiaTriTS	number

@@ -1,0 +1,139 @@
+﻿@using PresentationAspNet.MVC
+
+@if (UserInformation.Session_User != null)
+{
+    var model = UserInformation.Session_User;
+    <style>
+        .blink {
+            margin: 10px 0 0 50px;
+            color: #dc143c;
+            font-size: 15px;
+        }
+    </style>
+    <nav class="navbar" role="navigation">
+        @*navbar-fixed-top*@
+        @*<div class="row-fluid" id="box-head">
+            <div class="span9" style="padding-left: 20px">
+                <a class="brand pull-left" href="/Home">
+                    <img src="~/Images/KSE_logo2.png" alt="Hệ thống KSE" />
+                </a>
+                <div id="albSysAlert" class="blink" style="display: none;">
+                    <strong class="css-strong"><i class="icon-spinner icon-spin red"></i>Thông báo: </strong>
+                    <span id="msgSysAlert"></span>
+                </div>
+            </div>
+            <div class="span3">
+                <div class="span12 cssR css-company form-inline">
+                    <span>
+                        @(UserInformation.Session_User != null ? UserInformation.Session_User.User.FullName : string.Empty)
+                        <i class="icon-user"></i>
+                    </span>
+                </div>
+                <div class="span12 cssR" style="color: mediumturquoise; margin-top: 5px; min-height: 20px !important;">
+                    @if (UserInformation.Session_User != null && UserInformation.Session_User.khoInfo != null)
+                    {
+                        <a href="javascript:void(0);" onclick="DanhSachKho()">
+                            <span style="color: forestgreen !important;">
+                                @UserInformation.Session_User.khoInfo.TEN_GDICH
+                                <i class="icon-th"></i>
+                            </span>
+                        </a>
+                    }
+                    @if (UserInformation.Session_User != null && UserInformation.Session_User.DiemGdInfo != null)
+                    {
+                        <a href="javascript:void(0);" onclick="DanhSachKho()">
+                            <span style="color: mediumturquoise !important; margin-left: 15px;">
+                                @UserInformation.Session_User.DiemGdInfo.TenDiemGd
+                                <i class="icon-laptop"></i>
+                            </span>
+                        </a>
+                    }
+                </div>
+            </div>
+            <style type="text/css">
+                .css-company {
+                    font-size: 16px;
+                    padding-top: 10px;
+                    color: #4e71c0;
+                }
+            </style>
+        </div>*@
+        <div class="navbar-inner" id="box-menu">
+            <div class="row-fluid" style="border-bottom: 2px solid #CDCDCD; padding-bottom: 0;">
+                @if (model != null && model.ListChucNang.Any())
+                {
+                    var curUrl = HttpContext.Current.Request.RawUrl;
+                    var curNote = model.ListChucNang.FirstOrDefault(m => string.Equals(m.Url, curUrl, StringComparison.CurrentCultureIgnoreCase)) ?? new Presentation.Process.ZAMainAppServiceRef.ChucNangDto();
+                    <ul class="nav navbar-nav" id="mobile-nav" style="line-height: 22px; padding-left: 0 !important;">
+                        <li>
+                            <a href="javascript:void(0);" style="padding: 0 !important; margin: 0 !important;">
+                                <img src="~/Images/version-32.png" />
+                            </a>
+                        </li>
+                        @{
+                            var index = 0;
+                        }
+                        @foreach (var item in model.ListChucNang.Where(m => m.IDChucNangCha == 0).OrderBy(o => o.STT).ToList())
+                        {
+                            index++;
+                            var act = String.Equals(item.IDChucNang, curNote.IDChucNang) ? "active" : null;
+                            <li class="dropdown @act" style="margin-left: 10px;">
+                                <a data-toggle="dropdown" class="dropdown-toggle color-@index" href="javascript:void(0);">
+                                    @LanguageNode.GetValueUILanguage(item.TieuDe)
+                                    @*<b class="caret"></b>*@
+                                </a>
+                                @{var lst = model.ListChucNang.Where(m => m.IDChucNangCha == item.IDChucNang).ToList();}
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <div class="dropdown-menu-div">
+                                            @foreach (var child in lst.OrderBy(o => o.STT).ToList())
+                                            {
+                                                var lstLeaf = model.ListChucNang.Where(m => m.IDChucNangCha == child.IDChucNang).ToList();
+                                                if (lstLeaf.Count <= 0)
+                                                {
+                                                    continue;
+                                                }
+                                                <div class="css-nav-group">
+                                                    @*<a href="javascript:void(0);" class="lime-brown"><b>@child.Title</b></a>*@
+                                                    <b style="color: #9c3d3a !important;">@LanguageNode.GetValueUILanguage(child.TieuDe)</b>
+                                                    <br/>
+                                                    @foreach (var leaf in lstLeaf.OrderBy(o => o.STT).ToList())
+                                                    {
+                                                        <a href="@leaf.Url">@LanguageNode.GetValueUILanguage(leaf.TieuDe)</a><br/>
+                                                    }
+                                                </div>
+                                            }
+                                        </div>
+                                    </li>
+                                </ul>
+                                @*<li class="divider-vertical"></li>*@
+                            </li>
+                        }
+                    </ul>
+                }
+                @Html.Partial("Information")
+            </div>
+        </div>
+    </nav>
+    <style type="text/css">
+        .css-nav-group {
+            min-width: 120px;
+            float: left;
+            margin-right: 2px;
+            margin-top: 5px;
+        }
+
+            .css-nav-group a {
+                text-decoration: none;
+                color: #393939;
+            }
+
+                .css-nav-group a:hover {
+                    color: #045AFF;
+                }
+
+        .lime-brown {
+            color: #9C3D3A !important;
+        }
+    </style>
+}

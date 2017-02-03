@@ -1,0 +1,26 @@
+MaChiNhanh	string	255
+TenChiNhanh	string	255
+MaPhongGD	string	255
+TenPhongGD	string	255
+MaCum	string	255
+TenCum	string	255
+TenCumTruong	string	255
+MaNhom	string	255
+TenNhom	string	255
+KHMa	string	255
+KHTen	string	255
+KHSoCMND	string	255
+KHSoDT	string	255
+DuGocTKQD	number
+DuGocTKKKH	number
+DuGocTKKH01	number
+DuGocTKKH02	number
+DuGocTKKH03	number
+DuGocTKKH06	number
+DuGocTKKH09	number
+DuGocTKKH12	number
+DuGocTKKH18	number
+DuGocTKKH24	number
+DuGocTKKHKhac	number
+TongTKKH	number
+DuLaiLuyKe	number

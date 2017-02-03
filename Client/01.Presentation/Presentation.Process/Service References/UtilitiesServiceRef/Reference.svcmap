@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="98237f70-10db-45f7-b3be-f54112afae44" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:1001/UtilitiesService.svc/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="42929d9f-ef29-424c-ad83-036d9257baaf" SourceId="1" SourceUrl="http://localhost:1001/UtilitiesService.svc/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="ca9f9d15-2f25-4713-b0d7-a90f3fbcf4a5" SourceId="1" SourceUrl="http://localhost:1001/UtilitiesService.svc/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="b5981a00-29cb-4c97-a190-a4832c98b6af" SourceId="1" SourceUrl="http://localhost:1001/UtilitiesService.svc/mex" />
+    <MetadataFile FileName="Arrays.xsd" MetadataType="Schema" ID="0c521726-d565-4d2f-a76a-5279c3a91b13" SourceId="1" SourceUrl="http://localhost:1001/UtilitiesService.svc/mex" />
+    <MetadataFile FileName="CommunicationServices.Utilities.Messages.xsd" MetadataType="Schema" ID="7b1ab77a-3308-4d7e-8aea-a6fff978e774" SourceId="1" SourceUrl="http://localhost:1001/UtilitiesService.svc/mex" />
+    <MetadataFile FileName="CommunicationMessages.Base.MessageBases.xsd" MetadataType="Schema" ID="cf7c3c1c-c5ad-4aa2-8a57-521954f60ec4" SourceId="1" SourceUrl="http://localhost:1001/UtilitiesService.svc/mex" />
+    <MetadataFile FileName="Utilities.Common.xsd" MetadataType="Schema" ID="f7c912b1-22bb-4f0b-af55-1a7023aa96ae" SourceId="1" SourceUrl="http://localhost:1001/UtilitiesService.svc/mex" />
+    <MetadataFile FileName="DataModel.EntityFramework.xsd" MetadataType="Schema" ID="958e9603-2ecf-4024-9a20-e0ff5ef68fca" SourceId="1" SourceUrl="http://localhost:1001/UtilitiesService.svc/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

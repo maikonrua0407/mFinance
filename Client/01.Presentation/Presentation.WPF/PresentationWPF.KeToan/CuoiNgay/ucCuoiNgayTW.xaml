@@ -1,0 +1,122 @@
+﻿<UserControl x:Class="PresentationWPF.KeToan.CuoiNgay.ucCuoiNgayTW"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation" 
+             xmlns:telerikMaskInput="clr-namespace:Telerik.Windows.Controls.MaskedInput;assembly=Telerik.Windows.Controls.Input"
+             xmlns:uc="clr-namespace:PresentationWPF.CustomControl;assembly=PresentationWPF.CustomControl"
+             xmlns:ribbon="http://schemas.microsoft.com/winfx/2006/xaml/presentation/ribbon"
+             xmlns:my="clr-namespace:System;assembly=mscorlib"
+             xmlns:local="clr-namespace:PresentationWPF.KeToan.CuoiNgay"
+             mc:Ignorable="d" 
+             d:DesignHeight="768" d:DesignWidth="1024">
+    <UserControl.Resources>
+        
+        <!--<my:String x:Key="U.DungChung.TimKiemNhanh">Tìm kiếm...</my:String>
+        <my:String x:Key="U.KeToan.KhoaSo.ThucHien">Thực hiện</my:String>
+        <my:String x:Key="U.KeToan.KhoaSo.ThongTinDonVi">Thông tin đơn vị</my:String>
+        <my:String x:Key="U.KeToan.KhoaSo.DonVi:">Đơn vị:</my:String>
+        <my:String x:Key="U.KeToan.KhoaSo.TenDonVi">Tên đơn vị</my:String>
+        <my:String x:Key="U.KeToan.KhoaSo.NgayLamViec">Ngày làm việc:</my:String>
+        <my:String x:Key="U.KeToan.KhoaSo.NghiepVuThucHien">Nghiệp vụ thực hiện</my:String>
+        <my:String x:Key="U.KeToan.KhoaSo.MaNghiepVU">Mã nghiệp vụ</my:String>
+        <my:String x:Key="U.KeToan.KhoaSo.MoTa">Mô tả</my:String>
+        <my:String x:Key="U.KeToan.KhoaSo.KetQuaThucHien">Kết quả thực thi</my:String>
+        <my:String x:Key="U.KeToan.KhoaSo.DanhSachGiaoDich">Danh sách giao dịch</my:String>
+        <my:String x:Key="U.KeToan.KhoaSo.DoiTuong">Đối tượng</my:String>
+        <my:String x:Key="U.KeToan.KhoaSo.KetQua">Kết quả</my:String>
+        <my:String x:Key="U.KeToan.KhoaSo.ChiTiet">Chi tiết</my:String>-->
+    </UserControl.Resources>
+    <UserControl.CommandBindings>
+        <CommandBinding CanExecute="ExecuteCommand_CanExecute" Executed="ExecuteCommand_Executed" Command="{x:Static local:ucCuoiNgayTW.ExecuteCommand}" >
+        </CommandBinding>
+        <CommandBinding CanExecute="HelpCommand_CanExecute" Executed="HelpCommand_Executed" Command="{x:Static local:ucCuoiNgayTW.HelpCommand}">
+        </CommandBinding>
+        <CommandBinding CanExecute="CloseCommand_CanExecute" Executed="CloseCommand_Executed" Command="{x:Static local:ucCuoiNgayTW.CloseCommand}">
+        </CommandBinding>
+    </UserControl.CommandBindings>
+    <UserControl.ContextMenu>
+        <ContextMenu Name="mnuMain">
+        </ContextMenu>
+    </UserControl.ContextMenu>
+    <Grid Name="grMain">
+        <DockPanel>
+            <DockPanel HorizontalAlignment="Stretch" DockPanel.Dock="Top" LastChildFill="False" Name="docToolbar">
+                <WrapPanel Name="Toolbar">
+                    <ribbon:RibbonButton Margin="3,3,0,3" Name="tlbExecute" DockPanel.Dock="Left" Label="{DynamicResource U.KeToan.KhoaSo.ThucHien}"  SmallImageSource="/Utilities.Common;component/Images/Action/detail_process.png" Style="{DynamicResource RibbonButton}" Click="tlbHotKey_Click" />
+                    <ribbon:RibbonButton Margin="3,3,0,3" Name="tlbHelp" DockPanel.Dock="Left" Label="{DynamicResource U.DungChung.Button.TroGiup}"  SmallImageSource="/Utilities.Common;component/Images/Action/help.png" Style="{DynamicResource RibbonButton}" Click="tlbHotKey_Click" />
+                    <ribbon:RibbonButton Margin="3,3,0,3" Name="tlbClose" DockPanel.Dock="Left" Label="{DynamicResource U.DungChung.Button.Dong}"  SmallImageSource="/Utilities.Common;component/Images/Action/close.png" Style="{DynamicResource RibbonButton}" Click="tlbHotKey_Click"/>
+                </WrapPanel>
+            </DockPanel>
+            <DockPanel Margin="3" HorizontalAlignment="Stretch" DockPanel.Dock="Top" LastChildFill="False">
+                <GroupBox Header="{DynamicResource U.KeToan.KhoaSo.ThongTinDonVi}" Width="{Binding ElementName=grMain, Path=ActualWidth,
+                                Converter={uc:MathConverter}, ConverterParameter=x-10}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="6" />
+                            <RowDefinition Height="25" />
+                            <RowDefinition Height="6" />
+                            <RowDefinition Height="25" />
+                        </Grid.RowDefinitions>
+                        <StackPanel Orientation="Horizontal" Margin="0,-2,0,0" Grid.Row="1" Grid.Column="0">
+                            <Label Content="{DynamicResource U.KeToan.KhoaSo.DonVi:}"/>
+                        </StackPanel>
+                        <Label Name="lblDonVi" Grid.Row="1" Grid.Column="1" Content="{DynamicResource U.KeToan.KhoaSo.TenDonVi}" FontStyle="Italic" FontWeight="Bold"/>
+                        <StackPanel Orientation="Horizontal" Margin="0,-2,0,0" Grid.Row="3" Grid.Column="0">
+                            <Label Content="{DynamicResource U.KeToan.KhoaSo.NgayLamViec}"/>
+                        </StackPanel>
+                        <Label Name="lblNgayLamViec" Grid.Row="3" Grid.Column="1" Content="{DynamicResource U.KeToan.KhoaSo.NgayLamViec}" FontStyle="Italic" FontWeight="Bold"/>
+                    </Grid>
+                </GroupBox>
+            </DockPanel>
+            <telerik:RadTabControl Name="tabCumCT" TabStripPlacement="Top" TabOrientation="Horizontal" Align="Left" HeaderBackground="{x:Null}" >
+                <telerik:RadTabItem Name="tbiThongTinChung" Header="{DynamicResource U.KeToan.KhoaSo.NghiepVuThucHien}" TabIndex="0" Style="{DynamicResource HeaderTemplate}" HorizontalContentAlignment="Left" IsSelected="True">
+                    <Grid>
+                        <telerik:RadGridView Name="raddgrNghiepVu" ShowGroupPanel="False" Margin="3"
+                AutoGenerateColumns="False" CanUserFreezeColumns="False" RowIndicatorVisibility="Collapsed" DockPanel.Dock="Top">
+                            <telerik:RadGridView.Columns>
+                                <telerik:GridViewDataColumn Width="40" MinWidth="40"  Header="{DynamicResource U.DungChung.STT}"  IsReadOnly="True" DataMemberBinding="{Binding STT}" IsFilterable="False" IsSortable="False" />
+                                <telerik:GridViewDataColumn IsReadOnly="True" Width="*" Header="{DynamicResource U.KeToan.KhoaSo.MaNghiepVU}" DataMemberBinding="{Binding MA}"/>
+                                <telerik:GridViewDataColumn IsReadOnly="True" Width="2*" Header="{DynamicResource U.KeToan.KhoaSo.MoTa}" DataMemberBinding="{Binding TEN}"/>
+                                <telerik:GridViewDataColumn IsReadOnly="True" Header="{DynamicResource U.KeToan.KhoaSo.ThucHien}" >
+                                    <telerik:GridViewDataColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <ribbon:RibbonButton Margin="3" Name="tlbProccessDetail" DockPanel.Dock="Left" Tag="{Binding MA}" SmallImageSource="/Utilities.Common;component/Images/Action/detail_process.png" Style="{DynamicResource RibbonButton}" Click="tlbProccess_Click" />
+                                        </DataTemplate>
+                                    </telerik:GridViewDataColumn.CellTemplate>
+                                </telerik:GridViewDataColumn>
+                            </telerik:RadGridView.Columns>
+                        </telerik:RadGridView>
+                    </Grid>
+                </telerik:RadTabItem>
+                <telerik:RadTabItem Header="{DynamicResource U.KeToan.KhoaSo.KetQuaThucHien}" TabIndex="1"  IsSelected="True">
+                    <Grid>
+                        <DockPanel>
+                            <Grid>
+                                <GroupBox Header="{DynamicResource U.KeToan.KhoaSo.DanhSachGiaoDich}" VerticalAlignment="Stretch" Margin="3" Padding="-5,10,-5,0" Grid.Row="1">
+
+                                    <DockPanel>
+                                        <telerik:RadGridView Name="raddgrGiaoDichLoi" MinHeight="150" ShowGroupPanel="False" ItemsSource="{Binding}"
+                AutoGenerateColumns="False" CanUserFreezeColumns="False" RowIndicatorVisibility="Collapsed" HorizontalAlignment="Stretch" DockPanel.Dock="Top" MaxHeight="700">
+                                            <telerik:RadGridView.Columns>
+                                                <telerik:GridViewDataColumn Width="40" MinWidth="40" Header="{DynamicResource U.DungChung.STT}"  IsReadOnly="True" DataMemberBinding="{Binding STT}" IsFilterable="False" IsSortable="False" />
+                                                <telerik:GridViewDataColumn Width="2*" MinWidth="300" IsReadOnly="True" Header="{DynamicResource U.KeToan.KhoaSo.DoiTuong}" DataMemberBinding="{Binding OBJECT}"/>
+                                                <telerik:GridViewDataColumn Width="*" MinWidth="150" IsReadOnly="True" Header="{DynamicResource U.KeToan.KhoaSo.KetQua}" DataMemberBinding="{Binding RESULT}"/>
+                                                <telerik:GridViewDataColumn Width="*" MinWidth="150" IsReadOnly="True" Header="{DynamicResource U.KeToan.KhoaSo.ChiTiet}" DataMemberBinding="{Binding DETAIL}"/>
+                                            </telerik:RadGridView.Columns>
+                                        </telerik:RadGridView>
+                                    </DockPanel>
+                                </GroupBox>
+                            </Grid>
+                        </DockPanel>
+                    </Grid>
+                </telerik:RadTabItem>
+            </telerik:RadTabControl>
+        </DockPanel>
+    </Grid>
+</UserControl>

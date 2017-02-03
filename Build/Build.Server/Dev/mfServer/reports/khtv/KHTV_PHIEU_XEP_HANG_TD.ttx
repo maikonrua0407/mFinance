@@ -1,0 +1,50 @@
+MaChiNhanh	String	255
+TenChiNhanh	String	255
+DiaChiChiNhanh	String	255
+MaPhongGD	String	255
+TenPhongGD	String	255
+DiaChiPhongGD	String	255
+KHMa	String	255
+KHTen	String	255
+KHDiaChi	String	255
+KHSoCMND	String	255
+KHNgayCapCMND	String	255
+KHNoiCapCMND	String	255
+KHSoTaiKhoan	String	255
+KHSoDienThoai	String	255
+CBDGTen	String	255
+CBDGDonViCongTac	String	255
+XHTuoiGT	number
+XHTuoiDiem	number
+XHTrinhDoGT	String	255
+XHTrinhDoDiem	number
+XHLoaiHinhGT	String	255
+XHLoaiHinhDiem	number
+XHThoiGianGT	String	255
+XHThoiGianDiem	number
+XHThuNhapGT	number
+XHThuNhapDiem	number
+XHHonNhanGT	String	255
+XHHonNhanDiem	number
+XHNoiCuTruGT	String	255
+XHNoiCuTruDiem	number
+XHThoiGianCuTruGT	String	255
+XHThoiGianCuTruDiem	number
+XHSoNguoiPhuThuocGT	number
+XHSoNguoiPhuThuocDiem	number
+XHPTDiLaiGT	String	255
+XHPTDiLaiDiem	number
+XHPTThongTinGT	String	255
+XHPTThongTinDiem	number
+XHChenhLenhThuChiGT	number
+XHChenhLenhThuChiDiem	number
+XHTaiSanSoHuuGT	number
+XHTaiSanSoHuuDiem	number
+XHKhoanNoGT	number
+XHKhoanNoDiem	number
+XHQuanHeGT	String	255
+XHQuanHeDiem	number
+XHUyTinGiaTriGT	String	255
+XHUyTinGiaTriDiem	number
+XHKhacGT	number
+XHKhacDiem	number

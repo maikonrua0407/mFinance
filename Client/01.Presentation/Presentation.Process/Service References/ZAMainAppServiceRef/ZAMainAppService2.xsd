@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/CommunicationServices.ZAMainApp.Messages" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/CommunicationServices.ZAMainApp.Messages" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:1001/ZAMainAppService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" />
+  <xs:import schemaLocation="http://localhost:1001/ZAMainAppService.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" />
+  <xs:import schemaLocation="http://localhost:1001/ZAMainAppService.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/BusinessServices.Utilities.DTO" />
+  <xs:complexType name="SessionRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" base="q1:RequestBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="License" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Version" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SessionRequest" nillable="true" type="tns:SessionRequest" />
+  <xs:complexType name="SessionResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" base="q2:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="SessionId" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SessionResponse" nillable="true" type="tns:SessionResponse" />
+  <xs:complexType name="LoginRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" base="q3:RequestBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Language" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="License" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PassWord" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PhienBanMessage" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PhienBanResource" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Version" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LoginRequest" nillable="true" type="tns:LoginRequest" />
+  <xs:complexType name="LoginResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q4="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" base="q4:ResponseBase">
+        <xs:sequence>
+          <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="DonVi" nillable="true" type="q5:DM_DON_VI" />
+          <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="DonViGiaoDich" nillable="true" type="q6:DM_DON_VI" />
+          <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="DonViQuanLy" nillable="true" type="q7:DM_DON_VI" />
+          <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="DonViRoot" nillable="true" type="q8:DM_DON_VI" />
+          <xs:element minOccurs="0" name="ListChucNang" nillable="true" type="tns:ArrayOfChucNangDto" />
+          <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="ListPhongGD" nillable="true" type="q9:ArrayOfDM_DON_VI" />
+          <xs:element minOccurs="0" name="MaDongNoiTe" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MaQuocGiaBanDia" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NgayLamViecHienTai" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NgayLamViecSau" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NgayLamViecTruoc" nillable="true" type="xs:string" />
+          <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/BusinessServices.Utilities.DTO" minOccurs="0" name="NgonNguDTO" nillable="true" type="q10:NGON_NGU_DTO" />
+          <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="NguoiSuDung" nillable="true" type="q11:HT_NSD" />
+          <xs:element minOccurs="0" name="SessionId" nillable="true" type="xs:string" />
+          <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/BusinessServices.Utilities.DTO" minOccurs="0" name="ShowConfigDTO" nillable="true" type="q12:DSACH_SHOW_CONFIG" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LoginResponse" nillable="true" type="tns:LoginResponse" />
+  <xs:complexType name="ArrayOfChucNangDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ChucNangDto" nillable="true" type="tns:ChucNangDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfChucNangDto" nillable="true" type="tns:ArrayOfChucNangDto" />
+  <xs:complexType name="ChucNangDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BieuTuong" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ChucNang" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FormCase" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IDChucNang" type="xs:int" />
+      <xs:element minOccurs="0" name="IDChucNangCha" type="xs:int" />
+      <xs:element minOccurs="0" name="MenuHelp" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MenuType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PhuongThuc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Quyen" type="xs:int" />
+      <xs:element minOccurs="0" name="STT" type="xs:int" />
+      <xs:element minOccurs="0" name="ThuocTinh" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TieuDe" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Url" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UrlCat" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UrlGroup" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UrlHelp" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UrlICon" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UrlType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="lstTinhNang" nillable="true" type="tns:ArrayOfTinhNangDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ChucNangDto" nillable="true" type="tns:ChucNangDto" />
+  <xs:complexType name="ArrayOfTinhNangDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TinhNangDto" nillable="true" type="tns:TinhNangDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTinhNangDto" nillable="true" type="tns:ArrayOfTinhNangDto" />
+  <xs:complexType name="TinhNangDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MaTinhNang" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TinhNangDto" nillable="true" type="tns:TinhNangDto" />
+  <xs:complexType name="LogoutRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q13="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" base="q13:RequestBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="PassWord" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LogoutRequest" nillable="true" type="tns:LogoutRequest" />
+  <xs:complexType name="LogoutResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q14="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" base="q14:ResponseBase">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LogoutResponse" nillable="true" type="tns:LogoutResponse" />
+</xs:schema>

@@ -1,0 +1,10 @@
+STT	Number
+SO_HIEU	String	30
+TEN_TO_CHUC	String	255
+DIA_CHI	String	255
+DKKD	String	297
+LOAI_HINH	String	255
+VON_DIEU_LE	Number
+GIAM_DOC	String	255
+LINH_VUC_KD	String	255
+CBQL	String	30

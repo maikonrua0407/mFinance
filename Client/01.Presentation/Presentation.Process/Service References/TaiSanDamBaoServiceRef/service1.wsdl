@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="TaiSanDamBaoService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/CommunicationServices.TaiSanDamBao.Messages" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/Utilities.Common" />
+      <xsd:import />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/BusinessServices.TaiSanDamBao.DTO" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ITaiSanDamBaoService_returnHello_InputMessage">
+    <wsdl:part name="parameters" element="tns:returnHello" />
+  </wsdl:message>
+  <wsdl:message name="ITaiSanDamBaoService_returnHello_OutputMessage">
+    <wsdl:part name="parameters" element="tns:returnHelloResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITaiSanDamBaoService_functionName_InputMessage">
+    <wsdl:part name="parameters" element="tns:functionName" />
+  </wsdl:message>
+  <wsdl:message name="ITaiSanDamBaoService_functionName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:functionNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITaiSanDamBaoService_TaiSanDamBao_InputMessage">
+    <wsdl:part name="parameters" element="tns:TaiSanDamBao" />
+  </wsdl:message>
+  <wsdl:message name="ITaiSanDamBaoService_TaiSanDamBao_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TaiSanDamBaoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ITaiSanDamBaoService">
+    <wsdl:operation name="returnHello">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITaiSanDamBaoService/returnHello" message="tns:ITaiSanDamBaoService_returnHello_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITaiSanDamBaoService/returnHelloResponse" message="tns:ITaiSanDamBaoService_returnHello_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="functionName">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITaiSanDamBaoService/functionName" message="tns:ITaiSanDamBaoService_functionName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITaiSanDamBaoService/functionNameResponse" message="tns:ITaiSanDamBaoService_functionName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TaiSanDamBao">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITaiSanDamBaoService/TaiSanDamBao" message="tns:ITaiSanDamBaoService_TaiSanDamBao_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITaiSanDamBaoService/TaiSanDamBaoResponse" message="tns:ITaiSanDamBaoService_TaiSanDamBao_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="TaiSanDamBaoEndpoint" type="tns:ITaiSanDamBaoService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="returnHello">
+      <soap:operation soapAction="http://tempuri.org/ITaiSanDamBaoService/returnHello" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="functionName">
+      <soap:operation soapAction="http://tempuri.org/ITaiSanDamBaoService/functionName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TaiSanDamBao">
+      <soap:operation soapAction="http://tempuri.org/ITaiSanDamBaoService/TaiSanDamBao" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TaiSanDamBaoService">
+    <wsdl:port name="TaiSanDamBaoEndpoint" binding="tns:TaiSanDamBaoEndpoint">
+      <soap:address location="http://localhost:1001/TaiSanDamBaoService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

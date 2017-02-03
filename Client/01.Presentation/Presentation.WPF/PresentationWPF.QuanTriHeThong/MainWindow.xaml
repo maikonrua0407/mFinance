@@ -1,0 +1,20 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="PresentationWPF.QuanTriHeThong.MainWindow"
+        Title="MainWindow" Height="419" Width="852">
+    <Grid>
+        <StatusBar Height="30" VerticalAlignment="Bottom"/>
+        <Menu Height="30" VerticalAlignment="Top">
+            <MenuItem Name="mnuHeThong" Header="Hệ thống" Click="mnuHeThong_Click" />
+			<MenuItem Name="mnuDanhMuc" Header="Danh mục">
+				<MenuItem Header="Danh mục tỉnh thành" Name="mnuTinhThanh" Click="mnuTinhThanh_Click"/>
+			</MenuItem>
+			<MenuItem Header="Thoát" Name="mnuThoat" Click="mnuThoat_Click" />
+        </Menu>
+        <ToolBar Height="30" VerticalAlignment="Top" Margin="0,30,0,0" d:LayoutOverrides="Width"/>
+        <DockPanel Height="295" HorizontalAlignment="Left" Margin="0,58,0,0" Name="dockPanel1" VerticalAlignment="Top" Width="830" >
+            <Calendar Height="168" Name="calendar" Width="186" DisplayDate="" DockPanel.Dock="Left" FontSize="12" DisplayDateChanged="calendar_DisplayDateChanged" DisplayDateStart="1/1/1753" IsTodayHighlighted="False" />
+        </DockPanel>
+    </Grid>
+</Window>

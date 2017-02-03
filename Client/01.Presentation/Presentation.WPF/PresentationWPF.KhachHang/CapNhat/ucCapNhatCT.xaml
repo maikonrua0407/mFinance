@@ -1,0 +1,1051 @@
+﻿<UserControl x:Class="PresentationWPF.KhachHang.CapNhat.ucCapNhatCT"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             xmlns:my="http://schemas.microsoft.com/winfx/2006/xaml/presentation/ribbon" 
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation" 
+             xmlns:telerikMaskInput="clr-namespace:Telerik.Windows.Controls.MaskedInput;assembly=Telerik.Windows.Controls.Input"
+             xmlns:ribbon="clr-namespace:Microsoft.Windows.Controls.Ribbon;assembly=RibbonControlsLibrary"  
+             xmlns:s="clr-namespace:System;assembly=mscorlib"
+             xmlns:uc="clr-namespace:PresentationWPF.CustomControl;assembly=PresentationWPF.CustomControl"
+             xmlns:local="clr-namespace:PresentationWPF.KhachHang.CapNhat"
+             d:DesignHeight="768" d:DesignWidth="1024" >
+    <UserControl.Resources>
+        <DataTemplate x:Key="HeaderTemplate" DataType="{x:Type s:String}">
+            <Grid HorizontalAlignment="Left" Height="45">
+                <AccessText Text="{Binding}" TextWrapping="Wrap" VerticalAlignment="Center"/>
+            </Grid>
+        </DataTemplate>
+    </UserControl.Resources>
+    <UserControl.CommandBindings>
+        <CommandBinding CanExecute="HoldCommand_CanExecute" Executed="HoldCommand_Executed" Command="{x:Static local:ucCapNhatCT.HoldCommand}">
+        </CommandBinding>
+        <CommandBinding CanExecute="SaveCommand_CanExecute" Executed="SaveCommand_Executed" Command="{x:Static local:ucCapNhatCT.SaveCommand}">
+        </CommandBinding>
+        <CommandBinding CanExecute="ModifyCommand_CanExecute" Executed="ModifyCommand_Executed" Command="{x:Static local:ucCapNhatCT.ModifyCommand}">
+        </CommandBinding>
+        <CommandBinding CanExecute="DeleteCommand_CanExecute" Executed="DeleteCommand_Executed" Command="{x:Static local:ucCapNhatCT.DeleteCommand}">
+        </CommandBinding>
+        <CommandBinding CanExecute="ApproveCommand_CanExecute" Executed="ApproveCommand_Executed" Command="{x:Static local:ucCapNhatCT.ApproveCommand}">
+        </CommandBinding>
+        <CommandBinding CanExecute="RefuseCommand_CanExecute" Executed="RefuseCommand_Executed" Command="{x:Static local:ucCapNhatCT.RefuseCommand}">
+        </CommandBinding>
+        <CommandBinding CanExecute="CancelCommand_CanExecute" Executed="CancelCommand_Executed" Command="{x:Static local:ucCapNhatCT.CancelCommand}">
+        </CommandBinding>
+        <CommandBinding CanExecute="PreviewCommand_CanExecute" Executed="PreviewCommand_Executed" Command="{x:Static local:ucCapNhatCT.PreviewCommand}">
+        </CommandBinding>
+        <CommandBinding CanExecute="HelpCommand_CanExecute" Executed="HelpCommand_Executed" Command="{x:Static local:ucCapNhatCT.HelpCommand}">
+        </CommandBinding>
+        <CommandBinding CanExecute="CloseCommand_CanExecute" Executed="CloseCommand_Executed" Command="{x:Static local:ucCapNhatCT.CloseCommand}">
+        </CommandBinding>
+    </UserControl.CommandBindings>
+    <UserControl.ContextMenu>
+        <ContextMenu Name="mnuMain">
+        </ContextMenu>
+    </UserControl.ContextMenu>
+    <Grid Name="grMain">
+        <DockPanel Name="dockMain">
+            <DockPanel HorizontalAlignment="Stretch" DockPanel.Dock="Top" Margin="3,3,0,3" LastChildFill="False" Name="docToolbar">
+                <WrapPanel Name="Toolbar">
+                    <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbModify" DockPanel.Dock="Left" Label="Sửa"   SmallImageSource="/Utilities.Common;component/Images/Action/modify.png" Style="{StaticResource RibbonButton}" Click="tlbHotKey_Click" />
+                    <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbDelete" DockPanel.Dock="Left" Label="Xóa"  SmallImageSource="/Utilities.Common;component/Images/Action/delete.png" Style="{StaticResource RibbonButton}" Click="tlbHotKey_Click" />
+                    <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbHold" DockPanel.Dock="Left" Label="Lưu tạm" SmallImageSource="/Utilities.Common;component/Images/Action/hold.png" Style="{StaticResource RibbonButton}" Click="tlbHotKey_Click" />
+                    <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbSave" DockPanel.Dock="Left" Label="Trình duyệt"  SmallImageSource="/Utilities.Common;component/Images/Action/save.png" Style="{StaticResource RibbonButton}" Click="tlbHotKey_Click" />
+                    <Label Name="lbl1" Margin="3,0,0,0" DockPanel.Dock="Left" BorderThickness="3" Width="2" BorderBrush="#FF170404" />
+                    <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbApprove" DockPanel.Dock="Left" Label="Duyệt"  SmallImageSource="/Utilities.Common;component/Images/Action/approve.png" Style="{StaticResource RibbonButton}" Click="tlbHotKey_Click" />
+                    <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbRefuse" DockPanel.Dock="Left" Label="Từ chối"  SmallImageSource="/Utilities.Common;component/Images/Action/refuse.png" Style="{StaticResource RibbonButton}" Click="tlbHotKey_Click" />
+                    <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbCancel" DockPanel.Dock="Left" Label="Thoái duyệt"  SmallImageSource="/Utilities.Common;component/Images/Action/cancel.png" Style="{StaticResource RibbonButton}" Click="tlbHotKey_Click" />
+                    <Label Name="lbl2" Margin="3,0,0,0" DockPanel.Dock="Left" BorderThickness="3" Width="2" BorderBrush="#FF170404" />
+                    <ribbon:RibbonMenuButton Margin="3,0,0,0" Name="tlbPreview" DockPanel.Dock="Left" Label="In phiếu"  SmallImageSource="/Utilities.Common;component/Images/Action/preview.png" Style="{StaticResource RibbonMenuButton}">
+                        <ribbon:RibbonMenuItem Name="tlbPreviewSurvey" DockPanel.Dock="Left" Header="Phiếu khảo sát khách hàng"  ImageSource="/Utilities.Common;component/Images/Action/preview.png" Style="{StaticResource RibbonMenuItem}" Click="tlbHotKey_Click" />
+                        <ribbon:RibbonMenuItem Name="tlbPreviewReview" DockPanel.Dock="Left" Header="Phiếu đánh giá khách hàng"  ImageSource="/Utilities.Common;component/Images/Action/preview.png" Style="{StaticResource RibbonMenuItem}" Click="tlbHotKey_Click" />
+                        <ribbon:RibbonMenuItem Name="tlbPreviewRank" DockPanel.Dock="Left" Header="Phiếu xếp hạng tín dụng"  ImageSource="/Utilities.Common;component/Images/Action/preview.png" Style="{StaticResource RibbonMenuItem}" Click="tlbHotKey_Click" />
+                    </ribbon:RibbonMenuButton>
+                    <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbExport" DockPanel.Dock="Left" Label="Xuất Excel" SmallImageSource="/Utilities.Common;component/Images/Action/export.png" Style="{StaticResource RibbonButton}" Click="tlbHotKey_Click" />
+                    <Label Name="lbl3" Margin="3,0,0,0" DockPanel.Dock="Left" BorderThickness="3" Width="2" BorderBrush="#FF170404" />
+                    <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbHelp" DockPanel.Dock="Left" Label="Trợ giúp"  SmallImageSource="/Utilities.Common;component/Images/Action/help.png" Style="{StaticResource RibbonButton}" Click="tlbHotKey_Click" />
+                    <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbClose" DockPanel.Dock="Left" Label="Đóng"  SmallImageSource="/Utilities.Common;component/Images/Action/close.png" Style="{StaticResource RibbonButton}" Click="tlbHotKey_Click" />
+                </WrapPanel>
+                <CheckBox Margin="0,0,3,5" VerticalAlignment="Bottom" DockPanel.Dock="Right" Content="Thêm nhiều lần" Height="16" Name="cbMultiAdd"/>
+            </DockPanel>
+            <telerik:RadTabControl Name="tabNSDCT" TabStripPlacement="Left" TabOrientation="Vertical" Align="Right">
+                <telerik:RadTabItem Header="_1. Thông tin chung" HeaderTemplate="{StaticResource HeaderTemplate}" HorizontalContentAlignment="Left" Height="{Binding ElementName=grMain, Path=ActualWidth,
+                Converter={uc:MathConverter}, ConverterParameter=x/5}" TabIndex="0" IsSelected="True">
+                    <ScrollViewer ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="19*" />
+                                <ColumnDefinition Width="0" />
+                            </Grid.ColumnDefinitions>
+                            <DockPanel>
+                                <Border BorderThickness="1" CornerRadius="4" Margin="3" Height="50" Padding="10,5,0,5" BorderBrush="LightGray" DockPanel.Dock="Top">
+                                    <Grid VerticalAlignment="Center" HorizontalAlignment="Left" >
+                                        <StackPanel Orientation="Horizontal">
+                                            <Label Name="lblLabelTrangThai" HorizontalAlignment="Left">Trạng thái:</Label>
+                                            <Label Name="lblTrangThai" >Chờ duyệt</Label>
+                                        </StackPanel>
+                                    </Grid>
+                                </Border>
+                                <Expander DockPanel.Dock="Top" Header="Thông tin chung" Margin="3"  IsExpanded="True">
+                                    <Border BorderBrush="LightGray" BorderThickness="1" Padding="10,5,10,5">
+                                        <StackPanel>
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="130"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="20" />
+                                                    <ColumnDefinition Width="130"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="*"/>
+                                                    <RowDefinition Height="6"/>
+                                                </Grid.RowDefinitions>
+                                                <Label Grid.Row="0" Grid.Column="0" Content="Số giao dịch:"/>
+                                                <TextBox Grid.Row="0" Grid.Column="1" Name="txtSoGD" IsEnabled="False" />
+
+                                                <Label Grid.Row="0" Grid.Column="3" Content="Ngày giao dịch:"/>
+                                                <telerik:RadMaskedDateTimeInput Grid.Row="0" Grid.Column="4" Name="raddtNgayGD" IsEnabled="False" Mask="dd/MM/yyyy" HorizontalAlignment="Stretch"/>
+                                            </Grid>
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="130"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="20" />
+                                                    <ColumnDefinition Width="130"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="*"/>
+                                                    <RowDefinition Height="6"/>
+                                                    <RowDefinition Height="*"/>
+                                                    <RowDefinition Height="6"/>
+                                                    <RowDefinition Height="*"/>
+                                                    <RowDefinition Height="6"/>
+                                                    <RowDefinition Height="*"/>
+                                                    <RowDefinition Height="6"/>
+                                                    <RowDefinition Height="*"/>
+                                                    <RowDefinition Height="6"/>
+                                                    <RowDefinition Height="*"/>
+                                                    <RowDefinition Height="6"/>
+                                                    <RowDefinition Height="*"/>
+                                                    <RowDefinition Height="6"/>
+                                                    <RowDefinition Height="*"/>
+                                                    <RowDefinition Height="6"/>
+                                                    <RowDefinition Height="*"/>
+                                                    <RowDefinition Height="6"/>
+                                                    <RowDefinition Height="*"/>
+                                                    <RowDefinition Height="6"/>
+                                                    <RowDefinition Height="*"/>
+                                                    <RowDefinition Height="6"/>
+                                                </Grid.RowDefinitions>
+                                                <Border Grid.Column="4" Grid.RowSpan="5" CornerRadius="4" BorderBrush="LightGray" BorderThickness="1" Margin="0,0,0,0" HorizontalAlignment="Left" Width="150">
+                                                    <Image  Name="imgKhachHang" Source="pack://application:,,,/Utilities.Common;component/Images/Other/picture.png" Width="66" />
+                                                </Border>
+                                                <StackPanel Grid.Column="0" Grid.Row="0" Orientation="Horizontal">
+                                                    <Label Content="Mã khách hàng:" />
+                                                    <Label Content="(*)" Foreground="Red" Margin="-5,0,0,0" />
+                                                </StackPanel>
+                                                <TextBox Name="txtMaKhachHang" Grid.Column="1" Grid.Row="0" Padding="0,3,0,0" HorizontalAlignment="Stretch" Margin="0,0,35,0" TabIndex="1" />
+                                                <Button Grid.Column="1" Grid.Row="0" Name="btnMaKhachHang" HorizontalAlignment="Right" Width="30" Content="F3" TabIndex="2" />
+
+                                                <StackPanel Grid.Column="0" Grid.Row="8" Margin="0,0,0,0" Orientation="Horizontal">
+                                                    <Label Content="Nhóm thành viên:" />
+                                                    <Label Content="(*)" Margin="-5,0,0,0" Foreground="Red"/>
+                                                </StackPanel>
+                                                <TextBox Name="txtNhomTVien" Width="100" Padding="0,3,0,0" Grid.Column="1" Grid.Row="8" HorizontalAlignment="Left" TabIndex="5" IsEnabled="False"/>
+                                                <!--<Button Name="btnNhomTVien" Width="30" Margin="105,0,0,0" Content="F3" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="8" TabIndex="6" IsEnabled="False"/>-->
+                                                <Label Grid.Column="1" Grid.Row="8" Content="Tên nhóm" FontWeight="Bold" FontStyle="Italic" HorizontalAlignment="Stretch" Margin="140,0,0,0"/>
+
+                                                <StackPanel Grid.Column="0" Grid.Row="10" Margin="0,0,0,0" Orientation="Horizontal">
+                                                    <Label Content="Số thẻ thành viên:" />
+                                                </StackPanel>
+                                                <TextBox Name="txtSoTheTVien" Grid.Column="1" Grid.Row="10" Padding="0,3,0,0" IsEnabled="False" TabIndex="8" />
+
+                                                <StackPanel Grid.Row="4" Grid.Column="0" Margin="0,0,0,0" Orientation="Horizontal" HorizontalAlignment="Stretch">
+                                                    <Label Content="Ngày tham gia TC:" />
+                                                    <Label Content="(*)" Foreground="Red" Margin="-5,0,0,0" />
+                                                </StackPanel>
+                                                <telerik:RadMaskedDateTimeInput Name="raddtNgayTGiaTC" Grid.Column="1" Grid.Row="4"  Margin="0,0,35,0" HorizontalAlignment="Stretch" Mask="dd/MM/yyyy" AcceptsReturn="False" TabIndex="4"/>
+                                                <DatePicker HorizontalAlignment="Right" Grid.Column="1" Grid.Row="4" Width="30" AllowDrop="True" FirstDayOfWeek="Monday" Name="dtpNgayThamGiaTC" />
+
+                                                <StackPanel Grid.Row="6" Grid.Column="0" Margin="0,0,0,0" Orientation="Horizontal" HorizontalAlignment="Stretch">
+                                                    <Label Content="Ngày hết hiệu lực:" />
+                                                    <!--<Label Content="(*)" Foreground="Red" Margin="-5,0,0,0" />-->
+                                                </StackPanel>
+                                                <telerik:RadMaskedDateTimeInput Name="raddtNgayHetHL" Grid.Column="1" Grid.Row="6"  Margin="0,0,35,0" HorizontalAlignment="Stretch" Mask="dd/MM/yyyy" AcceptsReturn="False" TabIndex="4"/>
+                                                <DatePicker HorizontalAlignment="Right" Grid.Column="1" Grid.Row="6" Width="30" AllowDrop="True" FirstDayOfWeek="Monday" Name="dtpNgayHetHL" />
+
+                                                <StackPanel Grid.Column="0" Grid.Row="2" Margin="0,0,0,0" Orientation="Horizontal" HorizontalAlignment="Stretch">
+                                                    <Label Content="Tên khách hàng:" />
+                                                    <Label Content="(*)" Foreground="Red" Margin="-5,0,0,0" />
+                                                </StackPanel>
+                                                <TextBox Name="txtTenKhachHang" Grid.Column="1" Grid.Row="2" Padding="0,3,0,0" HorizontalAlignment="Stretch" TabIndex="3" />
+
+                                                <StackPanel Grid.Column="3" Grid.Row="8" Margin="0,0,0,0" Orientation="Horizontal" >
+                                                    <Label Content="Cụm:" />
+                                                </StackPanel>
+                                                <TextBox Name="txtCumTVien" HorizontalAlignment="Stretch" Grid.Column="4" Grid.Row="8" Padding="0,3,0,0" IsEnabled="False" TabIndex="7" />
+                                                <StackPanel Grid.Column="3" Grid.Row="10" Orientation="Horizontal">
+                                                    <Label Content="Ngày sinh:" />
+                                                    <Label Content="(*)" Margin="-5,0,0,0" Foreground="Red"/>
+                                                </StackPanel>
+                                                <telerik:RadMaskedDateTimeInput Name="raddtNgaySinh" Grid.Column="4" Grid.Row="10" Margin="0,0,35,0" HorizontalAlignment="Stretch" Mask="dd/MM/yyyy" AcceptsReturn="False" TabIndex="9" />
+                                                <DatePicker HorizontalAlignment="Right" Grid.Column="4" Grid.Row="10" Width="30" AllowDrop="True" FirstDayOfWeek="Monday" Name="dtpNgaySinh" />
+
+                                                <telerik:RadMaskedDateTimeInput Name="raddtNgayCap" Grid.Column="4" Grid.Row="12" Margin="0,0,35,0" HorizontalAlignment="Stretch" Mask="dd/MM/yyyy" AcceptsReturn="False" TabIndex="11" />
+                                                <DatePicker HorizontalAlignment="Right" Grid.Column="4" Grid.Row="12" Width="30" AllowDrop="True" FirstDayOfWeek="Monday" Name="dtpNgayCap" />
+
+                                                <StackPanel Grid.Row="12" Grid.Column="0" Orientation="Horizontal">
+                                                    <Label Content="Số CMND:"/>
+                                                    <Label Content="(*)" Margin="-5,0,0,0" Foreground="Red"/>
+                                                </StackPanel>
+                                                <TextBox Grid.Row="12" Grid.Column="1" TabIndex="10" />
+
+                                                <StackPanel Grid.Row="12" Grid.Column="3" Orientation="Horizontal">
+                                                    <Label Content="Ngày cấp:"/>
+                                                    <Label Content="(*)" Margin="-5,0,0,0" Foreground="Red"/>
+                                                </StackPanel>
+                                                <StackPanel Grid.Row="14" Grid.Column="0" Orientation="Horizontal">
+                                                    <Label Content="Nơi cấp:"/>
+                                                    <Label Content="(*)" Margin="-5,0,0,0" Foreground="Red"/>
+                                                </StackPanel>
+                                                <ComboBox Grid.Row="14" Grid.Column="1" Name="cmbNoiCap" HorizontalAlignment="Stretch"  TabIndex="12" />
+
+                                                <Label Grid.Row="14" Grid.Column="3" Content="Giới tính:"/>
+                                                <ComboBox Grid.Row="14" Grid.Column="4" TabIndex="14" />
+
+                                                <!--<Label Grid.Row="14" Grid.Column="0" Content="SĐT cố định:"/>
+                                            <TextBox Grid.Row="14" Grid.Column="1" TabIndex="15" />
+
+                                            <Label Grid.Row="14" Grid.Column="3" Content="SĐT di động:"/>
+                                            <TextBox Grid.Row="14" Grid.Column="4" TabIndex="16" />-->
+
+                                                <StackPanel Grid.Column="0" Grid.Row="16" Margin="0,0,0,0" Orientation="Horizontal">
+                                                    <Label Content="Dân tộc:" />
+                                                    <Label Content="(*)" Foreground="Red" Margin="-5,0,0,0" />
+                                                </StackPanel>
+                                                <ComboBox Name="cmbDanToc" Padding="0,3,0,0" Grid.Column="1" Grid.Row="16" TabIndex="17" />
+                                                <StackPanel Grid.Column="3" Grid.Row="16" Margin="0,0,0,0" Orientation="Horizontal">
+                                                    <Label Content="Quốc tịch:" />
+                                                    <Label Content="(*)" Foreground="Red" Margin="-5,0,0,0" />
+                                                </StackPanel>
+                                                <ComboBox Name="cmbQuocTich" Padding="0,3,0,0" Grid.Column="4" Grid.Row="16" TabIndex="19" />
+
+                                                <Label Grid.Row="18" Grid.Column="0" Content="Tình trạng cư trú:"/>
+                                                <ComboBox Grid.Row="18" Grid.Column="1" TabIndex="21">
+                                                    <ComboBoxItem Content="Người cư trú" IsSelected="True"/>
+                                                </ComboBox>
+
+                                                <Label Grid.Row="18" Grid.Column="3" Content="Mã số thuế:"/>
+                                                <TextBox Grid.Row="18" Grid.Column="4" Name="txtMaSoThue" TabIndex="22"/>
+                                            </Grid>
+                                        </StackPanel>
+                                    </Border>
+                                </Expander>
+                                <Expander DockPanel.Dock="Top" Header="Hộ khẩu thường trú" Margin="3" >
+                                    <StackPanel>
+                                        <Border BorderBrush="LightGray" BorderThickness="1" Padding="10,5,10,5">
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="130"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="20" />
+                                                    <ColumnDefinition Width="130"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="*"/>
+                                                    <RowDefinition Height="6"/>
+                                                    <RowDefinition Height="*"/>
+                                                </Grid.RowDefinitions>
+                                                <StackPanel  Grid.Row="0" Grid.Column="0" Orientation="Horizontal">
+                                                    <Label Content="Địa chỉ:"/>
+                                                    <Label Content="(*)" Margin="-5,0,0,0" Foreground="Red"/>
+                                                </StackPanel>
+
+                                                <TextBox Grid.Row="0" Grid.Column="1" Name="txtDiaChi" TabIndex="23" />
+
+                                                <StackPanel Grid.Column="3" Grid.Row="0" Margin="0,0,0,0" Orientation="Horizontal">
+                                                    <Label Content="Tỉnh/thành phố:" />
+                                                </StackPanel>
+                                                <ComboBox Name="cmbTinhTP" Padding="0,3,0,0" Grid.Column="4" Grid.Row="0" TabIndex="24" />
+                                                <StackPanel Grid.Column="0" Grid.Row="2" Orientation="Horizontal" >
+                                                    <Label Content="Quận/huyện:" />
+                                                </StackPanel>
+                                                <ComboBox Name="cmbQuanHuyen" Padding="0,3,0,0" Grid.Row="2" Grid.Column="1" TabIndex="25" />
+                                                <StackPanel Grid.Column="3" Grid.Row="2" Margin="0,0,0,0" Orientation="Horizontal">
+                                                    <Label Content="Xã/phường:" />
+                                                </StackPanel>
+                                                <ComboBox Name="cmbXaPhuong" Grid.Column="4" Grid.Row="2" Padding="0,3,0,0" TabIndex="26" />
+                                            </Grid>
+                                        </Border>
+                                    </StackPanel>
+                                </Expander>
+                                <Expander DockPanel.Dock="Top" Header="Địa chỉ hiện tại" Margin="3" >
+                                    <StackPanel>
+                                        <Border BorderBrush="LightGray" BorderThickness="1" Padding="10,5,10,5">
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="130"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="20" />
+                                                    <ColumnDefinition Width="130"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="*"/>
+                                                    <RowDefinition Height="6"/>
+                                                    <RowDefinition Height="*"/>
+                                                </Grid.RowDefinitions>
+                                                <StackPanel  Grid.Row="0" Grid.Column="0" Orientation="Horizontal">
+                                                    <Label Content="Địa chỉ:"/>
+                                                    <Label Content="(*)" Margin="-5,0,0,0" Foreground="Red"/>
+                                                </StackPanel>
+
+                                                <TextBox Grid.Row="0" Grid.Column="1" Name="txtDiaChiHienTai" TabIndex="27" />
+
+                                                <StackPanel Grid.Column="3" Grid.Row="0" Margin="0,0,0,0" Orientation="Horizontal">
+                                                    <Label Content="Tỉnh/thành phố:" />
+                                                </StackPanel>
+                                                <ComboBox Name="cmbTinhTPHienTai" Padding="0,3,0,0" Grid.Column="4" Grid.Row="0" TabIndex="28" />
+                                                <StackPanel Grid.Column="0" Grid.Row="2" Orientation="Horizontal" >
+                                                    <Label Content="Quận/huyện:" />
+                                                </StackPanel>
+                                                <ComboBox Name="cmbQuanHuyenHienTai" Padding="0,3,0,0" Grid.Row="2" Grid.Column="1" TabIndex="29" />
+                                                <StackPanel Grid.Column="3" Grid.Row="2" Margin="0,0,0,0" Orientation="Horizontal">
+                                                    <Label Content="Xã/phường:" />
+                                                </StackPanel>
+                                                <ComboBox Name="cmbXaPhuongHienTai" Grid.Column="4" Grid.Row="2" Padding="0,3,0,0" TabIndex="30" />
+                                            </Grid>
+                                        </Border>
+                                    </StackPanel>
+                                </Expander>
+                                <Expander DockPanel.Dock="Top" Header="Số Điện thoại và email" Margin="3" >
+                                    <StackPanel>
+                                        <Border BorderBrush="LightGray" BorderThickness="1" Padding="10,5,10,5">
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="130"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="20" />
+                                                    <ColumnDefinition Width="130"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="*"/>
+                                                    <RowDefinition Height="6"/>
+                                                    <RowDefinition Height="*"/>
+                                                </Grid.RowDefinitions>
+                                                <Label Grid.Row="0" Grid.Column="0" Content="SĐT cố định:"/>
+                                                <TextBox Grid.Row="0" Grid.Column="1" TabIndex="31" Name="txtSoCoDinh"/>
+
+                                                <Label Grid.Row="0" Grid.Column="3" Content="SĐT di động:"/>
+                                                <TextBox Grid.Row="0" Grid.Column="4" TabIndex="32" Name="txtSoDiDong"/>
+
+                                                <Label Grid.Row="2" Grid.Column="0" Content="Email:"/>
+                                                <TextBox Grid.Row="2" Grid.Column="1" TabIndex="33" Name="txtEmail"/>
+                                            </Grid>
+                                        </Border>
+                                    </StackPanel>
+                                </Expander>
+                                <Expander DockPanel.Dock="Top" Header="Thông tin khác" Margin="3" >
+                                    <StackPanel>
+                                        <Border BorderBrush="LightGray" BorderThickness="1" Padding="10,5,10,5">
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="130"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="20" />
+                                                    <ColumnDefinition Width="130"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="*"/>
+                                                    <RowDefinition Height="6"/>
+                                                    <RowDefinition Height="*"/>
+                                                    <RowDefinition Height="6"/>
+                                                    <RowDefinition Height="*"/>
+                                                </Grid.RowDefinitions>
+                                                <StackPanel Grid.Column="0" Grid.Row="0" Orientation="Horizontal">
+                                                    <Label Content="Tình trạng hôn nhân:" />
+                                                </StackPanel>
+                                                <ComboBox Name="cmbHonNhan" Grid.Column="1" Grid.Row="0" TabIndex="34"></ComboBox>
+                                                <Label Content="Trình độ học vấn:" Grid.Column="3"  Grid.Row="0" />
+                                                <ComboBox Name="cmbHocVan" HorizontalAlignment="Stretch" Grid.Column="4" Grid.Row="0" TabIndex="35"></ComboBox>
+
+                                                <Label Content="Vai trò trong gia đình:" Grid.Column="0" Grid.Row="2"/>
+                                                <ComboBox Name="cmbVaiTroGD" HorizontalAlignment="Stretch" Grid.Column="1" Grid.Row="2" TabIndex="36"></ComboBox>
+
+                                                <Label Content="Loại hình công tác:" Grid.Column="0" Grid.Row="4"/>
+                                                <ComboBox Name="cmbLHCongTac" HorizontalAlignment="Stretch" Grid.Column="1" Grid.Row="4" TabIndex="37"></ComboBox>
+
+                                                <Label Content="Thời gian công tác:" Grid.Column="3" Grid.Row="4" />
+                                                <ComboBox Name="cmbTGCongTac" Grid.Column="4" Grid.Row="4" TabIndex="38"></ComboBox>
+
+                                            </Grid>
+                                        </Border>
+                                    </StackPanel>
+                                </Expander>
+
+                            </DockPanel>
+                        </Grid>
+                    </ScrollViewer>
+                </telerik:RadTabItem>
+                <telerik:RadTabItem Header="_2. Gia đình và giấy tờ có liên quan" HeaderTemplate="{StaticResource HeaderTemplate}" HorizontalContentAlignment="Left" Height="{Binding ElementName=grMain, Path=ActualWidth,
+                Converter={uc:MathConverter}, ConverterParameter=x/5}" TabIndex="1" IsSelected="True">
+                    <ScrollViewer ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Auto">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="19*" />
+                                <ColumnDefinition Width="0" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="30" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="12" />
+                            </Grid.RowDefinitions>
+                            <GroupBox Header="Thông tin cơ bản về hộ gia đình" Grid.Row="0" Padding="0,10" Margin="3">
+                                <DockPanel>
+                                    <StackPanel Orientation="Horizontal" Margin="5,0,0,0" DockPanel.Dock="Top">
+                                        <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbAddThongTin" DockPanel.Dock="Left" Label="Thêm"  SmallImageSource="/Utilities.Common;component/Images/Action/detail_add.png" Style="{StaticResource RibbonButton}" />
+                                        <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbModifyThongTin" DockPanel.Dock="Left" Label="Sửa"   SmallImageSource="/Utilities.Common;component/Images/Action/detail_edit.png" Style="{StaticResource RibbonButton}"  />
+                                        <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbDeleteThongTin" DockPanel.Dock="Left" Label="Xóa"   SmallImageSource="/Utilities.Common;component/Images/Action/detail_delete.png" Style="{StaticResource RibbonButton}" />
+                                    </StackPanel>
+                                    <telerik:RadGridView Name="grGiayTo"
+                AutoGenerateColumns="False" CanUserFreezeColumns="False" RowIndicatorVisibility="Collapsed" Margin="5" ShowGroupPanel="False">
+                                        <telerik:RadGridView.Columns>
+                                            <telerik:GridViewDataColumn Header="ID" IsVisible="False" />
+                                            <telerik:GridViewDataColumn Width="30">
+                                                <telerik:GridViewDataColumn.Header>
+                                                    <CheckBox HorizontalAlignment="Center" Name="chkThongTinCoBanGDinh"></CheckBox>
+                                                </telerik:GridViewDataColumn.Header>
+                                                <telerik:GridViewDataColumn.CellTemplate>
+                                                    <DataTemplate>
+                                                        <CheckBox></CheckBox>
+                                                    </DataTemplate>
+                                                </telerik:GridViewDataColumn.CellTemplate>
+                                            </telerik:GridViewDataColumn>
+                                            <telerik:GridViewDataColumn Header="STT" Width="40"/>
+                                            <telerik:GridViewDataColumn Header="Họ và tên" Width="*"/>
+                                            <telerik:GridViewDataColumn Header="Ngày tháng năm sinh" Width="*"/>
+                                            <telerik:GridViewDataColumn Header="Giới tính" Width="*"/>
+                                            <telerik:GridViewDataColumn Header="Quan hệ GD" Width="*"/>
+                                            <telerik:GridViewDataColumn Header="Tình trạng sức khỏe" Width="*"/>
+                                            <telerik:GridViewDataColumn Header="Có việc làm và thu nhập" Width="*"/>
+
+                                        </telerik:RadGridView.Columns>
+                                    </telerik:RadGridView>
+                                </DockPanel>
+                            </GroupBox>
+                            <Grid Grid.Row="1">
+                                <StackPanel Grid.Row="1">
+                                    <Grid Grid.Row="1">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="130"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="20" />
+                                            <ColumnDefinition Width="130"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <CheckBox Grid.Column="0" Grid.ColumnSpan="3" Content="Đủ điều kiện tham gia MPA" Margin="10,5,10,5"/>
+                                        <Label Grid.Column="3" Content="Ngày tham gia:"/>
+                                        <telerik:RadMaskedDateTimeInput Grid.Column="4" HorizontalAlignment="Stretch" Margin="0,0,35,0" Mask="dd/MM/yyyy"/>
+                                        <DatePicker Grid.Column="4" HorizontalAlignment="Right" Width="30"/>
+                                    </Grid>
+                                </StackPanel>
+                            </Grid>
+                            
+                            <GroupBox Grid.Row="2" Header="Giấy tờ có liên quan" Padding="0,10" Margin="3">
+                                <DockPanel>
+                                    <StackPanel Orientation="Horizontal" Margin="5,0,0,0" DockPanel.Dock="Top">
+                                        <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbAddGiayTo" DockPanel.Dock="Left" Label="Thêm"  SmallImageSource="/Utilities.Common;component/Images/Action/detail_add.png" Style="{StaticResource RibbonButton}" />
+                                        <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbModifyGiayTo" DockPanel.Dock="Left" Label="Sửa"   SmallImageSource="/Utilities.Common;component/Images/Action/detail_edit.png" Style="{StaticResource RibbonButton}"  />
+                                        <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbDeleteGiayTo" DockPanel.Dock="Left" Label="Xóa"   SmallImageSource="/Utilities.Common;component/Images/Action/detail_delete.png" Style="{StaticResource RibbonButton}" />
+                                    </StackPanel>
+                                    <telerik:RadGridView Name="raddgrGiayTo" MinHeight="150" MaxHeight="400" ColumnWidth="*"
+                AutoGenerateColumns="False" CanUserFreezeColumns="False" RowIndicatorVisibility="Collapsed" Margin="5" ShowGroupPanel="False">
+                                        <telerik:RadGridView.Columns>
+                                            <telerik:GridViewDataColumn Header="ID" Width="0" IsReadOnly="True" DataMemberBinding="{Binding ID}" IsVisible="False" />
+                                            <telerik:GridViewDataColumn Width="30">
+                                                <telerik:GridViewDataColumn.Header>
+                                                    <CheckBox HorizontalAlignment="Center" Name="chkGiayToLQuan"></CheckBox>
+                                                </telerik:GridViewDataColumn.Header>
+                                                <telerik:GridViewDataColumn.CellTemplate>
+                                                    <DataTemplate>
+                                                        <CheckBox HorizontalAlignment="Center"></CheckBox>
+                                                    </DataTemplate>
+                                                </telerik:GridViewDataColumn.CellTemplate>
+                                            </telerik:GridViewDataColumn>
+                                            <telerik:GridViewDataColumn Header="STT" Width="40"  IsReadOnly="True" DataMemberBinding="{Binding STT}">
+                                            </telerik:GridViewDataColumn>
+                                            <telerik:GridViewDataColumn Header="Loại giấy tờ " Width="*"/>
+                                            <telerik:GridViewDataColumn Header="Số giấy giấy tờ" Width="*"/>
+                                            <telerik:GridViewDataColumn Header="Ngày cấp" Width="*"/>
+                                            <telerik:GridViewDataColumn Header="Ngày hết hạn" Width="*"/>
+                                        </telerik:RadGridView.Columns>
+                                    </telerik:RadGridView>
+                                </DockPanel>
+                            </GroupBox>
+                            
+                        </Grid>
+                    </ScrollViewer>
+                </telerik:RadTabItem>
+                <telerik:RadTabItem Header="_3. Thu nhập, chi phí và tài sản" HeaderTemplate="{StaticResource HeaderTemplate}" HorizontalContentAlignment="Left" Height="{Binding ElementName=grMain, Path=ActualWidth,
+                Converter={uc:MathConverter}, ConverterParameter=x/5}" TabIndex="2" IsSelected="True">
+                    <ScrollViewer ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Auto">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="19*" />
+                                <ColumnDefinition Width="0" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="12" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="12" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <GroupBox Header="Các khoản thu nhập" Padding="0,5" Margin="3">
+                                <DockPanel>
+                                    <telerik:RadGridView Name="raddgrKhoanThuNhap" 
+                AutoGenerateColumns="False" CanUserFreezeColumns="False" RowIndicatorVisibility="Collapsed" ShowGroupPanel="False">
+                                        <telerik:RadGridView.Columns>
+                                            <telerik:GridViewDataColumn Header="STT" Width="40"  />
+                                            <telerik:GridViewDataColumn Header="ID" IsVisible="False" />
+                                            <telerik:GridViewDataColumn Header="Các nguồn thu" Width="*" >
+                                            </telerik:GridViewDataColumn>
+                                            <telerik:GridViewDataColumn Header="Số tiền" Width="*" />
+                                        </telerik:RadGridView.Columns>
+                                    </telerik:RadGridView>
+                                </DockPanel>
+                            </GroupBox>
+                            <GroupBox Header="Các khoản chi phí" Grid.Row="2" Padding="0,5" Margin="3">
+                                <DockPanel>
+                                    <telerik:RadGridView Name="raddgrThuNhap"  MinHeight="100" MaxHeight="400" ColumnWidth="*" ShowGroupPanel="False"
+                AutoGenerateColumns="False" CanUserFreezeColumns="False" RowIndicatorVisibility="Collapsed" Margin="5" >
+                                        <telerik:RadGridView.Columns>
+                                            <telerik:GridViewDataColumn Header="STT" Width="40"  />
+                                            <telerik:GridViewDataColumn Header="ID" IsVisible="False" />
+                                            <telerik:GridViewDataColumn Header="Các khoản chi" Width="*" >
+                                            </telerik:GridViewDataColumn>
+                                            <telerik:GridViewDataColumn Header="Số tiền" Width="*" />
+                                        </telerik:RadGridView.Columns>
+                                    </telerik:RadGridView>
+                                </DockPanel>
+                            </GroupBox>
+                            <GroupBox Header="Tài sản của hộ gia đình" Grid.Row="4" Padding="0,5" Margin="3">
+                                <DockPanel>
+                                    <telerik:RadGridView Name="raddgrTaiSan" ShowGroupPanel="False"
+                AutoGenerateColumns="False" CanUserFreezeColumns="False" RowIndicatorVisibility="Collapsed">
+                                        <telerik:RadGridView.Columns>
+                                            <telerik:GridViewDataColumn Header="STT" Width="40"  />
+                                            <telerik:GridViewDataColumn Header="ID" IsVisible="False" />
+                                            <telerik:GridViewDataColumn Header="Loại tài sản" Width="*" >
+                                            </telerik:GridViewDataColumn>
+                                            <telerik:GridViewDataColumn Header="Số tiền" Width="*" />
+                                        </telerik:RadGridView.Columns>
+                                    </telerik:RadGridView>
+                                </DockPanel>
+                            </GroupBox>
+                        </Grid>
+                    </ScrollViewer>
+                </telerik:RadTabItem>
+                <telerik:RadTabItem Header="_4. Nhà cửa và phương tiện đi lại" HeaderTemplate="{StaticResource HeaderTemplate}" HorizontalContentAlignment="Left" Height="{Binding ElementName=grMain, Path=ActualWidth,
+                Converter={uc:MathConverter}, ConverterParameter=x/5}" TabIndex="3" IsSelected="True">
+                    <ScrollViewer ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="19*" />
+                                <ColumnDefinition Width="0" />
+                            </Grid.ColumnDefinitions>
+                            <DockPanel>
+                                <GroupBox DockPanel.Dock="Top" Header="Thông tin về nhà ở" Padding="0,10" Margin="3">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="*" />
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*" />
+                                            <RowDefinition Height="*" />
+                                            <RowDefinition Height="*" />
+                                        </Grid.RowDefinitions>
+                                        <GroupBox Header="Nơi cư trú" Grid.ColumnSpan="2" Margin="3">
+                                            <Grid Margin="7,0,0,0">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="*" />
+                                                    <ColumnDefinition Width="2*" />
+                                                    <ColumnDefinition Width="20" />
+                                                    <ColumnDefinition Width="*" />
+                                                    <ColumnDefinition Width="2*" />
+                                                </Grid.ColumnDefinitions>
+                                                <Label Content="Nơi cư trú:" />
+                                                <ComboBox Name="cmbNoiCuTru" Grid.Column="1" Grid.Row="0" TabIndex="1" />
+                                                <Label Content="Thời gian cư trú:" Grid.Column="3" />
+                                                <ComboBox Name="cmbTGianCuTru" Grid.Column="4" TabIndex="2"></ComboBox>
+                                            </Grid>
+                                        </GroupBox>
+                                        <GroupBox Header="Kích cỡ nhà" Grid.Column="0" Grid.Row="1" Margin="3">
+                                            <StackPanel Orientation="Horizontal">
+                                                <RadioButton Name="rdoKCoNhaNho" Margin="10,5,5,10"  Content="Nhà nhỏ" GroupName="grnKichCoNha" TabIndex="3" />
+                                                <RadioButton Name="rdoKCoNhaTB" Margin="10,5,5,10"  Content="Nhà trung bình" GroupName="grnKichCoNha" TabIndex="4" />
+                                                <RadioButton Name="rdoKCoNhaTo" Margin="10,5,5,10"  Content="Nhà lớn" GroupName="grnKichCoNha" TabIndex="5" />
+                                                <RadioButton Name="rdoKichCoNhaKhac" Margin="10,5,5,10"  Content="Khác" GroupName="grnKichCoNha" TabIndex="6" />
+                                            </StackPanel>
+                                        </GroupBox>
+                                        <GroupBox Header="Tường nhà" Margin="3" Grid.Column="1" Grid.Row="1">
+                                            <StackPanel Orientation="Horizontal">
+                                                <RadioButton Name="rdoTNhaDat" Margin="10,5,5,10"  Content="Đất/cót ép" GroupName="grnTuongNha" TabIndex="7" />
+                                                <RadioButton Name="rdoKTNhaVNua" Margin="10,5,5,10"  Content="Xỉ/papanh/vách tre/nứa" GroupName="grnTuongNha" TabIndex="8" />
+                                                <RadioButton Name="rdoKTNGach" Margin="10,5,5,10"  Content="Gạch/gỗ" GroupName="grnTuongNha" TabIndex="9" />
+                                                <RadioButton Name="rdoTuongNhaKhac" Margin="10,5,5,10"  Content="Khác" GroupName="grnKichCoNha" TabIndex="10" />
+                                            </StackPanel>
+                                        </GroupBox>
+                                        <GroupBox Header="Chất lợp mái nhà" Margin="3" Grid.Column="0" Grid.Row="2">
+                                            <StackPanel Orientation="Horizontal">
+                                                <RadioButton Name="rdoCLopTranh" Margin="10,5,5,10"  Content="Tranh/Lá" GroupName="grnChatLopMai" TabIndex="11" />
+                                                <RadioButton Name="rdoCLopTon" Margin="10,5,5,10"  Content="Tôn/ngói/tấm lợp" GroupName="grnChatLopMai" TabIndex="12" />
+                                                <RadioButton Name="rdoCLopMai" Margin="10,5,5,10"  Content="Mái bằng" GroupName="grnChatLopMai" TabIndex="13" />
+                                                <RadioButton Name="rdoCLopMaiKhac" Margin="10,5,5,10"  Content="Khác" GroupName="grnChatLopMai" TabIndex="14" />
+                                            </StackPanel>
+                                        </GroupBox>
+                                        <GroupBox Header="Mức độ bền chắc" Margin="3" Grid.Column="1" Grid.Row="2">
+                                            <StackPanel Orientation="Horizontal">
+                                                <RadioButton Name="rdoMDoCap4" Margin="10,5,5,10"  Content="Nhà cấp 4" GroupName="grnMDoBen" TabIndex="15" />
+                                                <RadioButton Name="rdoMDoCap3" Margin="10,5,5,10"  Content="Nhà cấp 3" GroupName="grnMDoBen" TabIndex="16" />
+                                                <RadioButton Name="rdoMDoKienCo" Margin="10,5,5,10"  Content="Nhà kiên cố" GroupName="grnMDoBen" TabIndex="17" />
+                                                <RadioButton Name="rdoMDoBenKhac" Margin="10,5,5,10"  Content="Nhà kiên cố" GroupName="grnMDoBen" TabIndex="18" />
+                                            </StackPanel>
+                                        </GroupBox>
+                                    </Grid>
+                                </GroupBox>
+                                <Grid Margin="0,10,0,0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*" />
+                                    </Grid.RowDefinitions>
+                                    <GroupBox Header="Phương tiện đi lại" Grid.Column="0" Grid.Row="0" Padding="0,10" Margin="3">
+                                        <StackPanel>
+                                            <Grid Margin="7,0,0,0">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="*" />
+                                                    <ColumnDefinition Width="*" />
+                                                </Grid.ColumnDefinitions>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="*" />
+                                                    <RowDefinition Height="*" />
+                                                </Grid.RowDefinitions>
+                                                <RadioButton Name="rdoPTienCongCong" Margin="10,5,5,5"  Content="Giao thông công cộng" GroupName="grnPhuongTien" Grid.Column="0" Grid.Row="0" TabIndex="19" />
+                                                <RadioButton Name="rdoPTienXeMay" Margin="10,5,5,5"  Content="Xe gắn máy hai bánh" GroupName="grnPhuongTien" Grid.Column="1" Grid.Row="0" TabIndex="20" />
+                                                <RadioButton Name="rdoPTienOto" Margin="10,5,5,5"  Content="Ô tô con" GroupName="grnPhuongTien" Grid.Column="0" Grid.Row="1" TabIndex="21" />
+                                                <RadioButton Name="rdoPTienKhac" Margin="10,5,5,5"  Content="Phương tiện khác" GroupName="grnPhuongTien" Grid.Column="1" Grid.Row="1" TabIndex="22" />
+                                            </Grid>
+                                        </StackPanel>
+                                    </GroupBox>
+                                    <GroupBox Header="Phương tiện thông tin" Grid.Column="1" Grid.Row="0" Padding="0,10" Margin="3">
+                                        <StackPanel>
+                                            <StackPanel Orientation="Vertical" Margin="2,0,0,0">
+                                                <RadioButton Name="rdoPTTTCo" Margin="10,5,5,10"  Content="Có sử dụng điện thoại" GroupName="grnPhuongTienTT" Grid.Column="1" Grid.Row="1" TabIndex="23" />
+                                                <RadioButton Name="rdoPTTTKhong" Margin="10,5,5,10"  Content="Không sử dụng điện thoại" GroupName="grnPhuongTienTT" Grid.Column="1" Grid.Row="1" TabIndex="24" />
+                                            </StackPanel>
+                                        </StackPanel>
+                                    </GroupBox>
+                                </Grid>
+                            </DockPanel>
+                        </Grid>
+                    </ScrollViewer>
+                </telerik:RadTabItem>
+                <telerik:RadTabItem Header="_5. Người thừa kế và KH có liên quan" HeaderTemplate="{StaticResource HeaderTemplate}" HorizontalContentAlignment="Left" Height="{Binding ElementName=grMain, Path=ActualWidth,
+                Converter={uc:MathConverter}, ConverterParameter=x/5}" TabIndex="4" IsSelected="True">
+                    <ScrollViewer ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Auto">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="19*" />
+                                <ColumnDefinition Width="0" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="0" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <GroupBox Header="Thông tin người thừa kế" Padding="0,5" Margin="3">
+                                <DockPanel>
+                                    <StackPanel Orientation="Horizontal" Margin="5,0,0,0" DockPanel.Dock="Top" >
+                                        <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbAddNguoiThuaKe" DockPanel.Dock="Left" Label="Thêm"  SmallImageSource="/Utilities.Common;component/Images/Action/detail_add.png" Style="{StaticResource RibbonButton}" />
+                                        <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbModifyNguoiThuaKe" DockPanel.Dock="Left" Label="Sửa"   SmallImageSource="/Utilities.Common;component/Images/Action/detail_edit.png" Style="{StaticResource RibbonButton}"  />
+                                        <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbDeleteNguoiThuaKe" DockPanel.Dock="Left" Label="Xóa"   SmallImageSource="/Utilities.Common;component/Images/Action/detail_delete.png" Style="{StaticResource RibbonButton}" />
+                                    </StackPanel>
+                                    <telerik:RadGridView Name="raddgrNTKe" ColumnWidth="*"
+                AutoGenerateColumns="False" CanUserFreezeColumns="False" RowIndicatorVisibility="Collapsed" Margin="3" ShowGroupPanel="False">
+                                        <telerik:RadGridView.Columns>
+                                            <telerik:GridViewDataColumn Header="ID" Width="0" IsVisible="False" />
+                                            <telerik:GridViewDataColumn Width="30" MaxWidth="40">
+                                                <telerik:GridViewDataColumn.Header>
+                                                    <CheckBox HorizontalAlignment="Center" Name="chkNguoiTKe"></CheckBox>
+                                                </telerik:GridViewDataColumn.Header>
+                                                <telerik:GridViewDataColumn.CellTemplate>
+                                                    <DataTemplate>
+                                                        <CheckBox></CheckBox>
+                                                    </DataTemplate>
+                                                </telerik:GridViewDataColumn.CellTemplate>
+                                            </telerik:GridViewDataColumn>
+                                            <telerik:GridViewDataColumn Header="STT" Width="40"  />
+
+                                            <telerik:GridViewDataColumn Header="Họ và tên" Width="*" />
+                                            <telerik:GridViewDataColumn Header="Ngày tháng năm sinh" >
+                                            </telerik:GridViewDataColumn>
+                                            <telerik:GridViewDataColumn Header="Số giấy tờ" Width="*"/>
+                                            <telerik:GridViewDataColumn Header="Mối quan hệ" Width="*" >
+                                            </telerik:GridViewDataColumn>
+                                        </telerik:RadGridView.Columns>
+                                    </telerik:RadGridView>
+                                </DockPanel>
+                            </GroupBox>
+                            <GroupBox Header="Thông tin khách hàng có liên quan" Padding="0,5" Grid.Row="2" Margin="3">
+                                <DockPanel>
+                                    <StackPanel Orientation="Horizontal" Margin="5,0,0,0" DockPanel.Dock="Top">
+                                        <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbAddKH" DockPanel.Dock="Left" Label="Thêm"  SmallImageSource="/Utilities.Common;component/Images/Action/detail_add.png" Style="{StaticResource RibbonButton}" />
+                                        <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbModifyKH" DockPanel.Dock="Left" Label="Sửa"   SmallImageSource="/Utilities.Common;component/Images/Action/detail_edit.png" Style="{StaticResource RibbonButton}"  />
+                                        <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbDeleteKH" DockPanel.Dock="Left" Label="Xóa"   SmallImageSource="/Utilities.Common;component/Images/Action/detail_delete.png" Style="{StaticResource RibbonButton}" />
+                                    </StackPanel>
+                                    <telerik:RadGridView Name="raddgrKHLQuan" MinHeight="150" MaxHeight="400" ColumnWidth="*" ShowGroupPanel="False"
+                AutoGenerateColumns="False" CanUserFreezeColumns="False" RowIndicatorVisibility="Collapsed" Margin="0,5,0,0">
+                                        <telerik:RadGridView.Columns>
+                                            <telerik:GridViewDataColumn Header="ID" Width="0" IsReadOnly="True" DataMemberBinding="{Binding ID}" IsVisible="False" />
+                                            <telerik:GridViewDataColumn Width="30">
+                                                <telerik:GridViewDataColumn.Header>
+                                                    <CheckBox HorizontalAlignment="Center" Name="chkKhachHangLQuan"></CheckBox>
+                                                </telerik:GridViewDataColumn.Header>
+                                                <telerik:GridViewDataColumn.CellTemplate>
+                                                    <DataTemplate>
+                                                        <CheckBox></CheckBox>
+                                                    </DataTemplate>
+                                                </telerik:GridViewDataColumn.CellTemplate>
+                                            </telerik:GridViewDataColumn>
+                                            <telerik:GridViewDataColumn Header="STT" Width="40"/>
+                                            <telerik:GridViewDataColumn Header="Mã khách hàng" Width="*"/>
+                                            <telerik:GridViewDataColumn Header="Tên khách hàng" Width="*"/>
+                                            <telerik:GridViewDataColumn Header="Mối quan hệ" Width="*"/>
+                                        </telerik:RadGridView.Columns>
+                                    </telerik:RadGridView>
+                                </DockPanel>
+                            </GroupBox>
+                        </Grid>
+                    </ScrollViewer>
+                </telerik:RadTabItem>
+                <telerik:RadTabItem Header="_6. Dữ liệu hình ảnh" HeaderTemplate="{StaticResource HeaderTemplate}" HorizontalContentAlignment="Left" Height="{Binding ElementName=grMain, Path=ActualWidth,
+                Converter={uc:MathConverter}, ConverterParameter=x/5}" TabIndex="5" IsSelected="True">
+                    <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="19*" />
+                                <ColumnDefinition Width="0" />
+                            </Grid.ColumnDefinitions>
+                            <DockPanel>
+                                <ScrollViewer ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Auto">
+                                    <GroupBox Header="Thông tin về dữ liệu hình ảnh" Padding="0,10" Margin="3">
+                                        <DockPanel UseLayoutRounding="True">
+                                            <Grid DockPanel.Dock="Top">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="2*"/>
+                                                    <ColumnDefinition Width="*" />
+                                                </Grid.ColumnDefinitions>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="*" />
+                                                </Grid.RowDefinitions>
+                                                <Grid Grid.Column="0" Grid.Row="0" VerticalAlignment="Top">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="1.5*"/>
+                                                        <ColumnDefinition Width="2*"/>
+                                                        <ColumnDefinition Width="2*" />
+                                                    </Grid.ColumnDefinitions>
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="*" />
+                                                        <RowDefinition Height="6" />
+                                                        <RowDefinition Height="*" />
+                                                        <RowDefinition Height="6" />
+                                                        <RowDefinition Height="*" />
+                                                        <RowDefinition Height="6" />
+                                                        <RowDefinition Height="*" />
+                                                        <RowDefinition Height="6" />
+                                                    </Grid.RowDefinitions>
+                                                    <StackPanel Grid.Column="0" Grid.Row="0" Orientation="Horizontal">
+                                                        <Label Content="Mã hình ảnh:" />
+                                                        <Label Content="(*)" Foreground="Red" Margin="-5,0,0,0" />
+
+                                                    </StackPanel>
+                                                    <TextBox  Name="txtMaHinhAnh" Margin="0,2,0,0" Grid.Column="1" TabIndex="1" />
+
+                                                    <StackPanel Grid.Column="0" Grid.Row="2" Orientation="Horizontal">
+                                                        <Label Content="Loại hình ảnh:" />
+                                                        <Label Content="(*)" Foreground="Red" Margin="-5,0,0,0" />
+                                                    </StackPanel>
+                                                    <ComboBox Name="cmbLoaiHinhAnh" Grid.Column="1" Grid.Row="2" TabIndex="2" />
+
+                                                    <StackPanel Grid.Column="0" Grid.Row="4" Orientation="Horizontal">
+                                                        <Label Content="Đối tượng:" />
+                                                        <Label Content="(*)" Foreground="Red" Margin="-5,0,0,0" />
+                                                    </StackPanel>
+                                                    <TextBox Name="cmbChuKyKH" Grid.Column="1" Grid.Row="4" TabIndex="3" />
+                                                    <StackPanel Grid.Column="0" Grid.Row="6" Orientation="Horizontal">
+                                                        <Label Content="Đường dẫn ảnh:" />
+                                                        <Label Content="(*)" Foreground="Red" Margin="-5,0,0,0" />
+                                                    </StackPanel>
+
+                                                    <TextBox Name="txtDuongDanHAnh" Margin="0,2,40,0" Grid.Column="1" Grid.Row="6" Grid.ColumnSpan="2" TabIndex="4" />
+                                                    <Button Content="F3" Width="30" Name="btnDuongDanAnh" Margin="0,2,0,0" HorizontalAlignment="Right" Grid.Column="1" Grid.Row="6" Grid.ColumnSpan="2" TabIndex="5" />
+                                                </Grid>
+                                                <Border BorderThickness="1" CornerRadius="4" Margin="0,3,5,3" Padding="10" Grid.Column="1" BorderBrush="LightGray" DockPanel.Dock="Top" HorizontalAlignment="Right" Width="185">
+                                                    <Image HorizontalAlignment="Stretch" Name="imgAvatar" Source="pack://application:,,,/Utilities.Common;component/Images/Other/picture.png" Width="66"/>
+                                                </Border>
+                                            </Grid>
+                                            <StackPanel Margin="5,5" DockPanel.Dock="Top">
+                                                <CheckBox Name="chkHieuLuc" IsChecked="True" Content="Có hiệu lực" HorizontalAlignment="Left" TabIndex="6" />
+                                            </StackPanel>
+                                            <Rectangle Height="1" Fill="#FF656565" Grid.Column="0" Margin="5,5,5,5" DockPanel.Dock="Top"/>
+                                            <StackPanel Orientation="Horizontal" Margin="5,5,0,0" DockPanel.Dock="Top">
+                                                <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbAddHinhAnh" DockPanel.Dock="Left" Label="Thêm"  SmallImageSource="/Utilities.Common;component/Images/Action/detail_add.png" Style="{StaticResource RibbonButton}" />
+                                                <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbModifyHinhAnh" DockPanel.Dock="Left" Label="Sửa"   SmallImageSource="/Utilities.Common;component/Images/Action/detail_edit.png" Style="{StaticResource RibbonButton}"  />
+                                                <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbDeleteHinhAnh" DockPanel.Dock="Left" Label="Xóa"   SmallImageSource="/Utilities.Common;component/Images/Action/detail_delete.png" Style="{StaticResource RibbonButton}" />
+                                            </StackPanel>
+                                            <telerik:RadGridView Name="raddgrDLieuHAnh" MinHeight="150" MaxHeight="700" ColumnWidth="*" ShowGroupPanel="False"
+                AutoGenerateColumns="False" CanUserFreezeColumns="False" RowIndicatorVisibility="Collapsed" Margin="5">
+                                                <telerik:RadGridView.Columns>
+                                                    <telerik:GridViewDataColumn Header="ID" Width="0" IsVisible="False" />
+                                                    <telerik:GridViewDataColumn Width="30">
+                                                        <telerik:GridViewDataColumn.Header>
+                                                            <CheckBox HorizontalAlignment="Center" Name="chkDuLieuHAnh"></CheckBox>
+                                                        </telerik:GridViewDataColumn.Header>
+                                                        <telerik:GridViewDataColumn.CellTemplate>
+                                                            <DataTemplate>
+                                                                <CheckBox></CheckBox>
+                                                            </DataTemplate>
+                                                        </telerik:GridViewDataColumn.CellTemplate>
+                                                    </telerik:GridViewDataColumn>
+                                                    <telerik:GridViewDataColumn Header="STT" Width="40"  />
+                                                    <telerik:GridViewDataColumn Header="Mã hình ảnh" />
+                                                    <telerik:GridViewDataColumn Header="Chữ ký hình ảnh">
+                                                        <telerik:GridViewDataColumn.CellTemplate>
+                                                            <DataTemplate>
+                                                                <Label Content="{Binding}" />
+                                                            </DataTemplate>
+                                                        </telerik:GridViewDataColumn.CellTemplate>
+                                                    </telerik:GridViewDataColumn>
+                                                    <telerik:GridViewDataColumn Header="Loại hình ảnh" IsReadOnly="True" />
+                                                    <telerik:GridViewDataColumn Header="Đường dẫn hình ảnh" />
+                                                    <telerik:GridViewDataColumn Header="Có hiệu lực" />
+                                                    <telerik:GridViewDataColumn Header="Hiển thị lên hồ sơ" />
+                                                </telerik:RadGridView.Columns>
+                                            </telerik:RadGridView>
+                                        </DockPanel>
+                                    </GroupBox>
+                                </ScrollViewer>
+                            </DockPanel>
+                        </Grid>
+                    </ScrollViewer>
+                </telerik:RadTabItem>
+                <telerik:RadTabItem Header="_7. Chấm điểm và xếp hạng" HeaderTemplate="{StaticResource HeaderTemplate}" HorizontalContentAlignment="Left" Height="{Binding ElementName=grMain, Path=ActualWidth,
+                Converter={uc:MathConverter}, ConverterParameter=x/5}" TabIndex="6" IsSelected="True">
+                    <ScrollViewer ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Auto">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="19*" />
+                                <ColumnDefinition Width="0" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="12" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <GroupBox Header="Xếp hạng tín dụng" Margin="3" Padding="0,10" Grid.Row="0">
+                                <DockPanel>
+                                    <StackPanel Orientation="Horizontal" Margin="0,10,10,0" DockPanel.Dock="Top">
+                                        <Label Content="Ngày xếp hạng:" />
+                                        <telerik:RadMaskedDateTimeInput Name="raddtNgayXepHangTD" Width="200" Margin="20,0,0,0" IsEnabled="False" />
+                                        <DatePicker Name="dtpNgayXepHangTD" Width="30" Margin="5,0,0,0" />
+                                    </StackPanel>
+                                    <telerik:RadGridView Name="raddgrXepHangTD" MinHeight="100" MaxHeight="400" ColumnWidth="*"
+                AutoGenerateColumns="False" CanUserFreezeColumns="False" RowIndicatorVisibility="Collapsed" Margin="5" ShowGroupPanel="False" >
+                                        <telerik:RadGridView.Columns>
+                                            <telerik:GridViewDataColumn Header="STT" Width="40"  IsReadOnly="True" DataMemberBinding="{Binding STT}"  />
+                                            <telerik:GridViewDataColumn Header="ID" Width="0" IsReadOnly="True" DataMemberBinding="{Binding ID}" IsVisible="False" />
+                                            <telerik:GridViewDataColumn Header="Chỉ tiêu" Width="*" ToolTip="Chỉ tiêu" DataMemberBinding="{Binding TENNHOM}" IsReadOnly="True" IsFilterable="True" IsSortable="True">
+
+                                                <telerik:GridViewDataColumn.CellTemplate>
+                                                    <DataTemplate>
+                                                        <Label Content="{Binding}" />
+                                                    </DataTemplate>
+                                                </telerik:GridViewDataColumn.CellTemplate>
+                                                <telerik:GridViewDataColumn.CellEditTemplate>
+                                                    <DataTemplate>
+                                                        <telerik:RadMaskedNumericInput Text="{Binding}" />
+                                                    </DataTemplate>
+                                                </telerik:GridViewDataColumn.CellEditTemplate>
+                                            </telerik:GridViewDataColumn>
+                                            <telerik:GridViewDataColumn Header="Giá trị" Width="200" ToolTip="Ngày cấp" IsReadOnly="True" />
+                                            <telerik:GridViewDataColumn Header="Điểm" Width="250" ToolTip="Ngày cấp" IsReadOnly="True" />
+                                        </telerik:RadGridView.Columns>
+                                    </telerik:RadGridView>
+                                </DockPanel>
+                            </GroupBox>
+                            <GroupBox Header="Xếp hạng diện nghèo" Margin="3" Padding="0,10,0,0" Grid.Row="2">
+                                <DockPanel>
+                                    <StackPanel Orientation="Horizontal" Margin="0,10,10,0" DockPanel.Dock="Top">
+                                        <Label Content="Ngày xếp hạng:" />
+                                        <telerik:RadMaskedDateTimeInput Name="raddtNgayXepHangNgheo" Width="200" Margin="20,0,0,0" IsEnabled="False"/>
+                                        <DatePicker Name="dtpNgayXepHangNgheo" Width="30" Margin="5,0,0,0" />
+                                    </StackPanel>
+                                    <telerik:RadGridView Name="raddgrXepHangNgheo" MinHeight="100" MaxHeight="400" ColumnWidth="*"
+                AutoGenerateColumns="False" CanUserFreezeColumns="False" RowIndicatorVisibility="Collapsed" Margin="5" ShowGroupPanel="False">
+                                        <telerik:RadGridView.Columns>
+                                            <telerik:GridViewDataColumn Header="STT" Width="40"  IsReadOnly="True" DataMemberBinding="{Binding STT}"  />
+                                            <telerik:GridViewDataColumn Header="ID" Width="0" IsReadOnly="True" DataMemberBinding="{Binding ID}" IsVisible="False" />
+                                            <telerik:GridViewDataColumn Header="Chỉ tiêu" Width="*" ToolTip="Chỉ tiêu" DataMemberBinding="{Binding TENNHOM}" IsReadOnly="True" IsFilterable="True" IsSortable="True">
+
+                                                <telerik:GridViewDataColumn.CellTemplate>
+                                                    <DataTemplate>
+                                                        <Label Content="{Binding}" />
+                                                    </DataTemplate>
+                                                </telerik:GridViewDataColumn.CellTemplate>
+                                                <telerik:GridViewDataColumn.CellEditTemplate>
+                                                    <DataTemplate>
+                                                        <telerik:RadMaskedNumericInput Text="{Binding}" />
+                                                    </DataTemplate>
+                                                </telerik:GridViewDataColumn.CellEditTemplate>
+                                            </telerik:GridViewDataColumn>
+                                            <telerik:GridViewDataColumn Header="Điểm" Width="200" ToolTip="Điểm" IsReadOnly="True" />
+                                            <telerik:GridViewDataColumn Header="Mức nghèo" Width="250" ToolTip="Mức nghèo" IsReadOnly="True" />
+                                        </telerik:RadGridView.Columns>
+                                    </telerik:RadGridView>
+                                </DockPanel>
+                            </GroupBox>
+                        </Grid>
+                    </ScrollViewer>
+                </telerik:RadTabItem>
+                <telerik:RadTabItem Header="_8. Lịch sử tăng trưởng kinh tế" TabIndex="7" HeaderTemplate="{StaticResource HeaderTemplate}" HorizontalContentAlignment="Left" Height="{Binding ElementName=grMain, Path=ActualWidth,
+                Converter={uc:MathConverter}, ConverterParameter=x/5}" IsSelected="True">
+                    <ScrollViewer VerticalScrollBarVisibility="Auto">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="19*" />
+                                <ColumnDefinition Width="0" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="12" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="12" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <GroupBox Header="Tăng trưởng về thu nhập" Padding="0,10" Margin="3">
+                                <DockPanel>
+                                    <telerik:RadGridView  MinHeight="100" MaxHeight="400" ColumnWidth="*"
+                AutoGenerateColumns="False" CanUserFreezeColumns="False" RowIndicatorVisibility="Collapsed" Margin="5" ShowGroupPanel="False">
+                                        <telerik:RadGridView.Columns>
+                                            <telerik:GridViewDataColumn Header="STT" Width="40"  IsReadOnly="True" DataMemberBinding="{Binding STT}"  />
+                                            <telerik:GridViewDataColumn Header="ID" Width="0" IsReadOnly="True" DataMemberBinding="{Binding ID}" IsVisible="False" />
+                                            <telerik:GridViewDataColumn Header="Các nguồn thu"/>
+                                            <telerik:GridViewDataColumn Header="Tại ngày"/>
+                                            <telerik:GridViewDataColumn Header="Tại ngày"/>
+                                            <telerik:GridViewDataColumn Header="Sự thay đổi (%)"/>                                            
+                                        </telerik:RadGridView.Columns>
+                                    </telerik:RadGridView>
+                                </DockPanel>
+                            </GroupBox>
+                            <GroupBox Header="Tăng trưởng về chỉ tiêu" Grid.Row="2" Padding="0,10" Margin="3">
+                                <DockPanel>
+                                    <telerik:RadGridView   MinHeight="100" MaxHeight="400" ColumnWidth="*" ShowGroupPanel="False"
+                AutoGenerateColumns="False" CanUserFreezeColumns="False" RowIndicatorVisibility="Collapsed" Margin="5" >
+                                        <telerik:RadGridView.Columns>
+                                            <telerik:GridViewDataColumn Header="STT" Width="40"  IsReadOnly="True" DataMemberBinding="{Binding STT}"  />
+                                            <telerik:GridViewDataColumn Header="ID" Width="0" IsReadOnly="True" DataMemberBinding="{Binding ID}" IsVisible="False" />
+                                            <telerik:GridViewDataColumn Header="Các nguồn thu"/>
+                                            <telerik:GridViewDataColumn Header="Tại ngày"/>
+                                            <telerik:GridViewDataColumn Header="Tại ngày"/>
+                                            <telerik:GridViewDataColumn Header="Sự thay đổi (%)"/>
+                                        </telerik:RadGridView.Columns>
+                                    </telerik:RadGridView>
+                                </DockPanel>
+                            </GroupBox>
+                            <GroupBox Header="Tăng trưởng về tài sản của hộ gia đình" Grid.Row="4" Padding="0,10" Margin="3">
+                                <DockPanel>
+                                    <telerik:RadGridView MinHeight="100" MaxHeight="400" ColumnWidth="*" ShowGroupPanel="False"
+                AutoGenerateColumns="False" CanUserFreezeColumns="False" RowIndicatorVisibility="Collapsed" Margin="5">
+                                        <telerik:RadGridView.Columns>
+                                            <telerik:GridViewDataColumn Header="STT" Width="40"  IsReadOnly="True" DataMemberBinding="{Binding STT}"  />
+                                            <telerik:GridViewDataColumn Header="ID" Width="0" IsReadOnly="True" DataMemberBinding="{Binding ID}" IsVisible="False" />
+                                            <telerik:GridViewDataColumn Header="Các nguồn thu"/>
+                                            <telerik:GridViewDataColumn Header="Tại ngày"/>
+                                            <telerik:GridViewDataColumn Header="Tại ngày"/>
+                                            <telerik:GridViewDataColumn Header="Sự thay đổi (%)"/>
+                                        </telerik:RadGridView.Columns>
+                                    </telerik:RadGridView>
+                                </DockPanel>
+                            </GroupBox>
+                        </Grid>
+                    </ScrollViewer>
+                </telerik:RadTabItem>
+                <telerik:RadTabItem Header="_9. Thông tin kiểm soát" TabIndex="7" HeaderTemplate="{StaticResource HeaderTemplate}" HorizontalContentAlignment="Left" Height="{Binding ElementName=grMain, Path=ActualWidth,
+                Converter={uc:MathConverter}, ConverterParameter=x/5}" IsSelected="True">
+                    <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="19*"/>
+                                <ColumnDefinition Width="0"/>
+                            </Grid.ColumnDefinitions>
+                            <DockPanel >
+                                <GroupBox Header="Trạng thái bản ghi" Margin="3">
+                                    <StackPanel Orientation="Vertical">
+                                        <Grid Margin="10,10,0,0">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="*" />
+                                            </Grid.RowDefinitions>
+                                            <Grid Grid.Column="0" Grid.Row="0">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="130"/>
+                                                    <ColumnDefinition Width="2*"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="*"/>
+                                                    <RowDefinition Height="6"/>
+                                                    <RowDefinition Height="*"/>
+                                                    <RowDefinition Height="6"/>
+                                                    <RowDefinition Height="*"/>
+                                                    <RowDefinition Height="6"/>
+                                                    <RowDefinition Height="*"/>
+                                                    <RowDefinition Height="6"/>
+                                                    <RowDefinition Height="*"/>
+                                                </Grid.RowDefinitions>
+                                                <Label Content="Trạng thái bản ghi:" Grid.Column="0" Grid.Row="0"/>
+                                                <TextBox Name="txtTrangThai" Grid.Column="1" Padding="0,3,0,0" />
+                                                <Label Content="Ngày lập:" Grid.Column="0" Grid.Row="2"/>
+                                                <telerik:RadMaskedDateTimeInput Name="raddtNgayNhap" Grid.Column="1" Grid.Row="2" Mask="dd/MM/yyyy" AcceptsReturn="False" IsClearButtonVisible="True" HorizontalAlignment="Stretch" />
+                                                <Label Content="Người lập:" Grid.Column="0" Grid.Row="4"/>
+                                                <TextBox Name="txtNguoiLap" Padding="0,3,0,0" Grid.Column="1" Grid.Row="4"/>
+                                                <Label Content="Ngày cập nhật:" Grid.Column="0" Grid.Row="6"/>
+                                                <telerik:RadMaskedDateTimeInput Name="raddtNgayCNhat" Grid.Column="1" Grid.Row="6" Mask="dd/MM/yyyy" IsClearButtonVisible="True" AcceptsReturn="True"  HorizontalAlignment="Stretch" />
+                                                <Label Content="Người cập nhật:" Grid.Column="0" Grid.Row="8"/>
+                                                <TextBox Name="txtNguoiCapNhat" Padding="0,3,0,0" Grid.Column="1" Grid.Row="8"/>
+                                            </Grid>
+                                        </Grid>
+                                    </StackPanel>
+                                </GroupBox>
+                            </DockPanel>
+                        </Grid>
+                    </ScrollViewer>
+                </telerik:RadTabItem>
+            </telerik:RadTabControl>
+        </DockPanel>
+    </Grid>
+</UserControl>

@@ -1,0 +1,142 @@
+﻿<UserControl x:Class="PresentationWPF.TinDung.DuThu.ucDuThuTheoLich"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:uc="clr-namespace:PresentationWPF.CustomControl;assembly=PresentationWPF.CustomControl"
+             xmlns:local="clr-namespace:PresentationWPF.TinDung.DuThu"
+             xmlns:ribbon="http://schemas.microsoft.com/winfx/2006/xaml/presentation/ribbon" 
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             mc:Ignorable="d" 
+             xmlns:s="clr-namespace:System;assembly=mscorlib"
+             d:DesignHeight="768" d:DesignWidth="1024">
+    <UserControl.Resources>
+        <DataTemplate x:Key="HeaderTemplate" DataType="{x:Type s:String}">
+            <Grid HorizontalAlignment="Left" Height="45">
+                <TextBlock Text="{Binding}" TextWrapping="Wrap" VerticalAlignment="Center"/>
+            </Grid>
+        </DataTemplate>
+    </UserControl.Resources>
+    <UserControl.CommandBindings>
+        <CommandBinding CanExecute="AddCommand_CanExecute" Executed="AddCommand_Executed" Command="{x:Static local:ucDuThuTheoLich.AddCommand}">
+        </CommandBinding>
+        <CommandBinding CanExecute="ModifyCommand_CanExecute" Executed="ModifyCommand_Executed" Command="{x:Static local:ucDuThuTheoLich.ModifyCommand}">
+        </CommandBinding>
+        <CommandBinding CanExecute="DeleteCommand_CanExecute" Executed="DeleteCommand_Executed" Command="{x:Static local:ucDuThuTheoLich.DeleteCommand}">
+        </CommandBinding>
+        <CommandBinding CanExecute="ApproveCommand_CanExecute" Executed="ApproveCommand_Executed" Command="{x:Static local:ucDuThuTheoLich.ApproveCommand}">
+        </CommandBinding>
+        <CommandBinding CanExecute="RefuseCommand_CanExecute" Executed="RefuseCommand_Executed" Command="{x:Static local:ucDuThuTheoLich.RefuseCommand}">
+        </CommandBinding>
+        <CommandBinding CanExecute="CancelCommand_CanExecute" Executed="CancelCommand_Executed" Command="{x:Static local:ucDuThuTheoLich.CancelCommand}">
+        </CommandBinding>
+        <CommandBinding CanExecute="SearchCommand_CanExecute" Executed="SearchCommand_Executed" Command="{x:Static local:ucDuThuTheoLich.SearchCommand}">
+        </CommandBinding>
+        <CommandBinding CanExecute="ExportCommand_CanExecute" Executed="ExportCommand_Executed" Command="{x:Static local:ucDuThuTheoLich.ExportCommand}">
+        </CommandBinding>
+        <CommandBinding CanExecute="CloseCommand_CanExecute" Executed="CloseCommand_Executed" Command="{x:Static local:ucDuThuTheoLich.CloseCommand}">
+        </CommandBinding>
+    </UserControl.CommandBindings>
+    <Grid Name="grMain">
+        <DockPanel Name="dockMain">
+            <DockPanel HorizontalAlignment="Stretch" DockPanel.Dock="Top" Margin="3,3,0,3" LastChildFill="False" Name="docToolbar">
+                <WrapPanel Name="Toolbar">
+                    <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbAdd" DockPanel.Dock="Left" Label="Thêm mới" SmallImageSource="/Utilities.Common;component/Images/Action/add.png" Style="{StaticResource RibbonButton}" Click="tlbShortcutKey_Click" />
+                    <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbModify" DockPanel.Dock="Left" Label="Sửa"  SmallImageSource="/Utilities.Common;component/Images/Action/modify.png" Style="{StaticResource RibbonButton}" Click="tlbShortcutKey_Click" />
+                    <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbDelete" DockPanel.Dock="Left" Label="Xóa"  SmallImageSource="/Utilities.Common;component/Images/Action/delete.png" Style="{StaticResource RibbonButton}" Click="tlbShortcutKey_Click" />
+                    <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbSubmit" DockPanel.Dock="Left" Label="Lưu"  SmallImageSource="/Utilities.Common;component/Images/Action/Submit.png" Style="{StaticResource RibbonButton}" Click="tlbShortcutKey_Click" />
+                    <Label Name="lbl1" Margin="3,0,0,0" DockPanel.Dock="Left" BorderThickness="3" Width="2" BorderBrush="#FF170404" />
+                    <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbApprove" DockPanel.Dock="Left" Label="Duyệt"  SmallImageSource="/Utilities.Common;component/Images/Action/approve.png" Style="{StaticResource RibbonButton}" Click="tlbShortcutKey_Click" />
+                    <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbRefuse" DockPanel.Dock="Left" Label="Từ chối"  SmallImageSource="/Utilities.Common;component/Images/Action/refuse.png" Style="{StaticResource RibbonButton}" Click="tlbShortcutKey_Click" />
+                    <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbCancel" DockPanel.Dock="Left" Label="Thoái duyệt"  SmallImageSource="/Utilities.Common;component/Images/Action/cancel.png" Style="{StaticResource RibbonButton}" Click="tlbShortcutKey_Click" />
+                    <Label Name="lbl2" Margin="3,0,0,0" DockPanel.Dock="Left" BorderThickness="3" Width="2" BorderBrush="#FF170404" />
+                    <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbSearch" DockPanel.Dock="Left" Label="Tìm kiếm"  SmallImageSource="/Utilities.Common;component/Images/Action/search.png" Style="{StaticResource RibbonButton}" Click="tlbShortcutKey_Click" />
+                    <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbExport" DockPanel.Dock="Left" Label="Xuất dữ liệu"  SmallImageSource="/Utilities.Common;component/Images/Action/export.png" Style="{StaticResource RibbonButton}" Click="tlbShortcutKey_Click" />
+                    <Label Name="lbl3" Margin="3,0,0,0" DockPanel.Dock="Left" BorderThickness="3" Width="2" BorderBrush="#FF170404" />
+                    <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbClose" DockPanel.Dock="Left" Label="Đóng"  SmallImageSource="/Utilities.Common;component/Images/Action/close.png" Style="{StaticResource RibbonButton}" Click="tlbShortcutKey_Click" />
+                </WrapPanel>
+                <CheckBox Margin="0,0,3,5" VerticalAlignment="Bottom" DockPanel.Dock="Right" Content="Thêm nhiều lần" Height="16" Name="cbMultiAdd" FlowDirection="RightToLeft" />
+            </DockPanel>
+            <telerik:RadTabControl Name="tabNSDCT" TabStripPlacement="Left" TabOrientation="Vertical" Align="Right">
+                <telerik:RadTabItem Style="{DynamicResource HeaderTemplate}" Header="Thông tin chung" Name="titemThongTinChung"  HorizontalContentAlignment="Left" Height="{Binding ElementName=grMain, Path=ActualWidth,
+                Converter={uc:MathConverter}, ConverterParameter=x/5}" TabIndex="0">
+                    <ScrollViewer ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto">
+                        <StackPanel Orientation="Vertical">
+                            <Border BorderThickness="1" CornerRadius="4" Margin="5" Height="50" Padding="5" BorderBrush="LightGray">
+                                <Grid VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,10,0,0">
+                                    <StackPanel Orientation="Horizontal">
+                                        <Label Name="lblLabelTrangThai" HorizontalAlignment="Left" FontSize="14">Trạng thái:</Label>
+                                        <Label Name="lblTrangThai" FontSize="14" FontStyle="Italic">Chờ duyệt</Label>
+                                    </StackPanel>
+                                </Grid>
+                            </Border>
+                            <GroupBox Header="Thông tin chung" Margin="5">
+                                <Grid>
+                                </Grid>
+                            </GroupBox>
+                        </StackPanel>
+                    </ScrollViewer>
+                </telerik:RadTabItem>
+                <telerik:RadTabItem Style="{DynamicResource HeaderTemplate}" Header="Thông tin chi tiết 1"  HorizontalContentAlignment="Left" Height="{Binding ElementName=grMain, Path=ActualWidth,
+                Converter={uc:MathConverter}, ConverterParameter=x/5}" TabIndex="1" IsSelected="True">
+                    <ScrollViewer ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Auto">
+                        <StackPanel Orientation="Vertical">
+                            <GroupBox Header="Giấy tờ có liên quan">
+                                <StackPanel Orientation="Vertical">
+                                    <StackPanel Orientation="Horizontal">
+                                        <ribbon:RibbonButton Margin="3,0,0,0" Name="btnThemGto" DockPanel.Dock="Left" Label="Thêm" Width="40" Height="25" Style="{StaticResource RibbonButton}" />
+                                        <ribbon:RibbonButton Margin="3,0,0,0" Name="btnSuaGto" DockPanel.Dock="Left" Label="Sửa" Width="40" Height="25" Style="{StaticResource RibbonButton}" />
+                                        <ribbon:RibbonButton Margin="3,0,0,0" Name="btnXoaGto" DockPanel.Dock="Left" Label="Xóa" Width="40" Height="25" Style="{StaticResource RibbonButton}" />
+                                    </StackPanel>
+                                    <telerik:RadGridView Name="raddgrGiayTo" MinHeight="150" MaxHeight="275" ColumnWidth="*"
+                AutoGenerateColumns="False" CanUserFreezeColumns="False" RowIndicatorVisibility="Collapsed" Margin="5" Height="275" VerticalAlignment="Bottom" ShowGroupPanel="False">
+                                    </telerik:RadGridView>
+                                </StackPanel>
+                            </GroupBox>
+                            <GroupBox Header="Thông tin cơ bản về hộ gia đình">
+                                <StackPanel Orientation="Vertical">
+                                    <StackPanel Orientation="Horizontal">
+                                        <ribbon:RibbonButton Margin="3,0,0,0" Name="btnThemHGDinh" DockPanel.Dock="Left" Label="Thêm mới" Width="40" Height="25" Style="{StaticResource RibbonButton}" />
+                                        <ribbon:RibbonButton Margin="3,0,0,0" Name="btnSuaHGDinh" DockPanel.Dock="Left" Label="Sửa" Width="40" Height="25" Style="{StaticResource RibbonButton}" />
+                                        <ribbon:RibbonButton Margin="3,0,0,0" Name="btnHGDinh" DockPanel.Dock="Left" Label="Xóa" Width="40" Height="25" Style="{StaticResource RibbonButton}" />
+                                    </StackPanel>
+                                    <telerik:RadGridView Name="raddgrHGDinh" MinHeight="150" MaxHeight="275" ColumnWidth="*"
+                AutoGenerateColumns="False" CanUserFreezeColumns="False" RowIndicatorVisibility="Collapsed" Margin="5" Height="275" VerticalAlignment="Bottom" ShowGroupPanel="False">
+                                    </telerik:RadGridView>
+                                </StackPanel>
+                            </GroupBox>
+                        </StackPanel>
+                    </ScrollViewer>
+                </telerik:RadTabItem>
+                <telerik:RadTabItem Style="{DynamicResource HeaderTemplate}" Header="Thông tin chi tiết 2"  HorizontalContentAlignment="Left" Height="{Binding ElementName=grMain, Path=ActualWidth,
+                Converter={uc:MathConverter}, ConverterParameter=x/5}" TabIndex="2" IsSelected="True">
+                    <ScrollViewer ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Auto">
+                        <StackPanel Orientation="Vertical">
+                            <GroupBox Header="Các khoản thu nhập">
+                                <StackPanel Orientation="Vertical">
+                                    <telerik:RadGridView Name="raddgrKhoanThuNhap" MinHeight="100" MaxHeight="185" ColumnWidth="*"
+                AutoGenerateColumns="False" CanUserFreezeColumns="False" RowIndicatorVisibility="Collapsed" Margin="5" Height="185" VerticalAlignment="Bottom" ShowGroupPanel="False">
+                                    </telerik:RadGridView>
+                                </StackPanel>
+                            </GroupBox>
+                            <GroupBox Header="Các khoản chi phí">
+                                <StackPanel Orientation="Vertical">
+                                    <telerik:RadGridView Name="raddgrThuNhap"  MinHeight="100" MaxHeight="185" ColumnWidth="*" ShowGroupPanel="False"
+                AutoGenerateColumns="False" CanUserFreezeColumns="False" RowIndicatorVisibility="Collapsed" Margin="5" Height="185" VerticalAlignment="Bottom">
+                                    </telerik:RadGridView>
+                                </StackPanel>
+                            </GroupBox>
+                            <GroupBox Header="Tài sản của hộ gia đình">
+                                <StackPanel Orientation="Vertical">
+                                    <telerik:RadGridView Name="raddgrTaiSan" MinHeight="100" MaxHeight="185" ColumnWidth="*" ShowGroupPanel="False"
+                AutoGenerateColumns="False" CanUserFreezeColumns="False" RowIndicatorVisibility="Collapsed" Margin="5" Height="185" VerticalAlignment="Bottom">
+                                    </telerik:RadGridView>
+                                </StackPanel>
+                            </GroupBox>
+                        </StackPanel>
+                    </ScrollViewer>
+                </telerik:RadTabItem>
+            </telerik:RadTabControl>
+        </DockPanel>
+    </Grid>
+</UserControl>

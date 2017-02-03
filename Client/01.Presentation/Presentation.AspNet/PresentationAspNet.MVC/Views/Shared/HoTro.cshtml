@@ -1,0 +1,42 @@
+﻿<div class="ho-tro isHide">
+    <div class="title">
+        <img src="~/Images/contact.png" alt="support" onclick="ShowSupporter()"/>
+    </div>
+    <div class="info">
+        <ul>
+            <li class="item-row row-name">
+                <i class="fa fa-user"></i><span>Lê Quang Trường</span>
+            </li>
+            <li class="item-row">
+                <i class="fa fa-phone"></i>
+                <label>Điện thoại: </label>
+                <span>0934460664</span>
+            </li>
+            <li class="item-row">
+                <i class="fa fa-skype"></i>
+                <label>Skype: </label>
+                <a href="skype:truonglq85?chat">truonglq85</a>
+            </li>
+            <li class="item-row">
+                <i class="fa fa-comments-o"></i>
+                <label>GTalk: </label>
+                <span>lequangtruong542@gmail.com</span>
+            </li>
+        </ul>
+    </div>
+</div>
+<script type="text/javascript">
+    function ShowSupporter() {
+        if ($('.ho-tro').hasClass("isHide")) {
+            $('.info').slideDown(200, function () {
+                $('.icon-remove').show();
+            });
+            $('.ho-tro').removeClass('isHide').addClass('isShow');
+        } else {
+            $('.info').slideUp(200, function () {
+                $('.icon-remove').hide();
+            });
+            $('.ho-tro').removeClass('isShow').addClass('isHide');
+        }
+    }
+</script>

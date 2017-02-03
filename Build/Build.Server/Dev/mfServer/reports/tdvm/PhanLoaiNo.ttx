@@ -1,0 +1,20 @@
+MaChiNhanh	string	255
+TenChiNhanh	string	255
+DiaChiChiNhanh	string	255
+MaPhongGD	string	255
+TenPhongGD	string	255
+MaCum	string	255
+TenCum	string	255
+TenCumTruong	string	255
+MaSanPham	string	255
+TenSanPham	string	255
+MaKhachHang	string	255
+TenKhachHang	string	255
+SoKheUoc	string	255
+Tu000Den010	number
+Tu010Den030	number
+Tu030Den090	number
+Tu090Den180	number
+Tu180Den999	number
+TongQuaHan	number
+TyLeQuaHan	number

@@ -1,0 +1,264 @@
+﻿<UserControl x:Class="PresentationWPF.HoaDonTienKy.PopupNghiepVu.ucPopupThucThu"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:ribbon="clr-namespace:Microsoft.Windows.Controls.Ribbon;assembly=RibbonControlsLibrary"
+             xmlns:uc="clr-namespace:PresentationWPF.CustomControl;assembly=PresentationWPF.CustomControl"
+             xmlns:local="clr-namespace:PresentationWPF.HoaDonTienKy.PopupNghiepVu"
+             mc:Ignorable="d" 
+             d:DesignHeight="768" d:DesignWidth="1024" Loaded="UserControl_Loaded" KeyDown="UserControl_KeyDown" xmlns:my="clr-namespace:System;assembly=mscorlib">
+    <UserControl.Resources>
+        <!--<local:CalTienNopTK x:Key="calTienNopTK" />
+        <local:CalTraTruoc x:Key="calTraTruoc" />-->
+        <ControlTemplate x:Key="TextBoxErrorTemplate">
+            <DockPanel LastChildFill="True">
+                <TextBlock DockPanel.Dock="Right" Foreground="Red" FontSize="12pt" ></TextBlock>
+                    <AdornedElementPlaceholder />
+            </DockPanel>
+        </ControlTemplate>
+        <my:String x:Key="U.TinDung.PopupNghiepVu.ucPopupThucThu.SoTienPhaiNop">Số tiền phải nộp</my:String>
+        <my:String x:Key="U.TinDung.PopupNghiepVu.ucPopupThucThu.TKQD:">Tiết kiệm quy định:</my:String>
+        <my:String x:Key="U.TinDung.PopupNghiepVu.ucPopupThucThu.GocVay:">Gốc vay:</my:String>
+        <my:String x:Key="U.TinDung.PopupNghiepVu.ucPopupThucThu.LaiTrongHan:">Lãi trong hạn:</my:String>
+        <my:String x:Key="U.TinDung.PopupNghiepVu.ucPopupThucThu.LaiQuaHan:">Lãi quá hạn:</my:String>
+        <my:String x:Key="U.TinDung.PopupNghiepVu.ucPopupThucThu.ThongTinChiTietThucThu">Thông tin chi tiết thực thu</my:String>
+        <my:String x:Key="U.TinDung.PopupNghiepVu.ucPopupThucThu.NopBangTienMat">Nộp bằng tiền mặt</my:String>
+        <my:String x:Key="U.TinDung.PopupNghiepVu.ucPopupThucThu.TienMat">Tiền mặt:</my:String>
+        <my:String x:Key="U.TinDung.PopupNghiepVu.ucPopupThucThu.NopTuTKKKH">Nộp tiền từ tài khoản tiết kiệm</my:String>
+        <my:String x:Key="U.TinDung.PopupNghiepVu.ucPopupThucThu.SoSo:">Số sổ:</my:String>
+        <my:String x:Key="U.TinDung.PopupNghiepVu.ucPopupThucThu.SoDu:">Số dư:</my:String>
+        <my:String x:Key="U.TinDung.PopupNghiepVu.ucPopupThucThu.SoTienRutRa">Số tiền rút ra:</my:String>
+        <my:String x:Key="U.TinDung.PopupNghiepVu.ucPopupThucThu.XuLySoTienNopThua">Xử lý số tiền nộp thừa</my:String>
+        <my:String x:Key="U.TinDung.PopupNghiepVu.ucPopupThucThu.NopTienVaoTKTK">Nộp tiền vào tài khoản tiết kiệm</my:String>
+        <my:String x:Key="U.TinDung.PopupNghiepVu.ucPopupThucThu.TongSoTien:">Tổng số tiền:</my:String>
+        <my:String x:Key="U.TinDung.PopupNghiepVu.ucPopupThucThu.SoSo">Số sổ</my:String>
+        <my:String x:Key="U.TinDung.PopupNghiepVu.ucPopupThucThu.SoDu">Số dư</my:String>
+        <my:String x:Key="U.TinDung.PopupNghiepVu.ucPopupThucThu.SoTienNopVao">Số tiền nộp vào</my:String>
+        <my:String x:Key="U.TinDung.PopupNghiepVu.ucPopupThucThu.TraGocTruocHan">Trả lãi gốc trước hạn</my:String>
+        <my:String x:Key="U.TinDung.PopupNghiepVu.ucPopupThucThu.TatToanTruocHan">Tất toán trước hạn</my:String>
+        <my:String x:Key="U.TinDung.PopupNghiepVu.ucPopupThucThu.SoTienGoc_Lai">Số tiền gốc/lãi:</my:String>
+        <my:String x:Key="U.TinDung.PopupNghiepVu.ucPopupThucThu.PhiTraTruocHan">Phí trả trước hạn:</my:String>
+        <my:String x:Key="U.TinDung.PopupNghiepVu.ucPopupThucThu.NgayTra">Ngày trả</my:String>
+        <!--<my:String x:Key="U.TinDung.PopupNghiepVu.ucPopupThucThu.Lai">Lãi</my:String>
+        <my:String x:Key="U.TinDung.PopupNghiepVu.ucPopupThucThu.GocVay">Gốc vay</my:String>-->
+        <my:String x:Key="U.TinDung.PopupNghiepVu.ucPopupThucThu.KhongThuTKBB">Không thu tiết kiệm bắt buộc</my:String>
+        <my:String x:Key="U.TinDung.PopupNghiepVu.ucPopupThucThu.KhongThuQuyTTro">Không thu quỹ tương trợ</my:String>
+        <my:String x:Key="U.TinDung.PopupNghiepVu.ucPopupThucThu.QuyTTro:">Quỹ tương trợ:</my:String>
+    </UserControl.Resources>
+    <Grid Name="grMain">
+        <DockPanel Name="dockMain">
+            <DockPanel HorizontalAlignment="Stretch" DockPanel.Dock="Top" Margin="3,3,0,3" LastChildFill="False" Name="docToolbar">
+                <WrapPanel Name="Toolbar" >
+                    <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbSave" DockPanel.Dock="Left" Label="{DynamicResource U.DungChung.Button.Luu}"  SmallImageSource="/Utilities.Common;component/Images/Action/save.png" Style="{StaticResource RibbonButton}" Click="tlbHotKey_Click"/>
+                    <!--<ribbon:RibbonButton Margin="3,0,0,0" Name="tlbCapNhatLich" DockPanel.Dock="Left" Label="Cập nhật lịch trả nợ"  SmallImageSource="/Utilities.Common;component/Images/Action/detail_update.png" Style="{StaticResource RibbonButton}" IsEnabled="{Binding ElementName=chkTraTruocHan, Path=IsChecked}" />-->
+                    <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbClose" DockPanel.Dock="Left" Label="{DynamicResource U.DungChung.Button.Dong}"  SmallImageSource="/Utilities.Common;component/Images/Action/close.png" Style="{StaticResource RibbonButton}" Click="tlbHotKey_Click"/>
+                </WrapPanel>
+                
+            </DockPanel>
+            <GroupBox DockPanel.Dock="Top" Header="{DynamicResource U.TinDung.PopupNghiepVu.ucPopupThucThu.SoTienPhaiNop}" Name="grbChiTiet">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width ="130"/>
+                        <ColumnDefinition Width ="*"/>
+                        <ColumnDefinition Width="20"/>
+                        <ColumnDefinition Width ="130"/>
+                        <ColumnDefinition Width ="*"/>
+                    </Grid.ColumnDefinitions>
+                    
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height ="Auto"/>
+                        <RowDefinition Height="6"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="6" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <Label Grid.Row="0" Grid.Column="0" Content="{DynamicResource U.TinDung.PopupNghiepVu.ucPopupThucThu.TKQD:}"/>
+                    <Grid  Grid.Row="0" Grid.Column="1">
+                        <telerik:RadMaskedNumericInput Mask="#18" Name="numTKQD" TabIndex="1" HorizontalAlignment="Stretch" Margin="0,0,200,0"/>
+                        <CheckBox Name="chkThuTKQD" HorizontalAlignment="Right" Margin="0,5,0,0"  Content="{DynamicResource U.TinDung.PopupNghiepVu.ucPopupThucThu.KhongThuTKBB}"/>
+                    </Grid>
+                    
+
+                    <Label Grid.Row="0" Grid.Column="3" Content="{DynamicResource U.TinDung.PopupNghiepVu.ucPopupThucThu.GocVay:}"/>
+                    <telerik:RadMaskedNumericInput HorizontalAlignment="Stretch"   Mask="#18" Grid.Row="0" Grid.Column="4" Name="numGocVay" IsEnabled="False" TabIndex="2" />
+
+                    <Label Grid.Row="2" Grid.Column="0" Content="{DynamicResource U.TinDung.PopupNghiepVu.ucPopupThucThu.LaiTrongHan:}"/>
+                    <telerik:RadMaskedNumericInput HorizontalAlignment="Stretch"   Mask="#18" Grid.Row="2" Grid.Column="1" Name="numLaiTrongHan" IsEnabled="False" TabIndex="3" />
+
+                    <Label Grid.Row="2" Grid.Column="3" Content="{DynamicResource U.TinDung.PopupNghiepVu.ucPopupThucThu.LaiQuaHan:}"/>
+                    <telerik:RadMaskedNumericInput HorizontalAlignment="Stretch"   Mask="#18" Grid.Row="2" Grid.Column="4" Name="numLaiQuaHan" IsEnabled="False" TabIndex="4" />
+
+                    <Label Grid.Row="4" Grid.Column="0" Content="{DynamicResource U.TinDung.PopupNghiepVu.ucPopupThucThu.QuyTTro:}" />
+                    <Grid  Grid.Row="4" Grid.Column="1">
+                        <telerik:RadMaskedNumericInput Mask="#18" Name="numQuyTTro" TabIndex="1" HorizontalAlignment="Stretch" Margin="0,0,200,0"/>
+                        <CheckBox Name="chkQuyTTro" HorizontalAlignment="Right" Margin="0,5,0,0"  Content="{DynamicResource U.TinDung.PopupNghiepVu.ucPopupThucThu.KhongThuQuyTTro}"/>
+                    </Grid>
+                </Grid>
+            </GroupBox>
+
+            <GroupBox DockPanel.Dock="Top" Header="{DynamicResource U.TinDung.PopupNghiepVu.ucPopupThucThu.ThongTinChiTietThucThu}">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width ="130"/>
+                        <ColumnDefinition Width ="*"/>
+                        <ColumnDefinition Width="20"/>
+                        <ColumnDefinition Width ="130"/>
+                        <ColumnDefinition Width ="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height ="*"/>
+                        <RowDefinition Height="6"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="6"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <CheckBox Name="chkNopBangTienMat" Content="{DynamicResource U.TinDung.PopupNghiepVu.ucPopupThucThu.NopBangTienMat}" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Margin="5,5,0,0"  IsChecked ="True"/>
+
+                    <Label Grid.Row="0" Grid.Column="3" Content="{DynamicResource U.TinDung.PopupNghiepVu.ucPopupThucThu.TienMat}"/>
+                    <telerik:RadMaskedNumericInput HorizontalAlignment="Stretch"  Mask="#18" Grid.Row="0" Grid.Column="4" Name="numTienMat" TabIndex="5"/>
+
+                    <CheckBox Name="chkTKTietKiemKhongKyHan" Content="{DynamicResource U.TinDung.PopupNghiepVu.ucPopupThucThu.NopTuTKKKH}" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Margin="5,5,0,0" IsChecked="False" TabIndex="6"/>
+                    <Label Grid.Row="2" Grid.Column="3" Content="{DynamicResource U.TinDung.PopupNghiepVu.ucPopupThucThu.TongSoTien:}" IsEnabled="False" Name="lblTongTienRutTK"/>
+                    <telerik:RadMaskedNumericInput HorizontalAlignment="Stretch"  Mask="#18" Grid.Row="2" Grid.Column="4" Name="numTienRutTK" TabIndex="5" IsEnabled="False"/>
+                    <telerik:RadGridView Name="grNopTienTuTKTK" MinHeight="100" Margin="5,0,0,0" ColumnWidth="*" Grid.Row="4" Grid.ColumnSpan="5" IsEnabled="False"
+                                AutoGenerateColumns="False" CanUserFreezeColumns="False" MaxHeight="200"  RowIndicatorVisibility="Collapsed" ShowGroupPanel="False" ItemsSource="{Binding}"
+                                         CellEditEnded="grNopTienTuTKTK_CellEditEnded" CellValidating="grNopTienTuTKTK_CellValidating">
+                        <telerik:RadGridView.Columns>
+                            <uc:MyColumn Header="{DynamicResource U.DungChung.STT}" IsFilterable="False" Width="40"/>
+                            <telerik:GridViewDataColumn Header="ID" Width="0" IsReadOnly="True" IsVisible="False" />
+                            <telerik:GridViewDataColumn Header="{DynamicResource U.TinDung.PopupNghiepVu.ucPopupThucThu.SoSo}" DataMemberBinding="{Binding SO_SO}" IsReadOnly="True" />
+                            <telerik:GridViewDataColumn Header="Mã khách hàng"  IsReadOnly="True" DataMemberBinding="{Binding MA_KHANG}"/>
+                            <telerik:GridViewDataColumn Header="Tên khách hàng"  IsReadOnly="True"  DataMemberBinding="{Binding TEN_KHANG}"/>
+                            <telerik:GridViewDataColumn Header="{DynamicResource U.TinDung.PopupNghiepVu.ucPopupThucThu.SoDu}" TextAlignment="Right" DataFormatString="{}{0:N0}" IsReadOnly="True"  DataMemberBinding="{Binding SO_DU}"/>
+                            <telerik:GridViewDataColumn Header="Số tiền rút" TextAlignment="Right" DataFormatString="{}{0:N0}"  DataMemberBinding="{Binding SO_TIEN_RUT_RA}"/>
+                            <telerik:GridViewExpressionColumn Header="Số dư sau khi rút" TextAlignment="Right" DataFormatString="{}{0:N0}" IsReadOnly ="True" Expression="SO_DU-SO_TIEN_RUT_RA" />
+                        </telerik:RadGridView.Columns>
+                    </telerik:RadGridView>
+                </Grid>
+            </GroupBox>
+            
+            <GroupBox Header="{DynamicResource U.TinDung.PopupNghiepVu.ucPopupThucThu.XuLySoTienNopThua}" Name="grbXuLyTienThua" IsEnabled="False">
+                <DockPanel>
+                    <Border DockPanel.Dock="Top">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width ="130"/>
+                                <ColumnDefinition Width ="*"/>
+                                <ColumnDefinition Width="20"/>
+                                <ColumnDefinition Width ="130"/>
+                                <ColumnDefinition Width ="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height ="Auto"/>
+                                <RowDefinition Height ="6"/>
+                                <RowDefinition Height ="Auto"/>
+                                <RowDefinition Height ="6"/>
+                                <RowDefinition Height ="Auto"/>
+                                <RowDefinition Height ="6"/>
+                                <RowDefinition Height ="Auto"/>
+                                <RowDefinition Height ="6"/>
+                                <RowDefinition Height ="Auto"/>
+                                <RowDefinition Height ="6"/>
+                                <RowDefinition Height ="0"/>
+                                <RowDefinition Height ="6"/>
+                                <RowDefinition Height ="*"/>
+                            </Grid.RowDefinitions>
+                            <!--<RadioButton Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2"  Name="chkGhiTKNoiBo" Content="Ghi nhận vào tài khoản nội bộ" Margin="5,5,0,0" IsChecked="False" TabIndex="9" />
+                            <Label Grid.Row="0" Grid.Column="3" Content="abc" Visibility="Hidden" />-->
+                            
+                            <CheckBox Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2"  Name="chkTKKhongKyHanTienThua" Content="{DynamicResource U.TinDung.PopupNghiepVu.ucPopupThucThu.NopTienVaoTKTK}" IsChecked="False" TabIndex="8" Margin="5,5,0,0" />
+                            <Label Grid.Row="2" Grid.Column="3" Content="{DynamicResource U.TinDung.PopupNghiepVu.ucPopupThucThu.TongSoTien:}"/>
+                            <telerik:RadMaskedNumericInput HorizontalAlignment="Stretch"  Mask="#18" Grid.Row="2" Grid.Column="4" Name="numKhongKyHanTienThua" TabIndex="11" Validation.ErrorTemplate="{StaticResource TextBoxErrorTemplate}" ValueChanged="numKhongKyHanTienThua_ValueChanged" >
+                                <!--<telerik:RadMaskedNumericInput.Value>
+                                    <MultiBinding Converter="{StaticResource calTienNopTK}"  UpdateSourceTrigger="PropertyChanged">
+                                        <Binding ElementName="numTienMat" Path="Value" />
+                                        <Binding ElementName="numSoTienRutTuTK" Path="Value" />
+                                        <Binding ElementName="numSoTienNop" Path="Value" />
+
+                                        <Binding ElementName="numTKQD" Path="Value" />
+                                        <Binding ElementName="numGocVay" Path="Value" />
+                                        <Binding ElementName="numLaiTrongHan" Path="Value" />
+                                        <Binding ElementName="numLaiQuaHan" Path="Value" />
+                                    </MultiBinding>
+                                </telerik:RadMaskedNumericInput.Value>-->
+                            </telerik:RadMaskedNumericInput>
+                            
+                            <telerik:RadGridView Name="grTKKhongKyHanTienThua" MinHeight="100" Margin="5,0,0,0" ColumnWidth="*" Grid.Row="4" Grid.ColumnSpan="5"
+                                AutoGenerateColumns="False" CanUserFreezeColumns="False" MaxHeight="200"  RowIndicatorVisibility="Collapsed" ShowGroupPanel="False" ItemsSource="{Binding}">
+                                <telerik:RadGridView.Columns>
+                                    <uc:MyColumn Header="{DynamicResource U.DungChung.STT}" IsFilterable="False" Width="40"/>
+                                    <telerik:GridViewDataColumn Header="ID" Width="0" IsReadOnly="True" IsVisible="False" />
+                                    <telerik:GridViewDataColumn Header="{DynamicResource U.TinDung.PopupNghiepVu.ucPopupThucThu.SoSo}"  IsReadOnly="True" DataMemberBinding="{Binding so_so_tg}"/>
+                                    <telerik:GridViewDataColumn Header="Số dư trước nộp" TextAlignment="Right" DataFormatString="{}{0:N0}" IsReadOnly="True" DataMemberBinding="{Binding so_tien}"/>
+                                    <telerik:GridViewDataColumn Header="{DynamicResource U.TinDung.PopupNghiepVu.ucPopupThucThu.SoTienNopVao}" TextAlignment="Right" DataFormatString="{}{0:N0}" DataMemberBinding="{Binding so_tien_nop}"/>
+                                    <telerik:GridViewExpressionColumn Header="Số dư sau khi nộp" TextAlignment="Right" DataFormatString="{}{0:N0}" IsReadOnly="True" Expression="so_tien+so_tien_nop"/>
+                                </telerik:RadGridView.Columns>
+                            </telerik:RadGridView>
+                            
+                            <CheckBox Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="2"  Name="chkTraTruocHan" Content="{DynamicResource U.TinDung.PopupNghiepVu.ucPopupThucThu.TraGocTruocHan}" Margin="5,3,0,0" TabIndex="10" />
+                            <CheckBox Content="{DynamicResource U.TinDung.PopupNghiepVu.ucPopupThucThu.TatToanTruocHan}" Grid.Column="3" Grid.Row="6" Grid.ColumnSpan="2" Name="chkTatToan" Margin="5,5,0,0" IsEnabled="False" />
+                            
+                            <Label Grid.Row="8" Grid.Column="0" Content="{DynamicResource U.TinDung.PopupNghiepVu.ucPopupThucThu.SoTienGoc_Lai}"/>
+                            <telerik:RadMaskedNumericInput HorizontalAlignment="Stretch"  Mask="#18" Grid.Row="8" Grid.Column="1" Name="numSoTienNop" TabIndex="12" Validation.ErrorTemplate="{StaticResource TextBoxErrorTemplate}" ValueChanged="numSoTienNop_ValueChanged" >
+                                <!--<telerik:RadMaskedNumericInput.Value>
+                                    <MultiBinding Converter="{StaticResource calTienNopTK}" UpdateSourceTrigger="PropertyChanged">
+                                        <Binding ElementName="numTienMat" Path="Value" />
+                                        <Binding ElementName="numSoTienRutTuTK" Path="Value" />
+                                        <Binding ElementName="numKhongKyHanTienThua" Path="Value" />
+
+                                        <Binding ElementName="numTKQD" Path="Value" />
+                                        <Binding ElementName="numGocVay" Path="Value" />
+                                        <Binding ElementName="numLaiTrongHan" Path="Value" />
+                                        <Binding ElementName="numLaiQuaHan" Path="Value" />
+                                    </MultiBinding>
+                                </telerik:RadMaskedNumericInput.Value>-->
+                            </telerik:RadMaskedNumericInput>
+
+                            <Label Grid.Row="8" Grid.Column="3" Content="{DynamicResource U.TinDung.PopupNghiepVu.ucPopupThucThu.PhiTraTruocHan}" />
+                            <telerik:RadMaskedNumericInput HorizontalAlignment="Stretch"  Mask="#18" Grid.Row="8" Grid.Column="4" Name="numPhiTraTruoc" TabIndex="12" IsEnabled="False" ValueChanged="numPhiTraTruoc_ValueChanged" >
+
+                            </telerik:RadMaskedNumericInput>
+
+                            <telerik:RadGridView Name="grGocLaiTruocHan"  Grid.Row="12" Grid.ColumnSpan="5" Margin="5,0,0,0" DockPanel.Dock="Top" ItemsSource="{Binding}"  ColumnWidth="*" AutoGenerateColumns="False" CanUserFreezeColumns="False" IsReadOnly="True"  RowIndicatorVisibility="Collapsed" ShowGroupPanel="False" TabIndex="7" ShowColumnFooters="True">
+                                <!--<telerik:RadGridView.ColumnGroups>
+                                    <telerik:GridViewColumnGroup Header="" Name="TTChung"/>
+                                    <telerik:GridViewColumnGroup Header="Kế hoạch" Name="KeHoach"/>
+                                    <telerik:GridViewColumnGroup Header="Trả trước" Name="TraTruoc"/>
+                                </telerik:RadGridView.ColumnGroups>-->
+                                <telerik:RadGridView.Columns>
+                                    <uc:MyColumn Header="{DynamicResource U.DungChung.STT}" IsFilterable="False" Width="40" ColumnGroupName="TTChung"/>
+                                    <telerik:GridViewDataColumn Header="{DynamicResource U.TinDung.PopupNghiepVu.ucPopupThucThu.NgayTra}"  Width="*" DataMemberBinding="{Binding kh_ngay_tra}" DataFormatString="{}{0:N0}"/>
+                                    <telerik:GridViewDataColumn Header="{DynamicResource U.TinDung.PopupNghiepVu.ucPopupThucThu.Lai}" TextAlignment="Right" FooterTextAlignment="Right" ColumnGroupName="KeHoach" Width="*" DataMemberBinding="{Binding kh_tra_lai}" DataFormatString="{}{0:N0}">
+                                        <telerik:GridViewDataColumn.AggregateFunctions>
+                                            <telerik:SumFunction ResultFormatString="{}{0:N0}" />
+                                        </telerik:GridViewDataColumn.AggregateFunctions>
+                                    </telerik:GridViewDataColumn>
+                                    <telerik:GridViewDataColumn Header="{DynamicResource U.TinDung.PopupNghiepVu.ucPopupThucThu.GocVay}" TextAlignment="Right" FooterTextAlignment="Right" ColumnGroupName="KeHoach" Width="*" DataMemberBinding="{Binding kh_tra_goc}" DataFormatString="{}{0:N0}">
+                                        <telerik:GridViewDataColumn.AggregateFunctions>
+                                            <telerik:SumFunction ResultFormatString="{}{0:N0}" />
+                                        </telerik:GridViewDataColumn.AggregateFunctions>
+                                    </telerik:GridViewDataColumn>
+                                    <telerik:GridViewDataColumn Header="{DynamicResource U.TinDung.PopupNghiepVu.ucPopupThucThu.Lai}" TextAlignment="Right" FooterTextAlignment="Right" ColumnGroupName="TraTruoc" Width="*" DataMemberBinding="{Binding tt_tra_lai}" DataFormatString="{}{0:N0}">
+                                        <telerik:GridViewDataColumn.AggregateFunctions>
+                                            <telerik:SumFunction ResultFormatString="{}{0:N0}" />
+                                        </telerik:GridViewDataColumn.AggregateFunctions>
+                                    </telerik:GridViewDataColumn>
+                                    <telerik:GridViewDataColumn Header="{DynamicResource U.TinDung.PopupNghiepVu.ucPopupThucThu.GocVay}" TextAlignment="Right" FooterTextAlignment="Right" ColumnGroupName="TraTruoc" Width="*" DataMemberBinding="{Binding tt_tra_goc}" DataFormatString="{}{0:N0}">
+                                        <telerik:GridViewDataColumn.AggregateFunctions>
+                                            <telerik:SumFunction ResultFormatString="{}{0:N0}" />
+                                        </telerik:GridViewDataColumn.AggregateFunctions>
+                                    </telerik:GridViewDataColumn>
+                                </telerik:RadGridView.Columns>
+                            </telerik:RadGridView>
+                        </Grid>
+                    </Border>
+                </DockPanel>
+            </GroupBox>
+        </DockPanel>
+    </Grid>
+</UserControl>

@@ -1,0 +1,16 @@
+STT	Number
+SO_HIEU	String	30
+HO_TEN	String	255
+PGD	String	255
+CUM	String	255
+NHOM	String	255
+QD_DK	Number
+QD_G	Number
+QD_L	Number
+QD_R	Number
+QD_CK	Number
+KK_DK	Number
+KK_G	Number
+KK_L	Number
+KK_R	Number
+KK_CK	Number

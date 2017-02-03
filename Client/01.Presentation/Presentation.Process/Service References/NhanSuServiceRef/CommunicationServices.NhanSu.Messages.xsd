@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/CommunicationServices.NhanSu.Messages" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/CommunicationServices.NhanSu.Messages" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="" namespace="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" />
+  <xs:import schemaLocation="" namespace="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" />
+  <xs:complexType name="NhanSuRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" base="q1:RequestBase">
+        <xs:sequence>
+          <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstDMBangCap" nillable="true" type="q2:ArrayOfNS_DM_BANG_CAP" />
+          <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstDMBenhVienKhamChuaBenh" nillable="true" type="q3:ArrayOfNS_DM_BVIEN_KCB" />
+          <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstDMChucVu" nillable="true" type="q4:ArrayOfNS_DM_CHUC_VU" />
+          <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstDMChuyenNganhDaoTao" nillable="true" type="q5:ArrayOfNS_DM_CNGANH_DTAO" />
+          <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstDMCuTru" nillable="true" type="q6:ArrayOfNS_DM_CU_TRU" />
+          <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstDMDanToc" nillable="true" type="q7:ArrayOfNS_DM_DAN_TOC" />
+          <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstDMDonViCongTac" nillable="true" type="q8:ArrayOfNS_DM_DVI_CTAC" />
+          <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstDMDonViThoiGian" nillable="true" type="q9:ArrayOfNS_DM_DVI_TGIAN" />
+          <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstDMGioiTinh" nillable="true" type="q10:ArrayOfNS_DM_GIOI_TINH" />
+          <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstDMHinhThucDaoTao" nillable="true" type="q11:ArrayOfNS_DM_HTHUC_DTAO" />
+          <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstDMHinhThucKhenThuong" nillable="true" type="q12:ArrayOfNS_DM_HTHUC_KTHUONG" />
+          <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstDMHinhThucKyLuat" nillable="true" type="q13:ArrayOfNS_DM_HTHUC_KLUAT" />
+          <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstDMHinhThucLamViec" nillable="true" type="q14:ArrayOfNS_DM_HTHUC_LVIEC" />
+          <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstDMHinhThucTraLuong" nillable="true" type="q15:ArrayOfNS_DM_HTHUC_TLUONG" />
+          <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstDMHocHam" nillable="true" type="q16:ArrayOfNS_DM_HOC_HAM" />
+          <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstDMHocVi" nillable="true" type="q17:ArrayOfNS_DM_HOC_VI" />
+          <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstDMKhoaDaoTao" nillable="true" type="q18:ArrayOfNS_DM_KHOA_DTAO" />
+          <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstDMKyHieuChamCong" nillable="true" type="q19:ArrayOfNS_DM_KHIEU_CCONG" />
+          <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstDMKyNang" nillable="true" type="q20:ArrayOfNS_DM_KY_NANG" />
+          <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstDMLoaiChiPhi" nillable="true" type="q21:ArrayOfNS_DM_LOAI_CPHI" />
+          <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstDMLoaiGiayTo" nillable="true" type="q22:ArrayOfNS_DM_LOAI_GTO" />
+          <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstDMLoaiHdld" nillable="true" type="q23:ArrayOfNS_DM_LOAI_HDLD" />
+          <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstDMLoaiHoSo" nillable="true" type="q24:ArrayOfNS_DM_LOAI_HSO" />
+          <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstDMLoaiThuNhap" nillable="true" type="q25:ArrayOfNS_DM_LOAI_TNHAP" />
+          <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstDMLyDoNghiPhep" nillable="true" type="q26:ArrayOfNS_DM_LDO_NPHEP" />
+          <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstDMLyDoThoiViec" nillable="true" type="q27:ArrayOfNS_DM_LDO_TVIEC" />
+          <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstDMNgheNghiep" nillable="true" type="q28:ArrayOfNS_DM_NGHE_NGHIEP" />
+          <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstDMPhuongXa" nillable="true" type="q29:ArrayOfNS_DM_PHUONG_XA" />
+          <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstDMQuanHeGiaDinh" nillable="true" type="q30:ArrayOfNS_DM_QHE_GDINH" />
+          <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstDMQuanHuyen" nillable="true" type="q31:ArrayOfNS_DM_QUAN_HUYEN" />
+          <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstDMQuocTich" nillable="true" type="q32:ArrayOfNS_DM_QUOC_TICH" />
+          <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstDMThoiHanHdld" nillable="true" type="q33:ArrayOfNS_DM_THAN_HDLD" />
+          <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstDMTinhThanhPho" nillable="true" type="q34:ArrayOfNS_DM_TINH_TP" />
+          <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstDMTinhTrangHonNhan" nillable="true" type="q35:ArrayOfNS_DM_TTRANG_HNHAN" />
+          <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstDMTonGiao" nillable="true" type="q36:ArrayOfNS_DM_TON_GIAO" />
+          <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstDMTrinhDoChinhTri" nillable="true" type="q37:ArrayOfNS_DM_TDO_CTRI" />
+          <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstDMTrinhDoHocVan" nillable="true" type="q38:ArrayOfNS_DM_TDO_HVAN" />
+          <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstDMTrinhDoTiengAnh" nillable="true" type="q39:ArrayOfNS_DM_TDO_TANH" />
+          <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstDMTrinhDoTinHoc" nillable="true" type="q40:ArrayOfNS_DM_TDO_THOC" />
+          <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstDMTruongDaoTao" nillable="true" type="q41:ArrayOfNS_DM_TRUONG_DTAO" />
+          <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstDMXepLoai" nillable="true" type="q42:ArrayOfNS_DM_XEP_LOAI" />
+          <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objDMBangCap" nillable="true" type="q43:NS_DM_BANG_CAP" />
+          <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objDMBenhVienKhamChuaBenh" nillable="true" type="q44:NS_DM_BVIEN_KCB" />
+          <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objDMChucVu" nillable="true" type="q45:NS_DM_CHUC_VU" />
+          <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objDMChuyenNganhDaoTao" nillable="true" type="q46:NS_DM_CNGANH_DTAO" />
+          <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objDMCuTru" nillable="true" type="q47:NS_DM_CU_TRU" />
+          <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objDMDanToc" nillable="true" type="q48:NS_DM_DAN_TOC" />
+          <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objDMDonViCongTac" nillable="true" type="q49:NS_DM_DVI_CTAC" />
+          <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objDMDonViThoiGian" nillable="true" type="q50:NS_DM_DVI_TGIAN" />
+          <xs:element xmlns:q51="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objDMGioiTinh" nillable="true" type="q51:NS_DM_GIOI_TINH" />
+          <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objDMHinhThucDaoTao" nillable="true" type="q52:NS_DM_HTHUC_DTAO" />
+          <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objDMHinhThucKhenThuong" nillable="true" type="q53:NS_DM_HTHUC_KTHUONG" />
+          <xs:element xmlns:q54="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objDMHinhThucKyLuat" nillable="true" type="q54:NS_DM_HTHUC_KLUAT" />
+          <xs:element xmlns:q55="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objDMHinhThucLamViec" nillable="true" type="q55:NS_DM_HTHUC_LVIEC" />
+          <xs:element xmlns:q56="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objDMHinhThucTraLuong" nillable="true" type="q56:NS_DM_HTHUC_TLUONG" />
+          <xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objDMHocHam" nillable="true" type="q57:NS_DM_HOC_HAM" />
+          <xs:element xmlns:q58="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objDMHocVi" nillable="true" type="q58:NS_DM_HOC_VI" />
+          <xs:element xmlns:q59="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objDMKhoaDaoTao" nillable="true" type="q59:NS_DM_KHOA_DTAO" />
+          <xs:element xmlns:q60="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objDMKyHieuChamCong" nillable="true" type="q60:NS_DM_KHIEU_CCONG" />
+          <xs:element xmlns:q61="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objDMKyNang" nillable="true" type="q61:NS_DM_KY_NANG" />
+          <xs:element xmlns:q62="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objDMLoaiChiPhi" nillable="true" type="q62:NS_DM_LOAI_CPHI" />
+          <xs:element xmlns:q63="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objDMLoaiGiayTo" nillable="true" type="q63:NS_DM_LOAI_GTO" />
+          <xs:element xmlns:q64="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objDMLoaiHdld" nillable="true" type="q64:NS_DM_LOAI_HDLD" />
+          <xs:element xmlns:q65="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objDMLoaiHoSo" nillable="true" type="q65:NS_DM_LOAI_HSO" />
+          <xs:element xmlns:q66="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objDMLoaiThuNhap" nillable="true" type="q66:NS_DM_LOAI_TNHAP" />
+          <xs:element xmlns:q67="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objDMLyDoNghiPhep" nillable="true" type="q67:NS_DM_LDO_NPHEP" />
+          <xs:element xmlns:q68="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objDMLyDoThoiViec" nillable="true" type="q68:NS_DM_LDO_TVIEC" />
+          <xs:element xmlns:q69="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objDMNgheNghiep" nillable="true" type="q69:NS_DM_NGHE_NGHIEP" />
+          <xs:element xmlns:q70="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objDMPhuongXa" nillable="true" type="q70:NS_DM_PHUONG_XA" />
+          <xs:element xmlns:q71="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objDMQuanHeGiaDinh" nillable="true" type="q71:NS_DM_QHE_GDINH" />
+          <xs:element xmlns:q72="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objDMQuanHuyen" nillable="true" type="q72:NS_DM_QUAN_HUYEN" />
+          <xs:element xmlns:q73="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objDMQuocTich" nillable="true" type="q73:NS_DM_QUOC_TICH" />
+          <xs:element xmlns:q74="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objDMThoiHanHdld" nillable="true" type="q74:NS_DM_THAN_HDLD" />
+          <xs:element xmlns:q75="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objDMTinhThanhPho" nillable="true" type="q75:NS_DM_TINH_TP" />
+          <xs:element xmlns:q76="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objDMTinhTrangHonNhan" nillable="true" type="q76:NS_DM_TTRANG_HNHAN" />
+          <xs:element xmlns:q77="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objDMTonGiao" nillable="true" type="q77:NS_DM_TON_GIAO" />
+          <xs:element xmlns:q78="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objDMTrinhDoChinhTri" nillable="true" type="q78:NS_DM_TDO_CTRI" />
+          <xs:element xmlns:q79="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objDMTrinhDoHocVan" nillable="true" type="q79:NS_DM_TDO_HVAN" />
+          <xs:element xmlns:q80="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objDMTrinhDoTiengAnh" nillable="true" type="q80:NS_DM_TDO_TANH" />
+          <xs:element xmlns:q81="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objDMTrinhDoTinHoc" nillable="true" type="q81:NS_DM_TDO_THOC" />
+          <xs:element xmlns:q82="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objDMTruongDaoTao" nillable="true" type="q82:NS_DM_TRUONG_DTAO" />
+          <xs:element xmlns:q83="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objDMXepLoai" nillable="true" type="q83:NS_DM_XEP_LOAI" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="NhanSuRequest" nillable="true" type="tns:NhanSuRequest" />
+  <xs:complexType name="NhanSuResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q84="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" base="q84:ResponseBase">
+        <xs:sequence>
+          <xs:element xmlns:q85="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstDMBangCap" nillable="true" type="q85:ArrayOfNS_DM_BANG_CAP" />
+          <xs:element xmlns:q86="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstDMBenhVienKhamChuaBenh" nillable="true" type="q86:ArrayOfNS_DM_BVIEN_KCB" />
+          <xs:element xmlns:q87="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstDMChucVu" nillable="true" type="q87:ArrayOfNS_DM_CHUC_VU" />
+          <xs:element xmlns:q88="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstDMChuyenNganhDaoTao" nillable="true" type="q88:ArrayOfNS_DM_CNGANH_DTAO" />
+          <xs:element xmlns:q89="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstDMCuTru" nillable="true" type="q89:ArrayOfNS_DM_CU_TRU" />
+          <xs:element xmlns:q90="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstDMDanToc" nillable="true" type="q90:ArrayOfNS_DM_DAN_TOC" />
+          <xs:element xmlns:q91="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstDMDonViCongTac" nillable="true" type="q91:ArrayOfNS_DM_DVI_CTAC" />
+          <xs:element xmlns:q92="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstDMDonViThoiGian" nillable="true" type="q92:ArrayOfNS_DM_DVI_TGIAN" />
+          <xs:element xmlns:q93="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstDMGioiTinh" nillable="true" type="q93:ArrayOfNS_DM_GIOI_TINH" />
+          <xs:element xmlns:q94="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstDMHinhThucDaoTao" nillable="true" type="q94:ArrayOfNS_DM_HTHUC_DTAO" />
+          <xs:element xmlns:q95="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstDMHinhThucKhenThuong" nillable="true" type="q95:ArrayOfNS_DM_HTHUC_KTHUONG" />
+          <xs:element xmlns:q96="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstDMHinhThucKyLuat" nillable="true" type="q96:ArrayOfNS_DM_HTHUC_KLUAT" />
+          <xs:element xmlns:q97="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstDMHinhThucLamViec" nillable="true" type="q97:ArrayOfNS_DM_HTHUC_LVIEC" />
+          <xs:element xmlns:q98="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstDMHinhThucTraLuong" nillable="true" type="q98:ArrayOfNS_DM_HTHUC_TLUONG" />
+          <xs:element xmlns:q99="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstDMHocHam" nillable="true" type="q99:ArrayOfNS_DM_HOC_HAM" />
+          <xs:element xmlns:q100="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstDMHocVi" nillable="true" type="q100:ArrayOfNS_DM_HOC_VI" />
+          <xs:element xmlns:q101="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstDMKhoaDaoTao" nillable="true" type="q101:ArrayOfNS_DM_KHOA_DTAO" />
+          <xs:element xmlns:q102="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstDMKyHieuChamCong" nillable="true" type="q102:ArrayOfNS_DM_KHIEU_CCONG" />
+          <xs:element xmlns:q103="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstDMKyNang" nillable="true" type="q103:ArrayOfNS_DM_KY_NANG" />
+          <xs:element xmlns:q104="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstDMLoaiChiPhi" nillable="true" type="q104:ArrayOfNS_DM_LOAI_CPHI" />
+          <xs:element xmlns:q105="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstDMLoaiGiayTo" nillable="true" type="q105:ArrayOfNS_DM_LOAI_GTO" />
+          <xs:element xmlns:q106="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstDMLoaiHdld" nillable="true" type="q106:ArrayOfNS_DM_LOAI_HDLD" />
+          <xs:element xmlns:q107="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstDMLoaiHoSo" nillable="true" type="q107:ArrayOfNS_DM_LOAI_HSO" />
+          <xs:element xmlns:q108="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstDMLoaiThuNhap" nillable="true" type="q108:ArrayOfNS_DM_LOAI_TNHAP" />
+          <xs:element xmlns:q109="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstDMLyDoNghiPhep" nillable="true" type="q109:ArrayOfNS_DM_LDO_NPHEP" />
+          <xs:element xmlns:q110="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstDMLyDoThoiViec" nillable="true" type="q110:ArrayOfNS_DM_LDO_TVIEC" />
+          <xs:element xmlns:q111="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstDMNgheNghiep" nillable="true" type="q111:ArrayOfNS_DM_NGHE_NGHIEP" />
+          <xs:element xmlns:q112="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstDMPhuongXa" nillable="true" type="q112:ArrayOfNS_DM_PHUONG_XA" />
+          <xs:element xmlns:q113="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstDMQuanHeGiaDinh" nillable="true" type="q113:ArrayOfNS_DM_QHE_GDINH" />
+          <xs:element xmlns:q114="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstDMQuanHuyen" nillable="true" type="q114:ArrayOfNS_DM_QUAN_HUYEN" />
+          <xs:element xmlns:q115="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstDMQuocTich" nillable="true" type="q115:ArrayOfNS_DM_QUOC_TICH" />
+          <xs:element xmlns:q116="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstDMThoiHanHdld" nillable="true" type="q116:ArrayOfNS_DM_THAN_HDLD" />
+          <xs:element xmlns:q117="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstDMTinhThanhPho" nillable="true" type="q117:ArrayOfNS_DM_TINH_TP" />
+          <xs:element xmlns:q118="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstDMTinhTrangHonNhan" nillable="true" type="q118:ArrayOfNS_DM_TTRANG_HNHAN" />
+          <xs:element xmlns:q119="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstDMTonGiao" nillable="true" type="q119:ArrayOfNS_DM_TON_GIAO" />
+          <xs:element xmlns:q120="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstDMTrinhDoChinhTri" nillable="true" type="q120:ArrayOfNS_DM_TDO_CTRI" />
+          <xs:element xmlns:q121="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstDMTrinhDoHocVan" nillable="true" type="q121:ArrayOfNS_DM_TDO_HVAN" />
+          <xs:element xmlns:q122="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstDMTrinhDoTiengAnh" nillable="true" type="q122:ArrayOfNS_DM_TDO_TANH" />
+          <xs:element xmlns:q123="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstDMTrinhDoTinHoc" nillable="true" type="q123:ArrayOfNS_DM_TDO_THOC" />
+          <xs:element xmlns:q124="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstDMTruongDaoTao" nillable="true" type="q124:ArrayOfNS_DM_TRUONG_DTAO" />
+          <xs:element xmlns:q125="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstDMXepLoai" nillable="true" type="q125:ArrayOfNS_DM_XEP_LOAI" />
+          <xs:element xmlns:q126="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objDMBangCap" nillable="true" type="q126:NS_DM_BANG_CAP" />
+          <xs:element xmlns:q127="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objDMBenhVienKhamChuaBenh" nillable="true" type="q127:NS_DM_BVIEN_KCB" />
+          <xs:element xmlns:q128="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objDMChucVu" nillable="true" type="q128:NS_DM_CHUC_VU" />
+          <xs:element xmlns:q129="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objDMChuyenNganhDaoTao" nillable="true" type="q129:NS_DM_CNGANH_DTAO" />
+          <xs:element xmlns:q130="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objDMCuTru" nillable="true" type="q130:NS_DM_CU_TRU" />
+          <xs:element xmlns:q131="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objDMDanToc" nillable="true" type="q131:NS_DM_DAN_TOC" />
+          <xs:element xmlns:q132="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objDMDonViCongTac" nillable="true" type="q132:NS_DM_DVI_CTAC" />
+          <xs:element xmlns:q133="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objDMDonViThoiGian" nillable="true" type="q133:NS_DM_DVI_TGIAN" />
+          <xs:element xmlns:q134="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objDMGioiTinh" nillable="true" type="q134:NS_DM_GIOI_TINH" />
+          <xs:element xmlns:q135="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objDMHinhThucDaoTao" nillable="true" type="q135:NS_DM_HTHUC_DTAO" />
+          <xs:element xmlns:q136="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objDMHinhThucKhenThuong" nillable="true" type="q136:NS_DM_HTHUC_KTHUONG" />
+          <xs:element xmlns:q137="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objDMHinhThucKyLuat" nillable="true" type="q137:NS_DM_HTHUC_KLUAT" />
+          <xs:element xmlns:q138="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objDMHinhThucLamViec" nillable="true" type="q138:NS_DM_HTHUC_LVIEC" />
+          <xs:element xmlns:q139="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objDMHinhThucTraLuong" nillable="true" type="q139:NS_DM_HTHUC_TLUONG" />
+          <xs:element xmlns:q140="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objDMHocHam" nillable="true" type="q140:NS_DM_HOC_HAM" />
+          <xs:element xmlns:q141="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objDMHocVi" nillable="true" type="q141:NS_DM_HOC_VI" />
+          <xs:element xmlns:q142="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objDMKhoaDaoTao" nillable="true" type="q142:NS_DM_KHOA_DTAO" />
+          <xs:element xmlns:q143="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objDMKyHieuChamCong" nillable="true" type="q143:NS_DM_KHIEU_CCONG" />
+          <xs:element xmlns:q144="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objDMKyNang" nillable="true" type="q144:NS_DM_KY_NANG" />
+          <xs:element xmlns:q145="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objDMLoaiChiPhi" nillable="true" type="q145:NS_DM_LOAI_CPHI" />
+          <xs:element xmlns:q146="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objDMLoaiGiayTo" nillable="true" type="q146:NS_DM_LOAI_GTO" />
+          <xs:element xmlns:q147="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objDMLoaiHdld" nillable="true" type="q147:NS_DM_LOAI_HDLD" />
+          <xs:element xmlns:q148="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objDMLoaiHoSo" nillable="true" type="q148:NS_DM_LOAI_HSO" />
+          <xs:element xmlns:q149="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objDMLoaiThuNhap" nillable="true" type="q149:NS_DM_LOAI_TNHAP" />
+          <xs:element xmlns:q150="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objDMLyDoNghiPhep" nillable="true" type="q150:NS_DM_LDO_NPHEP" />
+          <xs:element xmlns:q151="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objDMLyDoThoiViec" nillable="true" type="q151:NS_DM_LDO_TVIEC" />
+          <xs:element xmlns:q152="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objDMNgheNghiep" nillable="true" type="q152:NS_DM_NGHE_NGHIEP" />
+          <xs:element xmlns:q153="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objDMPhuongXa" nillable="true" type="q153:NS_DM_PHUONG_XA" />
+          <xs:element xmlns:q154="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objDMQuanHeGiaDinh" nillable="true" type="q154:NS_DM_QHE_GDINH" />
+          <xs:element xmlns:q155="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objDMQuanHuyen" nillable="true" type="q155:NS_DM_QUAN_HUYEN" />
+          <xs:element xmlns:q156="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objDMQuocTich" nillable="true" type="q156:NS_DM_QUOC_TICH" />
+          <xs:element xmlns:q157="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objDMThoiHanHdld" nillable="true" type="q157:NS_DM_THAN_HDLD" />
+          <xs:element xmlns:q158="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objDMTinhThanhPho" nillable="true" type="q158:NS_DM_TINH_TP" />
+          <xs:element xmlns:q159="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objDMTinhTrangHonNhan" nillable="true" type="q159:NS_DM_TTRANG_HNHAN" />
+          <xs:element xmlns:q160="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objDMTonGiao" nillable="true" type="q160:NS_DM_TON_GIAO" />
+          <xs:element xmlns:q161="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objDMTrinhDoChinhTri" nillable="true" type="q161:NS_DM_TDO_CTRI" />
+          <xs:element xmlns:q162="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objDMTrinhDoHocVan" nillable="true" type="q162:NS_DM_TDO_HVAN" />
+          <xs:element xmlns:q163="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objDMTrinhDoTiengAnh" nillable="true" type="q163:NS_DM_TDO_TANH" />
+          <xs:element xmlns:q164="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objDMTrinhDoTinHoc" nillable="true" type="q164:NS_DM_TDO_THOC" />
+          <xs:element xmlns:q165="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objDMTruongDaoTao" nillable="true" type="q165:NS_DM_TRUONG_DTAO" />
+          <xs:element xmlns:q166="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objDMXepLoai" nillable="true" type="q166:NS_DM_XEP_LOAI" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="NhanSuResponse" nillable="true" type="tns:NhanSuResponse" />
+</xs:schema>

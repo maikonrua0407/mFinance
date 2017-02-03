@@ -1,0 +1,15 @@
+MaChiNhanh	String	255
+TenChiNhanh	String	255
+DiaChiChiNhanh	String	255
+MaPhongGD	String	255
+TenPhongGD	String	255
+DiaChiPhongGD	String	255
+KHMa	String	255
+KHTen	String	255
+KHDiaChi	String	255
+KHDangKyKinhDoanh	String	255
+KHLoaiHinhToChuc	String	255
+KHVonDieuLe	number
+KHTenGiamDoc	String	255
+KHLinhVucKinhDoanh	String	255
+KHCanBoQuanLy	String	255

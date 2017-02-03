@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:1001/KeToanService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/CommunicationServices.KeToan.Messages" />
+  <xs:element name="TaiKhoan">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/CommunicationServices.KeToan.Messages" minOccurs="0" name="request" nillable="true" type="q1:TaiKhoanRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TaiKhoanResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/CommunicationServices.KeToan.Messages" minOccurs="0" name="TaiKhoanResult" nillable="true" type="q2:TaiKhoanResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GiaoDichKeToan">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/CommunicationServices.KeToan.Messages" minOccurs="0" name="request" nillable="true" type="q3:GiaoDichKeToanRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GiaoDichKeToanResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/CommunicationServices.KeToan.Messages" minOccurs="0" name="GiaoDichKeToanResult" nillable="true" type="q4:GiaoDichKeToanResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/BusinessServices.NhanSu.DTO" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/BusinessServices.NhanSu.DTO" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:1001/NhanSuService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" />
+  <xs:import schemaLocation="http://localhost:1001/NhanSuService.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/BusinessServices.HachToan.DTO" />
+  <xs:complexType name="ArrayOfNS_HSO_DU_AN_DTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NS_HSO_DU_AN_DTO" nillable="true" type="tns:NS_HSO_DU_AN_DTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNS_HSO_DU_AN_DTO" nillable="true" type="tns:ArrayOfNS_HSO_DU_AN_DTO" />
+  <xs:complexType name="NS_HSO_DU_AN_DTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MA_CVU" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DU_AN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MO_TA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_THAM_GIA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TEN_CVU" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TEN_DU_AN" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NS_HSO_DU_AN_DTO" nillable="true" type="tns:NS_HSO_DU_AN_DTO" />
+  <xs:complexType name="ArrayOfNS_THONG_TIN_LUONG">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NS_THONG_TIN_LUONG" nillable="true" type="tns:NS_THONG_TIN_LUONG" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNS_THONG_TIN_LUONG" nillable="true" type="tns:ArrayOfNS_THONG_TIN_LUONG" />
+  <xs:complexType name="NS_THONG_TIN_LUONG">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="HO_TEN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="ID_CHUC_VU" type="xs:int" />
+      <xs:element minOccurs="0" name="ID_NHAN_VIEN" type="xs:int" />
+      <xs:element minOccurs="0" name="ID_PHONG_BAN" type="xs:int" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="LST_DM_PHU_CAP" nillable="true" type="q1:ArrayOfNS_DM_PHU_CAP" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="LST_LUONG_LSU" nillable="true" type="q2:ArrayOfNS_LUONG_LSU" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="LST_LUONG_PHU_CAP" nillable="true" type="q3:ArrayOfNS_LUONG_PHU_CAP" />
+      <xs:element minOccurs="0" name="MA_DVI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_GDICH" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_NHAN_VIEN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_NHAP" nillable="true" type="xs:string" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="OBJ_LUONG" nillable="true" type="q4:NS_LUONG" />
+      <xs:element minOccurs="0" name="TTHAI_BGHI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_NVU" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NS_THONG_TIN_LUONG" nillable="true" type="tns:NS_THONG_TIN_LUONG" />
+  <xs:complexType name="ArrayOfNS_THONG_TIN_LUONG_DCHINH">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NS_THONG_TIN_LUONG_DCHINH" nillable="true" type="tns:NS_THONG_TIN_LUONG_DCHINH" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNS_THONG_TIN_LUONG_DCHINH" nillable="true" type="tns:ArrayOfNS_THONG_TIN_LUONG_DCHINH" />
+  <xs:complexType name="NS_THONG_TIN_LUONG_DCHINH">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BAC_LUONG" type="xs:int" />
+      <xs:element minOccurs="0" name="HO_TEN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="ID_CHUC_VU" type="xs:int" />
+      <xs:element minOccurs="0" name="ID_NHAN_VIEN" type="xs:int" />
+      <xs:element minOccurs="0" name="ID_PHONG_BAN" type="xs:int" />
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="LST_DM_PHU_CAP" nillable="true" type="q5:ArrayOfNS_DM_PHU_CAP" />
+      <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="LST_DM_PHU_CAP_LUONG" nillable="true" type="q6:ArrayOfNS_DM_PHU_CAP" />
+      <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="LST_LUONG_DCHINH_LSU" nillable="true" type="q7:ArrayOfNS_LUONG_DCHINH_LSU" />
+      <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="LST_LUONG_DCHINH_PHU_CAP" nillable="true" type="q8:ArrayOfNS_LUONG_DCHINH_PHU_CAP" />
+      <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="LST_LUONG_LSU" nillable="true" type="q9:ArrayOfNS_LUONG_LSU" />
+      <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="LST_LUONG_PHU_CAP" nillable="true" type="q10:ArrayOfNS_LUONG_PHU_CAP" />
+      <xs:element minOccurs="0" name="LUONG_CO_BAN" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MA_DVI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_GDICH" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_NHAN_VIEN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_NHAP" nillable="true" type="xs:string" />
+      <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="OBJ_LUONG_DCHINH" nillable="true" type="q11:NS_LUONG_DCHINH" />
+      <xs:element minOccurs="0" name="TTHAI_BGHI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_NVU" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TY_LE_HUONG_LUONG" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NS_THONG_TIN_LUONG_DCHINH" nillable="true" type="tns:NS_THONG_TIN_LUONG_DCHINH" />
+  <xs:complexType name="ArrayOfNS_THONG_TIN_PHU_CAP_CTV">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NS_THONG_TIN_PHU_CAP_CTV" nillable="true" type="tns:NS_THONG_TIN_PHU_CAP_CTV" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNS_THONG_TIN_PHU_CAP_CTV" nillable="true" type="tns:ArrayOfNS_THONG_TIN_PHU_CAP_CTV" />
+  <xs:complexType name="NS_THONG_TIN_PHU_CAP_CTV">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DATA_SET" nillable="true">
+        <xs:complexType>
+          <xs:annotation>
+            <xs:appinfo>
+              <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+            </xs:appinfo>
+          </xs:annotation>
+          <xs:sequence>
+            <xs:element ref="xs:schema" />
+            <xs:any />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/BusinessServices.HachToan.DTO" minOccurs="0" name="GDHT" nillable="true" type="q12:GDHT" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="LST_CT" nillable="true" type="q13:ArrayOfNS_TINH_PHU_CAP_CTV_CT" />
+      <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="LST_PBO" nillable="true" type="q14:ArrayOfNS_TINH_PHU_CAP_PBO" />
+      <xs:element minOccurs="0" name="MA_DVI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_GDICH" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_GDICH" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_NHAP" nillable="true" type="xs:string" />
+      <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="OBJ_TINH_PHU_CAP" nillable="true" type="q15:NS_TINH_PHU_CAP_CTV" />
+      <xs:element minOccurs="0" name="TTHAI_BGHI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_NVU" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NS_THONG_TIN_PHU_CAP_CTV" nillable="true" type="tns:NS_THONG_TIN_PHU_CAP_CTV" />
+  <xs:complexType name="ArrayOfNS_THONG_TIN_TINH_LUONG">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NS_THONG_TIN_TINH_LUONG" nillable="true" type="tns:NS_THONG_TIN_TINH_LUONG" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNS_THONG_TIN_TINH_LUONG" nillable="true" type="tns:ArrayOfNS_THONG_TIN_TINH_LUONG" />
+  <xs:complexType name="NS_THONG_TIN_TINH_LUONG">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DATA_SET" nillable="true">
+        <xs:complexType>
+          <xs:annotation>
+            <xs:appinfo>
+              <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+            </xs:appinfo>
+          </xs:annotation>
+          <xs:sequence>
+            <xs:element ref="xs:schema" />
+            <xs:any />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/BusinessServices.HachToan.DTO" minOccurs="0" name="GDHT" nillable="true" type="q16:GDHT" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="LST_CT" nillable="true" type="q17:ArrayOfNS_TINH_LUONG_CT" />
+      <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="LST_GTRI" nillable="true" type="q18:ArrayOfNS_TINH_LUONG_GTRI" />
+      <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="LST_PBO" nillable="true" type="q19:ArrayOfNS_TINH_LUONG_PBO" />
+      <xs:element minOccurs="0" name="MA_DVI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_GDICH" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_GDICH" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_NHAP" nillable="true" type="xs:string" />
+      <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="OBJ_TINH_LUONG" nillable="true" type="q20:NS_TINH_LUONG" />
+      <xs:element minOccurs="0" name="TTHAI_BGHI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_NVU" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NS_THONG_TIN_TINH_LUONG" nillable="true" type="tns:NS_THONG_TIN_TINH_LUONG" />
+  <xs:complexType name="NS_QLY_DU_AN_DTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ID_DU_AN" type="xs:int" />
+      <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="LST_QLY_DU_AN" nillable="true" type="q21:ArrayOfNS_QLY_DU_AN" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NS_QLY_DU_AN_DTO" nillable="true" type="tns:NS_QLY_DU_AN_DTO" />
+  <xs:complexType name="NS_TEMP_HO_SO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ID_NGUOI_QLY" type="xs:int" />
+      <xs:element minOccurs="0" name="MA_NGUOI_QLY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TEN_NGUOI_QLY" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NS_TEMP_HO_SO" nillable="true" type="tns:NS_TEMP_HO_SO" />
+  <xs:complexType name="NS_TEMP_HOP_DONG">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ID_CHUC_VU_NGUOI_DDIEN" type="xs:int" />
+      <xs:element minOccurs="0" name="ID_CHUC_VU_NGUOI_LDONG" type="xs:int" />
+      <xs:element minOccurs="0" name="ID_NGUOI_DDIEN" type="xs:int" />
+      <xs:element minOccurs="0" name="ID_NGUOI_LDONG" type="xs:int" />
+      <xs:element minOccurs="0" name="MA_NGUOI_DDIEN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_NGUOI_LDONG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TEN_NGUOI_DDIEN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TEN_NGUOI_LDONG" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NS_TEMP_HOP_DONG" nillable="true" type="tns:NS_TEMP_HOP_DONG" />
+  <xs:complexType name="NS_TEMP_THOI_VIEC">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ID_BO_PHAN" type="xs:int" />
+      <xs:element minOccurs="0" name="ID_CHUC_VU" type="xs:int" />
+      <xs:element minOccurs="0" name="ID_NHAN_VIEN" type="xs:int" />
+      <xs:element minOccurs="0" name="MA_NHAN_VIEN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TEN_NHAN_VIEN" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NS_TEMP_THOI_VIEC" nillable="true" type="tns:NS_TEMP_THOI_VIEC" />
+  <xs:complexType name="NS_TEMP_TCHUYEN_CTAC">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ID_NHAN_VIEN" type="xs:int" />
+      <xs:element minOccurs="0" name="MA_NHAN_VIEN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TEN_NHAN_VIEN" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NS_TEMP_TCHUYEN_CTAC" nillable="true" type="tns:NS_TEMP_TCHUYEN_CTAC" />
+  <xs:complexType name="NS_TIEU_CHI_PHU_CAP">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ID_NHOM_CTV" type="xs:int" />
+      <xs:element minOccurs="0" name="LOAI_PHU_CAP" nillable="true" type="xs:string" />
+      <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="LST_PHU_CAP_BSUNG" nillable="true" type="q22:ArrayOfNS_PHU_CAP_BSUNG_CTV" />
+      <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="LST_PHU_CAP_CDINH" nillable="true" type="q23:ArrayOfNS_PHU_CAP_CDINH_CTV" />
+      <xs:element minOccurs="0" name="MA_DVI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_GDICH" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_NHOM_CTV" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_CAP_NHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_LAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_CAP_NHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_LAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TRANG_THAI_BAN_GHI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TRANG_THAI_NGHIEP_VU" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NS_TIEU_CHI_PHU_CAP" nillable="true" type="tns:NS_TIEU_CHI_PHU_CAP" />
+</xs:schema>

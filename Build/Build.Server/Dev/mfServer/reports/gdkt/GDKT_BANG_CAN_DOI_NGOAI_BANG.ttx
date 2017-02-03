@@ -1,0 +1,8 @@
+MaChiNhanh	string	255
+TenChiNhanh	string	255
+SoTaiKhoan	string	255
+TenTaiKhoan	string	255
+DuDauKy	number
+PhatSinhThu	number
+PhatSinhChi	number
+DuCuoiKy	number

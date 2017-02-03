@@ -1,0 +1,93 @@
+﻿<UserControl x:Class="PresentationWPF.HanMuc.HanMuc.ucHanMucChung"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:ribbon="http://schemas.microsoft.com/winfx/2006/xaml/presentation/ribbon" 
+             xmlns:telerikMaskInput="clr-namespace:Telerik.Windows.Controls.MaskedInput;assembly=Telerik.Windows.Controls.Input"
+             xmlns:uc="clr-namespace:PresentationWPF.CustomControl;assembly=PresentationWPF.CustomControl"   
+             xmlns:local="clr-namespace:PresentationWPF.HanMuc.HanMuc"
+             xmlns:my="clr-namespace:System;assembly=mscorlib"
+             mc:Ignorable="d"
+             d:DesignHeight="768" d:DesignWidth="1024" Loaded="UserControl_Loaded">
+    <UserControl.Resources>
+        <uc:NullValueConverter x:Key="nullableConverter"/>
+        <uc:BoolToVisibilityConverter x:Key="boolToVisibilityConverter"/>
+        <uc:NullToVisibilityConverter x:Key="nullToVisibilityConverter"/>
+        <Style x:Key="GridViewCellStyle1" TargetType="{x:Type telerik:GridViewCell}">
+            <Setter Property="Background" Value="GhostWhite" />
+            <Setter Property="Padding" Value="0" />
+            <Setter Property="Margin" Value="0" />
+        </Style>
+        <my:String x:Key="U.DungChung.Button.Luu">Lưu</my:String>
+        <my:String x:Key="U.DungChung.Button.XuatExcel">Xuất Excel</my:String>
+        <my:String x:Key="U.DungChung.Button.TroGiup">Trợ giúp</my:String>
+        <my:String x:Key="U.DungChung.Button.Dong">Đóng</my:String>
+        <my:String x:Key="U.HanMuc.HanMuc.ucHanMucChung.expDSDTuong">Danh sách đối tượng</my:String>
+        <my:String x:Key="U.HanMuc.HanMuc.ucHanMucChung.LoaiDTuong">Loại đối tượng:</my:String>
+        <my:String x:Key="U.HanMuc.HanMuc.ucHanMucChung.DanhSachChucNang">Danh sách chức năng</my:String>
+        <my:String x:Key="U.HanMuc.HanMuc.ucHanMucChung.TinhNang">Tính năng:</my:String>
+        <my:String x:Key="U.HanMuc.HanMuc.ucHanMucChung.PhanHe">Phân hệ:</my:String>
+        <my:String x:Key="U.HanMuc.HanMuc.ucHanMucChung.STT">STT</my:String>
+        <my:String x:Key="U.HanMuc.HanMuc.ucHanMucChung.Ma">Mã</my:String>
+        <my:String x:Key="U.HanMuc.HanMuc.ucHanMucChung.Ten">Tên</my:String>
+        <my:String x:Key="U.HanMuc.HanMuc.ucHanMucChung.TenDonVi">Tên đơn vị</my:String>
+        <my:String x:Key="U.HanMuc.HanMuc.ucHanMucChung.Min">Min</my:String>
+        <my:String x:Key="U.HanMuc.HanMuc.ucHanMucChung.Max">Số tiền</my:String>
+    </UserControl.Resources>
+    <UserControl.CommandBindings>
+        <CommandBinding CanExecute="SaveCommand_CanExecute" Executed="SaveCommand_Executed" Command="{x:Static local:ucHanMucChung.SaveCommand}" >
+        </CommandBinding>
+        <CommandBinding CanExecute="ExportCommand_CanExecute" Executed="ExportCommand_Executed" Command="{x:Static local:ucHanMucChung.ExportCommand}">
+        </CommandBinding>
+        <CommandBinding CanExecute="HelpCommand_CanExecute" Executed="HelpCommand_Executed" Command="{x:Static local:ucHanMucChung.HelpCommand}">
+        </CommandBinding>
+        <CommandBinding CanExecute="CloseCommand_CanExecute" Executed="CloseCommand_Executed" Command="{x:Static local:ucHanMucChung.CloseCommand}">
+        </CommandBinding>
+    </UserControl.CommandBindings>
+    <Grid>
+        <DockPanel>
+            <DockPanel HorizontalAlignment="Stretch" DockPanel.Dock="Top" Margin="3,3,0,3" LastChildFill="False" Name="docToolbar">
+                <WrapPanel Name="Toolbar">
+                    <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbSave" DockPanel.Dock="Left" Label="{DynamicResource U.DungChung.Button.Luu}"  SmallImageSource="/Utilities.Common;component/Images/Action/modify.png" Style="{StaticResource RibbonButton}" Click="tlbHotKey_Click" />
+                    <Label Name="lbl1" Margin="3,0,0,0" DockPanel.Dock="Left"  BorderThickness="3" Width="2" BorderBrush="#FF170404" />
+                    <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbExport" DockPanel.Dock="Left" Label="{DynamicResource U.DungChung.Button.XuatExcel}"  SmallImageSource="/Utilities.Common;component/Images/Action/export.png" Style="{StaticResource RibbonButton}" Click="tlbHotKey_Click" />
+                    <Label Name="lbl3" Margin="3,0,0,0" DockPanel.Dock="Left" BorderThickness="3" Width="2" BorderBrush="#FF170404" />
+                    <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbHelp" DockPanel.Dock="Left" Label="{DynamicResource U.DungChung.Button.TroGiup}"  SmallImageSource="/Utilities.Common;component/Images/Action/help.png" Style="{StaticResource RibbonButton}" Click="tlbHotKey_Click" />
+                    <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbClose" DockPanel.Dock="Left" Label="{DynamicResource U.DungChung.Button.Dong}"  SmallImageSource="/Utilities.Common;component/Images/Action/close.png" Style="{StaticResource RibbonButton}" Click="tlbHotKey_Click" />
+                </WrapPanel>
+            </DockPanel>
+            <Grid Name="gridMain">
+                <GroupBox Header="{DynamicResource U.HanMuc.HanMuc.ucHanMucChung.expDSDTuong}" Margin="3" VerticalAlignment="Stretch">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="2*" />
+                            <ColumnDefinition Width="20" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="2*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="25" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <Label Grid.Row="0" Grid.Column="0" Name="lblLoaiDTuong" Content="{DynamicResource U.HanMuc.HanMuc.ucHanMucChung.LoaiDTuong}" />
+                        <telerik:RadComboBox Grid.Row="0" Grid.Column="1" IsEditable="True" Name="cmbDoiTuong" />
+                        <telerik:RadGridView Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="5" Name="grDSDoiTuong" ShowGroupPanel="False" CanUserFreezeColumns="False" RowIndicatorVisibility="Collapsed" AutoGenerateColumns="False" IsFilteringAllowed="False" SelectionUnit="Cell">
+                            <telerik:RadGridView.Columns>
+                                <telerik:GridViewDataColumn Header="{DynamicResource U.HanMuc.HanMuc.ucHanMucChung.STT}" DataMemberBinding="{Binding STT}" Width="40" IsReadOnly="True"/>
+                                <telerik:GridViewDataColumn DataMemberBinding="{Binding ID}" IsVisible="False" IsReadOnly="True" />
+                                <telerik:GridViewDataColumn Header="{DynamicResource U.HanMuc.HanMuc.ucHanMucChung.Ma}" DataMemberBinding="{Binding MA}" Width="*" IsReadOnly="True" />
+                                <telerik:GridViewDataColumn Header="{DynamicResource U.HanMuc.HanMuc.ucHanMucChung.Ten}" DataMemberBinding="{Binding TEN}" Width="2*" IsReadOnly="True" />
+                                <telerik:GridViewDataColumn Header="{DynamicResource U.HanMuc.HanMuc.ucHanMucChung.TenDonVi}" DataMemberBinding="{Binding TEN_DVI}" Width="2*" IsReadOnly="True" />
+                                <telerik:GridViewDataColumn Header="{DynamicResource U.HanMuc.HanMuc.ucHanMucChung.Min}" DataMemberBinding="{Binding HMUC_MIN}" Width="200" DataFormatString="{}{0:N0}" TextAlignment="Right" IsVisible="False" />
+                                <telerik:GridViewDataColumn Header="{DynamicResource U.HanMuc.HanMuc.ucHanMucChung.Max}" DataMemberBinding="{Binding HMUC_MAX}" Width="200" DataFormatString="{}{0:N0}" TextAlignment="Right"/>
+                            </telerik:RadGridView.Columns>
+                        </telerik:RadGridView>                        
+                    </Grid>
+                </GroupBox>
+            </Grid>
+        </DockPanel>
+    </Grid>
+</UserControl>

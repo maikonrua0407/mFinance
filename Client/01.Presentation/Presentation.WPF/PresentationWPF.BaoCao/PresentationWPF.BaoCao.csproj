@@ -1,0 +1,3321 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6A0780E5-9E43-4985-9CD8-A40AE5898EF1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PresentationWPF.BaoCao</RootNamespace>
+    <AssemblyName>PresentationWPF.BaoCao</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\..\Build\Build.Client\Dev\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.85.4.369, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL" />
+    <Reference Include="Presentation.Process, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Build\Build.Client\Dev\Presentation.Process.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework.Aero" />
+    <Reference Include="PresentationWPF.CustomControl, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Build\Build.Client\Dev\PresentationWPF.CustomControl.dll</HintPath>
+    </Reference>
+    <Reference Include="RibbonControlsLibrary, Version=4.0.0.11019, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Libraries\RibbonControlsLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls, Version=2012.1.215.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Libraries\Telerik.Windows.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Data, Version=2012.1.215.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Libraries\Telerik.Windows.Controls.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.GridView, Version=2012.1.215.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Libraries\Telerik.Windows.Controls.GridView.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Input, Version=2012.1.215.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Libraries\Telerik.Windows.Controls.Input.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Navigation, Version=2012.1.215.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Libraries\Telerik.Windows.Controls.Navigation.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.ScheduleView, Version=2012.1.215.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Libraries\Telerik.Windows.Controls.ScheduleView.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Data, Version=2012.1.215.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Libraries\Telerik.Windows.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="UIAutomationTypes" />
+    <Reference Include="Utilities.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Libraries\Utilities.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BCTH\BCTH_BC_TIEN_DO.xaml.cs">
+      <DependentUpon>BCTH_BC_TIEN_DO.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BCTH\BCTH_BC_VAN_HANH.xaml.cs">
+      <DependentUpon>BCTH_BC_VAN_HANH.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BCTH\BCTH_BC_VAN_HANH_00.xaml.cs">
+      <DependentUpon>BCTH_BC_VAN_HANH_00.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BCTH\BCTH_TH_LICH_SU.xaml.cs">
+      <DependentUpon>BCTH_TH_LICH_SU.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DungChung\ReportInformation.cs" />
+    <Compile Include="GDKT\GDKT_BC_BANG_KE_CTU.xaml.cs">
+      <DependentUpon>GDKT_BC_BANG_KE_CTU.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BCTK\BCTK_THONG_KE_HO_NGHEO_CAN_NGHEO.xaml.cs">
+      <DependentUpon>BCTK_THONG_KE_HO_NGHEO_CAN_NGHEO.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BCTK\ucBaoCaoThongKe.xaml.cs">
+      <DependentUpon>ucBaoCaoThongKe.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BCTK\BCTK_BANG_CAN_DOI.xaml.cs">
+      <DependentUpon>BCTK_BANG_CAN_DOI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BCTK\BCTK_BC_KET_QUA_HD_KD.xaml.cs">
+      <DependentUpon>BCTK_BC_KET_QUA_HD_KD.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DungChung\ucNhapLieu.xaml.cs">
+      <DependentUpon>ucNhapLieu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BHTH\ucDSachBaoVeVonVay.xaml.cs">
+      <DependentUpon>ucDSachBaoVeVonVay.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BHTH\ucYeuCauBaoVeVonVay.xaml.cs">
+      <DependentUpon>ucYeuCauBaoVeVonVay.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BCTH\BCTH_TH_THU_CHI.xaml.cs">
+      <DependentUpon>BCTH_TH_THU_CHI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GDKT\GDKT_BANG_KE_CHUNG_TU.xaml.cs">
+      <DependentUpon>GDKT_BANG_KE_CHUNG_TU.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GDKT\GDKT_KET_XUAT_BCDKT_THEO_CAU_TRUC.xaml.cs">
+      <DependentUpon>GDKT_KET_XUAT_BCDKT_THEO_CAU_TRUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GDKT\GDKT_SO_TH_TKHOAN_THEO_DOI_UNG.xaml.cs">
+      <DependentUpon>GDKT_SO_TH_TKHOAN_THEO_DOI_UNG.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GDKT\GDKT_SO_TIEN_GUI_NGAN_HANG.xaml.cs">
+      <DependentUpon>GDKT_SO_TIEN_GUI_NGAN_HANG.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GDKT\GDKT_THUYET_MINH_TAI_CHINH.xaml.cs">
+      <DependentUpon>GDKT_THUYET_MINH_TAI_CHINH.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GDKT\GDKT_KET_QUA_KINH_DOANH.xaml.cs">
+      <DependentUpon>GDKT_KET_QUA_KINH_DOANH.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GDKT\GDKT_BANG_CAN_DOI_KE_TOAN.xaml.cs">
+      <DependentUpon>GDKT_BANG_CAN_DOI_KE_TOAN.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GDKT\GDKT_TONG_HOP_DU_LIEU_KTOAN.xaml.cs">
+      <DependentUpon>GDKT_TONG_HOP_DU_LIEU_KTOAN.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="HDVO\HDVO_BANG_THOP_CPHI_LAI_TGUI_CKH_THEO_CN.xaml.cs">
+      <DependentUpon>HDVO_BANG_THOP_CPHI_LAI_TGUI_CKH_THEO_CN.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="HDVO\HDVO_BANG_THOP_CPHI_LAI_TGUI_CKH_THEO_PGD.xaml.cs">
+      <DependentUpon>HDVO_BANG_THOP_CPHI_LAI_TGUI_CKH_THEO_PGD.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="HDVO\HDVO_BANG_THOP_SDU_GOC_TKIEM_CKH_THEO_XA.xaml.cs">
+      <DependentUpon>HDVO_BANG_THOP_SDU_GOC_TKIEM_CKH_THEO_XA.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="HDVO\HDVO_BANG_TINH_LAI_TGUI_CKH_THEO_KH.xaml.cs">
+      <DependentUpon>HDVO_BANG_TINH_LAI_TGUI_CKH_THEO_KH.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="HDVO\HDVO_BANG_THOP_DCHI_TRA_TKIEM_CKH_THEO_PGD.xaml.cs">
+      <DependentUpon>HDVO_BANG_THOP_DCHI_TRA_TKIEM_CKH_THEO_PGD.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="HDVO\HDVO_BANG_THOP_DCHI_TRA_TKIEM_CKH_THEO_CN.xaml.cs">
+      <DependentUpon>HDVO_BANG_THOP_DCHI_TRA_TKIEM_CKH_THEO_CN.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="HDVO\HDVO_DS_TRA_TK.xaml.cs">
+      <DependentUpon>HDVO_DS_TRA_TK.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="HDVO\HDVO_SO_THEO_DOI_TK.xaml.cs">
+      <DependentUpon>HDVO_SO_THEO_DOI_TK.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GDKT\ucSoChiTietTaiKhoanCongNo.xaml.cs">
+      <DependentUpon>ucSoChiTietTaiKhoanCongNo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GDKT\GDKT_LUU_CHUYEN_TIEN_TE.xaml.cs">
+      <DependentUpon>GDKT_LUU_CHUYEN_TIEN_TE.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="KHTV\KHTV_PHIEU_XEP_HANG_TD.xaml.cs">
+      <DependentUpon>KHTV_PHIEU_XEP_HANG_TD.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="KHTV\KHTV_TKE_HO_NGHEO_CAN_NGHEO.xaml.cs">
+      <DependentUpon>KHTV_TKE_HO_NGHEO_CAN_NGHEO.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TDVM\TDVM_BANG_THOP_TINH_LAI_THEO_PGD.xaml.cs">
+      <DependentUpon>TDVM_BANG_THOP_TINH_LAI_THEO_PGD.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TDVM\TDVM_BANG_THOP_TINH_LAI_THEO_CN.xaml.cs">
+      <DependentUpon>TDVM_BANG_THOP_TINH_LAI_THEO_CN.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TDVM\TDVM_BANG_THOP_PHAT_VON_VAY_THEO_CN.xaml.cs">
+      <DependentUpon>TDVM_BANG_THOP_PHAT_VON_VAY_THEO_CN.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TDVM\TDVM_BANG_THOP_PHAT_VON_VAY_THEO_PGD.xaml.cs">
+      <DependentUpon>TDVM_BANG_THOP_PHAT_VON_VAY_THEO_PGD.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TDVM\TDVM_BKE_CNO_TVIEN_THEO_CN.xaml.cs">
+      <DependentUpon>TDVM_BKE_CNO_TVIEN_THEO_CN.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TDVM\TDVM_BKE_CNO_TVIEN_THEO_PGD.xaml.cs">
+      <DependentUpon>TDVM_BKE_CNO_TVIEN_THEO_PGD.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TDVM\TDVM_BKE_CNO_TVIEN_THEO_XA.xaml.cs">
+      <DependentUpon>TDVM_BKE_CNO_TVIEN_THEO_XA.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TDVM\TDVM_BKE_CNO_TVIEN_THEO_CUM.xaml.cs">
+      <DependentUpon>TDVM_BKE_CNO_TVIEN_THEO_CUM.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TDVM\TDVM_BAO_NO_CUM.xaml.cs">
+      <DependentUpon>TDVM_BAO_NO_CUM.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TDVM\TDVM_BAO_NO_THANH_VIEN.xaml.cs">
+      <DependentUpon>TDVM_BAO_NO_THANH_VIEN.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TDVM\TDVM_BAO_NO_TONG.xaml.cs">
+      <DependentUpon>TDVM_BAO_NO_TONG.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TDVM\TDVM_BAO_NO_TONG_CHI_TIET.xaml.cs">
+      <DependentUpon>TDVM_BAO_NO_TONG_CHI_TIET.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TDVM\TDVM_KHE_UOC_NHAN_NO_00.xaml.cs">
+      <DependentUpon>TDVM_KHE_UOC_NHAN_NO_00.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TDVM\TDVM_BANG_XAC_NHAN_SO_DU_VAY_VON.xaml.cs">
+      <DependentUpon>TDVM_BANG_XAC_NHAN_SO_DU_VAY_VON.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TDVM\TDVM_BC_PHAN_LOAI_NO.xaml.cs">
+      <DependentUpon>TDVM_BC_PHAN_LOAI_NO.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TDVM\TDVM_PHIEU_THAM_DINH_VON_VAY.xaml.cs">
+      <DependentUpon>TDVM_PHIEU_THAM_DINH_VON_VAY.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TDVM\TDVM_PHIEU_THEO_DOI_HOAN_TRA_TVIEN.xaml.cs">
+      <DependentUpon>TDVM_PHIEU_THEO_DOI_HOAN_TRA_TVIEN.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TDVM\TDVM_PHIEU_THEO_DOI_HOAN_TRA_CUM.xaml.cs">
+      <DependentUpon>TDVM_PHIEU_THEO_DOI_HOAN_TRA_CUM.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TDVM\TDVM_DS_KHTV_NHAN_VON_00.xaml.cs">
+      <DependentUpon>TDVM_DS_KHTV_NHAN_VON_00.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DungChung\ThamSoBaoCao.cs" />
+    <Compile Include="BHTH\ucBaoVeVonVay.xaml.cs">
+      <DependentUpon>ucBaoVeVonVay.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BHTH\ucChiTraNhanTho.xaml.cs">
+      <DependentUpon>ucChiTraNhanTho.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BHTH\ucChiTraTuVong.xaml.cs">
+      <DependentUpon>ucChiTraTuVong.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BHTH\ucHoTroMoDe.xaml.cs">
+      <DependentUpon>ucHoTroMoDe.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BCTH\BCTH_KH_THU_CHI_TIEN_MAT_TRONG_THANG.xaml.cs">
+      <DependentUpon>BCTH_KH_THU_CHI_TIEN_MAT_TRONG_THANG.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BHTH\ucTienDo.xaml.cs">
+      <DependentUpon>ucTienDo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BHTH\ucXoaNoVonVay.xaml.cs">
+      <DependentUpon>ucXoaNoVonVay.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DungChung\ucDanhSach.xaml.cs">
+      <DependentUpon>ucDanhSach.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DungChung\VanHanhGiaoDich.cs" />
+    <Compile Include="GDKT\ucBangCanDoiNgoaiBang.xaml.cs">
+      <DependentUpon>ucBangCanDoiNgoaiBang.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GDKT\ucBangCanDoiNoiBang.xaml.cs">
+      <DependentUpon>ucBangCanDoiNoiBang.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GDKT\ucBangKeTienMat.xaml.cs">
+      <DependentUpon>ucBangKeTienMat.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GDKT\GDKT_GIAY_GUI_TIEN_TIET_KIEM.xaml.cs">
+      <DependentUpon>GDKT_GIAY_GUI_TIEN_TIET_KIEM.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GDKT\ucPhieuChi.xaml.cs">
+      <DependentUpon>ucPhieuChi.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GDKT\ucPhieuHachToan.xaml.cs">
+      <DependentUpon>ucPhieuHachToan.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GDKT\ucPhieuThu.xaml.cs">
+      <DependentUpon>ucPhieuThu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="KHTV\KHTV_DAC_DIEM_HOKHTV.xaml.cs">
+      <DependentUpon>KHTV_DAC_DIEM_HOKHTV.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="KHTV\KHTV_TANG_TRUONG_KT_KHTV.xaml.cs">
+      <DependentUpon>KHTV_TANG_TRUONG_KT_KHTV.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="KHTV\ucDsKHCN.xaml.cs">
+      <DependentUpon>ucDsKHCN.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="KHTV\ucDsKHTC.xaml.cs">
+      <DependentUpon>ucDsKHTC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="KHTV\ucDsKHTV.xaml.cs">
+      <DependentUpon>ucDsKHTV.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="KHTV\ucDsKHTVRaKhoiNhom.xaml.cs">
+      <DependentUpon>ucDsKHTVRaKhoiNhom.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="KHTV\ucPhieuDanhGia.xaml.cs">
+      <DependentUpon>ucPhieuDanhGia.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="KHTV\ucPhieuKhaoSat.xaml.cs">
+      <DependentUpon>ucPhieuKhaoSat.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="KHTV\ucPhieuXepHangTD.xaml.cs">
+      <DependentUpon>ucPhieuXepHangTD.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="KHTV\ucChiTieuHoKHTV.xaml.cs">
+      <DependentUpon>ucChiTieuHoKHTV.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="KHTV\KHTV_NGUYEN_NHAN_RA_KHOI_NHOM.xaml.cs">
+      <DependentUpon>KHTV_NGUYEN_NHAN_RA_KHOI_NHOM.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="KHTV\ucThuNhapHoKHTV.xaml.cs">
+      <DependentUpon>ucThuNhapHoKHTV.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NSTL\NSTL_PHU_CAP_CUM_TRUONG.xaml.cs">
+      <DependentUpon>NSTL_PHU_CAP_CUM_TRUONG.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="QTHT\ucBaoCaoKiemSoat.xaml.cs">
+      <DependentUpon>ucBaoCaoKiemSoat.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TDVM\ucVonTietKiemCum.xaml.cs">
+      <DependentUpon>ucVonTietKiemCum.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TDVM\ucBcChamTra.xaml.cs">
+      <DependentUpon>ucBcChamTra.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TDVM\ucDsKHTVNhanVon.xaml.cs">
+      <DependentUpon>ucDsKHTVNhanVon.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TDVM\ucHoaDonThuTienKy.xaml.cs">
+      <DependentUpon>ucHoaDonThuTienKy.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TDVM\ucKheUocNhanNo.xaml.cs">
+      <DependentUpon>ucKheUocNhanNo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TDVM\ucSaoKeVonDH.xaml.cs">
+      <DependentUpon>ucSaoKeVonDH.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TDVM\ucSaoKeVonNH.xaml.cs">
+      <DependentUpon>ucSaoKeVonNH.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TDVM\ucSaoKeVonTH.xaml.cs">
+      <DependentUpon>ucSaoKeVonTH.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TDVM\ucSaoKeTH.xaml.cs">
+      <DependentUpon>ucSaoKeTH.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BCTH\BCTH_THONG_KE_TH.xaml.cs">
+      <DependentUpon>BCTH_THONG_KE_TH.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TDVM\ucVonTietKiemTVien.xaml.cs">
+      <DependentUpon>ucVonTietKiemTVien.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GDKT\GDKT_BANG_CAN_DOI_NGOAI_BANG.xaml.cs">
+      <DependentUpon>GDKT_BANG_CAN_DOI_NGOAI_BANG.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="HDVO\HDVO_BANG_XAC_NHAN_SO_DU_TK.xaml.cs">
+      <DependentUpon>HDVO_BANG_XAC_NHAN_SO_DU_TK.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BCTH\BCTH_BANG_CHI_SO_PEAL.xaml.cs">
+      <DependentUpon>BCTH_BANG_CHI_SO_PEAL.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GDKT\GDKT_SO_TH_CONG_NO_PHAI_TRA.xaml.cs">
+      <DependentUpon>GDKT_SO_TH_CONG_NO_PHAI_TRA.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GDKT\GDKT_SO_TH_CONG_NO_PHAI_THU.xaml.cs">
+      <DependentUpon>GDKT_SO_TH_CONG_NO_PHAI_THU.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GDKT\GDKT_SO_TH_CONG_NO_TAM_UNG.xaml.cs">
+      <DependentUpon>GDKT_SO_TH_CONG_NO_TAM_UNG.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GDKT\GDKT_SO_THEO_DOI_CT_NVON_KDOANH.xaml.cs">
+      <DependentUpon>GDKT_SO_THEO_DOI_CT_NVON_KDOANH.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GDKT\GDKT_SO_CT_TAI_KHOAN_CONG_NO.xaml.cs">
+      <DependentUpon>GDKT_SO_CT_TAI_KHOAN_CONG_NO.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BIDV\BCTH\BCTH_BAO_CAO_PHAN_LOAI_NO.xaml.cs">
+      <DependentUpon>BCTH_BAO_CAO_PHAN_LOAI_NO.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BIDV\BCTH\BCTH_BLACKLIST.xaml.cs">
+      <DependentUpon>BCTH_BLACKLIST.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BIDV\BCTH\BCTH_SAO_KE_DU_NO_TIN_DUNG_TKIEM.xaml.cs">
+      <DependentUpon>BCTH_SAO_KE_DU_NO_TIN_DUNG_TKIEM.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BIDV\BCTH\BCTH_BAO_CAO_DONG_TIEN.xaml.cs">
+      <DependentUpon>BCTH_BAO_CAO_DONG_TIEN.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BIDV\BCTK\BCTK_QUAN_LY_NO.xaml.cs">
+      <DependentUpon>BCTK_QUAN_LY_NO.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BIDV\BCTK\BCTK_DAILY_REPORT.xaml.cs">
+      <DependentUpon>BCTK_DAILY_REPORT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BIDV\BCTK\BCTK_MONTHLY_REPORT.xaml.cs">
+      <DependentUpon>BCTK_MONTHLY_REPORT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BIDV\BCTK\BCTK_NGANH_NGHE_MMSC.xaml.cs">
+      <DependentUpon>BCTK_NGANH_NGHE_MMSC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BIDV\BCTH\BCTH_CREDIT_STATEMENT.xaml.cs">
+      <DependentUpon>BCTH_CREDIT_STATEMENT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BIDV\BCTK\BCTK_THEO_DOANH_SO.xaml.cs">
+      <DependentUpon>BCTK_THEO_DOANH_SO.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BIDV\BCTK\BCTK_THEO_NGANH_NGHE.xaml.cs">
+      <DependentUpon>BCTK_THEO_NGANH_NGHE.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BIDV\GDKT\GDKT_BALANCE_SHEET.xaml.cs">
+      <DependentUpon>GDKT_BALANCE_SHEET.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BIDV\GDKT\GDKT_BANG_CAN_DOI_KE_TOAN.xaml.cs">
+      <DependentUpon>GDKT_BANG_CAN_DOI_KE_TOAN.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BIDV\GDKT\GDKT_BANG_CAN_DOI_TKKT.xaml.cs">
+      <DependentUpon>GDKT_BANG_CAN_DOI_TKKT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BIDV\GDKT\GDKT_PHIEU_CHI.xaml.cs">
+      <DependentUpon>GDKT_PHIEU_CHI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BIDV\GDKT\GDKT_PHIEU_KE_TOAN.xaml.cs">
+      <DependentUpon>GDKT_PHIEU_KE_TOAN.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BIDV\GDKT\GDKT_PHIEU_THU.xaml.cs">
+      <DependentUpon>GDKT_PHIEU_THU.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BIDV\GDKT\GDKT_BAO_CAO_TK_THU_NHAP_CHI_PHI.xaml.cs">
+      <DependentUpon>GDKT_BAO_CAO_TK_THU_NHAP_CHI_PHI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BIDV\GDKT\GDKT_PROFIT_AND_LOSS.xaml.cs">
+      <DependentUpon>GDKT_PROFIT_AND_LOSS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BIDV\HDVO\HDVO_DS_TIEN_GUI_DEN_HAN.xaml.cs">
+      <DependentUpon>HDVO_DS_TIEN_GUI_DEN_HAN.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BIDV\KHTV\KHTV_BIEN_BAN_HOP_NHOM.xaml.cs">
+      <DependentUpon>KHTV_BIEN_BAN_HOP_NHOM.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BIDV\TDVM\TDVM_DANH_SACH_SAO_KE_GN_ACTIVE.xaml.cs">
+      <DependentUpon>TDVM_DANH_SACH_SAO_KE_GN_ACTIVE.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BIDV\TDVM\TDVM_DANH_SACH_SAO_KE_GN_PERIOD.xaml.cs">
+      <DependentUpon>TDVM_DANH_SACH_SAO_KE_GN_PERIOD.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BIDV\TDVM\TDVM_DANH_SACH_THANH_TOAN_BAT_BUOC.xaml.cs">
+      <DependentUpon>TDVM_DANH_SACH_THANH_TOAN_BAT_BUOC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BIDV\TDVM\TDVM_DANH_SACH_THU_NO.xaml.cs">
+      <DependentUpon>TDVM_DANH_SACH_THU_NO.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BIDV\TDVM\TDVM_DS_THU_TIEN_VON_TRA_DAN_TK.xaml.cs">
+      <DependentUpon>TDVM_DS_THU_TIEN_VON_TRA_DAN_TK.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BIDV_BLF\BCTC\BCTC_BANG_CAN_DOI_KE_TOAN.xaml.cs">
+      <DependentUpon>BCTC_BANG_CAN_DOI_KE_TOAN.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BIDV_BLF\BCTC\BCTC_KET_QUA_HOAT_DONG.xaml.cs">
+      <DependentUpon>BCTC_KET_QUA_HOAT_DONG.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BIDV_BLF\GDKT\GDKT_BANG_CAN_DOI_PHAT_SINH.xaml.cs">
+      <DependentUpon>GDKT_BANG_CAN_DOI_PHAT_SINH.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BIDV_BLF\HDVO\HDVO_DS_SO_QUAY_VONG_TRONG_NGAY.xaml.cs">
+      <DependentUpon>HDVO_DS_SO_QUAY_VONG_TRONG_NGAY.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BIDV_BLF\HDVO\HDVO_DS_TK_TIET_KIEM_TT_DUNG_HAN.xaml.cs">
+      <DependentUpon>HDVO_DS_TK_TIET_KIEM_TT_DUNG_HAN.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BIDV_BLF\HDVO\HDVO_DS_TK_TIET_KIEM_TT_TRUOC_HAN.xaml.cs">
+      <DependentUpon>HDVO_DS_TK_TIET_KIEM_TT_TRUOC_HAN.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BIDV_BLF\HDVO\HDVO_DS_TK_TIET_KIEM_TT_TRONG_NGAY.xaml.cs">
+      <DependentUpon>HDVO_DS_TK_TIET_KIEM_TT_TRONG_NGAY.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BIDV_BLF\HDVO\HDVO_DS_TK_TIET_KIEM_DEN_HAN.xaml.cs">
+      <DependentUpon>HDVO_DS_TK_TIET_KIEM_DEN_HAN.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BIDV_BLF\HDVO\HDVO_DS_TK_TIEN_GUI_MO_MOI.xaml.cs">
+      <DependentUpon>HDVO_DS_TK_TIEN_GUI_MO_MOI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BIDV_BLF\HDVO\HDVO_HUY_DONG_VON_BINH_QUAN.xaml.cs">
+      <DependentUpon>HDVO_HUY_DONG_VON_BINH_QUAN.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BIDV_BLF\KHTV\KHTV_BC_KH_THAY_DOI_NGANH_KINH_TE.xaml.cs">
+      <DependentUpon>KHTV_BC_KH_THAY_DOI_NGANH_KINH_TE.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BIDV_BLF\KHTV\KHTV_BC_KH_THAY_DOI_TEN.xaml.cs">
+      <DependentUpon>KHTV_BC_KH_THAY_DOI_TEN.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BIDV_BLF\KHTV\KHTV_BC_KH_TAO_MOI.xaml.cs">
+      <DependentUpon>KHTV_BC_KH_TAO_MOI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BIDV_BLF\TDTT\TDTD_BC_GIA_TRI_TSDB_HANG_NGAY.xaml.cs">
+      <DependentUpon>TDTD_BC_GIA_TRI_TSDB_HANG_NGAY.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTRE\BCTC\BCTC_BAO_CAO_DOANH_THU_TOAN_QUY.xaml.cs">
+      <DependentUpon>BCTC_BAO_CAO_DOANH_THU_TOAN_QUY.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTRE\BCTC\BCTC_BAO_CAO_LUU_CHUYEN_TIEN_TE_TOAN_QUY.xaml.cs">
+      <DependentUpon>BCTC_BAO_CAO_LUU_CHUYEN_TIEN_TE_TOAN_QUY.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTRE\BCTC\BCTC_BANG_TONG_KET_TAI_SAN_TOAN_QUY.xaml.cs">
+      <DependentUpon>BCTC_BANG_TONG_KET_TAI_SAN_TOAN_QUY.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTRE\BCTC\BCTC_BANG_CAN_DOI_TAI_KHOAN_TOAN_QUY.xaml.cs">
+      <DependentUpon>BCTC_BANG_CAN_DOI_TAI_KHOAN_TOAN_QUY.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTRE\BCTC\BCTC_BAO_CAO_DOANH_THU_THEO_NGUON.xaml.cs">
+      <DependentUpon>BCTC_BAO_CAO_DOANH_THU_THEO_NGUON.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTRE\BCTC\BCTC_BAO_CAO_LUU_CHUYEN_TIEN_TE_THEO_NGUON.xaml.cs">
+      <DependentUpon>BCTC_BAO_CAO_LUU_CHUYEN_TIEN_TE_THEO_NGUON.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTRE\BCTC\BCTC_BANG_TONG_KET_TAI_SAN_THEO_NGUON.xaml.cs">
+      <DependentUpon>BCTC_BANG_TONG_KET_TAI_SAN_THEO_NGUON.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTRE\BCTC\BCTC_BANG_CAN_DOI_TAI_KHOAN_THEO_NGUON.xaml.cs">
+      <DependentUpon>BCTC_BANG_CAN_DOI_TAI_KHOAN_THEO_NGUON.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_DC\GDKT\GDKT_SO_NHAP_XUAT_NGOAI_TE.xaml.cs">
+      <DependentUpon>GDKT_SO_NHAP_XUAT_NGOAI_TE.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_DC\GDKT\GDKT_SO_NHAT_KY_CHI_TELLER.xaml.cs">
+      <DependentUpon>GDKT_SO_NHAT_KY_CHI_TELLER.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_DC\GDKT\GDKT_SO_NHAT_KY_THU_TELLER.xaml.cs">
+      <DependentUpon>GDKT_SO_NHAT_KY_THU_TELLER.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_DC\GDKT\GDKT_SO_QUY_TIEN_MAT_TELLER.xaml.cs">
+      <DependentUpon>GDKT_SO_QUY_TIEN_MAT_TELLER.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_DC\GDKT\GDKT_SO_NHAT_KY_CHUNG_TELLER.xaml.cs">
+      <DependentUpon>GDKT_SO_NHAT_KY_CHUNG_TELLER.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BIDV\GDKT\GDKT_UY_NHIEM_CHI.xaml.cs">
+      <DependentUpon>GDKT_UY_NHIEM_CHI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BIDV\GDKT\GDKT_UY_NHIEM_THU.xaml.cs">
+      <DependentUpon>GDKT_UY_NHIEM_THU.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BIDV\KHTV\KHTV_DANH_SACH_KHTV.xaml.cs">
+      <DependentUpon>KHTV_DANH_SACH_KHTV.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BIDV\TDTT\TDTT_BAO_CAO_DE_XUAT_TIN_DUNG.xaml.cs">
+      <DependentUpon>TDTT_BAO_CAO_DE_XUAT_TIN_DUNG.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BIDV\TDTT\TDTT_BAO_CAO_THAM_DINH_RUI_RO_TD.xaml.cs">
+      <DependentUpon>TDTT_BAO_CAO_THAM_DINH_RUI_RO_TD.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BIDV\TDTT\TDTT_DANH_SACH_SAO_KE_GN_ACTIVE.xaml.cs">
+      <DependentUpon>TDTT_DANH_SACH_SAO_KE_GN_ACTIVE.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BIDV\TDTT\TDTT_DANH_SACH_SAO_KE_GN_PERIOD.xaml.cs">
+      <DependentUpon>TDTT_DANH_SACH_SAO_KE_GN_PERIOD.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BIDV\TDTT\TDTT_DANH_SACH_THU_NO.xaml.cs">
+      <DependentUpon>TDTT_DANH_SACH_THU_NO.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BIDV\TDTT\TDTT_DE_XUAT_PHE_DUYET_GIAI_NGAN.xaml.cs">
+      <DependentUpon>TDTT_DE_XUAT_PHE_DUYET_GIAI_NGAN.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BIDV\TDTT\TDTT_GIAY_DE_NGHI_VAY_VON_CA_NHAN.xaml.cs">
+      <DependentUpon>TDTT_GIAY_DE_NGHI_VAY_VON_CA_NHAN.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BIDV\TDTT\TDTT_GIAY_NHAN_NO.xaml.cs">
+      <DependentUpon>TDTT_GIAY_NHAN_NO.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BIDV\TDTT\TDTT_HOP_DONG_TIN_DUNG.xaml.cs">
+      <DependentUpon>TDTT_HOP_DONG_TIN_DUNG.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BIDV\TDTT\TDTT_PHIEU_KHAO_SAT_KH_CA_NHAN.xaml.cs">
+      <DependentUpon>TDTT_PHIEU_KHAO_SAT_KH_CA_NHAN.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BIDV\TDTT\TDTT_SAO_KE_TIN_DUNG_TH.xaml.cs">
+      <DependentUpon>TDTT_SAO_KE_TIN_DUNG_TH.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BIDV\TDTT\TDTT_SO_VON_VAY_TIET_KIEM_KHTV.xaml.cs">
+      <DependentUpon>TDTT_SO_VON_VAY_TIET_KIEM_KHTV.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BIDV\TDVM\TDVM_DS_PHAT_VON.xaml.cs">
+      <DependentUpon>TDVM_DS_PHAT_VON.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BIDV\TDVM\TDVM_SAO_KE_TIN_DUNG.xaml.cs">
+      <DependentUpon>TDVM_SAO_KE_TIN_DUNG.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BIDV\TDVM\TDVM_BANG_KE_RUT_VON.xaml.cs">
+      <DependentUpon>TDVM_BANG_KE_RUT_VON.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BIDV\TDVM\TDVM_BAO_CAO_DE_XUAT_TIN_DUNG.xaml.cs">
+      <DependentUpon>TDVM_BAO_CAO_DE_XUAT_TIN_DUNG.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BIDV\TDVM\TDVM_BAO_CAO_THAM_DINH_RUI_RO_TD.xaml.cs">
+      <DependentUpon>TDVM_BAO_CAO_THAM_DINH_RUI_RO_TD.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BIDV\TDVM\TDVM_DON_VAY_VON.xaml.cs">
+      <DependentUpon>TDVM_DON_VAY_VON.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BIDV\TDVM\TDVM_HOP_DONG_VAY_VON.xaml.cs">
+      <DependentUpon>TDVM_HOP_DONG_VAY_VON.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BIDV\TDVM\TDVM_KHE_UOC_NHAN_NO.xaml.cs">
+      <DependentUpon>TDVM_KHE_UOC_NHAN_NO.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BIDV\TDVM\TDVM_PHIEU_KHAO_SAT_KHACH_HANG.xaml.cs">
+      <DependentUpon>TDVM_PHIEU_KHAO_SAT_KHACH_HANG.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BIDV\TDVM\TDVM_PHU_LUC_HOP_DONG.xaml.cs">
+      <DependentUpon>TDVM_PHU_LUC_HOP_DONG.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BIDV\TDVM\TDVM_SO_VON_VAY_TIET_KIEM_KHTV.xaml.cs">
+      <DependentUpon>TDVM_SO_VON_VAY_TIET_KIEM_KHTV.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTRE\BCTC\BCTC_BANG_CAN_DOI_KE_TOAN.xaml.cs">
+      <DependentUpon>BCTC_BANG_CAN_DOI_KE_TOAN.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTRE\BCTC\BCTC_BANG_CAN_DOI_TKKT_THU.xaml.cs">
+      <DependentUpon>BCTC_BANG_CAN_DOI_TKKT_THU.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTRE\BCTC\BCTC_KET_QUA_HOAT_DONG.xaml.cs">
+      <DependentUpon>BCTC_KET_QUA_HOAT_DONG.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTRE\BCTC\BCTC_LUU_CHUYEN_TIEN_TE.xaml.cs">
+      <DependentUpon>BCTC_LUU_CHUYEN_TIEN_TE.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTRE\BCTC\BCTC_THUYET_MINH_TAI_CHINH.xaml.cs">
+      <DependentUpon>BCTC_THUYET_MINH_TAI_CHINH.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTRE\BCTC\BCTC_BANG_CAN_DOI_CHUNG_TU.xaml.cs">
+      <DependentUpon>BCTC_BANG_CAN_DOI_CHUNG_TU.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTRE\BCTH\BCTH_HOAT_DONG.xaml.cs">
+      <DependentUpon>BCTH_HOAT_DONG.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTRE\BCTH\BCTH_HOAT_DONG_CBTD.xaml.cs">
+      <DependentUpon>BCTH_HOAT_DONG_CBTD.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTRE\BCTH\BCTH_HOAT_DONG_CBTD_SP.xaml.cs">
+      <DependentUpon>BCTH_HOAT_DONG_CBTD_SP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTRE\BCTH\BCTH_HOAT_DONG_DB.xaml.cs">
+      <DependentUpon>BCTH_HOAT_DONG_DB.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTRE\BCTH\BCTH_HOAT_DONG_TCVM.xaml.cs">
+      <DependentUpon>BCTH_HOAT_DONG_TCVM.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTRE\GDKT\GDKT_GIAY_THANH_TOAN_TAM_UNG.xaml.cs">
+      <DependentUpon>GDKT_GIAY_THANH_TOAN_TAM_UNG.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTRE\GDKT\GDKT_PHIEU_TAM_UNG.xaml.cs">
+      <DependentUpon>GDKT_PHIEU_TAM_UNG.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTRE\GDKT\GDKT_SO_THEO_DOI_TAM_UNG.xaml.cs">
+      <DependentUpon>GDKT_SO_THEO_DOI_TAM_UNG.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTRE\GDKT\GDKT_SO_TIEN_GUI_KHO_BAC.xaml.cs">
+      <DependentUpon>GDKT_SO_TIEN_GUI_KHO_BAC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTRE\HDVO\HDVO_DANH_SACH_HOAN_TK.xaml.cs">
+      <DependentUpon>HDVO_DANH_SACH_HOAN_TK.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTRE\KHTV\KHTV_BAN_KHAO_SAT_HOAN_CANH_KTXH.xaml.cs">
+      <DependentUpon>KHTV_BAN_KHAO_SAT_HOAN_CANH_KTXH.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTRE\KHTV\KHTV_BAN_KHAO_SAT_KH.xaml.cs">
+      <DependentUpon>KHTV_BAN_KHAO_SAT_KH.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTRE\KHTV\KHTV_PHIEU_DANH_GIA_RUI_RO_TD.xaml.cs">
+      <DependentUpon>KHTV_PHIEU_DANH_GIA_RUI_RO_TD.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTRE\KHTV\KHTV_PHIEU_THAM_HO_GD.xaml.cs">
+      <DependentUpon>KHTV_PHIEU_THAM_HO_GD.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTRE\KHTV\KHTV_QUYET_DINH_CONG_NHAN_TVIEN.xaml.cs">
+      <DependentUpon>KHTV_QUYET_DINH_CONG_NHAN_TVIEN.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTRE\TDVM\TDVM_BC_SO_LIEU_TDUNG_XA.xaml.cs">
+      <DependentUpon>TDVM_BC_SO_LIEU_TDUNG_XA.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTRE\TDVM\TDVM_DON_XIN_VAY_VON_NHOM_BAO_LANH.xaml.cs">
+      <DependentUpon>TDVM_DON_XIN_VAY_VON_NHOM_BAO_LANH.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTRE\TDVM\TDVM_DON_XIN_VAY_VON_NUOC_SACH.xaml.cs">
+      <DependentUpon>TDVM_DON_XIN_VAY_VON_NUOC_SACH.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTRE\TDVM\TDVM_DS_DE_NGHI_VAY_VON.xaml.cs">
+      <DependentUpon>TDVM_DS_DE_NGHI_VAY_VON.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTRE\TDVM\TDVM_DS_PHAT_VON.xaml.cs">
+      <DependentUpon>TDVM_DS_PHAT_VON.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTRE\TDVM\TDVM_DS_THU_LAI_VON_MUA_VU.xaml.cs">
+      <DependentUpon>TDVM_DS_THU_LAI_VON_MUA_VU.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTRE\TDVM\TDVM_DS_THU_VON_MUA_VU.xaml.cs">
+      <DependentUpon>TDVM_DS_THU_VON_MUA_VU.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTRE\TDVM\TDVM_HOP_DONG_VAY_VON_NHOM_BAO_LANH.xaml.cs">
+      <DependentUpon>TDVM_HOP_DONG_VAY_VON_NHOM_BAO_LANH.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTRE\TDVM\TDVM_HOP_DONG_VAY_VON_NUOC_SACH.xaml.cs">
+      <DependentUpon>TDVM_HOP_DONG_VAY_VON_NUOC_SACH.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTRE\TDVM\TDVM_LICH_THU_NO.xaml.cs">
+      <DependentUpon>TDVM_LICH_THU_NO.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTRE\TDVM\TDVM_PHIEU_KIEM_TRA_SU_DUNG_VON_VAY.xaml.cs">
+      <DependentUpon>TDVM_PHIEU_KIEM_TRA_SU_DUNG_VON_VAY.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTRE\TDVM\TDVM_SO_VON_VAY_TIET_KIEM_TVIEN.xaml.cs">
+      <DependentUpon>TDVM_SO_VON_VAY_TIET_KIEM_TVIEN.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTRE\TDVM\TDVM_TO_KE_THU.xaml.cs">
+      <DependentUpon>TDVM_TO_KE_THU.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTV\BCTC\BCTC_BANG_CAN_DOI_KE_TOAN.xaml.cs">
+      <DependentUpon>BCTC_BANG_CAN_DOI_KE_TOAN.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTV\BCTC\BCTC_BANG_CAN_DOI_TKKT.xaml.cs">
+      <DependentUpon>BCTC_BANG_CAN_DOI_TKKT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTV\BCTC\BCTC_CHI_TIEU_CT_CHEVRON.xaml.cs">
+      <DependentUpon>BCTC_CHI_TIEU_CT_CHEVRON.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTV\BCTC\BCTC_CHI_TIEU_CT_DISNEY.xaml.cs">
+      <DependentUpon>BCTC_CHI_TIEU_CT_DISNEY.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTV\BCTC\BCTC_CHI_TIEU_TH_CHEVRON.xaml.cs">
+      <DependentUpon>BCTC_CHI_TIEU_TH_CHEVRON.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTV\BCTC\BCTC_CHI_TIEU_TH_DISNEY.xaml.cs">
+      <DependentUpon>BCTC_CHI_TIEU_TH_DISNEY.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTV\BCTC\BCTC_KET_QUA_HOAT_DONG.xaml.cs">
+      <DependentUpon>BCTC_KET_QUA_HOAT_DONG.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTV\BCTC\BCTC_LUU_CHUYEN_TIEN_TE.xaml.cs">
+      <DependentUpon>BCTC_LUU_CHUYEN_TIEN_TE.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTV\BCTC\BCTC_LUU_CHUYEN_TIEN_TE_CHEVRON.xaml.cs">
+      <DependentUpon>BCTC_LUU_CHUYEN_TIEN_TE_CHEVRON.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTV\BCTC\BCTC_LUU_CHUYEN_TIEN_TE_DISNEY.xaml.cs">
+      <DependentUpon>BCTC_LUU_CHUYEN_TIEN_TE_DISNEY.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTV\BCTC\BCTC_THUYET_MINH_TAI_CHINH.xaml.cs">
+      <DependentUpon>BCTC_THUYET_MINH_TAI_CHINH.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTV\BCTH\BCTH_CHI_SO_TAI_CHINH.xaml.cs">
+      <DependentUpon>BCTH_CHI_SO_TAI_CHINH.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTV\BCTH\BCTH_CONG_VIEC_CBTD.xaml.cs">
+      <DependentUpon>BCTH_CONG_VIEC_CBTD.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTV\BCTH\BCTH_DU_TRU_NGAN_QUY.xaml.cs">
+      <DependentUpon>BCTH_DU_TRU_NGAN_QUY.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTV\BCTH\BCTH_HOAT_DONG.xaml.cs">
+      <DependentUpon>BCTH_HOAT_DONG.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTV\BCTH\BCTH_HOAT_DONG_CBTD.xaml.cs">
+      <DependentUpon>BCTH_HOAT_DONG_CBTD.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTV\BCTH\BCTH_HOAT_DONG_CBTD_SP.xaml.cs">
+      <DependentUpon>BCTH_HOAT_DONG_CBTD_SP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTV\BCTH\BCTH_HOAT_DONG_DB.xaml.cs">
+      <DependentUpon>BCTH_HOAT_DONG_DB.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTV\BCTH\BCTH_HOAT_DONG_KHCN_CBTD.xaml.cs">
+      <DependentUpon>BCTH_HOAT_DONG_KHCN_CBTD.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTV\BCTH\BCTH_HOAT_DONG_KHCN_DB.xaml.cs">
+      <DependentUpon>BCTH_HOAT_DONG_KHCN_DB.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTV\BCTH\BCTH_HOAT_DONG_KHTC_CBTD.xaml.cs">
+      <DependentUpon>BCTH_HOAT_DONG_KHTC_CBTD.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTV\BCTH\BCTH_HOAT_DONG_KHTC_DB.xaml.cs">
+      <DependentUpon>BCTH_HOAT_DONG_KHTC_DB.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTV\BCTH\BCTH_HOAT_DONG_TCVM.xaml.cs">
+      <DependentUpon>BCTH_HOAT_DONG_TCVM.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTV\BCTH\BCTH_THEO_DOI_RUI_RO.xaml.cs">
+      <DependentUpon>BCTH_THEO_DOI_RUI_RO.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTV\GDKT\GDKT_CHUNG_TU_GHI_SO.xaml.cs">
+      <DependentUpon>GDKT_CHUNG_TU_GHI_SO.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTV\GDKT\GDKT_NX_NGOAI_BANG.xaml.cs">
+      <DependentUpon>GDKT_NX_NGOAI_BANG.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTV\GDKT\GDKT_PHIEU_CHI.xaml.cs">
+      <DependentUpon>GDKT_PHIEU_CHI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTV\GDKT\GDKT_PHIEU_KE_TOAN.xaml.cs">
+      <DependentUpon>GDKT_PHIEU_KE_TOAN.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTV\GDKT\GDKT_PHIEU_THU.xaml.cs">
+      <DependentUpon>GDKT_PHIEU_THU.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTV\GDKT\GDKT_SO_CAI_CTGS.xaml.cs">
+      <DependentUpon>GDKT_SO_CAI_CTGS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTV\GDKT\GDKT_SO_CHI_TIET_TKHOAN.xaml.cs">
+      <DependentUpon>GDKT_SO_CHI_TIET_TKHOAN.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTV\GDKT\GDKT_SO_DANG_KY_CTGS.xaml.cs">
+      <DependentUpon>GDKT_SO_DANG_KY_CTGS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTV\GDKT\GDKT_SO_QUY_TIEN_MAT.xaml.cs">
+      <DependentUpon>GDKT_SO_QUY_TIEN_MAT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTV\GDKT\GDKT_SO_THEO_DOI_CONG_NO.xaml.cs">
+      <DependentUpon>GDKT_SO_THEO_DOI_CONG_NO.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTV\GDKT\GDKT_SO_THEO_DOI_TAM_UNG.xaml.cs">
+      <DependentUpon>GDKT_SO_THEO_DOI_TAM_UNG.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTV\GDKT\GDKT_SO_TIEN_GUI_NGAN_HANG.xaml.cs">
+      <DependentUpon>GDKT_SO_TIEN_GUI_NGAN_HANG.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTV\GDKT\GDKT_SO_TONG_HOP_NGHIEP_VU.xaml.cs">
+      <DependentUpon>GDKT_SO_TONG_HOP_NGHIEP_VU.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTV\GDKT\GDKT_UY_NHIEM_CHI.xaml.cs">
+      <DependentUpon>GDKT_UY_NHIEM_CHI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTV\GDKT\GDKT_SO_NHAT_KY_CHUNG.xaml.cs">
+      <DependentUpon>GDKT_SO_NHAT_KY_CHUNG.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTV\HDVO\HDVO_BANG_TINH_LAI_KHTV.xaml.cs">
+      <DependentUpon>HDVO_BANG_TINH_LAI_KHTV.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTV\HDVO\HDVO_BAO_CAO_THEO_CAN_BO.xaml.cs">
+      <DependentUpon>HDVO_BAO_CAO_THEO_CAN_BO.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTV\HDVO\HDVO_BAO_CAO_THEO_DIA_BAN.xaml.cs">
+      <DependentUpon>HDVO_BAO_CAO_THEO_DIA_BAN.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTV\HDVO\HDVO_DANH_SACH_HOAN_TK.xaml.cs">
+      <DependentUpon>HDVO_DANH_SACH_HOAN_TK.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTV\HDVO\HDVO_DANH_SACH_KHTV.xaml.cs">
+      <DependentUpon>HDVO_DANH_SACH_KHTV.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTV\HDVO\HDVO_GIAY_GUI_TIEN.xaml.cs">
+      <DependentUpon>HDVO_GIAY_GUI_TIEN.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTV\HDVO\HDVO_SAO_KE_TKCKH.xaml.cs">
+      <DependentUpon>HDVO_SAO_KE_TKCKH.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTV\HDVO\HDVO_SO_PHU_TIEN_GUI.xaml.cs">
+      <DependentUpon>HDVO_SO_PHU_TIEN_GUI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTV\HDVO\HDVO_SO_THEO_DOI_TK_KHTV.xaml.cs">
+      <DependentUpon>HDVO_SO_THEO_DOI_TK_KHTV.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTV\HDVO\HDVO_SO_TKCKH.xaml.cs">
+      <DependentUpon>HDVO_SO_TKCKH.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTV\KHTV\KHTV_HO_SO.xaml.cs">
+      <DependentUpon>KHTV_HO_SO.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTV\KHTV\KHTV_QUYET_DINH.xaml.cs">
+      <DependentUpon>KHTV_QUYET_DINH.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTV\KHTV\KHTV_THAM_DINH.xaml.cs">
+      <DependentUpon>KHTV_THAM_DINH.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTV\NSTL\NSTL_BANG_LUONG.xaml.cs">
+      <DependentUpon>NSTL_BANG_LUONG.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTV\NSTL\NSTL_CHI_TIEU_THUONG_CB.xaml.cs">
+      <DependentUpon>NSTL_CHI_TIEU_THUONG_CB.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTV\NSTL\NSTL_CHI_TIEU_THUONG_DB.xaml.cs">
+      <DependentUpon>NSTL_CHI_TIEU_THUONG_DB.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTV\NSTL\NSTL_DANH_SACH_CHUYEN_KHOAN.xaml.cs">
+      <DependentUpon>NSTL_DANH_SACH_CHUYEN_KHOAN.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTV\NSTL\NSTL_DANH_SACH_NHAN_VIEN.xaml.cs">
+      <DependentUpon>NSTL_DANH_SACH_NHAN_VIEN.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTV\NSTL\NSTL_PHU_CAP_CTV.xaml.cs">
+      <DependentUpon>NSTL_PHU_CAP_CTV.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTV\NSTL\NSTL_THE_LUONG.xaml.cs">
+      <DependentUpon>NSTL_THE_LUONG.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTV\NSTL\NSTL_THE_THUONG.xaml.cs">
+      <DependentUpon>NSTL_THE_THUONG.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTV\NSTL\NSTL_TONG_HOP_CHI_PHI_LUONG.xaml.cs">
+      <DependentUpon>NSTL_TONG_HOP_CHI_PHI_LUONG.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTV\NSTL\NSTL_HDLD_CHINH_THUC.xaml.cs">
+      <DependentUpon>NSTL_HDLD_CHINH_THUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTV\NSTL\NSTL_HDLD_HOC_VIEC.xaml.cs">
+      <DependentUpon>NSTL_HDLD_HOC_VIEC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTV\NSTL\NSTL_HDLD_THU_VIEC.xaml.cs">
+      <DependentUpon>NSTL_HDLD_THU_VIEC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTV\QLTS\QLTS_BANG_KHAU_HAO.xaml.cs">
+      <DependentUpon>QLTS_BANG_KHAU_HAO.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTV\QLTS\QLTS_BANG_KIEM_KE_TSCD.xaml.cs">
+      <DependentUpon>QLTS_BANG_KIEM_KE_TSCD.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTV\QLTS\QLTS_BIEN_BAN_BAN_GIAO_TSCD.xaml.cs">
+      <DependentUpon>QLTS_BIEN_BAN_BAN_GIAO_TSCD.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTV\QLTS\QLTS_SO_CHI_TIET_TSCD.xaml.cs">
+      <DependentUpon>QLTS_SO_CHI_TIET_TSCD.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTV\TDVM\TDVM_BANG_PHAN_BO_LAI_TRA_TRUOC.xaml.cs">
+      <DependentUpon>TDVM_BANG_PHAN_BO_LAI_TRA_TRUOC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTV\TDVM\TDVM_DON_VAY_VON.xaml.cs">
+      <DependentUpon>TDVM_DON_VAY_VON.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTV\TDVM\TDVM_DS_DE_NGHI_VAY_VON_CBTD.xaml.cs">
+      <DependentUpon>TDVM_DS_DE_NGHI_VAY_VON_CBTD.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTV\TDVM\TDVM_DS_DE_NGHI_VAY_VON_TCN.xaml.cs">
+      <DependentUpon>TDVM_DS_DE_NGHI_VAY_VON_TCN.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTV\TDVM\TDVM_DS_PHAT_VON.xaml.cs">
+      <DependentUpon>TDVM_DS_PHAT_VON.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTV\TDVM\TDVM_DS_THU_LAI_VON_MUA_VU.xaml.cs">
+      <DependentUpon>TDVM_DS_THU_LAI_VON_MUA_VU.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTV\TDVM\TDVM_DS_THU_TIEN_PHAT_HANH.xaml.cs">
+      <DependentUpon>TDVM_DS_THU_TIEN_PHAT_HANH.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTV\TDVM\TDVM_DS_THU_TIEN_VON_TRA_DAN_TK.xaml.cs">
+      <DependentUpon>TDVM_DS_THU_TIEN_VON_TRA_DAN_TK.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTV\TDVM\TDVM_DS_THU_VON_MUA_VU.xaml.cs">
+      <DependentUpon>TDVM_DS_THU_VON_MUA_VU.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTV\TDVM\TDVM_HOP_DONG_VAY_VON.xaml.cs">
+      <DependentUpon>TDVM_HOP_DONG_VAY_VON.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTV\TDVM\TDVM_LICH_THU_NO.xaml.cs">
+      <DependentUpon>TDVM_LICH_THU_NO.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTV\TDVM\TDVM_PHAN_LOAI_NO_TLDP.xaml.cs">
+      <DependentUpon>TDVM_PHAN_LOAI_NO_TLDP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTV\TDVM\TDVM_PHIEU_THAM_KHTV.xaml.cs">
+      <DependentUpon>TDVM_PHIEU_THAM_KHTV.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTV\TDVM\TDVM_PHU_LUC_HOP_DONG.xaml.cs">
+      <DependentUpon>TDVM_PHU_LUC_HOP_DONG.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTV\TDVM\TDVM_SAO_KE_TH.xaml.cs">
+      <DependentUpon>TDVM_SAO_KE_TH.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTV\TDVM\TDVM_SO_THEO_DOI_KHTV.xaml.cs">
+      <DependentUpon>TDVM_SO_THEO_DOI_KHTV.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTV\TDVM\TDVM_SO_THEO_DOI_NO_RUI_RO.xaml.cs">
+      <DependentUpon>TDVM_SO_THEO_DOI_NO_RUI_RO.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTV\TDVM\TDVM_SO_THEO_DOI_VON_VAY.xaml.cs">
+      <DependentUpon>TDVM_SO_THEO_DOI_VON_VAY.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTV\TDVM\TDVM_SO_VON_VAY_TIET_KIEM_KHTV.xaml.cs">
+      <DependentUpon>TDVM_SO_VON_VAY_TIET_KIEM_KHTV.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_BTV\TDVM\TDVM_XU_LY_NO.xaml.cs">
+      <DependentUpon>TDVM_XU_LY_NO.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_DC\BCTC\BCTC_BANG_CAN_DOI_TKKT.xaml.cs">
+      <DependentUpon>BCTC_BANG_CAN_DOI_TKKT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_DC\GDKT\GDKT_BANG_CAN_DOI_TKKT.xaml.cs">
+      <DependentUpon>GDKT_BANG_CAN_DOI_TKKT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_DC\GDKT\GDKT_NX_NGOAI_BANG.xaml.cs">
+      <DependentUpon>GDKT_NX_NGOAI_BANG.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_DC\GDKT\GDKT_PHIEU_CHI.xaml.cs">
+      <DependentUpon>GDKT_PHIEU_CHI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_DC\GDKT\GDKT_PHIEU_KE_TOAN.xaml.cs">
+      <DependentUpon>GDKT_PHIEU_KE_TOAN.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_DC\GDKT\GDKT_PHIEU_THU.xaml.cs">
+      <DependentUpon>GDKT_PHIEU_THU.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_DC\GDKT\GDKT_SO_CAI_TAI_KHOAN.xaml.cs">
+      <DependentUpon>GDKT_SO_CAI_TAI_KHOAN.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_DC\GDKT\GDKT_SO_CHI_TIET_TAI_KHOAN.xaml.cs">
+      <DependentUpon>GDKT_SO_CHI_TIET_TAI_KHOAN.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_DC\GDKT\GDKT_SO_NHAT_KY_CHI.xaml.cs">
+      <DependentUpon>GDKT_SO_NHAT_KY_CHI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_DC\GDKT\GDKT_SO_NHAT_KY_CHUNG.xaml.cs">
+      <DependentUpon>GDKT_SO_NHAT_KY_CHUNG.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_DC\GDKT\GDKT_SO_NHAT_KY_THU.xaml.cs">
+      <DependentUpon>GDKT_SO_NHAT_KY_THU.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_DC\GDKT\GDKT_SO_QUY_TIEN_MAT.xaml.cs">
+      <DependentUpon>GDKT_SO_QUY_TIEN_MAT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_DC\GDKT\GDKT_SO_TIEN_GUI_NGAN_HANG.xaml.cs">
+      <DependentUpon>GDKT_SO_TIEN_GUI_NGAN_HANG.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_DC\HDVO\HDVO_BANG_KE_LAI_NHAP_GOC.xaml.cs">
+      <DependentUpon>HDVO_BANG_KE_LAI_NHAP_GOC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_DC\HDVO\HDVO_BANG_TINH_LAI_KHTV.xaml.cs">
+      <DependentUpon>HDVO_BANG_TINH_LAI_KHTV.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_DC\HDVO\HDVO_BAO_CAO_THEO_CAN_BO.xaml.cs">
+      <DependentUpon>HDVO_BAO_CAO_THEO_CAN_BO.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_DC\HDVO\HDVO_BAO_CAO_THEO_DIA_BAN.xaml.cs">
+      <DependentUpon>HDVO_BAO_CAO_THEO_DIA_BAN.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_DC\HDVO\HDVO_DANH_SACH_HOAN_TK.xaml.cs">
+      <DependentUpon>HDVO_DANH_SACH_HOAN_TK.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_DC\HDVO\HDVO_DANH_SACH_KHTV.xaml.cs">
+      <DependentUpon>HDVO_DANH_SACH_KHTV.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_DC\HDVO\HDVO_GIAY_GUI_TIEN.xaml.cs">
+      <DependentUpon>HDVO_GIAY_GUI_TIEN.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_DC\HDVO\HDVO_SAO_KE_TKCKH.xaml.cs">
+      <DependentUpon>HDVO_SAO_KE_TKCKH.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_DC\HDVO\HDVO_SO_PHU_TIEN_GUI.xaml.cs">
+      <DependentUpon>HDVO_SO_PHU_TIEN_GUI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_DC\HDVO\HDVO_SO_THEO_DOI_TK_KHTV.xaml.cs">
+      <DependentUpon>HDVO_SO_THEO_DOI_TK_KHTV.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_DC\TDVM\TDVM_SAO_KE_TH.xaml.cs">
+      <DependentUpon>TDVM_SAO_KE_TH.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_DC\TDVM\TDVM_SAO_KE_VON_TONG_HOP.xaml.cs">
+      <DependentUpon>TDVM_SAO_KE_VON_TONG_HOP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_DC\TDVM\TDVM_DS_THU_TIEN_PHAT_HANH.xaml.cs">
+      <DependentUpon>TDVM_DS_THU_TIEN_PHAT_HANH.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_DC\TDVM\TDVM_DS_THU_TIEN_VON_TRA_DAN_TK.xaml.cs">
+      <DependentUpon>TDVM_DS_THU_TIEN_VON_TRA_DAN_TK.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_DC\TDVM\TDVM_PHAN_LOAI_NO_TLDP.xaml.cs">
+      <DependentUpon>TDVM_PHAN_LOAI_NO_TLDP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_DC\TDVM\TDVM_SAO_KE_VON_DAI_HAN.xaml.cs">
+      <DependentUpon>TDVM_SAO_KE_VON_DAI_HAN.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_DC\TDVM\TDVM_SAO_KE_VON_NGAN_HAN.xaml.cs">
+      <DependentUpon>TDVM_SAO_KE_VON_NGAN_HAN.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_DC\TDVM\TDVM_SAO_KE_VON_TRUNG_HAN.xaml.cs">
+      <DependentUpon>TDVM_SAO_KE_VON_TRUNG_HAN.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_DC\TDVM\TDVM_SO_THEO_DOI_KHTV.xaml.cs">
+      <DependentUpon>TDVM_SO_THEO_DOI_KHTV.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_DC\TDVM\TDVM_SO_THEO_DOI_NO_RUI_RO.xaml.cs">
+      <DependentUpon>TDVM_SO_THEO_DOI_NO_RUI_RO.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_DC\TDVM\TDVM_SO_THEO_DOI_VON_VAY.xaml.cs">
+      <DependentUpon>TDVM_SO_THEO_DOI_VON_VAY.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_DC\TDVM\TDVM_XU_LY_NO.xaml.cs">
+      <DependentUpon>TDVM_XU_LY_NO.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_HVNH\BCTC\BCTC_BANG_CAN_DOI_KE_TOAN.xaml.cs">
+      <DependentUpon>BCTC_BANG_CAN_DOI_KE_TOAN.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_HVNH\BCTC\BCTC_BAO_CAO_KET_QUA_HOAT_DONG_KINH_DOANH.xaml.cs">
+      <DependentUpon>BCTC_BAO_CAO_KET_QUA_HOAT_DONG_KINH_DOANH.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_HVNH\BCTC\BCTC_BANG_CAN_DOI_TKKT.xaml.cs">
+      <DependentUpon>BCTC_BANG_CAN_DOI_TKKT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_HVNH\BCTC\BCTC_LUU_CHUYEN_TIEN_TE.xaml.cs">
+      <DependentUpon>BCTC_LUU_CHUYEN_TIEN_TE.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_HVNH\BCTC\BCTC_THUYET_MINH_TAI_CHINH.xaml.cs">
+      <DependentUpon>BCTC_THUYET_MINH_TAI_CHINH.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_HVNH\BCTH\BCTH_BAO_CAO_THONG_KE_TONG_HOP.xaml.cs">
+      <DependentUpon>BCTH_BAO_CAO_THONG_KE_TONG_HOP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_HVNH\BCTH\BCTH_BAO_CAO_VAN_HANH.xaml.cs">
+      <DependentUpon>BCTH_BAO_CAO_VAN_HANH.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_HVNH\BCTH\BCTH_FACTSHEET.xaml.cs">
+      <DependentUpon>BCTH_FACTSHEET.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_HVNH\BCTK\BCTK_BANG_KE_SO_TIEN_GUI_THUOC_DOI_TUONG_BH.xaml.cs">
+      <DependentUpon>BCTK_BANG_KE_SO_TIEN_GUI_THUOC_DOI_TUONG_BH.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_HVNH\BCTK\BCTK_BANG_TINH_TOAN_NOP_PHI_BH_TIEN_GUI.xaml.cs">
+      <DependentUpon>BCTK_BANG_TINH_TOAN_NOP_PHI_BH_TIEN_GUI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_HVNH\BCTK\BCTK_BAO_CAO_CHO_VAY_KHACH_HANG_VUOT_QUY_DINH.xaml.cs">
+      <DependentUpon>BCTK_BAO_CAO_CHO_VAY_KHACH_HANG_VUOT_QUY_DINH.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_HVNH\BCTK\BCTK_BAO_CAO_HOAT_DONG_HUY_DONG_VON.xaml.cs">
+      <DependentUpon>BCTK_BAO_CAO_HOAT_DONG_HUY_DONG_VON.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_HVNH\BCTK\BCTK_BAO_CAO_PHAN_LOAI_NO_TRICH_LAP_DU_PHONG.xaml.cs">
+      <DependentUpon>BCTK_BAO_CAO_PHAN_LOAI_NO_TRICH_LAP_DU_PHONG.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_HVNH\BCTK\BCTK_BAO_CAO_SU_DUNG_DU_PHONG_XU_LY_RUI_RO.xaml.cs">
+      <DependentUpon>BCTK_BAO_CAO_SU_DUNG_DU_PHONG_XU_LY_RUI_RO.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_HVNH\BCTK\BCTK_BAO_CAO_THONG_TIN_TD.xaml.cs">
+      <DependentUpon>BCTK_BAO_CAO_THONG_TIN_TD.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_HVNH\BCTK\BCTK_BAO_CAO_THONG_TIN_TS_DAM_BAO_CUA_KHACH_HANG.xaml.cs">
+      <DependentUpon>BCTK_BAO_CAO_THONG_TIN_TS_DAM_BAO_CUA_KHACH_HANG.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_HVNH\BCTK\BCTK_BAO_CAO_TINH_HINH_TY_LE_DAM_BAO_AN_TOAN.xaml.cs">
+      <DependentUpon>BCTK_BAO_CAO_TINH_HINH_TY_LE_DAM_BAO_AN_TOAN.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_HVNH\BCTK\BCTK_DU_NO_TD_PHAN_THEO_LOAI_HINH_TO_CHUC.xaml.cs">
+      <DependentUpon>BCTK_DU_NO_TD_PHAN_THEO_LOAI_HINH_TO_CHUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_HVNH\BCTK\BCTK_DU_NO_TD_PHAN_THEO_NGANH_KINH_TE.xaml.cs">
+      <DependentUpon>BCTK_DU_NO_TD_PHAN_THEO_NGANH_KINH_TE.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_HVNH\BCTK\BCTK_PHAN_LOAI_TS_CO_RUI_RO.xaml.cs">
+      <DependentUpon>BCTK_PHAN_LOAI_TS_CO_RUI_RO.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_HVNH\CICR\CICR_BAO_CAO_THONG_TIN_TD.xaml.cs">
+      <DependentUpon>CICR_BAO_CAO_THONG_TIN_TD.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_HVNH\CICR\CICR_BAO_CAO_THONG_TIN_TSDB_KH.xaml.cs">
+      <DependentUpon>CICR_BAO_CAO_THONG_TIN_TSDB_KH.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_HVNH\GDKT\GDKT_NX_NGOAI_BANG.xaml.cs">
+      <DependentUpon>GDKT_NX_NGOAI_BANG.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_HVNH\GDKT\GDKT_PHIEU_CHI.xaml.cs">
+      <DependentUpon>GDKT_PHIEU_CHI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_HVNH\GDKT\GDKT_PHIEU_CHUYEN_KHOAN.xaml.cs">
+      <DependentUpon>GDKT_PHIEU_CHUYEN_KHOAN.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_HVNH\GDKT\GDKT_PHIEU_THU.xaml.cs">
+      <DependentUpon>GDKT_PHIEU_THU.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_HVNH\GDKT\GDKT_SO_CHI_TIET_TAI_KHOAN.xaml.cs">
+      <DependentUpon>GDKT_SO_CHI_TIET_TAI_KHOAN.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_HVNH\GDKT\GDKT_SO_NHAT_KY_CHI.xaml.cs">
+      <DependentUpon>GDKT_SO_NHAT_KY_CHI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_HVNH\GDKT\GDKT_SO_NHAT_KY_CHUNG.xaml.cs">
+      <DependentUpon>GDKT_SO_NHAT_KY_CHUNG.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_HVNH\GDKT\GDKT_SO_NHAT_KY_THU.xaml.cs">
+      <DependentUpon>GDKT_SO_NHAT_KY_THU.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_HVNH\GDKT\GDKT_SO_QUY_TIEN_MAT.xaml.cs">
+      <DependentUpon>GDKT_SO_QUY_TIEN_MAT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_HVNH\HDVO\HDVO_BANG_KE_LAI_NHAP_GOC.xaml.cs">
+      <DependentUpon>HDVO_BANG_KE_LAI_NHAP_GOC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_HVNH\HDVO\HDVO_BANG_KE_TINH_LAI_DU_CHI_TIEN_GUI_TK.xaml.cs">
+      <DependentUpon>HDVO_BANG_KE_TINH_LAI_DU_CHI_TIEN_GUI_TK.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_HVNH\HDVO\HDVO_BANG_XAC_NHAN_SO_DU_TIEN_GUI_TK.xaml.cs">
+      <DependentUpon>HDVO_BANG_XAC_NHAN_SO_DU_TIEN_GUI_TK.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_HVNH\HDVO\HDVO_GIAY_GUI_TIEN.xaml.cs">
+      <DependentUpon>HDVO_GIAY_GUI_TIEN.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_HVNH\HDVO\HDVO_LAI_SUAT_BINH_QUAN.xaml.cs">
+      <DependentUpon>HDVO_LAI_SUAT_BINH_QUAN.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_HVNH\HDVO\HDVO_SAO_KE_TIEN_GUI_TK.xaml.cs">
+      <DependentUpon>HDVO_SAO_KE_TIEN_GUI_TK.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_HVNH\HDVO\HDVO_SO_PHU_TIEN_GUI.xaml.cs">
+      <DependentUpon>HDVO_SO_PHU_TIEN_GUI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_HVNH\HDVO\HDVO_SO_TIET_KIEM.xaml.cs">
+      <DependentUpon>HDVO_SO_TIET_KIEM.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_HVNH\KHTV\KHTV_CHUYEN_DIA_BAN.xaml.cs">
+      <DependentUpon>KHTV_CHUYEN_DIA_BAN.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_HVNH\KHTV\KHTV_DANH_GIA_XEP_HANG_NGHEO.xaml.cs">
+      <DependentUpon>KHTV_DANH_GIA_XEP_HANG_NGHEO.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_HVNH\KHTV\KHTV_DANH_SACH_KHACH_HANG_RA_KHOI_CHUONG_TRINH.xaml.cs">
+      <DependentUpon>KHTV_DANH_SACH_KHACH_HANG_RA_KHOI_CHUONG_TRINH.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_HVNH\KHTV\KHTV_DANH_SACH_KHTV.xaml.cs">
+      <DependentUpon>KHTV_DANH_SACH_KHTV.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_HVNH\KHTV\KHTV_HO_SO_KHACH_HANG_THAM_DINH_THONG_TIN.xaml.cs">
+      <DependentUpon>KHTV_HO_SO_KHACH_HANG_THAM_DINH_THONG_TIN.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_HVNH\KHTV\KHTV_QUYET_DINH_CONG_NHAN_THANH_VIEN.xaml.cs">
+      <DependentUpon>KHTV_QUYET_DINH_CONG_NHAN_THANH_VIEN.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_HVNH\KHTV\KHTV_THAM_DINH_KHACH_HANG.xaml.cs">
+      <DependentUpon>KHTV_THAM_DINH_KHACH_HANG.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_HVNH\TDVM\TDVM_BAO_CAO_CHAM_TRA.xaml.cs">
+      <DependentUpon>TDVM_BAO_CAO_CHAM_TRA.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_HVNH\TDVM\TDVM_BAO_CAO_PHAN_LOAI_NO.xaml.cs">
+      <DependentUpon>TDVM_BAO_CAO_PHAN_LOAI_NO.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_HVNH\TDVM\TDVM_DANH_GIAI_XEP_HANG_KHACH_HANG_CA_NHAN.xaml.cs">
+      <DependentUpon>TDVM_DANH_GIAI_XEP_HANG_KHACH_HANG_CA_NHAN.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_HVNH\TDVM\TDVM_DON_VAY_VON.xaml.cs">
+      <DependentUpon>TDVM_DON_VAY_VON.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_HVNH\TDVM\TDVM_DS_DE_NGHI_VAY_VON.xaml.cs">
+      <DependentUpon>TDVM_DS_DE_NGHI_VAY_VON.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_HVNH\TDVM\TDVM_PHU_LUC_HOP_DONG.xaml.cs">
+      <DependentUpon>TDVM_PHU_LUC_HOP_DONG.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_HVNH\TDVM\TDVM_DS_PHAT_VON.xaml.cs">
+      <DependentUpon>TDVM_DS_PHAT_VON.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_HVNH\TDVM\TDVM_DS_THU_TIEN_PHAT_HANH.xaml.cs">
+      <DependentUpon>TDVM_DS_THU_TIEN_PHAT_HANH.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_HVNH\TDVM\TDVM_DS_THU_TIEN_VON_TRA_DAN_TK.xaml.cs">
+      <DependentUpon>TDVM_DS_THU_TIEN_VON_TRA_DAN_TK.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_HVNH\TDVM\TDVM_HOP_DONG_VAY_VON.xaml.cs">
+      <DependentUpon>TDVM_HOP_DONG_VAY_VON.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_HVNH\TDVM\TDVM_MAU_BIEU_XEP_HANG_TIN_DUNG_CA_NHAN.xaml.cs">
+      <DependentUpon>TDVM_MAU_BIEU_XEP_HANG_TIN_DUNG_CA_NHAN.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_HVNH\TDVM\TDVM_SAO_KE_VON_DAI_HAN.xaml.cs">
+      <DependentUpon>TDVM_SAO_KE_VON_DAI_HAN.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_HVNH\TDVM\TDVM_SAO_KE_VON_NGAN_HAN.xaml.cs">
+      <DependentUpon>TDVM_SAO_KE_VON_NGAN_HAN.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_HVNH\TDVM\TDVM_SAO_KE_VON_TRUNG_HAN.xaml.cs">
+      <DependentUpon>TDVM_SAO_KE_VON_TRUNG_HAN.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_HVNH\TDVM\TDVM_THAM_DINH_TIN_DUNG.xaml.cs">
+      <DependentUpon>TDVM_THAM_DINH_TIN_DUNG.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_PHUTHO\BCTH\BCTH_BAO_CAO_SO_THANH_VIEN.xaml.cs">
+      <DependentUpon>BCTH_BAO_CAO_SO_THANH_VIEN.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_PHUTHO\BCTH\BCTH_SO_TONG_HOP_VAY_VON.xaml.cs">
+      <DependentUpon>BCTH_SO_TONG_HOP_VAY_VON.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_PHUTHO\BCTH\BCTH_SO_TONG_HOP_TIET_KIEM.xaml.cs">
+      <DependentUpon>BCTH_SO_TONG_HOP_TIET_KIEM.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_PHUTHO\BCTH\BCTH_SO_TONG_HOP_TUONG_TRO.xaml.cs">
+      <DependentUpon>BCTH_SO_TONG_HOP_TUONG_TRO.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_PHUTHO\BCTH\BCTH_BAO_CAO_LAI_VON_VAY.xaml.cs">
+      <DependentUpon>BCTH_BAO_CAO_LAI_VON_VAY.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_PHUTHO\TDVM\TDVM_BAO_CAO_NO_QUA_HAN.xaml.cs">
+      <DependentUpon>TDVM_BAO_CAO_NO_QUA_HAN.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_PHUTHO\TDVM\TDVM_DS_XET_DUYET_THANH_VIEN_VAY_VON.xaml.cs">
+      <DependentUpon>TDVM_DS_XET_DUYET_THANH_VIEN_VAY_VON.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_PHUTHO\TDVM\TDVM_DS_THU_TIEN_VON_TRA_DAN_TK.xaml.cs">
+      <DependentUpon>TDVM_DS_THU_TIEN_VON_TRA_DAN_TK.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_PHUTHO\TDVM\TDVM_KE_HOACH_TRA_NO.xaml.cs">
+      <DependentUpon>TDVM_KE_HOACH_TRA_NO.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_PHUTHO\TDVM\TDVM_DON_VAY_VON.xaml.cs">
+      <DependentUpon>TDVM_DON_VAY_VON.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_PHUTHO\TDVM\TDVM_HOP_DONG_VAY_VON.xaml.cs">
+      <DependentUpon>TDVM_HOP_DONG_VAY_VON.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_PHUTHO\TDVM\TDVM_PHU_LUC_HOP_DONG.xaml.cs">
+      <DependentUpon>TDVM_PHU_LUC_HOP_DONG.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_QUANGBINH\BCTC\BCTC_KET_QUA_HOAT_DONG.xaml.cs">
+      <DependentUpon>BCTC_KET_QUA_HOAT_DONG.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_QUANGBINH\BCTH\BCTH_BAO_CAO_TIN_DUNG_THEO_CBTD.xaml.cs">
+      <DependentUpon>BCTH_BAO_CAO_TIN_DUNG_THEO_CBTD.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_QUANGBINH\BCTH\BCTH_BC_TIEN_DO_THEO_NGUON_TOAN_HE_THONG.xaml.cs">
+      <DependentUpon>BCTH_BC_TIEN_DO_THEO_NGUON_TOAN_HE_THONG.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_QUANGBINH\BCTH\BCTH_HOAT_DONG.xaml.cs">
+      <DependentUpon>BCTH_HOAT_DONG.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_QUANGBINH\BCTH\BCTH_BAO_CAO_TIN_DUNG_THEO_XA.xaml.cs">
+      <DependentUpon>BCTH_BAO_CAO_TIN_DUNG_THEO_XA.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_QUANGBINH\GDKT\GDKT_BAO_CAO_THU_NHAP_THEO_NGUON.xaml.cs">
+      <DependentUpon>GDKT_BAO_CAO_THU_NHAP_THEO_NGUON.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_QUANGBINH\GDKT\GDKT_BAO_CAO_CHI_PHI_THEO_NGUON.xaml.cs">
+      <DependentUpon>GDKT_BAO_CAO_CHI_PHI_THEO_NGUON.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_QUANGBINH\HDVO\HDVO_BAO_CAO_THEO_CAN_BO.xaml.cs">
+      <DependentUpon>HDVO_BAO_CAO_THEO_CAN_BO.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_QUANGBINH\HDVO\HDVO_BAO_CAO_THEO_DIA_BAN.xaml.cs">
+      <DependentUpon>HDVO_BAO_CAO_THEO_DIA_BAN.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_QUANGBINH\HDVO\HDVO_DANH_SACH_KHTV.xaml.cs">
+      <DependentUpon>HDVO_DANH_SACH_KHTV.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_QUANGBINH\HDVO\HDVO_DS_HUY_DONG_VON_CAP_CUM_NHOM.xaml.cs">
+      <DependentUpon>HDVO_DS_HUY_DONG_VON_CAP_CUM_NHOM.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_QUANGBINH\HDVO\HDVO_DS_HUY_DONG_VON_CAP_XA.xaml.cs">
+      <DependentUpon>HDVO_DS_HUY_DONG_VON_CAP_XA.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_QUANGBINH\HDVO\HDVO_SO_THEO_DOI_TK_KHTV.xaml.cs">
+      <DependentUpon>HDVO_SO_THEO_DOI_TK_KHTV.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_QUANGBINH\KHTV\KHTV_BAN_KHAO_SAT_HOAN_CANH_KTXH.xaml.cs">
+      <DependentUpon>KHTV_BAN_KHAO_SAT_HOAN_CANH_KTXH.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_QUANGBINH\TDVM\TDVM_BAO_CAO_KHACH_HANG_TRA_TRUOC.xaml.cs">
+      <DependentUpon>TDVM_BAO_CAO_KHACH_HANG_TRA_TRUOC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_QUANGBINH\TDVM\TDVM_BAO_CAO_KHACH_HANG_CHAM_TRA.xaml.cs">
+      <DependentUpon>TDVM_BAO_CAO_KHACH_HANG_CHAM_TRA.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_QUANGBINH\TDVM\TDVM_BANG_THEO_DOI_NO_QUA_HAN.xaml.cs">
+      <DependentUpon>TDVM_BANG_THEO_DOI_NO_QUA_HAN.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_QUANGBINH\TDVM\TDVM_DON_XIN_VAY_VON_TRA_DAN_VA_BO_SUNG.xaml.cs">
+      <DependentUpon>TDVM_DON_XIN_VAY_VON_TRA_DAN_VA_BO_SUNG.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_QUANGBINH\TDVM\TDVM_DON_XIN_VAY_VON_VAY_KHAC.xaml.cs">
+      <DependentUpon>TDVM_DON_XIN_VAY_VON_VAY_KHAC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_QUANGBINH\TDVM\TDVM_DS_PHAT_VON.xaml.cs">
+      <DependentUpon>TDVM_DS_PHAT_VON.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_QUANGBINH\TDVM\TDVM_DS_THU_TIEN_VON_TRA_DAN_TK.xaml.cs">
+      <DependentUpon>TDVM_DS_THU_TIEN_VON_TRA_DAN_TK.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_QUANGBINH\TDVM\TDVM_HOP_DONG_VAY_VON_TRA_DAN_VA_BO_SUNG.xaml.cs">
+      <DependentUpon>TDVM_HOP_DONG_VAY_VON_TRA_DAN_VA_BO_SUNG.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_QUANGBINH\TDVM\TDVM_HOP_DONG_VAY_VON_VAY_KHAC.xaml.cs">
+      <DependentUpon>TDVM_HOP_DONG_VAY_VON_VAY_KHAC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_QUANGBINH\TDVM\TDVM_SAO_KE_VON_DAI_HAN.xaml.cs">
+      <DependentUpon>TDVM_SAO_KE_VON_DAI_HAN.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_QUANGBINH\TDVM\TDVM_SAO_KE_VON_NGAN_HAN.xaml.cs">
+      <DependentUpon>TDVM_SAO_KE_VON_NGAN_HAN.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_QUANGBINH\TDVM\TDVM_SAO_KE_VON_TONG_HOP.xaml.cs">
+      <DependentUpon>TDVM_SAO_KE_VON_TONG_HOP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_QUANGBINH\TDVM\TDVM_SAO_KE_VON_TRUNG_HAN.xaml.cs">
+      <DependentUpon>TDVM_SAO_KE_VON_TRUNG_HAN.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_QUANGBINH\TDVM\TDVM_SO_TIN_DUNG_CAP_CUM.xaml.cs">
+      <DependentUpon>TDVM_SO_TIN_DUNG_CAP_CUM.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_QUANGBINH\TDVM\TDVM_SO_TIN_DUNG_CAP_XA.xaml.cs">
+      <DependentUpon>TDVM_SO_TIN_DUNG_CAP_XA.xaml</DependentUpon>
+    </Compile>
+    <Page Include="BCTH\BCTH_BC_TIEN_DO.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="BCTH\BCTH_BC_VAN_HANH.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BCTH\BCTH_BC_VAN_HANH_00.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="BCTH\BCTH_TH_LICH_SU.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GDKT\GDKT_BC_BANG_KE_CTU.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BCTK\BCTK_THONG_KE_HO_NGHEO_CAN_NGHEO.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="BCTK\ucBaoCaoThongKe.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BCTK\BCTK_BANG_CAN_DOI.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="BCTK\BCTK_BC_KET_QUA_HD_KD.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DungChung\ucNhapLieu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BHTH\ucDSachBaoVeVonVay.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="BHTH\ucBaoVeVonVay.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BHTH\ucChiTraNhanTho.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BHTH\ucChiTraTuVong.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BHTH\ucHoTroMoDe.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BCTH\BCTH_KH_THU_CHI_TIEN_MAT_TRONG_THANG.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BHTH\ucTienDo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BHTH\ucXoaNoVonVay.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BHTH\ucYeuCauBaoVeVonVay.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BCTH\BCTH_TH_THU_CHI.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GDKT\GDKT_BANG_KE_CHUNG_TU.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GDKT\GDKT_KET_XUAT_BCDKT_THEO_CAU_TRUC.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GDKT\GDKT_SO_TH_TKHOAN_THEO_DOI_UNG.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GDKT\GDKT_SO_TIEN_GUI_NGAN_HANG.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GDKT\GDKT_THUYET_MINH_TAI_CHINH.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GDKT\GDKT_KET_QUA_KINH_DOANH.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GDKT\GDKT_BANG_CAN_DOI_KE_TOAN.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GDKT\GDKT_TONG_HOP_DU_LIEU_KTOAN.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HDVO\HDVO_BANG_THOP_CPHI_LAI_TGUI_CKH_THEO_CN.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="HDVO\HDVO_BANG_THOP_CPHI_LAI_TGUI_CKH_THEO_PGD.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="HDVO\HDVO_BANG_THOP_SDU_GOC_TKIEM_CKH_THEO_XA.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="HDVO\HDVO_BANG_TINH_LAI_TGUI_CKH_THEO_KH.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="HDVO\HDVO_BANG_THOP_DCHI_TRA_TKIEM_CKH_THEO_PGD.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="HDVO\HDVO_BANG_THOP_DCHI_TRA_TKIEM_CKH_THEO_CN.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="HDVO\HDVO_DS_TRA_TK.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HDVO\HDVO_SO_THEO_DOI_TK.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GDKT\ucSoChiTietTaiKhoanCongNo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GDKT\GDKT_LUU_CHUYEN_TIEN_TE.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="KHTV\KHTV_PHIEU_XEP_HANG_TD.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="KHTV\KHTV_TKE_HO_NGHEO_CAN_NGHEO.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TDVM\TDVM_BANG_THOP_TINH_LAI_THEO_PGD.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TDVM\TDVM_BANG_THOP_TINH_LAI_THEO_CN.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TDVM\TDVM_BANG_THOP_PHAT_VON_VAY_THEO_CN.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TDVM\TDVM_BANG_THOP_PHAT_VON_VAY_THEO_PGD.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TDVM\TDVM_BKE_CNO_TVIEN_THEO_CN.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TDVM\TDVM_BKE_CNO_TVIEN_THEO_PGD.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TDVM\TDVM_BKE_CNO_TVIEN_THEO_XA.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TDVM\TDVM_BKE_CNO_TVIEN_THEO_CUM.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TDVM\TDVM_BAO_NO_CUM.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TDVM\TDVM_BAO_NO_THANH_VIEN.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TDVM\TDVM_BAO_NO_TONG.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TDVM\TDVM_BAO_NO_TONG_CHI_TIET.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TDVM\TDVM_KHE_UOC_NHAN_NO_00.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TDVM\TDVM_BANG_XAC_NHAN_SO_DU_VAY_VON.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TDVM\TDVM_BC_PHAN_LOAI_NO.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TDVM\TDVM_PHIEU_THAM_DINH_VON_VAY.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TDVM\TDVM_PHIEU_THEO_DOI_HOAN_TRA_TVIEN.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TDVM\TDVM_PHIEU_THEO_DOI_HOAN_TRA_CUM.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TDVM\TDVM_DS_KHTV_NHAN_VON_00.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DungChung\ucDanhSach.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GDKT\ucBangCanDoiNgoaiBang.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GDKT\ucBangCanDoiNoiBang.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GDKT\ucBangKeTienMat.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GDKT\GDKT_GIAY_GUI_TIEN_TIET_KIEM.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GDKT\ucNhatKyChiTien.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GDKT\ucNhatKyChung.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GDKT\ucNhatKyThuTien.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GDKT\ucPhieuChi.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GDKT\ucPhieuHachToan.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GDKT\ucPhieuThu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GDKT\ucSoCaiTaiKhoan.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GDKT\ucSoChiTietTaiKhoan.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GDKT\ucSoQuyTienMat.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HDVO\ucBangKeTKCKH.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HDVO\ucBangKeTKQDVaTKKKH.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HDVO\ucSoPhuTienGui.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HDVO\ucTongHopTKCKH.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="KHTV\KHTV_DAC_DIEM_HOKHTV.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="KHTV\KHTV_TANG_TRUONG_KT_KHTV.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="KHTV\ucDsKHCN.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="KHTV\ucDsKHTC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="KHTV\ucDsKHTV.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="KHTV\ucDsKHTVRaKhoiNhom.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="KHTV\ucPhieuDanhGia.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="KHTV\ucPhieuKhaoSat.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="KHTV\ucPhieuXepHangTD.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="KHTV\ucChiTieuHoKHTV.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="KHTV\KHTV_NGUYEN_NHAN_RA_KHOI_NHOM.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="KHTV\ucThuNhapHoKHTV.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="GDKT\ucNhatKyChiTien.xaml.cs">
+      <DependentUpon>ucNhatKyChiTien.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GDKT\ucNhatKyChung.xaml.cs">
+      <DependentUpon>ucNhatKyChung.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GDKT\ucNhatKyThuTien.xaml.cs">
+      <DependentUpon>ucNhatKyThuTien.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GDKT\ucSoCaiTaiKhoan.xaml.cs">
+      <DependentUpon>ucSoCaiTaiKhoan.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GDKT\ucSoChiTietTaiKhoan.xaml.cs">
+      <DependentUpon>ucSoChiTietTaiKhoan.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GDKT\ucSoQuyTienMat.xaml.cs">
+      <DependentUpon>ucSoQuyTienMat.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="HDVO\ucBangKeTKCKH.xaml.cs">
+      <DependentUpon>ucBangKeTKCKH.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="HDVO\ucBangKeTKQDVaTKKKH.xaml.cs">
+      <DependentUpon>ucBangKeTKQDVaTKKKH.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="HDVO\ucSoPhuTienGui.xaml.cs">
+      <DependentUpon>ucSoPhuTienGui.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="HDVO\ucTongHopTKCKH.xaml.cs">
+      <DependentUpon>ucTongHopTKCKH.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="NSTL\NSTL_PHU_CAP_CUM_TRUONG.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="QTHT\ucBaoCaoKiemSoat.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TDVM\ucVonTietKiemCum.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TDVM\ucBcChamTra.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TDVM\ucDsKHTVNhanVon.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TDVM\ucHoaDonThuTienKy.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TDVM\ucKheUocNhanNo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TDVM\ucSaoKeVonDH.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TDVM\ucSaoKeVonNH.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TDVM\ucSaoKeVonTH.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TDVM\ucSaoKeTH.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BCTH\BCTH_THONG_KE_TH.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TDVM\ucVonTietKiemTVien.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GDKT\GDKT_BANG_CAN_DOI_NGOAI_BANG.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="HDVO\HDVO_BANG_XAC_NHAN_SO_DU_TK.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="BCTH\BCTH_BANG_CHI_SO_PEAL.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GDKT\GDKT_SO_TH_CONG_NO_PHAI_TRA.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GDKT\GDKT_SO_TH_CONG_NO_PHAI_THU.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GDKT\GDKT_SO_TH_CONG_NO_TAM_UNG.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GDKT\GDKT_SO_THEO_DOI_CT_NVON_KDOANH.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GDKT\GDKT_SO_CT_TAI_KHOAN_CONG_NO.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_BIDV\BCTH\BCTH_BAO_CAO_PHAN_LOAI_NO.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_BIDV\BCTH\BCTH_BLACKLIST.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BIDV\BCTH\BCTH_SAO_KE_DU_NO_TIN_DUNG_TKIEM.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_BIDV\BCTH\BCTH_BAO_CAO_DONG_TIEN.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_BIDV\BCTK\BCTK_QUAN_LY_NO.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_BIDV\BCTK\BCTK_DAILY_REPORT.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_BIDV\BCTK\BCTK_MONTHLY_REPORT.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BIDV\BCTK\BCTK_NGANH_NGHE_MMSC.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_BIDV\BCTH\BCTH_CREDIT_STATEMENT.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_BIDV\BCTK\BCTK_THEO_DOANH_SO.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_BIDV\BCTK\BCTK_THEO_NGANH_NGHE.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_BIDV\GDKT\GDKT_BALANCE_SHEET.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_BIDV\GDKT\GDKT_BANG_CAN_DOI_KE_TOAN.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BIDV\GDKT\GDKT_BANG_CAN_DOI_TKKT.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BIDV\GDKT\GDKT_PHIEU_CHI.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BIDV\GDKT\GDKT_PHIEU_KE_TOAN.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BIDV\GDKT\GDKT_PHIEU_THU.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BIDV\GDKT\GDKT_BAO_CAO_TK_THU_NHAP_CHI_PHI.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BIDV\GDKT\GDKT_PROFIT_AND_LOSS.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BIDV\HDVO\HDVO_DS_TIEN_GUI_DEN_HAN.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_BIDV\KHTV\KHTV_BIEN_BAN_HOP_NHOM.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_BIDV\TDVM\TDVM_DANH_SACH_SAO_KE_GN_ACTIVE.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BIDV\TDVM\TDVM_DANH_SACH_SAO_KE_GN_PERIOD.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BIDV\TDVM\TDVM_DANH_SACH_THANH_TOAN_BAT_BUOC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BIDV\TDVM\TDVM_DANH_SACH_THU_NO.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_BIDV\TDVM\TDVM_DS_THU_TIEN_VON_TRA_DAN_TK.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_BIDV_BLF\BCTC\BCTC_BANG_CAN_DOI_KE_TOAN.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_BIDV_BLF\BCTC\BCTC_KET_QUA_HOAT_DONG.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_BIDV_BLF\GDKT\GDKT_BANG_CAN_DOI_PHAT_SINH.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_BIDV_BLF\HDVO\HDVO_DS_SO_QUAY_VONG_TRONG_NGAY.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_BIDV_BLF\HDVO\HDVO_DS_TK_TIET_KIEM_TT_DUNG_HAN.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_BIDV_BLF\HDVO\HDVO_DS_TK_TIET_KIEM_TT_TRUOC_HAN.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_BIDV_BLF\HDVO\HDVO_DS_TK_TIET_KIEM_TT_TRONG_NGAY.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_BIDV_BLF\HDVO\HDVO_DS_TK_TIET_KIEM_DEN_HAN.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_BIDV_BLF\HDVO\HDVO_DS_TK_TIEN_GUI_MO_MOI.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_BIDV_BLF\HDVO\HDVO_HUY_DONG_VON_BINH_QUAN.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_BIDV_BLF\KHTV\KHTV_BC_KH_THAY_DOI_NGANH_KINH_TE.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_BIDV_BLF\KHTV\KHTV_BC_KH_THAY_DOI_TEN.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_BIDV_BLF\KHTV\KHTV_BC_KH_TAO_MOI.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_BIDV_BLF\TDTT\TDTD_BC_GIA_TRI_TSDB_HANG_NGAY.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_BTRE\BCTC\BCTC_BAO_CAO_DOANH_THU_TOAN_QUY.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_BTRE\BCTC\BCTC_BAO_CAO_LUU_CHUYEN_TIEN_TE_TOAN_QUY.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_BTRE\BCTC\BCTC_BANG_TONG_KET_TAI_SAN_TOAN_QUY.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_BTRE\BCTC\BCTC_BANG_CAN_DOI_TAI_KHOAN_TOAN_QUY.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_BTRE\BCTC\BCTC_BAO_CAO_DOANH_THU_THEO_NGUON.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_BTRE\BCTC\BCTC_BAO_CAO_LUU_CHUYEN_TIEN_TE_THEO_NGUON.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_BTRE\BCTC\BCTC_BANG_TONG_KET_TAI_SAN_THEO_NGUON.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_BTRE\BCTC\BCTC_BANG_CAN_DOI_TAI_KHOAN_THEO_NGUON.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_DC\GDKT\GDKT_SO_NHAP_XUAT_NGOAI_TE.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_DC\GDKT\GDKT_SO_NHAT_KY_CHI_TELLER.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_DC\GDKT\GDKT_SO_NHAT_KY_THU_TELLER.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_DC\GDKT\GDKT_SO_QUY_TIEN_MAT_TELLER.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_DC\GDKT\GDKT_SO_NHAT_KY_CHUNG_TELLER.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_BIDV\GDKT\GDKT_UY_NHIEM_CHI.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BIDV\GDKT\GDKT_UY_NHIEM_THU.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BIDV\KHTV\KHTV_DANH_SACH_KHTV.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BIDV\TDTT\TDTT_BAO_CAO_DE_XUAT_TIN_DUNG.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BIDV\TDTT\TDTT_BAO_CAO_THAM_DINH_RUI_RO_TD.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BIDV\TDTT\TDTT_DANH_SACH_SAO_KE_GN_ACTIVE.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BIDV\TDTT\TDTT_DANH_SACH_SAO_KE_GN_PERIOD.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BIDV\TDTT\TDTT_DANH_SACH_THU_NO.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BIDV\TDTT\TDTT_DE_XUAT_PHE_DUYET_GIAI_NGAN.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BIDV\TDTT\TDTT_GIAY_DE_NGHI_VAY_VON_CA_NHAN.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BIDV\TDTT\TDTT_GIAY_NHAN_NO.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BIDV\TDTT\TDTT_HOP_DONG_TIN_DUNG.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BIDV\TDTT\TDTT_PHIEU_KHAO_SAT_KH_CA_NHAN.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BIDV\TDTT\TDTT_SAO_KE_TIN_DUNG_TH.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BIDV\TDTT\TDTT_SO_VON_VAY_TIET_KIEM_KHTV.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_BIDV\TDVM\TDVM_DS_PHAT_VON.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_BIDV\TDVM\TDVM_SAO_KE_TIN_DUNG.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_BIDV\TDVM\TDVM_BANG_KE_RUT_VON.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BIDV\TDVM\TDVM_BAO_CAO_DE_XUAT_TIN_DUNG.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BIDV\TDVM\TDVM_BAO_CAO_THAM_DINH_RUI_RO_TD.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BIDV\TDVM\TDVM_DON_VAY_VON.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BIDV\TDVM\TDVM_HOP_DONG_VAY_VON.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BIDV\TDVM\TDVM_KHE_UOC_NHAN_NO.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BIDV\TDVM\TDVM_PHIEU_KHAO_SAT_KHACH_HANG.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BIDV\TDVM\TDVM_PHU_LUC_HOP_DONG.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BIDV\TDVM\TDVM_SO_VON_VAY_TIET_KIEM_KHTV.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTRE\BCTC\BCTC_BANG_CAN_DOI_KE_TOAN.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTRE\BCTC\BCTC_BANG_CAN_DOI_TKKT_THU.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTRE\BCTC\BCTC_KET_QUA_HOAT_DONG.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTRE\BCTC\BCTC_LUU_CHUYEN_TIEN_TE.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTRE\BCTC\BCTC_THUYET_MINH_TAI_CHINH.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTRE\BCTC\BCTC_BANG_CAN_DOI_CHUNG_TU.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_BTRE\BCTH\BCTH_HOAT_DONG.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTRE\BCTH\BCTH_HOAT_DONG_CBTD.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_BTRE\BCTH\BCTH_HOAT_DONG_CBTD_SP.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_BTRE\BCTH\BCTH_HOAT_DONG_DB.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_BTRE\BCTH\BCTH_HOAT_DONG_TCVM.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_BTRE\GDKT\GDKT_GIAY_THANH_TOAN_TAM_UNG.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTRE\GDKT\GDKT_PHIEU_TAM_UNG.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTRE\GDKT\GDKT_SO_THEO_DOI_TAM_UNG.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTRE\GDKT\GDKT_SO_TIEN_GUI_KHO_BAC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTRE\HDVO\HDVO_DANH_SACH_HOAN_TK.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTRE\KHTV\KHTV_BAN_KHAO_SAT_HOAN_CANH_KTXH.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTRE\KHTV\KHTV_BAN_KHAO_SAT_KH.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTRE\KHTV\KHTV_PHIEU_DANH_GIA_RUI_RO_TD.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTRE\KHTV\KHTV_PHIEU_THAM_HO_GD.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTRE\KHTV\KHTV_QUYET_DINH_CONG_NHAN_TVIEN.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTRE\TDVM\TDVM_BC_SO_LIEU_TDUNG_XA.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTRE\TDVM\TDVM_DON_XIN_VAY_VON_NHOM_BAO_LANH.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTRE\TDVM\TDVM_DON_XIN_VAY_VON_NUOC_SACH.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTRE\TDVM\TDVM_DS_DE_NGHI_VAY_VON.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTRE\TDVM\TDVM_DS_PHAT_VON.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTRE\TDVM\TDVM_DS_THU_LAI_VON_MUA_VU.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTRE\TDVM\TDVM_DS_THU_VON_MUA_VU.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTRE\TDVM\TDVM_HOP_DONG_VAY_VON_NHOM_BAO_LANH.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTRE\TDVM\TDVM_HOP_DONG_VAY_VON_NUOC_SACH.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTRE\TDVM\TDVM_LICH_THU_NO.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTRE\TDVM\TDVM_PHIEU_KIEM_TRA_SU_DUNG_VON_VAY.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTRE\TDVM\TDVM_SO_VON_VAY_TIET_KIEM_TVIEN.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTRE\TDVM\TDVM_TO_KE_THU.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTV\BCTC\BCTC_BANG_CAN_DOI_KE_TOAN.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTV\BCTC\BCTC_BANG_CAN_DOI_TKKT.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTV\BCTC\BCTC_CHI_TIEU_CT_CHEVRON.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTV\BCTC\BCTC_CHI_TIEU_CT_DISNEY.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTV\BCTC\BCTC_CHI_TIEU_TH_CHEVRON.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTV\BCTC\BCTC_CHI_TIEU_TH_DISNEY.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTV\BCTC\BCTC_KET_QUA_HOAT_DONG.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTV\BCTC\BCTC_LUU_CHUYEN_TIEN_TE.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTV\BCTC\BCTC_LUU_CHUYEN_TIEN_TE_CHEVRON.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTV\BCTC\BCTC_LUU_CHUYEN_TIEN_TE_DISNEY.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTV\BCTC\BCTC_THUYET_MINH_TAI_CHINH.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTV\BCTH\BCTH_CHI_SO_TAI_CHINH.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTV\BCTH\BCTH_CONG_VIEC_CBTD.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTV\BCTH\BCTH_DU_TRU_NGAN_QUY.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTV\BCTH\BCTH_HOAT_DONG.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTV\BCTH\BCTH_HOAT_DONG_CBTD.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTV\BCTH\BCTH_HOAT_DONG_CBTD_SP.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTV\BCTH\BCTH_HOAT_DONG_DB.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTV\BCTH\BCTH_HOAT_DONG_KHCN_CBTD.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTV\BCTH\BCTH_HOAT_DONG_KHCN_DB.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTV\BCTH\BCTH_HOAT_DONG_KHTC_CBTD.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTV\BCTH\BCTH_HOAT_DONG_KHTC_DB.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTV\BCTH\BCTH_HOAT_DONG_TCVM.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTV\BCTH\BCTH_THEO_DOI_RUI_RO.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTV\GDKT\GDKT_CHUNG_TU_GHI_SO.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTV\GDKT\GDKT_NX_NGOAI_BANG.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTV\GDKT\GDKT_PHIEU_CHI.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTV\GDKT\GDKT_PHIEU_KE_TOAN.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTV\GDKT\GDKT_PHIEU_THU.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTV\GDKT\GDKT_SO_CAI_CTGS.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTV\GDKT\GDKT_SO_CHI_TIET_TKHOAN.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTV\GDKT\GDKT_SO_DANG_KY_CTGS.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTV\GDKT\GDKT_SO_QUY_TIEN_MAT.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTV\GDKT\GDKT_SO_THEO_DOI_CONG_NO.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTV\GDKT\GDKT_SO_THEO_DOI_TAM_UNG.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTV\GDKT\GDKT_SO_TIEN_GUI_NGAN_HANG.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTV\GDKT\GDKT_SO_TONG_HOP_NGHIEP_VU.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTV\GDKT\GDKT_UY_NHIEM_CHI.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTV\GDKT\GDKT_SO_NHAT_KY_CHUNG.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_BTV\HDVO\HDVO_BANG_TINH_LAI_KHTV.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTV\HDVO\HDVO_BAO_CAO_THEO_CAN_BO.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTV\HDVO\HDVO_BAO_CAO_THEO_DIA_BAN.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTV\HDVO\HDVO_DANH_SACH_HOAN_TK.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTV\HDVO\HDVO_DANH_SACH_KHTV.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTV\HDVO\HDVO_GIAY_GUI_TIEN.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTV\HDVO\HDVO_SAO_KE_TKCKH.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTV\HDVO\HDVO_SO_PHU_TIEN_GUI.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTV\HDVO\HDVO_SO_THEO_DOI_TK_KHTV.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTV\HDVO\HDVO_SO_TKCKH.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTV\KHTV\KHTV_HO_SO.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTV\KHTV\KHTV_QUYET_DINH.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTV\KHTV\KHTV_THAM_DINH.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTV\NSTL\NSTL_BANG_LUONG.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTV\NSTL\NSTL_CHI_TIEU_THUONG_CB.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTV\NSTL\NSTL_CHI_TIEU_THUONG_DB.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTV\NSTL\NSTL_DANH_SACH_CHUYEN_KHOAN.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTV\NSTL\NSTL_DANH_SACH_NHAN_VIEN.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTV\NSTL\NSTL_PHU_CAP_CTV.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTV\NSTL\NSTL_THE_LUONG.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTV\NSTL\NSTL_THE_THUONG.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTV\NSTL\NSTL_TONG_HOP_CHI_PHI_LUONG.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTV\NSTL\NSTL_HDLD_CHINH_THUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTV\NSTL\NSTL_HDLD_HOC_VIEC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTV\NSTL\NSTL_HDLD_THU_VIEC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTV\QLTS\QLTS_BANG_KHAU_HAO.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTV\QLTS\QLTS_BANG_KIEM_KE_TSCD.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTV\QLTS\QLTS_BIEN_BAN_BAN_GIAO_TSCD.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTV\QLTS\QLTS_SO_CHI_TIET_TSCD.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTV\TDVM\TDVM_BANG_PHAN_BO_LAI_TRA_TRUOC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTV\TDVM\TDVM_DON_VAY_VON.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTV\TDVM\TDVM_DS_DE_NGHI_VAY_VON_CBTD.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTV\TDVM\TDVM_DS_DE_NGHI_VAY_VON_TCN.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTV\TDVM\TDVM_DS_PHAT_VON.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTV\TDVM\TDVM_DS_THU_LAI_VON_MUA_VU.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTV\TDVM\TDVM_DS_THU_TIEN_PHAT_HANH.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTV\TDVM\TDVM_DS_THU_TIEN_VON_TRA_DAN_TK.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTV\TDVM\TDVM_DS_THU_VON_MUA_VU.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTV\TDVM\TDVM_HOP_DONG_VAY_VON.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTV\TDVM\TDVM_LICH_THU_NO.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTV\TDVM\TDVM_PHAN_LOAI_NO_TLDP.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTV\TDVM\TDVM_PHIEU_THAM_KHTV.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTV\TDVM\TDVM_PHU_LUC_HOP_DONG.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTV\TDVM\TDVM_SAO_KE_TH.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTV\TDVM\TDVM_SO_THEO_DOI_KHTV.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTV\TDVM\TDVM_SO_THEO_DOI_NO_RUI_RO.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTV\TDVM\TDVM_SO_THEO_DOI_VON_VAY.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTV\TDVM\TDVM_SO_VON_VAY_TIET_KIEM_KHTV.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_BTV\TDVM\TDVM_XU_LY_NO.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_DC\BCTC\BCTC_BANG_CAN_DOI_TKKT.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_DC\GDKT\GDKT_BANG_CAN_DOI_TKKT.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_DC\GDKT\GDKT_NX_NGOAI_BANG.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_DC\GDKT\GDKT_PHIEU_CHI.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_DC\GDKT\GDKT_PHIEU_KE_TOAN.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_DC\GDKT\GDKT_PHIEU_THU.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_DC\GDKT\GDKT_SO_CAI_TAI_KHOAN.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_DC\GDKT\GDKT_SO_CHI_TIET_TAI_KHOAN.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_DC\GDKT\GDKT_SO_NHAT_KY_CHI.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_DC\GDKT\GDKT_SO_NHAT_KY_CHUNG.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_DC\GDKT\GDKT_SO_NHAT_KY_THU.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_DC\GDKT\GDKT_SO_QUY_TIEN_MAT.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_DC\GDKT\GDKT_SO_TIEN_GUI_NGAN_HANG.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_DC\HDVO\HDVO_BANG_KE_LAI_NHAP_GOC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_DC\HDVO\HDVO_BANG_TINH_LAI_KHTV.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_DC\HDVO\HDVO_BAO_CAO_THEO_CAN_BO.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_DC\HDVO\HDVO_BAO_CAO_THEO_DIA_BAN.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_DC\HDVO\HDVO_DANH_SACH_HOAN_TK.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_DC\HDVO\HDVO_DANH_SACH_KHTV.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_DC\HDVO\HDVO_GIAY_GUI_TIEN.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_DC\HDVO\HDVO_SAO_KE_TKCKH.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_DC\HDVO\HDVO_SO_PHU_TIEN_GUI.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_DC\HDVO\HDVO_SO_THEO_DOI_TK_KHTV.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_DC\TDVM\TDVM_SAO_KE_TH.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_DC\TDVM\TDVM_SAO_KE_VON_TONG_HOP.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_DC\TDVM\TDVM_DS_THU_TIEN_PHAT_HANH.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_DC\TDVM\TDVM_DS_THU_TIEN_VON_TRA_DAN_TK.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_DC\TDVM\TDVM_PHAN_LOAI_NO_TLDP.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_DC\TDVM\TDVM_SAO_KE_VON_DAI_HAN.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_DC\TDVM\TDVM_SAO_KE_VON_NGAN_HAN.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_DC\TDVM\TDVM_SAO_KE_VON_TRUNG_HAN.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_DC\TDVM\TDVM_SO_THEO_DOI_KHTV.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_DC\TDVM\TDVM_SO_THEO_DOI_NO_RUI_RO.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_DC\TDVM\TDVM_SO_THEO_DOI_VON_VAY.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_DC\TDVM\TDVM_XU_LY_NO.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_HVNH\BCTC\BCTC_BANG_CAN_DOI_KE_TOAN.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_HVNH\BCTC\BCTC_BAO_CAO_KET_QUA_HOAT_DONG_KINH_DOANH.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_HVNH\BCTC\BCTC_BANG_CAN_DOI_TKKT.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_HVNH\BCTC\BCTC_LUU_CHUYEN_TIEN_TE.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_HVNH\BCTC\BCTC_THUYET_MINH_TAI_CHINH.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_HVNH\BCTH\BCTH_BAO_CAO_THONG_KE_TONG_HOP.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_HVNH\BCTH\BCTH_BAO_CAO_VAN_HANH.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_HVNH\BCTH\BCTH_FACTSHEET.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_HVNH\BCTK\BCTK_BANG_KE_SO_TIEN_GUI_THUOC_DOI_TUONG_BH.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_HVNH\BCTK\BCTK_BANG_TINH_TOAN_NOP_PHI_BH_TIEN_GUI.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_HVNH\BCTK\BCTK_BAO_CAO_CHO_VAY_KHACH_HANG_VUOT_QUY_DINH.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_HVNH\BCTK\BCTK_BAO_CAO_HOAT_DONG_HUY_DONG_VON.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_HVNH\BCTK\BCTK_BAO_CAO_PHAN_LOAI_NO_TRICH_LAP_DU_PHONG.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_HVNH\BCTK\BCTK_BAO_CAO_SU_DUNG_DU_PHONG_XU_LY_RUI_RO.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_HVNH\BCTK\BCTK_BAO_CAO_THONG_TIN_TD.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_HVNH\BCTK\BCTK_BAO_CAO_THONG_TIN_TS_DAM_BAO_CUA_KHACH_HANG.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_HVNH\BCTK\BCTK_BAO_CAO_TINH_HINH_TY_LE_DAM_BAO_AN_TOAN.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_HVNH\BCTK\BCTK_DU_NO_TD_PHAN_THEO_LOAI_HINH_TO_CHUC.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_HVNH\BCTK\BCTK_DU_NO_TD_PHAN_THEO_NGANH_KINH_TE.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_HVNH\BCTK\BCTK_PHAN_LOAI_TS_CO_RUI_RO.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_HVNH\CICR\CICR_BAO_CAO_THONG_TIN_TD.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_HVNH\CICR\CICR_BAO_CAO_THONG_TIN_TSDB_KH.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_HVNH\GDKT\GDKT_NX_NGOAI_BANG.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_HVNH\GDKT\GDKT_PHIEU_CHI.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_HVNH\GDKT\GDKT_PHIEU_CHUYEN_KHOAN.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_HVNH\GDKT\GDKT_PHIEU_THU.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_HVNH\GDKT\GDKT_SO_CHI_TIET_TAI_KHOAN.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_HVNH\GDKT\GDKT_SO_NHAT_KY_CHI.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_HVNH\GDKT\GDKT_SO_NHAT_KY_CHUNG.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_HVNH\GDKT\GDKT_SO_NHAT_KY_THU.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_HVNH\GDKT\GDKT_SO_QUY_TIEN_MAT.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_HVNH\HDVO\HDVO_BANG_KE_LAI_NHAP_GOC.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_HVNH\HDVO\HDVO_BANG_KE_TINH_LAI_DU_CHI_TIEN_GUI_TK.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_HVNH\HDVO\HDVO_BANG_XAC_NHAN_SO_DU_TIEN_GUI_TK.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_HVNH\HDVO\HDVO_GIAY_GUI_TIEN.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_HVNH\HDVO\HDVO_LAI_SUAT_BINH_QUAN.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_HVNH\HDVO\HDVO_SAO_KE_TIEN_GUI_TK.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_HVNH\HDVO\HDVO_SO_PHU_TIEN_GUI.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_HVNH\HDVO\HDVO_SO_TIET_KIEM.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_HVNH\KHTV\KHTV_CHUYEN_DIA_BAN.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_HVNH\KHTV\KHTV_DANH_GIA_XEP_HANG_NGHEO.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_HVNH\KHTV\KHTV_DANH_SACH_KHACH_HANG_RA_KHOI_CHUONG_TRINH.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_HVNH\KHTV\KHTV_DANH_SACH_KHTV.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_HVNH\KHTV\KHTV_HO_SO_KHACH_HANG_THAM_DINH_THONG_TIN.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_HVNH\KHTV\KHTV_QUYET_DINH_CONG_NHAN_THANH_VIEN.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_HVNH\KHTV\KHTV_THAM_DINH_KHACH_HANG.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_HVNH\TDVM\TDVM_BAO_CAO_CHAM_TRA.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_HVNH\TDVM\TDVM_BAO_CAO_PHAN_LOAI_NO.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_HVNH\TDVM\TDVM_DANH_GIAI_XEP_HANG_KHACH_HANG_CA_NHAN.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_HVNH\TDVM\TDVM_DON_VAY_VON.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_HVNH\TDVM\TDVM_DS_DE_NGHI_VAY_VON.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_HVNH\TDVM\TDVM_PHU_LUC_HOP_DONG.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_HVNH\TDVM\TDVM_DS_PHAT_VON.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_HVNH\TDVM\TDVM_DS_THU_TIEN_PHAT_HANH.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_HVNH\TDVM\TDVM_DS_THU_TIEN_VON_TRA_DAN_TK.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_HVNH\TDVM\TDVM_HOP_DONG_VAY_VON.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_HVNH\TDVM\TDVM_MAU_BIEU_XEP_HANG_TIN_DUNG_CA_NHAN.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_HVNH\TDVM\TDVM_SAO_KE_VON_DAI_HAN.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_HVNH\TDVM\TDVM_SAO_KE_VON_NGAN_HAN.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_HVNH\TDVM\TDVM_SAO_KE_VON_TRUNG_HAN.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_HVNH\TDVM\TDVM_THAM_DINH_TIN_DUNG.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_PHUTHO\BCTH\BCTH_BAO_CAO_SO_THANH_VIEN.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_PHUTHO\BCTH\BCTH_SO_TONG_HOP_VAY_VON.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_PHUTHO\BCTH\BCTH_SO_TONG_HOP_TIET_KIEM.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_PHUTHO\BCTH\BCTH_SO_TONG_HOP_TUONG_TRO.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_PHUTHO\BCTH\BCTH_BAO_CAO_LAI_VON_VAY.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_PHUTHO\TDVM\TDVM_BAO_CAO_NO_QUA_HAN.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_PHUTHO\TDVM\TDVM_DS_XET_DUYET_THANH_VIEN_VAY_VON.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_PHUTHO\TDVM\TDVM_DS_THU_TIEN_VON_TRA_DAN_TK.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_PHUTHO\TDVM\TDVM_KE_HOACH_TRA_NO.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_PHUTHO\TDVM\TDVM_DON_VAY_VON.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_PHUTHO\TDVM\TDVM_HOP_DONG_VAY_VON.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_PHUTHO\TDVM\TDVM_PHU_LUC_HOP_DONG.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_QUANGBINH\BCTC\BCTC_KET_QUA_HOAT_DONG.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_QUANGBINH\BCTH\BCTH_BAO_CAO_TIN_DUNG_THEO_CBTD.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_QUANGBINH\BCTH\BCTH_BC_TIEN_DO_THEO_NGUON_TOAN_HE_THONG.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_QUANGBINH\BCTH\BCTH_HOAT_DONG.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_QUANGBINH\BCTH\BCTH_BAO_CAO_TIN_DUNG_THEO_XA.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_QUANGBINH\GDKT\GDKT_BAO_CAO_THU_NHAP_THEO_NGUON.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_QUANGBINH\GDKT\GDKT_BAO_CAO_CHI_PHI_THEO_NGUON.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_QUANGBINH\HDVO\HDVO_BAO_CAO_THEO_CAN_BO.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_QUANGBINH\HDVO\HDVO_BAO_CAO_THEO_DIA_BAN.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_QUANGBINH\HDVO\HDVO_DANH_SACH_KHTV.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_QUANGBINH\HDVO\HDVO_DS_HUY_DONG_VON_CAP_CUM_NHOM.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_QUANGBINH\HDVO\HDVO_DS_HUY_DONG_VON_CAP_XA.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_QUANGBINH\HDVO\HDVO_SO_THEO_DOI_TK_KHTV.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_QUANGBINH\KHTV\KHTV_BAN_KHAO_SAT_HOAN_CANH_KTXH.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_QUANGBINH\TDVM\TDVM_BAO_CAO_KHACH_HANG_TRA_TRUOC.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_QUANGBINH\TDVM\TDVM_BAO_CAO_KHACH_HANG_CHAM_TRA.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_QUANGBINH\TDVM\TDVM_BANG_THEO_DOI_NO_QUA_HAN.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_QUANGBINH\TDVM\TDVM_DON_XIN_VAY_VON_TRA_DAN_VA_BO_SUNG.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_QUANGBINH\TDVM\TDVM_DON_XIN_VAY_VON_VAY_KHAC.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_QUANGBINH\TDVM\TDVM_DS_PHAT_VON.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_QUANGBINH\TDVM\TDVM_DS_THU_TIEN_VON_TRA_DAN_TK.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_QUANGBINH\TDVM\TDVM_HOP_DONG_VAY_VON_TRA_DAN_VA_BO_SUNG.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_QUANGBINH\TDVM\TDVM_HOP_DONG_VAY_VON_VAY_KHAC.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_QUANGBINH\TDVM\TDVM_SAO_KE_VON_DAI_HAN.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_QUANGBINH\TDVM\TDVM_SAO_KE_VON_NGAN_HAN.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_QUANGBINH\TDVM\TDVM_SAO_KE_VON_TONG_HOP.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_QUANGBINH\TDVM\TDVM_SAO_KE_VON_TRUNG_HAN.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_QUANGBINH\TDVM\TDVM_SO_TIN_DUNG_CAP_CUM.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_QUANGBINH\TDVM\TDVM_SO_TIN_DUNG_CAP_XA.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="..\..\Presentation.Process\app.config">
+      <Link>app.config</Link>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="_BTRE\NSTL\" />
+    <Folder Include="_BTRE\QLTS\" />
+    <Folder Include="_DC\BCTH\" />
+    <Folder Include="_DC\KHTV\" />
+    <Folder Include="_DC\NSTL\" />
+    <Folder Include="_DC\QLTS\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

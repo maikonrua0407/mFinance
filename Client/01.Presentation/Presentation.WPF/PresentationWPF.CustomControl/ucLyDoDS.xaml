@@ -1,0 +1,51 @@
+﻿<UserControl x:Class="PresentationWPF.CustomControl.ucLyDoDS"
+            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PresentationWPF.CustomControl"
+             xmlns:ribbon="http://schemas.microsoft.com/winfx/2006/xaml/presentation/ribbon" 
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:telerikMask="clr-namespace:Telerik.Windows.Controls.MaskedInput;assembly=Telerik.Windows.Controls.Input"
+             xmlns:telerikGrid="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.GridView"
+             mc:Ignorable="d" 
+             xmlns:my="clr-namespace:System;assembly=mscorlib"
+             d:DesignHeight="200" d:DesignWidth="600">
+    <UserControl.CommandBindings>
+        <CommandBinding CanExecute="SubmitCommand_CanExecute" Executed="SubmitCommand_Executed" Command="{x:Static local:ucLyDoDS.SubmitCommand}">
+        </CommandBinding>
+        <CommandBinding CanExecute="HelpCommand_CanExecute" Executed="HelpCommand_Executed" Command="{x:Static local:ucLyDoDS.HelpCommand}">
+        </CommandBinding>
+        <CommandBinding CanExecute="CloseCommand_CanExecute" Executed="CloseCommand_Executed" Command="{x:Static local:ucLyDoDS.CloseCommand}">
+        </CommandBinding>
+    </UserControl.CommandBindings>
+    <Grid Name="grMain">
+        <Grid.ContextMenu>
+            <ContextMenu Name="mnuMain"></ContextMenu>
+        </Grid.ContextMenu>
+        <DockPanel Name="dockMain">
+            <DockPanel HorizontalAlignment="Stretch" DockPanel.Dock="Top" Margin="3,3,0,3" LastChildFill="False" Name="docToolbar">
+                <WrapPanel Name="Toolbar">
+                    <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbClose" DockPanel.Dock="Left" Label="{DynamicResource U.DungChung.Button.Dong}"  SmallImageSource="/Utilities.Common;component/Images/Action/close.png" Style="{DynamicResource RibbonButton}" Click="tlbHotKey_Click"/>
+                </WrapPanel>
+            </DockPanel>
+            <GroupBox DockPanel.Dock="Top" Header="{DynamicResource U.CustomControl.ucLyDoDS.GrbThongTin}" Margin="3" Padding="10,5,0,5" Name="grbThongTinTinDung">
+                <Grid>
+                    <telerik:RadGridView Name="raddgrCapPheDuyet"  MinHeight="100" MaxHeight="700" ColumnWidth="*" ShowColumnFooters="True" ShowGroupPanel="False" SelectionMode="Extended"
+                AutoGenerateColumns="False" CanUserFreezeColumns="False" RowIndicatorVisibility="Collapsed"  TabIndex="14" >
+                        <telerik:RadGridView.Columns>
+                            <local:MyColumn Header="{DynamicResource U.DungChung.STT}" Width="40" MinWidth="40" IsFilterable="False" IsReadOnly="True"/>
+                            <telerik:GridViewDataColumn Header="ID" Width="0" IsReadOnly="True" IsVisible="False" />
+                            <telerik:GridViewDataColumn Header="ID_TCHIEU" Width="0" IsReadOnly="True" IsVisible="False" />
+                            <telerik:GridViewDataColumn Header="{DynamicResource U.CustomControl.ucLyDoDS.MaThamChieu}" DataMemberBinding="{Binding MA_TCHIEU}" Width="100" IsReadOnly="True" />
+                            <local:ColumnsComboBoxv1 Header="{DynamicResource U.CustomControl.ucLyDoDS.PheDuyetCapTD}" STruyVan="COMBOBOX_CAP_TU_CHOI" GiaTriDataMember="MA_CAP_PHE_DUYET" UniqueName="ucCapPheDuyet" IsVisible="True" x:Name="ucCapPheDuyet"/>
+                            <telerik:GridViewDataColumn Header="{DynamicResource U.CustomControl.ucLyDoDS.HanMucPheDuyet}" IsReadOnly="True" DataMemberBinding="{Binding MUC_PHE_DUYET}" DataFormatString="{}{0:N0}" Name="ucHanMucPheDuyet" UniqueName="MUC_PHE_DUYET"/>
+                            <local:ColumnsComboBoxv1 Header="{DynamicResource U.CustomControl.ucLyDoDS.LoaiTien}" Width="*" IsReadOnly="True" MinWidth="100" STruyVan="COMBOBOX_TIENTE" GiaTriDataMember="LOAI_TIEN" UniqueName="LOAI_TIEN"/>
+                            <telerik:GridViewDataColumn Header="{DynamicResource U.CustomControl.ucLyDoDS.LyDo}" DataMemberBinding="{Binding LY_DO}" Name="ucLyDo" UniqueName="LY_DO"/>
+                        </telerik:RadGridView.Columns>
+                    </telerik:RadGridView>
+                </Grid>
+            </GroupBox>
+        </DockPanel>
+    </Grid>
+</UserControl>

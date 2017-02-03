@@ -1,0 +1,280 @@
+﻿<UserControl x:Class="PresentationWPF.HuyDongVon.GiaoDich.ucTraLaiTienGui"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:pcc="clr-namespace:PresentationWPF.CustomControl;assembly=PresentationWPF.CustomControl"
+             xmlns:ribbon="clr-namespace:Microsoft.Windows.Controls.Ribbon;assembly=RibbonControlsLibrary"
+             xmlns:my="clr-namespace:System;assembly=mscorlib"
+             mc:Ignorable="d" 
+             d:DesignHeight="768" d:DesignWidth="1024">
+    <UserControl.Resources>
+        <DataTemplate x:Key="HeaderTemplate" DataType="{x:Type my:String}">
+            <Grid HorizontalAlignment="Left" Height="45">
+                <TextBlock Text="{Binding}" TextWrapping="Wrap" VerticalAlignment="Center"/>
+            </Grid>
+        </DataTemplate>
+        <my:String x:Key="U.DungChung.TrangThaiBanGhi">Trạng thái bản ghi:</my:String>
+        <my:String x:Key="U.DungChung.NgayLap">Ngày lập:</my:String>
+        <my:String x:Key="U.DungChung.NguoiLap">Người lập:</my:String>
+        <my:String x:Key="U.DungChung.NgayCapNhat">Ngày cập nhật:</my:String>
+        <my:String x:Key="U.DungChung.NguoiCapNhat">Người cập nhật:</my:String>
+        <my:String x:Key="U.DungChung.HeaderDataColumn.STT">STT</my:String>
+        <my:String x:Key="U.DungChung.ThongTinKiemSoat">Thông tin kiểm soát</my:String>
+        <my:String x:Key="U.DungChung.TrangThaiNghiepVu">Trạng thái:</my:String>
+        <my:String x:Key="U.DungChung.TrangThaiNghiepVu.ChoDuyet">Chờ duyệt</my:String>
+        <my:String x:Key="U.DungChung.Button.Luu">Lưu</my:String>
+        <my:String x:Key="U.DungChung.Button.Xoa">Xóa</my:String>
+        <my:String x:Key="U.DungChung.Button.Duyet">Duyệt</my:String>
+        <my:String x:Key="U.DungChung.Button.Tuchoi">Từ chối</my:String>
+        <my:String x:Key="U.DungChung.Button.Thoaiduyet">Thoái duyệt</my:String>
+        <my:String x:Key="U.DungChung.Button.XuatExcel">Xuất Excel</my:String>
+        <my:String x:Key="U.DungChung.Button.Dong">Đóng</my:String>
+        <my:String x:Key="U.DungChung.CheckBox.Themnhieulan">Thêm nhiều lần</my:String>
+        <my:String x:Key="U.DungChung.ThongTinKiemSoat.TrangThaiBanGhi">Trạng thái bản ghi</my:String>
+        <my:String x:Key="U.DungChung.ThongTinKiemSoat.NgayLapGD">Ngày lập giao dịch:</my:String>
+        <my:String x:Key="U.DungChung.ThongTinKiemSoat.NgayLap">Ngày lập:</my:String>
+        <my:String x:Key="U.DungChung.ThongTinKiemSoat.NguoiLap">Người lập:</my:String>
+        <my:String x:Key="U.DungChung.ThongTinKiemSoat.NgayCapNhat">Ngày cập nhật:</my:String>
+        <my:String x:Key="U.DungChung.ThongTinKiemSoat.NguoiCapNhat">Người cập nhật:</my:String>
+    </UserControl.Resources>
+    <Grid>
+        <DockPanel>
+            <Grid DockPanel.Dock="Top" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="19*" Name="colToolbar"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <DockPanel Margin="3,3,0,3">
+                    <WrapPanel Orientation="Horizontal" Width="{Binding ElementName=colToolbar, Path=ActualWidth,Converter={pcc:MathConverter}, ConverterParameter=x-120}">
+                        <ribbon:RibbonButton Margin="2" Name="tblSave" DockPanel.Dock="Left" Label="{DynamicResource U.DungChung.Button.Luu}" ToolTip="" SmallImageSource="/Utilities.Common;component/Images/Action/add.ico" BorderBrush="#FFC4B0B0" MouseOverBackground="#FFF2D4C0" MouseOverBorderBrush="#FFEF9468" />
+                        <ribbon:RibbonButton Margin="2" Name="tblPrint" DockPanel.Dock="Left" Label="{DynamicResource U.DungChung.Button.InChungTu}" ToolTip="" SmallImageSource="/Utilities.Common;component/Images/Action/add.ico" BorderBrush="#FFC4B0B0" MouseOverBackground="#FFF2D4C0" MouseOverBorderBrush="#FFEF9468" />
+                        <ribbon:RibbonButton Margin="2" Name="tblListMoney" DockPanel.Dock="Left" Label="{DynamicResource U.DungChung.Button.BangKeTM}" ToolTip=""  SmallImageSource="/Utilities.Common;component/Images/Action/remove.ico" BorderBrush="#FFC4B0B0" MouseOverBackground="#FFF2D4C0" MouseOverBorderBrush="#FFEF9468"/>
+                        <ribbon:RibbonButton Margin="2" Name="tblRemove" DockPanel.Dock="Left" Label="{DynamicResource U.DungChung.Button.Xoa}" ToolTip=""  SmallImageSource="/Utilities.Common;component/Images/Action/remove.ico" BorderBrush="#FFC4B0B0" MouseOverBackground="#FFF2D4C0" MouseOverBorderBrush="#FFEF9468"/>
+                        <ribbon:RibbonButton Margin="2" Name="tblApproved" DockPanel.Dock="Left" Label="{DynamicResource U.DungChung.Button.Duyet}" ToolTip=""  SmallImageSource="/Utilities.Common;component/Images/Action/ok.ico" BorderBrush="#FFC4B0B0" MouseOverBackground="#FFF2D4C0" MouseOverBorderBrush="#FFEF9468"/>
+                        <ribbon:RibbonButton Margin="2" Name="tblReject" DockPanel.Dock="Left" Label="{DynamicResource U.DungChung.Button.Tuchoi}" ToolTip=""  SmallImageSource="/Utilities.Common;component/Images/Action/remove.ico" BorderBrush="#FFC4B0B0" MouseOverBackground="#FFF2D4C0" MouseOverBorderBrush="#FFEF9468"/>
+                        <ribbon:RibbonButton Margin="2" Name="tblInApproved" DockPanel.Dock="Left" Label="{DynamicResource U.DungChung.Button.Thoaiduyet}" ToolTip=""  SmallImageSource="/Utilities.Common;component/Images/Action/cancel.ico" BorderBrush="#FFC4B0B0" MouseOverBackground="#FFF2D4C0" MouseOverBorderBrush="#FFEF9468"/>
+                        <ribbon:RibbonButton Margin="2" Name="tblExport" DockPanel.Dock="Left" Label="{DynamicResource U.DungChung.Button.XuatExcel}" ToolTip=""  SmallImageSource="/Utilities.Common;component/Images/Action/ok.ico" BorderBrush="#FFC4B0B0" MouseOverBackground="#FFF2D4C0" MouseOverBorderBrush="#FFEF9468"/>
+                        <ribbon:RibbonButton Margin="2" Name="tblClose" DockPanel.Dock="Left" Label="{DynamicResource U.DungChung.Button.Dong}" ToolTip=""  SmallImageSource="/Utilities.Common;component/Images/Action/exit.ico" BorderBrush="#FFC4B0B0" MouseOverBackground="#FFF2D4C0" MouseOverBorderBrush="#FFEF9468"/>
+                    </WrapPanel>
+                    <CheckBox Margin="0,0,3,5" VerticalAlignment="Bottom" DockPanel.Dock="Right" Content="{DynamicResource U.DungChung.CheckBox.Themnhieulan}" Height="16" Name="cbMultiAdd" FlowDirection="RightToLeft" />
+                </DockPanel>
+            </Grid>
+            <Grid Name="grMain">
+                <telerik:RadTabControl Name="tabGuiThemTGui" TabStripPlacement="Left" TabOrientation="Vertical" Align="Right">
+                    <telerik:RadTabItem Header="Thông tin chung" HeaderTemplate="{StaticResource HeaderTemplate}" HorizontalContentAlignment="Left" Height="{Binding ElementName=grMain, Path=ActualWidth,
+                Converter={pcc:MathConverter}, ConverterParameter=x/5}" TabIndex="0" IsSelected="True">
+                        <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="19*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <StackPanel Margin="5">
+                                    <Border BorderThickness="1" CornerRadius="4" Height="50" Padding="5" BorderBrush="LightGray" DockPanel.Dock="Top">
+                                        <Grid VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,10,0,0">
+                                            <StackPanel Orientation="Horizontal">
+                                                <Label Name="lblLabelTrangThai" HorizontalAlignment="Left" FontSize="14">Trạng thái:</Label>
+                                                <Label Name="lblTrangThai" FontSize="14" FontStyle="Italic">Chờ duyệt</Label>
+                                            </StackPanel>
+                                        </Grid>
+                                    </Border>
+                                    <GroupBox Header="Thông tin số tiền gửi" Padding="10,10,0,0" DockPanel.Dock="Top">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="1.2*" />
+                                                <ColumnDefinition Width="2*" />
+                                                <ColumnDefinition Width="1.2*" />
+                                                <ColumnDefinition Width="2*" />
+                                                <ColumnDefinition Width="1.2*" />
+                                                <ColumnDefinition Width="2*" />
+                                            </Grid.ColumnDefinitions>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="*" />
+                                                <RowDefinition Height="*" />
+                                                <RowDefinition Height="*" />
+                                                <RowDefinition Height="*" />
+                                            </Grid.RowDefinitions>
+                                            <Label Margin="10,5,0,0" Content="Số GD:" Height="28" VerticalAlignment="Top" />
+                                            <StackPanel Orientation="Horizontal" Margin="10,5,0,0"  Grid.Row="1" Height="28" VerticalAlignment="Top">
+                                                <Label Content="Số sổ tiền gửi:"/>
+                                                <Label Margin="-5,0,0,0" Content="(*)" Foreground="Red" />
+                                            </StackPanel>
+                                            <Label Content="Số dư:" Margin="10,5,0,0" Grid.Row="2" Height="28" VerticalAlignment="Top" />
+                                            <Label Content="Loại tiền:" Margin="10,5,0,0" Grid.Row="2" Grid.Column="2" Height="28" VerticalAlignment="Top" />
+                                            <Label Content="Kỳ hạn:" Margin="10,5,0,0" Grid.Row="3" Height="28" VerticalAlignment="Top" />
+                                            <Label Content="Ngày mở:" Margin="10,5,0,0" Grid.Row="3" Grid.Column="2" Height="26" VerticalAlignment="Top" />
+                                            <Label Content="Lãi suất:" Margin="10,5,0,0" Grid.Row="2" Grid.Column="4" Height="28" VerticalAlignment="Top" />
+                                            <Label Content="Ngày đáo hạn:" Margin="10,5,0,0" Grid.Row="3" Grid.Column="4" Height="26" VerticalAlignment="Top" />
+                                            <TextBox Name="txtSoGD" Grid.Column="1" Grid.ColumnSpan="5" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="26" Margin="0,7,5,0" />
+                                            <TextBox Name="txtSoSoTGui" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="5" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="26" Margin="0,7,40,0" />
+                                            <Button Name="btnSoSoTGui" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="5" HorizontalAlignment="Right" Margin="0,7,5,0" Height="26" Width="30" VerticalAlignment="Top" Content="F3"  />
+                                            <TextBox Name="txtSoDu" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="1" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="26" Margin="0,7,5,0" />
+                                            <TextBox Name="txtLoaiTien" Grid.Row="2" Grid.Column="3" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="26" Margin="0,7,5,0" />
+                                            <TextBox Name="txtKyHan" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="26" Margin="0,7,5,0" />
+                                            <telerik:RadMaskedDateTimeInput Name="telraddtNgayMo" Grid.Row="3" Grid.Column="3" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="26" Margin="0,5,5,0" IsClearButtonVisible="False" />
+                                            <TextBox Name="txtLaiSuat" Grid.Row="2" Grid.Column="5" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="26" Margin="0,7,5,0" />
+                                            <telerik:RadMaskedDateTimeInput Name="telraddtNgayDaoHan" Grid.Row="3" Grid.Column="5" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="26" Margin="0,5,5,0" IsClearButtonVisible="False" />
+                                        </Grid>
+                                    </GroupBox>
+                                    <GroupBox Header="Thông tin khách hàng" Padding="10,10,0,0" DockPanel.Dock="Top">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="1.2*" />
+                                                <ColumnDefinition Width="2*" />
+                                                <ColumnDefinition Width="1.2*" />
+                                                <ColumnDefinition Width="2*" />
+                                                <ColumnDefinition Width="1.2*" />
+                                                <ColumnDefinition Width="2*" />
+                                            </Grid.ColumnDefinitions>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="*" />
+                                                <RowDefinition Height="*" />
+                                                <RowDefinition Height="*" />
+                                                <RowDefinition Height="*" />
+                                            </Grid.RowDefinitions>
+                                            <Label Margin="10,5,0,0" Content="Tên khách hàng:" Height="28" VerticalAlignment="Top" />
+                                            <StackPanel Orientation="Horizontal" Margin="10,5,0,0"  Grid.Row="1" Height="28" VerticalAlignment="Top">
+                                                <Label Content="Địa chỉ:"/>
+                                            </StackPanel>
+                                            <Label Content="Số CMT:" Margin="10,5,0,0" Grid.Row="2" Height="28" VerticalAlignment="Top" />
+                                            <Label Content="Nơi cấp:" Margin="10,5,0,0" Grid.Row="2" Grid.Column="4" Height="28" VerticalAlignment="Top" />
+                                            <Label Content="Cụm:" Margin="10,5,0,0" Grid.Row="3" Height="28" VerticalAlignment="Top" />
+                                            <Label Content="Ngày cấp:" Margin="10,5,0,0" Grid.Row="2" Grid.Column="2" Height="28" VerticalAlignment="Top" />
+                                            <Label Content="Số điện thoại:" Margin="10,5,0,0" Grid.Row="3" Grid.Column="4" Height="28" VerticalAlignment="Top" />
+                                            <Label Content="Nhóm:" Margin="10,5,0,0" Grid.Row="3" Grid.Column="2" Height="28" VerticalAlignment="Top" />
+                                            <TextBox Name="txtTenKhachHang" Grid.Column="1" Grid.ColumnSpan="5" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="26" Margin="0,7,5,0" />
+                                            <TextBox Name="txtDiaChi" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="5" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="26" Margin="0,7,5,0" />
+                                            <TextBox Name="txtSoCMT" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="26" Margin="0,7,5,0" />
+                                            <TextBox Name="txtNoiCap" Grid.Row="2" Grid.Column="5" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="26" Margin="0,7,6,0" />
+                                            <TextBox Name="txtCum" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="26" Margin="0,7,5,0" />
+                                            <telerik:RadMaskedDateTimeInput Name="teldtNgayCap" Grid.Row="2" Grid.Column="3" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="26" Margin="0,5,5,0" IsClearButtonVisible="False" />
+                                            <TextBox Name="txtSoDienThoai" Grid.Row="3" Grid.Column="5" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="26" Margin="0,7,5,0" />
+                                            <TextBox Name="txtNhom" Grid.Row="3" Grid.Column="3" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="26" Margin="0,7,5,0" />
+                                        </Grid>
+                                    </GroupBox>
+                                    <GroupBox Header="Thông tin giao dịch" Padding="10,10,0,0" DockPanel.Dock="Top">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="1.2*" />
+                                                <ColumnDefinition Width="2*" />
+                                                <ColumnDefinition Width="1.2*" />
+                                                <ColumnDefinition Width="2*" />
+                                                <ColumnDefinition Width="1.2*" />
+                                                <ColumnDefinition Width="2*" />
+                                            </Grid.ColumnDefinitions>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="*" />
+                                                <RowDefinition Height="*" />
+                                                <RowDefinition Height="*" />
+                                                <RowDefinition Height="*" />
+                                                <RowDefinition Height="*" />
+                                                <RowDefinition Height="*" />
+                                                <RowDefinition Height="*" />
+                                            </Grid.RowDefinitions>
+                                            <Label Margin="10,5,0,0" Content="Hình thức giao dịch:" Height="28" VerticalAlignment="Top" />
+                                            <Label Margin="10,5,0,0" Content="Kỳ trả lãi:" Grid.Column="0" Grid.Row="1" Height="28" VerticalAlignment="Top" />
+                                            <Label Margin="10,5,0,0" Content="Từ ngày:" Grid.Column="2" Grid.Row="1" Height="28" VerticalAlignment="Top" />
+                                            <Label Margin="10,5,0,0" Content="Đến ngày:" Grid.Column="4" Grid.Row="1" Height="28" VerticalAlignment="Top" />
+                                            <Label Margin="10,5,0,0" Content="Lãi tính được:" Grid.Column="0" Grid.Row="2" Height="28" VerticalAlignment="Top" />
+                                            <Label Margin="10,5,0,0" Content="Lãi đã trả:" Grid.Column="2" Grid.Row="2" Height="28" VerticalAlignment="Top" />
+                                            <Label Margin="10,5,0,0" Content="Lãi dự chi:" Grid.Column="4" Grid.Row="2" Height="28" VerticalAlignment="Top" />
+                                            <Label Margin="10,5,0,0" Content="Tiền mặt:" Grid.Column="0" Grid.Row="3" Height="28" VerticalAlignment="Top" />
+                                            <Label Margin="10,5,0,0" Content="Chuyển khoản:" Grid.Column="2" Grid.Row="3" Height="28" VerticalAlignment="Top" />
+                                            <Label Margin="10,5,0,0" Content="Tổng tiền:" Grid.Column="4" Grid.Row="3" Height="28" VerticalAlignment="Top" />
+                                            <Label Margin="10,5,0,0" Content="Tài khoản KH:" Grid.Column="0" Grid.Row="4" Height="28" VerticalAlignment="Top" />
+                                            <Label Margin="10,5,0,0" Content="Tên tài khoản:" Grid.Column="2" Grid.Row="4" Height="28" VerticalAlignment="Top" />
+                                            <Label Margin="10,5,0,0" Content="Tài khoản NB:" Grid.Column="0" Grid.Row="5" Height="28" VerticalAlignment="Top" />
+                                            <Label Margin="10,5,0,0" Content="Tên tài khoản:" Grid.Column="2" Grid.Row="5" Height="28" VerticalAlignment="Top" />
+                                            <Label Margin="10,5,0,0" Content="Diễn giải:" Grid.Column="0" Grid.Row="6" Height="28" VerticalAlignment="Top" />
+                                            
+                                            <ComboBox Name="cmbHinhThuc" Grid.Column="1" Grid.ColumnSpan="5" Margin="0,5,5,0" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="26" />
+                                            <telerik:RadMaskedNumericInput Name="telradtxtKyTraLai" Grid.Column="1" Grid.Row="1" Margin="0,5,5,0" Mask="#2" IsClearButtonVisible="False" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="26" />
+                                            <telerik:RadMaskedDateTimeInput Name="telraddtTuNgay" Grid.Column="3" Grid.Row="1" Margin="0,5,5,0" IsClearButtonVisible="False" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="26" />
+                                            <telerik:RadMaskedDateTimeInput Name="telraddtDenNgay" Grid.Column="5" Grid.Row="1" Margin="0,5,5,0" IsClearButtonVisible="False" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="26" />
+                                            <telerik:RadMaskedNumericInput Name="teltxtLaiTinhDuoc" Grid.Column="1" Grid.Row="2" Margin="0,5,5,0" Mask="#15" IsClearButtonVisible="False" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="26" />
+                                            <telerik:RadMaskedNumericInput Name="teltxtLaiDaTra" Grid.Column="3" Grid.Row="2" Margin="0,5,5,0" Mask="#15" IsClearButtonVisible="False" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="26" />
+                                            <telerik:RadMaskedNumericInput Name="teltxtLaiDuChi" Grid.Column="5" Grid.Row="2" Margin="0,5,5,0" Mask="#15" IsClearButtonVisible="False" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="26" />
+                                            <telerik:RadMaskedNumericInput Name="teltxtTienMat" Grid.Column="1" Grid.Row="3" Margin="0,5,5,0" Mask="#15" IsClearButtonVisible="False" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="26" />
+                                            <telerik:RadMaskedNumericInput Name="teltxtChuyenKhoan" Grid.Column="3" Grid.Row="3" Margin="0,5,5,0" Mask="#15" IsClearButtonVisible="False" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="26" />
+                                            <telerik:RadMaskedNumericInput Name="teltxtTongTien" Grid.Column="5" Grid.Row="3" Margin="0,5,5,0" Mask="#15" IsClearButtonVisible="False" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="26" />
+                                            <TextBox Name="txtTaiKhoanKH" Grid.Column="1" Grid.Row="4" Margin="0,7,40,0" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="26" />
+                                            <Button Name="btnTaiKhoanKH" Content="F3" Grid.Column="1" Grid.Row="4" Margin="0,7,5,0" HorizontalAlignment="Right" VerticalAlignment="Top" Width="30" Height="26" />
+                                            <TextBox Name="txtTenTaiKhoanKH" Grid.Column="3" Grid.Row="4" Grid.ColumnSpan="3"  Margin="0,7,5,0" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="26" />
+                                            <TextBox Name="txtTaiKhoanNB" Grid.Column="1" Grid.Row="5" Margin="0,7,40,0" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="26" />
+                                            <Button Name="btnTaiKhoanNB" Content="F3" Grid.Column="1" Grid.Row="5" Margin="0,7,5,0" HorizontalAlignment="Right" VerticalAlignment="Top" Width="30" Height="26" />
+                                            <TextBox Name="txtTenTaiKhoanNB" Grid.Column="3" Grid.Row="5" Grid.ColumnSpan="3"  Margin="0,7,5,0" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="26" />
+                                            <TextBox Name="txtDienGiai" Grid.Column="1" Grid.Row="6" Grid.ColumnSpan="5" Margin="0,7,5,0" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="26" />
+                                        </Grid>
+                                    </GroupBox>
+                                    <GroupBox Header="Thông tin phân bổ" Padding="10,10,0,0" DockPanel.Dock="Top">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="1.2*" />
+                                                <ColumnDefinition Width="2*" />
+                                                <ColumnDefinition Width="1.2*" />
+                                                <ColumnDefinition Width="2*" />
+                                                <ColumnDefinition Width="1.2*" />
+                                                <ColumnDefinition Width="2*" />
+                                            </Grid.ColumnDefinitions>
+                                            <Label Content="Phân bổ chi phí:" />
+                                            <Label Content="Số tiền PB:" Grid.Column="2" />
+                                            <CheckBox Name="chkPhanBoChiPhi" Content="Không phân bổ chi phí" Grid.Column="1" Margin="0,5,5,0" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="26"/>
+                                            <telerik:RadMaskedNumericInput Name="telradtxtChiPhiCPB" Grid.Column="3" Margin="2,0,5,0" Mask="#15" IsClearButtonVisible="False" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="26" />
+                                        </Grid>
+                                    </GroupBox>
+                                </StackPanel>
+                            </Grid>
+                        </ScrollViewer>
+                    </telerik:RadTabItem>
+                    <telerik:RadTabItem Header="{DynamicResource U.DungChung.ThongTinKiemSoat}" HeaderTemplate="{DynamicResource HeaderTemplate}" HorizontalContentAlignment="Left" Height="{Binding ElementName=grMain, Path=ActualWidth,
+                Converter={pcc:MathConverter}, ConverterParameter=x/5}"  TabIndex="3">
+                        <Grid Margin="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="19*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <StackPanel Orientation="Vertical">
+                                <GroupBox Header="Trạng thái bản ghi">
+                                    <Grid Margin="10,10,0,0">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*" />
+                                        </Grid.RowDefinitions>
+                                        <Grid Grid.Column="0" Grid.Row="0">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="2*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="*"/>
+                                            </Grid.RowDefinitions>
+                                            <Label Content="{DynamicResource U.DungChung.ThongTinKiemSoat.TrangThaiBanGhi}" Margin="10,5,0,0" Grid.Column="0" Grid.Row="0"/>
+                                            <TextBox Name="txtTrangThai" Grid.Column="1" Margin="0,7,6,0" Height="26" VerticalAlignment="Top" />
+                                            <Label Content="{DynamicResource U.DungChung.ThongTinKiemSoat.NgayLap}" Margin="10,5,0,0" Grid.Column="0" Grid.Row="1"/>
+                                            <telerik:RadMaskedDateTimeInput Name="raddtNgayNhap" Grid.Column="1" Grid.Row="1" Margin="0,5,6,0" Mask="dd/MM/yyyy" AcceptsReturn="False" Height="26" VerticalAlignment="Top" HorizontalAlignment="Stretch" IsClearButtonVisible="False" />
+                                            <Label Content="{DynamicResource U.DungChung.ThongTinKiemSoat.NguoiLap}" Margin="10,5,0,0" Grid.Column="0" Grid.Row="2"/>
+                                            <TextBox Name="txtNguoiLap" Margin="0,7,6,0" Height="26" VerticalAlignment="Top"  Grid.Column="1" Grid.Row="2"/>
+                                            <Label Content="{DynamicResource U.DungChung.ThongTinKiemSoat.NgayCapNhat}" Margin="10,5,0,0" Grid.Column="0" Grid.Row="3"/>
+                                            <telerik:RadMaskedDateTimeInput Name="raddtNgayCNhat" Height="26" VerticalAlignment="Top" Grid.Column="1" Grid.Row="3" Mask="dd/MM/yyyy" IsClearButtonVisible="False" AcceptsReturn="True"  Margin="0,5,6,0" HorizontalAlignment="Stretch" />
+                                            <Label Content="{DynamicResource U.DungChung.ThongTinKiemSoat.NguoiCapNhat}" Margin="10,5,0,0" Grid.Column="0" Grid.Row="4"/>
+                                            <TextBox Name="txtNguoiCapNhat" Margin="0,7,5,0" Height="26" VerticalAlignment="Top" Grid.Column="1" Grid.Row="4"/>
+                                        </Grid>
+                                    </Grid>
+                                </GroupBox>
+                            </StackPanel>
+                        </Grid>
+                    </telerik:RadTabItem>
+                </telerik:RadTabControl>
+            </Grid>
+        </DockPanel>
+    </Grid>
+</UserControl>

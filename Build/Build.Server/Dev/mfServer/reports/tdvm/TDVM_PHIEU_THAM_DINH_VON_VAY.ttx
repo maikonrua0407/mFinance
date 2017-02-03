@@ -1,0 +1,79 @@
+MaChiNhanh	string	255
+TenChiNhanh	string	255
+DiaChiChiNhanh	string	255
+MaPhongGD	string	255
+TenPhongGD	string	255
+MaCum	string	255
+TenCum	string	255
+MaNhom	string	255
+TenNhom	string	255
+SoPhieu	string	255
+MaKhachHang	string	255
+TenKhachHang	string	255
+NgayGiaNhap	string	255
+SoLanChamTra	number
+LyDoChamTra	string	255
+QHChuaGD	number
+QHDaGD	number
+QHNoQuaHan	number
+QHGiaHanNo	number
+QHDungHan	number
+ThuTuCoSan	number
+ThuTuLua	number
+ThuTuHoaMau	number
+ThuTuLamNghiep	number
+ThuTuChanNuoi	number
+ThuTuThuySan	number
+ThuTuDichVu	number
+ThuTuLuong	number
+ThuTuVay	number
+ThuKhac	number
+ThuNhapBQHo	number
+ThuNhapBQKhau	number
+ChiSXKD	number
+ChiThue	number
+ChiGiaDinh	number
+ChiGiaoDichYTe	number
+ChiDiLai	number
+ChiMayMac	number
+ChiThietBi	number
+ChiTraGocLai	number
+ChiKhac	number
+ThuNhapRongBQHo	number
+ThuNhapRongBQKhau	number
+GiaTriNha	string	255
+DienTichDat	string	255
+GiaTriVatNuoi	string	255
+GiaTriHangHoa	string	255
+PhuongTienDiLai	string	255
+TaiSanKhac	string	255
+VonNHSoKheUoc	string	255
+VonNHMucVay	number
+VonNHThoiHanVay	number
+VonNHLaiSuat	number
+VonNHDuNo	number
+VonNHNgayTraHet	string	255
+VonNHGhiChu	string	255
+VonTHSoKheUoc	string	255
+VonTHMucVay	number
+VonTHThoiHanVay	number
+VonTHLaiSuat	number
+VonTHDuNo	number
+VonTHNgayTraHet	string	255
+VonTHGhiChu	string	255
+VonDHSoKheUoc	string	255
+VonDHMucVay	number
+VonDHThoiHanVay	number
+VonDHLaiSuat	number
+VonDHDuNo	number
+VonDHNgayTraHet	string	255
+VonDHGhiChu	string	255
+TKQDNgayBatDau	string	255
+TKQDSoDu	number
+TKQDGhiChu	string	255
+TKKKHNgayBatDau	string	255
+TKKKHSoDu	number
+TKKKHGhiChu	string	255
+TKCKHNgayBatDau	string	255
+TKCKHSoDu	number
+TKCKHGhiChu	string	255

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/CommunicationServices.SMS.Messages" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/CommunicationServices.SMS.Messages" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:1001/SMSService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/BusinessServices.SMS.DTO" />
+  <xs:import schemaLocation="http://localhost:1001/SMSService.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/BusinessServices.SMSGSMCom.DTO" />
+  <xs:import schemaLocation="http://localhost:1001/SMSService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" />
+  <xs:complexType name="SMSRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" base="q1:RequestBase">
+        <xs:sequence>
+          <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/BusinessServices.SMS.DTO" minOccurs="0" name="lstDoiTuongDthoais" nillable="true" type="q2:ArrayOfDOI_TUONG_DTHOAI" />
+          <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/BusinessServices.SMSGSMCom.DTO" minOccurs="0" name="lstModems" nillable="true" type="q3:ArrayOfMODEM" />
+          <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/BusinessServices.SMS.DTO" minOccurs="0" name="objDichVu" nillable="true" type="q4:DICHVU" />
+          <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/BusinessServices.SMS.DTO" minOccurs="0" name="objDoiTuong" nillable="true" type="q5:DOI_TUONG" />
+          <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/BusinessServices.SMS.DTO" minOccurs="0" name="objLoaiDoiTuong" nillable="true" type="q6:LOAI_DOI_TUONG" />
+          <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/BusinessServices.SMS.DTO" minOccurs="0" name="objTinNhanDen" nillable="true" type="q7:TIN_NHAN_DEN" />
+          <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/BusinessServices.SMS.DTO" minOccurs="0" name="objTinNhanDi" nillable="true" type="q8:TIN_NHAN_DI" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SMSRequest" nillable="true" type="tns:SMSRequest" />
+  <xs:complexType name="SMSResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q9="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" base="q9:ResponseBase">
+        <xs:sequence>
+          <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/BusinessServices.SMS.DTO" minOccurs="0" name="lstDoiTuongDthoais" nillable="true" type="q10:ArrayOfDOI_TUONG_DTHOAI" />
+          <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/BusinessServices.SMSGSMCom.DTO" minOccurs="0" name="lstModems" nillable="true" type="q11:ArrayOfMODEM" />
+          <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/BusinessServices.SMS.DTO" minOccurs="0" name="objDichVu" nillable="true" type="q12:DICHVU" />
+          <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/BusinessServices.SMS.DTO" minOccurs="0" name="objDoiTuong" nillable="true" type="q13:DOI_TUONG" />
+          <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/BusinessServices.SMS.DTO" minOccurs="0" name="objLoaiDoiTuong" nillable="true" type="q14:LOAI_DOI_TUONG" />
+          <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/BusinessServices.SMS.DTO" minOccurs="0" name="objTinNhanDen" nillable="true" type="q15:TIN_NHAN_DEN" />
+          <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/BusinessServices.SMS.DTO" minOccurs="0" name="objTinNhanDi" nillable="true" type="q16:TIN_NHAN_DI" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SMSResponse" nillable="true" type="tns:SMSResponse" />
+</xs:schema>

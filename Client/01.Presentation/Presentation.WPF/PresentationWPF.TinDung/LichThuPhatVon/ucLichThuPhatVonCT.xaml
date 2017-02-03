@@ -1,0 +1,277 @@
+﻿<UserControl x:Class="PresentationWPF.TinDung.LichThuPhatVon.ucLichThuPhatVonCT"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:uc="clr-namespace:PresentationWPF.CustomControl;assembly=PresentationWPF.CustomControl"
+             xmlns:local="clr-namespace:PresentationWPF.TinDung.LichThuPhatVon"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:my="clr-namespace:System;assembly=mscorlib"
+             mc:Ignorable="d" 
+             xmlns:ribbon="http://schemas.microsoft.com/winfx/2006/xaml/presentation/ribbon" 
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation" 
+             d:DesignHeight="768" d:DesignWidth="1024" KeyDown="UserControl_KeyDown" >
+    <UserControl.Resources>
+        <uc:ConverterStringToDataTime x:Key="converter" />
+        <!--<my:String x:Key="U.DungChung.TimKiemNhanh">Tìm kiếm...</my:String>
+        
+        <my:String x:Key="U.PresentationWPF.TinDung.LichThuPhatVon.ucLichThuPhatVonCT.GrbTuDongTinhLichThuPhat">Tu dong tinh lich thu phat von</my:String>
+        <my:String x:Key="U.PresentationWPF.TinDung.LichThuPhatVon.ucLichThuPhatVonCT.DanhSachCumThuPhat">Danh sach cum:</my:String>
+        <my:String x:Key="U.PresentationWPF.TinDung.LichThuPhatVon.ucLichThuPhatVonCT.LichThuVon">Lich thu</my:String>
+        <my:String x:Key="U.PresentationWPF.TinDung.LichThuPhatVon.ucLichThuPhatVonCT.LichPhatVon">Lich phat</my:String>
+        <my:String x:Key="U.PresentationWPF.TinDung.LichThuPhatVon.ucLichThuPhatVonCT.TanSuatTinh">Tan suat tinh:</my:String>
+        <my:String x:Key="U.PresentationWPF.TinDung.LichThuPhatVon.ucLichThuPhatVonCT.DonViTinhThoiGian">Don vi tinh thoi gian:</my:String>
+        <my:String x:Key="U.PresentationWPF.TinDung.LichThuPhatVon.ucLichThuPhatVonCT.GrvThu">Thu</my:String>
+        <my:String x:Key="U.PresentationWPF.TinDung.LichThuPhatVon.ucLichThuPhatVonCT.GrvNgay">Ngay</my:String>
+        <my:String x:Key="U.PresentationWPF.TinDung.LichThuPhatVon.ucLichThuPhatVonCT.GrvTuan">Tuan</my:String>
+        <my:String x:Key="U.PresentationWPF.TinDung.LichThuPhatVon.ucLichThuPhatVonCT.DuLieuNamTruoc">Dữ liệu năm trước</my:String>
+        <my:String x:Key="PresentationWPF.TinDung.LichThuPhatVon.ucLichThuPhatVonCT.Nam">Năm:</my:String>
+        <my:String x:Key="PresentationWPF.TinDung.LichThuPhatVon.ucLichThuPhatVonCT.DanhSachLichPhatVon">Danh sách lịch phát vốn</my:String>
+        <my:String x:Key="U.PresentationWPF.TinDung.LichThuPhatVon.ucLichThuPhatVonCT.MaCum">Mã cụm</my:String>
+        <my:String x:Key="U.PresentationWPF.TinDung.LichThuPhatVon.ucLichThuPhatVonCT.TenCum">Tên cụm</my:String>
+        <my:String x:Key="U.PresentationWPF.TinDung.LichThuPhatVon.ucLichThuPhatVonCT.Thang1">Tháng 1</my:String>
+        <my:String x:Key="U.PresentationWPF.TinDung.LichThuPhatVon.ucLichThuPhatVonCT.Thang2">Tháng 2</my:String>
+        <my:String x:Key="U.PresentationWPF.TinDung.LichThuPhatVon.ucLichThuPhatVonCT.Thang3">Tháng 3</my:String>
+        <my:String x:Key="U.PresentationWPF.TinDung.LichThuPhatVon.ucLichThuPhatVonCT.Thang4">Tháng 4</my:String>
+        <my:String x:Key="U.PresentationWPF.TinDung.LichThuPhatVon.ucLichThuPhatVonCT.Thang5">Tháng 5</my:String>
+        <my:String x:Key="U.PresentationWPF.TinDung.LichThuPhatVon.ucLichThuPhatVonCT.Thang6">Tháng 6</my:String>
+        <my:String x:Key="U.PresentationWPF.TinDung.LichThuPhatVon.ucLichThuPhatVonCT.Thang7">Tháng 7</my:String>
+        <my:String x:Key="U.PresentationWPF.TinDung.LichThuPhatVon.ucLichThuPhatVonCT.Thang8">Tháng 8</my:String>
+        <my:String x:Key="U.PresentationWPF.TinDung.LichThuPhatVon.ucLichThuPhatVonCT.Thang9">Tháng 9</my:String>
+        <my:String x:Key="U.PresentationWPF.TinDung.LichThuPhatVon.ucLichThuPhatVonCT.Thang10">Tháng 10</my:String>
+        <my:String x:Key="U.PresentationWPF.TinDung.LichThuPhatVon.ucLichThuPhatVonCT.Thang11">Tháng 11</my:String>
+        <my:String x:Key="U.PresentationWPF.TinDung.LichThuPhatVon.ucLichThuPhatVonCT.Thang12">Tháng 12</my:String>
+        <my:String x:Key="U.PresentationWPF.TinDung.LichThuPhatVon.ucLichThuPhatVonCT.DanhSachLichThuVon">Danh sách lịch thu vốn</my:String>-->
+        <!--<my:String x:Key="U.TinDung.ucLichThuPhatVonCT.ExtTimKiemNangCao">Tìm kiếm nâng cao</my:String>
+        <my:String x:Key="U.TinDung.ucLichThuPhatVonCT.TrangThai">Trạng thái:</my:String>
+        <my:String x:Key="U.TinDung.ucLichThuPhatVonCT.SoHopDong">Số hợp đồng:</my:String>
+        <my:String x:Key="U.TinDung.ucLichThuPhatVonCT.NgayHopDong">Ngày hợp đồng</my:String>
+        <my:String x:Key="U.TinDung.ucLichThuPhatVonCT.LaiSuatQuaHan">Lãi suất quá hạn:</my:String>
+        <my:String x:Key="U.TinDung.ucLichThuPhatVonCT.LaiSuatCoCau">Lãi suất cơ cấu:</my:String>
+        <my:String x:Key="U.TinDung.ucLichThuPhatVonCT.MaKhachHang">Mã khách hàng:</my:String>
+        <my:String x:Key="U.TinDung.ucLichThuPhatVonCT.TenKhachHang">Tên khách hàng:</my:String>
+        <my:String x:Key="U.TinDung.ucLichThuPhatVonCT.DanhSachHopDong">Danh sách hợp đồng tín dụng</my:String>
+        <my:String x:Key="U.TinDung.HDTD.ucLichThuPhatVonCT.XuatDuLieu">Xuất dữ liệu</my:String>
+        <my:String x:Key="U.TinDung.HDTD.ucLichThuPhatVonCT.Den">đến</my:String>
+        <my:String x:Key="U.TinDung.HDTD.ucLichThuPhatVonCT.LoaiGiayTo">Loại giấy tờ:</my:String>
+        <my:String x:Key="U.TinDung.HDTD.ucLichThuPhatVonCT.DienThoai">Điện thoại:</my:String>
+        <my:String x:Key="U.TinDung.HDTD.ucLichThuPhatVonCT.Email">E-mail:</my:String>
+        <my:String x:Key="U.TinDung.HDTD.ucLichThuPhatVonCT.SoGiayTo">Số giấy tờ:</my:String>
+        <my:String x:Key="U.TinDung.HDTD.ucLichThuPhatVonCT.TongSoHDTD">Tổng số HĐTD:</my:String>
+        <my:String x:Key="U.TinDung.HDTD.ucLichThuPhatVonCT.SoHopDong">Số hợp đồng</my:String>
+        <my:String x:Key="U.TinDung.HDTD.ucLichThuPhatVonCT.SoLo">Số lô</my:String>
+        <my:String x:Key="U.TinDung.HDTD.ucLichThuPhatVonCT.NgayHopDong">Ngày hợp đồng</my:String>
+        <my:String x:Key="U.TinDung.HDTD.ucLichThuPhatVonCT.KhachHang">Khách hàng</my:String>
+        <my:String x:Key="U.TinDung.HDTD.ucLichThuPhatVonCT.SoCMND">Số CMND</my:String>
+        <my:String x:Key="U.TinDung.HDTD.ucLichThuPhatVonCT.SoDienThoai">Số điện thoại</my:String>
+        <my:String x:Key="U.TinDung.HDTD.ucLichThuPhatVonCT.TrangThai">Trạng thái</my:String>-->
+    </UserControl.Resources>
+    <UserControl.CommandBindings>
+
+        <CommandBinding CanExecute="SearchCommand_CanExecute" Executed="SearchCommand_Executed" Command="{x:Static local:ucLichThuPhatVonCT.SearchCommand}">
+        </CommandBinding>
+        <CommandBinding CanExecute="ReloadCommand_CanExecute" Executed="ReloadCommand_Executed" Command="{x:Static local:ucLichThuPhatVonCT.ReloadCommand}">
+        </CommandBinding>
+        <CommandBinding CanExecute="ExportCommand_CanExecute" Executed="ExportCommand_Executed" Command="{x:Static local:ucLichThuPhatVonCT.ExportCommand}">
+        </CommandBinding>
+        <CommandBinding CanExecute="HelpCommand_CanExecute" Executed="HelpCommand_Executed" Command="{x:Static local:ucLichThuPhatVonCT.HelpCommand}">
+        </CommandBinding>
+        <CommandBinding CanExecute="CloseCommand_CanExecute" Executed="CloseCommand_Executed" Command="{x:Static local:ucLichThuPhatVonCT.CloseCommand}">
+        </CommandBinding>
+    </UserControl.CommandBindings>
+    <Grid >
+        <DockPanel Name="dockMain">
+            <DockPanel HorizontalAlignment="Stretch" DockPanel.Dock="Top" Margin="3,3,0,3" LastChildFill="False" Name="docToolbar">
+                <WrapPanel Name="Toolbar">
+                    <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbSave" DockPanel.Dock="Left" Label="{DynamicResource U.DungChung.Button.Luu}" SmallImageSource="/Utilities.Common;component/Images/Action/save.png" Style="{StaticResource RibbonButton}" Click="tlbHotKey_Click" />
+                    <Label Name="lbl2" Margin="3,0,0,0" DockPanel.Dock="Left" BorderThickness="3" Width="2" BorderBrush="#FF170404" />
+                    <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbExport" DockPanel.Dock="Left" Label="{DynamicResource U.DungChung.Button.XuatExcel}"  SmallImageSource="/Utilities.Common;component/Images/Action/export.png" Style="{StaticResource RibbonButton}" Click="tlbHotKey_Click" />
+                    <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbSearch" DockPanel.Dock="Left" Label="{DynamicResource U.DungChung.Button.TimKiem}"  SmallImageSource="/Utilities.Common;component/Images/Action/search.png" Style="{StaticResource RibbonButton}" Click="tlbHotKey_Click" />
+                    <Label Name="lbl3" Margin="3,0,0,0" DockPanel.Dock="Left" BorderThickness="3" Width="2" BorderBrush="#FF170404" />
+                    <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbHelp" DockPanel.Dock="Left" Label="{DynamicResource U.DungChung.Button.TroGiup}"  SmallImageSource="/Utilities.Common;component/Images/Action/help.png" Style="{StaticResource RibbonButton}" Click="tlbHotKey_Click" />
+                    <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbClose" DockPanel.Dock="Left" Label="{DynamicResource U.DungChung.Button.Dong}"  SmallImageSource="/Utilities.Common;component/Images/Action/close.png" Style="{StaticResource RibbonButton}" Click="tlbHotKey_Click" />
+                </WrapPanel>
+            </DockPanel>
+            <!--<ScrollViewer ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Auto">-->
+            <Grid Name="grMain" HorizontalAlignment="Left" Width="{Binding ElementName=dockMain,Path=ActualWidth}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="5" />
+                    <ColumnDefinition Width="4*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <GridSplitter Grid.Column="1" ResizeDirection="Auto" Grid.RowSpan="3" Width="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" ShowsPreview="False">
+                </GridSplitter>
+                <DockPanel Grid.Column="0" Margin="6,3,0,3">
+                    <telerik:RadTreeView Grid.Row="2" Name="tvwKhuVuc" BorderBrush="Black" BorderThickness="1,1,0.5,1" DockPanel.Dock="Top" SelectionMode="Extended"  IsRootLinesEnabled="True" IsTriStateMode="True" IsLineEnabled="True"/>
+                </DockPanel>
+                <Grid Grid.Column="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="19*" />
+                        <ColumnDefinition Width="0" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.ContextMenu>
+                        <ContextMenu Name="mnuMain">
+                        </ContextMenu>
+                    </Grid.ContextMenu>
+                    <DockPanel Name="spnContent" >
+                        <GroupBox Header="{DynamicResource U.PresentationWPF.TinDung.LichThuPhatVon.ucLichThuPhatVonCT.GrbThongTinChung}" DockPanel.Dock="Top">
+                            <DockPanel>
+                                <Grid DockPanel.Dock="Top" Margin="0,0,0,10">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="120" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="20" />
+                                        <ColumnDefinition Width="120" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Label Content="{DynamicResource U.PresentationWPF.TinDung.LichThuPhatVon.ucLichThuPhatVonCT.Nam}" />
+                                    <telerik:RadMaskedDateTimeInput Mask="yyyy" HorizontalAlignment="Stretch" Name="raddtNamLichThuPhat" Grid.Column="1" IsClearButtonVisible="False"/>
+                                    <CheckBox Name="chkDuLieuNamTruoc" Content="{DynamicResource U.PresentationWPF.TinDung.LichThuPhatVon.ucLichThuPhatVonCT.DuLieuNamTruoc}" Grid.Column="3" Grid.ColumnSpan="2" Margin="3,5,0,0"/>
+                                </Grid>
+                                <Expander Header="{DynamicResource U.PresentationWPF.TinDung.LichThuPhatVon.ucLichThuPhatVonCT.GrbTuDongTinhLichThuPhat}" VerticalAlignment="Stretch" Padding="-5,5,-5,0" Margin="3" TabIndex="18" DockPanel.Dock="Top" IsExpanded="False">
+                                    <DockPanel>
+                                        <Grid DockPanel.Dock="Top" Margin="0,0,0,10">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="120" />
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="20" />
+                                                <ColumnDefinition Width="120" />
+                                                <ColumnDefinition Width="*" />
+                                            </Grid.ColumnDefinitions>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="*" />
+                                                <RowDefinition Height="6" />
+                                                <RowDefinition Height="*" />
+                                            </Grid.RowDefinitions>
+                                            <Label Content="{DynamicResource U.PresentationWPF.TinDung.LichThuPhatVon.ucLichThuPhatVonCT.DanhSachCumThuPhat}" />
+                                            <telerik:RadComboBox Name="cmbDanhSachCum" Grid.Row="0" Grid.Column="1" DropDownClosed="cmbDanhSachCum_DropDownClosed" IsEditable="False" SelectedItem="0">
+                                                <telerik:RadComboBox.ItemTemplate>
+                                                    <DataTemplate>
+                                                        <CheckBox Content="{Binding Path=DislayMember}" IsChecked="{Binding Path=CheckedMember,Mode=TwoWay}" Height="16" HorizontalAlignment="Left" Margin="2" VerticalAlignment="Top" />
+                                                    </DataTemplate>
+                                                </telerik:RadComboBox.ItemTemplate>
+                                                <telerik:RadComboBox.SelectionBoxTemplate >
+                                                    <DataTemplate>
+                                                        <TextBlock Text="{Binding ElementName=cmbDanhSachCum, Path=ItemsSource.SelectedItemsText}" />
+                                                    </DataTemplate>
+                                                </telerik:RadComboBox.SelectionBoxTemplate>
+                                            </telerik:RadComboBox>
+                                            <Label Content="{DynamicResource U.PresentationWPF.TinDung.LichThuPhatVon.ucLichThuPhatVonCT.LoaiLich}" Grid.Column="3" Grid.Row="0"/>
+                                            <telerik:RadComboBox Name="cmbLoaiLich" Grid.Column="4" Grid.Row="0" HorizontalAlignment="Stretch" SelectedIndex="0" SelectedValuePath="Tag">
+                                                <telerik:RadComboBoxItem Content="{DynamicResource U.DungChung.TatCa}" Tag="ALL" />
+                                                <telerik:RadComboBoxItem Content="{DynamicResource U.PresentationWPF.TinDung.LichThuPhatVon.ucLichThuPhatVonCT.LichThuVon}" Tag="THU_VON" />
+                                                <telerik:RadComboBoxItem Content="{DynamicResource U.PresentationWPF.TinDung.LichThuPhatVon.ucLichThuPhatVonCT.LichPhatVon}" Tag="PHAT_VON" />
+                                            </telerik:RadComboBox>
+                                            <Label Content="{DynamicResource U.PresentationWPF.TinDung.LichThuPhatVon.ucLichThuPhatVonCT.TanSuatTinh}" Grid.Column="0" Grid.Row="2"/>
+                                            <telerik:RadNumericUpDown Name="telSoLanThuPhat" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Stretch" IsInteger="True"/>
+                                            <Label Content="{DynamicResource U.PresentationWPF.TinDung.LichThuPhatVon.ucLichThuPhatVonCT.DonViTinhThoiGian}" Grid.Column="3" Grid.Row="2"/>
+                                            <telerik:RadComboBox Name="cmbDonViTinhTGian" Grid.Column="4" HorizontalAlignment="Stretch" Grid.Row="2" SelectedIndex="1" SelectedValuePath="Tag">
+                                                <telerik:RadComboBoxItem Content="{DynamicResource U.DungChung.DonViThoiGian.TUAN}" Tag="TUAN" />
+                                                <telerik:RadComboBoxItem Content="{DynamicResource U.DungChung.DonViThoiGian.THANG}" Tag="THANG" />
+                                            </telerik:RadComboBox>
+                                        </Grid>
+                                        <DockPanel DockPanel.Dock="Bottom">
+                                            <ribbon:RibbonButton Margin="5" Name="tlbCal" DockPanel.Dock="Right" Label="{DynamicResource ACTION.Caculate}"  SmallImageSource="/Utilities.Common;component/Images/Action/detail_calc.png" Style="{StaticResource RibbonButton}" Click="tlbHotKey_Click" HorizontalAlignment="Right" />
+                                        </DockPanel>
+                                        <telerik:RadGridView Name="radDanhSachNgay" MinHeight="100" ColumnWidth="*" ShowGroupPanel="False" ShowColumnFooters="False" SelectionMode="Extended" 
+                AutoGenerateColumns="False" CanUserFreezeColumns="False" RowIndicatorVisibility="Collapsed" HorizontalAlignment="Stretch" DockPanel.Dock="Top" MaxHeight="300" TabIndex="21" CanUserSortColumns="False" IsFilteringAllowed="False">
+                                            <telerik:RadGridView.Columns>
+                                                <uc:MyColumn Header="{DynamicResource U.DungChung.STT}" IsFilterable="False" Width="40" MinWidth="40"  IsReadOnly="True">
+                                                    <uc:MyColumn.AggregateFunctions>
+                                                        <telerik:CountFunction />
+                                                    </uc:MyColumn.AggregateFunctions>
+                                                </uc:MyColumn>
+                                                <telerik:GridViewDataColumn Header="{DynamicResource U.PresentationWPF.TinDung.LichThuPhatVon.ucLichThuPhatVonCT.GrvNgay}" Width="*" DataMemberBinding="{Binding NGAY}" UniqueName="NGAY">
+                                                    <telerik:GridViewDataColumn.CellEditTemplate>
+                                                        <DataTemplate>
+                                                            <telerik:RadMaskedNumericInput Value="{Binding NGAY}" Mask="#2" HorizontalAlignment="Stretch"/>
+                                                        </DataTemplate>
+                                                    </telerik:GridViewDataColumn.CellEditTemplate>
+                                                </telerik:GridViewDataColumn>
+                                                <uc:ColumnsComboBoxv2 Header="{DynamicResource U.PresentationWPF.TinDung.LichThuPhatVon.ucLichThuPhatVonCT.GrvThu}" Width="*" GiaTriDataMember="{Binding THU}" IsVisible="False" UniqueName="THU" STruyVan="COMBOBOX_DMUC" DieuKien="THU_TRONG_TUAN"/>
+                                                <telerik:GridViewDataColumn Header="{DynamicResource U.PresentationWPF.TinDung.LichThuPhatVon.ucLichThuPhatVonCT.GrvTuan}" Width="*" DataMemberBinding="{Binding TUAN}" IsVisible="False" UniqueName="TUAN"/>
+                                            </telerik:RadGridView.Columns>
+                                        </telerik:RadGridView>
+                                    </DockPanel>
+                                </Expander>
+                            </DockPanel>
+                        </GroupBox>
+
+
+                        <ScrollViewer ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Auto">
+                            <DockPanel>
+                                <Expander Header="{DynamicResource U.PresentationWPF.TinDung.LichThuPhatVon.ucLichThuPhatVonCT.DanhSachLichPhatVon}" VerticalAlignment="Stretch" Padding="-5,5,-5,0" Margin="3" TabIndex="18" DockPanel.Dock="Top" IsExpanded="True">
+                                    <DockPanel>
+                                        <telerik:RadGridView Name="radDanhSachLichPhat" MinHeight="200" ColumnWidth="*" ShowGroupPanel="False" ShowColumnFooters="False" SelectionMode="Extended"
+                AutoGenerateColumns="False" CanUserFreezeColumns="False" RowIndicatorVisibility="Collapsed" HorizontalAlignment="Stretch" DockPanel.Dock="Top" MaxHeight="300" TabIndex="21" CanUserSortColumns="False" IsFilteringAllowed="False">
+                                            <telerik:RadGridView.Columns>
+                                                <uc:MyColumn Header="{DynamicResource U.DungChung.STT}" IsFilterable="False" Width="40" MinWidth="40"  IsReadOnly="True">
+                                                    <uc:MyColumn.AggregateFunctions>
+                                                        <telerik:CountFunction />
+                                                    </uc:MyColumn.AggregateFunctions>
+                                                </uc:MyColumn>
+                                                <telerik:GridViewDataColumn Header="{DynamicResource U.DungChung.ID}" Width="0" IsReadOnly="True" DataMemberBinding="{Binding ID}" IsVisible="False" />
+                                                <telerik:GridViewDataColumn Header="{DynamicResource U.DungChung.ID}" Width="0" IsReadOnly="True" DataMemberBinding="{Binding ID_KVUC}" IsVisible="False" />
+                                                <telerik:GridViewDataColumn Header="{DynamicResource U.PresentationWPF.TinDung.LichThuPhatVon.ucLichThuPhatVonCT.MaCum}" Width="100" IsReadOnly="True" DataMemberBinding="{Binding MA_CUM}" MinWidth="100" />
+                                                <telerik:GridViewDataColumn Header="{DynamicResource U.PresentationWPF.TinDung.LichThuPhatVon.ucLichThuPhatVonCT.TenCum}" Width="*" IsReadOnly="True" DataMemberBinding="{Binding TEN_CUM}" MinWidth="200" />
+                                                <uc:ColumnsDateTimeMulti Header="{DynamicResource U.PresentationWPF.TinDung.LichThuPhatVon.ucLichThuPhatVonCT.Thang1}" Width="100" MinWidth="100" Name="ucPhatDateJan" UniqueName="THANG_1" DataMemberBinding="JAN" Separator=";" FormatString="dd" IsChange="False"/>
+                                                <uc:ColumnsDateTimeMulti Header="{DynamicResource U.PresentationWPF.TinDung.LichThuPhatVon.ucLichThuPhatVonCT.Thang2}" Width="100" MinWidth="100" Name="ucPhatDateFeb" UniqueName="THANG_2" DataMemberBinding="FEB" Separator=";" FormatString="dd" IsChange="False"/>
+                                                <uc:ColumnsDateTimeMulti Header="{DynamicResource U.PresentationWPF.TinDung.LichThuPhatVon.ucLichThuPhatVonCT.Thang3}" Width="100" MinWidth="100" Name="ucPhatDateMar" UniqueName="THANG_3" DataMemberBinding="MAR" Separator=";" FormatString="dd" IsChange="False"/>
+                                                <uc:ColumnsDateTimeMulti Header="{DynamicResource U.PresentationWPF.TinDung.LichThuPhatVon.ucLichThuPhatVonCT.Thang4}" Width="100" MinWidth="100" Name="ucPhatDateApr" UniqueName="THANG_4" DataMemberBinding="APR" Separator=";" FormatString="dd" IsChange="False"/>
+                                                <uc:ColumnsDateTimeMulti Header="{DynamicResource U.PresentationWPF.TinDung.LichThuPhatVon.ucLichThuPhatVonCT.Thang5}" Width="100" MinWidth="100" Name="ucPhatDateMay" UniqueName="THANG_5" DataMemberBinding="MAY" Separator=";" FormatString="dd" IsChange="False"/>
+                                                <uc:ColumnsDateTimeMulti Header="{DynamicResource U.PresentationWPF.TinDung.LichThuPhatVon.ucLichThuPhatVonCT.Thang6}" Width="100" MinWidth="100" Name="ucPhatDateJun" UniqueName="THANG_6" DataMemberBinding="JUN" Separator=";" FormatString="dd" IsChange="False"/>
+                                                <uc:ColumnsDateTimeMulti Header="{DynamicResource U.PresentationWPF.TinDung.LichThuPhatVon.ucLichThuPhatVonCT.Thang7}" Width="100" MinWidth="100" Name="ucPhatDateJul" UniqueName="THANG_7" DataMemberBinding="JUL" Separator=";" FormatString="dd" IsChange="False"/>
+                                                <uc:ColumnsDateTimeMulti Header="{DynamicResource U.PresentationWPF.TinDung.LichThuPhatVon.ucLichThuPhatVonCT.Thang8}" Width="100" MinWidth="100" Name="ucPhatDateAug" UniqueName="THANG_8" DataMemberBinding="AUG" Separator=";" FormatString="dd" IsChange="False"/>
+                                                <uc:ColumnsDateTimeMulti Header="{DynamicResource U.PresentationWPF.TinDung.LichThuPhatVon.ucLichThuPhatVonCT.Thang9}" Width="100" MinWidth="100" Name="ucPhatDateSep" UniqueName="THANG_9" DataMemberBinding="SEP" Separator=";" FormatString="dd" IsChange="False"/>
+                                                <uc:ColumnsDateTimeMulti Header="{DynamicResource U.PresentationWPF.TinDung.LichThuPhatVon.ucLichThuPhatVonCT.Thang10}" Width="100" MinWidth="100" Name="ucPhatDateOct" UniqueName="THANG_10" DataMemberBinding="OCT" Separator=";" FormatString="dd" IsChange="False"/>
+                                                <uc:ColumnsDateTimeMulti Header="{DynamicResource U.PresentationWPF.TinDung.LichThuPhatVon.ucLichThuPhatVonCT.Thang11}" Width="100" MinWidth="100" Name="ucPhatDateNov" UniqueName="THANG_11" DataMemberBinding="NOV" Separator=";" FormatString="dd" IsChange="False"/>
+                                                <uc:ColumnsDateTimeMulti Header="{DynamicResource U.PresentationWPF.TinDung.LichThuPhatVon.ucLichThuPhatVonCT.Thang12}" Width="100" MinWidth="100" Name="ucPhatDateDec" UniqueName="THANG_12" DataMemberBinding="DEC" Separator=";" FormatString="dd" IsChange="False"/>
+                                            </telerik:RadGridView.Columns>
+                                        </telerik:RadGridView>
+                                    </DockPanel>
+                                </Expander>
+                                <StackPanel DockPanel.Dock="Top" Margin="0,5" Orientation="Horizontal">
+                                    <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbCopyDown" DockPanel.Dock="Left" SmallImageSource="/Utilities.Common;component/Images/Action/down.png" Style="{StaticResource RibbonButton}" Visibility="Collapsed"/>
+                                    <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbCopyUp" DockPanel.Dock="Left" SmallImageSource="/Utilities.Common;component/Images/Action/up.png" Style="{StaticResource RibbonButton}" Visibility="Collapsed"/>
+                                </StackPanel>
+                                <Expander Header="{DynamicResource U.PresentationWPF.TinDung.LichThuPhatVon.ucLichThuPhatVonCT.DanhSachLichThuVon}" VerticalAlignment="Stretch" Padding="-5,5,-5,0" Margin="3" TabIndex="18" IsExpanded="True">
+                                    <DockPanel>
+                                        <telerik:RadGridView Name="radDanhSachLichThu" MinHeight="200" ColumnWidth="*" ShowGroupPanel="False" ShowColumnFooters="False" SelectionMode="Extended"
+                AutoGenerateColumns="False" CanUserFreezeColumns="False" RowIndicatorVisibility="Collapsed" HorizontalAlignment="Stretch" DockPanel.Dock="Top" MaxHeight="450" TabIndex="21" CanUserSortColumns="False" IsFilteringAllowed="False">
+                                            <telerik:RadGridView.Columns>
+                                                <uc:MyColumn Header="{DynamicResource U.DungChung.STT}" IsFilterable="False" Width="40" MinWidth="40">
+                                                    <uc:MyColumn.AggregateFunctions>
+                                                        <telerik:CountFunction />
+                                                    </uc:MyColumn.AggregateFunctions>
+                                                </uc:MyColumn>
+                                                <telerik:GridViewDataColumn Header="{DynamicResource U.DungChung.ID}" Width="0" IsReadOnly="True" DataMemberBinding="{Binding ID}" IsVisible="False" />
+                                                <telerik:GridViewDataColumn Header="{DynamicResource U.DungChung.ID}" Width="0" IsReadOnly="True" DataMemberBinding="{Binding ID_KVUC}" IsVisible="False" />
+                                                <telerik:GridViewDataColumn Header="{DynamicResource U.PresentationWPF.TinDung.LichThuPhatVon.ucLichThuPhatVonCT.MaCum}" Width="100" IsReadOnly="True" DataMemberBinding="{Binding MA_CUM}" MinWidth="100" />
+                                                <telerik:GridViewDataColumn Header="{DynamicResource U.PresentationWPF.TinDung.LichThuPhatVon.ucLichThuPhatVonCT.TenCum}" Width="*" IsReadOnly="True" DataMemberBinding="{Binding TEN_CUM}" MinWidth="200" />
+                                                <uc:ColumnsDateTimeMulti Header="{DynamicResource U.PresentationWPF.TinDung.LichThuPhatVon.ucLichThuPhatVonCT.Thang1}" Width="100" MinWidth="100" Name="ucThuDateJan" UniqueName="THANGTHU_1" DataMemberBinding="JAN" Separator=";" FormatString="dd" IsChange="False"/>
+                                                <uc:ColumnsDateTimeMulti Header="{DynamicResource U.PresentationWPF.TinDung.LichThuPhatVon.ucLichThuPhatVonCT.Thang2}" Width="100" MinWidth="100" Name="ucThuDateFeb" UniqueName="THANGTHU_2" DataMemberBinding="FEB" Separator=";" FormatString="dd" IsChange="False"/>
+                                                <uc:ColumnsDateTimeMulti Header="{DynamicResource U.PresentationWPF.TinDung.LichThuPhatVon.ucLichThuPhatVonCT.Thang3}" Width="100" MinWidth="100" Name="ucThuDateMar" UniqueName="THANGTHU_3" DataMemberBinding="MAR" Separator=";" FormatString="dd" IsChange="False"/>
+                                                <uc:ColumnsDateTimeMulti Header="{DynamicResource U.PresentationWPF.TinDung.LichThuPhatVon.ucLichThuPhatVonCT.Thang4}" Width="100" MinWidth="100" Name="ucThuDateApr" UniqueName="THANGTHU_4" DataMemberBinding="APR" Separator=";" FormatString="dd" IsChange="False"/>
+                                                <uc:ColumnsDateTimeMulti Header="{DynamicResource U.PresentationWPF.TinDung.LichThuPhatVon.ucLichThuPhatVonCT.Thang5}" Width="100" MinWidth="100" Name="ucThuDateMay" UniqueName="THANGTHU_5" DataMemberBinding="MAY" Separator=";" FormatString="dd" IsChange="False"/>
+                                                <uc:ColumnsDateTimeMulti Header="{DynamicResource U.PresentationWPF.TinDung.LichThuPhatVon.ucLichThuPhatVonCT.Thang6}" Width="100" MinWidth="100" Name="ucThuDateJun" UniqueName="THANGTHU_6" DataMemberBinding="JUN" Separator=";" FormatString="dd" IsChange="False"/>
+                                                <uc:ColumnsDateTimeMulti Header="{DynamicResource U.PresentationWPF.TinDung.LichThuPhatVon.ucLichThuPhatVonCT.Thang7}" Width="100" MinWidth="100" Name="ucThuDateJul" UniqueName="THANGTHU_7" DataMemberBinding="JUL" Separator=";" FormatString="dd" IsChange="False"/>
+                                                <uc:ColumnsDateTimeMulti Header="{DynamicResource U.PresentationWPF.TinDung.LichThuPhatVon.ucLichThuPhatVonCT.Thang8}" Width="100" MinWidth="100" Name="ucThuDateAug" UniqueName="THANGTHU_8" DataMemberBinding="AUG" Separator=";" FormatString="dd" IsChange="False"/>
+                                                <uc:ColumnsDateTimeMulti Header="{DynamicResource U.PresentationWPF.TinDung.LichThuPhatVon.ucLichThuPhatVonCT.Thang9}" Width="100" MinWidth="100" Name="ucThuDateSep" UniqueName="THANGTHU_9" DataMemberBinding="SEP" Separator=";" FormatString="dd" IsChange="False"/>
+                                                <uc:ColumnsDateTimeMulti Header="{DynamicResource U.PresentationWPF.TinDung.LichThuPhatVon.ucLichThuPhatVonCT.Thang10}" Width="100" MinWidth="100" Name="ucThuDateOct" UniqueName="THANGTHU_10" DataMemberBinding="OCT" Separator=";" FormatString="dd" IsChange="False"/>
+                                                <uc:ColumnsDateTimeMulti Header="{DynamicResource U.PresentationWPF.TinDung.LichThuPhatVon.ucLichThuPhatVonCT.Thang11}" Width="100" MinWidth="100" Name="ucThuDateNov" UniqueName="THANGTHU_11" DataMemberBinding="NOV" Separator=";" FormatString="dd" IsChange="False"/>
+                                                <uc:ColumnsDateTimeMulti Header="{DynamicResource U.PresentationWPF.TinDung.LichThuPhatVon.ucLichThuPhatVonCT.Thang12}" Width="100" MinWidth="100" Name="ucThuDateDec" UniqueName="THANGTHU_12" DataMemberBinding="DEC" Separator=";" FormatString="dd" IsChange="False"/>
+                                            </telerik:RadGridView.Columns>
+                                        </telerik:RadGridView>
+                                    </DockPanel>
+                                </Expander>
+                            </DockPanel>
+                        </ScrollViewer>
+                    </DockPanel>
+                </Grid>
+            </Grid>
+            <!--</ScrollViewer>-->
+        </DockPanel>
+    </Grid>
+</UserControl>

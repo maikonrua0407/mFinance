@@ -1,0 +1,1013 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="QuanTriHeThongService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/CommunicationServices.QuanTriHeThong.Messages" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/Utilities.Common" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/BusinessServices.QuanTriHeThong.DTO" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IQuanTriHeThongService_returnHello_InputMessage">
+    <wsdl:part name="parameters" element="tns:returnHello" />
+  </wsdl:message>
+  <wsdl:message name="IQuanTriHeThongService_returnHello_OutputMessage">
+    <wsdl:part name="parameters" element="tns:returnHelloResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQuanTriHeThongService_LayChucNangTheoMa_InputMessage">
+    <wsdl:part name="parameters" element="tns:LayChucNangTheoMa" />
+  </wsdl:message>
+  <wsdl:message name="IQuanTriHeThongService_LayChucNangTheoMa_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LayChucNangTheoMaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQuanTriHeThongService_LayChucNangTheoMaCha_InputMessage">
+    <wsdl:part name="parameters" element="tns:LayChucNangTheoMaCha" />
+  </wsdl:message>
+  <wsdl:message name="IQuanTriHeThongService_LayChucNangTheoMaCha_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LayChucNangTheoMaChaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQuanTriHeThongService_LayChucNangTheoQuyen_InputMessage">
+    <wsdl:part name="parameters" element="tns:LayChucNangTheoQuyen" />
+  </wsdl:message>
+  <wsdl:message name="IQuanTriHeThongService_LayChucNangTheoQuyen_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LayChucNangTheoQuyenResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQuanTriHeThongService_LayDSNgayLamViec_InputMessage">
+    <wsdl:part name="parameters" element="tns:LayDSNgayLamViec" />
+  </wsdl:message>
+  <wsdl:message name="IQuanTriHeThongService_LayDSNgayLamViec_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LayDSNgayLamViecResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQuanTriHeThongService_LuuLich_InputMessage">
+    <wsdl:part name="parameters" element="tns:LuuLich" />
+  </wsdl:message>
+  <wsdl:message name="IQuanTriHeThongService_LuuLich_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LuuLichResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQuanTriHeThongService_layCNangTNang_InputMessage">
+    <wsdl:part name="parameters" element="tns:layCNangTNang" />
+  </wsdl:message>
+  <wsdl:message name="IQuanTriHeThongService_layCNangTNang_OutputMessage">
+    <wsdl:part name="parameters" element="tns:layCNangTNangResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQuanTriHeThongService_layCNangTNangTheoListIdChucNang_InputMessage">
+    <wsdl:part name="parameters" element="tns:layCNangTNangTheoListIdChucNang" />
+  </wsdl:message>
+  <wsdl:message name="IQuanTriHeThongService_layCNangTNangTheoListIdChucNang_OutputMessage">
+    <wsdl:part name="parameters" element="tns:layCNangTNangTheoListIdChucNangResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQuanTriHeThongService_layCNangTNangTheoListIdMenu_InputMessage">
+    <wsdl:part name="parameters" element="tns:layCNangTNangTheoListIdMenu" />
+  </wsdl:message>
+  <wsdl:message name="IQuanTriHeThongService_layCNangTNangTheoListIdMenu_OutputMessage">
+    <wsdl:part name="parameters" element="tns:layCNangTNangTheoListIdMenuResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQuanTriHeThongService_layTNangDuocPhanQuyen_InputMessage">
+    <wsdl:part name="parameters" element="tns:layTNangDuocPhanQuyen" />
+  </wsdl:message>
+  <wsdl:message name="IQuanTriHeThongService_layTNangDuocPhanQuyen_OutputMessage">
+    <wsdl:part name="parameters" element="tns:layTNangDuocPhanQuyenResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQuanTriHeThongService_layCNang_InputMessage">
+    <wsdl:part name="parameters" element="tns:layCNang" />
+  </wsdl:message>
+  <wsdl:message name="IQuanTriHeThongService_layCNang_OutputMessage">
+    <wsdl:part name="parameters" element="tns:layCNangResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQuanTriHeThongService_layCNangTheoPhanHe_InputMessage">
+    <wsdl:part name="parameters" element="tns:layCNangTheoPhanHe" />
+  </wsdl:message>
+  <wsdl:message name="IQuanTriHeThongService_layCNangTheoPhanHe_OutputMessage">
+    <wsdl:part name="parameters" element="tns:layCNangTheoPhanHeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQuanTriHeThongService_layCNangThietLapAPTheoPhanHe_InputMessage">
+    <wsdl:part name="parameters" element="tns:layCNangThietLapAPTheoPhanHe" />
+  </wsdl:message>
+  <wsdl:message name="IQuanTriHeThongService_layCNangThietLapAPTheoPhanHe_OutputMessage">
+    <wsdl:part name="parameters" element="tns:layCNangThietLapAPTheoPhanHeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQuanTriHeThongService_layCNangPQuyen_InputMessage">
+    <wsdl:part name="parameters" element="tns:layCNangPQuyen" />
+  </wsdl:message>
+  <wsdl:message name="IQuanTriHeThongService_layCNangPQuyen_OutputMessage">
+    <wsdl:part name="parameters" element="tns:layCNangPQuyenResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQuanTriHeThongService_layCNangPQuyenTheoDoiTuong_InputMessage">
+    <wsdl:part name="parameters" element="tns:layCNangPQuyenTheoDoiTuong" />
+  </wsdl:message>
+  <wsdl:message name="IQuanTriHeThongService_layCNangPQuyenTheoDoiTuong_OutputMessage">
+    <wsdl:part name="parameters" element="tns:layCNangPQuyenTheoDoiTuongResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQuanTriHeThongService_layCNangPQuyenTheoDoiTuongChucNang_InputMessage">
+    <wsdl:part name="parameters" element="tns:layCNangPQuyenTheoDoiTuongChucNang" />
+  </wsdl:message>
+  <wsdl:message name="IQuanTriHeThongService_layCNangPQuyenTheoDoiTuongChucNang_OutputMessage">
+    <wsdl:part name="parameters" element="tns:layCNangPQuyenTheoDoiTuongChucNangResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQuanTriHeThongService_layTNang_InputMessage">
+    <wsdl:part name="parameters" element="tns:layTNang" />
+  </wsdl:message>
+  <wsdl:message name="IQuanTriHeThongService_layTNang_OutputMessage">
+    <wsdl:part name="parameters" element="tns:layTNangResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQuanTriHeThongService_layTNangTheoListIdTinhNang_InputMessage">
+    <wsdl:part name="parameters" element="tns:layTNangTheoListIdTinhNang" />
+  </wsdl:message>
+  <wsdl:message name="IQuanTriHeThongService_layTNangTheoListIdTinhNang_OutputMessage">
+    <wsdl:part name="parameters" element="tns:layTNangTheoListIdTinhNangResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQuanTriHeThongService_layTNguyen_InputMessage">
+    <wsdl:part name="parameters" element="tns:layTNguyen" />
+  </wsdl:message>
+  <wsdl:message name="IQuanTriHeThongService_layTNguyen_OutputMessage">
+    <wsdl:part name="parameters" element="tns:layTNguyenResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQuanTriHeThongService_layDSTNguyenKThac_InputMessage">
+    <wsdl:part name="parameters" element="tns:layDSTNguyenKThac" />
+  </wsdl:message>
+  <wsdl:message name="IQuanTriHeThongService_layDSTNguyenKThac_OutputMessage">
+    <wsdl:part name="parameters" element="tns:layDSTNguyenKThacResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQuanTriHeThongService_luuPhanQuyen_InputMessage">
+    <wsdl:part name="parameters" element="tns:luuPhanQuyen" />
+  </wsdl:message>
+  <wsdl:message name="IQuanTriHeThongService_luuPhanQuyen_OutputMessage">
+    <wsdl:part name="parameters" element="tns:luuPhanQuyenResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQuanTriHeThongService_luuPhanQuyenChucNang_InputMessage">
+    <wsdl:part name="parameters" element="tns:luuPhanQuyenChucNang" />
+  </wsdl:message>
+  <wsdl:message name="IQuanTriHeThongService_luuPhanQuyenChucNang_OutputMessage">
+    <wsdl:part name="parameters" element="tns:luuPhanQuyenChucNangResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQuanTriHeThongService_layDanhSachDonVi_InputMessage">
+    <wsdl:part name="parameters" element="tns:layDanhSachDonVi" />
+  </wsdl:message>
+  <wsdl:message name="IQuanTriHeThongService_layDanhSachDonVi_OutputMessage">
+    <wsdl:part name="parameters" element="tns:layDanhSachDonViResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQuanTriHeThongService_layThongTinCaNhan_InputMessage">
+    <wsdl:part name="parameters" element="tns:layThongTinCaNhan" />
+  </wsdl:message>
+  <wsdl:message name="IQuanTriHeThongService_layThongTinCaNhan_OutputMessage">
+    <wsdl:part name="parameters" element="tns:layThongTinCaNhanResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQuanTriHeThongService_layNSD_InputMessage">
+    <wsdl:part name="parameters" element="tns:layNSD" />
+  </wsdl:message>
+  <wsdl:message name="IQuanTriHeThongService_layNSD_OutputMessage">
+    <wsdl:part name="parameters" element="tns:layNSDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQuanTriHeThongService_layNhomNSD_InputMessage">
+    <wsdl:part name="parameters" element="tns:layNhomNSD" />
+  </wsdl:message>
+  <wsdl:message name="IQuanTriHeThongService_layNhomNSD_OutputMessage">
+    <wsdl:part name="parameters" element="tns:layNhomNSDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQuanTriHeThongService_layNSDTheoNhom_InputMessage">
+    <wsdl:part name="parameters" element="tns:layNSDTheoNhom" />
+  </wsdl:message>
+  <wsdl:message name="IQuanTriHeThongService_layNSDTheoNhom_OutputMessage">
+    <wsdl:part name="parameters" element="tns:layNSDTheoNhomResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQuanTriHeThongService_layNhomTheoNSD_InputMessage">
+    <wsdl:part name="parameters" element="tns:layNhomTheoNSD" />
+  </wsdl:message>
+  <wsdl:message name="IQuanTriHeThongService_layNhomTheoNSD_OutputMessage">
+    <wsdl:part name="parameters" element="tns:layNhomTheoNSDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQuanTriHeThongService_layTruyCapTheoNSD_InputMessage">
+    <wsdl:part name="parameters" element="tns:layTruyCapTheoNSD" />
+  </wsdl:message>
+  <wsdl:message name="IQuanTriHeThongService_layTruyCapTheoNSD_OutputMessage">
+    <wsdl:part name="parameters" element="tns:layTruyCapTheoNSDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQuanTriHeThongService_layTruyCapTheoNhomNSD_InputMessage">
+    <wsdl:part name="parameters" element="tns:layTruyCapTheoNhomNSD" />
+  </wsdl:message>
+  <wsdl:message name="IQuanTriHeThongService_layTruyCapTheoNhomNSD_OutputMessage">
+    <wsdl:part name="parameters" element="tns:layTruyCapTheoNhomNSDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQuanTriHeThongService_layPhamViPhongGDTheoNSDVaMaLoaiPhamVi_InputMessage">
+    <wsdl:part name="parameters" element="tns:layPhamViPhongGDTheoNSDVaMaLoaiPhamVi" />
+  </wsdl:message>
+  <wsdl:message name="IQuanTriHeThongService_layPhamViPhongGDTheoNSDVaMaLoaiPhamVi_OutputMessage">
+    <wsdl:part name="parameters" element="tns:layPhamViPhongGDTheoNSDVaMaLoaiPhamViResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQuanTriHeThongService_ThemNSD_InputMessage">
+    <wsdl:part name="parameters" element="tns:ThemNSD" />
+  </wsdl:message>
+  <wsdl:message name="IQuanTriHeThongService_ThemNSD_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ThemNSDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQuanTriHeThongService_SuaNSD_InputMessage">
+    <wsdl:part name="parameters" element="tns:SuaNSD" />
+  </wsdl:message>
+  <wsdl:message name="IQuanTriHeThongService_SuaNSD_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SuaNSDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQuanTriHeThongService_XoaListNSDTheoID_InputMessage">
+    <wsdl:part name="parameters" element="tns:XoaListNSDTheoID" />
+  </wsdl:message>
+  <wsdl:message name="IQuanTriHeThongService_XoaListNSDTheoID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:XoaListNSDTheoIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQuanTriHeThongService_ThemNHNSD_InputMessage">
+    <wsdl:part name="parameters" element="tns:ThemNHNSD" />
+  </wsdl:message>
+  <wsdl:message name="IQuanTriHeThongService_ThemNHNSD_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ThemNHNSDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQuanTriHeThongService_SuaNHNSD_InputMessage">
+    <wsdl:part name="parameters" element="tns:SuaNHNSD" />
+  </wsdl:message>
+  <wsdl:message name="IQuanTriHeThongService_SuaNHNSD_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SuaNHNSDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQuanTriHeThongService_XoaListNHNSDTheoID_InputMessage">
+    <wsdl:part name="parameters" element="tns:XoaListNHNSDTheoID" />
+  </wsdl:message>
+  <wsdl:message name="IQuanTriHeThongService_XoaListNHNSDTheoID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:XoaListNHNSDTheoIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQuanTriHeThongService_layThamSo_InputMessage">
+    <wsdl:part name="parameters" element="tns:layThamSo" />
+  </wsdl:message>
+  <wsdl:message name="IQuanTriHeThongService_layThamSo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:layThamSoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQuanTriHeThongService_layThamSoHeThong_InputMessage">
+    <wsdl:part name="parameters" element="tns:layThamSoHeThong" />
+  </wsdl:message>
+  <wsdl:message name="IQuanTriHeThongService_layThamSoHeThong_OutputMessage">
+    <wsdl:part name="parameters" element="tns:layThamSoHeThongResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQuanTriHeThongService_layLoaiThamSo_InputMessage">
+    <wsdl:part name="parameters" element="tns:layLoaiThamSo" />
+  </wsdl:message>
+  <wsdl:message name="IQuanTriHeThongService_layLoaiThamSo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:layLoaiThamSoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQuanTriHeThongService_capNhatThamSo_InputMessage">
+    <wsdl:part name="parameters" element="tns:capNhatThamSo" />
+  </wsdl:message>
+  <wsdl:message name="IQuanTriHeThongService_capNhatThamSo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:capNhatThamSoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQuanTriHeThongService_capNhatGiaTriThamSo_InputMessage">
+    <wsdl:part name="parameters" element="tns:capNhatGiaTriThamSo" />
+  </wsdl:message>
+  <wsdl:message name="IQuanTriHeThongService_capNhatGiaTriThamSo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:capNhatGiaTriThamSoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQuanTriHeThongService_capNhatLoaiThamSo_InputMessage">
+    <wsdl:part name="parameters" element="tns:capNhatLoaiThamSo" />
+  </wsdl:message>
+  <wsdl:message name="IQuanTriHeThongService_capNhatLoaiThamSo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:capNhatLoaiThamSoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQuanTriHeThongService_DoiMatKhauNguoiDung_InputMessage">
+    <wsdl:part name="parameters" element="tns:DoiMatKhauNguoiDung" />
+  </wsdl:message>
+  <wsdl:message name="IQuanTriHeThongService_DoiMatKhauNguoiDung_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DoiMatKhauNguoiDungResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQuanTriHeThongService_DoiMatKhauNguoiDungLucDangNhap_InputMessage">
+    <wsdl:part name="parameters" element="tns:DoiMatKhauNguoiDungLucDangNhap" />
+  </wsdl:message>
+  <wsdl:message name="IQuanTriHeThongService_DoiMatKhauNguoiDungLucDangNhap_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DoiMatKhauNguoiDungLucDangNhapResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQuanTriHeThongService_ThietLapMatKhauNguoiDung_InputMessage">
+    <wsdl:part name="parameters" element="tns:ThietLapMatKhauNguoiDung" />
+  </wsdl:message>
+  <wsdl:message name="IQuanTriHeThongService_ThietLapMatKhauNguoiDung_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ThietLapMatKhauNguoiDungResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQuanTriHeThongService_CheckClientVersion_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckClientVersion" />
+  </wsdl:message>
+  <wsdl:message name="IQuanTriHeThongService_CheckClientVersion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckClientVersionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQuanTriHeThongService_DownloadClientVersion_InputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadClientVersion" />
+  </wsdl:message>
+  <wsdl:message name="IQuanTriHeThongService_DownloadClientVersion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadClientVersionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQuanTriHeThongService_DownloadClientVersionItem_InputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadClientVersionItem" />
+  </wsdl:message>
+  <wsdl:message name="IQuanTriHeThongService_DownloadClientVersionItem_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadClientVersionItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQuanTriHeThongService_LayDanhSachPhongGD_InputMessage">
+    <wsdl:part name="parameters" element="tns:LayDanhSachPhongGD" />
+  </wsdl:message>
+  <wsdl:message name="IQuanTriHeThongService_LayDanhSachPhongGD_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LayDanhSachPhongGDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQuanTriHeThongService_PhanQuyenPhamVi_InputMessage">
+    <wsdl:part name="parameters" element="tns:PhanQuyenPhamVi" />
+  </wsdl:message>
+  <wsdl:message name="IQuanTriHeThongService_PhanQuyenPhamVi_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PhanQuyenPhamViResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQuanTriHeThongService_ChucNang_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChucNang" />
+  </wsdl:message>
+  <wsdl:message name="IQuanTriHeThongService_ChucNang_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChucNangResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IQuanTriHeThongService">
+    <wsdl:operation name="returnHello">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQuanTriHeThongService/returnHello" message="tns:IQuanTriHeThongService_returnHello_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQuanTriHeThongService/returnHelloResponse" message="tns:IQuanTriHeThongService_returnHello_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LayChucNangTheoMa">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQuanTriHeThongService/LayChucNangTheoMa" message="tns:IQuanTriHeThongService_LayChucNangTheoMa_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQuanTriHeThongService/LayChucNangTheoMaResponse" message="tns:IQuanTriHeThongService_LayChucNangTheoMa_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LayChucNangTheoMaCha">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQuanTriHeThongService/LayChucNangTheoMaCha" message="tns:IQuanTriHeThongService_LayChucNangTheoMaCha_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQuanTriHeThongService/LayChucNangTheoMaChaResponse" message="tns:IQuanTriHeThongService_LayChucNangTheoMaCha_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LayChucNangTheoQuyen">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQuanTriHeThongService/LayChucNangTheoQuyen" message="tns:IQuanTriHeThongService_LayChucNangTheoQuyen_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQuanTriHeThongService/LayChucNangTheoQuyenResponse" message="tns:IQuanTriHeThongService_LayChucNangTheoQuyen_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LayDSNgayLamViec">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQuanTriHeThongService/LayDSNgayLamViec" message="tns:IQuanTriHeThongService_LayDSNgayLamViec_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQuanTriHeThongService/LayDSNgayLamViecResponse" message="tns:IQuanTriHeThongService_LayDSNgayLamViec_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LuuLich">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQuanTriHeThongService/LuuLich" message="tns:IQuanTriHeThongService_LuuLich_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQuanTriHeThongService/LuuLichResponse" message="tns:IQuanTriHeThongService_LuuLich_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="layCNangTNang">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQuanTriHeThongService/layCNangTNang" message="tns:IQuanTriHeThongService_layCNangTNang_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQuanTriHeThongService/layCNangTNangResponse" message="tns:IQuanTriHeThongService_layCNangTNang_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="layCNangTNangTheoListIdChucNang">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQuanTriHeThongService/layCNangTNangTheoListIdChucNang" message="tns:IQuanTriHeThongService_layCNangTNangTheoListIdChucNang_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQuanTriHeThongService/layCNangTNangTheoListIdChucNangResponse" message="tns:IQuanTriHeThongService_layCNangTNangTheoListIdChucNang_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="layCNangTNangTheoListIdMenu">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQuanTriHeThongService/layCNangTNangTheoListIdMenu" message="tns:IQuanTriHeThongService_layCNangTNangTheoListIdMenu_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQuanTriHeThongService/layCNangTNangTheoListIdMenuResponse" message="tns:IQuanTriHeThongService_layCNangTNangTheoListIdMenu_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="layTNangDuocPhanQuyen">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQuanTriHeThongService/layTNangDuocPhanQuyen" message="tns:IQuanTriHeThongService_layTNangDuocPhanQuyen_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQuanTriHeThongService/layTNangDuocPhanQuyenResponse" message="tns:IQuanTriHeThongService_layTNangDuocPhanQuyen_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="layCNang">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQuanTriHeThongService/layCNang" message="tns:IQuanTriHeThongService_layCNang_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQuanTriHeThongService/layCNangResponse" message="tns:IQuanTriHeThongService_layCNang_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="layCNangTheoPhanHe">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQuanTriHeThongService/layCNangTheoPhanHe" message="tns:IQuanTriHeThongService_layCNangTheoPhanHe_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQuanTriHeThongService/layCNangTheoPhanHeResponse" message="tns:IQuanTriHeThongService_layCNangTheoPhanHe_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="layCNangThietLapAPTheoPhanHe">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQuanTriHeThongService/layCNangThietLapAPTheoPhanHe" message="tns:IQuanTriHeThongService_layCNangThietLapAPTheoPhanHe_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQuanTriHeThongService/layCNangThietLapAPTheoPhanHeResponse" message="tns:IQuanTriHeThongService_layCNangThietLapAPTheoPhanHe_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="layCNangPQuyen">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQuanTriHeThongService/layCNangPQuyen" message="tns:IQuanTriHeThongService_layCNangPQuyen_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQuanTriHeThongService/layCNangPQuyenResponse" message="tns:IQuanTriHeThongService_layCNangPQuyen_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="layCNangPQuyenTheoDoiTuong">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQuanTriHeThongService/layCNangPQuyenTheoDoiTuong" message="tns:IQuanTriHeThongService_layCNangPQuyenTheoDoiTuong_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQuanTriHeThongService/layCNangPQuyenTheoDoiTuongResponse" message="tns:IQuanTriHeThongService_layCNangPQuyenTheoDoiTuong_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="layCNangPQuyenTheoDoiTuongChucNang">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQuanTriHeThongService/layCNangPQuyenTheoDoiTuongChucNang" message="tns:IQuanTriHeThongService_layCNangPQuyenTheoDoiTuongChucNang_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQuanTriHeThongService/layCNangPQuyenTheoDoiTuongChucNangResponse" message="tns:IQuanTriHeThongService_layCNangPQuyenTheoDoiTuongChucNang_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="layTNang">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQuanTriHeThongService/layTNang" message="tns:IQuanTriHeThongService_layTNang_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQuanTriHeThongService/layTNangResponse" message="tns:IQuanTriHeThongService_layTNang_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="layTNangTheoListIdTinhNang">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQuanTriHeThongService/layTNangTheoListIdTinhNang" message="tns:IQuanTriHeThongService_layTNangTheoListIdTinhNang_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQuanTriHeThongService/layTNangTheoListIdTinhNangResponse" message="tns:IQuanTriHeThongService_layTNangTheoListIdTinhNang_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="layTNguyen">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQuanTriHeThongService/layTNguyen" message="tns:IQuanTriHeThongService_layTNguyen_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQuanTriHeThongService/layTNguyenResponse" message="tns:IQuanTriHeThongService_layTNguyen_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="layDSTNguyenKThac">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQuanTriHeThongService/layDSTNguyenKThac" message="tns:IQuanTriHeThongService_layDSTNguyenKThac_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQuanTriHeThongService/layDSTNguyenKThacResponse" message="tns:IQuanTriHeThongService_layDSTNguyenKThac_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="luuPhanQuyen">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQuanTriHeThongService/luuPhanQuyen" message="tns:IQuanTriHeThongService_luuPhanQuyen_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQuanTriHeThongService/luuPhanQuyenResponse" message="tns:IQuanTriHeThongService_luuPhanQuyen_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="luuPhanQuyenChucNang">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQuanTriHeThongService/luuPhanQuyenChucNang" message="tns:IQuanTriHeThongService_luuPhanQuyenChucNang_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQuanTriHeThongService/luuPhanQuyenChucNangResponse" message="tns:IQuanTriHeThongService_luuPhanQuyenChucNang_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="layDanhSachDonVi">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQuanTriHeThongService/layDanhSachDonVi" message="tns:IQuanTriHeThongService_layDanhSachDonVi_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQuanTriHeThongService/layDanhSachDonViResponse" message="tns:IQuanTriHeThongService_layDanhSachDonVi_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="layThongTinCaNhan">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQuanTriHeThongService/layThongTinCaNhan" message="tns:IQuanTriHeThongService_layThongTinCaNhan_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQuanTriHeThongService/layThongTinCaNhanResponse" message="tns:IQuanTriHeThongService_layThongTinCaNhan_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="layNSD">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQuanTriHeThongService/layNSD" message="tns:IQuanTriHeThongService_layNSD_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQuanTriHeThongService/layNSDResponse" message="tns:IQuanTriHeThongService_layNSD_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="layNhomNSD">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQuanTriHeThongService/layNhomNSD" message="tns:IQuanTriHeThongService_layNhomNSD_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQuanTriHeThongService/layNhomNSDResponse" message="tns:IQuanTriHeThongService_layNhomNSD_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="layNSDTheoNhom">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQuanTriHeThongService/layNSDTheoNhom" message="tns:IQuanTriHeThongService_layNSDTheoNhom_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQuanTriHeThongService/layNSDTheoNhomResponse" message="tns:IQuanTriHeThongService_layNSDTheoNhom_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="layNhomTheoNSD">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQuanTriHeThongService/layNhomTheoNSD" message="tns:IQuanTriHeThongService_layNhomTheoNSD_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQuanTriHeThongService/layNhomTheoNSDResponse" message="tns:IQuanTriHeThongService_layNhomTheoNSD_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="layTruyCapTheoNSD">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQuanTriHeThongService/layTruyCapTheoNSD" message="tns:IQuanTriHeThongService_layTruyCapTheoNSD_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQuanTriHeThongService/layTruyCapTheoNSDResponse" message="tns:IQuanTriHeThongService_layTruyCapTheoNSD_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="layTruyCapTheoNhomNSD">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQuanTriHeThongService/layTruyCapTheoNhomNSD" message="tns:IQuanTriHeThongService_layTruyCapTheoNhomNSD_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQuanTriHeThongService/layTruyCapTheoNhomNSDResponse" message="tns:IQuanTriHeThongService_layTruyCapTheoNhomNSD_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="layPhamViPhongGDTheoNSDVaMaLoaiPhamVi">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQuanTriHeThongService/layPhamViPhongGDTheoNSDVaMaLoaiPhamVi" message="tns:IQuanTriHeThongService_layPhamViPhongGDTheoNSDVaMaLoaiPhamVi_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQuanTriHeThongService/layPhamViPhongGDTheoNSDVaMaLoaiPhamViResponse" message="tns:IQuanTriHeThongService_layPhamViPhongGDTheoNSDVaMaLoaiPhamVi_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ThemNSD">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQuanTriHeThongService/ThemNSD" message="tns:IQuanTriHeThongService_ThemNSD_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQuanTriHeThongService/ThemNSDResponse" message="tns:IQuanTriHeThongService_ThemNSD_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SuaNSD">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQuanTriHeThongService/SuaNSD" message="tns:IQuanTriHeThongService_SuaNSD_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQuanTriHeThongService/SuaNSDResponse" message="tns:IQuanTriHeThongService_SuaNSD_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="XoaListNSDTheoID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQuanTriHeThongService/XoaListNSDTheoID" message="tns:IQuanTriHeThongService_XoaListNSDTheoID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQuanTriHeThongService/XoaListNSDTheoIDResponse" message="tns:IQuanTriHeThongService_XoaListNSDTheoID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ThemNHNSD">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQuanTriHeThongService/ThemNHNSD" message="tns:IQuanTriHeThongService_ThemNHNSD_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQuanTriHeThongService/ThemNHNSDResponse" message="tns:IQuanTriHeThongService_ThemNHNSD_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SuaNHNSD">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQuanTriHeThongService/SuaNHNSD" message="tns:IQuanTriHeThongService_SuaNHNSD_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQuanTriHeThongService/SuaNHNSDResponse" message="tns:IQuanTriHeThongService_SuaNHNSD_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="XoaListNHNSDTheoID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQuanTriHeThongService/XoaListNHNSDTheoID" message="tns:IQuanTriHeThongService_XoaListNHNSDTheoID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQuanTriHeThongService/XoaListNHNSDTheoIDResponse" message="tns:IQuanTriHeThongService_XoaListNHNSDTheoID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="layThamSo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQuanTriHeThongService/layThamSo" message="tns:IQuanTriHeThongService_layThamSo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQuanTriHeThongService/layThamSoResponse" message="tns:IQuanTriHeThongService_layThamSo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="layThamSoHeThong">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQuanTriHeThongService/layThamSoHeThong" message="tns:IQuanTriHeThongService_layThamSoHeThong_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQuanTriHeThongService/layThamSoHeThongResponse" message="tns:IQuanTriHeThongService_layThamSoHeThong_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="layLoaiThamSo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQuanTriHeThongService/layLoaiThamSo" message="tns:IQuanTriHeThongService_layLoaiThamSo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQuanTriHeThongService/layLoaiThamSoResponse" message="tns:IQuanTriHeThongService_layLoaiThamSo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="capNhatThamSo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQuanTriHeThongService/capNhatThamSo" message="tns:IQuanTriHeThongService_capNhatThamSo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQuanTriHeThongService/capNhatThamSoResponse" message="tns:IQuanTriHeThongService_capNhatThamSo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="capNhatGiaTriThamSo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQuanTriHeThongService/capNhatGiaTriThamSo" message="tns:IQuanTriHeThongService_capNhatGiaTriThamSo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQuanTriHeThongService/capNhatGiaTriThamSoResponse" message="tns:IQuanTriHeThongService_capNhatGiaTriThamSo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="capNhatLoaiThamSo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQuanTriHeThongService/capNhatLoaiThamSo" message="tns:IQuanTriHeThongService_capNhatLoaiThamSo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQuanTriHeThongService/capNhatLoaiThamSoResponse" message="tns:IQuanTriHeThongService_capNhatLoaiThamSo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DoiMatKhauNguoiDung">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQuanTriHeThongService/DoiMatKhauNguoiDung" message="tns:IQuanTriHeThongService_DoiMatKhauNguoiDung_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQuanTriHeThongService/DoiMatKhauNguoiDungResponse" message="tns:IQuanTriHeThongService_DoiMatKhauNguoiDung_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DoiMatKhauNguoiDungLucDangNhap">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQuanTriHeThongService/DoiMatKhauNguoiDungLucDangNhap" message="tns:IQuanTriHeThongService_DoiMatKhauNguoiDungLucDangNhap_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQuanTriHeThongService/DoiMatKhauNguoiDungLucDangNhapResponse" message="tns:IQuanTriHeThongService_DoiMatKhauNguoiDungLucDangNhap_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ThietLapMatKhauNguoiDung">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQuanTriHeThongService/ThietLapMatKhauNguoiDung" message="tns:IQuanTriHeThongService_ThietLapMatKhauNguoiDung_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQuanTriHeThongService/ThietLapMatKhauNguoiDungResponse" message="tns:IQuanTriHeThongService_ThietLapMatKhauNguoiDung_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckClientVersion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQuanTriHeThongService/CheckClientVersion" message="tns:IQuanTriHeThongService_CheckClientVersion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQuanTriHeThongService/CheckClientVersionResponse" message="tns:IQuanTriHeThongService_CheckClientVersion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadClientVersion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQuanTriHeThongService/DownloadClientVersion" message="tns:IQuanTriHeThongService_DownloadClientVersion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQuanTriHeThongService/DownloadClientVersionResponse" message="tns:IQuanTriHeThongService_DownloadClientVersion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadClientVersionItem">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQuanTriHeThongService/DownloadClientVersionItem" message="tns:IQuanTriHeThongService_DownloadClientVersionItem_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQuanTriHeThongService/DownloadClientVersionItemResponse" message="tns:IQuanTriHeThongService_DownloadClientVersionItem_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LayDanhSachPhongGD">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQuanTriHeThongService/LayDanhSachPhongGD" message="tns:IQuanTriHeThongService_LayDanhSachPhongGD_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQuanTriHeThongService/LayDanhSachPhongGDResponse" message="tns:IQuanTriHeThongService_LayDanhSachPhongGD_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PhanQuyenPhamVi">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQuanTriHeThongService/PhanQuyenPhamVi" message="tns:IQuanTriHeThongService_PhanQuyenPhamVi_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQuanTriHeThongService/PhanQuyenPhamViResponse" message="tns:IQuanTriHeThongService_PhanQuyenPhamVi_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChucNang">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQuanTriHeThongService/ChucNang" message="tns:IQuanTriHeThongService_ChucNang_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQuanTriHeThongService/ChucNangResponse" message="tns:IQuanTriHeThongService_ChucNang_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="QuanTriHeThongEndpoint" type="tns:IQuanTriHeThongService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="returnHello">
+      <soap:operation soapAction="http://tempuri.org/IQuanTriHeThongService/returnHello" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LayChucNangTheoMa">
+      <soap:operation soapAction="http://tempuri.org/IQuanTriHeThongService/LayChucNangTheoMa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LayChucNangTheoMaCha">
+      <soap:operation soapAction="http://tempuri.org/IQuanTriHeThongService/LayChucNangTheoMaCha" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LayChucNangTheoQuyen">
+      <soap:operation soapAction="http://tempuri.org/IQuanTriHeThongService/LayChucNangTheoQuyen" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LayDSNgayLamViec">
+      <soap:operation soapAction="http://tempuri.org/IQuanTriHeThongService/LayDSNgayLamViec" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LuuLich">
+      <soap:operation soapAction="http://tempuri.org/IQuanTriHeThongService/LuuLich" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="layCNangTNang">
+      <soap:operation soapAction="http://tempuri.org/IQuanTriHeThongService/layCNangTNang" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="layCNangTNangTheoListIdChucNang">
+      <soap:operation soapAction="http://tempuri.org/IQuanTriHeThongService/layCNangTNangTheoListIdChucNang" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="layCNangTNangTheoListIdMenu">
+      <soap:operation soapAction="http://tempuri.org/IQuanTriHeThongService/layCNangTNangTheoListIdMenu" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="layTNangDuocPhanQuyen">
+      <soap:operation soapAction="http://tempuri.org/IQuanTriHeThongService/layTNangDuocPhanQuyen" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="layCNang">
+      <soap:operation soapAction="http://tempuri.org/IQuanTriHeThongService/layCNang" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="layCNangTheoPhanHe">
+      <soap:operation soapAction="http://tempuri.org/IQuanTriHeThongService/layCNangTheoPhanHe" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="layCNangThietLapAPTheoPhanHe">
+      <soap:operation soapAction="http://tempuri.org/IQuanTriHeThongService/layCNangThietLapAPTheoPhanHe" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="layCNangPQuyen">
+      <soap:operation soapAction="http://tempuri.org/IQuanTriHeThongService/layCNangPQuyen" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="layCNangPQuyenTheoDoiTuong">
+      <soap:operation soapAction="http://tempuri.org/IQuanTriHeThongService/layCNangPQuyenTheoDoiTuong" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="layCNangPQuyenTheoDoiTuongChucNang">
+      <soap:operation soapAction="http://tempuri.org/IQuanTriHeThongService/layCNangPQuyenTheoDoiTuongChucNang" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="layTNang">
+      <soap:operation soapAction="http://tempuri.org/IQuanTriHeThongService/layTNang" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="layTNangTheoListIdTinhNang">
+      <soap:operation soapAction="http://tempuri.org/IQuanTriHeThongService/layTNangTheoListIdTinhNang" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="layTNguyen">
+      <soap:operation soapAction="http://tempuri.org/IQuanTriHeThongService/layTNguyen" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="layDSTNguyenKThac">
+      <soap:operation soapAction="http://tempuri.org/IQuanTriHeThongService/layDSTNguyenKThac" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="luuPhanQuyen">
+      <soap:operation soapAction="http://tempuri.org/IQuanTriHeThongService/luuPhanQuyen" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="luuPhanQuyenChucNang">
+      <soap:operation soapAction="http://tempuri.org/IQuanTriHeThongService/luuPhanQuyenChucNang" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="layDanhSachDonVi">
+      <soap:operation soapAction="http://tempuri.org/IQuanTriHeThongService/layDanhSachDonVi" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="layThongTinCaNhan">
+      <soap:operation soapAction="http://tempuri.org/IQuanTriHeThongService/layThongTinCaNhan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="layNSD">
+      <soap:operation soapAction="http://tempuri.org/IQuanTriHeThongService/layNSD" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="layNhomNSD">
+      <soap:operation soapAction="http://tempuri.org/IQuanTriHeThongService/layNhomNSD" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="layNSDTheoNhom">
+      <soap:operation soapAction="http://tempuri.org/IQuanTriHeThongService/layNSDTheoNhom" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="layNhomTheoNSD">
+      <soap:operation soapAction="http://tempuri.org/IQuanTriHeThongService/layNhomTheoNSD" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="layTruyCapTheoNSD">
+      <soap:operation soapAction="http://tempuri.org/IQuanTriHeThongService/layTruyCapTheoNSD" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="layTruyCapTheoNhomNSD">
+      <soap:operation soapAction="http://tempuri.org/IQuanTriHeThongService/layTruyCapTheoNhomNSD" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="layPhamViPhongGDTheoNSDVaMaLoaiPhamVi">
+      <soap:operation soapAction="http://tempuri.org/IQuanTriHeThongService/layPhamViPhongGDTheoNSDVaMaLoaiPhamVi" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ThemNSD">
+      <soap:operation soapAction="http://tempuri.org/IQuanTriHeThongService/ThemNSD" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SuaNSD">
+      <soap:operation soapAction="http://tempuri.org/IQuanTriHeThongService/SuaNSD" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="XoaListNSDTheoID">
+      <soap:operation soapAction="http://tempuri.org/IQuanTriHeThongService/XoaListNSDTheoID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ThemNHNSD">
+      <soap:operation soapAction="http://tempuri.org/IQuanTriHeThongService/ThemNHNSD" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SuaNHNSD">
+      <soap:operation soapAction="http://tempuri.org/IQuanTriHeThongService/SuaNHNSD" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="XoaListNHNSDTheoID">
+      <soap:operation soapAction="http://tempuri.org/IQuanTriHeThongService/XoaListNHNSDTheoID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="layThamSo">
+      <soap:operation soapAction="http://tempuri.org/IQuanTriHeThongService/layThamSo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="layThamSoHeThong">
+      <soap:operation soapAction="http://tempuri.org/IQuanTriHeThongService/layThamSoHeThong" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="layLoaiThamSo">
+      <soap:operation soapAction="http://tempuri.org/IQuanTriHeThongService/layLoaiThamSo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="capNhatThamSo">
+      <soap:operation soapAction="http://tempuri.org/IQuanTriHeThongService/capNhatThamSo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="capNhatGiaTriThamSo">
+      <soap:operation soapAction="http://tempuri.org/IQuanTriHeThongService/capNhatGiaTriThamSo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="capNhatLoaiThamSo">
+      <soap:operation soapAction="http://tempuri.org/IQuanTriHeThongService/capNhatLoaiThamSo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DoiMatKhauNguoiDung">
+      <soap:operation soapAction="http://tempuri.org/IQuanTriHeThongService/DoiMatKhauNguoiDung" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DoiMatKhauNguoiDungLucDangNhap">
+      <soap:operation soapAction="http://tempuri.org/IQuanTriHeThongService/DoiMatKhauNguoiDungLucDangNhap" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ThietLapMatKhauNguoiDung">
+      <soap:operation soapAction="http://tempuri.org/IQuanTriHeThongService/ThietLapMatKhauNguoiDung" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckClientVersion">
+      <soap:operation soapAction="http://tempuri.org/IQuanTriHeThongService/CheckClientVersion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadClientVersion">
+      <soap:operation soapAction="http://tempuri.org/IQuanTriHeThongService/DownloadClientVersion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadClientVersionItem">
+      <soap:operation soapAction="http://tempuri.org/IQuanTriHeThongService/DownloadClientVersionItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LayDanhSachPhongGD">
+      <soap:operation soapAction="http://tempuri.org/IQuanTriHeThongService/LayDanhSachPhongGD" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PhanQuyenPhamVi">
+      <soap:operation soapAction="http://tempuri.org/IQuanTriHeThongService/PhanQuyenPhamVi" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChucNang">
+      <soap:operation soapAction="http://tempuri.org/IQuanTriHeThongService/ChucNang" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="QuanTriHeThongService">
+    <wsdl:port name="QuanTriHeThongEndpoint" binding="tns:QuanTriHeThongEndpoint">
+      <soap:address location="http://localhost:1001/QuanTriHeThongService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

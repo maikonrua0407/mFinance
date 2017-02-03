@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/eD.GSMCommunication" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/eD.GSMCommunication" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="GsmCommMain">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ConnectionCheckDelay" type="xs:int" />
+      <xs:element minOccurs="0" name="LogLevel" type="tns:LogLevel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GsmCommMain" nillable="true" type="tns:GsmCommMain" />
+  <xs:simpleType name="LogLevel">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Error" />
+      <xs:enumeration value="Warning" />
+      <xs:enumeration value="Info" />
+      <xs:enumeration value="Verbose" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="LogLevel" nillable="true" type="tns:LogLevel" />
+</xs:schema>

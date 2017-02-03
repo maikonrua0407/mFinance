@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="aa2e9e28-5d16-48eb-9af8-46d543be113e" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:1001/TaiSanDamBaoService.svc/mex/mex/mex/mex/mex/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service1.wsdl" MetadataType="Wsdl" ID="17e4dbbd-d1e1-4af8-a4be-e466299115b8" SourceId="1" SourceUrl="http://localhost:1001/TaiSanDamBaoService.svc/mex/mex/mex/mex/mex/mex" />
+    <MetadataFile FileName="service3.xsd" MetadataType="Schema" ID="e60a1148-b631-4e1d-909d-79b0283d9cbc" SourceId="1" SourceUrl="http://localhost:1001/TaiSanDamBaoService.svc/mex/mex/mex/mex/mex/mex" />
+    <MetadataFile FileName="service31.xsd" MetadataType="Schema" ID="f5601066-cbd0-416a-b3e3-6cf085dd29f8" SourceId="1" SourceUrl="http://localhost:1001/TaiSanDamBaoService.svc/mex/mex/mex/mex/mex/mex" />
+    <MetadataFile FileName="CommunicationServices.TaiSanDamBao.Messages1.xsd" MetadataType="Schema" ID="317ff75a-bc3e-47de-a009-a530fec7a832" SourceId="1" SourceUrl="http://localhost:1001/TaiSanDamBaoService.svc/mex/mex/mex/mex/mex/mex" />
+    <MetadataFile FileName="CommunicationMessages.Base.MessageBases1.xsd" MetadataType="Schema" ID="a772b2ed-5362-4151-a5df-34054b88c184" SourceId="1" SourceUrl="http://localhost:1001/TaiSanDamBaoService.svc/mex/mex/mex/mex/mex/mex" />
+    <MetadataFile FileName="Utilities.Common1.xsd" MetadataType="Schema" ID="fc3af98f-2a8f-46c0-80a4-9b62830c1e53" SourceId="1" SourceUrl="http://localhost:1001/TaiSanDamBaoService.svc/mex/mex/mex/mex/mex/mex" />
+    <MetadataFile FileName="service32.xsd" MetadataType="Schema" ID="291df2ea-8c1a-498d-b938-db843d79d9c7" SourceId="1" SourceUrl="http://localhost:1001/TaiSanDamBaoService.svc/mex/mex/mex/mex/mex/mex" />
+    <MetadataFile FileName="Arrays1.xsd" MetadataType="Schema" ID="78393c30-75ce-46c3-948d-149ec98b0dc3" SourceId="1" SourceUrl="http://localhost:1001/TaiSanDamBaoService.svc/mex/mex/mex/mex/mex/mex" />
+    <MetadataFile FileName="DataModel.EntityFramework1.xsd" MetadataType="Schema" ID="fbf59b6e-ba24-4fae-b042-9ac1ab9757c9" SourceId="1" SourceUrl="http://localhost:1001/TaiSanDamBaoService.svc/mex/mex/mex/mex/mex/mex" />
+    <MetadataFile FileName="BusinessServices.TaiSanDamBao.DTO.xsd" MetadataType="Schema" ID="0d43e267-e72f-42e3-bb84-e53948ae3f25" SourceId="1" SourceUrl="http://localhost:1001/TaiSanDamBaoService.svc/mex/mex/mex/mex/mex/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

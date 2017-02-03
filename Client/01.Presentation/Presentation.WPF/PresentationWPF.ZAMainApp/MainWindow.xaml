@@ -1,0 +1,85 @@
+﻿<my:RibbonWindow x:Class="PresentationWPF.ZAMainApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:PresentationWPF.ZAMainApp"
+        xmlns:my="http://schemas.microsoft.com/winfx/2006/xaml/presentation/ribbon" 
+        xmlns:System="clr-namespace:System;assembly=mscorlib" 
+             xmlns:uc="clr-namespace:PresentationWPF.CustomControl;assembly=PresentationWPF.CustomControl"
+        xmlns:Microsoft_Windows_Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero" 
+        Title="{DynamicResource U.ZAMainApp.MainWindow.Title}" Height="700" Width="1024" WindowState="Maximized" Icon="pack://application:,,,/Utilities.Common;component/Images/Icon/Logo.ico" Loaded="RibbonWindow_Loaded" Closed="RibbonWindow_Closed" WindowStartupLocation="CenterScreen">
+    <my:RibbonWindow.Resources>
+        <Style TargetType="{x:Type TabItem}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TabItem}">
+                        <!--<Border Background="{StaticResource LightBackgroundBrush}"-->
+                        <Border CornerRadius="5,5,0,0" BorderThickness="1" BorderBrush="Black">
+                            <StackPanel Orientation="Horizontal" Margin="2">
+                                <ContentPresenter  ContentSource="Header" Margin="10,2,10,2"/>
+                                <!--<Button Background="Transparent" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"  Height="20" Width="20" Content="X" Click="CloseTab" FontWeight="Bold" />-->
+                            </StackPanel>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </my:RibbonWindow.Resources>
+    <Grid>
+        <DockPanel x:Name="dpMain" LastChildFill="True">
+            <!--<my:Ribbon DockPanel.Dock="Top" x:Name="rbMenu" Background="#FFDCEFC4">-->
+                <my:Ribbon DockPanel.Dock="Top" x:Name="rbMenu">
+                <!--<my:Ribbon.ApplicationMenu>
+                    <my:RibbonApplicationMenu AllowDrop="False">
+                        <MenuItem Name="btnLogout" Header="Logout" Click="btnLogout_Click" />
+                        <MenuItem Name="btnExit" Header="Exit"/>
+                    </my:RibbonApplicationMenu>
+                </my:Ribbon.ApplicationMenu>-->
+            </my:Ribbon>
+            <StatusBar Name="stbTrangThai" DockPanel.Dock="Bottom" >
+                <StatusBarItem HorizontalAlignment="Right">
+                    <Label Name="lblUserName" Content="{DynamicResource U.ZAMainApp.MainWindow.NguoiDung}" />
+                </StatusBarItem>
+                <StatusBarItem HorizontalAlignment="Left">
+                    <Label Name="lbUser"></Label>
+                </StatusBarItem>
+                <StatusBarItem HorizontalAlignment="Right">
+                    <Label Name="lblBranch" Content="{DynamicResource U.ZAMainApp.MainWindow.DonVi}" />
+                </StatusBarItem>
+                <StatusBarItem HorizontalAlignment="Left">
+                    <Label Name="lbBranch"></Label>
+                </StatusBarItem>
+                <StatusBarItem HorizontalAlignment="Right">
+                    <Label Name="lblWorkingDay" Content="{DynamicResource U.ZAMainApp.MainWindow.NgayLamViec}" />
+                </StatusBarItem>
+                <StatusBarItem HorizontalAlignment="Left">
+                    <Label Name="lbWorkingDay"></Label>
+                </StatusBarItem>
+                <!--<StatusBarItem HorizontalAlignment="Right" Width="600">
+                    <uc:MarqueeTextControl FontSize="12" MarqueeTimeInSeconds="20"  Foreground="Red" MarqueeContent="Số sổ đến hạn : 100    Số khế ước quá hạn : 10     Số khoản chưa duyệt : 24" MarqueeType="RightToLeft" Height="25" Width="600"></uc:MarqueeTextControl>
+                </StatusBarItem>-->
+                <StatusBarItem HorizontalContentAlignment="Right">
+                    <Image ToolTip="NGV Corporation" Cursor="Hand" MouseUp="Image_MouseUp">
+                        <Image.Style>
+                            <Style TargetType="{x:Type Image}">
+                                <Setter Property="Source" Value="pack://application:,,,/Utilities.Common;component/Images/Icon/NGV.png"/>
+                                <Setter Property="Height" Value="16" />
+                                <Setter Property="Margin" Value="0,0,8,0" />
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Source" Value="pack://application:,,,/Utilities.Common;component/Images/Icon/NGVGlow.png"/>
+                                        <Setter Property="Height" Value="22" />
+                                        <Setter Property="Margin" Value="0,0,5,0" />
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Image.Style>
+                    </Image>
+                </StatusBarItem>
+            </StatusBar>
+            <TabControl x:Name="MainTab" Grid.Row="1" Padding="0" TabStripPlacement="Left">
+            </TabControl>
+            <!--<Image Height="150" Name="image1" Stretch="Fill" Width="200" >
+            </Image>-->
+        </DockPanel>
+    </Grid>
+</my:RibbonWindow>

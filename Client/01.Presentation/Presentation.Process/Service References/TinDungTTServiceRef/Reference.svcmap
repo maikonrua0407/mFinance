@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="5879a890-d33b-4d0f-8180-480da92c26b0" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:1001/TinDungTTService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="TinDungTTService.xsd" MetadataType="Schema" ID="36e3eda9-acc9-430d-aed0-c4e232b25910" SourceId="1" SourceUrl="http://localhost:1001/TinDungTTService.svc?xsd=xsd6" />
+    <MetadataFile FileName="TinDungTTService.wsdl" MetadataType="Wsdl" ID="193d8ba0-09ce-4262-8525-82f9a4c6fcc0" SourceId="1" SourceUrl="http://localhost:1001/TinDungTTService.svc" />
+    <MetadataFile FileName="TinDungTTService1.xsd" MetadataType="Schema" ID="fca974ae-d54d-4be7-a5f5-b87e7f7c67b9" SourceId="1" SourceUrl="http://localhost:1001/TinDungTTService.svc?xsd=xsd8" />
+    <MetadataFile FileName="TinDungTTService2.xsd" MetadataType="Schema" ID="de35a717-5e8a-47eb-8105-9b6a11a2e0e9" SourceId="1" SourceUrl="http://localhost:1001/TinDungTTService.svc?xsd=xsd5" />
+    <MetadataFile FileName="TinDungTTService9.xsd" MetadataType="Schema" ID="1c2a4b43-afc1-47ca-a22b-bc3f35f14346" SourceId="1" SourceUrl="http://localhost:1001/TinDungTTService.svc?xsd=xsd9" />
+    <MetadataFile FileName="TinDungTTService3.xsd" MetadataType="Schema" ID="5c60b2d5-92e9-46c7-a210-98b60efca945" SourceId="1" SourceUrl="http://localhost:1001/TinDungTTService.svc?xsd=xsd4" />
+    <MetadataFile FileName="TinDungTTService4.xsd" MetadataType="Schema" ID="a6f263f0-6920-4f18-bc87-785e80f3bcd9" SourceId="1" SourceUrl="http://localhost:1001/TinDungTTService.svc?xsd=xsd0" />
+    <MetadataFile FileName="TinDungTTService5.xsd" MetadataType="Schema" ID="70b4bb33-cbf4-490e-ac28-9ff762877128" SourceId="1" SourceUrl="http://localhost:1001/TinDungTTService.svc?xsd=xsd2" />
+    <MetadataFile FileName="TinDungTTService6.xsd" MetadataType="Schema" ID="4ccd8520-cb26-494f-9651-b9c035c58efd" SourceId="1" SourceUrl="http://localhost:1001/TinDungTTService.svc?xsd=xsd1" />
+    <MetadataFile FileName="TinDungTTService7.xsd" MetadataType="Schema" ID="48fa6cec-567b-445d-9f60-4cda4a81ecd9" SourceId="1" SourceUrl="http://localhost:1001/TinDungTTService.svc?xsd=xsd3" />
+    <MetadataFile FileName="TinDungTTService8.xsd" MetadataType="Schema" ID="069a431d-3cfa-4c0b-be85-07c6aae5eca8" SourceId="1" SourceUrl="http://localhost:1001/TinDungTTService.svc?xsd=xsd7" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

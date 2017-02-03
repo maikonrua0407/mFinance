@@ -1,0 +1,95 @@
+﻿<UserControl x:Class="PresentationWPF.ZATestApp.Tainm.ReOderAndNumberRows"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:my="clr-namespace:System;assembly=mscorlib"
+             xmlns:uc="clr-namespace:PresentationWPF.ZATestApp.CustomControl"
+             xmlns:TelerikDataPager="clr-namespace:Telerik.Windows.Controls.Data.DataPager;assembly=Telerik.Windows.Controls.Data"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"  
+             xmlns:ribbon="http://schemas.microsoft.com/winfx/2006/xaml/presentation/ribbon"
+             xmlns:uc1="clr-namespace:PresentationWPF.ZATestApp.Tainm"
+             xmlns:uc2="clr-namespace:PresentationWPF.CustomControl;assembly=PresentationWPF.CustomControl"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <my:String x:Key="TongGia">Tổng giá: </my:String>
+        <uc:DataTimeConverter x:Key="converter" />
+    </UserControl.Resources>
+    <Grid>
+        <Grid>
+            <telerik:RadBusyIndicator Name="radBusyMain" Grid.Row="1" IsIndeterminate="False">
+                <DockPanel>
+                    <telerik:RadComboBox x:Name="cmbTestIP" DockPanel.Dock="Top"  SelectedIndex="0" DropDownClosed="cmbTestIP_DropDownClosed">
+                        <telerik:RadComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <CheckBox Content="{Binding Path=Text}" IsChecked="{Binding Path=IsSelected,Mode=TwoWay}" Height="16" HorizontalAlignment="Left" Margin="2" VerticalAlignment="Top" />
+                            </DataTemplate>
+                        </telerik:RadComboBox.ItemTemplate>
+                        <telerik:RadComboBox.SelectionBoxTemplate >
+                            <DataTemplate>
+                                <TextBlock Text="{Binding ElementName=cmbTestIP, Path=ItemsSource.SelectedItemsText}" />
+                            </DataTemplate>
+                        </telerik:RadComboBox.SelectionBoxTemplate>
+                    </telerik:RadComboBox>
+                    <StackPanel Margin="0,15,0,0">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <!--<Grid.ContextMenu>
+                        <ContextMenu Name="cmnMain">
+                        </ContextMenu>
+                    </Grid.ContextMenu>-->
+                            <telerik:RadNumericUpDown Name="nudPageSize" HorizontalAlignment="Left" Grid.Row="0" Width="60" Margin="5" IsInteger="True" ValueChanged="nudRowNum_ValueChanged" />
+                            <telerik:RadGridView x:Name="GridView" Grid.Row="1" MaxHeight="400" CanUserInsertRows="True"
+								  CanUserFreezeColumns="False" RowIndicatorVisibility="Collapsed" AutoGenerateColumns="False" ShowColumnFooters="True"
+                                  ShowGroupPanel="False" BeginningEdit="GridView_BeginningEdit" PreparingCellForEdit="GridView_PreparingCellForEdit">
+                                <telerik:RadGridView.ContextMenu>
+                                    <ContextMenu Name="cmnMain">
+                                    </ContextMenu>
+                                </telerik:RadGridView.ContextMenu>
+                                <telerik:RadGridView.Columns>
+                                    <telerik:GridViewDataColumn Header="ID cha" DataMemberBinding="{Binding SID}" />
+                                    <telerik:GridViewDataColumn Header="Tên lớp cha" DataMemberBinding="{Binding STen}" IsReadOnly="True"/>
+                                    <!--<uc:RadMyColumn Header="My Columns" DataMemberBinding="{Binding GTRI_TTIN}" />-->
+                                    <uc:ColumnsDateTimeAndComboBox Header="Ngày tháng" DataMemberBinding="{Binding ObjClasschild.STen, Converter={StaticResource converter}}" />
+                                    <telerik:GridViewDataColumn Header="ID Con" DataMemberBinding="{Binding ObjClasschild.SID}" />
+                                    <telerik:GridViewDataColumn Header="Tên lớp Con" DataMemberBinding="{Binding ObjClasschild.STen}" IsReadOnly="True"/>
+                                    <telerik:GridViewDataColumn Header="Tên nhom" DataMemberBinding="{Binding SNhom}" IsReadOnly="True"/>
+                                    <telerik:GridViewDataColumn Header="So Tien 1" DataMemberBinding="{Binding DSoTien1}" IsReadOnly="True"/>
+                                    <telerik:GridViewDataColumn Header="So Tien 2" DataMemberBinding="{Binding DSoTien2}" IsReadOnly="True"/>
+                                    <uc2:ColumnsDateTimeMulti Header="Test" DataMemberBinding="NgayThang" IsChange="False" Name="ucclThang1" FormatString="dd"/>
+                                </telerik:RadGridView.Columns>
+                                <telerik:RadGridView.GroupDescriptors>
+                                    <telerik:GroupDescriptor Member="SNhom" SortDirection="Ascending">
+                                        <telerik:GroupDescriptor.AggregateFunctions>
+                                            <telerik:SumFunction SourceField="DSoTien1" Caption="So tien 1:" />
+                                            <telerik:SumFunction SourceField="DSoTien2" Caption="So tien 2:" />
+                                        </telerik:GroupDescriptor.AggregateFunctions>
+                                    </telerik:GroupDescriptor>
+                                    <!--<telerik:ColumnGroupDescriptor>
+                                        <telerik:ColumnGroupDescriptor.Column>
+                                            <telerik:GridViewDataColumn Header="So tien 1">
+                                                <telerik:GridViewDataColumn.AggregateFunctions>
+                                                    <telerik:SumFunction SourceField="DSoTien1" Caption="So tien 1:" />
+                                                </telerik:GridViewDataColumn.AggregateFunctions>
+                                            </telerik:GridViewDataColumn>
+                                        </telerik:ColumnGroupDescriptor.Column>
+                                    </telerik:ColumnGroupDescriptor>-->
+                                </telerik:RadGridView.GroupDescriptors>
+                            </telerik:RadGridView>
+                            <telerik:RadDataPager Name="pager" PageSize="10" Grid.Row="2" Source="{Binding Items, ElementName=GridView}" IsTotalItemCountFixed="True" DisplayMode="All"/>
+                            <Button Content="Thêm mới" Height="23" HorizontalAlignment="Left" Margin="79,4,0,0" Name="btnThem" VerticalAlignment="Top" Width="75" Click="btnThem_Click" />
+                            <!--<telerik:RadContextMenu Grid.Row="1" HorizontalAlignment="Left" Margin="9958,5,0,0" Name="cmnMain" VerticalAlignment="Top">
+                    </telerik:RadContextMenu>-->
+                        </Grid>
+                    </StackPanel>
+                    
+                </DockPanel>
+            </telerik:RadBusyIndicator>
+        </Grid>
+    </Grid>
+</UserControl>

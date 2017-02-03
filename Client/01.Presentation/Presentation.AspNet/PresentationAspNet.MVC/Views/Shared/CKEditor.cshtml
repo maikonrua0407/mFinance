@@ -1,0 +1,9 @@
+﻿
+@model string
+<div contenteditable="true" id="txtContent" class="editor wysiwyg-editor">
+    @Html.Raw(Model)
+</div>
+
+<style type="text/css">
+    .wysiwyg-editor{ height: 150px !important}
+</style>

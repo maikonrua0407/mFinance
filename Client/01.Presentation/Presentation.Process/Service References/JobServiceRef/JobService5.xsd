@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/CommunicationServices.Job.Messages" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/CommunicationServices.Job.Messages" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:1001/JobService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" />
+  <xs:import schemaLocation="http://localhost:1001/JobService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" />
+  <xs:complexType name="JobRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" base="q1:RequestBase">
+        <xs:sequence>
+          <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstSysJobHis" nillable="true" type="q2:ArrayOfSYS_JOB_HIS" />
+          <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstSysJobSubscribe" nillable="true" type="q3:ArrayOfSYS_JOB_SUBSCRIBE" />
+          <xs:element minOccurs="0" name="maDoiTuong" nillable="true" type="xs:string" />
+          <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objSysJob" nillable="true" type="q4:SYS_JOB" />
+          <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objSysJobEmail" nillable="true" type="q5:SYS_JOB_EMAIL" />
+          <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objSysJobHis" nillable="true" type="q6:SYS_JOB_HIS" />
+          <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objSysJobSubscribe" nillable="true" type="q7:SYS_JOB_SUBSCRIBE" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="JobRequest" nillable="true" type="tns:JobRequest" />
+  <xs:complexType name="JobResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q8="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" base="q8:ResponseBase">
+        <xs:sequence>
+          <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstSysJobHis" nillable="true" type="q9:ArrayOfSYS_JOB_HIS" />
+          <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstSysJobSubscribe" nillable="true" type="q10:ArrayOfSYS_JOB_SUBSCRIBE" />
+          <xs:element minOccurs="0" name="maDoiTuong" nillable="true" type="xs:string" />
+          <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objSysJob" nillable="true" type="q11:SYS_JOB" />
+          <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objSysJobEmail" nillable="true" type="q12:SYS_JOB_EMAIL" />
+          <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objSysJobHis" nillable="true" type="q13:SYS_JOB_HIS" />
+          <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objSysJobSubscribe" nillable="true" type="q14:SYS_JOB_SUBSCRIBE" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="JobResponse" nillable="true" type="tns:JobResponse" />
+</xs:schema>

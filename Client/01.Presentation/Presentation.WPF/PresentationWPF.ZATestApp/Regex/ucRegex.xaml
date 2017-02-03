@@ -1,0 +1,36 @@
+﻿<UserControl x:Class="PresentationWPF.ZATestApp.Regex.ucRegex"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PresentationWPF.ZATestApp.Regex"
+             mc:Ignorable="d" 
+             d:DesignHeight="322" d:DesignWidth="567">
+
+    <UserControl.Resources>
+        <!-- This style allows a validation error message to be displayed in a TextBox's tooltip. -->
+        <Style TargetType="{x:Type local:ValidatingTextBox}">
+            <Setter Property="Margin" Value="0,8" />
+            <Style.Triggers>
+                <MultiTrigger>
+                    <MultiTrigger.Conditions>
+                        <!-- Don't let the tooltip show errors if the text box is configured to use popups for that purpose -->
+                        <Condition Property="TooltipShowsError" Value="True" />
+                        <Condition Property="Validation.HasError" Value="True" />
+                    </MultiTrigger.Conditions>
+                    <Setter Property="ToolTip" 
+                            Value="{Binding RelativeSource={RelativeSource Self}, Path=(Validation.Errors)[0].ErrorContent}"/>
+                </MultiTrigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Resources>
+
+    <Grid>
+        <local:ValidatingTextBox x:Name="ValidatingTextBoxElement" NotificationType="Popup"
+                                         Text="{Binding Path=MiscellaneousInput, UpdateSourceTrigger=PropertyChanged}"                                  
+                                         Height="24" Width="100" ErrorMessage="Hello Error!" Margin="180,27,286,271" />
+
+        <ComboBox ItemsSource="{Binding ElementName=ValidatingTextBoxElement, Path=ContentTypes}" 
+                          SelectedValue="{Binding ElementName=ValidatingTextBoxElement, Path=ContentType, Mode=TwoWay}" Height="24" Width="100" Margin="180,71,287,227" />
+    </Grid>
+</UserControl>

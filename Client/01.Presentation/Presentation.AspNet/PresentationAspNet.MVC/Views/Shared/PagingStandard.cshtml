@@ -1,0 +1,129 @@
+﻿@model ParamPaging
+@using System.Globalization
+@using PresentationAspNet.MVC
+
+<div style="padding:2px 0px 8px; width:100%">
+<div style="float:left; width:68%" id="pageContainer">
+@{
+    var idCbo = "cboPage" + Model.functionJs;
+    var hidCurPage = "curPage" + Model.functionJs;
+    var soTrangHienThi = Common.SoTrangHienThi;
+    int totalPage = Model.totalRecord % (Model.pageSize * soTrangHienThi) != 0
+        ? ((int)(Model.totalRecord / (Model.pageSize * soTrangHienThi))) + 1
+        : ((int)Model.totalRecord / (Model.pageSize * soTrangHienThi));
+
+    var lastPage = Model.totalRecord % Model.pageSize != 0
+        ? ((int)(Model.totalRecord / Model.pageSize)) + 1
+        : ((int)Model.totalRecord / Model.pageSize);
+
+    var anchorPage = Model.curPage > soTrangHienThi
+        ? Model.curPage % soTrangHienThi != 0 ? Model.curPage / soTrangHienThi + 1 : Model.curPage / soTrangHienThi
+        : 1;
+    if (Model.curPage * Model.pageSize < Model.totalRecord ||
+        (Model.curPage > 1 && Model.curPage * Model.pageSize >= Model.totalRecord && Model.curPage * Model.pageSize <= Model.totalRecord * Model.curPage))
+    {
+        /* Hiển thị về trang đầu và next */
+        <ul class="pagination">            
+            @if (anchorPage > 1)
+            {
+                <li>
+                    <a  id="page-first" anchor="pg-1" href="javascript:void(0);" onclick="@(Model.functionJs + "('" + 1 +  "')" )">««</a>    
+                </li>
+            }
+            else
+            {
+                <li>
+                    <a  id="page-first" href="javascript:void(0);" style="color:#AAA" onclick="return false;">««</a>    
+                </li>
+            }
+            @if (anchorPage >= 2)
+            {
+                <li>
+                    <a  id="page-next" anchor="pg-2" href="javascript:void(0);" onclick="@(Model.functionJs + "('" + (anchorPage - 1) * soTrangHienThi +  "')" )">«</a>    
+                </li>
+            }
+            else
+            {
+                <li>
+                    <a  id="page-next" href="javascript:void(0);" style="color:#AAA" onclick="return false;">«</a>   
+                </li> 
+            }
+
+            <!-- Hiển thị trang -->
+            @{
+                var index = 3;
+            }
+            @for (var i = 1; i <= soTrangHienThi; i++)
+            {
+                var page = (anchorPage - 1) * soTrangHienThi + i;
+                if (Model.curPage == page)
+                {
+                    <li class="active">
+                        <a  id="page-@page" anchor="pg-@index" href="javascript:void(0);" onclick="return false;">@page</a>    
+                    </li>
+                }else{
+                    <li>
+                        <a  id="page-@page" anchor="pg-@index" href="javascript:void(0);" onclick="@(Model.functionJs + "('" + page +  "')" )">@page</a>    
+                    </li>
+                }            
+                if (page * Model.pageSize >= Model.totalRecord)
+                {
+                    break;
+                }
+                index++;
+            }
+
+            <!-- Hiển thị về trang cuối và prev -->
+            @if (totalPage > 2 && totalPage - anchorPage >= 2)
+            {
+                <li>
+                    <a  id="page-prev" anchor="pg-@(index)" href="javascript:void(0);" onclick="@(Model.functionJs + "('" + ((anchorPage * soTrangHienThi) + 1) +  "')" )">»</a>
+                </li>
+            }
+            else
+            {
+                <li>
+	                <a  id="page-prev" href="javascript:void(0);" style="color:#AAA" onclick="return false;">»</a>
+                </li>
+            }
+            @if (totalPage > anchorPage)
+            {
+                <li>
+                    <a  id="page-last" anchor="pg-@(index+1)" href="javascript:void(0);" onclick="@(Model.functionJs + "('" + lastPage +  "')" )">»»</a>
+                </li>
+            }
+            else
+            {
+                <li>
+	                <a  id="page-last" href="javascript:void(0);" style="color:#AAA" onclick="return false;">»»</a>
+                </li>
+            }
+        </ul>
+    }
+}
+</div>
+<div style="float:right; width:30%; text-align:right"> <!-- class="dvPageCombo"-->
+    <!-- xu ly hien thi pagesize -->
+    @if (Model.curPage * Model.pageSize < Model.totalRecord ||
+        (Model.curPage > 1 && Model.curPage * Model.pageSize >= Model.totalRecord && Model.curPage * Model.pageSize <= Model.totalRecord * Model.curPage))
+    {
+        <span>Hiển thị </span>
+        <select name="@idCbo" id="@idCbo" style="width: 30%" class="cssCombobox" onchange="@(Model.functionJs + "('" + 1 + "')" )">
+            @foreach (var d in DataCombobox.initPageShow())
+            {
+                if (Model.pageSize.ToString(CultureInfo.InvariantCulture) == d.id)
+                {
+                    <option selected value="@d.id">@d.id</option>
+                }
+                else
+                {
+                    <option value="@d.id">@d.id</option>
+                }
+            }
+        </select> 
+        <span>/ <b>@Model.totalRecord</b> bản ghi.</span>
+    }
+</div>   
+</div>
+<br />
+<input type="hidden" id="@hidCurPage" value="@Model.curPage" />

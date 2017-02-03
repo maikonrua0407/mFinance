@@ -1,0 +1,146 @@
+﻿<UserControl x:Class="PresentationWPF.BaoHiem.CamKetThamGiaBH.ucLapCamKetTheoKH"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:uc="clr-namespace:PresentationWPF.CustomControl;assembly=PresentationWPF.CustomControl"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:ribbon="http://schemas.microsoft.com/winfx/2006/xaml/presentation/ribbon"
+             xmlns:my="clr-namespace:System;assembly=mscorlib"
+            xmlns:s="clr-namespace:System;assembly=mscorlib"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="900">
+    <UserControl.Resources>
+        <DataTemplate x:Key="HeaderTemplate" DataType="{x:Type s:String}">
+            <Grid HorizontalAlignment="Left" Height="45">
+                <TextBlock Text="{Binding}" TextWrapping="Wrap" VerticalAlignment="Center"/>
+            </Grid>
+        </DataTemplate>
+        <my:String x:Key="U.DungChung.Button.Them">Thêm</my:String>
+        <my:String x:Key="U.DungChung.Button.Sua">Sửa</my:String>
+        <my:String x:Key="U.DungChung.Button.Xoa">Xóa</my:String>
+        <my:String x:Key="U.DungChung.Button.Luu">Lưu</my:String>
+        <my:String x:Key="U.DungChung.Button.Duyet">Duyệt</my:String>
+        <my:String x:Key="U.DungChung.Button.Tuchoi">Từ chối</my:String>
+        <my:String x:Key="U.DungChung.Button.Thoaiduyet">Thoái duyệt</my:String>
+        <my:String x:Key="U.DungChung.Button.Timkiem">Tìm kiếm</my:String>
+        <my:String x:Key="U.DungChung.Button.XuatExcel">Xuất Excel</my:String>
+        <my:String x:Key="U.DungChung.Button.Dong">Đóng</my:String>
+        <my:String x:Key="U.DungChung.Check.ThemNhieuLan">Thêm nhiều lần</my:String>
+
+        <my:String x:Key="U.DungChung.TrangThaiNghiepVu">Trạng thái:</my:String>
+        <my:String x:Key="U.DungChung.TrangThaiNghiepVu.ChoDuyet">Chờ duyệt</my:String>
+
+        <my:String x:Key="U.DungChung.ThongTinKiemSoat">Thông tin kiểm soát</my:String>
+        <my:String x:Key="U.DungChung.ThongTinKiemSoat.TrangThaiBanGhi">Trạng thái bản ghi</my:String>
+        <my:String x:Key="U.DungChung.ThongTinKiemSoat.NgayLapGD">Ngày lập giao dịch:</my:String>
+        <my:String x:Key="U.DungChung.ThongTinKiemSoat.NgayLap">Ngày lập:</my:String>
+        <my:String x:Key="U.DungChung.ThongTinKiemSoat.NguoiLap">Người lập:</my:String>
+        <my:String x:Key="U.DungChung.ThongTinKiemSoat.NgayCapNhat">Ngày cập nhật:</my:String>
+        <my:String x:Key="U.DungChung.ThongTinKiemSoat.NguoiCapNhat">Người cập nhật:</my:String>
+        
+        <my:String x:Key="U.BaoHiem.ucChiPhiHoBaoHiemCT.ThongTinCamKet">Thông tin cam kết</my:String>
+        <my:String x:Key="U.BaoHiem.ucChiPhiHoBaoHiemCT.ThongTinKH">Thông tin khách hàng</my:String>
+        <my:String x:Key="U.BaoHiem.ucChiPhiHoBaoHiemCT.MaKH">Mã khách hàng:</my:String>
+        <my:String x:Key="U.BaoHiem.ucChiPhiHoBaoHiemCT.SoCamKetBH">Số cam kết bảo hiểm:</my:String>
+        <my:String x:Key="U.BaoHiem.ucChiPhiHoBaoHiemCT.NgayCap">Ngày cấp:</my:String>
+        <my:String x:Key="U.BaoHiem.ucChiPhiHoBaoHiemCT.DiaChi">Địa chỉ:</my:String>
+        <my:String x:Key="U.BaoHiem.ucChiPhiHoBaoHiemCT.TenKH">Tên khách hàng:</my:String>
+        <my:String x:Key="U.BaoHiem.ucChiPhiHoBaoHiemCT.SoGiayTo">Số giấy tờ:</my:String>
+        <my:String x:Key="U.BaoHiem.ucChiPhiHoBaoHiemCT.NoiCap">Nơi cấp:</my:String>
+        <my:String x:Key="U.BaoHiem.ucChiPhiHoBaoHiemCT.LoaiSP">Loại sản phẩm:</my:String>
+        <my:String x:Key="U.BaoHiem.ucChiPhiHoBaoHiemCT.DTuongDuocBVe">Đối tượng được bảo vệ:</my:String>
+        <my:String x:Key="U.BaoHiem.ucChiPhiHoBaoHiemCT.NgayBatDauHL">Ngày bắt đầu hiệu lực:</my:String>
+        <my:String x:Key="U.BaoHiem.ucChiPhiHoBaoHiemCT.ThuPhiXLTV">Thu phí xác lập thành viên</my:String>
+        <my:String x:Key="U.BaoHiem.ucChiPhiHoBaoHiemCT.NgayHetHL">Ngày hết hiệu lực:</my:String>
+    </UserControl.Resources>
+    <Grid Name="grMain">
+        <DockPanel>
+            <DockPanel HorizontalAlignment="Stretch" DockPanel.Dock="Top" Margin="3,3,0,3" LastChildFill="False" Name="docToolbar">
+                <WrapPanel Name="Toolbar">
+                    <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbSave" DockPanel.Dock="Left" Label="Lưu"  SmallImageSource="/Utilities.Common;component/Images/Action/save.png" Style="{StaticResource RibbonButton}" />
+                    <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbDelete" DockPanel.Dock="Left" Label="Xóa"  SmallImageSource="/Utilities.Common;component/Images/Action/delete.png" Style="{StaticResource RibbonButton}" />
+                    <Label Name="lbl1" Margin="3,0,0,0" DockPanel.Dock="Left" BorderThickness="3" Width="2" BorderBrush="#FF170404" />
+                    <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbApprove" DockPanel.Dock="Left" Label="Duyệt"  SmallImageSource="/Utilities.Common;component/Images/Action/approve.png" Style="{StaticResource RibbonButton}" />
+                    <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbRefuse" DockPanel.Dock="Left" Label="Từ chối"  SmallImageSource="/Utilities.Common;component/Images/Action/refuse.png" Style="{StaticResource RibbonButton}"/>
+                    <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbCancel" DockPanel.Dock="Left" Label="Thoái duyệt"  SmallImageSource="/Utilities.Common;component/Images/Action/cancel.png" Style="{StaticResource RibbonButton}" />
+                    <Label Name="lbl2" Margin="3,0,0,0" DockPanel.Dock="Left" BorderThickness="3" Width="2" BorderBrush="#FF170404" />
+                    <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbPreview" DockPanel.Dock="Left" Label="Xem trước"  SmallImageSource="/Utilities.Common;component/Images/Action/preview.png" Style="{StaticResource RibbonButton}" />
+                    <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbExport" DockPanel.Dock="Left" Label="Xuất Excel"  SmallImageSource="/Utilities.Common;component/Images/Action/export.png" Style="{StaticResource RibbonButton}" />
+                    <Label Name="lbl3" Margin="3,0,0,0" DockPanel.Dock="Left" BorderThickness="3" Width="2" BorderBrush="#FF170404" />
+                    <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbClose" DockPanel.Dock="Left" Label="Đóng"  SmallImageSource="/Utilities.Common;component/Images/Action/close.png" Style="{StaticResource RibbonButton}" />
+                </WrapPanel>
+                <CheckBox Margin="0,0,3,5" VerticalAlignment="Bottom" DockPanel.Dock="Right" Content="Thêm nhiều lần" Height="16" Name="cbMultiAdd" Width="115" />
+            </DockPanel>
+            <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+                <telerik:RadTabControl TabOrientation="Vertical" TabStripPlacement="Left" Align="Right">
+                    <telerik:RadTabItem Header="{DynamicResource U.BaoHiem.ucChiPhiHoBaoHiemCT.ThongTinCamKet}" HeaderTemplate="{StaticResource HeaderTemplate}"
+                                        HorizontalContentAlignment="Left" MinWidth="35" Height="{Binding ElementName=grMain, Path=ActualWidth,Converter={uc:MathConverter}, ConverterParameter=x/5}" IsSelected="True">                        
+                        <Grid>
+                            <DockPanel>
+                                <Border BorderThickness="1" CornerRadius="4" Margin="5" Height="50" Padding="5" BorderBrush="LightGray" DockPanel.Dock="Top">
+                                    <StackPanel Margin="10,10,0,0" Orientation="Horizontal">
+                                        <Label Content="{DynamicResource U.DungChung.TrangThaiNghiepVu}"/>
+                                        <Label Content="{DynamicResource U.DungChung.TrangThaiNghiepVu.ChoDuyet}" />
+                                    </StackPanel>
+                                </Border>
+                                <GroupBox DockPanel.Dock="Top" Margin="3"  Header="{DynamicResource U.BaoHiem.ucChiPhiHoBaoHiemCT.ThongTinKH}">
+                                    <Grid>
+                                        <Label Content="{DynamicResource U.BaoHiem.ucChiPhiHoBaoHiemCT.MaKH}" Height="28" HorizontalAlignment="Left" Margin="16,17,0,0" Name="label1" VerticalAlignment="Top" />
+                                        <Label Content="{DynamicResource U.BaoHiem.ucChiPhiHoBaoHiemCT.TenKH}" Height="28" HorizontalAlignment="Left" Margin="372,18,0,0" Name="label2" VerticalAlignment="Top" />
+                                        <Label Content="{DynamicResource U.BaoHiem.ucChiPhiHoBaoHiemCT.SoCamKetBH}" Height="28" HorizontalAlignment="Left" Margin="16,46,0,0" Name="label3" VerticalAlignment="Top" />
+                                        <Label Content="{DynamicResource U.BaoHiem.ucChiPhiHoBaoHiemCT.SoGiayTo}" Height="28" HorizontalAlignment="Left" Margin="372,46,0,0" Name="label4" VerticalAlignment="Top" />
+                                        <Label Content="{DynamicResource U.BaoHiem.ucChiPhiHoBaoHiemCT.NgayCap}" Height="28" HorizontalAlignment="Left" Margin="16,73,0,0" Name="label5" VerticalAlignment="Top" />
+                                        <Label Content="{DynamicResource U.BaoHiem.ucChiPhiHoBaoHiemCT.NoiCap}" Height="28" HorizontalAlignment="Left" Margin="372,75,0,0" Name="label6" VerticalAlignment="Top" />
+                                        <Label Content="{DynamicResource U.BaoHiem.ucChiPhiHoBaoHiemCT.DiaChi}" Height="28" HorizontalAlignment="Left" Margin="18,102,0,0" Name="label7" VerticalAlignment="Top" />
+                                        <TextBox Height="23" HorizontalAlignment="Left" Margin="160,18,0,0" Name="textBox1" VerticalAlignment="Top" Width="154" />
+                                        <Button Content="F3" Height="23" HorizontalAlignment="Left" Margin="319,17,0,0" Name="button1" VerticalAlignment="Top" Width="28" />
+                                        <TextBox Margin="483,19,50,0" Name="textBox2" Height="23" VerticalAlignment="Top"/>
+                                        <TextBox Height="23" HorizontalAlignment="Left" Margin="159,48,0,0" Name="textBox3" VerticalAlignment="Top" Width="188" />
+                                        <TextBox Height="23" Margin="483,48,50,0" Name="textBox4" VerticalAlignment="Top" />
+                                        <TextBox Height="23" HorizontalAlignment="Left" Margin="159,75,0,0" Name="textBox5" VerticalAlignment="Top" Width="188" />
+                                        <TextBox Height="23" Margin="483,75,50,0" Name="textBox6" VerticalAlignment="Top"/>
+                                        <TextBox Height="23" Margin="159,104,50,0" Name="textBox7" VerticalAlignment="Top" />
+                                    </Grid>
+                                </GroupBox>
+                                <GroupBox Header="{DynamicResource U.BaoHiem.ucChiPhiHoBaoHiemCT.ThongTinCamKet}" Margin="3" >
+                                    <Grid>
+                                        <Label Content="{DynamicResource U.BaoHiem.ucChiPhiHoBaoHiemCT.LoaiSP}" Height="28" HorizontalAlignment="Left" Margin="21,20,0,0" Name="label8" VerticalAlignment="Top" />
+                                        <Label Content="{DynamicResource U.BaoHiem.ucChiPhiHoBaoHiemCT.DTuongDuocBVe}" Height="28" HorizontalAlignment="Left" Margin="18,43,0,0" Name="label9" VerticalAlignment="Top" />
+                                        <Label Content="{DynamicResource U.BaoHiem.ucChiPhiHoBaoHiemCT.NgayBatDauHL}" Height="28" HorizontalAlignment="Left" Margin="21,78,0,0" Name="label10" VerticalAlignment="Top" />
+                                        <Label Content="{DynamicResource U.BaoHiem.ucChiPhiHoBaoHiemCT.NgayHetHL}" Height="28" HorizontalAlignment="Left" Margin="371,78,0,0" Name="label11" VerticalAlignment="Top" />
+                                        <ComboBox Height="23" HorizontalAlignment="Left" Margin="159,20,0,0" Name="comboBox1" VerticalAlignment="Top" Width="188" />
+                                        <CheckBox Content="{DynamicResource U.BaoHiem.ucChiPhiHoBaoHiemCT.ThuPhiXLTV}" Height="16" HorizontalAlignment="Left" Margin="371,25,0,0" Name="checkBox1" VerticalAlignment="Top" Width="310" />
+                                        <ComboBox Height="23" Margin="159,48,0,0" Name="comboBox2" VerticalAlignment="Top" HorizontalAlignment="Left" Width="188" />
+                                        <telerik:RadMaskedDateTimeInput HorizontalAlignment="Left" Margin="159,78,0,0" Name="radMaskedDateTimeInput1" VerticalAlignment="Top" Width="188" />
+                                        <telerik:RadMaskedDateTimeInput Margin="483,78,0,0" Name="radMaskedDateTimeInput2" VerticalAlignment="Top" />
+                                        <telerik:RadGridView Margin="16,122,49,26" Name="radGridView1" ShowGroupPanel="False" />
+                                    </Grid>
+                                </GroupBox>
+                            </DockPanel>
+                        </Grid>
+                    </telerik:RadTabItem>
+                    <telerik:RadTabItem Header="{DynamicResource U.DungChung.ThongTinKiemSoat}" HeaderTemplate="{StaticResource HeaderTemplate}" HorizontalContentAlignment="Left" MinWidth="35" Height="{Binding ElementName=grMain, Path=ActualWidth,Converter={uc:MathConverter}, ConverterParameter=x/5}" IsSelected="True">                        
+                        <Grid>
+                            <GroupBox Header="{DynamicResource U.DungChung.ThongTinKiemSoat.TrangThaiBanGhi}" Margin="0,5,0,0">
+                                <Grid>
+                                    <Label Content="{DynamicResource U.DungChung.ThongTinKiemSoat.TrangThaiBanGhi}" Height="28" HorizontalAlignment="Left" Margin="16,15,0,0" VerticalAlignment="Top" />
+                                    <Label Content="{DynamicResource U.DungChung.ThongTinKiemSoat.NgayLap}" Height="28" HorizontalAlignment="Left" Margin="16,44,0,0" VerticalAlignment="Top" />
+                                    <Label Content="{DynamicResource U.DungChung.ThongTinKiemSoat.NguoiLap}" Height="28" HorizontalAlignment="Left" Margin="16,73,0,0" VerticalAlignment="Top" />
+                                    <Label Content="{DynamicResource U.DungChung.ThongTinKiemSoat.NgayCapNhat}" Height="28" HorizontalAlignment="Left" Margin="16,102,0,0" VerticalAlignment="Top" />
+                                    <Label Content="{DynamicResource U.DungChung.ThongTinKiemSoat.NguoiCapNhat}" Height="28" HorizontalAlignment="Left" Margin="16,131,0,0" VerticalAlignment="Top" />
+                                    <TextBox Height="23" Margin="143,17,29,0" Name="txtTrangThaiBanGhi" VerticalAlignment="Top" />
+                                    <TextBox Height="23" Margin="143,46,29,0" Name="txtNgayLap" VerticalAlignment="Top" />
+                                    <TextBox Height="23" Margin="143,75,29,0" Name="txtNguoiLap" VerticalAlignment="Top" />
+                                    <TextBox Height="23" Margin="143,104,29,0" Name="txtNgayCapNhat" VerticalAlignment="Top" />
+                                    <TextBox Height="23" Margin="143,133,29,0" Name="txtNguoiCapNhat" VerticalAlignment="Top" />
+                                    <Label Content="" Height="28" HorizontalAlignment="Left" Margin="16,165,0,0" Name="label12" VerticalAlignment="Top" Width="658" />
+                                </Grid>
+                            </GroupBox>
+                        </Grid>
+                    </telerik:RadTabItem>
+                </telerik:RadTabControl>
+            </ScrollViewer>
+        </DockPanel>
+    </Grid>
+</UserControl>

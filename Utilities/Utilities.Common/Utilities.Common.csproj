@@ -1,0 +1,254 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EE4689D2-D4FB-476B-9D29-034178099C86}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Utilities.Common</RootNamespace>
+    <AssemblyName>Utilities.Common</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\Libraries\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\Libraries\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>..\..\Libraries\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.4.0.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libraries\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\..\Libraries\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApplicationConstant.cs" />
+    <Compile Include="BoHelper.cs" />
+    <Compile Include="BusinessConstant.cs" />
+    <Compile Include="LList.cs" />
+    <Compile Include="LMessageBox.cs" />
+    <Compile Include="LMultiThread.cs" />
+    <Compile Include="DatabaseConstant.cs" />
+    <Compile Include="LCollection.cs" />
+    <Compile Include="LDatatable.cs" />
+    <Compile Include="LDateTime.cs" />
+    <Compile Include="LImage.cs" />
+    <Compile Include="LLanguage.cs" />
+    <Compile Include="LFile.cs" />
+    <Compile Include="LLogging.cs" />
+    <Compile Include="LMessage.cs" />
+    <Compile Include="LNumber.cs" />
+    <Compile Include="LObject.cs" />
+    <Compile Include="LSecurity.cs" />
+    <Compile Include="LString.cs" />
+    <Compile Include="LXmlMessage.cs" />
+    <Compile Include="LZip.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="txScope.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Images\Custom\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Icon\NGV.AMS.ico" />
+    <Resource Include="Images\Icon\NGV.CAF.ico" />
+    <Resource Include="Images\Icon\NGV.dCAM.ico" />
+    <Resource Include="Images\Icon\NGV.eDIS.ico" />
+    <Resource Include="Images\Icon\NGV.eFund.ico" />
+    <Resource Include="Images\Icon\NGV.fTransfer.ico" />
+    <Resource Include="Images\Icon\NGV.mFinance.ico" />
+    <Resource Include="Images\Icon\NGV.sGateway.ico" />
+    <Resource Include="Images\Icon\NGV.T24Report.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Other\attention.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Action\submit.png" />
+    <Resource Include="Images\Action\add.png" />
+    <Resource Include="Images\Action\approve.png" />
+    <Resource Include="Images\Action\cancel.png" />
+    <Resource Include="Images\Action\close.png" />
+    <Resource Include="Images\Action\delete.png" />
+    <Resource Include="Images\Action\export.png" />
+    <Resource Include="Images\Action\modify.png" />
+    <Resource Include="Images\Action\preview.png" />
+    <Resource Include="Images\Action\print.png" />
+    <Resource Include="Images\Action\refuse.png" />
+    <Resource Include="Images\Action\save.png" />
+    <Resource Include="Images\Action\search.png" />
+    <Resource Include="Images\Action\view.png" />
+    <Resource Include="Images\Action\help.png" />
+    <Resource Include="Images\Function\user.png" />
+    <Resource Include="Images\Function\version.png" />
+    <Resource Include="Images\Function\configure.png" />
+    <Resource Include="Images\Function\group_add-32.png" />
+    <Resource Include="Images\Function\group_add.png" />
+    <Resource Include="Images\Function\lock-32.png" />
+    <Resource Include="Images\Function\lock.png" />
+    <Resource Include="Images\Function\user-32.png" />
+    <Resource Include="Images\Function\user_add-32.png" />
+    <Resource Include="Images\Function\user_add.png" />
+    <Resource Include="Images\Function\user_list-32.png" />
+    <Resource Include="Images\Function\user_list.png" />
+    <Resource Include="Images\Function\user_edit-32.png" />
+    <Resource Include="Images\Function\user_edit.png" />
+    <Resource Include="Images\Function\user_right-32.png" />
+    <Resource Include="Images\Function\user_right.png" />
+    <Resource Include="Images\Function\db-32.png" />
+    <Resource Include="Images\Function\db.png" />
+    <Resource Include="Images\Function\db_backup-32.png" />
+    <Resource Include="Images\Function\db_backup.png" />
+    <Resource Include="Images\Function\db_restore-32.png" />
+    <Resource Include="Images\Function\db_restore.png" />
+    <Resource Include="Images\Function\parameter-32.png" />
+    <Resource Include="Images\Function\parameter.png" />
+    <Resource Include="Images\Function\parameter_add-32.png" />
+    <Resource Include="Images\Function\parameter_add.png" />
+    <Resource Include="Images\Function\version-32.png" />
+    <Resource Include="Images\Function\version_check-32.png" />
+    <Resource Include="Images\Function\version_check.png" />
+    <Resource Include="Images\Function\version_update-32.png" />
+    <Resource Include="Images\Function\version_update.png" />
+    <Resource Include="Images\Action\down.png" />
+    <Resource Include="Images\Action\up.png" />
+    <Resource Include="Images\Function\app_add-32.png" />
+    <Resource Include="Images\Function\app_add.png" />
+    <Resource Include="Images\Function\app_list-32.png" />
+    <Resource Include="Images\Function\app_list.png" />
+    <Resource Include="Images\Action\hold.png" />
+    <Resource Include="Images\Action\login.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Action\cash_statement.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Action\clone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Action\clear.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Action\cut.png" />
+    <Resource Include="Images\Action\paste.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Action\help_main.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Icon\NGV.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Icon\NGVGlow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Function\user_right_area-32.png" />
+    <Resource Include="Images\Function\user_right_function-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Function\parameter_list-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Function\parameter_list.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Function\user_right_area.png" />
+    <Resource Include="Images\Function\user_right_function.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Action\detail_add.png" />
+    <Resource Include="Images\Action\detail_calc.png" />
+    <Resource Include="Images\Action\detail_delete.png" />
+    <Resource Include="Images\Action\detail_edit.png" />
+    <Resource Include="Images\Action\detail_process.png" />
+    <Resource Include="Images\Action\detail_update.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Other\picture.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Action\import.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Action\detail_ranking.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Action\group_list.png" />
+    <Resource Include="Images\Action\user_list.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Action\reload.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Other\M7_plant.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Action\update_finish.png" />
+    <Resource Include="Images\Action\update_start.png" />
+    <Resource Include="Images\Action\update_stop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Icon\Logo.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Other\text-selection.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Action\next.png" />
+    <Resource Include="Images\Action\previous.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Action\detail_view.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

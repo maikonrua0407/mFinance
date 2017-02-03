@@ -1,0 +1,9 @@
+STT	Number
+SO_HIEU	String	30
+HO_TEN	String	255
+NHOM	String	30
+CUM	String	30
+DIA_CHI	String	255
+DAN_TOC	String	30
+NGAY_CONG_NHAN	String	10
+CBQL	String	30

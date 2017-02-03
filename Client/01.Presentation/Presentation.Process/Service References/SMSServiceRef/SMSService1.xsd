@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/BusinessServices.SMSGSMCom.DTO" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/BusinessServices.SMSGSMCom.DTO" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:1001/SMSService.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/eD.GSMCommunication" />
+  <xs:complexType name="ArrayOfMODEM">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MODEM" nillable="true" type="tns:MODEM" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMODEM" nillable="true" type="tns:ArrayOfMODEM" />
+  <xs:complexType name="MODEM">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BAURATE" type="xs:int" />
+      <xs:element minOccurs="0" name="PORT" type="xs:int" />
+      <xs:element minOccurs="0" name="PORTNAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TIMEOUT" type="xs:int" />
+      <xs:element minOccurs="0" name="countday" nillable="true" type="tns:COUNTSMS" />
+      <xs:element minOccurs="0" name="counthour" nillable="true" type="tns:COUNTSMS" />
+      <xs:element minOccurs="0" name="countminuste" nillable="true" type="tns:COUNTSMS" />
+      <xs:element minOccurs="0" name="countsecond" nillable="true" type="tns:COUNTSMS" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/eD.GSMCommunication" minOccurs="0" name="gsmCommMain" nillable="true" type="q1:GsmCommMain" />
+      <xs:element minOccurs="0" name="netWorkName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="sTatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="sendDay" type="xs:int" />
+      <xs:element minOccurs="0" name="sendDelay" type="xs:int" />
+      <xs:element minOccurs="0" name="sendMin" type="xs:int" />
+      <xs:element minOccurs="0" name="sendSecond" type="xs:int" />
+      <xs:element minOccurs="0" name="sendhour" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MODEM" nillable="true" type="tns:MODEM" />
+  <xs:complexType name="COUNTSMS">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="count" type="xs:int" />
+      <xs:element minOccurs="0" name="time" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="COUNTSMS" nillable="true" type="tns:COUNTSMS" />
+</xs:schema>

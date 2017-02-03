@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/CommunicationServices.Phi.Message" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/CommunicationServices.Phi.Message" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" />
+  <xs:complexType name="PhiRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" base="q1:RequestBase">
+        <xs:sequence>
+          <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="lstIDLaiSuat" nillable="true" type="q2:ArrayOfint" />
+          <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstPhanHePLoai" nillable="true" type="q3:ArrayOfKT_PHAN_HE_PLOAI" />
+          <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstPhi" nillable="true" type="q4:ArrayOfDC_BPHI" />
+          <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstPhiCtiet" nillable="true" type="q5:ArrayOfDC_BPHI_CTIET" />
+          <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstPhiCtietLsu" nillable="true" type="q6:ArrayOfDC_BPHI_CTIET_LSU" />
+          <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstPhiGD" nillable="true" type="q7:ArrayOfDC_BPHI_GDICH" />
+          <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstPhiLsu" nillable="true" type="q8:ArrayOfDC_BPHI_LSU" />
+          <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstPhiTK" nillable="true" type="q9:ArrayOfKT_BPHI_TKHOAN" />
+          <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objPhi" nillable="true" type="q10:DC_BPHI" />
+          <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objPhiCtiet" nillable="true" type="q11:DC_BPHI_CTIET" />
+          <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objPhiCtietLsu" nillable="true" type="q12:DC_BPHI_CTIET_LSU" />
+          <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objPhiLsu" nillable="true" type="q13:DC_BPHI_LSU" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PhiRequest" nillable="true" type="tns:PhiRequest" />
+  <xs:complexType name="PhiResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q14="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" base="q14:ResponseBase">
+        <xs:sequence>
+          <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstPhanHePLoai" nillable="true" type="q15:ArrayOfKT_PHAN_HE_PLOAI" />
+          <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstPhi" nillable="true" type="q16:ArrayOfDC_BPHI" />
+          <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstPhiCtiet" nillable="true" type="q17:ArrayOfDC_BPHI_CTIET" />
+          <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstPhiCtietLsu" nillable="true" type="q18:ArrayOfDC_BPHI_CTIET_LSU" />
+          <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstPhiGD" nillable="true" type="q19:ArrayOfDC_BPHI_GDICH" />
+          <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstPhiLsu" nillable="true" type="q20:ArrayOfDC_BPHI_LSU" />
+          <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstPhiTK" nillable="true" type="q21:ArrayOfKT_BPHI_TKHOAN" />
+          <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objPhi" nillable="true" type="q22:DC_BPHI" />
+          <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objPhiCtiet" nillable="true" type="q23:DC_BPHI_CTIET" />
+          <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objPhiCtietLsu" nillable="true" type="q24:DC_BPHI_CTIET_LSU" />
+          <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objPhiLsu" nillable="true" type="q25:DC_BPHI_LSU" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PhiResponse" nillable="true" type="tns:PhiResponse" />
+</xs:schema>

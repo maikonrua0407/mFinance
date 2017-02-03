@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/CommunicationServices.KhaiThacDuLieu.Messages" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/CommunicationServices.KhaiThacDuLieu.Messages" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" />
+  <xs:complexType name="KhaiThacDuLieuRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" base="q1:RequestBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="dsDuLieuBaoCao" nillable="true">
+            <xs:complexType>
+              <xs:annotation>
+                <xs:appinfo>
+                  <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+                </xs:appinfo>
+              </xs:annotation>
+              <xs:sequence>
+                <xs:element ref="xs:schema" />
+                <xs:any />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="htBaoCao" nillable="true" type="q2:HT_BAOCAO" />
+          <xs:element minOccurs="0" name="idBaoCao" type="xs:int" />
+          <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstHtBaoCaoTso" nillable="true" type="q3:ArrayOfHT_BAOCAO_TSO" />
+          <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstLoaiTK" nillable="true" type="q4:ArrayOfBC_LOAITK" />
+          <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstMaTK" nillable="true" type="q5:ArrayOfBC_MATK" />
+          <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstMaTKMapping" nillable="true" type="q6:ArrayOfBC_MATK_MAPPING" />
+          <xs:element minOccurs="0" name="maBaoCao" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="maPhanHeBaoCao" nillable="true" type="xs:string" />
+          <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objLoaiTK" nillable="true" type="q7:BC_LOAITK" />
+          <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objMaTK" nillable="true" type="q8:BC_MATK" />
+          <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objMaTKMapping" nillable="true" type="q9:BC_MATK_MAPPING" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="KhaiThacDuLieuRequest" nillable="true" type="tns:KhaiThacDuLieuRequest" />
+  <xs:complexType name="KhaiThacDuLieuResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q10="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" base="q10:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="dsDuLieuBaoCao" nillable="true">
+            <xs:complexType>
+              <xs:annotation>
+                <xs:appinfo>
+                  <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+                </xs:appinfo>
+              </xs:annotation>
+              <xs:sequence>
+                <xs:element ref="xs:schema" />
+                <xs:any />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="htBaoCao" nillable="true" type="q11:HT_BAOCAO" />
+          <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstBaoCao" nillable="true" type="q12:ArrayOfHT_BAOCAO" />
+          <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstHtBaoCaoTso" nillable="true" type="q13:ArrayOfHT_BAOCAO_TSO" />
+          <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstLoaiTK" nillable="true" type="q14:ArrayOfBC_LOAITK" />
+          <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstMaTK" nillable="true" type="q15:ArrayOfBC_MATK" />
+          <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstMaTKMapping" nillable="true" type="q16:ArrayOfBC_MATK_MAPPING" />
+          <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objLoaiTK" nillable="true" type="q17:BC_LOAITK" />
+          <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objMaTK" nillable="true" type="q18:BC_MATK" />
+          <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objMaTKMapping" nillable="true" type="q19:BC_MATK_MAPPING" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="KhaiThacDuLieuResponse" nillable="true" type="tns:KhaiThacDuLieuResponse" />
+</xs:schema>

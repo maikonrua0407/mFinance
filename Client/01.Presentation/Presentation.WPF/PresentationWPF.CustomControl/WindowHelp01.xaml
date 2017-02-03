@@ -1,0 +1,28 @@
+﻿<Window x:Class="PresentationWPF.CustomControl.WindowHelp01"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+        xmlns:rb="http://schemas.microsoft.com/winfx/2006/xaml/presentation/ribbon" 
+        Title="WindowHelp" Height="600" Width="800" 
+        xmlns:my="clr-namespace:System;assembly=mscorlib">
+    <Window.Resources>
+        <my:String x:Key="U.PresentationWPF.CustomControl.WindowsHelp01.GioiThieuChung">Giới thiệu chung</my:String>
+        <my:String x:Key="U.PresentationWPF.CustomControl.WindowsHelp01.GioiThieuNGV">Giới thiệu về NGV</my:String>
+    </Window.Resources>
+    <Grid Name="grMain">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="5" />
+            <ColumnDefinition Width="3*" />
+        </Grid.ColumnDefinitions>
+        <Border BorderBrush="LightGray" BorderThickness="1">
+            <telerik:RadTreeView Name="trvMenu" SelectionMode="Extended" IsLineEnabled="True"  IsRootLinesEnabled="True" SelectionChanged="trvMenu_SelectionChanged">
+                <!--<telerik:RadTreeViewItem Header="{DynamicResource U.PresentationWPF.CustomControl.WindowsHelp01.GioiThieuNGV}" Uid="ngv" Tag="0"/>
+                <telerik:RadTreeViewItem Header="{DynamicResource U.PresentationWPF.CustomControl.WindowsHelp01.GioiThieuChung}" Uid="mFinance" Tag="0"/>-->
+            </telerik:RadTreeView>
+        </Border>
+        <Grid Grid.Column="2">
+            <WebBrowser Name="wbSample"></WebBrowser>
+        </Grid>
+    </Grid>
+</Window>

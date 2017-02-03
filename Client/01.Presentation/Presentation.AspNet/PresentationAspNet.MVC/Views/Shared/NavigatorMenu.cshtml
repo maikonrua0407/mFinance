@@ -1,0 +1,56 @@
+﻿@model string
+@{
+    var currentNode = SiteMap.CurrentNode;
+}
+<ul class="nav nav-list">
+    @foreach (SiteMapNode item in SiteMap.RootNode.ChildNodes)
+    {
+        var lst= PresentationAspNet.MVC.Common.GetListSitemapbyRoles(item,Model);
+        if (lst.Count <= 0)
+        {
+            continue;
+        }
+        <li>
+            <a class="dropdown-toggle" href="javascript:void(0);">
+                <i class="@item["IconUrl"]"></i>
+                <span class="menu-text">@item.Title </span>
+                <b class="arrow icon-angle-down"></b>
+            </a>
+
+            <ul class="submenu">
+                @foreach (var child in lst)
+                {
+                    if (!string.IsNullOrEmpty(Model) && !child.Title.ToLower().Contains(Model.ToLower()))
+                    {
+                        continue;
+                    }
+                    var active = string.Empty;
+                    if (currentNode != null && (Equals(currentNode, child) || Equals(currentNode.ParentNode, child)))
+                    {
+                        active = "active";
+                    }
+                    <li class="@active"><a href="@child.Url"><i class="icon-double-angle-right"></i>@child.Title</a></li>
+                }
+            </ul>
+        </li>
+    }
+</ul>
+<script>
+    $(document).ready(function () {
+        // Scroll Menu - Truonglq
+        var browserH = $(window).height();
+        var headerH = $('.container-fluid').height();
+        var collapseH = $('#sidebar-collapse').height();
+        $('.nav-list').slimScroll({
+            height: browserH - headerH - collapseH - 45
+        });
+
+        $.menuAttr = $('.nav-list').attr('style');
+        $.scrollAttr = $('.slimScrollDiv').attr('style');
+        
+        $("li .active").parents("li").last().addClass("active open");
+    });
+</script>
+<script src="~/Content/assets/js/jquery.slimscroll.min.js"></script>
+<script src="~/Content/assets/js/ace-elements.min.js"></script>
+<script src="~/Content/assets/js/ace.min.js"></script>

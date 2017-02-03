@@ -1,0 +1,4 @@
+﻿@{
+    var strSet = ViewBag.IDNoiSanXuat as string;
+}
+@Html.DropDownList("cboNoiSanXuat", PresentationAspNet.MVC.DataCombobox.LoadXuatXu(false,(strSet)), new { @class = "cssCombobox"})

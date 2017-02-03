@@ -1,0 +1,47 @@
+﻿@using PresentationAspNet.MVC
+@{
+    var model = UserInformation.Session_User;
+    var qtht = model.ListChucNang.Where(m => m.IDChucNangCha == 0).OrderBy(o => o.STT).FirstOrDefault();
+}
+<li>
+    @if (UserInformation.Session_User != null && UserInformation.Session_User.TenDonViGiaoDich != null)
+    {
+        <a href="javascript:void(0);" onclick=" DanhSachKho() ">
+            @UserInformation.Session_User.TenDonViGiaoDich
+        </a>
+    }
+</li>
+<li class="dropdown dropdown-user">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+        <img alt="" class="img-circle hide1" src="~/Content/assets/admin/layout/img/avatar3_small.jpg" />
+        <span class="username username-hide-on-mobile">
+            @(UserInformation.Session_User != null ? UserInformation.Session_User.HoTen : string.Empty)
+        </span>
+        <i class="fa fa-angle-down"></i>
+    </a>
+    <ul class="dropdown-menu">
+        @{ var lst = model.ListChucNang.Where(m => m.IDChucNangCha == qtht.IDChucNang).ToList();
+         foreach (var child in lst.OrderBy(o => o.STT).ToList())
+         {
+             var lstLeaf = model.ListChucNang.Where(m => m.IDChucNangCha == child.IDChucNang).ToList();
+             if (lstLeaf.Count <= 0)
+             {
+                <li>
+                    @if (child.PhuongThuc.Equals("Function"))
+                    {
+                        <a href="javascript:void" onclick="@child.Url">
+                            @LanguageNode.GetValueUILanguage(child.TieuDe)
+                        </a>
+                    }
+                    else
+                    {
+                        <a href="@child.Url">
+                            @LanguageNode.GetValueUILanguage(child.TieuDe)
+                        </a>
+                    }
+                </li>
+             }
+         }
+        }
+    </ul>
+</li>

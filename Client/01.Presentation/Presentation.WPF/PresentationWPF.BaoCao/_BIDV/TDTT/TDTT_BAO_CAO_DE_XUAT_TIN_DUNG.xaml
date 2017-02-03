@@ -1,0 +1,88 @@
+﻿<UserControl x:Class="PresentationWPF.BaoCao._BIDV.TDTT.TDTT_BAO_CAO_DE_XUAT_TIN_DUNG"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:ribbon="http://schemas.microsoft.com/winfx/2006/xaml/presentation/ribbon" 
+             xmlns:telerikMaskInput="clr-namespace:Telerik.Windows.Controls.MaskedInput;assembly=Telerik.Windows.Controls.Input"
+             xmlns:uc="clr-namespace:PresentationWPF.CustomControl;assembly=PresentationWPF.CustomControl"                           
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="800" xmlns:my="clr-namespace:System;assembly=mscorlib">
+    <UserControl.Resources>
+    </UserControl.Resources>
+    <Grid>
+        <DockPanel>
+            <Grid>
+                <GroupBox Header="{DynamicResource U.BaoCao._BIDV.TDTT.TDTT_BAO_CAO_DE_XUAT_TIN_DUNG}" Margin="3,10,3,3">
+                    <DockPanel>
+                        <Grid DockPanel.Dock="Top">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="2*" />
+                                <ColumnDefinition Width="20" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="2*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="6"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="6"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="6"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="6"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Label Content="{DynamicResource U.BaoCao._BTV.TDVM.TDVM_DON_VAY_VON.MaKhachHang}" Grid.Column="0" Grid.Row="0" />
+                            <Grid Grid.Column="1" Grid.Row="0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="5"/>
+                                    <ColumnDefinition Width="30"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                </Grid.RowDefinitions>
+                                <TextBox Name="txtMaKhachHang" Grid.Column="0" KeyDown="txtMaKhachHang_KeyDown" />
+                                <Button Name="btnKhachHang" Grid.Column="2" Grid.Row="0" Content="F3" Click="btnKhachHang_Click" />
+                            </Grid>
+                            <Label Name="lblTenKhachHang" Content="{DynamicResource U.BaoCao._BTV.TDVM.TDVM_DON_VAY_VON.TenKhachHang}" Grid.Column="3" Grid.Row="0"/>
+                            <TextBox Name="txtTenKhachHang" Grid.Column="4" Grid.Row="0"/>
+                            <Label Name="lblDiachi" Content="{DynamicResource U.BaoCao._BTV.TDVM.TDVM_DON_VAY_VON.DiaChi}" Grid.Column="0" Grid.Row="2"/>
+                            <TextBox Name="txtDiaChi" Grid.Row="2" Grid.ColumnSpan="4" Grid.Column="1"/>
+                            <CheckBox Name="chkInMauMoi" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center"  Content="{DynamicResource U.BaoCao._BTV.TDVM.TDVM_DON_VAY_VON.InDonXin}"/>
+                            <Label Name="lblNgayBaoCao" Content="{DynamicResource U.BaoCao.NgayBaoCao}" Grid.Column="3" Grid.Row="4" />
+                            <telerik:RadMaskedDateTimeInput Name="raddtNgayBaoCao" Grid.Row="4" Grid.Column="4" Mask="dd/MM/yyyy" HorizontalAlignment="Stretch" Margin="0,0,35,0" IsEnabled="False" />
+                            <DatePicker Grid.Row="4" Grid.Column="4" HorizontalAlignment="Right" Width="30" SelectedDate="{Binding Path=Value,ElementName=raddtNgayBaoCao}" />
+                            <Label Content="{DynamicResource U.BaoCao.NgonNgu}" Grid.Column="0" Grid.Row="6"/>
+                            <telerik:RadComboBox Name="cmbNgonNgu" IsEditable="True" Grid.Column="1" Grid.Row="6"/>
+                            <Label Content="{DynamicResource U.BaoCao.DinhDang}" Grid.Column="3" Grid.Row="6"/>
+                            <telerik:RadComboBox Name="cmbDinhDang" IsEditable="True" Grid.Column="4" Grid.Row="6"/>
+                        </Grid>
+                        <DockPanel Grid.Column="0" Grid.ColumnSpan="6" Grid.Row="8" LastChildFill="True">
+                            <GroupBox  Header="{DynamicResource U.BaoCao._BTV.TDVM.TDVM_DON_VAY_VON.ThongTinDonXin}" >
+                                <telerik:RadGridView Name="raddgrThongTinDon" DockPanel.Dock="Top" ColumnWidth="*"
+                                                AutoGenerateColumns="False" CanUserFreezeColumns="False" RowIndicatorVisibility="Collapsed" ShowGroupPanel="False" SelectionMode="Multiple">
+                                    <telerik:RadGridView.Columns>
+                                        <telerik:GridViewSelectColumn Width="30">
+                                            <telerik:GridViewSelectColumn.Header>
+                                                <CheckBox HorizontalAlignment="Center"/>
+                                            </telerik:GridViewSelectColumn.Header>
+                                        </telerik:GridViewSelectColumn>
+                                        <telerik:GridViewDataColumn Name="grdSoDon" Header="{DynamicResource U.BaoCao._BTV.TDVM.TDVM_DON_VAY_VON.SoDon}" Width="180" MinWidth="180" DataMemberBinding="{Binding MA_DXVV}"/>
+                                        <telerik:GridViewDataColumn Name="grdNgayLapDon" Header="{DynamicResource U.BaoCao._BTV.TDVM.TDVM_DON_VAY_VON.NgayLapDon}" Width="100" MinWidth="100" DataMemberBinding="{Binding NGAY_HD}"/>
+                                        <telerik:GridViewDataColumn Name="grdLoaiSP" Header="{DynamicResource U.BaoCao._BTV.TDVM.TDVM_DON_VAY_VON.LoaiSanPham}" Width="120" MinWidth="120" DataMemberBinding="{Binding LOAI_SAN_PHAM}"/>
+                                        <telerik:GridViewDataColumn Name="grdMucVay" Header="{DynamicResource U.BaoCao._BTV.TDVM.TDVM_DON_VAY_VON.MucVay}" Width="100" MinWidth="100" DataMemberBinding="{Binding SO_TIEN_XIN_VAY}" DataFormatString="{}{0:N0}" TextAlignment="Right"/>
+                                        <telerik:GridViewDataColumn Name="grdThoiHanVay" Header="{DynamicResource U.BaoCao._BTV.TDVM.TDVM_DON_VAY_VON.ThoiHanVay}" Width="80" MinWidth="80" DataMemberBinding="{Binding TGIAN_VAY}"/>
+                                        <telerik:GridViewDataColumn Name="grdTenMucDich" Header="{DynamicResource U.BaoCao._BTV.TDVM.TDVM_DON_VAY_VON.MucDichVay}" Width="180" MinWidth="180" DataMemberBinding="{Binding TEN_DMUC}"/>
+                                    </telerik:RadGridView.Columns>
+                                </telerik:RadGridView>
+                            </GroupBox>
+                        </DockPanel>
+                    </DockPanel>
+                </GroupBox>
+            </Grid>
+        </DockPanel>
+    </Grid>
+</UserControl>

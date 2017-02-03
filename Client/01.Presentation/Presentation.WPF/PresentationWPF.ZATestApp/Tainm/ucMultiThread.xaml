@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="PresentationWPF.ZATestApp.Tainm.ucMultiThread"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <DockPanel LastChildFill="False">
+            <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
+                <TextBox Name="ThreadOneID" Width="100"/>
+                <TextBox Name="TimeOne" Width="100"/>
+                <Button Name="AboutOne" Width="100" Content="About One" Click="AboutOne_Click" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
+                <TextBox Name="ThreadTwoID" Width="100"/>
+                <TextBox Name="TimeTwo" Width="100"/>
+                <Button Name="AboutTwo" Width="100" Content="About Two" Click="AboutTwo_Click" />
+            </StackPanel>
+        </DockPanel>
+    </Grid>
+</UserControl>

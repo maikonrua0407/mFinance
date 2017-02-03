@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/CommunicationServices.Utilities.Messages" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/CommunicationServices.Utilities.Messages" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Utilities.Common" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" />
+  <xs:complexType name="LockRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" base="q1:RequestBase">
+        <xs:sequence>
+          <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ListLockId" nillable="true" type="q2:ArrayOfint" />
+          <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Utilities.Common" minOccurs="0" name="Table" type="q3:DatabaseConstant.Table" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LockRequest" nillable="true" type="tns:LockRequest" />
+  <xs:complexType name="LockResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q4="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" base="q4:ResponseBase">
+        <xs:sequence>
+          <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ListLockedId" nillable="true" type="q5:ArrayOfint" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LockResponse" nillable="true" type="tns:LockResponse" />
+  <xs:complexType name="UnlockRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q6="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" base="q6:RequestBase">
+        <xs:sequence>
+          <xs:element xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ListLockId" nillable="true" type="q7:ArrayOfint" />
+          <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Utilities.Common" minOccurs="0" name="Table" type="q8:DatabaseConstant.Table" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UnlockRequest" nillable="true" type="tns:UnlockRequest" />
+  <xs:complexType name="UnlockResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q9="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" base="q9:ResponseBase">
+        <xs:sequence>
+          <xs:element xmlns:q10="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ListUnlockedId" nillable="true" type="q10:ArrayOfint" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UnlockResponse" nillable="true" type="tns:UnlockResponse" />
+  <xs:complexType name="CheckDuplicateRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="GiaTri" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TenBang" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TenTruong" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CheckDuplicateRequest" nillable="true" type="tns:CheckDuplicateRequest" />
+  <xs:complexType name="CheckDuplicateResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="KetQua" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CheckDuplicateResponse" nillable="true" type="tns:CheckDuplicateResponse" />
+  <xs:complexType name="ThamSoRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q11="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" base="q11:RequestBase">
+        <xs:sequence>
+          <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Utilities.Common" minOccurs="0" name="LoaiThamSo" type="q12:BusinessConstant.LoaiThamSo" />
+          <xs:element minOccurs="0" name="MaDonVi" nillable="true" type="xs:string" />
+          <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Utilities.Common" minOccurs="0" name="MaThamSo" type="q13:BusinessConstant.MaThamSo" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ThamSoRequest" nillable="true" type="tns:ThamSoRequest" />
+  <xs:complexType name="ThamSoResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q14="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" base="q14:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="GiaTriThamSo" nillable="true" type="xs:string" />
+          <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objThamSo" nillable="true" type="q15:HT_TSO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ThamSoResponse" nillable="true" type="tns:ThamSoResponse" />
+  <xs:complexType name="UtilitiesRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q16="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" base="q16:RequestBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="objType" nillable="true" type="xs:string" />
+          <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/Utilities.Common" minOccurs="0" name="type" type="q17:ApplicationConstant.FormatType" />
+          <xs:element minOccurs="0" name="value" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UtilitiesRequest" nillable="true" type="tns:UtilitiesRequest" />
+  <xs:complexType name="UtilitiesResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q18="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" base="q18:ResponseBase">
+        <xs:sequence>
+          <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/Utilities.Common" minOccurs="0" name="type" type="q19:ApplicationConstant.FormatType" />
+          <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/Utilities.Common" minOccurs="0" name="utilitesResponseMessage" type="q20:ApplicationConstant.UtilitesResponseMessage" />
+          <xs:element minOccurs="0" name="value" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UtilitiesResponse" nillable="true" type="tns:UtilitiesResponse" />
+</xs:schema>

@@ -1,0 +1,154 @@
+﻿<UserControl x:Class="PresentationWPF.KhachHang.KhachHang.Popup.ucGiaDinhNguoiThuaKe"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:ribbon="clr-namespace:Microsoft.Windows.Controls.Ribbon;assembly=RibbonControlsLibrary" 
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation" 
+             mc:Ignorable="d" 
+             d:DesignHeight="768" d:DesignWidth="1024" Loaded="UserControl_Loaded" KeyDown="UserControl_KeyDown" xmlns:my="clr-namespace:System;assembly=mscorlib">
+    <UserControl.Resources>
+        <!--
+        <my:String x:Key="U.KhachHang.KhachHang.Popup.ucGiaDinhNguoiThuaKe.ThongTinThanhVienTrongGiaDinh">Thông tin thành viên trong gia đình</my:String>        
+        -->
+    </UserControl.Resources>
+    <Grid Name="grMain">
+        <DockPanel Name="dockMain">
+            <DockPanel HorizontalAlignment="Stretch" DockPanel.Dock="Top" Margin="3,3,0,3" LastChildFill="False" Name="docToolbar">
+                <WrapPanel Name="Toolbar" >
+                    <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbSave" DockPanel.Dock="Left" Label="{DynamicResource U.DungChung.Button.Luu}"  SmallImageSource="/Utilities.Common;component/Images/Action/save.png" Style="{StaticResource RibbonButton}" Click="tlbSave_Click" />
+                    <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbClose" DockPanel.Dock="Left" Label="{DynamicResource U.DungChung.Button.Dong}"  SmallImageSource="/Utilities.Common;component/Images/Action/close.png" Style="{StaticResource RibbonButton}" Click="tlbClose_Click" />
+                </WrapPanel>
+
+                <CheckBox Margin="0,0,3,5" VerticalAlignment="Bottom" DockPanel.Dock="Right" Content="{DynamicResource U.DungChung.Checkbox.ThemNhieuLan}" Height="16" Name="chkThemNhieuLan"/>
+            </DockPanel>
+            <GroupBox DockPanel.Dock="Top" Header="{DynamicResource U.KhachHang.KhachHang.Popup.ucGiaDinhNguoiThuaKe.ThongTinThanhVienTrongGiaDinh}" Name="grbChiTiet">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="130"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="20" />
+                        <ColumnDefinition Width="130"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="6"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="6"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="6"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="6"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="6"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="6"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="6"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="6"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <Label Grid.Row="0" Grid.Column="0" Name="lblVaiTro" Content="{DynamicResource U.KhachHang.KhachHang.Popup.ucGiaDinhNguoiThuaKe.VaiTro}"/>
+                    <CheckBox Grid.Row="0" Grid.Column="1" Name="chkNguoiThuaKe" Content="{DynamicResource U.KhachHang.KhachHang.Popup.ucGiaDinhNguoiThuaKe.ThuaKe}"/>
+                    <CheckBox Grid.Row="0" Grid.Column="3" Name="chkNguoiDongTrachNhiem" Content="{DynamicResource U.KhachHang.KhachHang.Popup.ucGiaDinhNguoiThuaKe.DongTrachNhiem}" Grid.ColumnSpan="2"/>
+
+                    <StackPanel Grid.Row="2" Grid.Column="0" Orientation="Horizontal" >
+                        <Label Name="lblHoTen" Content="{DynamicResource U.KhachHang.KhachHang.Popup.ucGiaDinhNguoiThuaKe.HoTen}"/>
+                        <Label Content="(*)" Foreground="Red" Margin="-5,0,0,0"/>
+                    </StackPanel>
+                    <TextBox Grid.Row="2" Grid.Column="1" Name="txtHoTen"/>
+                    <StackPanel Grid.Row="2" Grid.Column="3" Orientation="Horizontal" >
+                        <Label Name="lblNgaySinh" Content="{DynamicResource U.KhachHang.KhachHang.Popup.ucGiaDinhNguoiThuaKe.NgaySinh}"/>
+                        <Label Content="(*)" Foreground="Red" Margin="-5,0,0,0"/>
+                    </StackPanel>
+                    <telerik:RadMaskedDateTimeInput Grid.Row="2" Grid.Column="4" Name="raddtNgaySinh" Mask="dd/MM/yyyy" Value="{Binding Path=SelectedDate, ElementName=dtpNgaySinh}" Margin="0,0,35,0" HorizontalAlignment="Stretch"/>
+                    <DatePicker Grid.Row="2" Grid.Column="4" Name="dtpNgaySinh" Width="30" HorizontalAlignment="Right" />
+
+                    <StackPanel Grid.Row="4" Grid.Column="0" Orientation="Horizontal" >
+                        <Label Name="lblGioiTinh" Content="{DynamicResource U.KhachHang.KhachHang.Popup.ucGiaDinhNguoiThuaKe.GioiTinh}"/>
+                        <Label Content="(*)" Foreground="Red" Margin="-5,0,0,0"/>
+                    </StackPanel>
+                    <telerik:RadComboBox Grid.Row="4" Grid.Column="1" Name="cmbGioiTinh" IsEditable="True" />
+                    <Label Grid.Row="4" Grid.Column="3" Name="lblDanToc" Content="{DynamicResource U.KhachHang.KhachHang.Popup.ucGiaDinhNguoiThuaKe.DanToc}"/>
+                    <telerik:RadComboBox Grid.Row="4" Grid.Column="4" Name="cmbDanToc" IsEditable="True" />
+
+                    <StackPanel Grid.Row="6" Grid.Column="0" Orientation="Horizontal" >
+                        <Label Name="lblQuanHeVoiThanhVien" Content="{DynamicResource U.KhachHang.KhachHang.Popup.ucGiaDinhNguoiThuaKe.QuanHeVoiTV}"/>
+                        <Label Content="(*)" Foreground="Red" Margin="-5,0,0,0"/>
+                    </StackPanel>
+                    <telerik:RadComboBox Grid.Row="6" Grid.Column="1" Name="cmbQuanHeVoiThanhVien" IsEditable="True" />
+                    <Label Grid.Row="6" Grid.Column="3" Name="lblTrinhDoHocVan" Content="{DynamicResource U.KhachHang.KhachHang.Popup.ucGiaDinhNguoiThuaKe.TrinhDoHV}"/>
+                    <telerik:RadComboBox Grid.Row="6" Grid.Column="4" Name="cmbTrinhDoHocVan" IsEditable="True" />
+
+                    <StackPanel Grid.Row="8" Grid.Column="0" Orientation="Horizontal" >
+                        <Label Name="lblNgheNghiep" Content="{DynamicResource U.KhachHang.KhachHang.Popup.ucGiaDinhNguoiThuaKe.NgheNghiep}"/>
+                        <Label Content="(*)" Foreground="Red" Margin="-5,0,0,0"/>
+                    </StackPanel>
+                    <telerik:RadComboBox Grid.Row="8" Grid.Column="1" Name="cmbNgheNghiep" IsEditable="True" />
+                    <Label Grid.Row="8" Grid.Column="3" Name="lblTinhTrangSucKhoe" Content="{DynamicResource U.KhachHang.KhachHang.Popup.ucGiaDinhNguoiThuaKe.TinhTrangSK}"/>
+                    <telerik:RadComboBox Grid.Row="8" Grid.Column="4" Name="cmbTinhTrangSucKhoe" IsEditable="True" />
+
+                    <StackPanel Grid.Row="10" Grid.Column="0" Orientation="Horizontal" >
+                        <Label Name="lblSoCMND" Content="{DynamicResource U.KhachHang.KhachHang.Popup.ucGiaDinhNguoiThuaKe.SoCMND}"/>
+                        <!--<Label Content="(*)" Foreground="Red" Margin="-5,0,0,0"/>-->
+                    </StackPanel>
+                    <TextBox Grid.Row="10" Grid.Column="1" Name="txtSoCMND"/>
+                    <Label Grid.Row="10" Grid.Column="3" Name="lblNgayCap" Content="{DynamicResource U.KhachHang.KhachHang.Popup.ucGiaDinhNguoiThuaKe.NgayCap}"/>
+                    <telerik:RadMaskedDateTimeInput Grid.Row="10" Grid.Column="4" Name="raddtNgayCap" Mask="dd/MM/yyyy" Value="{Binding Path=SelectedDate, ElementName=dtpNgayCap}" Margin="0,0,35,0" HorizontalAlignment="Stretch"/>
+                    <DatePicker Grid.Row="10" Grid.Column="4" Name="dtpNgayCap" Width="30" HorizontalAlignment="Right" />
+
+                    <StackPanel Grid.Row="12" Grid.Column="0" Orientation="Horizontal" >
+                        <Label Name="lblNoiCap" Content="{DynamicResource U.KhachHang.KhachHang.Popup.ucGiaDinhNguoiThuaKe.NoiCap}"/>
+                        <!--<Label Content="(*)" Foreground="Red" Margin="-5,0,0,0"/>-->
+                    </StackPanel>
+                    <telerik:RadComboBox Grid.Row="12" Grid.Column="1" Name="cmbNoiCap" IsEditable="True" />
+
+                    <StackPanel Grid.Row="12" Grid.Column="3" Orientation="Horizontal" >
+                        <Label Name="lblQuanHeKT" Content="{DynamicResource U.KhachHang.KhachHang.Popup.ucGiaDinhNguoiThuaKe.QuanHeKT}"/>
+                    </StackPanel>
+                    <telerik:RadComboBox Grid.Row="12" Grid.Column="4" Name="cmbQuanHeKT" IsEditable="True" />
+
+                    <CheckBox Grid.Row="14" Grid.Column="1" Name="chkKhongCungHoKhauKH" Content="{DynamicResource U.KhachHang.KhachHang.Popup.ucGiaDinhNguoiThuaKe.KhongCungHoKhau}" Grid.ColumnSpan="4"/>
+
+                </Grid>
+            </GroupBox>
+
+            <GroupBox DockPanel.Dock="Top" Header="{DynamicResource U.KhachHang.KhachHang.Popup.ucGiaDinhNguoiThuaKe.ThongTinKhongCungHoKhau}" Name="grbKhac">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="130"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="20" />
+                        <ColumnDefinition Width="130"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="6"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="6"/>
+                        <RowDefinition Height="*"/>
+                        
+                    </Grid.RowDefinitions>
+
+                    <Label Grid.Row="0" Grid.Column="0" Name="lblSoHoKhau" Content="{DynamicResource U.KhachHang.KhachHang.Popup.ucGiaDinhNguoiThuaKe.SoHoKhau}"/>
+                    <TextBox Grid.Row="0" Grid.Column="1" Name="txtSoHoKhau" IsEnabled="{Binding Path=IsChecked, ElementName=chkKhongCungHoKhauKH}"/>
+                    <Label Grid.Row="0" Grid.Column="3" Name="lblSoDienThoai" Content="{DynamicResource U.KhachHang.KhachHang.Popup.ucGiaDinhNguoiThuaKe.SoDienThoai}"/>
+                    <TextBox Grid.Row="0" Grid.Column="4" Name="txtSoDienThoai" IsEnabled="{Binding Path=IsChecked, ElementName=chkKhongCungHoKhauKH}"/>
+
+                    <Label Grid.Row="2" Grid.Column="0" Name="lblDiaChi" Content="{DynamicResource U.KhachHang.KhachHang.Popup.ucGiaDinhNguoiThuaKe.DiaChi}"/>
+                    <TextBox Grid.Row="2" Grid.Column="1" Name="txtDiaChi" IsEnabled="{Binding Path=IsChecked, ElementName=chkKhongCungHoKhauKH}"  Grid.ColumnSpan="4"/>
+
+                    <Label Grid.Row="4" Grid.Column="0" Name="lblGhiChu" Content="{DynamicResource U.KhachHang.KhachHang.Popup.ucGiaDinhNguoiThuaKe.GhiChu}"/>
+                    <TextBox Grid.Row="4" Grid.Column="1" Name="txtGhiChu" IsEnabled="{Binding Path=IsChecked, ElementName=chkKhongCungHoKhauKH}"  Grid.ColumnSpan="4"/>
+
+
+                </Grid>
+            </GroupBox>
+            <Grid></Grid>
+        </DockPanel>
+    </Grid>
+</UserControl>

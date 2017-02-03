@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E1E5EF0C-7B64-41ED-A95A-9F1623E2262C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DataServices.QuanTriHeThong</RootNamespace>
+    <AssemblyName>DataServices.QuanTriHeThong</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\..\Build\Build.Server\Dev\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\..\Build\Build.Server\Dev\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DataModel.ADO">
+      <HintPath>..\..\..\..\Build\Build.Server\Dev\DataModel.ADO.dll</HintPath>
+    </Reference>
+    <Reference Include="DataModel.EntityFramework">
+      <HintPath>..\..\..\..\Build\Build.Server\Dev\DataModel.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="DataServices.Utilities, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Build\Build.Server\Dev\DataServices.Utilities.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Utilities.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Libraries\Utilities.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DS_HT_MATRIX_DUYET.cs" />
+    <Compile Include="DS_HT_CNANG_PQUYEN.cs" />
+    <Compile Include="DS_CNANG.cs" />
+    <Compile Include="DS_HTLich.cs" />
+    <Compile Include="DS_HT_CNANG.cs" />
+    <Compile Include="DS_HT_CNANG_HDSD.cs" />
+    <Compile Include="DS_HT_CNANG_TNANG.cs" />
+    <Compile Include="DS_HT_CNANG_TSO.cs" />
+    <Compile Include="DS_HT_DATA_CONSTRAINT.cs" />
+    <Compile Include="DS_HT_DLIEU_RBUOC.cs" />
+    <Compile Include="DS_HT_HANG_DOI.cs" />
+    <Compile Include="DS_HT_HANG_DOI_LS.cs" />
+    <Compile Include="DS_HT_LICH.cs" />
+    <Compile Include="DS_HT_LICH_LVIEC.cs" />
+    <Compile Include="DS_HT_LICH_NGHI.cs" />
+    <Compile Include="DS_HT_LICH_SU.cs" />
+    <Compile Include="DS_HT_LICH_SU_CT.cs" />
+    <Compile Include="DS_HT_LSU_GDICH.cs" />
+    <Compile Include="DS_HT_MENU.cs" />
+    <Compile Include="DS_HT_MENU_HDSD.cs" />
+    <Compile Include="DS_HT_MENU_TSO.cs" />
+    <Compile Include="DS_HT_NGAY_LVIEC.cs" />
+    <Compile Include="DS_HT_NHNSD.cs" />
+    <Compile Include="DS_HT_NHNSD_HSO.cs" />
+    <Compile Include="DS_HT_NHNSD_NSD.cs" />
+    <Compile Include="DS_HT_NSD.cs" />
+    <Compile Include="DS_HT_NSD_HSO.cs" />
+    <Compile Include="DS_HT_NSD_PVI.cs" />
+    <Compile Include="DS_HT_PBAN.cs" />
+    <Compile Include="DS_HT_PBAN_CTIET.cs" />
+    <Compile Include="DS_HT_PBAN_FILE.cs" />
+    <Compile Include="DS_HT_PBAN_MAPPING.cs" />
+    <Compile Include="DS_HT_PHAM_VI.cs" />
+    <Compile Include="DS_HT_PHIEN_LVIEC.cs" />
+    <Compile Include="DS_HT_PHIEN_LVIEC_LSU.cs" />
+    <Compile Include="DS_HT_SO_TT.cs" />
+    <Compile Include="DS_HT_TNANG.cs" />
+    <Compile Include="DS_HT_TNGUYEN.cs" />
+    <Compile Include="DS_HT_TNGUYEN_KBAO.cs" />
+    <Compile Include="DS_HT_TNGUYEN_KTHAC.cs" />
+    <Compile Include="DS_HT_TNGUYEN_LOAI.cs" />
+    <Compile Include="DS_HT_TNGUYEN_LOAI_GTRI.cs" />
+    <Compile Include="DS_HT_TRUY_CAP.cs" />
+    <Compile Include="DS_HT_TSO.cs" />
+    <Compile Include="DS_HT_TSO_LOAI.cs" />
+    <Compile Include="DS_HT_TTINH.cs" />
+    <Compile Include="DS_HT_TTINH_GTRI.cs" />
+    <Compile Include="DS_HT_TTRINH .cs" />
+    <Compile Include="DS_HT_TVAN.cs" />
+    <Compile Include="DS_HT_TVAN_CTIET.cs" />
+    <Compile Include="DS_NN_MESSAGE.cs" />
+    <Compile Include="DS_NN_RESOURCE.cs" />
+    <Compile Include="DS_PhamVi.cs" />
+    <Compile Include="DS_PhanQuyen.cs" />
+    <Compile Include="DS_QuanTriHeThong.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="4f3da713-6a36-4865-bf87-f55fc6c7ec49" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:1001/LaiSuatService.svc/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="7b5b2e2b-54fd-4610-999f-29c03b8506b0" SourceId="1" SourceUrl="http://localhost:1001/LaiSuatService.svc/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="e7ae7546-404f-415e-9e9b-d1f7e3cdc70a" SourceId="1" SourceUrl="http://localhost:1001/LaiSuatService.svc/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="8bf671e5-b395-4709-82c2-569cf69c4cd7" SourceId="1" SourceUrl="http://localhost:1001/LaiSuatService.svc/mex" />
+    <MetadataFile FileName="CommunicationServices.LaiSuat.Messages.xsd" MetadataType="Schema" ID="a558e550-3079-466a-9793-ef91d40f8a1a" SourceId="1" SourceUrl="http://localhost:1001/LaiSuatService.svc/mex" />
+    <MetadataFile FileName="CommunicationMessages.Base.MessageBases.xsd" MetadataType="Schema" ID="bde899ed-b59a-4995-90c5-351764ff44b8" SourceId="1" SourceUrl="http://localhost:1001/LaiSuatService.svc/mex" />
+    <MetadataFile FileName="Utilities.Common.xsd" MetadataType="Schema" ID="f0271453-1812-4c60-b307-924cd837b7b4" SourceId="1" SourceUrl="http://localhost:1001/LaiSuatService.svc/mex" />
+    <MetadataFile FileName="Arrays.xsd" MetadataType="Schema" ID="b4f787d2-2ce6-4400-a81e-2a44684e7c44" SourceId="1" SourceUrl="http://localhost:1001/LaiSuatService.svc/mex" />
+    <MetadataFile FileName="DataModel.EntityFramework.xsd" MetadataType="Schema" ID="21359fb4-0cc5-4498-bc99-1ac28943aad8" SourceId="1" SourceUrl="http://localhost:1001/LaiSuatService.svc/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

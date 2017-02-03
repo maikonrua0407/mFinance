@@ -1,0 +1,91 @@
+﻿<UserControl x:Class="PresentationWPF.BaoCao._BTV.QLTS.QLTS_BANG_KHAU_HAO"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:ribbon="http://schemas.microsoft.com/winfx/2006/xaml/presentation/ribbon" 
+             xmlns:telerikMaskInput="clr-namespace:Telerik.Windows.Controls.MaskedInput;assembly=Telerik.Windows.Controls.Input"
+             xmlns:uc="clr-namespace:PresentationWPF.CustomControl;assembly=PresentationWPF.CustomControl"     
+             xmlns:local="clr-namespace:PresentationWPF.BaoCao._BTV.QLTS"  
+             mc:Ignorable="d" 
+             xmlns:my="clr-namespace:System;assembly=mscorlib"
+             d:DesignHeight="600" d:DesignWidth="800">
+    <UserControl.Resources>
+        <!--<my:String x:Key="U.BaoCao.TaiSan.ChiNhanh">Chi nhánh:</my:String>
+        <my:String x:Key="U.BaoCao.TaiSan.PhongGD">Phòng GD:</my:String>
+        <my:String x:Key="U.BaoCao.TaiSan.SoLieuQuy">Số liệu quý:</my:String>
+        <my:String x:Key="U.BaoCao.TaiSan.NgayBaoCao">Ngày báo cáo:</my:String>
+        <my:String x:Key="U.BaoCao.TaiSan.LoaiTien">Loại tiền:</my:String>
+
+        <my:String x:Key="U.BaoCao.TaiSan.NgonNgu">Ngôn ngữ:</my:String>
+        <my:String x:Key="U.BaoCao.TaiSan.DinhDang">Định dạng báo cáo:</my:String>
+        <my:String x:Key="U.BaoCao.TaiSan.GridMaNhom">Mã nhóm</my:String>
+        <my:String x:Key="U.BaoCao.TaiSan.GridTenNhom">Tên nhóm tài sản</my:String>
+        <my:String x:Key="U.BaoCao.TaiSan.Nam">Năm:</my:String>
+        <my:String x:Key="U.BaoCao.TaiSan.DanhSachNhomTS">Danh sách nhóm tài sản</my:String>-->
+    </UserControl.Resources>
+    <Grid>
+        <DockPanel>
+            <Grid>
+                <DockPanel>
+                    <GroupBox Header="{DynamicResource U.BaoCao._BTV.QLTS.QLTS_BANG_KHAU_HAO}" DockPanel.Dock="Top">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="2*" />
+                                <ColumnDefinition Width="20" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="2*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="6" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="6" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="15" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Label Content="{DynamicResource U.BaoCao.TaiSan.ChiNhanh}" Grid.Row="0" Grid.Column="0"/>
+                            <Label Content="{DynamicResource U.BaoCao.TaiSan.PhongGD}" Grid.Row="0" Grid.Column="3"/>
+                            <Label Content="{DynamicResource U.BaoCao.TaiSan.SoLieuQuy}" Grid.Row="2" Grid.Column="0"/>
+                            <Label Content="{DynamicResource U.BaoCao.TaiSan.NgayBaoCao}" Grid.Row="4" Grid.Column="0"/>
+                            <Label Content="{DynamicResource U.BaoCao.TaiSan.LoaiTien}" Grid.Row="4" Grid.Column="3"/>
+                            <Label Grid.Row="5" Grid.ColumnSpan="5" Height="0.5" Background="DarkGray" />
+                            <Label Content="{DynamicResource U.BaoCao.TaiSan.NgonNgu}" Grid.Row="6" Grid.Column="0"/>
+                            <Label Content="{DynamicResource U.BaoCao.TaiSan.DinhDang}" Grid.Row="6" Grid.Column="3"/>
+                            <telerik:RadComboBox IsEditable="True" Name="cmbChiNhanh" Grid.Row="0" Grid.Column="1" SelectionChanged="cmbChiNhanh_SelectionChanged" TabIndex="1" />
+                            <telerik:RadComboBox IsEditable="True" Name="cmbPhongGD" Grid.Row="0" Grid.Column="4" TabIndex="2" />
+                            <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="2">
+                                <telerik:RadComboBox IsEditable="True" IsReadOnly="True" Name="cmbQuy" Width="120px" Padding="3" TabIndex="3" />
+                                <Label Content="{DynamicResource U.BaoCao.TaiSan.Nam}"/>
+                                <telerik:RadComboBox IsEditable="True" IsReadOnly="True" Name="cmbNam" Width="80px" HorizontalAlignment="Right" Padding="3" TabIndex="4" />
+                            </StackPanel>
+                            <telerik:RadMaskedDateTimeInput Name="raddtNgayBaoCao" Grid.Row="4" Grid.Column="1" Mask="dd/MM/yyyy" HorizontalAlignment="Stretch" Margin="0,0,35,0" TabIndex="5" />
+                            <DatePicker Grid.Row="4" Grid.Column="1" HorizontalAlignment="Right" Width="30" SelectedDate="{Binding Path=Value,ElementName=raddtNgayBaoCao}" TabIndex="6" />
+                            <telerik:RadComboBox IsEditable="True" Name="cmbLoaiTien" Grid.Row="4" Grid.Column="4" TabIndex="7" IsEnabled="False" />
+                            <telerik:RadComboBox IsEditable="True" Name="cmbNgonNgu" Grid.Row="6" Grid.Column="1" TabIndex="8" IsEnabled="False" />
+                            <telerik:RadComboBox IsEditable="True" Name="cmbDinhDang" Grid.Row="6" Grid.Column="4" TabIndex="9" IsEnabled="False" />
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox Header="{DynamicResource U.BaoCao.TaiSan.DanhSachNhomTS}" Margin="3,10,3,3" DockPanel.Dock="Top">
+                        <Grid>
+                            <telerik:RadGridView Name="grNhomTS" ShowGroupPanel="False" Margin="3,0" ItemsSource="{Binding}" SelectionMode="Extended" 
+                AutoGenerateColumns="False" CanUserFreezeColumns="False" RowIndicatorVisibility="Collapsed" DockPanel.Dock="Top" TabIndex="10" >
+                                <telerik:RadGridView.Columns>
+                                    <!--STT,ID,MA_NHOM,TEN_NHOM-->
+                                    <telerik:GridViewSelectColumn MaxWidth="20" MinWidth="20" />
+                                    <telerik:GridViewDataColumn Header="ID" IsVisible="False" IsReadOnly="True" DataMemberBinding="{Binding ID}"/>
+                                    <telerik:GridViewDataColumn Header="{DynamicResource U.DungChung.STT}" Width="50" IsReadOnly="True" DataMemberBinding="{Binding STT}"/>
+                                    <telerik:GridViewDataColumn Header="{DynamicResource U.BaoCao.TaiSan.GridMaNhom}" Width="*" IsReadOnly="True" DataMemberBinding="{Binding MA_NHOM}"/>
+                                    <telerik:GridViewDataColumn Header="{DynamicResource U.BaoCao.TaiSan.GridTenNhom}"  Width="2*" IsReadOnly="True" DataMemberBinding="{Binding TEN_NHOM}"/>
+                                </telerik:RadGridView.Columns>
+                            </telerik:RadGridView>
+                        </Grid>
+                    </GroupBox>
+                </DockPanel>
+            </Grid>
+        </DockPanel>
+    </Grid>
+</UserControl>

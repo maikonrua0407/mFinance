@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="8637424b-e2de-4568-947d-19d90bb62b13" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:1001/ZATestAppService.svc/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="28d10688-39c1-458b-959e-cbdb81716027" SourceId="1" SourceUrl="http://localhost:1001/ZATestAppService.svc/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="60adc839-aa10-4419-8bc5-efff2cb900dd" SourceId="1" SourceUrl="http://localhost:1001/ZATestAppService.svc/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="d5f01425-905b-4301-8581-0662bedc9f5b" SourceId="1" SourceUrl="http://localhost:1001/ZATestAppService.svc/mex" />
+    <MetadataFile FileName="Utilities.Common.xsd" MetadataType="Schema" ID="193a2de3-0ea9-47ff-a88e-f4df3e098d2d" SourceId="1" SourceUrl="http://localhost:1001/ZATestAppService.svc/mex" />
+    <MetadataFile FileName="CommunicationServices.ZATestApp.Messages.xsd" MetadataType="Schema" ID="787444c2-9ba3-4635-b193-fe57d0d4afc8" SourceId="1" SourceUrl="http://localhost:1001/ZATestAppService.svc/mex" />
+    <MetadataFile FileName="CommunicationMessages.Base.MessageBases.xsd" MetadataType="Schema" ID="3f6a42fa-426f-4784-ac04-347b661d4c07" SourceId="1" SourceUrl="http://localhost:1001/ZATestAppService.svc/mex" />
+    <MetadataFile FileName="System.IO.xsd" MetadataType="Schema" ID="f9f40003-45f3-4ef2-b88f-80827155068c" SourceId="1" SourceUrl="http://localhost:1001/ZATestAppService.svc/mex" />
+    <MetadataFile FileName="System.xsd" MetadataType="Schema" ID="54352dc7-d026-4dfe-a744-ea1b329a8327" SourceId="1" SourceUrl="http://localhost:1001/ZATestAppService.svc/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

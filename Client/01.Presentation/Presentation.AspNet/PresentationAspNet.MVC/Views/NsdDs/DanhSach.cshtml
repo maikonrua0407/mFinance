@@ -1,0 +1,66 @@
+﻿@model List<Presentation.Process.QuanTriHeThongServiceRef.HT_NSD>
+<thead>
+    <tr>
+        <th style="width: 40px;">STT</th>
+        <th>Họ tên</th>
+        <th>Tên đăng nhập</th>
+        <th>Email</th>
+        <th style="width: 80px;">Kích hoạt</th>
+        <th>Tên phòng ban</th>
+        <th style="width: 40px;">Sửa</th>
+        <th style="width: 50px;">Đổi MK</th>
+    </tr>
+</thead>
+<tbody id="tableBody">
+    @if (Model != null && Model.Any())
+    {
+        foreach (var item in Model)
+        {
+            <tr>
+                <td class="text-center"></td>
+                <td>@item.TEN_DAY_DU</td>
+                <td>@item.MA_DANG_NHAP</td>
+                <td>@item.EMAIL</td>
+                <td>@item.TINH_TRANG</td>
+                <td>@item.MA_DVI_QLY</td>
+                <td class="text-center">
+                    <a href="javascript:void(0);" onclick="ShowInsert('@item.ID');">
+                        <i class="icon-edit bigger-130"></i>
+                    </a>
+                </td>
+                <td class="text-center">
+                    <a href="javascript:void(0);" onclick="ChangePassword('@item.ID');">
+                        <i class="icon-lock bigger-130"></i>
+                    </a>
+                </td>
+            </tr>
+        }
+        <tr>
+            <td class="td-paging" colspan="8">@Html.Partial("NavigatePaging")</td>
+        </tr>
+    }
+    else
+    {
+        <tr>
+            <td colspan="8" class="notData">Không có dữ liệu</td>
+        </tr>
+    }
+</tbody>
+<input id="hidIdNguoiDung" type="hidden" />
+
+
+<script type="text/javascript">
+    $("#tableDsNguoiDung").find('tr').click(function () {
+        var id = $(this).find("input[type='checkbox']").val();
+        $("#tableDsNguoiDung").find('tr').removeClass('row-selected');
+        $(this).addClass('row-selected');
+        $("#hidIdNguoiDung").val(id);
+    });
+    $("#tableDsNguoiDung").find('tr').dblclick(function () {
+        var id = $(this).find("input:checkbox").val();
+        $("#tableDsNguoiDung").find('tr').removeClass('row-selected');
+        $(this).addClass('row-selected');
+        $("#hidIdNguoiDung").val(id);
+        applyDataProcess();
+    });
+</script>

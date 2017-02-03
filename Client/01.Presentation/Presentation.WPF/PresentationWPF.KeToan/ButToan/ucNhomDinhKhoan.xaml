@@ -1,0 +1,106 @@
+﻿<UserControl x:Class="PresentationWPF.KeToan.ButToan.ucNhomDinhKhoan"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:ribbon="clr-namespace:Microsoft.Windows.Controls.Ribbon;assembly=RibbonControlsLibrary" 
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation" 
+             mc:Ignorable="d" 
+             d:DesignHeight="768" d:DesignWidth="1024" Loaded="UserControl_Loaded" KeyDown="UserControl_KeyDown">
+
+    <Grid Name="grMain">
+        <DockPanel Name="dockMain">
+            <DockPanel HorizontalAlignment="Stretch" DockPanel.Dock="Top" Margin="3,3,0,3" LastChildFill="False" Name="docToolbar">
+                <WrapPanel Name="Toolbar" >
+                    <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbSave" DockPanel.Dock="Left" Label="{DynamicResource U.DungChung.Button.Luu}"  SmallImageSource="/Utilities.Common;component/Images/Action/save.png" Style="{StaticResource RibbonButton}" Click="tlbSave_Click" />
+                    <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbClose" DockPanel.Dock="Left" Label="{DynamicResource U.DungChung.Button.Dong}"  SmallImageSource="/Utilities.Common;component/Images/Action/close.png" Style="{StaticResource RibbonButton}" Click="tlbClose_Click" />
+                </WrapPanel>
+            </DockPanel>
+            <GroupBox DockPanel.Dock="Top" Name="grbChiTiet" Header="{DynamicResource U.KeToan.ButToan.ucNhomDinhKhoan.DinhKhoanChiTiet}">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="130"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="20" />
+                        <ColumnDefinition Width="130"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="6"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="6"/>
+                        <RowDefinition Height="*"/>
+
+                    </Grid.RowDefinitions>
+                    <StackPanel Grid.Column="0" Grid.Row="0" Orientation="Horizontal">
+                        <Label Content="{DynamicResource U.KeToan.ButToan.ucNhomDinhKhoan.NhomDinhKhoan}" Name="lblNhomDinhKhoan"/>
+                        <Label Content="(*)" Foreground="Red" Margin="-5,0,0,0" />
+                    </StackPanel>
+                    <TextBox Grid.Row="0" Grid.Column="1" Name="txtNhomDinhKhoan" TabIndex="1" LostFocus="txtNhomDinhKhoan_LostFocus" />
+                    
+                    <StackPanel Grid.Column="3" Grid.Row="0" Orientation="Horizontal">
+                        <Label Content="{DynamicResource U.KeToan.ButToan.ucNhomDinhKhoan.DinhKhoan}" Name="lblDinhKhoan"/>
+                        <Label Content="(*)" Foreground="Red" Margin="-5,0,0,0" />
+                    </StackPanel>
+                    <telerik:RadComboBox Grid.Row="0" Grid.Column="4" IsEditable="True" Name="cmbDinhKhoan" TabIndex="2" TextSearchMode="Contains" IsFilteringEnabled="True" IsTextSearchEnabled="True" OpenDropDownOnFocus="True"/>
+
+                    <StackPanel Grid.Column="0" Grid.Row="2" Orientation="Horizontal">
+                        <Label Content="{DynamicResource U.KeToan.ButToan.ucNhomDinhKhoan.MaPhanLoai}" Name="lblMaPhanLoai"/>
+                        <Label Content="(*)" Foreground="Red" Margin="-5,0,0,0" />
+                    </StackPanel>
+                    <TextBox Name="txtMaPhanLoai" Grid.Column="1" Grid.Row="2" Padding="0,3,0,0" HorizontalAlignment="Stretch" Margin="0,0,35,0" TabIndex="3" LostFocus="txtMaPhanLoai_LostFocus" KeyDown="txtMaPhanLoai_KeyDown" />
+                    <Button Grid.Column="1" Grid.Row="2" Name="btnMaPhanLoai" HorizontalAlignment="Right" Width="30" Content="F3" TabIndex="4" Click="btnMaPhanLoai_Click" />
+                    <Label Content="{DynamicResource U.KeToan.ButToan.ucNhomDinhKhoan.TenPhanLoai}" Name="lblTenPhanLoai" FontWeight="Bold" FontStyle="Italic" Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="2"/>
+
+                    <StackPanel Grid.Column="0" Grid.Row="4" Orientation="Horizontal">
+                        <Label Content="{DynamicResource U.KeToan.ButToan.ucNhomDinhKhoan.LoaiChungTu}" Name="lblLoaiChungTu"/>
+                        <Label Content="(*)" Foreground="Red" Margin="-5,0,0,0" />
+                    </StackPanel>
+                    <telerik:RadComboBox Grid.Row="4" Grid.Column="1" IsEditable="True" Name="cmbLoaiChungTu" TabIndex="5" TextSearchMode="Contains" IsFilteringEnabled="True" IsTextSearchEnabled="True" OpenDropDownOnFocus="True"/>
+
+                    
+                </Grid>
+            </GroupBox>
+            <GroupBox Header="{DynamicResource U.KeToan.ButToan.ucNhomDinhKhoan.DanhSachDinhKhoan}" Padding="0,10" Margin="3">
+                <DockPanel>
+                    <Border DockPanel.Dock="Top" BorderThickness="1">
+                        <StackPanel Orientation="Horizontal" Margin="5,0,0,0" >
+                            <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbAddThongTin" DockPanel.Dock="Left" Label="{DynamicResource U.DungChung.Button.Them}" SmallImageSource="/Utilities.Common;component/Images/Action/add.png" Style="{StaticResource RibbonButton}" Click="tlbAddThongTin_Click" />
+                            <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbSaveThongTin" DockPanel.Dock="Left" Label="{DynamicResource U.DungChung.Button.Luu}"   SmallImageSource="/Utilities.Common;component/Images/Action/detail_edit.png" Style="{StaticResource RibbonButton}" Click="tlbSaveThongTin_Click" />
+                            <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbDeleteThongTin" DockPanel.Dock="Left" Label="{DynamicResource U.DungChung.Button.Xoa}"   SmallImageSource="/Utilities.Common;component/Images/Action/detail_delete.png" Style="{StaticResource RibbonButton}" Click="tlbDeleteThongTin_Click" />
+                        </StackPanel>
+                    </Border>
+                    <telerik:RadGridView Name="grDinhKhoan" ItemsSource="{Binding}" AutoExpandGroups="True"
+                AutoGenerateColumns="False" CanUserFreezeColumns="False" RowIndicatorVisibility="Collapsed" Margin="5" ShowGroupPanel="False" SelectionChanged="grDinhKhoan_SelectionChanged">
+                        <telerik:RadGridView.Columns>
+                            <telerik:GridViewDataColumn Header="ID" Width="0" IsReadOnly="True" DataMemberBinding="{Binding ID}" IsVisible="False" />
+                            <telerik:GridViewDataColumn Width="30" IsFilterable="False" IsSortable="False">
+                                <telerik:GridViewDataColumn.Header>
+                                    <CheckBox HorizontalAlignment="Center" VerticalAlignment="Center"  Name="chkAll" Click="chkAll_Click" />
+                                </telerik:GridViewDataColumn.Header>
+                                <telerik:GridViewDataColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <CheckBox HorizontalAlignment="Center" IsChecked="{Binding CHON}" />
+                                    </DataTemplate>
+                                </telerik:GridViewDataColumn.CellTemplate>
+                            </telerik:GridViewDataColumn>
+                            <telerik:GridViewDataColumn Width="40"  IsReadOnly="True" DataMemberBinding="{Binding STT}" IsFilterable="False" IsSortable="False">
+                                <telerik:GridViewDataColumn.Header>
+                                    <Label Content="{DynamicResource U.DungChung.STT}" HorizontalAlignment="Center" Foreground="White" />
+                                </telerik:GridViewDataColumn.Header>
+                            </telerik:GridViewDataColumn>
+                            <telerik:GridViewDataColumn IsReadOnly="True" Header="{DynamicResource U.KeToan.ButToan.ucNhomDinhKhoan.DinhKhoanBind}" DataMemberBinding="{Binding DINHKHOAN_TEN}"/>
+                            <telerik:GridViewDataColumn IsReadOnly="True" Header="{DynamicResource U.KeToan.ButToan.ucNhomDinhKhoan.MaPhanLoaiTK}" DataMemberBinding="{Binding MA_PHAN_LOAI}"/>
+                            <telerik:GridViewDataColumn Width="*"  IsReadOnly="True" Header="{DynamicResource U.KeToan.ButToan.ucNhomDinhKhoan.TenPhanLoaiTaiKhoan}" DataMemberBinding="{Binding TEN_PHAN_LOAI}"/>
+                            <telerik:GridViewDataColumn IsReadOnly="True" Header="{DynamicResource U.KeToan.ButToan.ucNhomDinhKhoan.NhomDinhKhoanBind}" DataMemberBinding="{Binding NHOM_DK}" UniqueName="NHOM_DK"/>
+                            <telerik:GridViewDataColumn IsReadOnly="True" Header="{DynamicResource U.KeToan.ButToan.ucNhomDinhKhoan.LoaiChungTuBind}" DataMemberBinding="{Binding CHUNGTU_TEN}"/>
+                        </telerik:RadGridView.Columns>
+                        
+
+                    </telerik:RadGridView>
+                </DockPanel>
+            </GroupBox>
+        </DockPanel>
+    </Grid>
+</UserControl>

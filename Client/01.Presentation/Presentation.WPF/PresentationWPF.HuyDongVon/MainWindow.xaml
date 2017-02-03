@@ -1,0 +1,223 @@
+﻿<Window x:Class="PresentationWPF.HuyDongVon.MainWindow"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:uc="clr-namespace:PresentationWPF.CustomControl;assembly=PresentationWPF.CustomControl"
+             mc:Ignorable="d" 
+             d:DesignHeight="570" d:DesignWidth="870" 
+             xmlns:ribbon="http://schemas.microsoft.com/winfx/2006/xaml/presentation/ribbon" 
+             xmlns:my="clr-namespace:System;assembly=mscorlib">
+    <Window.Resources>
+        <my:String x:Key="U.HuyDongVon.ucDangKySanPhamCT.ThongTinChung">Thông tin chung</my:String>
+        <my:String x:Key="U.HuyDongVon.ucDangKySanPhamCT.NhomSanPhamTKQD">Nhóm sản phẩm TKQĐ</my:String>
+        <my:String x:Key="U.HuyDongVon.ucDangKySanPhamCT.NhomSanPham">Nhóm sản phẩm</my:String>
+        <my:String x:Key="U.HuyDongVon.ucDangKySanPhamCT.NhomSanPhamTGTT">Nhóm sản phẩm TGTT</my:String>
+        <my:String x:Key="U.HuyDongVon.ucDangKySanPhamCT.KiemSoat">Kiểm soát</my:String>
+        <my:String x:Key="U.HuyDongVon.ucDangKySanPhamCT.MaNhomSP">Mã nhóm SP</my:String>
+        <my:String x:Key="U.HuyDongVon.ucDangKySanPhamCT.TenNhomSP">Tên nhóm SP</my:String>
+        <my:String x:Key="U.HuyDongVon.ucDangKySanPhamCT.TenSP">Tên SP</my:String>
+        <my:String x:Key="U.HuyDongVon.ucDangKySanPhamCT.HinhThucTraLai">Hình thức trả lãi</my:String>
+        <my:String x:Key="u.HuyDongVon.ucDangKySanPhamCT.ThongTinKhac">Thông tin khác</my:String>
+        <my:String x:Key="u.HuyDongVon.ucDangKySanPhamCT">Số dư tồi thiểu:</my:String>
+        <my:String x:Key="U.HuyDongVon.ucDangKySanPhamCT.MaSP">Mã SP</my:String>
+        <my:String x:Key="U.HuyDongVon.ucDangKySanPhamCT.TanSuatTraLai">Tần suất trả lãi:</my:String>
+        <my:String x:Key="U.HuyDongVon.ucDangKySanPhamCT.Lan">Lần</my:String>
+        <my:String x:Key="U.HuyDongVon.ucDangKySanPhamCT.LoaiTien">Loại tiền:</my:String>
+        <my:String x:Key="U.HuyDongVon.ucDangKySanPhamCT.ThongTinLaiSuat">Thông tin lãi suất</my:String>
+        <my:String x:Key="U.HuyDongVon.ucDangKySanPhamCT.LoaiLaiSuat">Loại lãi suất:</my:String>
+        <my:String x:Key="U.HuyDongVon.ucDangKySanPhamCT.CoDinh">Cố định</my:String>
+        <my:String x:Key="U.HuyDongVon.ucDangKySanPhamCT.ThaNoi">Thả nổi</my:String>
+        <my:String x:Key="U.HuyDongVon.ucDangKySanPhamCT.MaLaiSuat">Mã lãi suất:</my:String>
+        <my:String x:Key="U.HuyDongVon.ucDangKySanPhamCT.BienDoLS">Biên độ LS:</my:String>
+        <my:String x:Key="U.HuyDongVon.ucDangKySanPhamCT.DinhKyDanhGiaLaiLS">Định kỳ đánh giá lại LS:</my:String>
+        <my:String x:Key="U.HuyDongVon.ucDangKySanPhamCT.CoSoTinhLai">Cơ sở tính lãi:</my:String>
+        <my:String x:Key="U.HuyDongVon.ucDangKySanPhamCT.TenLaiSuat">Tên lãi suất:</my:String>
+        <my:String x:Key="U.HuyDongVon.ucDangKySanPhamCT.NgayHieuLuc">Ngày hiệu lực</my:String>
+        <my:String x:Key="U.HuyDongVon.ucDangKySanPhamCT.SoDuToiDa">Số dư tối đa</my:String>
+        <my:String x:Key="U.HuyDongVon.ucDangKySanPhamCT.NgayHetHieuLuc">Ngày hết hiệu lực:</my:String>
+        <my:String x:Key="U.HuyDongVon.ucDangKySanPhamCT.ThongTinNhomSPTK">Thông tin nhóm sản phẩm TK có kỳ hạn, tiền gửi CKH</my:String>
+        <my:String x:Key="U.HuyDongVon.ucDangKySanPhamCT.ChoPhepTatToanTruocHan">Cho phép tất toán trước hạn</my:String>
+        <my:String x:Key="U.HuyDongVon.ucDangKySanPhamCT.LaiSuatAD">Lãi suất AD khi tất toán trước hạn</my:String>
+        <my:String x:Key="U.HuyDongVon.ucDangKySanPhamCT.ChoPhepRutGoc1Phan">Cho phép rút gốc 1 phần trước hạn</my:String>
+        <my:String x:Key="U.HuyDongVon.ucDangKySanPhamCT.SoTienToiThieuKhiRutGocMotPhan">Số tiền tối thiểu khi rút gốc một phần</my:String>
+        <my:String x:Key="U.HuyDongVon.ucDangKySanPhamCT.TuyetDoi">Tuyệt đối</my:String>
+        <my:String x:Key="U.HuyDongVon.ucDangKySanPhamCT.TuongDoi">Tương đối</my:String>
+        <my:String x:Key="U.HuyDongVon.ucDangKySanPhamCT.SoTien">Số tiền:</my:String>
+        <my:String x:Key="U.HuyDongVon.ucDangKySanPhamCT.TyLe">Tỷ lệ:</my:String>
+        <my:String x:Key="U.HuyDongVon.ucDangKySanPhamCT.TinhLaiKhiSoDuNhoHonSoDuToiThieu">Tính lãi khi số dư nhỏ hơn số dư tối thiểu</my:String>
+        <my:String x:Key="U.HuyDongVon.ucDangKySanPhamCT.SoTienGuiMoiKy">Số tiền gửi mỗi kỳ</my:String>
+        <my:String x:Key="U.HuyDongVon.ucDangKySanPhamCT.TheoKhoang">Theo khoảng</my:String>
+        <my:String x:Key="U.HuyDongVon.ucDangKySanPhamCT.SoDuDen">Số dư đến:</my:String>
+        <my:String x:Key="U.HuyDongVon.ucDangKySanPhamCT.ThongTinNhomSPTGTT">Thông tin nhóm sản phẩm tiền gửi thanh toán</my:String>
+        <my:String x:Key="U.HuyDongVon.ucDangKySanPhamCT.ChoPhepRutRaSoDuToiThieu">Cho phép rút ra số dư tối thiểu</my:String>
+        <my:String x:Key="U.HuyDongVon.ucDangKySanPhamCT.CoPhiKhiRutRaSuDu">Có phí khi rút ra số dư tối thiểu</my:String>
+        <my:String x:Key="U.HuyDongVon.ucDangKySanPhamCT.SoDuThoiDiem">Số dư thời điểm</my:String>
+        <my:String x:Key="U.HuyDongVon.ucDangKySanPhamCT.SoDuBinhQuanThang">Số dư bình quân tháng</my:String>
+        <my:String x:Key="U.HuyDongVon.ucDangKySanPhamCT.MaPhi">Mã phí</my:String>
+        <my:String x:Key="U.HuyDongVon.ucDangKySanPhamCT.ChoPhepThauChi">Cho phép thấu chi</my:String>
+        <my:String x:Key="U.HuyDongVon.ucDangKySanPhamCT.STT">STT</my:String>
+        <my:String x:Key="U.HuyDongVon.ucDangKySanPhamCT.DuNoDen">Dư nợ đến</my:String>
+    </Window.Resources>
+    <Grid>
+        <DockPanel>
+            <!--<uc:ucMenuBarCT HorizontalAlignment="Stretch" DockPanel.Dock="Top"/>-->
+            <TabControl TabStripPlacement="Left">
+                <TabItem Height="35" Header="{DynamicResource U.HuyDongVon.ucDangKySanPhamCT.ThongTinChung}" Name="TabThongTinChung">
+                    <Grid>
+                        <DockPanel>
+                            <GroupBox Height="150" Header="{DynamicResource U.HuyDongVon.ucDangKySanPhamCT.ThongTinChung}" DockPanel.Dock="Top" TabIndex="0">
+                                <Grid>
+                                    <Label Content="{DynamicResource U.HuyDongVon.ucDangKySanPhamCT.MaNhomSP}" Height="23" HorizontalAlignment="Left" Margin="14,12,0,0" Name="label1" VerticalAlignment="Top" Width="111" />
+                                    <Label Content="{DynamicResource U.HuyDongVon.ucDangKySanPhamCT.TenNhomSP}" Height="23" HorizontalAlignment="Left" Margin="295,12,0,0" Name="label3" VerticalAlignment="Top" Width="125" />
+                                    <Label Content="{DynamicResource U.HuyDongVon.ucDangKySanPhamCT.TenSP}" Height="25" HorizontalAlignment="Left" Margin="295,41,0,0" Name="label4" VerticalAlignment="Top" Width="116" />
+                                    <TextBox Height="23" HorizontalAlignment="Left" Margin="426,12,0,0" Name="txtTenNhomSP" VerticalAlignment="Top" Width="250" TabIndex="1" />
+                                    <TextBox Height="23" HorizontalAlignment="Left" Margin="426,41,0,0" Name="txtTenSP" VerticalAlignment="Top" Width="250" TabIndex="3" />
+                                    <ComboBox Height="23" HorizontalAlignment="Left" Margin="131,12,0,0" Name="cmbMaNhomSP" VerticalAlignment="Top" Width="133" TabIndex="0" />
+                                    <Label Content="{DynamicResource  U.HuyDongVon.ucDangKySanPhamCT.HinhThucTraLai}" Height="28" HorizontalAlignment="Left" Margin="14,67,0,0" Name="label5" VerticalAlignment="Top" Width="111" />
+                                    <ComboBox Height="23" HorizontalAlignment="Left" Margin="131,69,0,0" Name="cmbHTTraLai" VerticalAlignment="Top" Width="133" TabIndex="4" />
+                                    <Label Content="{DynamicResource U.HuyDongVon.ucDangKySanPhamCT.TanSuatTraLai}" Height="28" Margin="295,69,0,0" Name="label6" VerticalAlignment="Top" HorizontalAlignment="Left" Width="125" />
+                                    <TextBox Height="23" HorizontalAlignment="Left" Margin="426,69,0,0" Name="txtTanSuatTraLai" VerticalAlignment="Top" Width="86" TabIndex="5" />
+                                    <Label Content="{DynamicResource U.HuyDongVon.ucDangKySanPhamCT.Lan}" Height="23" HorizontalAlignment="Left" Margin="518,69,0,0" Name="label7" VerticalAlignment="Top" />
+                                    <ComboBox Height="23" HorizontalAlignment="Left" Margin="587,69,0,0" Name="cmbDinhKy" VerticalAlignment="Top" Width="89" TabIndex="6" />
+                                    <Label Content="{DynamicResource U.HuyDongVon.ucDangKySanPhamCT.LoaiTien}" Height="28" HorizontalAlignment="Left" Margin="14,93,0,0" Name="label8" VerticalAlignment="Top" Width="92" />
+                                    <ComboBox Height="23" HorizontalAlignment="Left" Margin="131,98,0,0" Name="cmbLoaiTien" VerticalAlignment="Top" Width="133" TabIndex="7" />
+                                    <TextBox Height="23" HorizontalAlignment="Left" Margin="131,41,0,0" Name="txtMaSP" VerticalAlignment="Top" Width="133" TabIndex="2" />
+                                    <Label Content="{DynamicResource U.HuyDongVon.ucDangKySanPhamCT.MaSP}" Height="28" HorizontalAlignment="Left" Margin="14,41,0,0" Name="label2" VerticalAlignment="Top" Width="92" />
+
+                                </Grid>
+                            </GroupBox>
+                            <GroupBox Height="151" Header="{DynamicResource U.HuyDongVon.ucDangKySanPhamCT.ThongTinLaiSuat}" DockPanel.Dock="Top" TabIndex="1" Name="grbThongTinLaiSuat">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="75" />
+                                        <ColumnDefinition Width="636" />
+                                    </Grid.ColumnDefinitions>
+                                    <Label Content="{DynamicResource U.HuyDongVon.ucDangKySanPhamCT.LoaiLaiSuat}" Height="28" HorizontalAlignment="Left" Margin="14,6,0,0" Name="label9" VerticalAlignment="Top" Width="92" Grid.ColumnSpan="2" />
+                                    <RadioButton Content="{DynamicResource U.HuyDongVon.ucDangKySanPhamCT.CoDinh}" Height="16" HorizontalAlignment="Left" Margin="56,11,0,0" Name="radCoDinh" VerticalAlignment="Top" TabIndex="8" Grid.Column="1" />
+                                    <RadioButton Content="{DynamicResource U.HuyDongVon.ucDangKySanPhamCT.ThaNoi}" Height="16" HorizontalAlignment="Left" Margin="134,11,0,0" Name="radThaNoi" VerticalAlignment="Top" TabIndex="9" Grid.Column="1" />
+                                    <Label Content="{DynamicResource U.HuyDongVon.ucDangKySanPhamCT.MaLaiSuat}" Height="28" HorizontalAlignment="Left" Margin="14,31,0,0" Name="label10" VerticalAlignment="Top" Width="92" Grid.ColumnSpan="2" />
+                                    <TextBox Height="23" HorizontalAlignment="Left" Margin="56,33,0,0" Name="txtMaLaiSuat" VerticalAlignment="Top" Width="100" TabIndex="10" Grid.Column="1" />
+                                    <Button Content="F3" Height="23" HorizontalAlignment="Left" Margin="161,33,0,0" Name="btnMaLaiSuat" VerticalAlignment="Top" Width="28" TabIndex="11" Grid.Column="1" />
+                                    <Label Content="{DynamicResource U.HuyDongVon.ucDangKySanPhamCT.BienDoLS}" Height="28" HorizontalAlignment="Left" Margin="220,30,0,0" Name="label11" VerticalAlignment="Top" Width="116" Grid.Column="1" />
+                                    <TextBox Height="23" HorizontalAlignment="Left" Margin="357,32,0,0" Name="txtBienDoLS" VerticalAlignment="Top" Width="244" TabIndex="12" Grid.Column="1" />
+                                    <Label Content="{DynamicResource U.HuyDongVon.ucDangKySanPhamCT.TenLaiSuat}" Height="28" HorizontalAlignment="Left" Margin="14,60,0,0" Name="label12" VerticalAlignment="Top" Width="92" Grid.ColumnSpan="2" />
+                                    <TextBox Height="23" HorizontalAlignment="Left" Margin="56,65,0,0" Name="txtTenLS" VerticalAlignment="Top" Width="133" TabIndex="13" Grid.Column="1" />
+                                    <Label Content="{DynamicResource U.HuyDongVon.ucDangKySanPhamCT.DinhKyDanhGiaLaiLS}" Height="28" HorizontalAlignment="Left" Margin="220,60,0,0" Name="label13" VerticalAlignment="Top" Width="136" Grid.Column="1" />
+                                    <TextBox Height="23" HorizontalAlignment="Left" Margin="357,60,0,0" Name="txtDinhKy" VerticalAlignment="Top" Width="80" TabIndex="14" Grid.Column="1" />
+                                    <Label Content="{DynamicResource U.HuyDongVon.ucDangKySanPhamCT.Lan}" Height="28" HorizontalAlignment="Left" Margin="443,58,0,0" Name="label14" VerticalAlignment="Top" Grid.Column="1" />
+                                    <ComboBox Height="23" HorizontalAlignment="Left" Margin="512,60,0,0" Name="cmbDinhKyLS" VerticalAlignment="Top" Width="89" TabIndex="15" Grid.Column="1" />
+                                    <Label Content="{DynamicResource U.HuyDongVon.ucDangKySanPhamCT.CoSoTinhLai}" Height="28" HorizontalAlignment="Left" Margin="14,89,0,0" Name="label15" VerticalAlignment="Top" Width="111" Grid.ColumnSpan="2" />
+                                    <ComboBox Height="23" HorizontalAlignment="Left" Margin="56,94,0,0" Name="tbCoSoTinhLai" VerticalAlignment="Top" Width="133" TabIndex="16" Grid.Column="1" />
+                                </Grid>
+                            </GroupBox>
+
+                            <GroupBox Header="{DynamicResource u.HuyDongVon.ucDangKySanPhamCT.ThongTinKhac}" Name="grbThongTinKhac">
+                                <Grid>
+                                    <Label Content="{DynamicResource u.HuyDongVon.ucDangKySanPhamCT}" Height="28" HorizontalAlignment="Left" Margin="14,6,0,0" Name="label16" VerticalAlignment="Top" Width="92" />
+                                    <TextBox Height="23" HorizontalAlignment="Left" Margin="131,34,0,0" Name="txtSoDuToiThieu" VerticalAlignment="Top" Width="133" TabIndex="17" />
+                                    <Label Content="{DynamicResource U.HuyDongVon.ucDangKySanPhamCT.SoDuToiDa}" Height="28" HorizontalAlignment="Left" Margin="14,32,0,0" Name="label17" VerticalAlignment="Top" Width="92" />
+                                    <TextBox Height="23" HorizontalAlignment="Left" Margin="131,0,0,168" Name="txtSoDuToiDa" VerticalAlignment="Bottom" Width="133" TabIndex="19" />
+                                    <Label Content="{DynamicResource U.HuyDongVon.ucDangKySanPhamCT.NgayHieuLuc}" Height="28" HorizontalAlignment="Left" Margin="295,6,0,0" Name="label18" VerticalAlignment="Top" Width="95" />
+                                    <Label Content="{DynamicResource U.HuyDongVon.ucDangKySanPhamCT.NgayHetHieuLuc}" Height="28" HorizontalAlignment="Left" Margin="295,32,0,0" Name="label19" VerticalAlignment="Top" Width="116" />
+                                    <TextBox Height="23" HorizontalAlignment="Left" Margin="432,8,0,0" Name="txtNgayHieuLuc" VerticalAlignment="Top" Width="95" TabIndex="18" />
+                                    <TextBox Height="23" HorizontalAlignment="Left" Margin="432,37,0,0" Name="txtNgayHetHieuLuc" VerticalAlignment="Top" Width="95" />
+                                </Grid>
+                            </GroupBox>
+                        </DockPanel>
+                    </Grid>
+                </TabItem>
+
+                <TabItem  Height="35" Header="{DynamicResource U.HuyDongVon.ucDangKySanPhamCT.NhomSanPham}" Name="TabNhomSP">
+                    <Grid>
+                        <GroupBox Header="{DynamicResource U.HuyDongVon.ucDangKySanPhamCT.ThongTinNhomSPTK}" Height="120" VerticalAlignment="Top" Name="grbThongTinNhomSPTK">
+                            <Grid>
+                                <CheckBox Content="{DynamicResource U.HuyDongVon.ucDangKySanPhamCT.ChoPhepTatToanTruocHan}" Height="16" Margin="33,20,390,0" Name="chkChoPhepTTTH" VerticalAlignment="Top" Width="266" HorizontalAlignment="Left" />
+                                <CheckBox Content="{DynamicResource U.HuyDongVon.ucDangKySanPhamCT.ChoPhepRutGoc1Phan}" Height="16" HorizontalAlignment="Left" Margin="33,58,0,0" Name="chkChoPhepRGTH" VerticalAlignment="Top" Width="265" />
+                                <Label Content="{DynamicResource U.HuyDongVon.ucDangKySanPhamCT.LaiSuatAD}" Height="28" HorizontalAlignment="Left" Margin="305,15,0,0" Name="label20" VerticalAlignment="Top" Width="188" />
+                                <TextBox Height="23" HorizontalAlignment="Left" Margin="511,17,0,0" Name="txtLaiSuatAD" VerticalAlignment="Top" Width="95" />
+                                <Button Content="..." Height="23" HorizontalAlignment="Left" Margin="612,17,0,0" Name="btnLaiSuatAD" VerticalAlignment="Top" Width="29" />
+                            </Grid>
+                        </GroupBox>
+                    </Grid>
+                </TabItem>
+                <TabItem Height="35" Header="{DynamicResource U.HuyDongVon.ucDangKySanPhamCT.NhomSanPhamTKQD}" Name="Tab3">
+                    <Grid>
+                        <DockPanel>
+                            <GroupBox Height="130" Header="{DynamicResource U.HuyDongVon.ucDangKySanPhamCT.SoTienToiThieuKhiRutGocMotPhan}"  DockPanel.Dock="Top" Name="grbSoTienToiThieu">
+                                <Grid>
+                                    <RadioButton Content="{DynamicResource U.HuyDongVon.ucDangKySanPhamCT.TuyetDoi}" Height="16" HorizontalAlignment="Left" Margin="35,6,0,0" Name="radTuyetDoi" VerticalAlignment="Top" Width="74" />
+                                    <RadioButton Content="{DynamicResource U.HuyDongVon.ucDangKySanPhamCT.TuongDoi}" Height="16" HorizontalAlignment="Left" Margin="324,6,0,0" Name="radTuongDoi" VerticalAlignment="Top" />
+                                    <Label Content="{DynamicResource U.HuyDongVon.ucDangKySanPhamCT.SoTien}" Height="28" HorizontalAlignment="Left" Margin="35,28,0,0" Name="label22" VerticalAlignment="Top" Width="48" />
+                                    <TextBox Height="23" HorizontalAlignment="Left" Margin="89,28,0,0" Name="txtSoTien" VerticalAlignment="Top" Width="171" />
+                                    <Label Content="{DynamicResource U.HuyDongVon.ucDangKySanPhamCT.TyLe}" Height="28" HorizontalAlignment="Left" Margin="324,25,0,0" Name="label23" VerticalAlignment="Top" />
+                                    <TextBox Height="23" HorizontalAlignment="Left" Margin="365,25,0,0" Name="txtTyLe" VerticalAlignment="Top" Width="86" />
+                                    <Label Content="%" Height="28" HorizontalAlignment="Left" Margin="457,23,0,0" Name="label24" VerticalAlignment="Top" Width="23" />
+                                    <ComboBox Height="23" HorizontalAlignment="Left" Margin="494,23,0,0" Name="cmbDuNoCuaKheUoc" VerticalAlignment="Top" Width="158" />
+                                    <CheckBox Content="{DynamicResource U.HuyDongVon.ucDangKySanPhamCT.TinhLaiKhiSoDuNhoHonSoDuToiThieu}" Height="16" HorizontalAlignment="Left" Margin="35,80,0,0" Name="chkTinhLai" VerticalAlignment="Top" />
+                                </Grid>
+                            </GroupBox>
+                            <GroupBox Header="{DynamicResource U.HuyDongVon.ucDangKySanPhamCT.SoTienGuiMoiKy}">
+                                <Grid>
+                                    <DockPanel>
+                                        <GroupBox Height="107" DockPanel.Dock="Top">
+                                            <Grid>
+                                                <RadioButton Content="{DynamicResource U.HuyDongVon.ucDangKySanPhamCT.TuyetDoi}" Height="16" HorizontalAlignment="Left" Margin="38,15,0,0" Name="radTuyetDoi1" VerticalAlignment="Top" />
+                                                <Label Content="{DynamicResource U.HuyDongVon.ucDangKySanPhamCT.SoTien}" Height="28" HorizontalAlignment="Left" Margin="65,37,0,0" Name="label25" VerticalAlignment="Top" />
+                                                <TextBox Height="23" HorizontalAlignment="Left" Margin="124,37,0,0" Name="txtSoTienGuiMoiKy" VerticalAlignment="Top" Width="120" />
+                                                <RadioButton Content="{DynamicResource U.HuyDongVon.ucDangKySanPhamCT.TuongDoi}" Height="16" HorizontalAlignment="Left" Margin="38,71,0,0" Name="radTuongDoi1" VerticalAlignment="Top" Width="74" />
+                                            </Grid>
+                                        </GroupBox>
+                                        <GroupBox Width="390" DockPanel.Dock="Left">
+                                            <Grid Name="grdSoTienGui">
+                                                <RadioButton Content="{DynamicResource U.HuyDongVon.ucDangKySanPhamCT.TheoKhoang}" Height="16" HorizontalAlignment="Left" Margin="30,19,0,0" Name="radTheoKhoang" VerticalAlignment="Top" />
+                                                <Label Content="{DynamicResource U.HuyDongVon.ucDangKySanPhamCT.SoDuDen}" Height="28" HorizontalAlignment="Left" Margin="27,41,0,0" Name="label28" VerticalAlignment="Top" Width="85" />
+                                                <Label Content="{DynamicResource U.HuyDongVon.ucDangKySanPhamCT.SoTienGuiMoiKy}" Height="28" HorizontalAlignment="Left" Margin="27,68,0,0" Name="label29" VerticalAlignment="Top" Width="107" />
+                                                <TextBox Height="23" HorizontalAlignment="Left" Margin="134,41,0,0" Name="txtSoDuDen" VerticalAlignment="Top" Width="221"  />
+                                                <TextBox Height="23" HorizontalAlignment="Left" Margin="134,70,0,0" Name="txtSoTGuiMoiKy" VerticalAlignment="Top" Width="221" />
+                                                <DataGrid AutoGenerateColumns="False" Height="146" HorizontalAlignment="Left" Margin="17,96,0,0" Name="dataGrid1" VerticalAlignment="Top" Width="338">
+                                                    <DataGrid.Columns>
+                                                        <DataGridTextColumn Header="{StaticResource U.HuyDongVon.ucDangKySanPhamCT.STT}" />
+                                                        <DataGridTextColumn Header="{StaticResource U.HuyDongVon.ucDangKySanPhamCT.DuNoDen}" />
+                                                        <DataGridTextColumn Header="{DynamicResource U.HuyDongVon.ucDangKySanPhamCT.SoTienGuiMoiKy}" />
+                                                    </DataGrid.Columns>
+                                                </DataGrid>
+                                            </Grid>
+                                        </GroupBox>
+                                        <GroupBox>
+                                            <Grid>
+                                                <RadioButton Content="{DynamicResource U.HuyDongVon.ucDangKySanPhamCT.TyLe}" Height="16" HorizontalAlignment="Left" Margin="31,19,0,0" Name="radTyLe" VerticalAlignment="Top" Width="58" />
+                                                <Label Content="{DynamicResource U.HuyDongVon.ucDangKySanPhamCT.TyLe}" Height="28" HorizontalAlignment="Left" Margin="31,41,0,0" Name="label26" VerticalAlignment="Top" Width="38" />
+                                                <TextBox Height="23" HorizontalAlignment="Left" Margin="75,43,0,0" Name="txtTyLe1" VerticalAlignment="Top" Width="61" />
+                                                <Label Content="%" Height="28" HorizontalAlignment="Left" Margin="142,41,0,0" Name="label27" VerticalAlignment="Top" Width="27" />
+                                                <ComboBox Height="23" HorizontalAlignment="Left" Margin="175,43,0,0" Name="cmbTyLe" VerticalAlignment="Top" Width="95" />
+                                            </Grid>
+                                        </GroupBox>
+                                    </DockPanel>
+                                </Grid>
+                            </GroupBox>
+                        </DockPanel>
+                    </Grid>
+                </TabItem>
+                <TabItem Height="35" Header="{DynamicResource U.HuyDongVon.ucDangKySanPhamCT.NhomSanPhamTGTT}" Name="Tab4">
+                    <Grid>
+                        <GroupBox Header="{DynamicResource U.HuyDongVon.ucDangKySanPhamCT.ThongTinNhomSPTGTT}" VerticalAlignment="Top" Height="300">
+                            <Grid>
+                                <CheckBox Content="{DynamicResource U.HuyDongVon.ucDangKySanPhamCT.ChoPhepRutRaSoDuToiThieu}" Height="16" HorizontalAlignment="Left" Margin="37,19,0,0" Name="checkBox3" VerticalAlignment="Top" Width="279" />
+                                <CheckBox Content="{DynamicResource U.HuyDongVon.ucDangKySanPhamCT.CoPhiKhiRutRaSuDu}" Height="16" HorizontalAlignment="Left" Margin="37,58,0,0" Name="checkBox4" VerticalAlignment="Top" Width="287" />
+                                <RadioButton Content="{DynamicResource U.HuyDongVon.ucDangKySanPhamCT.SoDuThoiDiem}" Height="20" HorizontalAlignment="Left" Margin="117,89,0,0" Name="radioButton3" VerticalAlignment="Top" />
+                                <RadioButton Content="{DynamicResource U.HuyDongVon.ucDangKySanPhamCT.SoDuBinhQuanThang}" Height="16" HorizontalAlignment="Left" Margin="117,115,0,0" Name="radioButton4" VerticalAlignment="Top" />
+                                <Label Content="{DynamicResource U.HuyDongVon.ucDangKySanPhamCT.MaPhi}" Height="28" HorizontalAlignment="Left" Margin="51,142,0,0" Name="label21" VerticalAlignment="Top" Width="60" />
+                                <TextBox Height="23" HorizontalAlignment="Left" Margin="117,144,0,0" Name="textBox14" VerticalAlignment="Top" Width="127" />
+                                <Button Content="..." Height="23" HorizontalAlignment="Left" Margin="249,143,0,0" Name="button3" VerticalAlignment="Top" Width="31" />
+                                <CheckBox Content="{DynamicResource U.HuyDongVon.ucDangKySanPhamCT.ChoPhepThauChi}" Height="16" HorizontalAlignment="Left" Margin="37,188,0,0" Name="checkBox5" VerticalAlignment="Top" Width="264" />
+                            </Grid>
+                        </GroupBox>
+                    </Grid>
+                </TabItem>
+                <TabItem Height="35" Header="{DynamicResource U.HuyDongVon.ucDangKySanPhamCT.KiemSoat}" Name="Tab5"></TabItem>
+            </TabControl>
+        </DockPanel>
+    </Grid>
+
+</Window>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/BusinessServices.TyGia.DTO" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/BusinessServices.TyGia.DTO" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:1001/TyGiaService.svc?xsd=xsd7" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="TY_GIA_CT">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DSACH_TY_GIA_CT" nillable="true" type="tns:ArrayOfDANH_SACH_TY_GIA_CT" />
+      <xs:element minOccurs="0" name="HINH_THUC_NIEM_YET" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID_TY_GIA" type="xs:int" />
+      <xs:element minOccurs="0" name="LOAI_TY_GIA" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="LST_ID_XOA" nillable="true" type="q1:ArrayOfint" />
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="LST_MA_THIEN" nillable="true" type="q2:ArrayOfstring" />
+      <xs:element minOccurs="0" name="MA_DVI_QLY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_TAO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_LOAI_TIEN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_AP_DUNG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TRANG_THAI_BAN_GHI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TRANG_THAI_NGHIEP_VU" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TY_GIA_BAN" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TY_GIA_BQUAN" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TY_GIA_DGIA" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TY_GIA_MUA" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TY_GIA_CT" nillable="true" type="tns:TY_GIA_CT" />
+  <xs:complexType name="ArrayOfDANH_SACH_TY_GIA_CT">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DANH_SACH_TY_GIA_CT" nillable="true" type="tns:DANH_SACH_TY_GIA_CT" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDANH_SACH_TY_GIA_CT" nillable="true" type="tns:ArrayOfDANH_SACH_TY_GIA_CT" />
+  <xs:complexType name="DANH_SACH_TY_GIA_CT">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="HINH_THUC_NIEM_YET" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID_TY_GIA" type="xs:int" />
+      <xs:element minOccurs="0" name="ID_TY_GIA_CT" type="xs:int" />
+      <xs:element minOccurs="0" name="LOAI_TY_GIA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_QLY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_TAO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_LOAI_TIEN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_AP_DUNG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TEN_LOAI_TIEN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TRANG_THAI_BAN_GHI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TRANG_THAI_NGHIEP_VU" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_DL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TY_GIA_BAN" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TY_GIA_BQUAN" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TY_GIA_DGIA" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TY_GIA_MUA" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DANH_SACH_TY_GIA_CT" nillable="true" type="tns:DANH_SACH_TY_GIA_CT" />
+</xs:schema>

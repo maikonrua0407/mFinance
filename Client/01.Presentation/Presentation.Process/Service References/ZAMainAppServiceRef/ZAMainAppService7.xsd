@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/BusinessServices.Utilities.DTO" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/BusinessServices.Utilities.DTO" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="NGON_NGU_DTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="checkMessage" type="xs:boolean" />
+      <xs:element minOccurs="0" name="checkResource" type="xs:boolean" />
+      <xs:element minOccurs="0" name="lstMessage" nillable="true" type="tns:ArrayOfNGON_NGU" />
+      <xs:element minOccurs="0" name="lstResource" nillable="true" type="tns:ArrayOfNGON_NGU" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NGON_NGU_DTO" nillable="true" type="tns:NGON_NGU_DTO" />
+  <xs:complexType name="ArrayOfNGON_NGU">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NGON_NGU" nillable="true" type="tns:NGON_NGU" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNGON_NGU" nillable="true" type="tns:ArrayOfNGON_NGU" />
+  <xs:complexType name="NGON_NGU">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ENGLISH" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VIET_NAM" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NGON_NGU" nillable="true" type="tns:NGON_NGU" />
+  <xs:complexType name="DSACH_SHOW_CONFIG">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DSACH_SHOW" nillable="true" type="tns:ArrayOfSHOW_CONFIG_DTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DSACH_SHOW_CONFIG" nillable="true" type="tns:DSACH_SHOW_CONFIG" />
+  <xs:complexType name="ArrayOfSHOW_CONFIG_DTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SHOW_CONFIG_DTO" nillable="true" type="tns:SHOW_CONFIG_DTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSHOW_CONFIG_DTO" nillable="true" type="tns:ArrayOfSHOW_CONFIG_DTO" />
+  <xs:complexType name="SHOW_CONFIG_DTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CASE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CONTROL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DESC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FORM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PROPERTY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VALUE" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SHOW_CONFIG_DTO" nillable="true" type="tns:SHOW_CONFIG_DTO" />
+</xs:schema>

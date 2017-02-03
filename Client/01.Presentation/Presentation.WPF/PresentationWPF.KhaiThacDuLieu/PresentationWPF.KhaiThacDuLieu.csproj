@@ -1,0 +1,316 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E5F451CA-5C51-4E87-8963-4B7CF77F9E6F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PresentationWPF.KhaiThacDuLieu</RootNamespace>
+    <AssemblyName>PresentationWPF.KhaiThacDuLieu</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\..\Build\Build.Client\Dev\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Windows.Shell, Version=3.5.41019.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Libraries\Microsoft.Windows.Shell.dll</HintPath>
+    </Reference>
+    <Reference Include="Presentation.Process, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Build\Build.Client\Dev\Presentation.Process.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationWPF.CustomControl, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Build\Build.Client\Dev\PresentationWPF.CustomControl.dll</HintPath>
+    </Reference>
+    <Reference Include="RibbonControlsLibrary, Version=4.0.0.11019, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Libraries\RibbonControlsLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls, Version=2012.1.215.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Libraries\Telerik.Windows.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Data, Version=2012.1.215.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Libraries\Telerik.Windows.Controls.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.GridView, Version=2012.1.215.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Libraries\Telerik.Windows.Controls.GridView.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Input, Version=2012.1.215.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Libraries\Telerik.Windows.Controls.Input.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Navigation, Version=2012.1.215.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Libraries\Telerik.Windows.Controls.Navigation.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Data, Version=2012.1.215.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Libraries\Telerik.Windows.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Utilities.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Libraries\Utilities.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="HDVO\HDVO_DM_SO_SO_TKCKH.xaml.cs">
+      <DependentUpon>HDVO_DM_SO_SO_TKCKH.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="HDVO\HDVO_DM_SO_SO_TKKKH.xaml.cs">
+      <DependentUpon>HDVO_DM_SO_SO_TKKKH.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="HDVO\HDVO_DM_SO_SO_TKQD.xaml.cs">
+      <DependentUpon>HDVO_DM_SO_SO_TKQD.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="HDVO\HDVO_DM_SO_SO_TT.xaml.cs">
+      <DependentUpon>HDVO_DM_SO_SO_TT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="HDVO\ucKhaiThacHDVO.xaml.cs">
+      <DependentUpon>ucKhaiThacHDVO.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="KhaiThac\ucKhaiThacTheoChiTieu.xaml.cs">
+      <DependentUpon>ucKhaiThacTheoChiTieu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="KHTV\ucKhaiThacKHTVBinhKhanh.xaml.cs">
+      <DependentUpon>ucKhaiThacKHTVBinhKhanh.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="KHTV\KHTV_DM_SO_KHACH_HANG_RA.xaml.cs">
+      <DependentUpon>KHTV_DM_SO_KHACH_HANG_RA.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="KHTV\KHTV_DM_SO_KHACH_HANG_TKCKH.xaml.cs">
+      <DependentUpon>KHTV_DM_SO_KHACH_HANG_TKCKH.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="KHTV\KHTV_DM_SO_KHACH_HANG_TKKKH.xaml.cs">
+      <DependentUpon>KHTV_DM_SO_KHACH_HANG_TKKKH.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="KHTV\KHTV_DM_SO_KHACH_HANG_TKQD.xaml.cs">
+      <DependentUpon>KHTV_DM_SO_KHACH_HANG_TKQD.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="KHTV\KHTV_DM_SO_KHACH_HANG_VAO.xaml.cs">
+      <DependentUpon>KHTV_DM_SO_KHACH_HANG_VAO.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="KHTV\KHTV_DM_SO_KHACH_HANG_VAY_VON.xaml.cs">
+      <DependentUpon>KHTV_DM_SO_KHACH_HANG_VAY_VON.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="KHTV\ucKhaiThacKHTV.xaml.cs">
+      <DependentUpon>ucKhaiThacKHTV.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Mapping\ucLoaiTKCT.xaml.cs">
+      <DependentUpon>ucLoaiTKCT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Mapping\ucLoaiTKDS.xaml.cs">
+      <DependentUpon>ucLoaiTKDS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Mapping\ucMapping.xaml.cs">
+      <DependentUpon>ucMapping.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Mapping\ucMaTKCT.xaml.cs">
+      <DependentUpon>ucMaTKCT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Mapping\ucMaTKDS.xaml.cs">
+      <DependentUpon>ucMaTKDS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TDVM\TDVM_DM_CHAM_TRA.xaml.cs">
+      <DependentUpon>TDVM_DM_CHAM_TRA.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TDVM\TDVM_DM_PHAT_VON.xaml.cs">
+      <DependentUpon>TDVM_DM_PHAT_VON.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TDVM\TDVM_DM_THU_GOC_LAI.xaml.cs">
+      <DependentUpon>TDVM_DM_THU_GOC_LAI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TDVM\ucKhaiThacTDVM.xaml.cs">
+      <DependentUpon>ucKhaiThacTDVM.xaml</DependentUpon>
+    </Compile>
+    <Page Include="HDVO\HDVO_DM_SO_SO_TKCKH.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HDVO\HDVO_DM_SO_SO_TKKKH.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HDVO\HDVO_DM_SO_SO_TKQD.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HDVO\HDVO_DM_SO_SO_TT.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HDVO\ucKhaiThacHDVO.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="KhaiThac\ucKhaiThacTheoChiTieu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="KHTV\ucKhaiThacKHTVBinhKhanh.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="KHTV\KHTV_DM_SO_KHACH_HANG_RA.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="KHTV\KHTV_DM_SO_KHACH_HANG_TKCKH.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="KHTV\KHTV_DM_SO_KHACH_HANG_TKKKH.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="KHTV\KHTV_DM_SO_KHACH_HANG_TKQD.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="KHTV\KHTV_DM_SO_KHACH_HANG_VAO.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="KHTV\KHTV_DM_SO_KHACH_HANG_VAY_VON.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="KHTV\ucKhaiThacKHTV.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Mapping\ucLoaiTKCT.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Mapping\ucLoaiTKDS.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Mapping\ucMapping.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Mapping\ucMaTKCT.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Mapping\ucMaTKDS.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TDVM\TDVM_DM_CHAM_TRA.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TDVM\TDVM_DM_PHAT_VON.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TDVM\TDVM_DM_THU_GOC_LAI.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TDVM\ucKhaiThacTDVM.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="..\..\Presentation.Process\app.config">
+      <Link>app.config</Link>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DangKyMau\" />
+    <Folder Include="ThamSo\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

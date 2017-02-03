@@ -1,0 +1,14 @@
+MaChiNhanh	string	255
+TenChiNhanh	string	255
+MaPhongGD	string	255
+TenPhongGD	string	255
+SoTaiKhoan	string	255
+TenTaiKhoan	string	255
+MaDoiTuong	string	255
+TenDoiTuong	string	255
+DKNo	number
+DKCo	number
+PSNo	number
+PSCo	number
+CKNo	number
+CKCo	number

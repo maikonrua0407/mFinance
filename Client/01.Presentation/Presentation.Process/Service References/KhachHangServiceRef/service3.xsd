@@ -1,0 +1,241 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="" namespace="http://schemas.datacontract.org/2004/07/CommunicationServices.KhachHang.Messages" />
+  <xs:element name="returnHello">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="returnHelloResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="returnHelloResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ThemKhachHang">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/CommunicationServices.KhachHang.Messages" minOccurs="0" name="request" nillable="true" type="q1:KhachHangRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ThemKhachHangResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/CommunicationServices.KhachHang.Messages" minOccurs="0" name="ThemKhachHangResult" nillable="true" type="q2:KhachHangResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SuaKhachHang">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/CommunicationServices.KhachHang.Messages" minOccurs="0" name="request" nillable="true" type="q3:KhachHangRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SuaKhachHangResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/CommunicationServices.KhachHang.Messages" minOccurs="0" name="SuaKhachHangResult" nillable="true" type="q4:KhachHangResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="XoaKhachHang">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/CommunicationServices.KhachHang.Messages" minOccurs="0" name="request" nillable="true" type="q5:KhachHangRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="XoaKhachHangResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/CommunicationServices.KhachHang.Messages" minOccurs="0" name="XoaKhachHangResult" nillable="true" type="q6:KhachHangResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DuyetKhachHang">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/CommunicationServices.KhachHang.Messages" minOccurs="0" name="request" nillable="true" type="q7:KhachHangRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DuyetKhachHangResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/CommunicationServices.KhachHang.Messages" minOccurs="0" name="DuyetKhachHangResult" nillable="true" type="q8:KhachHangResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TuChoiKhachHang">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/CommunicationServices.KhachHang.Messages" minOccurs="0" name="request" nillable="true" type="q9:KhachHangRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TuChoiKhachHangResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/CommunicationServices.KhachHang.Messages" minOccurs="0" name="TuChoiKhachHangResult" nillable="true" type="q10:KhachHangResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ThoaiDuyetKhachHang">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/CommunicationServices.KhachHang.Messages" minOccurs="0" name="request" nillable="true" type="q11:KhachHangRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ThoaiDuyetKhachHangResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/CommunicationServices.KhachHang.Messages" minOccurs="0" name="ThoaiDuyetKhachHangResult" nillable="true" type="q12:KhachHangResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckSoCMND">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="soCMND" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="maKH" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckSoCMNDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CheckSoCMNDResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChuyenDiaBan">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/CommunicationServices.KhachHang.Messages" minOccurs="0" name="request" nillable="true" type="q13:ChuyenDiaBanRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChuyenDiaBanResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/CommunicationServices.KhachHang.Messages" minOccurs="0" name="ChuyenDiaBanResult" nillable="true" type="q14:ChuyenDiaBanResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="KhachHang01">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/CommunicationServices.KhachHang.Messages" minOccurs="0" name="request" nillable="true" type="q15:KhachHangRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="KhachHang01Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/CommunicationServices.KhachHang.Messages" minOccurs="0" name="KhachHang01Result" nillable="true" type="q16:KhachHangResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="KhachHang02">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/CommunicationServices.KhachHang.Messages" minOccurs="0" name="request" nillable="true" type="q17:KhachHangRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="KhachHang02Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/CommunicationServices.KhachHang.Messages" minOccurs="0" name="KhachHang02Result" nillable="true" type="q18:KhachHangResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="KhachHang04">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/CommunicationServices.KhachHang.Messages" minOccurs="0" name="request" nillable="true" type="q19:KhachHangRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="KhachHang04Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/CommunicationServices.KhachHang.Messages" minOccurs="0" name="KhachHang04Result" nillable="true" type="q20:KhachHangResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="KhachHang05">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/CommunicationServices.KhachHang.Messages" minOccurs="0" name="request" nillable="true" type="q21:KhachHangRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="KhachHang05Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/CommunicationServices.KhachHang.Messages" minOccurs="0" name="KhachHang05Result" nillable="true" type="q22:KhachHangResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="KhachHang07">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/CommunicationServices.KhachHang.Messages" minOccurs="0" name="request" nillable="true" type="q23:KhachHangRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="KhachHang07Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/CommunicationServices.KhachHang.Messages" minOccurs="0" name="KhachHang07Result" nillable="true" type="q24:KhachHangResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QuanLyHinhAnh">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/CommunicationServices.KhachHang.Messages" minOccurs="0" name="request" nillable="true" type="q25:KhachHangRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QuanLyHinhAnhResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/CommunicationServices.KhachHang.Messages" minOccurs="0" name="QuanLyHinhAnhResult" nillable="true" type="q26:KhachHangResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ThongTinKhaoSat">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/CommunicationServices.KhachHang.Messages" minOccurs="0" name="request" nillable="true" type="q27:KhachHangRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ThongTinKhaoSatResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/CommunicationServices.KhachHang.Messages" minOccurs="0" name="ThongTinKhaoSatResult" nillable="true" type="q28:KhachHangResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ThongTinKhaoSat05">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/CommunicationServices.KhachHang.Messages" minOccurs="0" name="request" nillable="true" type="q29:KhachHangRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ThongTinKhaoSat05Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/CommunicationServices.KhachHang.Messages" minOccurs="0" name="ThongTinKhaoSat05Result" nillable="true" type="q30:KhachHangResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="b9dcc571-8dba-4317-8145-7576713d6994" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://ngvgroup.vn:9109/WebProcessService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="WebProcessService.xsd" MetadataType="Schema" ID="6593e518-051d-45c2-b215-665661da23b8" SourceId="1" SourceUrl="http://ngvgroup.vn:9109/WebProcessService.svc?xsd=xsd0" />
+    <MetadataFile FileName="WebProcessService1.xsd" MetadataType="Schema" ID="6fcf229f-4bb8-4627-9cd5-177efe878952" SourceId="1" SourceUrl="http://ngvgroup.vn:9109/WebProcessService.svc?xsd=xsd1" />
+    <MetadataFile FileName="WebProcessService.wsdl" MetadataType="Wsdl" ID="8642c620-a07e-4f3f-b5d6-26220858e5fc" SourceId="1" SourceUrl="http://ngvgroup.vn:9109/WebProcessService.svc" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

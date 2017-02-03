@@ -1,0 +1,233 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="UtilitiesService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/CommunicationServices.Utilities.Messages" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/Utilities.Common" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IUtilitiesService_IsWorkingDay_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsWorkingDay" />
+  </wsdl:message>
+  <wsdl:message name="IUtilitiesService_IsWorkingDay_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsWorkingDayResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUtilitiesService_LayNgayHopCum_InputMessage">
+    <wsdl:part name="parameters" element="tns:LayNgayHopCum" />
+  </wsdl:message>
+  <wsdl:message name="IUtilitiesService_LayNgayHopCum_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LayNgayHopCumResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUtilitiesService_LayNgayHopCumTheoMa_InputMessage">
+    <wsdl:part name="parameters" element="tns:LayNgayHopCumTheoMa" />
+  </wsdl:message>
+  <wsdl:message name="IUtilitiesService_LayNgayHopCumTheoMa_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LayNgayHopCumTheoMaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUtilitiesService_LockData_InputMessage">
+    <wsdl:part name="parameters" element="tns:LockData" />
+  </wsdl:message>
+  <wsdl:message name="IUtilitiesService_LockData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LockDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUtilitiesService_UnlockData_InputMessage">
+    <wsdl:part name="parameters" element="tns:UnlockData" />
+  </wsdl:message>
+  <wsdl:message name="IUtilitiesService_UnlockData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UnlockDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUtilitiesService_UnlockDataFromFunctionByUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:UnlockDataFromFunctionByUser" />
+  </wsdl:message>
+  <wsdl:message name="IUtilitiesService_UnlockDataFromFunctionByUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UnlockDataFromFunctionByUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUtilitiesService_UnlockDataFromUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:UnlockDataFromUser" />
+  </wsdl:message>
+  <wsdl:message name="IUtilitiesService_UnlockDataFromUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UnlockDataFromUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUtilitiesService_CheckDuplicateData_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckDuplicateData" />
+  </wsdl:message>
+  <wsdl:message name="IUtilitiesService_CheckDuplicateData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckDuplicateDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUtilitiesService_LayGiaTriThamSo_InputMessage">
+    <wsdl:part name="parameters" element="tns:LayGiaTriThamSo" />
+  </wsdl:message>
+  <wsdl:message name="IUtilitiesService_LayGiaTriThamSo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LayGiaTriThamSoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUtilitiesService_LayThamSo_InputMessage">
+    <wsdl:part name="parameters" element="tns:LayThamSo" />
+  </wsdl:message>
+  <wsdl:message name="IUtilitiesService_LayThamSo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LayThamSoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUtilitiesService_Utilites_InputMessage">
+    <wsdl:part name="parameters" element="tns:Utilites" />
+  </wsdl:message>
+  <wsdl:message name="IUtilitiesService_Utilites_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UtilitesResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IUtilitiesService">
+    <wsdl:operation name="IsWorkingDay">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUtilitiesService/IsWorkingDay" message="tns:IUtilitiesService_IsWorkingDay_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUtilitiesService/IsWorkingDayResponse" message="tns:IUtilitiesService_IsWorkingDay_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LayNgayHopCum">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUtilitiesService/LayNgayHopCum" message="tns:IUtilitiesService_LayNgayHopCum_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUtilitiesService/LayNgayHopCumResponse" message="tns:IUtilitiesService_LayNgayHopCum_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LayNgayHopCumTheoMa">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUtilitiesService/LayNgayHopCumTheoMa" message="tns:IUtilitiesService_LayNgayHopCumTheoMa_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUtilitiesService/LayNgayHopCumTheoMaResponse" message="tns:IUtilitiesService_LayNgayHopCumTheoMa_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LockData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUtilitiesService/LockData" message="tns:IUtilitiesService_LockData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUtilitiesService/LockDataResponse" message="tns:IUtilitiesService_LockData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UnlockData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUtilitiesService/UnlockData" message="tns:IUtilitiesService_UnlockData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUtilitiesService/UnlockDataResponse" message="tns:IUtilitiesService_UnlockData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UnlockDataFromFunctionByUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUtilitiesService/UnlockDataFromFunctionByUser" message="tns:IUtilitiesService_UnlockDataFromFunctionByUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUtilitiesService/UnlockDataFromFunctionByUserResponse" message="tns:IUtilitiesService_UnlockDataFromFunctionByUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UnlockDataFromUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUtilitiesService/UnlockDataFromUser" message="tns:IUtilitiesService_UnlockDataFromUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUtilitiesService/UnlockDataFromUserResponse" message="tns:IUtilitiesService_UnlockDataFromUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckDuplicateData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUtilitiesService/CheckDuplicateData" message="tns:IUtilitiesService_CheckDuplicateData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUtilitiesService/CheckDuplicateDataResponse" message="tns:IUtilitiesService_CheckDuplicateData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LayGiaTriThamSo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUtilitiesService/LayGiaTriThamSo" message="tns:IUtilitiesService_LayGiaTriThamSo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUtilitiesService/LayGiaTriThamSoResponse" message="tns:IUtilitiesService_LayGiaTriThamSo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LayThamSo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUtilitiesService/LayThamSo" message="tns:IUtilitiesService_LayThamSo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUtilitiesService/LayThamSoResponse" message="tns:IUtilitiesService_LayThamSo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Utilites">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUtilitiesService/Utilites" message="tns:IUtilitiesService_Utilites_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUtilitiesService/UtilitesResponse" message="tns:IUtilitiesService_Utilites_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="UtilitiesEndpoint" type="tns:IUtilitiesService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="IsWorkingDay">
+      <soap:operation soapAction="http://tempuri.org/IUtilitiesService/IsWorkingDay" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LayNgayHopCum">
+      <soap:operation soapAction="http://tempuri.org/IUtilitiesService/LayNgayHopCum" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LayNgayHopCumTheoMa">
+      <soap:operation soapAction="http://tempuri.org/IUtilitiesService/LayNgayHopCumTheoMa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LockData">
+      <soap:operation soapAction="http://tempuri.org/IUtilitiesService/LockData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnlockData">
+      <soap:operation soapAction="http://tempuri.org/IUtilitiesService/UnlockData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnlockDataFromFunctionByUser">
+      <soap:operation soapAction="http://tempuri.org/IUtilitiesService/UnlockDataFromFunctionByUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnlockDataFromUser">
+      <soap:operation soapAction="http://tempuri.org/IUtilitiesService/UnlockDataFromUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckDuplicateData">
+      <soap:operation soapAction="http://tempuri.org/IUtilitiesService/CheckDuplicateData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LayGiaTriThamSo">
+      <soap:operation soapAction="http://tempuri.org/IUtilitiesService/LayGiaTriThamSo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LayThamSo">
+      <soap:operation soapAction="http://tempuri.org/IUtilitiesService/LayThamSo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Utilites">
+      <soap:operation soapAction="http://tempuri.org/IUtilitiesService/Utilites" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="UtilitiesService">
+    <wsdl:port name="UtilitiesEndpoint" binding="tns:UtilitiesEndpoint">
+      <soap:address location="http://localhost:1001/UtilitiesService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

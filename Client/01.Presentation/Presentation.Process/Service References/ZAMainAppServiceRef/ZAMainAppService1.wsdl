@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ZAMainAppService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:1234/ZAMainAppService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:1234/ZAMainAppService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:1234/ZAMainAppService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/CommunicationServices.ZAMainApp.Messages" />
+      <xsd:import schemaLocation="http://localhost:1234/ZAMainAppService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" />
+      <xsd:import schemaLocation="http://localhost:1234/ZAMainAppService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Utilities.Common" />
+      <xsd:import schemaLocation="http://localhost:1234/ZAMainAppService.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://localhost:1234/ZAMainAppService.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" />
+      <xsd:import schemaLocation="http://localhost:1234/ZAMainAppService.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/BusinessServices.Utilities.DTO" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IZAMainAppService_returnHello_InputMessage">
+    <wsdl:part name="parameters" element="tns:returnHello" />
+  </wsdl:message>
+  <wsdl:message name="IZAMainAppService_returnHello_OutputMessage">
+    <wsdl:part name="parameters" element="tns:returnHelloResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZAMainAppService_getSession_InputMessage">
+    <wsdl:part name="parameters" element="tns:getSession" />
+  </wsdl:message>
+  <wsdl:message name="IZAMainAppService_getSession_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getSessionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZAMainAppService_doLogin_InputMessage">
+    <wsdl:part name="parameters" element="tns:doLogin" />
+  </wsdl:message>
+  <wsdl:message name="IZAMainAppService_doLogin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:doLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZAMainAppService_doLoginWithSession_InputMessage">
+    <wsdl:part name="parameters" element="tns:doLoginWithSession" />
+  </wsdl:message>
+  <wsdl:message name="IZAMainAppService_doLoginWithSession_OutputMessage">
+    <wsdl:part name="parameters" element="tns:doLoginWithSessionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZAMainAppService_doLogout_InputMessage">
+    <wsdl:part name="parameters" element="tns:doLogout" />
+  </wsdl:message>
+  <wsdl:message name="IZAMainAppService_doLogout_OutputMessage">
+    <wsdl:part name="parameters" element="tns:doLogoutResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZAMainAppService_doCheckSession_InputMessage">
+    <wsdl:part name="parameters" element="tns:doCheckSession" />
+  </wsdl:message>
+  <wsdl:message name="IZAMainAppService_doCheckSession_OutputMessage">
+    <wsdl:part name="parameters" element="tns:doCheckSessionResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IZAMainAppService">
+    <wsdl:operation name="returnHello">
+      <wsdl:input wsaw:Action="http://tempuri.org/IZAMainAppService/returnHello" message="tns:IZAMainAppService_returnHello_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IZAMainAppService/returnHelloResponse" message="tns:IZAMainAppService_returnHello_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getSession">
+      <wsdl:input wsaw:Action="http://tempuri.org/IZAMainAppService/getSession" message="tns:IZAMainAppService_getSession_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IZAMainAppService/getSessionResponse" message="tns:IZAMainAppService_getSession_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="doLogin">
+      <wsdl:input wsaw:Action="http://tempuri.org/IZAMainAppService/doLogin" message="tns:IZAMainAppService_doLogin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IZAMainAppService/doLoginResponse" message="tns:IZAMainAppService_doLogin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="doLoginWithSession">
+      <wsdl:input wsaw:Action="http://tempuri.org/IZAMainAppService/doLoginWithSession" message="tns:IZAMainAppService_doLoginWithSession_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IZAMainAppService/doLoginWithSessionResponse" message="tns:IZAMainAppService_doLoginWithSession_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="doLogout">
+      <wsdl:input wsaw:Action="http://tempuri.org/IZAMainAppService/doLogout" message="tns:IZAMainAppService_doLogout_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IZAMainAppService/doLogoutResponse" message="tns:IZAMainAppService_doLogout_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="doCheckSession">
+      <wsdl:input wsaw:Action="http://tempuri.org/IZAMainAppService/doCheckSession" message="tns:IZAMainAppService_doCheckSession_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IZAMainAppService/doCheckSessionResponse" message="tns:IZAMainAppService_doCheckSession_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ZAMainAppEndpoint" type="tns:IZAMainAppService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="returnHello">
+      <soap:operation soapAction="http://tempuri.org/IZAMainAppService/returnHello" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSession">
+      <soap:operation soapAction="http://tempuri.org/IZAMainAppService/getSession" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="doLogin">
+      <soap:operation soapAction="http://tempuri.org/IZAMainAppService/doLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="doLoginWithSession">
+      <soap:operation soapAction="http://tempuri.org/IZAMainAppService/doLoginWithSession" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="doLogout">
+      <soap:operation soapAction="http://tempuri.org/IZAMainAppService/doLogout" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="doCheckSession">
+      <soap:operation soapAction="http://tempuri.org/IZAMainAppService/doCheckSession" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ZAMainAppService">
+    <wsdl:port name="ZAMainAppEndpoint" binding="tns:ZAMainAppEndpoint">
+      <soap:address location="http://localhost:1234/ZAMainAppService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

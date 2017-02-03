@@ -1,0 +1,21 @@
+STT	Number
+GROUP_BY	String	255
+SO_HIEU	String	30
+HO_TEN	String	255
+CUM	String	255
+NHOM	String	255
+NV_LOAI_NVON	String	255
+SO_KHE_UOC	String	255
+NGAY_BAT_DAU	String	255
+NGAY_TRA_HET	String	255
+MUC_VAY	Number
+DU_NO	Number
+TGIAN_VAY	Number
+DON_VI_TGIAN	String	255
+LAI_SUAT	String	255
+MUC_DICH_VAY	String	255
+SO_CHAM_TRA	Number
+SO_NGAY_CHAM_TRA	Number
+NHOM_NO	String	255
+TSDB	String	255
+CBKT	String	255

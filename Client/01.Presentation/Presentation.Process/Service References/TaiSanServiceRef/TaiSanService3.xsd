@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/BusinessServices.TaiSan.DTO" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/BusinessServices.TaiSan.DTO" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:1001/TaiSanService.svc?xsd=xsd6" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://localhost:1001/TaiSanService.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" />
+  <xs:import schemaLocation="http://localhost:1001/TaiSanService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Utilities.Common" />
+  <xs:complexType name="DIEU_KIEN_TIM_KIEM_DTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EndRow" type="xs:int" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="SMaDonVi" nillable="true" type="q1:ArrayOfstring" />
+      <xs:element minOccurs="0" name="SMaDonViSD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SMaTS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SNgaySDDen" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SNgaySDTu" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SSoBienBan" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="STenDonViSD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="STenTS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="STrangThaiNVu" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StartRow" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DIEU_KIEN_TIM_KIEM_DTO" nillable="true" type="tns:DIEU_KIEN_TIM_KIEM_DTO" />
+  <xs:complexType name="ArrayOfDANH_SACH_BAN_GIAO_DTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DANH_SACH_BAN_GIAO_DTO" nillable="true" type="tns:DANH_SACH_BAN_GIAO_DTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDANH_SACH_BAN_GIAO_DTO" nillable="true" type="tns:ArrayOfDANH_SACH_BAN_GIAO_DTO" />
+  <xs:complexType name="DANH_SACH_BAN_GIAO_DTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="HTHUC_BGIAO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="MA_DVI_QLY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_SDUNG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_BAN_GIAO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SO_BIEN_BAN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TEN_DVI_SDUNG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TEN_HTHUC_BGIAO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TRANG_THAI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_NVU" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DANH_SACH_BAN_GIAO_DTO" nillable="true" type="tns:DANH_SACH_BAN_GIAO_DTO" />
+  <xs:complexType name="ArrayOfDANH_SACH_DANH_GIA_DTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DANH_SACH_DANH_GIA_DTO" nillable="true" type="tns:DANH_SACH_DANH_GIA_DTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDANH_SACH_DANH_GIA_DTO" nillable="true" type="tns:ArrayOfDANH_SACH_DANH_GIA_DTO" />
+  <xs:complexType name="DANH_SACH_DANH_GIA_DTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="MA_DVI_QLY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_TAI_SAN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_DANH_GIA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SO_QUYET_DINH" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TEN_TAI_SAN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TRANG_THAI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_NVU" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DANH_SACH_DANH_GIA_DTO" nillable="true" type="tns:DANH_SACH_DANH_GIA_DTO" />
+  <xs:complexType name="ArrayOfDANH_SACH_GIAM_DTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DANH_SACH_GIAM_DTO" nillable="true" type="tns:DANH_SACH_GIAM_DTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDANH_SACH_GIAM_DTO" nillable="true" type="tns:ArrayOfDANH_SACH_GIAM_DTO" />
+  <xs:complexType name="DANH_SACH_GIAM_DTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="MA_DVI_QLY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_TAI_SAN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_GIAM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SO_QUYET_DINH" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TEN_TAI_SAN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TRANG_THAI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_NVU" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DANH_SACH_GIAM_DTO" nillable="true" type="tns:DANH_SACH_GIAM_DTO" />
+  <xs:complexType name="ArrayOfDANH_SACH_KHAU_HAO_DTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DANH_SACH_KHAU_HAO_DTO" nillable="true" type="tns:DANH_SACH_KHAU_HAO_DTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDANH_SACH_KHAU_HAO_DTO" nillable="true" type="tns:ArrayOfDANH_SACH_KHAU_HAO_DTO" />
+  <xs:complexType name="DANH_SACH_KHAU_HAO_DTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="KY_KHAU_HAO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_QLY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_CHUNG_TU" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SO_CHUNG_TU" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TRANG_THAI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_NVU" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DANH_SACH_KHAU_HAO_DTO" nillable="true" type="tns:DANH_SACH_KHAU_HAO_DTO" />
+  <xs:complexType name="ArrayOfDANH_SACH_NANG_CAP_DTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DANH_SACH_NANG_CAP_DTO" nillable="true" type="tns:DANH_SACH_NANG_CAP_DTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDANH_SACH_NANG_CAP_DTO" nillable="true" type="tns:ArrayOfDANH_SACH_NANG_CAP_DTO" />
+  <xs:complexType name="DANH_SACH_NANG_CAP_DTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="MA_DVI_QLY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_TAI_SAN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_NANG_CAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SO_QUYET_DINH" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TEN_TAI_SAN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TONG_CHI_PHI" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TRANG_THAI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_NVU" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DANH_SACH_NANG_CAP_DTO" nillable="true" type="tns:DANH_SACH_NANG_CAP_DTO" />
+  <xs:complexType name="ArrayOfDMUC_TSAN_DTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DMUC_TSAN_DTO" nillable="true" type="tns:DMUC_TSAN_DTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDMUC_TSAN_DTO" nillable="true" type="tns:ArrayOfDMUC_TSAN_DTO" />
+  <xs:complexType name="DMUC_TSAN_DTO">
+    <xs:sequence>
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="LstObj" nillable="true" type="q2:ArrayOfTS_DM_DMUC_GTRI" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Utilities.Common" minOccurs="0" name="MaLoai" type="q3:DatabaseConstant.LOAI_DMUC_TSAN" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DMUC_TSAN_DTO" nillable="true" type="tns:DMUC_TSAN_DTO" />
+  <xs:complexType name="BAN_GIAO_DTO">
+    <xs:sequence>
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="LstChiTiet" nillable="true" type="q4:ArrayOfTS_BAN_GIAO_CT" />
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="LstGiaoNhan" nillable="true" type="q5:ArrayOfTS_BAN_GIAO_CT_GIAO_NHAN" />
+      <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="LstTaiSan" nillable="true" type="q6:ArrayOfTS_TAI_SAN" />
+      <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="ObjBanGiao" nillable="true" type="q7:TS_BAN_GIAO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BAN_GIAO_DTO" nillable="true" type="tns:BAN_GIAO_DTO" />
+  <xs:complexType name="BIEN_DONG_DTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodeBienDong" nillable="true" type="xs:string" />
+      <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Utilities.Common" minOccurs="0" name="Function" type="q8:DatabaseConstant.Function" />
+      <xs:element minOccurs="0" name="IdBienDong" type="xs:int" />
+      <xs:element minOccurs="0" name="RefBienDong" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BIEN_DONG_DTO" nillable="true" type="tns:BIEN_DONG_DTO" />
+  <xs:complexType name="DANH_GIA_DTO">
+    <xs:sequence>
+      <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="LstPhuKien" nillable="true" type="q9:ArrayOfTS_DANH_GIA_PK" />
+      <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="ObjDanhGia" nillable="true" type="q10:TS_DANH_GIA" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DANH_GIA_DTO" nillable="true" type="tns:DANH_GIA_DTO" />
+  <xs:complexType name="GIAM_DTO">
+    <xs:sequence>
+      <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="ObjGiam" nillable="true" type="q11:TS_GIAM" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GIAM_DTO" nillable="true" type="tns:GIAM_DTO" />
+  <xs:complexType name="KHAU_HAO_DTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DIEN_GIAI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID_GDICH" type="xs:int" />
+      <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="LstChiTiet" nillable="true" type="q12:ArrayOfTS_KHAU_HAO_CT" />
+      <xs:element minOccurs="0" name="MA_GDICH" nillable="true" type="xs:string" />
+      <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="ObjKhauHao" nillable="true" type="q13:TS_KHAU_HAO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="KHAU_HAO_DTO" nillable="true" type="tns:KHAU_HAO_DTO" />
+  <xs:complexType name="NANG_CAP_DTO">
+    <xs:sequence>
+      <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="ObjNangCap" nillable="true" type="q14:TS_NANG_CAP" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NANG_CAP_DTO" nillable="true" type="tns:NANG_CAP_DTO" />
+  <xs:complexType name="TS_TAI_SAN_DTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="GDICH_HTHUC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GDICH_TKHOAN_KHANG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GDICH_TKHOAN_NBO" nillable="true" type="xs:string" />
+      <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="Lst_TS_PHU_KIEN" nillable="true" type="q15:ArrayOfTS_TAI_SAN_PHU_KIEN" />
+      <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="Lst_TS_TTINH" nillable="true" type="q16:ArrayOfTS_TAI_SAN_TTINH" />
+      <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="Lst_TTS_TAI_SAN_NG" nillable="true" type="q17:ArrayOfTS_TAI_SAN_NG" />
+      <xs:element minOccurs="0" name="MA_GDICH" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_GDICH" nillable="true" type="xs:string" />
+      <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="TS_TAI_SAN" nillable="true" type="q18:TS_TAI_SAN" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TS_TAI_SAN_DTO" nillable="true" type="tns:TS_TAI_SAN_DTO" />
+  <xs:complexType name="TAI_SAN_DTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="GDICH_HTHUC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GDICH_TKHOAN_KHANG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GDICH_TKHOAN_NBO" nillable="true" type="xs:string" />
+      <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="Lst_TS_PHU_KIEN" nillable="true" type="q19:ArrayOfTS_TANG_PHU_KIEN" />
+      <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="Lst_TS_TTINH" nillable="true" type="q20:ArrayOfTS_TANG_TTINH" />
+      <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="Lst_TTS_TANG_NG" nillable="true" type="q21:ArrayOfTS_TANG_NG" />
+      <xs:element minOccurs="0" name="MA_GDICH" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_GDICH" nillable="true" type="xs:string" />
+      <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="TS_TAI_SAN" nillable="true" type="q22:TS_TANG" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TAI_SAN_DTO" nillable="true" type="tns:TAI_SAN_DTO" />
+</xs:schema>

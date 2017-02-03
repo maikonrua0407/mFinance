@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/BusinessServices.KhachHang.DTO" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/BusinessServices.KhachHang.DTO" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" />
+  <xs:complexType name="ArrayOfKH_THONG_TIN_KHAO_SAT">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KH_THONG_TIN_KHAO_SAT" nillable="true" type="tns:KH_THONG_TIN_KHAO_SAT" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKH_THONG_TIN_KHAO_SAT" nillable="true" type="tns:ArrayOfKH_THONG_TIN_KHAO_SAT" />
+  <xs:complexType name="KH_THONG_TIN_KHAO_SAT">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DATA_SET" nillable="true">
+        <xs:complexType>
+          <xs:annotation>
+            <xs:appinfo>
+              <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+            </xs:appinfo>
+          </xs:annotation>
+          <xs:sequence>
+            <xs:element ref="xs:schema" />
+            <xs:any />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="ID_KHANG" type="xs:int" />
+      <xs:element minOccurs="0" name="IS_KHAO_SAT" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LOAI_DXVV" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_GDICH" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DXVV" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_KHANG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_NHAP" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="OBJ_KH_KHANG_HSO" nillable="true" type="q1:KH_KHANG_HSO" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="OBJ_VKH_THONG_TIN_KHAO_SAT" nillable="true" type="q2:VKH_THONG_TIN_KHAO_SAT" />
+      <xs:element minOccurs="0" name="TTHAI_BGHI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_NVU" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="KH_THONG_TIN_KHAO_SAT" nillable="true" type="tns:KH_THONG_TIN_KHAO_SAT" />
+</xs:schema>

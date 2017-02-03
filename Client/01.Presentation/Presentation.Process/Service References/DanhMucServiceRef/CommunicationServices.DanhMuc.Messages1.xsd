@@ -1,0 +1,360 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/CommunicationServices.DanhMuc.Messages" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/CommunicationServices.DanhMuc.Messages" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" />
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/BusinessServices.DanhMuc.DTO" />
+  <xs:complexType name="DMDonViRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" base="q1:RequestBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DonViLogo" nillable="true" type="q1:ImageBase" />
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+          <xs:element minOccurs="0" name="Ma" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MaCum" nillable="true" type="xs:string" />
+          <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="listID" nillable="true" type="q2:ArrayOfint" />
+          <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="listTaiKhoan" nillable="true" type="q3:ArrayOfDM_DON_VI_TKHOAN" />
+          <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="obj" nillable="true" type="q4:DM_DON_VI" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DMDonViRequest" nillable="true" type="tns:DMDonViRequest" />
+  <xs:complexType name="DMDonViResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q5="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" base="q5:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DonViLogo" nillable="true" type="q5:ImageBase" />
+          <xs:element minOccurs="0" name="KetQua" type="xs:boolean" />
+          <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="NgayLamViec" nillable="true" type="q6:HT_NGAY_LVIEC" />
+          <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="obj" nillable="true" type="q7:DM_DON_VI" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DMDonViResponse" nillable="true" type="tns:DMDonViResponse" />
+  <xs:complexType name="DMCumRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q8="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" base="q8:RequestBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+          <xs:element minOccurs="0" name="Ma" nillable="true" type="xs:string" />
+          <xs:element xmlns:q9="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="listID" nillable="true" type="q9:ArrayOfint" />
+          <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstCum" nillable="true" type="q10:ArrayOfDM_CUM" />
+          <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstNhanSu" nillable="true" type="q11:ArrayOfDM_CUM_NS" />
+          <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="obj" nillable="true" type="q12:DM_CUM" />
+          <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objTanSuatCum" nillable="true" type="q13:DC_TSUAT_CUM" />
+          <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/BusinessServices.DanhMuc.DTO" minOccurs="0" name="objTempCum" nillable="true" type="q14:DM_TEMP_CUM" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DMCumRequest" nillable="true" type="tns:DMCumRequest" />
+  <xs:complexType name="DMCumResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q15="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" base="q15:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="KetQua" type="xs:boolean" />
+          <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstCum" nillable="true" type="q16:ArrayOfDM_CUM" />
+          <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="obj" nillable="true" type="q17:DM_CUM" />
+          <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objTanSuatCum" nillable="true" type="q18:DC_TSUAT_CUM" />
+          <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/BusinessServices.DanhMuc.DTO" minOccurs="0" name="objTempCum" nillable="true" type="q19:DM_TEMP_CUM" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DMCumResponse" nillable="true" type="tns:DMCumResponse" />
+  <xs:complexType name="DMDiaBanRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q20="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" base="q20:RequestBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+          <xs:element xmlns:q21="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="listID" nillable="true" type="q21:ArrayOfint" />
+          <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="obj" nillable="true" type="q22:DM_DIA_BAN" />
+          <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objTTKhac" nillable="true" type="q23:VDM_DBAN_TTIN_KHAC" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DMDiaBanRequest" nillable="true" type="tns:DMDiaBanRequest" />
+  <xs:complexType name="DMDiaBanResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q24="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" base="q24:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="bKetQua" type="xs:boolean" />
+          <xs:element minOccurs="0" name="iKetQua" type="xs:int" />
+          <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="obj" nillable="true" type="q25:DM_DIA_BAN" />
+          <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objTTKhac" nillable="true" type="q26:VDM_DBAN_TTIN_KHAC" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DMDiaBanResponse" nillable="true" type="tns:DMDiaBanResponse" />
+  <xs:complexType name="DMDoiTuongRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q27="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" base="q27:RequestBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+          <xs:element xmlns:q28="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="listID" nillable="true" type="q28:ArrayOfint" />
+          <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="obj" nillable="true" type="q29:DM_DTUONG" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DMDoiTuongRequest" nillable="true" type="tns:DMDoiTuongRequest" />
+  <xs:complexType name="DMDoiTuongResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q30="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" base="q30:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="bKetQua" type="xs:boolean" />
+          <xs:element minOccurs="0" name="iKetQua" type="xs:int" />
+          <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="obj" nillable="true" type="q31:DM_DTUONG" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DMDoiTuongResponse" nillable="true" type="tns:DMDoiTuongResponse" />
+  <xs:complexType name="DMDoiTuongLoaiRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q32="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" base="q32:RequestBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+          <xs:element xmlns:q33="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="listID" nillable="true" type="q33:ArrayOfint" />
+          <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="obj" nillable="true" type="q34:DM_LOAI_DTUONG" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DMDoiTuongLoaiRequest" nillable="true" type="tns:DMDoiTuongLoaiRequest" />
+  <xs:complexType name="DMDoiTuongLoaiResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q35="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" base="q35:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="bKetQua" type="xs:boolean" />
+          <xs:element minOccurs="0" name="iKetQua" type="xs:int" />
+          <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="obj" nillable="true" type="q36:DM_LOAI_DTUONG" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DMDoiTuongLoaiResponse" nillable="true" type="tns:DMDoiTuongLoaiResponse" />
+  <xs:complexType name="DMDungChungRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q37="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" base="q37:RequestBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+          <xs:element minOccurs="0" name="IdLoai" type="xs:int" />
+          <xs:element xmlns:q38="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="listID" nillable="true" type="q38:ArrayOfint" />
+          <xs:element xmlns:q39="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="listIDLoai" nillable="true" type="q39:ArrayOfint" />
+          <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="obj" nillable="true" type="q40:DM_DMUC_GTRI" />
+          <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objLoai" nillable="true" type="q41:DM_DMUC_LOAI" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DMDungChungRequest" nillable="true" type="tns:DMDungChungRequest" />
+  <xs:complexType name="DMDungChungResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q42="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" base="q42:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="bKetQua" type="xs:boolean" />
+          <xs:element minOccurs="0" name="iKetQua" type="xs:int" />
+          <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="obj" nillable="true" type="q43:DM_DMUC_GTRI" />
+          <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objLoai" nillable="true" type="q44:DM_DMUC_LOAI" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DMDungChungResponse" nillable="true" type="tns:DMDungChungResponse" />
+  <xs:complexType name="DMKhuVucRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q45="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" base="q45:RequestBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+          <xs:element xmlns:q46="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="listID" nillable="true" type="q46:ArrayOfint" />
+          <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstKhuVuc" nillable="true" type="q47:ArrayOfDM_KHU_VUC" />
+          <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstNhanSu" nillable="true" type="q48:ArrayOfDM_KHU_VUC_NS" />
+          <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="obj" nillable="true" type="q49:DM_KHU_VUC" />
+          <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objNhanSu" nillable="true" type="q50:DM_KHU_VUC_NS" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DMKhuVucRequest" nillable="true" type="tns:DMKhuVucRequest" />
+  <xs:complexType name="DMKhuVucResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q51="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" base="q51:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="bKetQua" type="xs:boolean" />
+          <xs:element minOccurs="0" name="iKetQua" type="xs:int" />
+          <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstKhuVuc" nillable="true" type="q52:ArrayOfDM_KHU_VUC" />
+          <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="obj" nillable="true" type="q53:DM_KHU_VUC" />
+          <xs:element xmlns:q54="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objNhanSu" nillable="true" type="q54:DM_KHU_VUC_NS" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DMKhuVucResponse" nillable="true" type="tns:DMKhuVucResponse" />
+  <xs:complexType name="DMNhomRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q55="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" base="q55:RequestBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+          <xs:element minOccurs="0" name="IdCum" type="xs:int" />
+          <xs:element minOccurs="0" name="IdDvi" type="xs:int" />
+          <xs:element minOccurs="0" name="IdKvuc" type="xs:int" />
+          <xs:element xmlns:q56="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="listID" nillable="true" type="q56:ArrayOfint" />
+          <xs:element xmlns:q57="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="listIDNhomKHangXoa" nillable="true" type="q57:ArrayOfint" />
+          <xs:element xmlns:q58="http://schemas.datacontract.org/2004/07/BusinessServices.DanhMuc.DTO" minOccurs="0" name="lstNhomDTO" nillable="true" type="q58:ArrayOfDM_NHOM_DTO" />
+          <xs:element xmlns:q59="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstNhomKHang" nillable="true" type="q59:ArrayOfKH_KHANG_NHOM" />
+          <xs:element xmlns:q60="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="obj" nillable="true" type="q60:DM_NHOM" />
+          <xs:element xmlns:q61="http://schemas.datacontract.org/2004/07/BusinessServices.DanhMuc.DTO" minOccurs="0" name="objNhomDTO" nillable="true" type="q61:DM_NHOM_DTO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DMNhomRequest" nillable="true" type="tns:DMNhomRequest" />
+  <xs:complexType name="DMNhomResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q62="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" base="q62:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="bKetQua" type="xs:boolean" />
+          <xs:element minOccurs="0" name="iKetQua" type="xs:int" />
+          <xs:element xmlns:q63="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstDmNhom" nillable="true" type="q63:ArrayOfDM_NHOM" />
+          <xs:element xmlns:q64="http://schemas.datacontract.org/2004/07/BusinessServices.DanhMuc.DTO" minOccurs="0" name="lstNhomDTO" nillable="true" type="q64:ArrayOfDM_NHOM_DTO" />
+          <xs:element xmlns:q65="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="obj" nillable="true" type="q65:DM_NHOM" />
+          <xs:element xmlns:q66="http://schemas.datacontract.org/2004/07/BusinessServices.DanhMuc.DTO" minOccurs="0" name="objNhomDTO" nillable="true" type="q66:DM_NHOM_DTO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DMNhomResponse" nillable="true" type="tns:DMNhomResponse" />
+  <xs:complexType name="DMPhanHeGDRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q67="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" base="q67:RequestBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+          <xs:element minOccurs="0" name="IdLoai" type="xs:int" />
+          <xs:element xmlns:q68="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="listID" nillable="true" type="q68:ArrayOfint" />
+          <xs:element xmlns:q69="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="obj" nillable="true" type="q69:DM_PHAN_HE_GD" />
+          <xs:element xmlns:q70="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objPhanHe" nillable="true" type="q70:DM_PHAN_HE" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DMPhanHeGDRequest" nillable="true" type="tns:DMPhanHeGDRequest" />
+  <xs:complexType name="DMPhanHeGDResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q71="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" base="q71:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="bKetQua" type="xs:boolean" />
+          <xs:element minOccurs="0" name="iKetQua" type="xs:int" />
+          <xs:element xmlns:q72="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="obj" nillable="true" type="q72:DM_PHAN_HE_GD" />
+          <xs:element xmlns:q73="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objPhanHe" nillable="true" type="q73:DM_PHAN_HE" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DMPhanHeGDResponse" nillable="true" type="tns:DMPhanHeGDResponse" />
+  <xs:complexType name="DMTinhTPRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q74="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" base="q74:RequestBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+          <xs:element xmlns:q75="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="listID" nillable="true" type="q75:ArrayOfint" />
+          <xs:element xmlns:q76="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="obj" nillable="true" type="q76:DM_TINH_TP" />
+          <xs:element xmlns:q77="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objTTKhac" nillable="true" type="q77:VDM_DBAN_TTIN_KHAC" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DMTinhTPRequest" nillable="true" type="tns:DMTinhTPRequest" />
+  <xs:complexType name="DMTinhTPResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q78="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" base="q78:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="bKetQua" type="xs:boolean" />
+          <xs:element minOccurs="0" name="iKetQua" type="xs:int" />
+          <xs:element xmlns:q79="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="obj" nillable="true" type="q79:DM_TINH_TP" />
+          <xs:element xmlns:q80="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objTTKhac" nillable="true" type="q80:VDM_DBAN_TTIN_KHAC" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DMTinhTPResponse" nillable="true" type="tns:DMTinhTPResponse" />
+  <xs:complexType name="DMVungMienRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q81="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" base="q81:RequestBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+          <xs:element xmlns:q82="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="listID" nillable="true" type="q82:ArrayOfint" />
+          <xs:element xmlns:q83="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="obj" nillable="true" type="q83:DM_VUNG_MIEN" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DMVungMienRequest" nillable="true" type="tns:DMVungMienRequest" />
+  <xs:complexType name="DMVungMienResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q84="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" base="q84:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="bKetQua" type="xs:boolean" />
+          <xs:element minOccurs="0" name="iKetQua" type="xs:int" />
+          <xs:element xmlns:q85="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="obj" nillable="true" type="q85:DM_VUNG_MIEN" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DMVungMienResponse" nillable="true" type="tns:DMVungMienResponse" />
+  <xs:complexType name="DCTanSuatRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q86="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" base="q86:RequestBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+          <xs:element minOccurs="0" name="IdCum" type="xs:int" />
+          <xs:element minOccurs="0" name="Ma" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MaDonVi" nillable="true" type="xs:string" />
+          <xs:element xmlns:q87="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="listID" nillable="true" type="q87:ArrayOfint" />
+          <xs:element xmlns:q88="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="listTSuatCum" nillable="true" type="q88:ArrayOfDC_TSUAT_CUM" />
+          <xs:element xmlns:q89="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="obj" nillable="true" type="q89:DC_TSUAT" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DCTanSuatRequest" nillable="true" type="tns:DCTanSuatRequest" />
+  <xs:complexType name="DCTanSuatResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q90="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" base="q90:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="KetQua" type="xs:boolean" />
+          <xs:element xmlns:q91="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstObjTSuatCum" nillable="true" type="q91:ArrayOfDC_TSUAT_CUM" />
+          <xs:element xmlns:q92="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="obj" nillable="true" type="q92:DC_TSUAT" />
+          <xs:element xmlns:q93="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objTSuatCum" nillable="true" type="q93:DC_TSUAT_CUM" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DCTanSuatResponse" nillable="true" type="tns:DCTanSuatResponse" />
+  <xs:complexType name="DMToChucTinDungRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q94="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" base="q94:RequestBase">
+        <xs:sequence>
+          <xs:element xmlns:q95="http://schemas.datacontract.org/2004/07/BusinessServices.DanhMuc.DTO" minOccurs="0" name="lstToChucTinDung" nillable="true" type="q95:ArrayOfDM_TO_CHUC_TIN_DUNG" />
+          <xs:element xmlns:q96="http://schemas.datacontract.org/2004/07/BusinessServices.DanhMuc.DTO" minOccurs="0" name="objToChucTinDung" nillable="true" type="q96:DM_TO_CHUC_TIN_DUNG" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DMToChucTinDungRequest" nillable="true" type="tns:DMToChucTinDungRequest" />
+  <xs:complexType name="DMToChucTinDungResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q97="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" base="q97:ResponseBase">
+        <xs:sequence>
+          <xs:element xmlns:q98="http://schemas.datacontract.org/2004/07/BusinessServices.DanhMuc.DTO" minOccurs="0" name="lstToChucTinDung" nillable="true" type="q98:ArrayOfDM_TO_CHUC_TIN_DUNG" />
+          <xs:element xmlns:q99="http://schemas.datacontract.org/2004/07/BusinessServices.DanhMuc.DTO" minOccurs="0" name="objToChucTinDung" nillable="true" type="q99:DM_TO_CHUC_TIN_DUNG" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DMToChucTinDungResponse" nillable="true" type="tns:DMToChucTinDungResponse" />
+</xs:schema>

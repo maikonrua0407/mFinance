@@ -1,0 +1,47 @@
+﻿@using PresentationAspNet.MVC
+<div class="row-fluid">
+    <div class="span12" id="div_kho" style="padding-left:10px">
+        <span>Kho làm việc :</span>
+        <select id="cboChonPhongGd" name="cboChonPhongGd" onchange="ChonDiemGdTheoKho()" style="width:90%">
+            @{
+                var khoCurrent = ViewBag.PhongGd ?? UserInformation.Session_User.IDKho;
+            }
+            @foreach (var d in UserInformation.Session_User.lstKhoLamViec)
+            {
+                if (d.ID == khoCurrent)
+                {
+                    <option selected id="kho-@d.ID" value="@d.ID">@d.TEN_GDICH</option>
+                }else{
+                    <option id="kho-@d.ID" value="@d.ID">@d.TEN_GDICH</option>
+                }
+            }
+        </select>
+    </div>
+    <div class="span12" id="div_DiemGd" style="padding-left:10px; margin-left:0px">
+        <span>Điểm bán :</span>
+        @{
+            var data = new DanhMucDiemGdSvr().DM_DiemGd_GetByIDKho(new SelectAllDM_DiemGd_ByIDKhoPara
+            {
+                IDKho = khoCurrent
+            });
+            }
+        @if (data != null && data.Count > 0)
+        {
+            <select name="cboDiemGD" id="cboDiemGD"  style="width:90%"> @*onkeydown="ChonDiemGd(event);"*@
+            @foreach (var d in data)
+            {
+                if (UserInformation.Session_User.DiemGdInfo != null && d.ID == UserInformation.Session_User.DiemGdInfo.ID)
+                {
+                    <option selected="selected" value="@d.ID">@d.TenDiemGd</option>
+                }else
+                {
+                    <option value="@d.ID">@d.TenDiemGd</option>
+                }
+            }
+            </select>
+        }
+    </div>
+</div>             
+   
+
+

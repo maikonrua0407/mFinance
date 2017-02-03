@@ -1,0 +1,64 @@
+﻿@using PresentationAspNet.MVC
+
+@if (UserInformation.Session_User != null)
+{
+    var model = UserInformation.Session_User;
+
+    <div class="hor-menu hidden-sm hidden-xs">
+        @if (model != null && model.ListChucNang.Any())
+        {
+            var curUrl = HttpContext.Current.Request.RawUrl;
+            var curNote = model.ListChucNang.FirstOrDefault(m => string.Equals(m.Url, curUrl, StringComparison.CurrentCultureIgnoreCase)) ?? new Presentation.Process.ZAMainAppServiceRef.ChucNangDto();
+            var index = 0;
+
+            <ul class="nav navbar-nav">
+                <!-- DOC: Remove data-hover="dropdown" and data-close-others="true" attributes below to disable the horizontal opening on mouse hover -->
+                @foreach (var item in model.ListChucNang.Where(m => m.IDChucNangCha == 0).OrderBy(o => o.STT).ToList())
+                {
+                    index++;
+                    var act = String.Equals(item.IDChucNang, curNote.IDChucNang) ? "active" : null;
+                    <li class="mega-menu-dropdown @act">
+                        <a data-toggle="dropdown" href="javascript:;" class="dropdown-toggle" data-hover="dropdown" data-close-others="true">
+                            @LanguageNode.GetValueUILanguage(item.TieuDe)
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <!-- Content container to add padding -->
+                                <div class="mega-menu-content">
+                                    <div class="row">
+                                        @{ var lst = model.ListChucNang.Where(m => m.IDChucNangCha == item.IDChucNang).ToList();
+                                            var col = lst.OrderBy(o => o.STT).ToList().Select(child => model.ListChucNang.Where(m => m.IDChucNangCha == child.IDChucNang).ToList()).Count(lstLeaf => lstLeaf.Count > 0);
+                                            var strCcol = "col-md-" + (12 / col);
+                                         foreach (var child in lst.OrderBy(o => o.STT).ToList())
+                                         {
+                                             var lstLeaf = model.ListChucNang.Where(m => m.IDChucNangCha == child.IDChucNang).ToList();
+                                             if (lstLeaf.Count <= 0)
+                                             {
+                                                 continue;
+                                             }
+                                            <div class="@strCcol">
+                                                <ul class="mega-menu-submenu">
+                                                    <li>
+                                                        <h3>@LanguageNode.GetValueUILanguage(child.TieuDe)</h3>
+                                                    </li>
+                                                    @foreach (var leaf in lstLeaf.OrderBy(o => o.STT).ToList())
+                                                    {
+                                                        <li>
+                                                            <a href="@Url.Content("~/"+leaf.Url)">@LanguageNode.GetValueUILanguage(leaf.TieuDe)</a>
+                                                        </li>
+                                                    }
+                                                </ul>
+                                            </div>
+                                         }
+                                        }
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+
+                    </li>
+                }
+            </ul>
+        }
+    </div>
+}

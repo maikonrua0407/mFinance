@@ -1,0 +1,9 @@
+KY_TRA	string	255
+NGAY_TRA	String	255,
+TRA_GOC	Number
+TRA_LAI_PHI	Number
+DC_LAI	Number
+TONG_CONG	Number
+DU_GOC	Number
+DU_LAI	Number
+GHI_CHU	string	255

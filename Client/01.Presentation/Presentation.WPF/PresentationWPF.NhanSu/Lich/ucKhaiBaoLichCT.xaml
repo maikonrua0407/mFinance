@@ -1,0 +1,207 @@
+﻿<UserControl x:Class="PresentationWPF.NhanSu.Lich.ucKhaiBaoLichCT"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             xmlns:local="clr-namespace:PresentationWPF.NhanSu.Lich"
+             xmlns:ribbon="http://schemas.microsoft.com/winfx/2006/xaml/presentation/ribbon" 
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation" 
+             xmlns:telerikMaskInput="clr-namespace:Telerik.Windows.Controls.MaskedInput;assembly=Telerik.Windows.Controls.Input"
+             xmlns:uc="clr-namespace:PresentationWPF.CustomControl;assembly=PresentationWPF.CustomControl"
+             xmlns:my="clr-namespace:System;assembly=mscorlib"
+             d:DesignHeight="768" d:DesignWidth="1024" KeyDown="UserControl_KeyDown" Loaded="UserControl_Loaded">
+    <UserControl.Resources>
+        <DataTemplate x:Key="HeaderTemplate" DataType="{x:Type my:String}">
+            <Grid HorizontalAlignment="Left" Height="45">
+                <AccessText Text="{Binding}" TextWrapping="Wrap" VerticalAlignment="Center"/>
+            </Grid>
+        </DataTemplate>
+        <Style x:Key="GridViewCellStyle1" TargetType="{x:Type telerik:GridViewCell}">
+            <Setter Property="Background" Value="GhostWhite" />
+            <Setter Property="Padding" Value="0" />
+            <Setter Property="Margin" Value="0" />
+        </Style>
+        <my:String x:Key="U.NhanSu.KhaiBaoLich.ucKhaiBaoLichCT.Label.PhanHe">Loại lịch :</my:String>
+        <my:String x:Key="U.NhanSu.KhaiBaoLich.ucKhaiBaoLichCT.Label.MaKhaiBaoLich">Tên lịch:</my:String>
+        <my:String x:Key="U.NhanSu.KhaiBaoLich.ucKhaiBaoLichCT.Label.NgayHieuLuc">Ngày hiệu lực:</my:String>
+        <my:String x:Key="U.NhanSu.KhaiBaoLich.ucKhaiBaoLichCT.Label.LoaiTien">TT hiệu lực:</my:String>
+        <my:String x:Key="U.NhanSu.KhaiBaoLich.ucKhaiBaoLichCT.GroupBox.TrangThaiBanGhi">Trạng thái bản ghi</my:String>
+        <my:String x:Key="U.NhanSu.KhaiBaoLich.ucKhaiBaoLichCT.Label.TThaiBGhi">Trạng thái bản ghi:</my:String>
+        <my:String x:Key="U.NhanSu.KhaiBaoLich.ucKhaiBaoLichCT.Label.NgayLap">Ngày lập:</my:String>
+        <my:String x:Key="U.NhanSu.KhaiBaoLich.ucKhaiBaoLichCT.Label.NguoiLap">Người lập:</my:String>
+        <my:String x:Key="U.NhanSu.KhaiBaoLich.ucKhaiBaoLichCT.Label.NgayCapNhat">Ngày cập nhật:</my:String>
+        <my:String x:Key="U.NhanSu.KhaiBaoLich.ucKhaiBaoLichCT.Label.NguoiCapNhat">Người cập nhật:</my:String>
+        <my:String x:Key="U.NhanSu.KhaiBaoLich.ucKhaiBaoLichCT.Label.TrangThai">Trạng thái:</my:String>
+        <my:String x:Key="U.NhanSu.KhaiBaoLich.ucKhaiBaoLichCT.TabHeader.ThongTinChung">_1. Thông tin chung</my:String>
+        <my:String x:Key="U.NhanSu.KhaiBaoLich.ucKhaiBaoLichCT.TabHeader.KiemSoat">_2. Thông tin kiểm soát</my:String>
+    </UserControl.Resources>
+    <UserControl.CommandBindings>
+        <CommandBinding CanExecute="HoldCommand_CanExecute" Executed="HoldCommand_Executed" Command="{x:Static local:ucKhaiBaoLichCT.HoldCommand}">
+        </CommandBinding>
+        <CommandBinding CanExecute="SaveCommand_CanExecute" Executed="SaveCommand_Executed" Command="{x:Static local:ucKhaiBaoLichCT.SubmitCommand}">
+        </CommandBinding>
+        <CommandBinding CanExecute="ModifyCommand_CanExecute" Executed="ModifyCommand_Executed" Command="{x:Static local:ucKhaiBaoLichCT.ModifyCommand}">
+        </CommandBinding>
+        <CommandBinding CanExecute="DeleteCommand_CanExecute" Executed="DeleteCommand_Executed" Command="{x:Static local:ucKhaiBaoLichCT.DeleteCommand}">
+        </CommandBinding>
+        <CommandBinding CanExecute="ApproveCommand_CanExecute" Executed="ApproveCommand_Executed" Command="{x:Static local:ucKhaiBaoLichCT.ApproveCommand}">
+        </CommandBinding>
+        <CommandBinding CanExecute="RefuseCommand_CanExecute" Executed="RefuseCommand_Executed" Command="{x:Static local:ucKhaiBaoLichCT.RefuseCommand}">
+        </CommandBinding>
+        <CommandBinding CanExecute="CancelCommand_CanExecute" Executed="CancelCommand_Executed" Command="{x:Static local:ucKhaiBaoLichCT.CancelCommand}">
+        </CommandBinding>
+        <CommandBinding CanExecute="HelpCommand_CanExecute" Executed="HelpCommand_Executed" Command="{x:Static local:ucKhaiBaoLichCT.HelpCommand}">
+        </CommandBinding>
+        <CommandBinding CanExecute="CloseCommand_CanExecute" Executed="CloseCommand_Executed" Command="{x:Static local:ucKhaiBaoLichCT.CloseCommand}">
+        </CommandBinding>
+    </UserControl.CommandBindings>
+
+    <UserControl.ContextMenu>
+        <ContextMenu Name="mnuMain">
+        </ContextMenu>
+    </UserControl.ContextMenu>
+
+    <Grid Name="grMain">
+        <DockPanel Name="dockMain">
+            <DockPanel HorizontalAlignment="Stretch" DockPanel.Dock="Top" Margin="3,3,0,3" LastChildFill="False" Name="docToolbar">
+                <WrapPanel Name="Toolbar">
+                    <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbModify" DockPanel.Dock="Left" Label="Sửa"  SmallImageSource="/Utilities.Common;component/Images/Action/modify.png" Style="{StaticResource RibbonButton}" Click="tlbHotKey_Click" />
+                    <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbDelete" DockPanel.Dock="Left" Label="Xóa"  SmallImageSource="/Utilities.Common;component/Images/Action/delete.png" Style="{StaticResource RibbonButton}" Click="tlbHotKey_Click" />
+                    <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbHold" DockPanel.Dock="Left" Label="Lưu tạm" SmallImageSource="/Utilities.Common;component/Images/Action/hold.png" Style="{StaticResource RibbonButton}" Click="tlbHotKey_Click" />
+                    <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbSubmit" DockPanel.Dock="Left" Label="Trình duyệt"  SmallImageSource="/Utilities.Common;component/Images/Action/save.png" Style="{StaticResource RibbonButton}" Click="tlbHotKey_Click" />
+                    <Label Name="lbl1" Margin="3,0,0,0" DockPanel.Dock="Left" BorderThickness="3" Width="2" BorderBrush="#FF170404" />
+                    <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbApprove" DockPanel.Dock="Left" Label="Duyệt"  SmallImageSource="/Utilities.Common;component/Images/Action/approve.png" Style="{StaticResource RibbonButton}" Click="tlbHotKey_Click" />
+                    <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbRefuse" DockPanel.Dock="Left" Label="Từ chối"  SmallImageSource="/Utilities.Common;component/Images/Action/refuse.png" Style="{StaticResource RibbonButton}" Click="tlbHotKey_Click" />
+                    <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbCancel" DockPanel.Dock="Left" Label="Thoái duyệt"  SmallImageSource="/Utilities.Common;component/Images/Action/cancel.png" Style="{StaticResource RibbonButton}" Click="tlbHotKey_Click" />
+                    <Label Name="lbl2" Margin="3,0,0,0" DockPanel.Dock="Left" BorderThickness="3" Width="2" BorderBrush="#FF170404" />
+                    <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbHelp" DockPanel.Dock="Left" Label="Trợ giúp"  SmallImageSource="/Utilities.Common;component/Images/Action/help.png" Style="{StaticResource RibbonButton}" Click="tlbHotKey_Click" />
+                    <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbClose" DockPanel.Dock="Left" Label="Đóng"  SmallImageSource="/Utilities.Common;component/Images/Action/close.png" Style="{StaticResource RibbonButton}" Click="tlbHotKey_Click" />
+                </WrapPanel>
+                <CheckBox Margin="0,0,3,5" VerticalAlignment="Bottom" DockPanel.Dock="Right" Content="Thêm nhiều lần" Height="16" Name="cbMultiAdd" />
+            </DockPanel>
+            <telerik:RadTabControl Name="tabNSDCT" TabStripPlacement="Left" TabOrientation="Vertical" Align="Right">
+                <telerik:RadTabItem Header="{StaticResource U.NhanSu.KhaiBaoLich.ucKhaiBaoLichCT.TabHeader.ThongTinChung}" Name="titemThongTinChung" HeaderTemplate="{StaticResource HeaderTemplate}" HorizontalContentAlignment="Left" Height="{Binding ElementName=grMain, Path=ActualWidth,
+                Converter={uc:MathConverter}, ConverterParameter=x/5}" TabIndex="0" IsSelected="True">
+                    <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Auto">
+                        <DockPanel LastChildFill="True">
+                            <DockPanel>
+                                <Border DockPanel.Dock="Top" BorderThickness="1" CornerRadius="4" Margin="3" Height="50" Padding="5" BorderBrush="LightGray">
+                                    <Grid VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,5,0,5">
+                                        <StackPanel Orientation="Horizontal">
+                                            <Label Name="lblLabelTrangThai" Content="{StaticResource U.NhanSu.KhaiBaoLich.ucKhaiBaoLichCT.Label.TrangThai}" />
+                                            <Label Name="lblTrangThai" >Chờ duyệt</Label>
+                                        </StackPanel>
+                                    </Grid>
+                                </Border>
+                                <GroupBox Header="Thông tin chung" Margin="3" Padding="10,5,10,5">
+                                    <StackPanel>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="2*"/>
+                                                <ColumnDefinition Width="20"/>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="2*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="6"/>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="6"/>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="6"/>
+                                                <RowDefinition Height="*"/>
+                                            </Grid.RowDefinitions>
+                                            <TextBox Grid.Row="2" Grid.Column="1" Name="txtMaLS" TabIndex="1" Grid.ColumnSpan="4" />
+                                            <telerik:RadMaskedDateTimeInput Grid.Row="6" Grid.Column="1" Mask="dd/MM/yyyy" Name="raddtNgayHL" HorizontalAlignment="Stretch" Margin="0,0,35,0" TabIndex="4" />
+                                            <DatePicker Grid.Row="6" Grid.Column="1" Name="dtpNgayHL" HorizontalAlignment="Right" Width="30" TabIndex="5" SelectedDate="{Binding Path=Value,ElementName=raddtNgayHL}" />
+                                            <StackPanel Grid.Row="4" Grid.Column="3" Orientation="Horizontal">
+                                                <Label Content="Giá trị:" />
+                                                <Label Content="(*)" Foreground="Red" />
+                                            </StackPanel>
+                                            <StackPanel Grid.Row="2" Grid.Column="0" Orientation="Horizontal">
+                                                <Label Content="{StaticResource U.NhanSu.KhaiBaoLich.ucKhaiBaoLichCT.Label.MaKhaiBaoLich}" />
+                                                <Label Content="(*)" Foreground="Red" />
+                                            </StackPanel>
+                                            <StackPanel Grid.Row="6" Grid.Column="0" Orientation="Horizontal" >
+                                                <Label Content="{StaticResource U.NhanSu.KhaiBaoLich.ucKhaiBaoLichCT.Label.NgayHieuLuc}" />
+                                                <Label Content="(*)" Foreground="Red" />
+                                            </StackPanel>
+                                            <TextBox Grid.Row="4" Grid.Column="4" Name="txtTenLS" TabIndex="3" />
+                                            <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" >
+                                                <Label Content="{StaticResource U.NhanSu.KhaiBaoLich.ucKhaiBaoLichCT.Label.PhanHe}" />
+                                                <Label Content="(*)" Foreground="Red" />
+                                            </StackPanel>
+                                            <telerik:RadComboBox Grid.Row="0" Grid.Column="1" Name="cmbPhanHe" TabIndex="0" IsEditable="True" />
+                                            <StackPanel Grid.Row="0" Grid.Column="3" Orientation="Horizontal" >
+                                                <Label Content="Chi nhánh:" />
+                                                <Label Content="(*)" Foreground="Red" />
+                                            </StackPanel>
+                                            <telerik:RadComboBox Grid.Row="0" Grid.Column="4" Name="cmbChiNhanh" TabIndex="0" IsEditable="True" />
+                                            <StackPanel Grid.Row="6" Grid.Column="3" Orientation="Horizontal" >
+                                                <Label Content="{StaticResource U.NhanSu.KhaiBaoLich.ucKhaiBaoLichCT.Label.LoaiTien}" />
+                                                <Label Content="(*)" Foreground="Red" />
+                                            </StackPanel>
+                                            <telerik:RadComboBox Grid.Row="6" Grid.Column="4" Name="cmbLoaiTien" TabIndex="6" IsEditable="True"/>
+                                            <StackPanel Grid.Row="4" Grid.Column="0" Orientation="Horizontal">
+                                                <Label Content="Kiểu định dạng" />
+                                                <Label Content="(*)" Foreground="Red" />
+                                            </StackPanel>
+                                            <telerik:RadComboBox Grid.Row="4" Grid.Column="1" Name="cmbLSDonViTinh"  TabIndex="2" IsEditable="True" />
+                                        </Grid>
+                                    </StackPanel>
+                                </GroupBox>
+                            </DockPanel>
+                        </DockPanel>
+                    </ScrollViewer>
+                </telerik:RadTabItem>
+                <telerik:RadTabItem Header="{StaticResource U.NhanSu.KhaiBaoLich.ucKhaiBaoLichCT.TabHeader.KiemSoat}" HeaderTemplate="{StaticResource HeaderTemplate}" HorizontalContentAlignment="Left" Height="{Binding ElementName=grMain, Path=ActualWidth,
+                Converter={uc:MathConverter}, ConverterParameter=x/5}" TabIndex="1" IsSelected="True">
+                    <ScrollViewer ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Auto">
+                        <Grid>
+                            <GroupBox Header="{StaticResource U.NhanSu.KhaiBaoLich.ucKhaiBaoLichCT.GroupBox.TrangThaiBanGhi}" Margin="3" Padding="10,10,10,5">
+                                <StackPanel>
+                                    <Grid >
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="130"/>
+                                            <ColumnDefinition Width="2*"/>
+                                            <ColumnDefinition Width="2*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*"/>
+                                            <RowDefinition Height="6"/>
+                                            <RowDefinition Height="*"/>
+                                            <RowDefinition Height="6"/>
+                                            <RowDefinition Height="*"/>
+                                            <RowDefinition Height="6"/>
+                                            <RowDefinition Height="*"/>
+                                            <RowDefinition Height="6"/>
+                                            <RowDefinition Height="*"/>
+                                        </Grid.RowDefinitions>
+
+                                        <Label Grid.Row="0" Grid.Column="0" Content="{StaticResource U.NhanSu.KhaiBaoLich.ucKhaiBaoLichCT.Label.TThaiBGhi}" Margin="0,-2,0,0" />
+                                        <TextBox Grid.Row="0" Grid.Column="1" Name="txtTrangThaiBanGhi" />
+
+                                        <Label Grid.Row="2" Grid.Column="0" Content="{StaticResource U.NhanSu.KhaiBaoLich.ucKhaiBaoLichCT.Label.NgayLap}"/>
+                                        <telerik:RadMaskedDateTimeInput Grid.Row="2" Grid.Column="1" HorizontalAlignment="Stretch" Mask="dd/MM/yyyy" Name="txtNgayLap"/>
+
+                                        <Label Grid.Row="4" Grid.Column="0" Content="{StaticResource U.NhanSu.KhaiBaoLich.ucKhaiBaoLichCT.Label.NguoiLap}" Margin="0,-2,0,0"/>
+                                        <TextBox Grid.Row="4" Grid.Column="1" Name="txtNguoiLap"/>
+
+                                        <Label Grid.Row="6" Grid.Column="0" Content="{StaticResource U.NhanSu.KhaiBaoLich.ucKhaiBaoLichCT.Label.NgayCapNhat}"/>
+                                        <telerik:RadMaskedDateTimeInput Grid.Row="6" Grid.Column="1" HorizontalAlignment="Stretch" Mask="dd/MM/yyyy" Name="txtNgayCapNhat"/>
+
+                                        <Label Grid.Row="8" Grid.Column="0" Content="{StaticResource U.NhanSu.KhaiBaoLich.ucKhaiBaoLichCT.Label.NguoiCapNhat}" Margin="0,-2,0,0"/>
+                                        <TextBox Grid.Row="8" Grid.Column="1" Name="txtNguoiCapNhat"/>
+
+                                    </Grid>
+                                </StackPanel>
+                            </GroupBox>
+                        </Grid>
+                    </ScrollViewer>
+                </telerik:RadTabItem>
+            </telerik:RadTabControl>
+        </DockPanel>
+    </Grid>
+</UserControl>

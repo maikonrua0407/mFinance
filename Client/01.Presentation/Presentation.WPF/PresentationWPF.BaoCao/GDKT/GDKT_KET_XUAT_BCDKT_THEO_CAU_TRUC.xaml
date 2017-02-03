@@ -1,0 +1,78 @@
+﻿<UserControl x:Class="PresentationWPF.BaoCao.GDKT.GDKT_KET_XUAT_BCDKT_THEO_CAU_TRUC"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:ribbon="http://schemas.microsoft.com/winfx/2006/xaml/presentation/ribbon" 
+             xmlns:telerikMaskInput="clr-namespace:Telerik.Windows.Controls.MaskedInput;assembly=Telerik.Windows.Controls.Input"
+             xmlns:uc="clr-namespace:PresentationWPF.CustomControl;assembly=PresentationWPF.CustomControl"     
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="800" Loaded="UserControl_Loaded" xmlns:my="clr-namespace:System;assembly=mscorlib">
+    <UserControl.Resources>
+        <!--<my:String x:Key="U.BaoCao.GDKT.GDKT_KET_XUAT_BCDKT_THEO_CAU_TRUC.ThangBaoCao">Tháng báo cáo:</my:String>
+        <my:String x:Key="U.BaoCao.GDKT.GDKT_KET_XUAT_BCDKT_THEO_CAU_TRUC.TaiKhoanCap">Tài khoản cấp:</my:String>
+        <my:String x:Key="U.BaoCao.GDKT.GDKT_KET_XUAT_BCDKT_THEO_CAU_TRUC.LanTaoThu">Lần tạo thứ:</my:String>
+        <my:String x:Key="U.BaoCao.GDKT.GDKT_KET_XUAT_BCDKT_THEO_CAU_TRUC.ThuMucKetQua">Thư mục kết quả:</my:String>-->
+    </UserControl.Resources>
+    <Grid>
+        <DockPanel>
+            <Grid>
+                <GroupBox Header="{DynamicResource BC.GDKT_KET_XUAT_BCDKT_THEO_CAU_TRUC}" Margin="3,10,3,3" Padding="0,10,0,0" >
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="2*" />
+                            <ColumnDefinition Width="20" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="2*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="6" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="6" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="6" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="6" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="15" />
+                        </Grid.RowDefinitions>
+
+                        <Label Content="{DynamicResource U.BaoCao.ChiNhanh}" Grid.Row="0" Grid.Column="0"/>
+                        <telerik:RadComboBox IsEditable="True" Name="cmbChiNhanh" Grid.Row="0" Grid.Column="1" TabIndex="2"/>
+
+                        <Label Content="{DynamicResource U.BaoCao.GDKT.GDKT_KET_XUAT_BCDKT_THEO_CAU_TRUC.ThangBaoCao}" Grid.Row="2" Grid.Column="0"/>
+                        <telerik:RadMaskedDateTimeInput Name="raddtThangBaoCao" Grid.Row="2" Grid.Column="1" Mask="MM/yyyy" HorizontalAlignment="Stretch" Margin="0,0,35,0" TabIndex="4"/>
+                        <DatePicker Grid.Row="2" Grid.Column="1" HorizontalAlignment="Right" Width="30" SelectedDate="{Binding Path=Value,ElementName=raddtThangBaoCao}" TabIndex="6"/>
+
+                        <Label Content="{DynamicResource U.BaoCao.NgayBaoCao}" Grid.Row="2" Grid.Column="3"/>
+                        <telerik:RadMaskedDateTimeInput Name="raddtNgayBaoCao" Grid.Row="2" Grid.Column="4" Mask="dd/MM/yyyy" HorizontalAlignment="Stretch" Margin="0,0,35,0" TabIndex="4"/>
+                        <DatePicker Grid.Row="2" Grid.Column="5" HorizontalAlignment="Right" Width="30" SelectedDate="{Binding Path=Value,ElementName=raddtNgayBaoCao}" TabIndex="6"/>
+
+                        <Label Content="{DynamicResource U.BaoCao.GDKT.GDKT_KET_XUAT_BCDKT_THEO_CAU_TRUC.TaiKhoanCap}" Grid.Row="4" Grid.Column="0"/>
+                        <telerik:RadNumericUpDown Name="nudCap" Grid.Row="4" Grid.Column="1" IsInteger="True" Value="4" Minimum="4" Maximum="6" TabIndex="8"/>
+
+                        <Label Content="{DynamicResource U.BaoCao.GDKT.GDKT_KET_XUAT_BCDKT_THEO_CAU_TRUC.LanTaoThu}" Grid.Row="4" Grid.Column="3" Visibility="Hidden" />
+                        <telerik:RadNumericUpDown Name="nudLanTaoThu" Grid.Row="4" Grid.Column="4" IsInteger="True" Value="1" Minimum="1" Maximum="99" TabIndex="10" Visibility="Hidden" />
+
+
+                        <Label Content="{DynamicResource U.BaoCao.GDKT.GDKT_KET_XUAT_BCDKT_THEO_CAU_TRUC.ThuMucKetQua}" Grid.Row="6" Grid.Column="0"/>
+
+                        <TextBox Name="txtKetQua" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="4" Margin="0,2,28,0" HorizontalAlignment="Stretch" Foreground="#FFFA0000" Text="" />
+                        <Button Name="btnBrowse" Grid.Row="6" Grid.Column="5" Content="F3" Width="30" Margin="0,2,0,0" HorizontalAlignment="Right" Click="btnBrowse_Click" TabIndex="11" />
+                        
+                        <Label Grid.Row="5" Grid.ColumnSpan="7" Height="0.5" Background="DarkGray"  Visibility="Hidden"/>
+
+                        <Label Content="{DynamicResource U.BaoCao.NgonNgu}" Grid.Row="8" Grid.Column="0" Visibility="Hidden"/>
+                        <telerik:RadComboBox IsEditable="True" Name="cmbNgonNgu" Grid.Row="6" Grid.Column="1" Visibility="Hidden"/>
+
+                        <Label Content="{DynamicResource U.BaoCao.DinhDang}" Grid.Row="8" Grid.Column="3" Visibility="Hidden"/>
+                        <telerik:RadComboBox IsEditable="True" Name="cmbDinhDang" Grid.Row="6" Grid.Column="4" Visibility="Hidden"/>
+                    </Grid>
+                </GroupBox>
+            </Grid>
+        </DockPanel>
+    </Grid>
+</UserControl>

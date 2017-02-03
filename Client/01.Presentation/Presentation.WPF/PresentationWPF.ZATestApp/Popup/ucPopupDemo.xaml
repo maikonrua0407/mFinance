@@ -1,0 +1,69 @@
+﻿<UserControl x:Class="PresentationWPF.ZATestApp.Popup.ucPopupDemo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:my="http://schemas.microsoft.com/winfx/2006/xaml/presentation/ribbon"
+             xmlns:custom="clr-namespace:PresentationWPF.CustomControl;assembly=PresentationWPF.CustomControl"
+             xmlns:rules="clr-namespace:PresentationWPF.ZATestApp.Popup"
+             mc:Ignorable="d" d:DesignWidth="624">
+    <Grid>
+        <DockPanel HorizontalAlignment="Stretch" Name="dockMain">
+            <WrapPanel HorizontalAlignment="Stretch" Name="wrapPanelHeader" Orientation="Vertical" DockPanel.Dock="Top">
+                <Grid Name="gridPanelHeader" Height="44" Width="624">
+                    <my:RibbonButton Label="Test" Name="rbtnAdd" Style="{StaticResource RibbonButton}" VerticalAlignment="Top" Click="rbtnTest_Click" HorizontalAlignment="Left" Width="92" Margin="17,12,0,0" Height="22" />
+                </Grid>
+            </WrapPanel>
+            <WrapPanel HorizontalAlignment="Stretch" Name="wrapPanelDonVi" Orientation="Vertical" DockPanel.Dock="Top">
+                <Grid Name="gridPanelDonVi" Height="44" Width="624">
+                    <Label Content="Đơn vị:" Height="23" HorizontalAlignment="Left" Margin="12,8,0,0" Name="lblDonVi" VerticalAlignment="Top" Width="83" />
+                    <TextBox Height="23" HorizontalAlignment="Right" Margin="0,10,434,0" Name="txtMaDonVi" VerticalAlignment="Top" Width="94" />
+                    <my:RibbonButton Label="F3" Margin="201,9,371,0" Name="rbtnDonVi" Style="{StaticResource RibbonButton}" VerticalAlignment="Top" Click="rbtnDonVi_Click" Width="52" />
+                    <Label Content="Tên đơn vị" Height="23" HorizontalAlignment="Right" Margin="0,10,36,0" Name="lblTenDonVi" VerticalAlignment="Top" Width="317" />
+                </Grid>
+            </WrapPanel>
+            <WrapPanel HorizontalAlignment="Stretch" Name="wrapPanelTinhThanh" Orientation="Vertical" DockPanel.Dock="Top">
+                <Grid Name="gridPanelTinhThanh" Height="42" Width="624">
+                    <Label Content="Tỉnh thành:" Height="23" HorizontalAlignment="Left" Margin="12,6,0,0" Name="lblTinhThanh" VerticalAlignment="Top" Width="83" />
+                    <TextBox Height="23" HorizontalAlignment="Left" Margin="96,8,0,0" Name="txtMaTinhThanh" VerticalAlignment="Top" Width="94" />
+                    <my:RibbonButton Label="F3" Margin="201,6,371,0" Name="rbtnTinhThanh" Style="{StaticResource RibbonButton}" VerticalAlignment="Top" Click="rbtnTinhThanh_Click" Width="52" />
+                    <Label Content="Tên tỉnh thành" Height="23" HorizontalAlignment="Right" Margin="0,8,24,0" Name="lblTenTinhThanh" VerticalAlignment="Top" Width="329" />
+                </Grid>
+            </WrapPanel>
+            <WrapPanel HorizontalAlignment="Stretch" Name="wrapPanelQuanHuyen" Orientation="Vertical" DockPanel.Dock="Top">
+                <Grid Name="gridPanelQuanHuyen" Height="42" Width="624">
+                    <Label Content="Quận huyện:" Height="23" HorizontalAlignment="Left" Margin="12,7,0,0" Name="lblQuanHuyen" VerticalAlignment="Top" Width="83" />
+                    <TextBox Height="23" HorizontalAlignment="Left" Margin="96,7,0,0" Name="txtMaQuanHuyen" VerticalAlignment="Top" Width="94" />
+                    <my:RibbonButton Label="F3" Margin="201,6,371,0" Name="rbtnQuanHuyen" Style="{StaticResource RibbonButton}" VerticalAlignment="Top" Click="rbtnQuanHuyen_Click" />
+                    <Label Content="Tên quận huyện" Height="23" Margin="271,7,12,0" Name="lblTenQuanHuyen" VerticalAlignment="Top" />
+                </Grid>
+            </WrapPanel>
+            <WrapPanel HorizontalAlignment="Stretch" Name="wrapPanelPhuongXa" Orientation="Vertical" DockPanel.Dock="Top">
+                <Grid Name="gridPanelPhuongXa" Height="46" Width="624">
+                    <Label Content="Phường xã:" Height="23" HorizontalAlignment="Left" Margin="12,7,0,0" Name="lblPhuongXa" VerticalAlignment="Top" Width="83" />
+                    <TextBox Height="23" HorizontalAlignment="Left" Margin="96,7,0,0" Name="txtMaPhuongXa" VerticalAlignment="Top" Width="94" />
+                    <my:RibbonButton Label="F3" Margin="201,6,371,0" Name="rbtnPhuongXa" Style="{StaticResource RibbonButton}" VerticalAlignment="Top" Click="rbtnPhuongXa_Click" />
+                    <Label Content="Tên phường xã" Height="23" HorizontalAlignment="Right" Margin="0,7,12,0" Name="lblTenPhuongXa" VerticalAlignment="Top" Width="341" />
+                </Grid>
+            </WrapPanel>
+            <WrapPanel HorizontalAlignment="Stretch" Name="wrapPanelTTCB" Orientation="Vertical" DockPanel.Dock="Top">
+                <Grid Name="gridPanelTTCB" Height="145" Width="624">
+                    <Label Content="Tỉnh thành:" Height="23" HorizontalAlignment="Left" Margin="12,15,0,0" Name="lblTTCB" VerticalAlignment="Top" Width="83" />
+                    <ComboBox TabIndex="21" Margin="96,15,246,108" Name="cboTinhThanh" IsEditable="true" KeyDown="cboTinhThanh_KeyDown">
+                    </ComboBox>
+                    <Label Content="Test:" Height="23" HorizontalAlignment="Left" Margin="12,44,0,0" Name="lblTest" VerticalAlignment="Top" Width="83" />
+                    <TextBox Height="23" HorizontalAlignment="Left" Margin="96,44,0,0" Name="txtTest" VerticalAlignment="Top" Width="282">
+                        <TextBox.Text>
+                            <Binding Path="Address" UpdateSourceTrigger="PropertyChanged">
+                                <Binding.ValidationRules>
+                                    <rules:CustomValidationRule MinimumLength="1" MaximumLength="30" 
+										ErrorMessage="Address is required and must be less than 30 letters." />
+                                </Binding.ValidationRules>
+                            </Binding>
+                        </TextBox.Text>
+                    </TextBox>
+                </Grid>
+            </WrapPanel>
+        </DockPanel>
+    </Grid>
+</UserControl>

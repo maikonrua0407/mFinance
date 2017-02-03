@@ -1,0 +1,202 @@
+﻿@using Utilities.Common
+@{
+    ViewBag.Title = "ĐĂNG NHẬP";
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+}
+<script type="text/javascript">
+    $(function () {
+        function rotate(selector) {
+            $(selector).animate({ left: $('.load').width() }, 2000, function () {
+                $(selector).css("left", -($(selector).width()) + "px");
+                rotate(selector);
+            });
+        }
+
+        rotate('.bar');
+
+        $('#txtUser').focus();
+        $('#txtUser').keypress(function (e) {
+            if (e.which == 13) {
+                Login();
+            }
+        });
+        $('#txtPass').keypress(function (e) {
+            if (e.which == 13) {
+                Login();
+            }
+        });
+    });
+
+    function ChonPhongGd() {
+        var idPhongGd = $('#cboDiemGD').val();
+        if (idPhongGd == undefined) idPhongGd = 0;
+        $.getJSON("@Html.Raw(Url.Action("ChonDiemGd", "Login"))", {
+            idPhongGd: idPhongGd
+        }, function () {
+            $('#btnFinish').focus();
+        });
+    }
+
+    function SaveDiemGd() {
+        ShowProcess(null, false);
+        var idPhongGd = $('#cboDiemGD').val();
+        if (idPhongGd == undefined) idPhongGd = 0;
+        $.getJSON("@Html.Raw(Url.Action("ChonDiemGd", "Login"))", {
+            idPhongGd: idPhongGd
+        }, function (data) {
+            if (data == WARNING_SUCCESS) {
+                window.location.href = '@Url.Action("Index", "Home", new {module = "HomePage"})';
+            } else {
+                $('#container_work').load("@Html.Raw(Url.Action("LoadKho", "Login"))", {},
+                    function () {
+                        $('#btnFinish').focus();
+                        CloseProcess();
+                    });
+            }
+        });
+    }
+
+    function Login() {
+        if ($('#txtUser').val() == "") {
+            $('#spError').html('Nhập tên truy cập');
+            $('#lbError').show();
+            $('#txtUser').focus();
+            return;
+        }
+        if ($('#txtPass').val() == "") {
+            $('#spError').html('Nhập mật khẩu');
+            $('#lbError').show();
+            $('#txtPass').focus();
+            return;
+        }
+        ShowProcess(null, false);
+        $.getJSON("@Html.Raw(Url.Action("CheckLogin", "Login"))", {
+            user: $('#txtUser').val(),
+            password: $('#txtPass').val(),
+            width: $(window).width(),
+            height: $(window).height()
+        }, function (data) {
+            if (data == "CONNECT_FAILT") {
+                CloseProcess();
+                $('#spError').html('Lỗi kết nối tới cơ sở dữ liệu.');
+                $('#lbError').show();
+            } else if (data == "NOKHO") {
+                show_box('cacheIndex-box');
+            } else if (data == "LOGIN_FAIL") {
+                CloseProcess();
+                $('#spError').html('Đăng nhập bị lỗi. Hãy kiểm tra lại tên đăng nhập hoặc mật khẩu.');
+                $('#lbError').show();
+            } else if (data == "ACCOUNT_NOT_CREATE") {
+                CloseProcess();
+                $('#spError').html('Tài khoản này chưa được kích hoạt, liên hệ với admin.');
+                $('#lbError').show();
+            } else if (data == WARNING_SUCCESS) {
+                window.location.href = '@Url.Action("Index", "Home", new {module = "HomePage"})';
+            } else {
+                $('#lbError').hide();
+                //load combo kho
+                $('#container_work').load("@Html.Raw(Url.Action("LoadKho", "Login"))", {},
+                    function () {
+                        show_box('branch-box', 'login-box');
+                        $('#btnFinish').focus();
+                        CloseProcess();
+                    });
+            }
+        });
+    }
+
+    function ChangeLanguage(lang) {
+        if (lang == 'undefined') lang = 'vi';
+        $.getJSON("@Html.Raw(Url.Action("ChangeLanguage", "Login"))", {
+            lang: lang
+        }, function (data) {
+            if (data == WARNING_SUCCESS) {
+                window.location.href = '@Url.Action("Index", "Login")';
+            }
+        });
+    }
+
+    function show_box(idShow, idHide) {
+        $('.loader').hide();
+        $('#' + idShow).show();
+        $('#' + idHide).hide();
+    }
+</script>
+@{
+    var headerLogin = "";
+    var txtUserPlaceholder = "";
+    var txtPassPlaceholder = "";
+    var btnLogin = "";
+
+    var headerWorkPlace = "";
+    var btnSubmit = "";
+    var btnBack = "";
+    if (PresentationAspNet.MVC.UserInformation.Session_User.IsNullOrEmpty() || PresentationAspNet.MVC.UserInformation.Session_User.NgonNgu == "vi")
+    {
+        headerLogin = "HỆ THỐNG mFINACE";
+        txtUserPlaceholder = "Tên truy cập";
+        txtPassPlaceholder = "Mật khẩu";
+        btnLogin = "Đăng nhập";
+
+        headerWorkPlace = "CHỌN ĐƠN VỊ LÀM VIỆC";
+        btnSubmit = "Hoàn tất";
+        btnBack = "Quay lại";
+    }
+    else
+    {
+        headerLogin = "mFINACE SYSTEM";
+        txtUserPlaceholder = "User name";
+        txtPassPlaceholder = "Password";
+        btnLogin = "Login";
+
+        headerWorkPlace = "SELECT WORK PLACE";
+        btnSubmit = "Submit";
+        btnBack = "Back";
+
+    }
+}
+
+<div class="login-form" id="login-box">
+    <h3 class="form-title">@headerLogin</h3>
+    <div class="alert alert-danger display-hide">
+        <button class="close" data-close="alert"></button>
+        <span>
+            Enter any username and password.
+        </span>
+    </div>
+    <div class="form-group">
+        <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
+        <label class="control-label visible-ie8 visible-ie9">@txtUserPlaceholder</label>
+        <div class="input-icon">
+            <i class="fa fa-user"></i>
+            <input class="form-control placeholder-no-fix" type="text" id="txtUser" autocomplete="off" placeholder="@txtUserPlaceholder" name="username" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label visible-ie8 visible-ie9">@txtPassPlaceholder</label>
+        <div class="input-icon">
+            <i class="fa fa-lock"></i>
+            <input class="form-control placeholder-no-fix" type="password" id="txtPass" autocomplete="off" placeholder="@txtPassPlaceholder" name="password" />
+        </div>
+    </div>
+    <div class="form-actions">
+        <label class="checkbox">
+            <input type="checkbox" name="remember" value="1" /> Remember me
+        </label>
+        <button onclick=" Login(); " class="btn green pull-right">
+            @btnLogin <i class="m-icon-swapright m-icon-white"></i>
+        </button>
+    </div>
+</div>
+<div id="branch-box" style="display: none;">
+    <h3 class="form-title">@headerWorkPlace</h3>
+    <div id="container_work"></div>
+    <div class="form-actions" style="margin: 10px;">
+        <button onclick="show_box('login-box','branch-box');" class="btn green pull-left">
+            <i class="m-icon-swapleft m-icon-white"></i> &nbsp;@btnBack
+        </button>
+        <button id="btnFinish" onclick=" SaveDiemGd(); " class="btn green pull-right">
+            @btnSubmit <i class="m-icon-swapright m-icon-white"></i>
+        </button>
+    </div>
+</div>

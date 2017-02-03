@@ -1,0 +1,276 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/CommunicationServices.QuanTriHeThong.Messages" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/CommunicationServices.QuanTriHeThong.Messages" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" />
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Utilities.Common" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/BusinessServices.QuanTriHeThong.DTO" />
+  <xs:complexType name="LayDSNgayLamViecRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" base="q1:RequestBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Month" type="xs:int" />
+          <xs:element minOccurs="0" name="Year" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LayDSNgayLamViecRequest" nillable="true" type="tns:LayDSNgayLamViecRequest" />
+  <xs:complexType name="LayDSNgayLamViecResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" base="q2:ResponseBase">
+        <xs:sequence>
+          <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ListNgayLamViec" nillable="true" type="q3:ArrayOfboolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LayDSNgayLamViecResponse" nillable="true" type="tns:LayDSNgayLamViecResponse" />
+  <xs:complexType name="LuuLichRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q4="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" base="q4:RequestBase">
+        <xs:sequence>
+          <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="ListHT_LICH" nillable="true" type="q5:ArrayOfHT_LICH" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LuuLichRequest" nillable="true" type="tns:LuuLichRequest" />
+  <xs:complexType name="LuuLichResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q6="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" base="q6:ResponseBase">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LuuLichResponse" nillable="true" type="tns:LuuLichResponse" />
+  <xs:complexType name="PhanQuyenRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q7="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" base="q7:RequestBase">
+        <xs:sequence>
+          <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="dsCNangPQuyenXoa" nillable="true" type="q8:ArrayOfHT_CNANG_PQUYEN" />
+          <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="dsCNangTNangThem" nillable="true" type="q9:ArrayOfHT_CNANG_TNANG" />
+          <xs:element minOccurs="0" name="idDoiTuong" type="xs:int" />
+          <xs:element minOccurs="0" name="loaiDoiTuong" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="loaiTaiNguyen" nillable="true" type="xs:string" />
+          <xs:element xmlns:q10="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="lstIdChucNang" nillable="true" type="q10:ArrayOfint" />
+          <xs:element xmlns:q11="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="lstIdMenu" nillable="true" type="q11:ArrayOfint" />
+          <xs:element xmlns:q12="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="lstIdTinhNang" nillable="true" type="q12:ArrayOfint" />
+          <xs:element minOccurs="0" name="lstPhanQuyen" nillable="true" type="tns:ArrayOfDSChucNangDto" />
+          <xs:element minOccurs="0" name="maDoiTuong" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="maDonVi" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="maPhanHe" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="maTaiNguyen" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="nguoiCapNhat" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PhanQuyenRequest" nillable="true" type="tns:PhanQuyenRequest" />
+  <xs:complexType name="ArrayOfDSChucNangDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DSChucNangDto" nillable="true" type="tns:DSChucNangDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDSChucNangDto" nillable="true" type="tns:ArrayOfDSChucNangDto" />
+  <xs:complexType name="DSChucNangDto">
+    <xs:sequence>
+      <xs:element xmlns:q13="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="lstChucNang" nillable="true" type="q13:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DSChucNangDto" nillable="true" type="tns:DSChucNangDto" />
+  <xs:complexType name="PhanQuyenResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q14="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" base="q14:ResponseBase">
+        <xs:sequence>
+          <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="ListChucNang" nillable="true" type="q15:ArrayOfHT_CNANG" />
+          <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="ListChucNangPhanQuyen" nillable="true" type="q16:ArrayOfHT_CNANG_PQUYEN" />
+          <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="ListChucNangTinhNang" nillable="true" type="q17:ArrayOfHT_CNANG_TNANG" />
+          <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="ListTaiNguyen" nillable="true" type="q18:ArrayOfHT_TNGUYEN" />
+          <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="ListTaiNguyenKhaiThac" nillable="true" type="q19:ArrayOfHT_TNGUYEN_KTHAC" />
+          <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="ListTinhNang" nillable="true" type="q20:ArrayOfHT_TNANG" />
+          <xs:element minOccurs="0" name="bKetQua" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PhanQuyenResponse" nillable="true" type="tns:PhanQuyenResponse" />
+  <xs:complexType name="NguoiDungRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q21="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" base="q21:RequestBase">
+        <xs:sequence>
+          <xs:element xmlns:q22="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="listID" nillable="true" type="q22:ArrayOfint" />
+          <xs:element minOccurs="0" name="listPhamVi" nillable="true" type="tns:ArrayOfPhamViDto" />
+          <xs:element xmlns:q23="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="lstIdNHNSD" nillable="true" type="q23:ArrayOfint" />
+          <xs:element xmlns:q24="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="lstIdNSD" nillable="true" type="q24:ArrayOfint" />
+          <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstTruyCap" nillable="true" type="q25:ArrayOfHT_TRUY_CAP" />
+          <xs:element minOccurs="0" name="maLoaiPhamVi" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="maNguoiDung" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="newPassword" nillable="true" type="xs:string" />
+          <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objNHNSD" nillable="true" type="q26:HT_NHNSD" />
+          <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objNSD" nillable="true" type="q27:HT_NSD" />
+          <xs:element minOccurs="0" name="oldPassword" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="NguoiDungRequest" nillable="true" type="tns:NguoiDungRequest" />
+  <xs:complexType name="ArrayOfPhamViDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PhamViDto" nillable="true" type="tns:PhamViDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPhamViDto" nillable="true" type="tns:ArrayOfPhamViDto" />
+  <xs:complexType name="PhamViDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IdLoaiPvi" type="xs:int" />
+      <xs:element minOccurs="0" name="IdPvi" type="xs:int" />
+      <xs:element minOccurs="0" name="MaLoaiPvi" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MaPvi" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TenPvi" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PhamViDto" nillable="true" type="tns:PhamViDto" />
+  <xs:complexType name="NguoiDungResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q28="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" base="q28:ResponseBase">
+        <xs:sequence>
+          <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="ListDonVi" nillable="true" type="q29:ArrayOfDM_DON_VI" />
+          <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="ListNHNSD" nillable="true" type="q30:ArrayOfHT_NHNSD" />
+          <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="ListNSD" nillable="true" type="q31:ArrayOfHT_NSD" />
+          <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="ListPhongGD" nillable="true" type="q32:ArrayOfDM_DON_VI" />
+          <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="NHNSD" nillable="true" type="q33:HT_NHNSD" />
+          <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="NSD" nillable="true" type="q34:HT_NSD" />
+          <xs:element minOccurs="0" name="bKetQua" type="xs:boolean" />
+          <xs:element minOccurs="0" name="iKetQua" type="xs:int" />
+          <xs:element minOccurs="0" name="listPhamVi" nillable="true" type="tns:ArrayOfPhamViDto" />
+          <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstTruyCap" nillable="true" type="q35:ArrayOfHT_TRUY_CAP" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="NguoiDungResponse" nillable="true" type="tns:NguoiDungResponse" />
+  <xs:complexType name="ThamSoRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q36="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" base="q36:RequestBase">
+        <xs:sequence>
+          <xs:element xmlns:q37="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="listID" nillable="true" type="q37:ArrayOfint" />
+          <xs:element minOccurs="0" name="loaiThamSo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="maDonVi" nillable="true" type="xs:string" />
+          <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objLoaiThamSo" nillable="true" type="q38:HT_TSO_LOAI" />
+          <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objThamSo" nillable="true" type="q39:HT_TSO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ThamSoRequest" nillable="true" type="tns:ThamSoRequest" />
+  <xs:complexType name="ThamSoResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q40="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" base="q40:ResponseBase">
+        <xs:sequence>
+          <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="ListLoaiThamSo" nillable="true" type="q41:ArrayOfHT_TSO_LOAI" />
+          <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="ListThamSo" nillable="true" type="q42:ArrayOfHT_TSO" />
+          <xs:element minOccurs="0" name="bKetQua" type="xs:boolean" />
+          <xs:element minOccurs="0" name="iKetQua" type="xs:int" />
+          <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objThamSo" nillable="true" type="q43:HT_TSO" />
+          <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/Utilities.Common" minOccurs="0" name="responseMessage" type="q44:ApplicationConstant.NghiepVuResponseMessage" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ThamSoResponse" nillable="true" type="tns:ThamSoResponse" />
+  <xs:complexType name="PhienBanRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q45="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" base="q45:RequestBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ClientVersion" nillable="true" type="xs:string" />
+          <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="HtPban" nillable="true" type="q46:HT_PBAN" />
+          <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="HtPbanCtiet" nillable="true" type="q47:HT_PBAN_CTIET" />
+          <xs:element minOccurs="0" name="LastestClientVersion" nillable="true" type="xs:string" />
+          <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="ListHtPbanCtiet" nillable="true" type="q48:ArrayOfHT_PBAN_CTIET" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PhienBanRequest" nillable="true" type="tns:PhienBanRequest" />
+  <xs:complexType name="PhienBanResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q49="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" base="q49:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ClientVersion" nillable="true" type="xs:string" />
+          <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="HtPban" nillable="true" type="q50:HT_PBAN" />
+          <xs:element minOccurs="0" name="LastestClientVersion" nillable="true" type="xs:string" />
+          <xs:element xmlns:q51="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="ListHtPbanCtiet" nillable="true" type="q51:ArrayOfHT_PBAN_CTIET" />
+          <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="ListHtPbanFile" nillable="true" type="q52:ArrayOfHT_PBAN_FILE" />
+          <xs:element minOccurs="0" name="PhienBanDTO" nillable="true" type="tns:PhienBanDTO" />
+          <xs:element minOccurs="0" name="PhienBanItemDTO" nillable="true" type="tns:PhienBanItemDTO" />
+          <xs:element minOccurs="0" name="ServerVersion" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PhienBanResponse" nillable="true" type="tns:PhienBanResponse" />
+  <xs:complexType name="PhienBanDTO">
+    <xs:sequence>
+      <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="HtPban" nillable="true" type="q53:HT_PBAN" />
+      <xs:element minOccurs="0" name="ListPhienBanItemDTO" nillable="true" type="tns:ArrayOfPhienBanItemDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PhienBanDTO" nillable="true" type="tns:PhienBanDTO" />
+  <xs:complexType name="ArrayOfPhienBanItemDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PhienBanItemDTO" nillable="true" type="tns:PhienBanItemDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPhienBanItemDTO" nillable="true" type="tns:ArrayOfPhienBanItemDTO" />
+  <xs:complexType name="PhienBanItemDTO">
+    <xs:sequence>
+      <xs:element xmlns:q54="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="HtPbanCtiet" nillable="true" type="q54:HT_PBAN_CTIET" />
+      <xs:element xmlns:q55="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" minOccurs="0" name="HtPbanData" nillable="true" type="q55:FileBase" />
+      <xs:element xmlns:q56="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="HtPbanFile" nillable="true" type="q56:HT_PBAN_FILE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PhienBanItemDTO" nillable="true" type="tns:PhienBanItemDTO" />
+  <xs:complexType name="PhamViRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q57="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" base="q57:RequestBase">
+        <xs:sequence>
+          <xs:element xmlns:q58="http://schemas.datacontract.org/2004/07/BusinessServices.QuanTriHeThong.DTO" minOccurs="0" name="objPhamVi" nillable="true" type="q58:PHAM_VI" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PhamViRequest" nillable="true" type="tns:PhamViRequest" />
+  <xs:complexType name="PhamViResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q59="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" base="q59:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="bKetQua" type="xs:boolean" />
+          <xs:element minOccurs="0" name="iKetQua" type="xs:int" />
+          <xs:element xmlns:q60="http://schemas.datacontract.org/2004/07/BusinessServices.QuanTriHeThong.DTO" minOccurs="0" name="objPhamVi" nillable="true" type="q60:PHAM_VI" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PhamViResponse" nillable="true" type="tns:PhamViResponse" />
+  <xs:complexType name="ChucNangRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q61="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" base="q61:RequestBase">
+        <xs:sequence>
+          <xs:element xmlns:q62="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="htCNang" nillable="true" type="q62:HT_CNANG" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ChucNangRequest" nillable="true" type="tns:ChucNangRequest" />
+  <xs:complexType name="ChucNangResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q63="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" base="q63:ResponseBase">
+        <xs:sequence>
+          <xs:element xmlns:q64="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="htCNang" nillable="true" type="q64:HT_CNANG" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ChucNangResponse" nillable="true" type="tns:ChucNangResponse" />
+</xs:schema>

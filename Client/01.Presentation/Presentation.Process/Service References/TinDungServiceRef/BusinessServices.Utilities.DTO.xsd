@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/BusinessServices.Utilities.DTO" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/BusinessServices.Utilities.DTO" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfTHONG_TIN_TIEN_LAI">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="THONG_TIN_TIEN_LAI" nillable="true" type="tns:THONG_TIN_TIEN_LAI" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTHONG_TIN_TIEN_LAI" nillable="true" type="tns:ArrayOfTHONG_TIN_TIEN_LAI" />
+  <xs:complexType name="THONG_TIN_TIEN_LAI">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DEN_NGAY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DOI_TUONG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LAI_SUAT" type="xs:decimal" />
+      <xs:element minOccurs="0" name="SO_NGAY_TINH_LAI" type="xs:int" />
+      <xs:element minOccurs="0" name="SO_THANG_TINH_LAI" type="xs:int" />
+      <xs:element minOccurs="0" name="SO_TIEN" type="xs:decimal" />
+      <xs:element minOccurs="0" name="SO_TIEN_LAI" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TU_NGAY" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="THONG_TIN_TIEN_LAI" nillable="true" type="tns:THONG_TIN_TIEN_LAI" />
+  <xs:complexType name="BIEU_PHI_DTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DSACH_BPHI_CT" nillable="true" type="tns:ArrayOfBIEU_PHI_CTIET_DTO" />
+      <xs:element minOccurs="0" name="HTHUC_BTHANG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID_BPHI" type="xs:int" />
+      <xs:element minOccurs="0" name="LOAI_BPHI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LOAI_TIEN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_BPHI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_ADUNG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_HHAN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TCHAT_BPHI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TEN_BPHI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TY_LE_VAT" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BIEU_PHI_DTO" nillable="true" type="tns:BIEU_PHI_DTO" />
+  <xs:complexType name="ArrayOfBIEU_PHI_CTIET_DTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BIEU_PHI_CTIET_DTO" nillable="true" type="tns:BIEU_PHI_CTIET_DTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBIEU_PHI_CTIET_DTO" nillable="true" type="tns:ArrayOfBIEU_PHI_CTIET_DTO" />
+  <xs:complexType name="BIEU_PHI_CTIET_DTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ID_BPHI" type="xs:int" />
+      <xs:element minOccurs="0" name="LOAI_BPHI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_BPHI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SO_TIEN_PHI" type="xs:decimal" />
+      <xs:element minOccurs="0" name="SO_TIEN_TDA" type="xs:decimal" />
+      <xs:element minOccurs="0" name="SO_TIEN_TINH_PHI" type="xs:decimal" />
+      <xs:element minOccurs="0" name="SO_TIEN_TTHIEU" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TEN_BPHI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TY_LE_PHI" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TY_LE_VAT" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BIEU_PHI_CTIET_DTO" nillable="true" type="tns:BIEU_PHI_CTIET_DTO" />
+</xs:schema>

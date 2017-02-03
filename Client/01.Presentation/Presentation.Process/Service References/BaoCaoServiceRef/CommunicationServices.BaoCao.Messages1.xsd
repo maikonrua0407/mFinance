@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/CommunicationServices.BaoCao.Messages" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/CommunicationServices.BaoCao.Messages" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="" namespace="http://schemas.datacontract.org/2004/07/Utilities.Common" />
+  <xs:import schemaLocation="" namespace="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" />
+  <xs:import schemaLocation="" namespace="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" />
+  <xs:import schemaLocation="" namespace="http://schemas.datacontract.org/2004/07/BusinessServices.BaoCao.DoiTuong" />
+  <xs:complexType name="BaoCaoRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" base="q1:RequestBase">
+        <xs:sequence>
+          <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Utilities.Common" minOccurs="0" name="LoaiXuatExcel" type="q2:DatabaseConstant.DanhSachXuatExcel" />
+          <xs:element minOccurs="0" name="dsDuLieuBaoCao" nillable="true">
+            <xs:complexType>
+              <xs:annotation>
+                <xs:appinfo>
+                  <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+                </xs:appinfo>
+              </xs:annotation>
+              <xs:sequence>
+                <xs:element ref="xs:schema" />
+                <xs:any />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element minOccurs="0" name="dtParameter" nillable="true">
+            <xs:complexType>
+              <xs:annotation>
+                <xs:appinfo>
+                  <ActualType Name="DataTable" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+                </xs:appinfo>
+              </xs:annotation>
+              <xs:sequence>
+                <xs:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                <xs:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="htBaoCao" nillable="true" type="q3:HT_BAOCAO" />
+          <xs:element minOccurs="0" name="idBaoCao" type="xs:int" />
+          <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstBCTKDuLieu" nillable="true" type="q4:ArrayOfBC_BCTK_DU_LIEU" />
+          <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstHtBaoCaoTso" nillable="true" type="q5:ArrayOfHT_BAOCAO_TSO" />
+          <xs:element minOccurs="0" name="maBaoCao" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="maPhanHeBaoCao" nillable="true" type="xs:string" />
+          <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objBCTKDuLieu" nillable="true" type="q6:BC_BCTK_DU_LIEU" />
+          <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objBieuMau" nillable="true" type="q7:BC_BIEUMAU" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="BaoCaoRequest" nillable="true" type="tns:BaoCaoRequest" />
+  <xs:complexType name="BaoCaoResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q8="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" base="q8:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="dsDuLieuBaoCao" nillable="true">
+            <xs:complexType>
+              <xs:annotation>
+                <xs:appinfo>
+                  <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+                </xs:appinfo>
+              </xs:annotation>
+              <xs:sequence>
+                <xs:element ref="xs:schema" />
+                <xs:any />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element minOccurs="0" name="duLieuBaoCao" nillable="true" type="tns:DuLieuBaoCaoDTO" />
+          <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="htBaoCao" nillable="true" type="q9:HT_BAOCAO" />
+          <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstBCTKDuLieu" nillable="true" type="q10:ArrayOfBC_BCTK_DU_LIEU" />
+          <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstBaoCao" nillable="true" type="q11:ArrayOfHT_CNANG" />
+          <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstHtBaoCaoTso" nillable="true" type="q12:ArrayOfHT_BAOCAO_TSO" />
+          <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objBCTKDuLieu" nillable="true" type="q13:BC_BCTK_DU_LIEU" />
+          <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objBieuMau" nillable="true" type="q14:BC_BIEUMAU" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="BaoCaoResponse" nillable="true" type="tns:BaoCaoResponse" />
+  <xs:complexType name="DuLieuBaoCaoDTO">
+    <xs:sequence>
+      <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="baoCao" nillable="true" type="q15:HT_CNANG" />
+      <xs:element minOccurs="0" name="dsDuLieuBaoCao" nillable="true">
+        <xs:complexType>
+          <xs:annotation>
+            <xs:appinfo>
+              <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+            </xs:appinfo>
+          </xs:annotation>
+          <xs:sequence>
+            <xs:element ref="xs:schema" />
+            <xs:any />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" minOccurs="0" name="fileDuLieuBaoCao" nillable="true" type="q16:FileBase" />
+      <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" minOccurs="0" name="lstFileDuLieuBaoCao" nillable="true" type="q17:ArrayOfFileBase" />
+      <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="thamSoBaoCao" nillable="true" type="q18:HT_CNANG_TSO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DuLieuBaoCaoDTO" nillable="true" type="tns:DuLieuBaoCaoDTO" />
+  <xs:complexType name="VanHanhGiaoDichRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q19="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" base="q19:RequestBase">
+        <xs:sequence>
+          <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/BusinessServices.BaoCao.DoiTuong" minOccurs="0" name="objDoiTuongBaoCao" nillable="true" type="q20:DoiTuongBaoCao" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="VanHanhGiaoDichRequest" nillable="true" type="tns:VanHanhGiaoDichRequest" />
+  <xs:complexType name="VanHanhGiaoDichResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q21="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" base="q21:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="duLieuBaoCao" nillable="true" type="tns:DuLieuBaoCaoDTO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="VanHanhGiaoDichResponse" nillable="true" type="tns:VanHanhGiaoDichResponse" />
+</xs:schema>

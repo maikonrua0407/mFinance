@@ -1,0 +1,50 @@
+﻿<UserControl x:Class="PresentationWPF.KhaiThacDuLieu.KhaiThac.ucKhaiThacTheoChiTieu"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:ribbon="http://schemas.microsoft.com/winfx/2006/xaml/presentation/ribbon" 
+             xmlns:telerikMaskInput="clr-namespace:Telerik.Windows.Controls.MaskedInput;assembly=Telerik.Windows.Controls.Input"
+             xmlns:uc="clr-namespace:PresentationWPF.CustomControl;assembly=PresentationWPF.CustomControl"   
+             xmlns:local="clr-namespace:PresentationWPF.KhaiThacDuLieu.KhaiThac"
+             xmlns:my="clr-namespace:System;assembly=mscorlib"
+             mc:Ignorable="d"
+             d:DesignHeight="768" d:DesignWidth="1024" Loaded="UserControl_Loaded">
+    <UserControl.CommandBindings>
+        <CommandBinding CanExecute="HelpCommand_CanExecute" Executed="HelpCommand_Executed" Command="{x:Static local:ucKhaiThacTheoChiTieu.HelpCommand}">
+        </CommandBinding>
+        <CommandBinding CanExecute="CloseCommand_CanExecute" Executed="CloseCommand_Executed" Command="{x:Static local:ucKhaiThacTheoChiTieu.CloseCommand}">
+        </CommandBinding>
+    </UserControl.CommandBindings>
+    <UserControl.Resources>
+        <!--<my:String x:Key="U.KhaiThacDuLieu.KhaiThac.ucKhaiThacTheoChiTieu.TongHop">Tổng hợp</my:String>-->
+    </UserControl.Resources>
+    <Grid>
+        <DockPanel>
+            <DockPanel HorizontalAlignment="Stretch" DockPanel.Dock="Top" Margin="3,3,0,3" LastChildFill="False" Name="docToolbar">
+                <WrapPanel Name="Toolbar">
+                    <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbHelp" DockPanel.Dock="Left" Label="{DynamicResource U.DungChung.Button.TroGiup}"  SmallImageSource="/Utilities.Common;component/Images/Action/help.png" Style="{StaticResource RibbonButton}" Click="tlbHotKey_Click" />
+                    <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbClose" DockPanel.Dock="Left" Label="{DynamicResource U.DungChung.Button.Dong}"  SmallImageSource="/Utilities.Common;component/Images/Action/close.png" Style="{StaticResource RibbonButton}" Click="tlbHotKey_Click" />
+                    <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbView" DockPanel.Dock="Left" Label="{DynamicResource U.KhaiThacDuLieu.KhaiThac.ucKhaiThacTheoChiTieu.TongHop}"  SmallImageSource="/Utilities.Common;component/Images/Action/detail_process.png" Style="{StaticResource RibbonButton}" Click="tlbView_Click"/>
+                </WrapPanel>
+            </DockPanel>
+            <Grid Name="gridMain">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="30*"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="70*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <GridSplitter Grid.Column="1" ResizeDirection="Auto" Grid.RowSpan="3" Width="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" ShowsPreview="False" />
+                <TextBox Text="{DynamicResource U.DungChung.TimKiemNhanh}" Name="txtTimKiemNhanh" Grid.Column="0" Grid.Row="0" Margin="5,0,0,0" />
+                <telerik:RadGridView Grid.Column="0" Grid.Row="1" Margin="5,0,0,0" Name="grDSBaoCao" ColumnWidth="*" SelectionMode="Single" ShowGroupPanel="False" CanUserFreezeColumns="False" RowIndicatorVisibility="Collapsed" HorizontalAlignment="Stretch" DockPanel.Dock="Top" Loaded="grDSBaoCao_Loaded" >
+                </telerik:RadGridView>
+                <Frame Grid.Column="2" Grid.RowSpan="2" Margin="3" Name="frFormInput" NavigationUIVisibility="Hidden" />
+            </Grid>
+        </DockPanel>
+    </Grid>
+</UserControl>

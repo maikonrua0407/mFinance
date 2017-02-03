@@ -1,0 +1,812 @@
+﻿
+/* css nha cung cap */
+#dialog-ncc {
+    width: 100%;
+    height: 1000%;
+    filter: alpha(opacity=50);
+    opacity: 0.5;
+    background: #000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3000;
+    display: none;
+}
+
+#dialog-box-ncc {
+    background: #eee;
+    width: 60%;
+    position: fixed;
+    z-index: 5000;
+    display: none;
+}
+
+    #dialog-box-ncc .dialog-content-ncc {
+        text-align: left;
+        margin: 1px;
+        color: #696969;
+        font-family: arial;
+        font-size: 12px;
+        border-radius: 5px;
+        border: 1px solid #20b0f0;
+    }
+
+/* css khach hang */
+#dialog-khachHang {
+    width: 100%;
+    height: 1000%;
+    filter: alpha(opacity=50);
+    opacity: 0.5;
+    background: #000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3000;
+    display: none;
+}
+
+#dialog-box-khachHang {
+    background: #eee;
+    width: 60%;
+    position: fixed;
+    z-index: 5000;
+    display: none;
+}
+
+    #dialog-box-khachHang .dialog-content-khachHang {
+        margin: 1px;
+        color: #696969;
+        font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-size: 12px;
+    }
+
+/* css them nha cung cap */
+#dialog-addNcc {
+    width: 100%;
+    height: 1000%;
+    filter: alpha(opacity=50);
+    opacity: 0.5;
+    background: #000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3000;
+    display: none;
+}
+
+#dialog-box-addNcc {
+    background: #eee;
+    width: 60%;
+    position: fixed;
+    z-index: 5000;
+    display: none;
+}
+
+    #dialog-box-addNcc .dialog-content-addNcc {
+        margin: 1px;
+        color: #696969;
+        font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-size: 12px;
+    }
+
+/* css them khach hang*/
+#dialog-addKH {
+    width: 100%;
+    height: 1000%;
+    filter: alpha(opacity=50);
+    opacity: 0.5;
+    background: #000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3000;
+    display: none;
+}
+
+#dialog-box-addKH {
+    background: #eee;
+    width: 60%;
+    position: fixed;
+    z-index: 5000;
+    display: none;
+}
+
+    #dialog-box-addKH .dialog-content-addKH {
+        margin: 1px;
+        color: #696969;
+        font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-size: 12px;
+    }
+
+/* css so dia chi */
+#dialog-soDiaChi {
+    width: 100%;
+    height: 1000%;
+    filter: alpha(opacity=50);
+    opacity: 0.5;
+    background: #000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3000;
+    display: none;
+}
+
+#dialog-box-soDiaChi {
+    background: #eee;
+    width: 60%;
+    position: fixed;
+    z-index: 5000;
+    display: none;
+}
+
+    #dialog-box-soDiaChi .dialog-content-soDiaChi {
+        margin: 1px;
+        color: #696969;
+        font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-size: 12px;
+    }
+
+/* css chon phieu online */
+#dialog-chonPhieuOnline {
+    width: 100%;
+    height: 1000%;
+    filter: alpha(opacity=50);
+    opacity: 0.5;
+    background: #000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3000;
+    display: none;
+}
+
+#dialog-box-chonPhieuOnline {
+    background: #eee;
+    width: 70%;
+    position: fixed;
+    z-index: 5000;
+    display: none;
+}
+
+    #dialog-box-chonPhieuOnline .dialog-content-chonPhieuOnline {
+        margin: 1px;
+        color: #696969;
+        font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-size: 12px;
+    }
+
+/* css chon kho lam viec */
+#dialog-kho {
+    width: 100%;
+    height: 1000%;
+    filter: alpha(opacity=50);
+    opacity: 0.5;
+    background: #000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3000;
+    display: none;
+}
+
+#dialog-box-kho {
+    background: #eee;
+    width: 30%;
+    position: fixed;
+    z-index: 5000;
+    display: none;
+}
+
+    #dialog-box-kho .dialog-content-kho {
+        margin: 1px;
+        color: #696969;
+        font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-size: 12px;
+    }
+
+/* css diem ban theo kho */
+#dialog-DiemGd {
+    width: 100%;
+    height: 1000%;
+    filter: alpha(opacity=50);
+    opacity: 0.5;
+    background: #000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3000;
+    display: none;
+}
+
+#dialog-box-DiemGd {
+    background: #eee;
+    width: 30%;
+    position: fixed;
+    z-index: 5000;
+    display: none;
+}
+
+    #dialog-box-DiemGd .dialog-content-DiemGd {
+        margin: 1px;
+        color: #696969;
+        font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-size: 12px;
+    }
+
+/* css duyet phieu de xuat */
+#dialog-Duyet {
+    width: 100%;
+    height: 1000%;
+    filter: alpha(opacity=50);
+    opacity: 0.5;
+    background: #000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3000;
+    display: none;
+}
+
+#dialog-box-Duyet {
+    background: #eee;
+    width: 30%;
+    position: fixed;
+    z-index: 5000;
+    display: none;
+}
+
+    #dialog-box-Duyet .dialog-content-Duyet {
+        margin: 1px;
+        color: #696969;
+        font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-size: 12px;
+    }
+
+/* css huy phieu online */
+#dialog-confirmHuyPhieuOnline {
+    width: 100%;
+    height: 1000%;
+    filter: alpha(opacity=50);
+    opacity: 0.5;
+    background: #000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3000;
+    display: none;
+}
+
+#dialog-box-confirmHuyPhieuOnline {
+    background: #eee;
+    width: 30%;
+    position: fixed;
+    z-index: 5000;
+    display: none;
+}
+
+    #dialog-box-confirmHuyPhieuOnline .dialog-content-confirmHuyPhieuOnline {
+        margin: 1px;
+        color: #696969;
+        font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-size: 12px;
+    }
+
+/* css ghi no */
+#dialog-ghino {
+    width: 100%;
+    height: 1000%;
+    filter: alpha(opacity=50);
+    opacity: 0.5;
+    background: #000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3000;
+    display: none;
+}
+
+#dialog-box-ghino {
+    background: #eee;
+    width: 25%;
+    position: fixed;
+    z-index: 5000;
+    display: none;
+}
+
+    #dialog-box-ghino .dialog-content-ghino {
+        margin: 1px;
+        color: #696969;
+        font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-size: 12px;
+    }
+
+/* css them phieu chi*/
+#dialog-addChi {
+    width: 100%;
+    height: 1000%;
+    filter: alpha(opacity=50);
+    opacity: 0.5;
+    background: #000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2000;
+    display: none;
+}
+
+#dialog-box-addChi {
+    background: #eee;
+    width: 55%;
+    position: fixed;
+    z-index: 4000;
+    display: none;
+}
+
+    #dialog-box-addChi .dialog-content-addChi {
+        margin: 1px;
+        color: #696969;
+        font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-size: 12px;
+    }
+
+/* css tim phieu xuat */
+#dialog-timPX {
+    width: 100%;
+    height: 1000%;
+    filter: alpha(opacity=50);
+    opacity: 0.5;
+    background: #000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2000;
+    display: none;
+}
+
+#dialog-box-timPX {
+    background: #eee;
+    width: 60%;
+    position: fixed;
+    z-index: 4000;
+    display: none;
+}
+
+    #dialog-box-timPX .dialog-content-timPX {
+        margin: 1px;
+        color: #696969;
+        font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-size: 12px;
+    }
+
+/* css tim kiem mat hang */
+#dialog-sItem {
+    width: 100%;
+    height: 1000%;
+    filter: alpha(opacity=50);
+    opacity: 0.5;
+    background: #000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3000;
+    display: none;
+}
+
+#dialog-box-sItem {
+    background: #eee;
+    width: 60%;
+    position: fixed;
+    z-index: 5000;
+    display: none;
+}
+
+    #dialog-box-sItem .dialog-content-sItem {
+        margin: 1px;
+        color: #696969;
+        font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-size: 12px;
+    }
+
+/* css tim kiem phieu nhap hang */
+#dialog-sNhapHang {
+    width: 100%;
+    height: 1000%;
+    filter: alpha(opacity=50);
+    opacity: 0.5;
+    background: #000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3000;
+    display: none;
+}
+
+#dialog-box-sNhapHang {
+    background: #eee;
+    width: 60%;
+    position: fixed;
+    z-index: 5000;
+    display: none;
+}
+
+    #dialog-box-sNhapHang .dialog-content-sNhapHang {
+        margin: 1px;
+        color: #696969;
+        font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-size: 12px;
+    }
+
+/* css ton kho */
+#dialog-tonKho {
+    width: 100%;
+    height: 1000%;
+    filter: alpha(opacity=50);
+    opacity: 0.5;
+    background: #000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3000;
+    display: none;
+}
+
+#dialog-box-tonKho {
+    background: #eee;
+    width: 30%;
+    position: fixed;
+    z-index: 5000;
+    display: none;
+}
+
+    #dialog-box-tonKho .dialog-content-tonKho {
+        margin: 1px;
+        color: #696969;
+        font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-size: 12px;
+    }
+
+/* css ton kho */
+#dialog-thongBao {
+    width: 100%;
+    height: 1000%;
+    filter: alpha(opacity=50);
+    opacity: 0.5;
+    background: #000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3000;
+    display: none;
+}
+
+#dialog-box-thongBao {
+    background: #eee;
+    width: 30%;
+    position: fixed;
+    z-index: 5000;
+    display: none;
+}
+
+    #dialog-box-thongBao .dialog-content-thongBao {
+        margin: 1px;
+        color: #696969;
+        font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-size: 12px;
+    }
+
+/*Dang nhap*/
+.div-dangnhap {
+    background-color: #FFF;
+    font-family: 'Opensans',Segoe UI,arial,"Helvetica Neue",Helvetica,sans-serif,monospace;
+    font-size: 14px;
+    width: 100%;
+}
+
+    .div-dangnhap .header-dangnhap {
+        background-color: #3399cc;
+        height: 55px;
+        padding: 10px 0;
+        line-height: 30px;
+        color: #FFF;
+        font-weight: bold;
+    }
+
+        .div-dangnhap .header-dangnhap span {
+            font-size: 16px;
+            width: 980px;
+            display: block;
+            margin: 2px auto;
+        }
+
+    .div-dangnhap .dangnhap-footer {
+        background-color: #242424;
+        height: 40px;
+        line-height: 25px;
+        color: #FFF;
+        text-align: center;
+        position: absolute;
+        bottom: 0;
+        display: block;
+        width: 100%;
+        padding: 8px 0;
+    }
+
+        .div-dangnhap .dangnhap-footer span, .div-dangnhap .dangnhap-footer b {
+            font-size: 14px;
+        }
+
+.content-dangnhap {
+    margin: 60px auto;
+    width: 980px;
+    display: block;
+}
+
+.dangnhap-right, .dangnhap-left {
+    float: left;
+    display: block;
+}
+
+.dangnhap-right {
+    margin-left: 40px;
+    margin-top: 20px;
+}
+
+    .dangnhap-right .title-dangnhap {
+        background: url(images/bg_tit_login.gif) no-repeat;
+        height: 40px;
+        line-height: 40px;
+        font-size: 16px;
+        font-weight: 700;
+        color: #09517d;
+        padding-left: 57px;
+        width: 300px;
+    }
+
+    .dangnhap-right .lbl-dangnhap, .dangnhap-right .input-dangnhap {
+        padding: 6px 0;
+    }
+
+    .dangnhap-right .lbl-dangnhap {
+        width: 110px;
+    }
+
+    .dangnhap-right input[type="text"], .dangnhap-right input[type="password"] {
+        height: 33px;
+        width: 230px;
+        border: 1px solid #bababa !important;
+    }
+
+        .dangnhap-right input[type="text"]:focus, .dangnhap-right input[type="password"]:focus {
+            border: 1px solid #137ec2 !important;
+        }
+
+    .dangnhap-right a {
+        color: #09517d;
+        cursor: pointer;
+        font-size: 11px;
+    }
+
+    .dangnhap-right input[type="button"] {
+        border: 1px solid #CCC;
+        background-color: #FFF;
+        font-weight: bold;
+    }
+
+        .dangnhap-right input[type="button"]:hover {
+            background-color: #3399cc;
+            cursor: pointer;
+            color: #FFF;
+            border: 1px solid #FFF;
+        }
+
+    .dangnhap-right .thongbao span {
+        color: red;
+        font-weight: bold;
+        font-size: 12px;
+        margin: 10px auto;
+        display: block;
+    }
+
+/*-------------Style Jquery  Dialog-------------*/
+#DialogContent {
+    min-height: 34px !important;
+    max-height: 800px !important;
+    padding: 4px 13px 0 13px;
+}
+
+#DialogMesage {
+    /*padding-left: 42px;    */
+}
+
+    #DialogMesage ul {
+        padding-left: 55px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+
+.dialogCustomStyle {
+    position: fixed !important;
+}
+
+    .dialogCustomStyle .ui-dialog {
+        border: 1px solid #BFD3EB !important; /*z-index: 2501 !important;*/
+        position: fixed !important;
+        top: 50%;
+        left: 50%;
+        margin-top: -50px;
+        margin-left: -100px;
+    }
+
+    .dialogCustomStyle .ui-widget-header {
+        background: url("Images/Dialog/Dialog-background_Header.png") repeat-x scroll 0 0 transparent !important;
+        border: 1px solid #BFD3EB !important;
+        color: #192F86 !important;
+        padding: 2px 13px 2px 6px !important;
+    }
+
+        .dialogCustomStyle .ui-widget-header .ui-dialog-title {
+            background: url("Images/Dialog/logo.png") no-repeat scroll 0 1px transparent !important;
+            padding-left: 22px;
+        }
+
+    .dialogCustomStyle .ui-dialog-buttonpane {
+        border-top: 1px solid #BFD3EB !important;
+        padding-bottom: 0px !important;
+        padding-right: 4px !important;
+    }
+
+    .dialogCustomStyle .ui-dialog-buttonset .ui-button:hover {
+        background: url("Images/Dialog/button-2.png") repeat-x scroll 50% 50% transparent !important;
+        border: 1px solid #E5DAB0 !important;
+    }
+
+    .dialogCustomStyle .ui-dialog-buttonset .ui-button {
+        background: url("Images/Dialog/button-1.png") repeat-x scroll 50% 50% transparent !important;
+        border: 1px solid #CAD9FF !important;
+        height: 25px;
+        min-width: 70px;
+        padding-top: 1px;
+    }
+
+/*thuộc tính này add chung cho tất cả các dialog*/
+.ui-button-text {
+    width: auto !important;
+}
+
+.dialogCustomStyle .ui-button-text {
+    padding: 0 10px 0 27px !important;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-color: transparent;
+    font-weight: normal;
+}
+
+.dialogCustomStyle .icon-close .ui-button-text {
+    background-image: url("Images/dialog/Close16.png");
+    background-position: 7px 0px;
+}
+
+.dialogCustomStyle .icon-agree .ui-button-text {
+    background-image: url("Images/dialog/submit16.png");
+    background-position: 7px -1px;
+}
+
+.dialogCustomStyle .icon-cancel .ui-button-text {
+    background-image: url("Images/dialog/Disabled16.png");
+    background-position: 7px 0px;
+}
+
+.dialogCustomStyle .icon-no .ui-button-text {
+    background-image: url("Images/Dialog/No.png");
+    background-position: 7px 0px;
+}
+
+/* icon cho dialog */
+.dialogCustomStyle .dialog-icon {
+    height: 32px !important;
+    margin-bottom: 0 !important;
+    width: 32px !important;
+    float: left;
+    margin: 2px 10px 20px 0;
+}
+
+.dialogCustomStyle .icon-information {
+    background: url("Images/Dialog/Info32.png") no-repeat scroll 0 0 transparent !important;
+}
+
+.dialogCustomStyle .icon-warning {
+    background: url("Images/Dialog/Warning32.png") no-repeat scroll 0 0 transparent !important;
+}
+
+.dialogCustomStyle .icon-error {
+    background: url("Images/Dialog/Error32.png") no-repeat scroll 0 0 transparent !important;
+}
+
+.dialogCustomStyle .icon-confirm {
+    background: url("Images/Dialog/Help32.png") no-repeat scroll 0 0 transparent !important;
+}
+
+.dialogCustomStyle .icon-none {
+    display: none;
+}
+
+.dialogCustomStyle .ui-widget-header .ui-icon {
+    background-image: url("Images/Dialog/Dialog-close.png") !important;
+    background-position: center center;
+}
+
+.dialogCustomStyle .icon-agree .ui-button-text {
+    background-image: url("Images/dialog/submit16.png");
+    background-position: 7px -1px;
+}
+
+.dialogCustomStyle .icon-cancel .ui-button-text {
+    background-image: url("Images/dialog/Disabled16.png");
+    background-position: 7px 0px;
+}
+
+
+/* ----------- end style dialog -------------*/
+
+/* css popup common */
+#dialog-container {
+    width: 100%;
+    height: 1000%;
+    filter: alpha(opacity=50);
+    opacity: 0.5;
+    background: #000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 50;
+}
+
+#dialog-box-main {
+    background: #eee;
+    position: fixed;
+    z-index: 5000;
+    display: none;
+}
+
+    #dialog-box-main .dialog-content-detail {
+        margin: 1px;
+        color: #696969;
+        font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-size: 12px;
+    }
+
+#dialog-process {
+    width: 100%;
+    height: 1000%;
+    filter: alpha(opacity=50);
+    opacity: 0.9;
+    background: #000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3000;
+    display: none;
+    background: url("Images/dialog/loading.gif") no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.img-close {
+    background: url("../Content/image/close.png") no-repeat;
+    width: 21px;
+    height: 21px;
+    float: right;
+    margin-top: 3px;
+}
+
+.popup-title {
+    height: 30px;
+    vertical-align: middle;
+    color: #FFF;
+    font-size: 13px;
+    padding-left: 5px;
+    background-color: #3399CC;
+    padding-top: 3px;
+    font-weight: bold;
+}

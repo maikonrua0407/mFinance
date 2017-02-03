@@ -1,0 +1,129 @@
+﻿@using Utilities.Common
+@{
+    Layout = null;
+}
+
+<div class="pagerNav">
+    <div id="divPagerNav">
+        <ul class="pagination">
+            @{
+                // Tham số url
+                string urlPara = "";
+                if (ViewBag.ListPara != null && ViewBag.ListPara.Count > 0)
+                {
+                    foreach (var item in ViewBag.ListPara)
+                    {
+                        if (item.Value != null && item.Value.Equals(""))
+                        { urlPara += "&" + item.Key + "=" + item.Value; }
+                    }
+                }
+                int block = 5;
+                // Số bản ghi hiển thị trên 1 trang - pager
+                int PageSize = PresentationAspNet.MVC.Common.SoBanGhiTrenTrang();
+                // Tính tổng số trang
+                int CurrentPage = (int)(ViewBag.TotalRecord / PageSize);
+                if (ViewBag.TotalRecord % PageSize > 0)
+                { CurrentPage += 1; }
+                // Biến thuộc tính css disable điều hướng
+                string disFirst = "", disPrev = "", disNext = "", disLast = "";
+                // Trang vừa chọn
+                int trangChon = ViewBag.CurrentPage;
+                // Tính toán trang đầu tiên trong block phân trang (mỗi block chỉ hiển thị 3 trang)
+                int startPage = 1;
+                if (trangChon > block)
+                { startPage = (trangChon / block) * block + 1; }
+                // Thiết lập css disable các nút điều hướng
+                if (startPage < block + 1)
+                { disFirst = " disabled"; }
+                if (trangChon == 1)
+                { disPrev = " disabled"; }
+                if (trangChon == CurrentPage)
+                { disNext = " disabled"; }
+                if (startPage > (CurrentPage - block))
+                { disLast = " disabled"; }
+                <li class="prev @disFirst">
+                    @{
+                        if (!disFirst.IsNullOrEmptyOrSpace())
+                        {
+                        <a id="lhkPageFirst" href="javascript:void(0);">
+                            <i class="fa fa-angle-double-left"></i>
+                        </a>
+                        }
+                        else
+                        {
+                        <a id="lhkPageFirst" href="@ViewBag.StrUrl?PageSize=10&CurrentPage=1&TotalRecord=0@(urlPara)" data-ajax-url="@ViewBag.StrUrl?PageSize=10&CurrentPage=1&TotalRecord=0@(urlPara)" data-ajax-success="dataProcess" data-ajax="true">
+                            <i class="fa fa-angle-double-left"></i>
+                        </a>
+                        }
+                    }
+                </li>
+                <li class="prev @disPrev">
+                    @{
+                        if (!disPrev.IsNullOrEmptyOrSpace())
+                        {
+                        <a id="lhkPagePrev" href="javascript:void(0);">
+                            <i class="fa fa-angle-left"></i>
+                        </a>
+                        }
+                        else
+                        {
+                        <a id="lhkPagePrev" href="@ViewBag.StrUrl?PageSize=10&CurrentPage=@(ViewBag.CurrentPage - 1)&TotalRecord=0@(urlPara)" data-ajax-url="@ViewBag.StrUrl?PageSize=10&CurrentPage=@(ViewBag.CurrentPage - 1)&TotalRecord=0@(urlPara)" data-ajax-success="dataProcess" data-ajax="true">
+                            <i class="fa fa-angle-left"></i>
+                        </a>
+                        }
+                    }
+                </li>
+                for (int i = startPage; i < startPage + block && i <= CurrentPage; i++)
+                {
+                    if (i == ViewBag.CurrentPage)
+                    {
+                <li class="active">
+                    <a id="lhkPage" href="@ViewBag.StrUrl?PageSize=10&CurrentPage=@i&TotalRecord=0@(urlPara)" data-ajax-url="@ViewBag.StrUrl?PageSize=10&CurrentPage=@i&TotalRecord=0@(urlPara)" data-ajax-success="dataProcess" data-ajax="true">@i</a>
+                </li>
+                    }
+                    else
+                    {
+                <li>
+                    <a id="lhkPage" href="@ViewBag.StrUrl?PageSize=10&CurrentPage=@i&TotalRecord=0@(urlPara)" data-ajax-url="@ViewBag.StrUrl?PageSize=10&CurrentPage=@i&TotalRecord=0@(urlPara)" data-ajax-success="dataProcess" data-ajax="true">@i</a>
+                </li> 
+                    }
+                }
+                <li class="next @disNext">
+                    @{
+                        if (!disNext.IsNullOrEmptyOrSpace())
+                        {
+                        <a id="lhkPageNext" href="javascript:void(0);">
+                            <i class="fa fa-angle-right"></i>
+                        </a>
+                        }
+                        else
+                        {
+                        <a id="lhkPageNext" href="@ViewBag.StrUrl?PageSize=10&CurrentPage=@(ViewBag.CurrentPage + 1)&TotalRecord=0@(urlPara)" data-ajax-url="@ViewBag.StrUrl?PageSize=10&CurrentPage=@(ViewBag.CurrentPage + 1)&TotalRecord=0@(urlPara)" data-ajax-success="dataProcess" data-ajax="true">
+                            <i class="fa fa-angle-right"></i>
+                        </a>
+                        }
+                    }
+                </li>
+                <li class="next @disLast">
+                    @{
+                        if (!disLast.IsNullOrEmptyOrSpace())
+                        {
+                        <a id="lhkPageLast" href="javascript:void(0);">
+                            <i class="fa fa-angle-double-right"></i>
+                        </a>
+                        }
+                        else
+                        {
+                        <a id="lhkPageLast" href="@ViewBag.StrUrl?PageSize=10&CurrentPage=@CurrentPage&TotalRecord=0@(urlPara)" data-ajax-url="@ViewBag.StrUrl?PageSize=10&CurrentPage=@CurrentPage&TotalRecord=0@(urlPara)" data-ajax-success="dataProcess" data-ajax="true">
+                            <i class="fa fa-angle-double-right"></i>
+                        </a>
+                        }
+                    }
+                </li>
+            }
+        </ul>
+    </div>
+</div>
+<div class="pagerNumber">
+    <div id="divPagerNumber" class="dataTables_info" style="margin-top: 5px;"><b>Tổng số @LNumber.ToString((int)ViewBag.TotalRecord).Replace(".00","") bản ghi</b></div>
+</div>

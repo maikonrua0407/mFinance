@@ -1,0 +1,70 @@
+﻿
+@model ErrorInportExcel
+@using PresentationAspNet.MVC
+<div class="row-fluid">
+    <div class="span12">
+			<table class="table table-striped table-bordered" style="border-bottom: none !important">
+				<thead>
+					<tr>
+						<th class="cssC css-width5">STT</th>
+                        <th class="cssC css-width35">Mã hàng</th>
+                        <th class="cssC css-width60">Tên hàng hóa</th>
+					</tr>
+				</thead>						
+			</table>
+            @if (Model.ErrorXuatChuyenKhoItemNotExist.Count > 0 || Model.ErrorXuatChuyenKhoItemDuplicate.Count > 0)
+            {
+	            <div class="dialogs">
+	                <table class="table table-striped table-bordered">
+	                    <tbody>
+                        @if (Model.ErrorXuatChuyenKhoItemNotExist.Count > 0)
+                        {
+                            var index = 1;
+                            <tr>
+                                <td colspan="3" class="text-warning red red cssL">
+                                    <i class="icon-warning-sign"></i>
+                                    MÃ HÀNG KHÔNG TỒN TẠI TRONG HỆ THỐNG
+                                </td>
+                            </tr>
+                            foreach (var d in Model.ErrorXuatChuyenKhoItemNotExist)
+	                        {
+                                <tr>
+                                    <td class="cssC css-width5">@index</td>
+                                    <td class="css-width35">@d.MaVach</td>
+                                    <td class="css-width60">@d.TenHangHoa</td>
+		                        </tr>
+                                index++;
+	                        }
+                        }
+                        @if (Model.ErrorXuatChuyenKhoItemDuplicate.Any())
+                        {
+                            var index = 1;
+                            <tr>
+                                <td colspan="3" class="text-warning red red cssL">
+                                    <i class="icon-warning-sign"></i>
+                                    MÃ HÀNG ĐÃ TỒN TẠI TRONG ĐƠN HÀNG
+                                </td>
+                            </tr>
+                            foreach (var d in Model.ErrorXuatChuyenKhoItemDuplicate)
+	                        {
+                                <tr>
+                                    <td class="cssC css-width5">@index</td>
+                                    <td class="css-width35">@d.MaVach</td>
+                                    <td class="css-width60">@d.TenHangHoa</td>
+		                        </tr>
+                                index++;
+	                        }
+                        }
+	                    </tbody>
+	                </table> 
+	            </div>
+            }
+    </div>
+</div>
+<script type="text/javascript">
+    $(function () {
+        $('.dialogs').slimScroll({
+            height: '300px'
+        });
+    });
+</script>

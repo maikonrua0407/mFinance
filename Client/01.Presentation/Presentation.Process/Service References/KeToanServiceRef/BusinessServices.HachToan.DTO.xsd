@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/BusinessServices.HachToan.DTO" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/BusinessServices.HachToan.DTO" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfGDICH_HTOAN">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GDICH_HTOAN" nillable="true" type="tns:GDICH_HTOAN" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGDICH_HTOAN" nillable="true" type="tns:ArrayOfGDICH_HTOAN" />
+  <xs:complexType name="GDICH_HTOAN">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DIA_CHI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DIEN_GIAI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DSACH_BUT_TOAN" nillable="true" type="tns:ArrayOfBUT_TOAN" />
+      <xs:element minOccurs="0" name="HACH_TOAN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="ID_DVI" type="xs:int" />
+      <xs:element minOccurs="0" name="ID_LOAI_GDICH" type="xs:int" />
+      <xs:element minOccurs="0" name="LY_DO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DTUONG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_GDICH" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_KHANG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_LOAI_GDICH" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_LOAI_TIEN_GCO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_LOAI_TIEN_GCO_QD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_LOAI_TIEN_GNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_LOAI_TIEN_GNO_QD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_PHAN_HE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_TCHIEU" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_CAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_CTU_KTHEO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_GDICH" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_LAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NOI_CAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PHUONG_PHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SO_CMND" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SO_CTU_KTHEO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TEN_KHANG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_NVU" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TY_GIA" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TY_GIA_QD" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GDICH_HTOAN" nillable="true" type="tns:GDICH_HTOAN" />
+  <xs:complexType name="ArrayOfBUT_TOAN">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BUT_TOAN" nillable="true" type="tns:BUT_TOAN" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBUT_TOAN" nillable="true" type="tns:ArrayOfBUT_TOAN" />
+  <xs:complexType name="BUT_TOAN">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DIEN_GIAI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LOAI_CHUNG_TU" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_BUT_TOAN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="STIEN_GCCK" type="xs:decimal" />
+      <xs:element minOccurs="0" name="STIEN_GCCK_QD" type="xs:decimal" />
+      <xs:element minOccurs="0" name="STIEN_GCTM" type="xs:decimal" />
+      <xs:element minOccurs="0" name="STIEN_GCTM_QD" type="xs:decimal" />
+      <xs:element minOccurs="0" name="STIEN_GNCK" type="xs:decimal" />
+      <xs:element minOccurs="0" name="STIEN_GNCK_QD" type="xs:decimal" />
+      <xs:element minOccurs="0" name="STIEN_GNTM" type="xs:decimal" />
+      <xs:element minOccurs="0" name="STIEN_GNTM_QD" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TKHOAN_GCCK" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TKHOAN_GCTM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TKHOAN_GNCK" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TKHOAN_GNTM" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BUT_TOAN" nillable="true" type="tns:BUT_TOAN" />
+</xs:schema>

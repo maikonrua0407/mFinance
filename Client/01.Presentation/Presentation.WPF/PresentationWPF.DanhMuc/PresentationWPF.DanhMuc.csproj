@@ -1,0 +1,501 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FD1ED5FA-262E-4424-8A1C-1FFF148045AB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PresentationWPF.DanhMuc</RootNamespace>
+    <AssemblyName>PresentationWPF.DanhMuc</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\..\Build\Build.Client\Dev\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>
+    </NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Windows.Shell, Version=3.5.41019.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <Reference Include="Presentation.Process, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Build\Build.Client\Dev\Presentation.Process.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationWPF.BaoCao, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Build\Build.Client\Dev\PresentationWPF.BaoCao.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationWPF.CustomControl, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Build\Build.Client\Dev\PresentationWPF.CustomControl.dll</HintPath>
+    </Reference>
+    <Reference Include="RibbonControlsLibrary, Version=4.0.0.11019, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Libraries\RibbonControlsLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls, Version=2012.1.215.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Build\Build.Client\Dev\Telerik.Windows.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Data, Version=2012.1.215.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Build\Build.Client\Dev\Telerik.Windows.Controls.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.GridView, Version=2012.1.215.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Build\Build.Client\Dev\Telerik.Windows.Controls.GridView.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Input, Version=2012.1.215.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Build\Build.Client\Dev\Telerik.Windows.Controls.Input.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Navigation, Version=2012.1.215.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Build\Build.Client\Dev\Telerik.Windows.Controls.Navigation.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Data, Version=2012.1.215.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Build\Build.Client\Dev\Telerik.Windows.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="UIAutomationProvider, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <Reference Include="UIAutomationTypes, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <Reference Include="Utilities.Common">
+      <HintPath>..\..\..\..\Libraries\Utilities.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Cum\BinhKhanh\ucCumCTBinhKhanh.xaml.cs">
+      <DependentUpon>ucCumCTBinhKhanh.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Cum\ucCumCT_02.xaml.cs">
+      <DependentUpon>ucCumCT_02.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Cum\ucCumDS_01.xaml.cs">
+      <DependentUpon>ucCumDS_01.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Cum\ucCumCT_01.xaml.cs">
+      <DependentUpon>ucCumCT_01.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Cum\ucCumCT.xaml.cs">
+      <DependentUpon>ucCumCT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Cum\ucCumDS.xaml.cs">
+      <DependentUpon>ucCumDS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Cum\ucCumDS_02.xaml.cs">
+      <DependentUpon>ucCumDS_02.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DiaBan\ucDiaBanCT.xaml.cs">
+      <DependentUpon>ucDiaBanCT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DiaBan\ucDiaBanCT01.xaml.cs">
+      <DependentUpon>ucDiaBanCT01.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DiaBan\ucDiaBanDS.xaml.cs">
+      <DependentUpon>ucDiaBanDS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DiaBan\ucDiaBanDS01.xaml.cs">
+      <DependentUpon>ucDiaBanDS01.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DungChung\ucDanhMucCT.xaml.cs">
+      <DependentUpon>ucDanhMucCT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DungChung\ucDanhMucDS.xaml.cs">
+      <DependentUpon>ucDanhMucDS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="KhuVuc\ucKhuVucCT_03.xaml.cs">
+      <DependentUpon>ucKhuVucCT_03.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="KhuVuc\ucKhuVucCT_02.xaml.cs">
+      <DependentUpon>ucKhuVucCT_02.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="KhuVuc\ucKhuVucDS_01.xaml.cs">
+      <DependentUpon>ucKhuVucDS_01.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="KhuVuc\ucKhuVucCT.xaml.cs">
+      <DependentUpon>ucKhuVucCT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="KhuVuc\ucKhuVucCT_01.xaml.cs">
+      <DependentUpon>ucKhuVucCT_01.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="KhuVuc\ucKhuVucDS.xaml.cs">
+      <DependentUpon>ucKhuVucDS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="KhuVuc\ucKhuVucDS_03.xaml.cs">
+      <DependentUpon>ucKhuVucDS_03.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="KhuVuc\ucKhuVucDS_02.xaml.cs">
+      <DependentUpon>ucKhuVucDS_02.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LichHop\ucLichHopCT.xaml.cs">
+      <DependentUpon>ucLichHopCT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LichHop\ucLichHopDS.xaml.cs">
+      <DependentUpon>ucLichHopDS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Nhom\ucNhomCT_01.xaml.cs">
+      <DependentUpon>ucNhomCT_01.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Nhom\ucNhomCT.xaml.cs">
+      <DependentUpon>ucNhomCT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Nhom\ucNhomCT_03.xaml.cs">
+      <DependentUpon>ucNhomCT_03.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Nhom\ucNhomCT_02.xaml.cs">
+      <DependentUpon>ucNhomCT_02.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Nhom\ucNhomCT_04.xaml.cs">
+      <DependentUpon>ucNhomCT_04.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Nhom\ucNhomDS.xaml.cs">
+      <DependentUpon>ucNhomDS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Nhom\ucNhomDS_01.xaml.cs">
+      <DependentUpon>ucNhomDS_01.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Nhom\ucNhomDS_03.xaml.cs">
+      <DependentUpon>ucNhomDS_03.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Nhom\ucNhomDS_02.xaml.cs">
+      <DependentUpon>ucNhomDS_02.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Nhom\ucNhomDS_04.xaml.cs">
+      <DependentUpon>ucNhomDS_04.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PhanHeGiaoDich\ucPhanHeGDCT.xaml.cs">
+      <DependentUpon>ucPhanHeGDCT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PhanHeGiaoDich\ucPhanHeGDDS.xaml.cs">
+      <DependentUpon>ucPhanHeGDDS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\ucPopupKhachHang.xaml.cs">
+      <DependentUpon>ucPopupKhachHang.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="QuocGia\ucQuocGiaCT.xaml.cs">
+      <DependentUpon>ucQuocGiaCT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="QuocGia\ucQuocGiaDS.xaml.cs">
+      <DependentUpon>ucQuocGiaDS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TienTe\ucTienTeCT.xaml.cs">
+      <DependentUpon>ucTienTeCT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TienTe\ucTienTeDS.xaml.cs">
+      <DependentUpon>ucTienTeDS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TinhTP\ucTinhTPCT.xaml.cs">
+      <DependentUpon>ucTinhTPCT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TinhTP\ucTinhTPCT01.xaml.cs">
+      <DependentUpon>ucTinhTPCT01.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TinhTP\ucTinhTPDS.xaml.cs">
+      <DependentUpon>ucTinhTPDS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TinhTP\ucTinhTPDS01.xaml.cs">
+      <DependentUpon>ucTinhTPDS01.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ToChucTinDung\ucToChucTinDungCT.xaml.cs">
+      <DependentUpon>ucToChucTinDungCT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ToChucTinDung\ucToChucTinDungDS.xaml.cs">
+      <DependentUpon>ucToChucTinDungDS.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Cum\BinhKhanh\ucCumCTBinhKhanh.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Cum\ucCumCT_02.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Cum\ucCumDS_01.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Cum\ucCumCT_01.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Cum\ucCumCT.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Cum\ucCumDS.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Cum\ucCumDS_02.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DiaBan\ucDiaBanCT.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DiaBan\ucDiaBanCT01.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DiaBan\ucDiaBanDS.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DiaBan\ucDiaBanDS01.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DonVi\ucDonViCT.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DonVi\ucDonViDS.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DungChung\ucDanhMucCT.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DungChung\ucDanhMucDS.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="KhuVuc\ucKhuVucCT_03.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="KhuVuc\ucKhuVucCT_02.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="KhuVuc\ucKhuVucDS_01.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="KhuVuc\ucKhuVucCT.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="KhuVuc\ucKhuVucCT_01.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="KhuVuc\ucKhuVucDS.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="KhuVuc\ucKhuVucDS_03.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="KhuVuc\ucKhuVucDS_02.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LichHop\ucLichHopCT.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="LichHop\ucLichHopDS.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="DonVi\ucDonViCT.xaml.cs">
+      <DependentUpon>ucDonViCT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DonVi\ucDonViDS.xaml.cs">
+      <DependentUpon>ucDonViDS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Nhom\ucNhomCT_01.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Nhom\ucNhomCT.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Nhom\ucNhomCT_03.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Nhom\ucNhomCT_02.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Nhom\ucNhomCT_04.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Nhom\ucNhomDS.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Nhom\ucNhomDS_01.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Nhom\ucNhomDS_03.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Nhom\ucNhomDS_02.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Nhom\ucNhomDS_04.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PhanHeGiaoDich\ucPhanHeGDCT.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PhanHeGiaoDich\ucPhanHeGDDS.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Popup\ucPopupKhachHang.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="QuocGia\ucQuocGiaCT.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="QuocGia\ucQuocGiaDS.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TienTe\ucTienTeCT.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TienTe\ucTienTeDS.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TinhTP\ucTinhTPCT.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TinhTP\ucTinhTPCT01.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TinhTP\ucTinhTPDS.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TinhTP\ucTinhTPDS01.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ToChucTinDung\ucToChucTinDungCT.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ToChucTinDung\ucToChucTinDungDS.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="..\..\Presentation.Process\app.config">
+      <Link>app.config</Link>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DoiTuong\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PresentationWPF.TinDung\PresentationWPF.TinDung.csproj">
+      <Project>{E5839B2E-1B4D-4FA0-9127-C659A95A62B7}</Project>
+      <Name>PresentationWPF.TinDung</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

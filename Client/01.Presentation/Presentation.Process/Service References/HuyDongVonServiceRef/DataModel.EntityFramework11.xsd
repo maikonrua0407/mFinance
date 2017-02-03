@@ -1,0 +1,572 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="ArrayOfBL_SAN_PHAM_CT">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BL_SAN_PHAM_CT" nillable="true" type="tns:BL_SAN_PHAM_CT" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBL_SAN_PHAM_CT" nillable="true" type="tns:ArrayOfBL_SAN_PHAM_CT" />
+  <xs:complexType name="BL_SAN_PHAM_CT">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChangeTracker" nillable="true" type="tns:ObjectChangeTracker" />
+      <xs:element minOccurs="0" name="DU_NO" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="ID_SAN_PHAM" type="xs:int" />
+      <xs:element minOccurs="0" name="LOAI_TTIN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_BPHI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_QLY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_TAO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SO_TIEN_KY" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TTHAI_BGHI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_LY_DO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_NVU" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TY_LE" nillable="true" type="xs:decimal" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="BL_SAN_PHAM_CT" nillable="true" type="tns:BL_SAN_PHAM_CT" />
+  <xs:complexType name="ObjectChangeTracker">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ExtendedProperties" nillable="true" type="tns:ExtendedPropertiesDictionary" />
+      <xs:element minOccurs="0" name="ObjectsAddedToCollectionProperties" nillable="true" type="tns:ObjectsAddedToCollectionProperties" />
+      <xs:element minOccurs="0" name="ObjectsRemovedFromCollectionProperties" nillable="true" type="tns:ObjectsRemovedFromCollectionProperties" />
+      <xs:element minOccurs="0" name="OriginalValues" nillable="true" type="tns:OriginalValuesDictionary" />
+      <xs:element minOccurs="0" name="State" type="tns:ObjectState" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="ObjectChangeTracker" nillable="true" type="tns:ObjectChangeTracker" />
+  <xs:complexType name="ExtendedPropertiesDictionary">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsDictionary xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsDictionary>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ExtendedProperties">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Name" nillable="true" type="xs:string" />
+            <xs:element name="ExtendedProperty" nillable="true" type="xs:anyType" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ExtendedPropertiesDictionary" nillable="true" type="tns:ExtendedPropertiesDictionary" />
+  <xs:complexType name="ObjectsAddedToCollectionProperties">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsDictionary xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsDictionary>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AddedObjectsForProperty">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="CollectionPropertyName" nillable="true" type="xs:string" />
+            <xs:element name="AddedObjects" nillable="true" type="tns:ObjectList" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ObjectsAddedToCollectionProperties" nillable="true" type="tns:ObjectsAddedToCollectionProperties" />
+  <xs:complexType name="ObjectList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ObjectValue" nillable="true" type="xs:anyType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ObjectList" nillable="true" type="tns:ObjectList" />
+  <xs:complexType name="ObjectsRemovedFromCollectionProperties">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsDictionary xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsDictionary>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DeletedObjectsForProperty">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="CollectionPropertyName" nillable="true" type="xs:string" />
+            <xs:element name="DeletedObjects" nillable="true" type="tns:ObjectList" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ObjectsRemovedFromCollectionProperties" nillable="true" type="tns:ObjectsRemovedFromCollectionProperties" />
+  <xs:complexType name="OriginalValuesDictionary">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsDictionary xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsDictionary>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="OriginalValues">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Name" nillable="true" type="xs:string" />
+            <xs:element name="OriginalValue" nillable="true" type="xs:anyType" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OriginalValuesDictionary" nillable="true" type="tns:OriginalValuesDictionary" />
+  <xs:simpleType name="ObjectState">
+    <xs:list>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Unchanged" />
+          <xs:enumeration value="Added" />
+          <xs:enumeration value="Modified" />
+          <xs:enumeration value="Deleted" />
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:list>
+  </xs:simpleType>
+  <xs:element name="ObjectState" nillable="true" type="tns:ObjectState" />
+  <xs:complexType name="ArrayOfBL_TIEN_GUI">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BL_TIEN_GUI" nillable="true" type="tns:BL_TIEN_GUI" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBL_TIEN_GUI" nillable="true" type="tns:ArrayOfBL_TIEN_GUI" />
+  <xs:complexType name="BL_TIEN_GUI">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChangeTracker" nillable="true" type="tns:ObjectChangeTracker" />
+      <xs:element minOccurs="0" name="DHAN_CTHI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DHAN_KY_HAN" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="DHAN_KY_HAN_DVI_TINH" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DHAN_MA_LSUAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DHAN_MUC_LSUAT" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="DHAN_TKHOAN_TRGOC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DHAN_TKHOAN_TRLAI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DIEN_GIAI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DU_CHI_DEN_NGAY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DU_CHI_LAI" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="GDICH_HTHUC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GDICH_TIEN_CKHOAN" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="GDICH_TIEN_MAT" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="GDICH_TKHOAN_KHANG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GDICH_TKHOAN_NBO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GGOP_HTHUC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GGOP_HTHUC_CNGAY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GGOP_KY_HAN" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="GGOP_KY_HAN_DVI_TINH" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GGOP_LAP_KHOACH" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GGOP_NGAY_BDAU" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GGOP_SO_LAN" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="GGOP_SO_TIEN_KY" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="GGOP_TONG_TIEN" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="ID_KHANG" type="xs:int" />
+      <xs:element minOccurs="0" name="ID_SAN_PHAM" type="xs:int" />
+      <xs:element minOccurs="0" name="KY_HAN" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="KY_HAN_DVI_TINH" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="KY_HAN_TTE" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="KY_HAN_TTE_DVI_TINH" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LAI_CHUA_TRA" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="LAI_SUAT" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="LAI_SUAT_BSUNG" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="LAI_SUAT_DVI_TINH" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LAI_SUAT_THANG" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="LAI_TRA_TRUOC" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="LOAI_SODU_TLAI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_CBQL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_QLY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_TAO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_GDICH" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_KHANG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_KUOC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_LOAI_TIEN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_NHOM_SP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_SAN_PHAM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_ADUNG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_DEN_HAN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_GDICH" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_KY_MOI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_MO_SO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_TINH_LAI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_TINH_LAI_DEN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NV_LOAI_NVON" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NV_LOAI_NVON_CT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NV_MA_HOP_DONG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="QUA_TANG" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="SO_DU_GOC" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="SO_SO_TG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SO_TIEN" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="SO_TIEN_KY" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="SO_TIEN_MO_SO" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TKHOAN_NHAN_HHONG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TKHOAN_THU_PHI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TLAI_HTHUC_CNGAY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TLAI_LAP_LICH" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TLAI_NGAY_BDAU" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TLAI_TSUAT" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="TLAI_TSUAT_DVI_TINH" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_BGHI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_LY_DO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_NVU" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_SOTG" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="BL_TIEN_GUI" nillable="true" type="tns:BL_TIEN_GUI" />
+  <xs:complexType name="ArrayOfBL_TIEN_GUI_DCSH">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BL_TIEN_GUI_DCSH" nillable="true" type="tns:BL_TIEN_GUI_DCSH" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBL_TIEN_GUI_DCSH" nillable="true" type="tns:ArrayOfBL_TIEN_GUI_DCSH" />
+  <xs:complexType name="BL_TIEN_GUI_DCSH">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChangeTracker" nillable="true" type="tns:ObjectChangeTracker" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="ID_KHANG" type="xs:int" />
+      <xs:element minOccurs="0" name="ID_TIEN_GUI" type="xs:int" />
+      <xs:element minOccurs="0" name="MA_DVI_QLY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_TAO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_KHANG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SO_SO_TG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_BGHI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_LY_DO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_NVU" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="BL_TIEN_GUI_DCSH" nillable="true" type="tns:BL_TIEN_GUI_DCSH" />
+  <xs:complexType name="ArrayOfBL_TIEN_GUI_KHOACH">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BL_TIEN_GUI_KHOACH" nillable="true" type="tns:BL_TIEN_GUI_KHOACH" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBL_TIEN_GUI_KHOACH" nillable="true" type="tns:ArrayOfBL_TIEN_GUI_KHOACH" />
+  <xs:complexType name="BL_TIEN_GUI_KHOACH">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChangeTracker" nillable="true" type="tns:ObjectChangeTracker" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="ID_TIEN_GUI" type="xs:int" />
+      <xs:element minOccurs="0" name="LAI_SUAT" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MA_DVI_QLY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_TAO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_LOAI_KHOACH" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_KH" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SO_DU" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="SO_SO_TG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SO_TIEN" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TIEN_LAI" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TTHAI_BGHI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_LY_DO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_NVU" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="BL_TIEN_GUI_KHOACH" nillable="true" type="tns:BL_TIEN_GUI_KHOACH" />
+  <xs:complexType name="ArrayOfKT_PHAN_HE_PLOAI">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KT_PHAN_HE_PLOAI" nillable="true" type="tns:KT_PHAN_HE_PLOAI" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKT_PHAN_HE_PLOAI" nillable="true" type="tns:ArrayOfKT_PHAN_HE_PLOAI" />
+  <xs:complexType name="KT_PHAN_HE_PLOAI">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChangeTracker" nillable="true" type="tns:ObjectChangeTracker" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="ID_PHAN_HE" type="xs:int" />
+      <xs:element minOccurs="0" name="MA_DTUONG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_QLY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_TAO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_KY_HIEU" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_NHOM_TKHOAN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_PHAN_HE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_PLOAI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_PLOAI_BSO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_BGHI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_LY_DO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_NVU" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="KT_PHAN_HE_PLOAI" nillable="true" type="tns:KT_PHAN_HE_PLOAI" />
+  <xs:complexType name="ArrayOfBL_DKY_RGOC_CT">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BL_DKY_RGOC_CT" nillable="true" type="tns:BL_DKY_RGOC_CT" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBL_DKY_RGOC_CT" nillable="true" type="tns:ArrayOfBL_DKY_RGOC_CT" />
+  <xs:complexType name="BL_DKY_RGOC_CT">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CHU_KY_VAY" type="xs:int" />
+      <xs:element minOccurs="0" name="ChangeTracker" nillable="true" type="tns:ObjectChangeTracker" />
+      <xs:element minOccurs="0" name="HTHUC_DKY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="ID_DKY" type="xs:int" />
+      <xs:element minOccurs="0" name="ID_TIEN_GUI" type="xs:int" />
+      <xs:element minOccurs="0" name="MA_DKY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_QLY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_TAO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_KHANG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_NHOM_SP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_MO_SO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SO_DU" type="xs:decimal" />
+      <xs:element minOccurs="0" name="SO_SO_TG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SO_TIEN_GOC" type="xs:decimal" />
+      <xs:element minOccurs="0" name="SO_TIEN_RUT_GOC" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TEN_KHANG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_BGHI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_NVU" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="BL_DKY_RGOC_CT" nillable="true" type="tns:BL_DKY_RGOC_CT" />
+  <xs:complexType name="BL_DKY_RGOC">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChangeTracker" nillable="true" type="tns:ObjectChangeTracker" />
+      <xs:element minOccurs="0" name="DIEN_GIAI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HTHUC_DKY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="ID_CUM" type="xs:int" />
+      <xs:element minOccurs="0" name="ID_KVUC" type="xs:int" />
+      <xs:element minOccurs="0" name="MA_CBQL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DKY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_QLY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_TAO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_DKY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_TRA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="THANG_TRA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_BGHI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_NVU" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="BL_DKY_RGOC" nillable="true" type="tns:BL_DKY_RGOC" />
+  <xs:complexType name="BL_SAN_PHAM">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChangeTracker" nillable="true" type="tns:ObjectChangeTracker" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="ID_CS_TLAI" type="xs:int" />
+      <xs:element minOccurs="0" name="ID_LSUAT" type="xs:int" />
+      <xs:element minOccurs="0" name="KHAN_TOI_DA" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="KHAN_TOI_THIEU" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="KY_HAN" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="KY_HAN_DVTINH" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LSUAT_BIEN_DO" type="xs:decimal" />
+      <xs:element minOccurs="0" name="LSUAT_CSO_TLAI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LSUAT_DVTINH_DGIA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LSUAT_MA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LSUAT_SO_DKY_DGIA" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="LSUAT_TCHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LSUAT_TDOI_BTHANG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_QLY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_TAO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_LOAI_TIEN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_NHOM_SP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_SAN_PHAM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_ADUNG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_HHAN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NTAC_LTRON" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PPHAP_TLAI_GGOP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RGOC_1PHAN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RGOC_CO_SO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RGOC_CO_SO_TLAI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RGOC_PPHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RGOC_STIEN" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="RGOC_TLAI_SDU_TT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RGOC_TY_LE" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="SO_DU_TDA" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="SO_DU_TTHIEU" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="SO_DU_TTHIEU_RGOC" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="SO_DU_TTHIEU_TLAI" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TCHAT_KY_HAN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TC_THAU_CHI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TC_TOI_DA" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TC_TOI_THIEU" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TEN_SAN_PHAM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TGUI_CO_SO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TGUI_CTHUC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TGUI_PPHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TGUI_STIEN" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TGUI_THEM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TGUI_TY_LE" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TLAI_DVTINH" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TLAI_HTHUC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TLAI_TSUAT" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="TRHAN_MA_LSUAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TRHAN_RGOC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TRHAN_TTOAN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_BGHI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_LY_DO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_NVU" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TT_MA_BPHI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TT_SDU_TTHIEU" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TT_SDU_TTHIEU_PHI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TT_SDU_TTHIEU_PP" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="BL_SAN_PHAM" nillable="true" type="tns:BL_SAN_PHAM" />
+  <xs:complexType name="NQ_BKE_TMAT">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChangeTracker" nillable="true" type="tns:ObjectChangeTracker" />
+      <xs:element minOccurs="0" name="DIA_CHI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DIEN_GIAI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HHONG" type="xs:decimal" />
+      <xs:element minOccurs="0" name="HHONG_THUE" type="xs:decimal" />
+      <xs:element minOccurs="0" name="HHONG_TY_LE_THUE" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="LOAI_GDICH" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_BKE_TMAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_QLY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_TAO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_KHANG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_LOAI_TIEN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_TCHIEU_BKE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_TCHIEU_GDICH" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_CAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_GDICH" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NOI_CAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PHI_GD" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PHI_GD_THUE" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PHI_GD_TY_LE" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PHI_GD_TY_LE_THUE" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PHI_PP_TINH" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PVI_GDICH" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SO_CMND" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SO_DDONG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SO_DTHOAI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TEN_KHANG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TONG_PHI" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TONG_TIEN_NT" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TONG_TIEN_QD" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TTHAI_BGHI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_LY_DO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_NVU" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="NQ_BKE_TMAT" nillable="true" type="tns:NQ_BKE_TMAT" />
+  <xs:complexType name="NQ_BKE_TMAT_CT">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChangeTracker" nillable="true" type="tns:ObjectChangeTracker" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="ID_BKE_TMAT" type="xs:int" />
+      <xs:element minOccurs="0" name="LOAI_PHIEU" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_BKE_TMAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_BKE_TMAT_CT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_QLY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_TAO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_MENH_GIA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MENH_GIA" type="xs:decimal" />
+      <xs:element minOccurs="0" name="NGAY_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SO_TKHOAN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SO_TO" type="xs:int" />
+      <xs:element minOccurs="0" name="SO_TO_TON_DAU" type="xs:int" />
+      <xs:element minOccurs="0" name="TINH_CHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TONG_MENH_GIA" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TTHAI_BGHI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_LY_DO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_NVU" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="NQ_BKE_TMAT_CT" nillable="true" type="tns:NQ_BKE_TMAT_CT" />
+  <xs:complexType name="ArrayOfVKT_HDV_DKY_RGOC">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VKT_HDV_DKY_RGOC" nillable="true" type="tns:VKT_HDV_DKY_RGOC" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVKT_HDV_DKY_RGOC" nillable="true" type="tns:ArrayOfVKT_HDV_DKY_RGOC" />
+  <xs:complexType name="VKT_HDV_DKY_RGOC">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CHU_KY_VAY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ChangeTracker" nillable="true" type="tns:ObjectChangeTracker" />
+      <xs:element minOccurs="0" name="DIEN_GIAI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HTHUC_DKY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="ID_CUM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID_KVUC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID_TIEN_GUI" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="MA_CBQL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_CUM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DKY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DOI_TUONG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_DVI_TAO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_KHANG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA_KVUC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_DL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_MO_SO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGAY_TRA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_CNHAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGUOI_NHAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SO_DU" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SO_SO_TG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SO_TIEN_GOC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SO_TIEN_RUT_GOC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TEN_BANG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TEN_CUM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TEN_KHANG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TEN_KVUC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="THANG_TRA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_BGHI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TTHAI_NVU" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="VKT_HDV_DKY_RGOC" nillable="true" type="tns:VKT_HDV_DKY_RGOC" />
+</xs:schema>

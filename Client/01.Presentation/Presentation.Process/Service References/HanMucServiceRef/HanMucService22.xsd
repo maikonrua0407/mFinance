@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Utilities.Common" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Utilities.Common" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="DatabaseConstant.Action">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="XEM" />
+      <xs:enumeration value="THEM" />
+      <xs:enumeration value="SUA" />
+      <xs:enumeration value="XOA" />
+      <xs:enumeration value="LUU" />
+      <xs:enumeration value="SAO_CHEP" />
+      <xs:enumeration value="CAT" />
+      <xs:enumeration value="DAN" />
+      <xs:enumeration value="LUU_TAM" />
+      <xs:enumeration value="NHAN_BAN" />
+      <xs:enumeration value="DONG" />
+      <xs:enumeration value="DUYET" />
+      <xs:enumeration value="HUY_DUYET" />
+      <xs:enumeration value="TU_CHOI_DUYET" />
+      <xs:enumeration value="LOC" />
+      <xs:enumeration value="TIM_KIEM" />
+      <xs:enumeration value="XEM_TRUOC" />
+      <xs:enumeration value="IN" />
+      <xs:enumeration value="DONG_BO" />
+      <xs:enumeration value="TRO_GIUP" />
+      <xs:enumeration value="KET_NOI" />
+      <xs:enumeration value="HUY_KET_NOI" />
+      <xs:enumeration value="LAY_LAI" />
+      <xs:enumeration value="POPUP" />
+      <xs:enumeration value="XUAT_DU_LIEU" />
+      <xs:enumeration value="NHAP_DU_LIEU" />
+      <xs:enumeration value="TONG_HOP" />
+      <xs:enumeration value="TAO_DU_LIEU" />
+      <xs:enumeration value="SINH_DU_LIEU" />
+      <xs:enumeration value="TINH_TOAN" />
+      <xs:enumeration value="THUC_HIEN" />
+      <xs:enumeration value="XU_LY" />
+      <xs:enumeration value="CAU_HINH" />
+      <xs:enumeration value="TAI_XUONG" />
+      <xs:enumeration value="TAI_LEN" />
+      <xs:enumeration value="DON_DEP" />
+      <xs:enumeration value="SAO_LUU" />
+      <xs:enumeration value="PHUC_HOI" />
+      <xs:enumeration value="BANG_KE" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="DatabaseConstant.Action" nillable="true" type="tns:DatabaseConstant.Action" />
+  <xs:simpleType name="DatabaseConstant.Function">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="QTHT_ND" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="DatabaseConstant.Function" nillable="true" type="tns:DatabaseConstant.Function" />
+  <xs:simpleType name="DatabaseConstant.Module">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="QTHT" />
+      <xs:enumeration value="DM" />
+      <xs:enumeration value="KH" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="DatabaseConstant.Module" nillable="true" type="tns:DatabaseConstant.Module" />
+  <xs:simpleType name="DatabaseConstant.Table">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="DM_DON_VI" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="DatabaseConstant.Table" nillable="true" type="tns:DatabaseConstant.Table" />
+  <xs:simpleType name="ApplicationConstant.ResponseStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="KHONG_THANH_CONG" />
+      <xs:enumeration value="THANH_CONG" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ApplicationConstant.ResponseStatus" nillable="true" type="tns:ApplicationConstant.ResponseStatus" />
+</xs:schema>

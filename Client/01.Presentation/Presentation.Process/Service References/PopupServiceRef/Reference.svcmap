@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="87a5bc1d-0234-4c2d-a142-9c3a3b352fa4" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:1001/PopupService.svc/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="4e7a38bf-67c2-495a-9079-2c0ba22995a6" SourceId="1" SourceUrl="http://localhost:1001/PopupService.svc/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="40bcfde3-ba84-4ebc-bb4c-86b0e50d8f98" SourceId="1" SourceUrl="http://localhost:1001/PopupService.svc/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="4bc03110-50d1-4f26-a042-aa1ae6d607b0" SourceId="1" SourceUrl="http://localhost:1001/PopupService.svc/mex" />
+    <MetadataFile FileName="CommunicationServices.Popup.Messages.xsd" MetadataType="Schema" ID="5b736b5c-e790-4c41-91e8-38f270afe32c" SourceId="1" SourceUrl="http://localhost:1001/PopupService.svc/mex" />
+    <MetadataFile FileName="CommunicationMessages.Base.MessageBases.xsd" MetadataType="Schema" ID="ec8334ef-6693-4160-afb3-1b0860e58200" SourceId="1" SourceUrl="http://localhost:1001/PopupService.svc/mex" />
+    <MetadataFile FileName="Utilities.Common.xsd" MetadataType="Schema" ID="1e9e6fba-d476-400d-aeb3-3fba2cdc2d50" SourceId="1" SourceUrl="http://localhost:1001/PopupService.svc/mex" />
+    <MetadataFile FileName="Arrays.xsd" MetadataType="Schema" ID="d9d9296e-c140-4ba5-ad1e-7387611b1743" SourceId="1" SourceUrl="http://localhost:1001/PopupService.svc/mex" />
+    <MetadataFile FileName="service2.xsd" MetadataType="Schema" ID="06e9b37f-504e-4965-b917-ffd175bedb80" SourceId="1" SourceUrl="http://localhost:1001/PopupService.svc/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

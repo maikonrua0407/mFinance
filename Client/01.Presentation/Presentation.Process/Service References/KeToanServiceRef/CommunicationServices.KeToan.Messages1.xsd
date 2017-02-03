@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/CommunicationServices.KeToan.Messages" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/CommunicationServices.KeToan.Messages" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/BusinessServices.KeToan.DTO" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/BusinessServices.HachToan.DTO" />
+  <xs:complexType name="TaiKhoanRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" base="q1:RequestBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="decTongSoDu" type="xs:decimal" />
+          <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstDcCtrucCtiet" nillable="true" type="q2:ArrayOfDC_CTRUC_CTIET" />
+          <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstGDichBToan" nillable="true" type="q3:ArrayOfKT_GDICH_BTOAN" />
+          <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstKtBToan" nillable="true" type="q4:ArrayOfKT_BTOAN" />
+          <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstKtBphiTkhoan" nillable="true" type="q5:ArrayOfKT_BPHI_TKHOAN" />
+          <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstKtDoiChieu" nillable="true" type="q6:ArrayOfKT_DOI_CHIEU" />
+          <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstKtKyHieu" nillable="true" type="q7:ArrayOfKT_KY_HIEU" />
+          <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstKtKyHieuPhanLoai" nillable="true" type="q8:ArrayOfKT_KY_HIEU_PLOAI" />
+          <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstKtNhomPloai" nillable="true" type="q9:ArrayOfKT_NHOM_PLOAI" />
+          <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstKtNhomPloaiLsdu" nillable="true" type="q10:ArrayOfKT_NHOM_PLOAI_LSDU" />
+          <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstKtPhanHePhanLoai" nillable="true" type="q11:ArrayOfKT_PHAN_HE_PLOAI" />
+          <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstKtPloai" nillable="true" type="q12:ArrayOfKT_PLOAI" />
+          <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstKtSoCai" nillable="true" type="q13:ArrayOfKT_SO_CAI" />
+          <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstKtSoCaiCthuc" nillable="true" type="q14:ArrayOfKT_SO_CAI_CTHUC" />
+          <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstKtSoCaiDnghia" nillable="true" type="q15:ArrayOfKT_SO_CAI_DNGHIA" />
+          <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstKtSoCaiLoai" nillable="true" type="q16:ArrayOfKT_SO_CAI_LOAI" />
+          <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstKtTchiThop" nillable="true" type="q17:ArrayOfKT_TCHI_THOP" />
+          <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstKtTkhoan" nillable="true" type="q18:ArrayOfKT_TKHOAN" />
+          <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstKtTkhoanSdu" nillable="true" type="q19:ArrayOfKT_TKHOAN_SDU" />
+          <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/BusinessServices.KeToan.DTO" minOccurs="0" name="objDoiTuongSDUTKhoan" nillable="true" type="q20:DOI_TUONG_SDU_TKHOAN" />
+          <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objGDichBToan" nillable="true" type="q21:KT_GDICH_BTOAN" />
+          <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/BusinessServices.KeToan.DTO" minOccurs="0" name="objGHI_SO" nillable="true" type="q22:GHI_SO" />
+          <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/BusinessServices.KeToan.DTO" minOccurs="0" name="objHeThongTKTH" nillable="true" type="q23:HE_THONG_TKTH" />
+          <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objKtBToan" nillable="true" type="q24:KT_BTOAN" />
+          <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objKtBphiTkhoan" nillable="true" type="q25:KT_BPHI_TKHOAN" />
+          <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objKtDoiChieu" nillable="true" type="q26:KT_DOI_CHIEU" />
+          <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objKtKyHieu" nillable="true" type="q27:KT_KY_HIEU" />
+          <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objKtKyHieuPhanLoai" nillable="true" type="q28:KT_KY_HIEU_PLOAI" />
+          <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objKtNhomPloai" nillable="true" type="q29:KT_NHOM_PLOAI" />
+          <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objKtNhomPloaiLsdu" nillable="true" type="q30:KT_NHOM_PLOAI_LSDU" />
+          <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objKtPhanHePhanLoai" nillable="true" type="q31:KT_PHAN_HE_PLOAI" />
+          <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objKtPloai" nillable="true" type="q32:KT_PLOAI" />
+          <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objKtSoCai" nillable="true" type="q33:KT_SO_CAI" />
+          <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objKtSoCaiCthuc" nillable="true" type="q34:KT_SO_CAI_CTHUC" />
+          <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objKtSoCaiDnghia" nillable="true" type="q35:KT_SO_CAI_DNGHIA" />
+          <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objKtSoCaiLoai" nillable="true" type="q36:KT_SO_CAI_LOAI" />
+          <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objKtTchiThop" nillable="true" type="q37:KT_TCHI_THOP" />
+          <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objKtTkhoan" nillable="true" type="q38:KT_TKHOAN" />
+          <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objKtTkhoanSdu" nillable="true" type="q39:KT_TKHOAN_SDU" />
+          <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/BusinessServices.KeToan.DTO" minOccurs="0" name="objTKTH" nillable="true" type="q40:TKTONGHOP" />
+          <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/BusinessServices.KeToan.DTO" minOccurs="0" name="objTongHopDuLieu" nillable="true" type="q41:TONG_HOP_DU_LIEU" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TaiKhoanRequest" nillable="true" type="tns:TaiKhoanRequest" />
+  <xs:complexType name="TaiKhoanResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q42="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" base="q42:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="decTongSoDu" type="xs:decimal" />
+          <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstDcCtrucCtiet" nillable="true" type="q43:ArrayOfDC_CTRUC_CTIET" />
+          <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstGDichBToan" nillable="true" type="q44:ArrayOfKT_GDICH_BTOAN" />
+          <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstKtBToan" nillable="true" type="q45:ArrayOfKT_BTOAN" />
+          <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstKtBphiTkhoan" nillable="true" type="q46:ArrayOfKT_BPHI_TKHOAN" />
+          <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstKtDoiChieu" nillable="true" type="q47:ArrayOfKT_DOI_CHIEU" />
+          <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstKtKyHieu" nillable="true" type="q48:ArrayOfKT_KY_HIEU" />
+          <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstKtKyHieuPhanLoai" nillable="true" type="q49:ArrayOfKT_KY_HIEU_PLOAI" />
+          <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstKtNhomPloai" nillable="true" type="q50:ArrayOfKT_NHOM_PLOAI" />
+          <xs:element xmlns:q51="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstKtNhomPloaiLsdu" nillable="true" type="q51:ArrayOfKT_NHOM_PLOAI_LSDU" />
+          <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstKtPhanHePhanLoai" nillable="true" type="q52:ArrayOfKT_PHAN_HE_PLOAI" />
+          <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstKtPloai" nillable="true" type="q53:ArrayOfKT_PLOAI" />
+          <xs:element xmlns:q54="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstKtSoCai" nillable="true" type="q54:ArrayOfKT_SO_CAI" />
+          <xs:element xmlns:q55="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstKtSoCaiCthuc" nillable="true" type="q55:ArrayOfKT_SO_CAI_CTHUC" />
+          <xs:element xmlns:q56="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstKtSoCaiDnghia" nillable="true" type="q56:ArrayOfKT_SO_CAI_DNGHIA" />
+          <xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstKtSoCaiLoai" nillable="true" type="q57:ArrayOfKT_SO_CAI_LOAI" />
+          <xs:element xmlns:q58="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstKtTchiThop" nillable="true" type="q58:ArrayOfKT_TCHI_THOP" />
+          <xs:element xmlns:q59="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstKtTkhoan" nillable="true" type="q59:ArrayOfKT_TKHOAN" />
+          <xs:element xmlns:q60="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstKtTkhoanSdu" nillable="true" type="q60:ArrayOfKT_TKHOAN_SDU" />
+          <xs:element xmlns:q61="http://schemas.datacontract.org/2004/07/BusinessServices.KeToan.DTO" minOccurs="0" name="objDoiTuongSDUTKhoan" nillable="true" type="q61:DOI_TUONG_SDU_TKHOAN" />
+          <xs:element xmlns:q62="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objGDichBToan" nillable="true" type="q62:KT_GDICH_BTOAN" />
+          <xs:element xmlns:q63="http://schemas.datacontract.org/2004/07/BusinessServices.KeToan.DTO" minOccurs="0" name="objHeThongTKTH" nillable="true" type="q63:HE_THONG_TKTH" />
+          <xs:element xmlns:q64="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objKtBToan" nillable="true" type="q64:KT_BTOAN" />
+          <xs:element xmlns:q65="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objKtBphiTkhoan" nillable="true" type="q65:KT_BPHI_TKHOAN" />
+          <xs:element xmlns:q66="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objKtDoiChieu" nillable="true" type="q66:KT_DOI_CHIEU" />
+          <xs:element xmlns:q67="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objKtKyHieu" nillable="true" type="q67:KT_KY_HIEU" />
+          <xs:element xmlns:q68="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objKtKyHieuPhanLoai" nillable="true" type="q68:KT_KY_HIEU_PLOAI" />
+          <xs:element xmlns:q69="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objKtNhomPloai" nillable="true" type="q69:KT_NHOM_PLOAI" />
+          <xs:element xmlns:q70="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objKtNhomPloaiLsdu" nillable="true" type="q70:KT_NHOM_PLOAI_LSDU" />
+          <xs:element xmlns:q71="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objKtPhanHePhanLoai" nillable="true" type="q71:KT_PHAN_HE_PLOAI" />
+          <xs:element xmlns:q72="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objKtPloai" nillable="true" type="q72:KT_PLOAI" />
+          <xs:element xmlns:q73="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objKtSoCai" nillable="true" type="q73:KT_SO_CAI" />
+          <xs:element xmlns:q74="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objKtSoCaiCthuc" nillable="true" type="q74:KT_SO_CAI_CTHUC" />
+          <xs:element xmlns:q75="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objKtSoCaiDnghia" nillable="true" type="q75:KT_SO_CAI_DNGHIA" />
+          <xs:element xmlns:q76="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objKtSoCaiLoai" nillable="true" type="q76:KT_SO_CAI_LOAI" />
+          <xs:element xmlns:q77="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objKtTchiThop" nillable="true" type="q77:KT_TCHI_THOP" />
+          <xs:element xmlns:q78="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objKtTkhoan" nillable="true" type="q78:KT_TKHOAN" />
+          <xs:element xmlns:q79="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objKtTkhoanSdu" nillable="true" type="q79:KT_TKHOAN_SDU" />
+          <xs:element xmlns:q80="http://schemas.datacontract.org/2004/07/BusinessServices.KeToan.DTO" minOccurs="0" name="objTKTH" nillable="true" type="q80:TKTONGHOP" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TaiKhoanResponse" nillable="true" type="tns:TaiKhoanResponse" />
+  <xs:complexType name="GiaoDichKeToanRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q81="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" base="q81:RequestBase">
+        <xs:sequence>
+          <xs:element xmlns:q82="http://schemas.datacontract.org/2004/07/BusinessServices.HachToan.DTO" minOccurs="0" name="lstGdichHtoan" nillable="true" type="q82:ArrayOfGDICH_HTOAN" />
+          <xs:element xmlns:q83="http://schemas.datacontract.org/2004/07/BusinessServices.KeToan.DTO" minOccurs="0" name="objCuoiNgay" nillable="true" type="q83:CUOI_NGAY" />
+          <xs:element xmlns:q84="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objDTuong" nillable="true" type="q84:KT_GIAO_DICH_DTUONG" />
+          <xs:element xmlns:q85="http://schemas.datacontract.org/2004/07/BusinessServices.KeToan.DTO" minOccurs="0" name="objDanhGiaNgoaiTe" nillable="true" type="q85:DANH_GIA_NGOAI_TE" />
+          <xs:element xmlns:q86="http://schemas.datacontract.org/2004/07/BusinessServices.KeToan.DTO" minOccurs="0" name="objDieuChinhButToan" nillable="true" type="q86:DIEU_CHINH_BUT_TOAN" />
+          <xs:element xmlns:q87="http://schemas.datacontract.org/2004/07/BusinessServices.HachToan.DTO" minOccurs="0" name="objGdichHtoan" nillable="true" type="q87:GDICH_HTOAN" />
+          <xs:element xmlns:q88="http://schemas.datacontract.org/2004/07/BusinessServices.KeToan.DTO" minOccurs="0" name="objKetChuyen" nillable="true" type="q88:KET_CHUYEN" />
+          <xs:element xmlns:q89="http://schemas.datacontract.org/2004/07/BusinessServices.KeToan.DTO" minOccurs="0" name="objKiemSoatGiaoDich" nillable="true" type="q89:KIEM_SOAT_GIAO_DICH" />
+          <xs:element xmlns:q90="http://schemas.datacontract.org/2004/07/BusinessServices.KeToan.DTO" minOccurs="0" name="objNhapXuatNgoaiBang" nillable="true" type="q90:NHAP_XUAT_NGOAI_BANG" />
+          <xs:element xmlns:q91="http://schemas.datacontract.org/2004/07/BusinessServices.KeToan.DTO" minOccurs="0" name="objPhieuKeToan" nillable="true" type="q91:PHIEU_KE_TOAN" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GiaoDichKeToanRequest" nillable="true" type="tns:GiaoDichKeToanRequest" />
+  <xs:complexType name="GiaoDichKeToanResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q92="http://schemas.datacontract.org/2004/07/CommunicationMessages.Base.MessageBases" base="q92:ResponseBase">
+        <xs:sequence>
+          <xs:element xmlns:q93="http://schemas.datacontract.org/2004/07/BusinessServices.HachToan.DTO" minOccurs="0" name="lstGdichHtoan" nillable="true" type="q93:ArrayOfGDICH_HTOAN" />
+          <xs:element xmlns:q94="http://schemas.datacontract.org/2004/07/BusinessServices.KeToan.DTO" minOccurs="0" name="objCuoiNgay" nillable="true" type="q94:CUOI_NGAY" />
+          <xs:element xmlns:q95="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objDTuong" nillable="true" type="q95:KT_GIAO_DICH_DTUONG" />
+          <xs:element xmlns:q96="http://schemas.datacontract.org/2004/07/BusinessServices.KeToan.DTO" minOccurs="0" name="objDanhGiaNgoaiTe" nillable="true" type="q96:DANH_GIA_NGOAI_TE" />
+          <xs:element xmlns:q97="http://schemas.datacontract.org/2004/07/BusinessServices.KeToan.DTO" minOccurs="0" name="objDieuChinhButToan" nillable="true" type="q97:DIEU_CHINH_BUT_TOAN" />
+          <xs:element xmlns:q98="http://schemas.datacontract.org/2004/07/BusinessServices.HachToan.DTO" minOccurs="0" name="objGdichHtoan" nillable="true" type="q98:GDICH_HTOAN" />
+          <xs:element xmlns:q99="http://schemas.datacontract.org/2004/07/BusinessServices.KeToan.DTO" minOccurs="0" name="objKetChuyen" nillable="true" type="q99:KET_CHUYEN" />
+          <xs:element xmlns:q100="http://schemas.datacontract.org/2004/07/BusinessServices.KeToan.DTO" minOccurs="0" name="objKiemSoatGiaoDich" nillable="true" type="q100:KIEM_SOAT_GIAO_DICH" />
+          <xs:element xmlns:q101="http://schemas.datacontract.org/2004/07/BusinessServices.KeToan.DTO" minOccurs="0" name="objNhapXuatNgoaiBang" nillable="true" type="q101:NHAP_XUAT_NGOAI_BANG" />
+          <xs:element xmlns:q102="http://schemas.datacontract.org/2004/07/BusinessServices.KeToan.DTO" minOccurs="0" name="objPhieuKeToan" nillable="true" type="q102:PHIEU_KE_TOAN" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GiaoDichKeToanResponse" nillable="true" type="tns:GiaoDichKeToanResponse" />
+</xs:schema>

@@ -1,0 +1,136 @@
+﻿<UserControl x:Class="PresentationWPF.BaoHiem.CamKetThamGiaBH.ucCamKetThamGiaBHDS"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:uc="clr-namespace:PresentationWPF.CustomControl;assembly=PresentationWPF.CustomControl"
+             xmlns:Telerik_DataPager="clr-namespace:Telerik.Windows.Controls.Data.DataPager;assembly=Telerik.Windows.Controls.Data"
+             xmlns:ribbon="http://schemas.microsoft.com/winfx/2006/xaml/presentation/ribbon"
+             mc:Ignorable="d" 
+             d:DesignHeight="768" d:DesignWidth="1024" xmlns:my="clr-namespace:System;assembly=mscorlib">
+    <UserControl.Resources>
+        <my:String x:Key="U.BaoHiem.CamKetThamGiaBH.ucCamKetThamGiaBHDS.SoCamKet">Số cam kết BH:</my:String>
+        <my:String x:Key="U.BaoHiem.CamKetThamGiaBH.ucCamKetThamGiaBHDS.TuNgayHL">Từ ngày hiệu lực:</my:String>
+        <my:String x:Key="U.BaoHiem.CamKetThamGiaBH.ucCamKetThamGiaBHDS.DenNgayHL">Đến ngày hiệu lực:</my:String>
+        <my:String x:Key="U.BaoHiem.CamKetThamGiaBH.ucCamKetThamGiaBHDS.TuNgayHetHL">Ngày hết hiệu lực từ:</my:String>
+        <my:String x:Key="U.BaoHiem.CamKetThamGiaBH.ucCamKetThamGiaBHDS.DenNgayHetHL">Ngày hết hiệu lực đến:</my:String>
+    </UserControl.Resources>
+    <Grid>
+        <DockPanel>
+            <DockPanel HorizontalAlignment="Stretch" DockPanel.Dock="Top" Margin="3,3,0,3" LastChildFill="False" Name="docToolbar">
+                <WrapPanel Name="Toolbar">
+                    <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbAdd" DockPanel.Dock="Left" Label="Thêm" SmallImageSource="/Utilities.Common;component/Images/Action/add.png" Style="{StaticResource RibbonButton}" />
+                    <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbModify" DockPanel.Dock="Left" Label="Sửa"  SmallImageSource="/Utilities.Common;component/Images/Action/modify.png" Style="{StaticResource RibbonButton}" />
+                    <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbDelete" DockPanel.Dock="Left" Label="Xóa"  SmallImageSource="/Utilities.Common;component/Images/Action/delete.png" Style="{StaticResource RibbonButton}" />
+                    <Label Name="lbl1" Margin="3,0,0,0" DockPanel.Dock="Left"  BorderThickness="3" Width="2" BorderBrush="#FF170404" />
+                    <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbApprove" DockPanel.Dock="Left" Label="Duyệt"  SmallImageSource="/Utilities.Common;component/Images/Action/approve.png" Style="{StaticResource RibbonButton}" />
+                    <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbCancel" DockPanel.Dock="Left" Label="Thoái duyệt"  SmallImageSource="/Utilities.Common;component/Images/Action/refuse.png" Style="{StaticResource RibbonButton}" />
+                    <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbRefuse" DockPanel.Dock="Left" Label="Từ chối"  SmallImageSource="/Utilities.Common;component/Images/Action/cancel.png" Style="{StaticResource RibbonButton}" />
+                    <Label Name="lbl2" Margin="3,0,0,0" DockPanel.Dock="Left" BorderThickness="3" Width="2" BorderBrush="#FF170404" />
+                    <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbView" DockPanel.Dock="Left" Label="Xem"  SmallImageSource="/Utilities.Common;component/Images/Action/view.png" Style="{StaticResource RibbonButton}" />
+                    <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbSearch" DockPanel.Dock="Left" Label="Tìm kiếm"  SmallImageSource="/Utilities.Common;component/Images/Action/search.png" Style="{StaticResource RibbonButton}" />
+                    <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbExport" DockPanel.Dock="Left" Label="Xuất Excel"  SmallImageSource="/Utilities.Common;component/Images/Action/export.png" Style="{StaticResource RibbonButton}" />
+                    <Label Name="lbl3" Margin="3,0,0,0" DockPanel.Dock="Left" BorderThickness="3" Width="2" BorderBrush="#FF170404" />
+                    <ribbon:RibbonButton Margin="3,0,0,0" Name="tlbClose" DockPanel.Dock="Left" Label="Đóng"  SmallImageSource="/Utilities.Common;component/Images/Action/close.png" Style="{StaticResource RibbonButton}" />
+                </WrapPanel>
+            </DockPanel>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="5"/>
+                    <ColumnDefinition Width="8*"/>
+                </Grid.ColumnDefinitions>
+                <TreeView Name="tvwDieuKien" Grid.Column="0"/>
+                <GridSplitter Grid.Column="1" ResizeBehavior="PreviousAndNext"/>
+                <Grid Grid.Column="2">
+                    <DockPanel Name="dockMain">
+                        <Expander Header="Tìm kiếm nâng cao" IsExpanded="True" DockPanel.Dock="Top" Height="239">
+                            <DockPanel>
+                                <GroupBox Header="Thông tin cam kết bảo hiểm" DockPanel.Dock="Left" Margin="3"  Width="332">
+                                    <Grid>
+                                        <Label Content="{StaticResource U.BaoHiem.CamKetThamGiaBH.ucCamKetThamGiaBHDS.SoCamKet}" Height="28" HorizontalAlignment="Left" Margin="14,8,0,0" Name="label1" VerticalAlignment="Top" />
+                                        <Label Content="{StaticResource U.BaoHiem.CamKetThamGiaBH.ucCamKetThamGiaBHDS.TuNgayHL}" Height="28" HorizontalAlignment="Left" Margin="14,37,0,0" Name="label2" VerticalAlignment="Top" />
+                                        <Label Content="{StaticResource U.BaoHiem.CamKetThamGiaBH.ucCamKetThamGiaBHDS.DenNgayHL}" Height="28" HorizontalAlignment="Left" Margin="14,66,0,0" Name="label3" VerticalAlignment="Top" />
+                                        <Label Content="{DynamicResource U.BaoHiem.CamKetThamGiaBH.ucCamKetThamGiaBHDS.TuNgayHetHL}" Height="28" HorizontalAlignment="Left" Margin="14,95,0,0" Name="label4" VerticalAlignment="Top" />
+                                        <Label Content="{DynamicResource U.BaoHiem.CamKetThamGiaBH.ucCamKetThamGiaBHDS.DenNgayHetHL}" Height="28" HorizontalAlignment="Left" Margin="14,124,0,0" Name="label5" VerticalAlignment="Top" />
+                                        <TextBox Height="23" HorizontalAlignment="Left" Margin="150,10,0,0" Name="txtSoCamKetKH" VerticalAlignment="Top" Width="146" TabIndex="0" />
+                                        <DatePicker Height="25" HorizontalAlignment="Left" Margin="267,38,0,0" Name="datePicker1" VerticalAlignment="Top" Width="29" />
+                                        <DatePicker Height="25" HorizontalAlignment="Left" Margin="267,67,0,0" Name="datePicker2" VerticalAlignment="Top" Width="29" />
+                                        <DatePicker Height="25" HorizontalAlignment="Left" Margin="267,96,0,0" Name="datePicker3" VerticalAlignment="Top" Width="29" />
+                                        <DatePicker Height="25" HorizontalAlignment="Left" Margin="267,125,0,0" Name="datePicker4" VerticalAlignment="Top" Width="29" />
+                                        <telerik:RadMaskedDateTimeInput HorizontalAlignment="Left" Margin="150,38,0,0" Name="raddtTuNgayHL" VerticalAlignment="Top" Width="111" Text="__/__/____" TabIndex="1" Mask="dd/MM/yyyy" />
+                                        <telerik:RadMaskedDateTimeInput HorizontalAlignment="Left" Margin="150,67,0,0" Name="raddtDenNgayHL" VerticalAlignment="Top" Width="111" Text="__/__/____" TabIndex="2" />
+                                        <telerik:RadMaskedDateTimeInput Margin="150,96,0,0" Name="raddtTuNgayHetHL" VerticalAlignment="Top" Text="__/__/____" TabIndex="3" HorizontalAlignment="Left" Width="111" />
+                                        <telerik:RadMaskedDateTimeInput HorizontalAlignment="Left" Margin="150,125,0,0" Name="raddtDenNgayHetHL" VerticalAlignment="Top" Width="111" Text="__/__/____" TabIndex="4" />
+                                    </Grid>
+                                </GroupBox >
+                                <GroupBox Header="Thông tin cam kết khách hàng" Margin="3" >
+                                    <Grid Name="grd">
+                                        <Label Content="Tên khách hàng:" Height="28" HorizontalAlignment="Left" Margin="30,8,0,0" Name="label6" VerticalAlignment="Top" />
+                                        <Label Content="Số thẻ TV:" Height="28" HorizontalAlignment="Left" Margin="30,37,0,0" Name="label7" VerticalAlignment="Top" Width="96" />
+                                        <Label Content="Địa chỉ:" Height="28" HorizontalAlignment="Left" Margin="30,66,0,0" Name="label8" VerticalAlignment="Top" Width="96" />
+                                        <Label Content="Số CMT" Height="28" HorizontalAlignment="Left" Margin="33,88,0,0" Name="label9" VerticalAlignment="Top" />
+                                        <TextBox Margin="176,10,22,0" Name="txtTenKH" TabIndex="5" Height="23" VerticalAlignment="Top" />
+                                        <TextBox Height="23" Margin="176,39,22,0" Name="txtSoTheTV" VerticalAlignment="Top" TabIndex="6" />
+                                        <TextBox Height="23" Margin="176,68,22,0" Name="txtDiaChi" VerticalAlignment="Top" TabIndex="7" />
+                                        <Label Content="Ngày cấp" Height="28" HorizontalAlignment="Left" Margin="176,86,0,0" Name="label10" VerticalAlignment="Top" />
+                                        <Label Content="Nơi cấp" Height="28" HorizontalAlignment="Left" Margin="328,87,0,0" Name="label11" VerticalAlignment="Top" />
+                                        <TextBox Height="23" HorizontalAlignment="Left" Margin="30,109,0,0" Name="txtCMT" VerticalAlignment="Top" Width="117" TabIndex="8" />
+                                        <TextBox Height="23" HorizontalAlignment="Left" Margin="176,109,0,0" Name="txtNgayCap" VerticalAlignment="Top" Width="120" TabIndex="9" />
+                                        <TextBox Height="23" Margin="328,109,22,0" Name="txtNoiCap" VerticalAlignment="Top" TabIndex="10"/>
+                                        <Label Content="Số điện thoại" Height="28" HorizontalAlignment="Left" Margin="30,134,0,0" Name="label12" VerticalAlignment="Top" />
+                                        <Label Content="Địa chỉ email" Height="28" HorizontalAlignment="Left" Margin="176,134,0,0" Name="label13" VerticalAlignment="Top" />
+                                        <TextBox Height="23" HorizontalAlignment="Left" Margin="30,158,0,0" Name="txtSoDienThoai" VerticalAlignment="Top" Width="117" TabIndex="11" />
+                                        <TextBox Height="23" Margin="176,158,22,0" Name="txtDiaChiEmail" VerticalAlignment="Top" TabIndex="12" />
+                                    </Grid>
+                                </GroupBox>
+                            </DockPanel>
+                        </Expander>
+                        <GroupBox Header="Thông tin cam kết bảo hiểm của khách hàng" DockPanel.Dock="Top" Margin="3" >
+                            <Grid>
+                                <DockPanel>
+                                    <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
+                                        <TextBox Name="txtQuickSearch" HorizontalAlignment="Left" Text="Tìm kiếm..." Width="{Binding ElementName=dockMain, Path=ActualWidth,Converter={uc:MathConverter}, ConverterParameter=x-80}" Margin="2"/>
+                                        <telerik:RadNumericUpDown HorizontalAlignment="Right" Name="nudPageSize" VerticalAlignment="Top" Width="60" IsInteger="True" Value="10" Margin="2" />
+                                    </StackPanel>
+                                    <Grid DockPanel.Dock="Bottom">
+                                        <Grid.Background>
+                                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                                <GradientStop Color="#FF889393" Offset="0" />
+                                                <GradientStop Color="#FFDEDEDE" Offset="1" />
+                                            </LinearGradientBrush>
+                                        </Grid.Background>
+                                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                            <Label Name="lblLabelSumDonVi" HorizontalAlignment="Left" Content="Tổng số bản ghi: " />
+                                            <Label Name="lblSumDonVi" Content="30" HorizontalAlignment="Left"/>
+                                        </StackPanel>
+                                        <telerik:RadDataPager PageSize="30" Name="radPager" IsTotalItemCountFixed="True" DisplayMode="All" Source="{Binding Items, ElementName=raddgrDSDiaBan}" HorizontalContentAlignment="Right" HorizontalAlignment="Right"/>
+                                    </Grid>
+                                    <StackPanel>
+                                        <telerik:RadGridView Name="grdBaoHiemKH" AutoGenerateColumns="False" ShowGroupPanel="False" RowIndicatorVisibility="Collapsed">
+                                            <telerik:RadGridView.Columns>
+                                                <telerik:GridViewSelectColumn Header="ID" IsVisible="False"/>
+                                                <telerik:GridViewDataColumn Header="STT" Width="40"/>
+                                                <telerik:GridViewDataColumn Header="Số cam kết"/>
+                                                <telerik:GridViewDataColumn Header="Mã khách hàng"/>
+                                                <telerik:GridViewDataColumn Header="Tên khách hàng"/>
+                                                <telerik:GridViewDataColumn Header="Địa chỉ" Width="*"/>
+                                                <telerik:GridViewDataColumn Header="Sản phẩm"/>
+                                                <telerik:GridViewDataColumn Header="Đối tượng BH"/>
+                                                <telerik:GridViewDataColumn Header="Đối tượng hưởng BH"/>
+                                                <telerik:GridViewDataColumn Header="Ngày hiệu lực"/>
+                                                <telerik:GridViewDataColumn Header="Ngày hết hiệu lực"/>
+                                            </telerik:RadGridView.Columns>
+                                        </telerik:RadGridView>
+                                    </StackPanel>
+                                </DockPanel>
+                            </Grid>
+                        </GroupBox>
+                    </DockPanel>
+                </Grid>
+            </Grid>
+        </DockPanel>
+    </Grid>
+    
+</UserControl>

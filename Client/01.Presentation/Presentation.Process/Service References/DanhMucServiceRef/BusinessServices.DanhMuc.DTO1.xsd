@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/BusinessServices.DanhMuc.DTO" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/BusinessServices.DanhMuc.DTO" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" />
+  <xs:complexType name="DM_TEMP_CUM">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="TEN_CUM_TRUONG" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DM_TEMP_CUM" nillable="true" type="tns:DM_TEMP_CUM" />
+  <xs:complexType name="ArrayOfDM_NHOM_DTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DM_NHOM_DTO" nillable="true" type="tns:DM_NHOM_DTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDM_NHOM_DTO" nillable="true" type="tns:ArrayOfDM_NHOM_DTO" />
+  <xs:complexType name="DM_NHOM_DTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DATA_SET" nillable="true">
+        <xs:complexType>
+          <xs:annotation>
+            <xs:appinfo>
+              <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+            </xs:appinfo>
+          </xs:annotation>
+          <xs:sequence>
+            <xs:element ref="xs:schema" />
+            <xs:any />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="LST_KHANG_HSO" nillable="true" type="q1:ArrayOfKH_KHANG_HSO" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="LST_KHANG_HSO_LSU" nillable="true" type="q2:ArrayOfKH_KHANG_HSO_LSU" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="LST_KH_NHOM" nillable="true" type="q3:ArrayOfKH_KHANG_NHOM" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="OBJ_NHOM" nillable="true" type="q4:DM_NHOM" />
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="OBJ_NHOM_NGUOI_BLANH" nillable="true" type="q5:DM_NHOM_NGUOI_BLANH" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DM_NHOM_DTO" nillable="true" type="tns:DM_NHOM_DTO" />
+  <xs:complexType name="ArrayOfDM_TO_CHUC_TIN_DUNG">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DM_TO_CHUC_TIN_DUNG" nillable="true" type="tns:DM_TO_CHUC_TIN_DUNG" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDM_TO_CHUC_TIN_DUNG" nillable="true" type="tns:ArrayOfDM_TO_CHUC_TIN_DUNG" />
+  <xs:complexType name="DM_TO_CHUC_TIN_DUNG">
+    <xs:sequence>
+      <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstTTinKhac" nillable="true" type="q6:ArrayOfDM_TCTD_TTIN_KHAC" />
+      <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="lstTkhoan" nillable="true" type="q7:ArrayOfDM_TCTD_TKHOAN" />
+      <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/DataModel.EntityFramework" minOccurs="0" name="objTCTD" nillable="true" type="q8:DM_TCTD" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DM_TO_CHUC_TIN_DUNG" nillable="true" type="tns:DM_TO_CHUC_TIN_DUNG" />
+</xs:schema>

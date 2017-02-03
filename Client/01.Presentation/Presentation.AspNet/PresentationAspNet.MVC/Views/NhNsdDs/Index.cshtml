@@ -1,0 +1,300 @@
+﻿@using Utilities.Common
+@model PresentationAspNet.MVC.Models.SysUsers
+@{
+    ViewBag.Title = "Danh sách nhóm người sử dụng";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section HeadPluginStyles{
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/assets/global/plugins/select2/select2.css")" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/assets/global/plugins/datatables/extensions/Scroller/css/dataTables.scroller.min.css")" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/assets/global/plugins/datatables/extensions/ColReorder/css/dataTables.colReorder.min.css")" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css")" />
+}
+
+<!-- BEGIN PAGE HEADER-->
+@Html.Partial("_ActionBar", new List<string>())
+<!-- END PAGE HEADER-->
+<!-- BEGIN NHNSD TABLE-->
+<div class="col-md-3">
+    <div class="portlet blue-hoki box">
+        <div class="portlet-title">
+            <div class="caption">
+                <i class="fa fa-cogs"></i>Loại danh mục
+            </div>
+            <div class="tools">
+                <a href="javascript:;" class="collapse">
+                </a>
+                <a href="javascript:;" class="reload">
+                </a>
+                <a href="javascript:;" class="remove">
+                </a>
+            </div>
+        </div>
+        <div class="portlet-body">
+            <div id="tree_1" class="tree-demo jstree jstree-1 jstree-default" role="tree" aria-activedescendant="j1_8">
+                <ul class="jstree-container-ul">
+                    <li role="treeitem" aria-expanded="true" id="j1_1" class="jstree-node  jstree-open" aria-selected="false">
+                        <i class="jstree-icon jstree-ocl"></i>
+                        <i class="jstree-icon jstree-themeicon fa fa-folder icon-state-warning icon-lg jstree-themeicon-custom"></i>
+                        User and user group
+                        <ul role="group" class="jstree-children">
+                            @foreach (var item in Model.LstSourceLoaiDTuong)
+                            {
+                                var selectTr = "";
+                                var selectA = "";
+                                if (item.KeywordStrings.First() == "NHNSD")
+                                {
+                                    selectTr = "{selected:true}";
+                                    selectA += " jstree-clicked";
+                                }
+                                <li role="treeitem" data-jstree="@selectTr" class="jstree-node  jstree-leaf">
+                                    <i class="jstree-icon jstree-ocl"></i>
+                                    <a class="@selectA" title="@item.KeywordStrings.First()" href="javascript:void" onclick="SearchProcess('@item.KeywordStrings.First()')">
+                                        <i class="jstree-icon jstree-themeicon fa fa-folder icon-state-warning icon-lg jstree-themeicon-custom"></i>
+                                        @item.DisplayName
+                                    </a>
+                                </li>
+                            }
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-9">
+    <div class="portlet box blue-madison">
+        <div class="portlet-title">
+            <div class="caption">
+                <i class="fa fa-globe"></i>Danh sách nhóm người sử dụng
+            </div>
+            <div class="tools">
+                <a href="javascript:;" class="reload">
+                </a>
+                <a href="javascript:;" class="remove">
+                </a>
+            </div>
+        </div>
+        <div class="portlet-body">
+            <table class="table table-striped table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th style="width: 40px">
+                            <input type="checkbox" id="chkAllNhNsd">
+                        </th>
+                        <th style="width: 40px">
+                            STT
+                        </th>
+                        <th style="width: 25%">
+                            Mã
+                        </th>
+                        <th>
+                            Tên
+                        </th>
+                        <th style="width: 15%">
+                            Đơn vị
+                        </th>
+                        <th style="width: 15%">
+                            Trạng thái
+                        </th>
+                    </tr>
+                </thead>
+                <tbody id="tbodyNhNsd">
+                    @Html.Partial("List")
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<!-- END NHNSD TABLE-->
+@section EndPluginJs{
+    <script src="@Url.Content("~/Content/assets/global/plugins/select2/select2.min.js")"></script>
+    <script src="@Url.Content("~/Content/assets/global/plugins/datatables/media/js/jquery.dataTables.min.js")"></script>
+    <script src="@Url.Content("~/Content/assets/global/plugins/datatables/extensions/TableTools/js/dataTables.tableTools.min.js")"></script>
+    <script src="@Url.Content("~/Content/assets/global/plugins/datatables/extensions/ColReorder/js/dataTables.colReorder.min.js")"></script>
+    <script src="@Url.Content("~/Content/assets/global/plugins/datatables/extensions/Scroller/js/dataTables.scroller.min.js")"></script>
+    <script src="@Url.Content("~/Content/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js")"></script>
+}
+@section EndScriptsJs{
+    <script type="text/javascript">
+        jQuery(document).ready(function() {
+            //InitTableManagedType1('sample_1');
+            $('#chkAllNhNsd').change(function() {
+                var checked = $(this).prop('checked');
+                $('input:checkbox[name=chkNhNsd]').each(function() {
+                    if (checked)
+                        $(this).parent().addClass("checked");
+                    else
+                        $(this).parent().removeClass("checked");
+                    $(this).prop('checked', checked);
+                });
+
+            });
+        });
+
+        function GetCheckBox(nameCheckBox) {
+            var str = "";
+            $('input:checkbox[name=' + nameCheckBox + ']').each(function() {
+                if ($(this).is(':checked') == true) {
+                    str += $(this).attr('id') + ",";
+                }
+            });
+            return str;
+        }
+
+        function SearchProcess(type) {
+            ShowProcess(null, false);
+            $('#tbodyNhNsd').load("@Html.Raw(Url.Action("List", "NhNsdDs"))", { type: type }, function() {
+                CloseProcess();
+            });
+        }
+
+        function ViewProcess(id) {
+            ShowProcess(null, false);
+            if (id == undefined || id == "")
+                id = GetCheckBox('chkNhNsd');
+            if (id == undefined || id == "") {
+                ShowAlertWin8(WARNING_ERROR, "Chưa chọn đối tượng");
+                CloseProcess();
+                return;
+            } else if (id.split(",").length > 2) {
+                ShowAlertWin8(WARNING_ERROR, "Chỉ chọn một đối tượng");
+                CloseProcess();
+                return;
+            } else {
+                id = id.replace(',', '');
+            }
+            var type = $(".jstree-clicked").attr("title");
+            if (type == '@BusinessConstant.LoaiDoiTuong.NHOM_NGUOI_SDUNG.layGiaTri()') {
+                $('#data').load("@Html.Raw(Url.Action("DetailNhNsd", "NhNsdDs"))", { id: id }, function() {
+                    PopupSearch("THÔNG TIN NHÓM NGƯỜI DÙNG", 1000, true, "", "view");
+                    CloseProcess();
+                });
+            } else if (type == '@BusinessConstant.LoaiDoiTuong.NGUOI_SDUNG.layGiaTri()') {
+                $('#data').load("@Html.Raw(Url.Action("DetailNsd", "NhNsdDs"))", { id: id }, function() {
+                    PopupSearch("THÔNG TIN NGƯỜI DÙNG", 1000, true, "", "view");
+                    CloseProcess();
+                });
+            }
+        }
+
+        function AddProcess() {
+            /*POST*/
+            ShowProcess(null, false);
+            var type = $(".jstree-clicked").attr("title");
+            if (type == '@BusinessConstant.LoaiDoiTuong.NHOM_NGUOI_SDUNG.layGiaTri()') {
+                $('#data').load("@Html.Raw(Url.Action("DetailNhNsd", "NhNsdDs"))", { id: 0 }, function() {
+                    PopupSearch("THÔNG TIN NHÓM NGƯỜI DÙNG", 1000, true, "", "normal");
+                    CloseProcess();
+                });
+            } else if (type == '@BusinessConstant.LoaiDoiTuong.NGUOI_SDUNG.layGiaTri()') {
+                $('#data').load("@Html.Raw(Url.Action("DetailNsd", "NhNsdDs"))", { id: 0 }, function() {
+                    PopupSearch("THÔNG TIN NGƯỜI DÙNG", 1000, true, "", "normal");
+                    CloseProcess();
+                });
+            }
+        }
+
+        function ModifyProcess(id) {
+            /*PUT*/
+            ShowProcess(null, false);
+            if (id == undefined || id == "")
+                id = GetCheckBox('chkNhNsd');
+            if (id == undefined || id == "") {
+                ShowAlertWin8(WARNING_ERROR, "Chưa chọn đối tượng");
+                CloseProcess();
+                return;
+            } else if (id.split(",").length > 2) {
+                ShowAlertWin8(WARNING_ERROR, "Chỉ chọn một đối tượng");
+                CloseProcess();
+                return;
+            } else {
+                id = id.replace(',', '');
+            }
+            var type = $(".jstree-clicked").attr("title");
+            if (type == '@BusinessConstant.LoaiDoiTuong.NHOM_NGUOI_SDUNG.layGiaTri()') {
+                $.getJSON("@Html.Raw(Url.Action("BeforeModifyNhNsd"))", {
+                    id: id
+                }, function(data) {
+                    if (data == WARNING_SUCCESS) {
+                        $('#data').load("@Html.Raw(Url.Action("DetailNhNsd", "NhNsdDs"))", { id: id }, function() {
+                            PopupSearch("THÔNG TIN NHÓM NGƯỜI DÙNG", 1000, true, "SaveProcessNhNsd()", "normal");
+                            CloseProcess();
+                        });
+                    } else {
+                        ShowAlertWin8(WARNING_ERROR, data);
+                        CloseProcess();
+                    }
+                });
+            } else if (type == '@BusinessConstant.LoaiDoiTuong.NGUOI_SDUNG.layGiaTri()') {
+                $.getJSON("@Html.Raw(Url.Action("BeforeModifyNsd"))", {
+                    id: id
+                }, function(data) {
+                    if (data == WARNING_SUCCESS) {
+                        $('#data').load("@Html.Raw(Url.Action("DetailNsd", "NhNsdDs"))", { id: id }, function() {
+                            PopupSearch("THÔNG TIN NGƯỜI DÙNG", 1000, true, "SaveProcessNsd()", "normal");
+                            CloseProcess();
+                        });
+                    } else {
+                        ShowAlertWin8(WARNING_ERROR, data);
+                        CloseProcess();
+                    }
+                });
+            }
+        }
+
+        function SaveProcessNhNsd() {
+            $.getJSON("@Html.Raw(Url.Action("Save"))", {
+                id: $('#ID_NHNSD').val(),
+                maNhnsd: $('#MA_NHNSD').val(),
+                tenNhnsd: $('#TEN_NHNSD').val(),
+                moTa: $('#MO_TA').val(),
+                maDviQly: $('#MA_DVI_QLY').val(),
+                hanCheTruyCap: $('#chkHanCheTruyCap').is(':checked')
+            }, function(data) {
+                if (data.split('#')[0] == 'S') {
+                    ShowAlertWin8(WARNING_SUCCESS, data.split('#')[1]);
+                    CloseProcess();
+                } else {
+                    ShowAlertWin8(WARNING_ERROR, data.split('#')[1]);
+                    CloseProcess();
+                }
+            });
+        }
+
+        function SaveProcessNsd() {
+        }
+
+        function DeleteProcess(id) {
+            if (id == undefined || id == "")
+                id = GetCheckBox('chkNhNsd');
+            if (id == undefined || id == "") {
+                ShowAlertWin8(WARNING_ERROR, "Chưa chọn đối tượng");
+                return;
+            }
+            var type = $(".jstree-clicked").attr("title");
+            if (type == '@BusinessConstant.LoaiDoiTuong.NHOM_NGUOI_SDUNG.layGiaTri()') {
+                $('#data').html('Bạn có chắc muốn xóa không ?');
+                PopupSearch("Xác nhận xóa thông tin", 300, true, 'deleteNhNsd("' + id + '")', 'confirm');
+            }
+            else if (type == '@BusinessConstant.LoaiDoiTuong.NGUOI_SDUNG.layGiaTri()') {
+            }
+        }
+
+        function deleteNhNsd(id) {
+            ShowProcess(null, false);
+            $.getJSON("@Html.Raw(Url.Action("DeleteNhNsd"))", {
+                id: id
+            }, function(data) {
+                if (data.split('#')[0] == 'S') {
+                    ShowAlertWin8(WARNING_SUCCESS, data.split('#')[1]);
+                    CloseProcess();
+                } else {
+                    ShowAlertWin8(WARNING_ERROR, data.split('#')[1]);
+                    CloseProcess();
+                }
+            });
+        }
+    </script>
+}
+
