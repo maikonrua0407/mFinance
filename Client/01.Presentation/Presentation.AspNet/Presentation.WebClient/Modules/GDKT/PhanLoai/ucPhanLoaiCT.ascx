@@ -25,7 +25,7 @@
             
          }
          
-        $('#<%=teldtNgayHieuLuc.ClientID%>').datepicker({ dateFormat: 'dd/mm/yy' });
+        $('#<%=txtNgayHieuLuc.ClientID%>').datepicker({ dateFormat: 'dd/mm/yy' });
     });
 
     function fndeletedetail()
@@ -53,19 +53,19 @@
         
         var thongbaotrong='<%=LanguageEngine.Instance().GetContent(LanguageType.TypeMessage, "M.DungChung.ThongBao.KhongDuocDeTrong") %>'
           
-        if ($('#<%=txtTenPhanLoai.ClientID %>').val()=='')
+        if ($('#<%=txtTenPLTK.ClientID %>').val()=='')
         {              
             getObj('<%=lblErr.ClientID %>').innerText=thongbaotrong.replace('{0}','Tên phân loại');  
               $("#dialog").dialog("open");             
-              $('#<%=txtTenPhanLoai.ClientID %>').focus();
+              $('#<%=txtTenPLTK.ClientID %>').focus();
               return false;
           }
 
-          else if ($('#<%=teldtNgayHieuLuc.ClientID %>').val()=='')
+          else if ($('#<%=txtNgayHieuLuc.ClientID %>').val()=='')
           {
               getObj('<%=lblErr.ClientID %>').innerText=thongbaotrong.replace('{0}','Ngày hiệu lực');  
               $("#dialog").dialog("open");   
-              $('<%=teldtNgayHieuLuc.ClientID %>').focus()
+              $('<%=txtNgayHieuLuc.ClientID %>').focus()
               return false;
           }
 
@@ -168,11 +168,11 @@
                         </td>
                         <td>Ngày áp dụng: <font color="red">(*)</font></td>
                         <td>
-                            <asp:TextBox ID="teldtNgayHieuLuc" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="txtNgayHieuLuc" runat="server"></asp:TextBox>
                         </td>
                     </tr>
                 </table>
-                <asp:RegularExpressionValidator ID="Regularexpressionvalidator3" runat="server" ControlToValidate="teldtNgayHieuLuc"
+                <asp:RegularExpressionValidator ID="Regularexpressionvalidator3" runat="server" ControlToValidate="txtNgayHieuLuc"
                     ValidationExpression="^\d{1,2}/\d{1,2}/\d{4}$" Display="Dynamic">Kiểu ngày:dd/MM/yyyy</asp:RegularExpressionValidator>
             </asp:Panel>
         </div>
