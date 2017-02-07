@@ -52,7 +52,16 @@
         showpopup(linkpopup + "&ID=0", window.outerWidth - 120, window.outerHeight - 100);
     });
     function ViewMaPLTKCapTren() {
-        alert("view popup");
+        var action = "edit";
+        var strAction = "edit";
+        var IDVALUE = "0";
+        $.ajax({
+            type: "POST", url: "PopupContent.aspx",
+            contentType: "application/json; charset=utf-8", dataType: "json",
+            success: function (msg) {
+                alert("view popup");
+            }
+        });
     }
     function validdata()
     {

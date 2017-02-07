@@ -131,6 +131,8 @@ namespace Presentation.WebClient
 
             if (!Page.IsPostBack)
             {
+                LoadParams();
+                InitTemplate();
             }
         }
 
