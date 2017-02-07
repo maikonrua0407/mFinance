@@ -105,12 +105,12 @@
     });
 
     function fnaction(strconfirm, action) {
-        getcheckeditemgrid()
+        alert(action);
+        getcheckeditemgrid();
         if (getObj('<%=chkvalgrid.ClientID %>').value != "") {
             if (confirm(strconfirm)) {
-
-                getObj('<%=cfaction.ClientID %>').value = action
-                getObj('mainForm').submit()
+                getObj('<%=cfaction.ClientID %>').value = action;
+                getObj('mainForm').submit();
             }
         }
     }
@@ -205,7 +205,7 @@
                                 OnItemDataBound="grdPhanLoaiDS_ItemDataBound" CssClass="display">
                                 <ItemStyle CssClass="bordergrid" Font-Names="Arial" Font-Size="12px" ForeColor="#000"
                                     BackColor="White"></ItemStyle>
-                                <HeaderStyle ForeColor="#FFFFFF" CssClass="tbDataFlowList"></HeaderStyle>
+                                <HeaderStyle ForeColor="#000000" CssClass="tbDataFlowList"></HeaderStyle>
 
                                 <Columns>
 

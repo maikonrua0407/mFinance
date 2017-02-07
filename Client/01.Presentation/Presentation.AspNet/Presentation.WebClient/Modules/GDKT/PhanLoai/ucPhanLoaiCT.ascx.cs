@@ -13,6 +13,7 @@ using Microsoft.Office.Interop.Excel;
 using Presentation.Process.Common;
 using Presentation.Process.PopupServiceRef;
 using DataTable = System.Data.DataTable;
+using System.Web;
 
 namespace Presentation.WebClient.Modules.GDKT.PhanLoai
 {
@@ -51,29 +52,29 @@ namespace Presentation.WebClient.Modules.GDKT.PhanLoai
             set { tthaiNvu = value; }
         }
 
-        private int _idPhanLoai = -1;
+        public int _idPhanLoai = -1;
         private int _idKyHieuPLoai = -1;
 
         private bool? updateTNCP = null;
         #endregion
 
         #region Khoi tao
-        public ucPhanLoaiCT()
-        {
-            teldtNgayHieuLuc.Text = Process.Common.ClientInformation.NgayLamViecHienTai;
-            lblTenPLTKCapTren.Text = "";
-            InitCombobox();
-            txtMaPLTKCapTren.Focus();
-            ResetForm();
-        }
+        //public ucPhanLoaiCT()
+        //{
+        //    txtNgayHieuLuc.Text = ClientInformation.NgayLamViecHienTai ?? "";
+        //    lblTenPLTKCapTren.Text = "";
+        //    InitCombobox();
+        //    txtMaPLTKCapTren.Focus();
+        //    ResetForm();
+        //}
 
-        public ucPhanLoaiCT(int id, string tthai, DatabaseConstant.Action action) : this()
-        {
-            _idPhanLoai = id;
-            tthaiNvu = tthai;
-            SetFormData();
-            BeforeModifyFromList(action);
-        }
+        //public ucPhanLoaiCT(int id, string tthai, DatabaseConstant.Action action) : this()
+        //{
+        //    _idPhanLoai = id;
+        //    tthaiNvu = tthai;
+        //    SetFormData();
+        //    BeforeModifyFromList(action);
+        //}
 
         //private void KhoiTaoChung()
         //{
@@ -105,7 +106,6 @@ namespace Presentation.WebClient.Modules.GDKT.PhanLoai
         {
             AutoComboBox auto = new AutoComboBox();
             List<string> lstDK = new List<string>();
-            Mouse.OverrideCursor = Cursors.Wait;
             try
             {
                 //Loại tài khoản
@@ -119,9 +119,9 @@ namespace Presentation.WebClient.Modules.GDKT.PhanLoai
                 auto.GenAutoComboBox(ref lstSourceLoaiKHNB, ref cmbLoaiKHNBo, DatabaseConstant.DanhSachTruyVan.COMBOBOX_DMUC.getValue(), lstDK, "NOI_BO");
 
                 //Loại khách hàng/ nội bộ
-                lstDK.Clear();
-                lstDK.Add(DatabaseConstant.DanhMuc.CO_KHONG.getValue());
-                auto.GenAutoComboBox(ref lstSourceTChatBTru, ref cmbTinhChatTK, DatabaseConstant.DanhSachTruyVan.COMBOBOX_DMUC.getValue(), lstDK, "CO");
+                //lstDK.Clear();
+                //lstDK.Add(DatabaseConstant.DanhMuc.CO_KHONG.getValue());
+                //auto.GenAutoComboBox(ref lstSourceTChatBTru, ref cmbTinhChatTK, DatabaseConstant.DanhSachTruyVan.COMBOBOX_DMUC.getValue(), lstDK, "CO");
 
                 //Loại thu nhập/ chi phí
                 lstDK.Clear();
@@ -145,10 +145,6 @@ namespace Presentation.WebClient.Modules.GDKT.PhanLoai
             {
                 LLogging.WriteLog(ex.TargetSite.Name, LLogging.LogType.ERR, ex);
             }
-            finally
-            {
-                Mouse.OverrideCursor = Cursors.Arrow;
-            }
         }
 
         #endregion
@@ -157,6 +153,124 @@ namespace Presentation.WebClient.Modules.GDKT.PhanLoai
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            //btnMaPLTKCapTren.Click += btnMaPLTKCapTren_Click;
+            if (!IsPostBack)
+            {
+                if (HttpContext.Current.Request.QueryString["ID"].ToString() != "")
+                {
+                    try
+                    {
+                        _idPhanLoai = int.Parse(HttpContext.Current.Request.QueryString["ID"].ToString());
+                        inpID.Value = _idPhanLoai.ToString();
+                    }
+                    catch
+                    {
+                        Response.Write("<script>window.close();</script>");
+                    }
+                }
+                InitCombobox();
+                if (!string.IsNullOrEmpty(_idPhanLoai.ToString()))
+                {
+                    SetFormData();
+                }
+                else
+                {
+                    ResetForm();
+                }
+                txtMaPLTKCapTren.Focus();
+            }
+            _idPhanLoai = int.Parse(inpID.Value);
+            if (cfaction.Value == "add")
+            {
+                BeforeModifyFromDetail();
+                cfaction.Value = "0";
+            }
+            if (cfaction.Value == "edit")
+            {
+                BeforeModifyFromDetail();
+                cfaction.Value = "0";
+            }
+            else if (cfaction.Value == "delete")
+            {
+                OnDelete();
+                List<string> kq = null;
+                if (kq != null && kq.Count > 0)
+                {
+                    string strkq = "";
+                    for (int j = 0; j < kq.Count; j++)
+                    {
+                        strkq += kq[j].Split('#')[0] + " --    " + kq[j].Split('#')[1] + "\n";
+                    }
+                    inpshowresult.Value = "1";
+                    lblErr.Text = strkq;
+                }
+                cfaction.Value = "0";
+            }
+            else if (cfaction.Value == "submit")
+            {
+                OnSave();
+                List<string> kq = null;
+
+                if (kq != null && kq.Count > 0)
+                {
+                    string strkq = "";
+                    for (int j = 0; j < kq.Count; j++)
+                    {
+                        strkq += kq[j].Split('#')[0] + " --    " + kq[j].Split('#')[1] + "\n\r";
+                    }
+                    inpshowresult.Value = "1";
+                    lblErr.Text = strkq;
+                }
+                cfaction.Value = "0";
+            }
+            else if (cfaction.Value == "approve")
+            {
+                OnApprove();
+                List<string> kq = null;
+                if (kq != null && kq.Count > 0)
+                {
+                    string strkq = "";
+                    for (int j = 0; j < kq.Count; j++)
+                    {
+                        strkq += kq[j].Split('#')[0] + " --    " + kq[j].Split('#')[1] + "\n";
+                    }
+                    inpshowresult.Value = "1";
+                    lblErr.Text = strkq;
+                }
+                cfaction.Value = "0";
+            }
+            else if (cfaction.Value == "reject")
+            {
+                OnRefuse();
+                List<string> kq = null;
+                if (kq != null && kq.Count > 0)
+                {
+                    string strkq = "";
+                    for (int j = 0; j < kq.Count; j++)
+                    {
+                        strkq += kq[j].Split('#')[0] + " --    " + kq[j].Split('#')[1] + "\n";
+                    }
+                    inpshowresult.Value = "1";
+                    lblErr.Text = strkq;
+                }
+                cfaction.Value = "0";
+            }
+            else if (cfaction.Value == "refuse")
+            {
+                OnRefuse();
+                List<string> kq = null;
+                if (kq != null && kq.Count > 0)
+                {
+                    string strkq = "";
+                    for (int j = 0; j < kq.Count; j++)
+                    {
+                        strkq += kq[j].Split('#')[0] + " --    " + kq[j].Split('#')[1] + "\n";
+                    }
+                    inpshowresult.Value = "1";
+                    lblErr.Text = strkq;
+                }
+                cfaction.Value = "0";
+            }
             Release();
             if (OnSavingCompleted != null)
             {
@@ -301,6 +415,7 @@ namespace Presentation.WebClient.Modules.GDKT.PhanLoai
         private void SetEnabledAllControls(bool enable)
         {
             grbThongTinChung.Enabled = enable;
+            grbThongTinKiemSoat.Enabled = enable;
         }
 
 
@@ -309,11 +424,11 @@ namespace Presentation.WebClient.Modules.GDKT.PhanLoai
             AutoCompleteEntry au = lstSourceTinhChatTK.ElementAt(cmbTinhChatTK.SelectedIndex);
             if (au.KeywordStrings.FirstOrDefault().Equals("LT"))
             {
-                stpTinhChatGocTK.Visible = true;
-                cmbTinhChatGocTK.Visible = true;
+                //stpTinhChatGocTK.Visible = true;
+                //cmbTinhChatGocTK.Visible = true;
 
-                stpTinhChatBTru.Visible = true;
-                cmbTinhChatBTru.Visible = true;
+                //stpTinhChatBTru.Visible = true;
+                cmbTinhChatTK.Visible = true;
             }
             else
             {
@@ -322,12 +437,12 @@ namespace Presentation.WebClient.Modules.GDKT.PhanLoai
 
                 //stpTinhChatBTru.Visibility = System.Windows.Visibility.Collapsed;
                 //cmbTinhChatBTru.Visibility = System.Windows.Visibility.Collapsed;
-                stpTinhChatGocTK.Visible = false;
-                cmbTinhChatGocTK.Visible = false;
+                //stpTinhChatGocTK.Visible = false;
+                //cmbTinhChatTK.Visible = false;
 
-                stpTinhChatBTru.Visible = false;
-                cmbTinhChatBTru.Visible = false;
-                cmbTinhChatGocTK.SelectedIndex = lstSourceTChatGoc.IndexOf(lstSourceTChatGoc.FirstOrDefault(f => f.KeywordStrings.FirstOrDefault().Equals(au.KeywordStrings.FirstOrDefault())));
+                //stpTinhChatBTru.Visible = false;
+                cmbTinhChatTK.Visible = false;
+                cmbTinhChatTK.SelectedIndex = lstSourceTChatGoc.IndexOf(lstSourceTChatGoc.FirstOrDefault(f => f.KeywordStrings.FirstOrDefault().Equals(au.KeywordStrings.FirstOrDefault())));
             }
         }
 
@@ -343,15 +458,15 @@ namespace Presentation.WebClient.Modules.GDKT.PhanLoai
         {
             SetFormData();
             SetEnabledAllControls(false);
-            CommonFunction.RefreshButton(Toolbar, DatabaseConstant.Action.XEM, tthaiNvu, mnuMain, DatabaseConstant.Function.KT_PHAN_LOAI_CT);
+            //CommonFunction.RefreshButton(Toolbar, DatabaseConstant.Action.XEM, tthaiNvu, mnuMain, DatabaseConstant.Function.KT_PHAN_LOAI_CT);
         }
 
         private void BeforeAddNew()
         {
-            CommonFunction.RefreshButton(Toolbar, DatabaseConstant.Action.THEM, tthaiNvu, mnuMain, DatabaseConstant.Function.KT_PHAN_LOAI_CT);
+            //CommonFunction.RefreshButton(Toolbar, DatabaseConstant.Action.THEM, tthaiNvu, mnuMain, DatabaseConstant.Function.KT_PHAN_LOAI_CT);
             lblTrangThai.Text = "";
-            raddtNgayNhap.Value = null;
-            raddtNgayCNhat.Value = null;
+            txtNgayNhap.Text = null;
+            txtNgayCNhat.Text = null;
             lblTenPLTKCapTren.Text = "";
         }
 
@@ -361,7 +476,7 @@ namespace Presentation.WebClient.Modules.GDKT.PhanLoai
             {
                 SetEnabledAllControls(false);
             }
-            CommonFunction.RefreshButton(Toolbar, action, tthaiNvu, mnuMain, DatabaseConstant.Function.KT_PHAN_LOAI_CT);
+            //CommonFunction.RefreshButton(Toolbar, action, tthaiNvu, mnuMain, DatabaseConstant.Function.KT_PHAN_LOAI_CT);
         }
 
         private void BeforeModifyFromDetail()
@@ -382,7 +497,7 @@ namespace Presentation.WebClient.Modules.GDKT.PhanLoai
             {
                 SetEnabledAllControls(true);
                 SetFormData();
-                CommonFunction.RefreshButton(Toolbar, DatabaseConstant.Action.SUA, tthaiNvu, mnuMain, DatabaseConstant.Function.KT_PHAN_LOAI_CT);
+                //CommonFunction.RefreshButton(Toolbar, DatabaseConstant.Action.SUA, tthaiNvu, mnuMain, DatabaseConstant.Function.KT_PHAN_LOAI_CT);
             }
             else
             {
@@ -458,14 +573,14 @@ namespace Presentation.WebClient.Modules.GDKT.PhanLoai
                     objTThai.MA = txtMaPLTK.Text;
                     objTThai.TEN = txtTenPLTK.Text;
                     lstLyDo.Add(objTThai);
-                    ucLyDo lydo = new ucLyDo(lstLyDo);
-                    lydo.DuLieuTraVe = new ucLyDo.LayDuLieu(LayDuLieuLyDo);
-                    Window win = new Window();
-                    //win.Title = "Danh sách mã phân loại tài khoản";
-                    win.Content = lydo;
-                    win.Title = LLanguage.SearchResourceByKey("U.KeToan.KiemSoat.frmLyDo.LyDo") + "-" + LLanguage.SearchResourceByKey("U.DungChung.Button.Duyet");
-                    win.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-                    win.ShowDialog();
+                    //ucLyDo lydo = new ucLyDo(lstLyDo);
+                    //lydo.DuLieuTraVe = new ucLyDo.LayDuLieu(LayDuLieuLyDo);
+                    //Window win = new Window();
+                    ////win.Title = "Danh sách mã phân loại tài khoản";
+                    //win.Content = lydo;
+                    //win.Title = LLanguage.SearchResourceByKey("U.KeToan.KiemSoat.frmLyDo.LyDo") + "-" + LLanguage.SearchResourceByKey("U.DungChung.Button.Duyet");
+                    //win.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+                    //win.ShowDialog();
                     // Gọi tới hàm duyệt dữ liệu
                     OnApprove();
                     return;
@@ -512,16 +627,16 @@ namespace Presentation.WebClient.Modules.GDKT.PhanLoai
                     objTThai.MA = txtMaPLTK.Text;
                     objTThai.TEN = txtTenPLTK.Text;
                     lstLyDo.Add(objTThai);
-                    ucLyDo lydo = new ucLyDo(lstLyDo);
-                    lydo.DuLieuTraVe = new ucLyDo.LayDuLieu(LayDuLieuLyDo);
-                    Window win = new Window();
-                    //win.Title = "Danh sách mã phân loại tài khoản";
-                    win.Content = lydo;
-                    win.Title = LLanguage.SearchResourceByKey("U.KeToan.KiemSoat.frmLyDo.LyDo") + "-" + LLanguage.SearchResourceByKey("U.DungChung.Button.ThoaiDuyet");
-                    win.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-                    win.ShowDialog();
+                    //ucLyDo lydo = new ucLyDo(lstLyDo);
+                    //lydo.DuLieuTraVe = new ucLyDo.LayDuLieu(LayDuLieuLyDo);
+                    //Window win = new Window();
+                    ////win.Title = "Danh sách mã phân loại tài khoản";
+                    //win.Content = lydo;
+                    //win.Title = LLanguage.SearchResourceByKey("U.KeToan.KiemSoat.frmLyDo.LyDo") + "-" + LLanguage.SearchResourceByKey("U.DungChung.Button.ThoaiDuyet");
+                    //win.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+                    //win.ShowDialog();
                     // Gọi tới hàm thoái duyệt dữ liệu
-                    onCancel();
+                    OnCancel();
                     return;
                 }
                 // Nếu lock không thành công >> cảnh báo
@@ -569,16 +684,16 @@ namespace Presentation.WebClient.Modules.GDKT.PhanLoai
                     objTThai.MA = txtMaPLTK.Text;
                     objTThai.TEN = txtTenPLTK.Text;
                     lstLyDo.Add(objTThai);
-                    ucLyDo lydo = new ucLyDo(lstLyDo);
-                    lydo.DuLieuTraVe = new ucLyDo.LayDuLieu(LayDuLieuLyDo);
-                    Window win = new Window();
-                    //win.Title = "Danh sách mã phân loại tài khoản";
-                    win.Content = lydo;
-                    win.Title = LLanguage.SearchResourceByKey("U.KeToan.KiemSoat.frmLyDo.LyDo") + "-" + LLanguage.SearchResourceByKey("U.DungChung.Button.TuChoi");
-                    win.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-                    win.ShowDialog();
+                    //ucLyDo lydo = new ucLyDo(lstLyDo);
+                    //lydo.DuLieuTraVe = new ucLyDo.LayDuLieu(LayDuLieuLyDo);
+                    //Window win = new Window();
+                    ////win.Title = "Danh sách mã phân loại tài khoản";
+                    //win.Content = lydo;
+                    //win.Title = LLanguage.SearchResourceByKey("U.KeToan.KiemSoat.frmLyDo.LyDo") + "-" + LLanguage.SearchResourceByKey("U.DungChung.Button.TuChoi");
+                    //win.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+                    //win.ShowDialog();
                     // Gọi tới hàm xóa dữ liệu
-                    onRefuse();
+                    OnRefuse();
                     return;
                 }
                 // Nếu lock không thành công >> cảnh báo
@@ -601,7 +716,7 @@ namespace Presentation.WebClient.Modules.GDKT.PhanLoai
         /// </summary>
         private void OnSave()
         {
-            string trangThai = CommonFunction.LayTrangThaiBanGhi(DatabaseConstant.Action.TRINH_DUYET, BusinessConstant.layTrangThaiNghiepVu(tthaiNvu));
+            string trangThai = CommonFuntion.LayTrangThaiBanGhi(DatabaseConstant.Action.TRINH_DUYET, BusinessConstant.layTrangThaiNghiepVu(tthaiNvu));
             if (Validation())
             {
                 KeToanProcess process = new KeToanProcess();
@@ -613,13 +728,11 @@ namespace Presentation.WebClient.Modules.GDKT.PhanLoai
                     ApplicationConstant.ResponseStatus ret = ApplicationConstant.ResponseStatus.KHONG_THANH_CONG;
                     List<ClientResponseDetail> listResponseDetail = new List<ClientResponseDetail>();
                     GetFormData(ref objPLoai, ref objKHPLoai, trangThai);
-                    Mouse.OverrideCursor = Cursors.Wait;
                     // Nếu là lưu tạm hoặc thêm mới lần đầu
                     if (_idPhanLoai == -1)
                     {
                         // Lấy dữ liệu từ form
                         ret = process.PhanLoaiChiTiet(DatabaseConstant.Action.THEM, ref objPLoai, ref objKHPLoai, ref listResponseDetail);
-                        Mouse.OverrideCursor = Cursors.Arrow;
                         AfterAddNew(ret, objPLoai, objKHPLoai, listResponseDetail);
                     }
                     // Nếu là lưu tạm khi sửa
@@ -629,13 +742,12 @@ namespace Presentation.WebClient.Modules.GDKT.PhanLoai
                     {
                         // Lấy dữ liệu từ form
                         ret = process.PhanLoaiChiTiet(DatabaseConstant.Action.SUA, ref objPLoai, ref objKHPLoai, ref listResponseDetail);
-                        Mouse.OverrideCursor = Cursors.Arrow;
                         AfterModify(ret, objPLoai, listResponseDetail);
                     }
                 }
                 catch (Exception ex)
                 {
-                    this.Cursor = Cursors.Arrow;
+                    //this.Cursor = Cursors.Arrow;
                     //CommonFunction.ThongBaoLoi(ex);
                     LLogging.WriteLog(ex.TargetSite.Name, LLogging.LogType.ERR, ex);
                 }
@@ -651,7 +763,7 @@ namespace Presentation.WebClient.Modules.GDKT.PhanLoai
         /// </summary>
         private void OnHold()
         {
-            string trangThai = CommonFunction.LayTrangThaiBanGhi(DatabaseConstant.Action.LUU_TAM, BusinessConstant.layTrangThaiNghiepVu(tthaiNvu));
+            string trangThai = CommonFuntion.LayTrangThaiBanGhi(DatabaseConstant.Action.LUU_TAM, BusinessConstant.layTrangThaiNghiepVu(tthaiNvu));
             KeToanProcess process = new KeToanProcess();
             try
             {
@@ -661,13 +773,11 @@ namespace Presentation.WebClient.Modules.GDKT.PhanLoai
                 ApplicationConstant.ResponseStatus ret = ApplicationConstant.ResponseStatus.KHONG_THANH_CONG;
                 List<ClientResponseDetail> listResponseDetail = new List<ClientResponseDetail>();
                 GetFormData(ref objPLoai, ref objKHPLoai, trangThai);
-                Mouse.OverrideCursor = Cursors.Wait;
                 // Nếu là lưu tạm hoặc thêm mới lần đầu
                 if (_idPhanLoai == -1)
                 {
                     // Lấy dữ liệu từ form
                     ret = process.PhanLoaiChiTiet(DatabaseConstant.Action.THEM, ref objPLoai, ref objKHPLoai, ref listResponseDetail);
-                    Mouse.OverrideCursor = Cursors.Arrow;
                     AfterAddNew(ret, objPLoai, objKHPLoai, listResponseDetail);
                 }
                 // Nếu là lưu tạm khi sửa
@@ -677,7 +787,6 @@ namespace Presentation.WebClient.Modules.GDKT.PhanLoai
                 {
                     // Lấy dữ liệu từ form
                     ret = process.PhanLoaiChiTiet(DatabaseConstant.Action.SUA, ref objPLoai, ref objKHPLoai, ref listResponseDetail);
-                    Mouse.OverrideCursor = Cursors.Arrow;
                     AfterModify(ret, objPLoai, listResponseDetail);
                 }
             }
@@ -707,10 +816,8 @@ namespace Presentation.WebClient.Modules.GDKT.PhanLoai
                 ApplicationConstant.ResponseStatus ret = ApplicationConstant.ResponseStatus.KHONG_THANH_CONG;
                 List<ClientResponseDetail> listResponseDetail = new List<ClientResponseDetail>();
                 GetFormData(ref objPLoai, ref objKHPLoai, trangThai);
-                Mouse.OverrideCursor = Cursors.Wait;
 
                 ret = process.PhanLoaiChiTiet(DatabaseConstant.Action.XOA, ref objPLoai, ref objKHPLoai, ref listResponseDetail);
-                Mouse.OverrideCursor = Cursors.Arrow;
                 AfterDelete(ret, listResponseDetail);
             }
             catch (Exception ex)
@@ -729,7 +836,7 @@ namespace Presentation.WebClient.Modules.GDKT.PhanLoai
         /// </summary>
         private void OnApprove()
         {
-            string trangThai = CommonFunction.LayTrangThaiBanGhi(DatabaseConstant.Action.DUYET, BusinessConstant.layTrangThaiNghiepVu(tthaiNvu));
+            string trangThai = CommonFuntion.LayTrangThaiBanGhi(DatabaseConstant.Action.DUYET, BusinessConstant.layTrangThaiNghiepVu(tthaiNvu));
             KeToanProcess process = new KeToanProcess();
             try
             {
@@ -739,10 +846,8 @@ namespace Presentation.WebClient.Modules.GDKT.PhanLoai
                 ApplicationConstant.ResponseStatus ret = ApplicationConstant.ResponseStatus.KHONG_THANH_CONG;
                 List<ClientResponseDetail> listResponseDetail = new List<ClientResponseDetail>();
                 GetFormData(ref objPLoai, ref objKHPLoai, trangThai);
-                Mouse.OverrideCursor = Cursors.Wait;
 
                 ret = process.PhanLoaiChiTiet(DatabaseConstant.Action.DUYET, ref objPLoai, ref objKHPLoai, ref listResponseDetail);
-                Mouse.OverrideCursor = Cursors.Arrow;
                 AfterApprove(ret, objPLoai, listResponseDetail);
             }
             catch (Exception ex)
@@ -761,7 +866,7 @@ namespace Presentation.WebClient.Modules.GDKT.PhanLoai
         /// </summary>
         private void OnCancel()
         {
-            string trangThai = CommonFunction.LayTrangThaiBanGhi(DatabaseConstant.Action.THOAI_DUYET, BusinessConstant.layTrangThaiNghiepVu(tthaiNvu));
+            string trangThai = CommonFuntion.LayTrangThaiBanGhi(DatabaseConstant.Action.THOAI_DUYET, BusinessConstant.layTrangThaiNghiepVu(tthaiNvu));
             KeToanProcess process = new KeToanProcess();
             try
             {
@@ -771,10 +876,8 @@ namespace Presentation.WebClient.Modules.GDKT.PhanLoai
                 ApplicationConstant.ResponseStatus ret = ApplicationConstant.ResponseStatus.KHONG_THANH_CONG;
                 List<ClientResponseDetail> listResponseDetail = new List<ClientResponseDetail>();
                 GetFormData(ref objPLoai, ref objKHPLoai, trangThai);
-                Mouse.OverrideCursor = Cursors.Wait;
 
                 ret = process.PhanLoaiChiTiet(DatabaseConstant.Action.THOAI_DUYET, ref objPLoai, ref objKHPLoai, ref listResponseDetail);
-                Mouse.OverrideCursor = Cursors.Arrow;
                 AfterCancel(ret, objPLoai, listResponseDetail);
 
             }
@@ -794,7 +897,7 @@ namespace Presentation.WebClient.Modules.GDKT.PhanLoai
         /// </summary>
         private void OnRefuse()
         {
-            string trangThai = CommonFunction.LayTrangThaiBanGhi(DatabaseConstant.Action.TU_CHOI_DUYET, BusinessConstant.layTrangThaiNghiepVu(tthaiNvu));
+            string trangThai = CommonFuntion.LayTrangThaiBanGhi(DatabaseConstant.Action.TU_CHOI_DUYET, BusinessConstant.layTrangThaiNghiepVu(tthaiNvu));
             KeToanProcess process = new KeToanProcess();
             try
             {
@@ -804,10 +907,8 @@ namespace Presentation.WebClient.Modules.GDKT.PhanLoai
                 ApplicationConstant.ResponseStatus ret = ApplicationConstant.ResponseStatus.KHONG_THANH_CONG;
                 List<ClientResponseDetail> listResponseDetail = new List<ClientResponseDetail>();
                 GetFormData(ref objPLoai, ref objKHPLoai, trangThai);
-                Mouse.OverrideCursor = Cursors.Wait;
 
                 ret = process.PhanLoaiChiTiet(DatabaseConstant.Action.TU_CHOI_DUYET, ref objPLoai, ref objKHPLoai, ref listResponseDetail);
-                Mouse.OverrideCursor = Cursors.Arrow;
                 AfterRefuse(ret, objPLoai, listResponseDetail);
 
             }
@@ -834,20 +935,20 @@ namespace Presentation.WebClient.Modules.GDKT.PhanLoai
                 SetEnabledAllControls(false);
                 lblTrangThai.Text = BusinessConstant.layNgonNguNghiepVu(objPLoai.TTHAI_NVU);
                 txtNguoiLap.Text = objPLoai.NGUOI_NHAP;
-                raddtNgayNhap.Value = LDateTime.StringToDate(objPLoai.NGAY_NHAP, "yyyyMMdd");
+                txtNgayNhap.Text = LDateTime.StringToDate(objPLoai.NGAY_NHAP, "yyyyMMdd").ToString();
                 txtTrangThai.Text = lblTrangThai.Text.ToString();
                 tthaiNvu = objPLoai.TTHAI_NVU;
                 _idPhanLoai = objPLoai.ID;
                 _idKyHieuPLoai = objKHPLoai.ID;
 
-                if (cbMultiAdd.IsChecked == true)
+                if (cbThemnhieulan.Checked == true)
                 {
                     SetEnabledAllControls(true);
                     ResetForm();
                 }
                 else if (!DatabaseConstant.CLOSE_DETAIL_FORM)
                 {
-                    CommonFunction.RefreshButton(Toolbar, DatabaseConstant.Action.XEM, tthaiNvu, mnuMain, DatabaseConstant.Function.KT_PHAN_LOAI_CT);
+                    //CommonFuntion.RefreshButton(Toolbar, DatabaseConstant.Action.XEM, tthaiNvu, mnuMain, DatabaseConstant.Function.KT_PHAN_LOAI_CT);
                 }
                 else
                 {
@@ -856,7 +957,7 @@ namespace Presentation.WebClient.Modules.GDKT.PhanLoai
             }
             else
             {
-                CommonFunction.ThongBaoKetQua(listResponseDetail);
+                //CommonFuntion.ThongBaoKetQua(listResponseDetail);
             }
         }
 
@@ -871,14 +972,14 @@ namespace Presentation.WebClient.Modules.GDKT.PhanLoai
                 LMessage.ShowMessage("M.DungChung.CapNhatThanhCong", LMessage.MessageBoxType.Information);
                 tthaiNvu = ret.TTHAI_NVU;
                 SetEnabledAllControls(false);
-                CommonFunction.RefreshButton(Toolbar, DatabaseConstant.Action.XEM, tthaiNvu, mnuMain, DatabaseConstant.Function.KT_PHAN_LOAI_CT);
+                //CommonFunction.RefreshButton(Toolbar, DatabaseConstant.Action.XEM, tthaiNvu, mnuMain, DatabaseConstant.Function.KT_PHAN_LOAI_CT);
                 lblTrangThai.Text = BusinessConstant.layNgonNguNghiepVu(tthaiNvu);
                 txtNguoiCapNhat.Text = ret.NGUOI_CNHAT;
-                raddtNgayCNhat.Value = LDateTime.StringToDate(ret.NGAY_CNHAT, "yyyyMMdd");
+                txtNgayCNhat.Text = LDateTime.StringToDate(ret.NGAY_CNHAT, "yyyyMMdd").ToString();
             }
             else
             {
-                CommonFunction.ThongBaoKetQua(listResponseDetail);
+                //CommonFunction.ThongBaoKetQua(listResponseDetail);
             }
 
             // Yêu cầu Unlock bản ghi cần sửa
@@ -905,7 +1006,7 @@ namespace Presentation.WebClient.Modules.GDKT.PhanLoai
             }
             else
             {
-                CommonFunction.ThongBaoKetQua(listResponseDetail);
+                //CommonFunction.ThongBaoKetQua(listResponseDetail);
             }
 
             // Yêu cầu unlock dữ liệu
@@ -935,14 +1036,14 @@ namespace Presentation.WebClient.Modules.GDKT.PhanLoai
                 LMessage.ShowMessage("M.DungChung.DuyetThanhCong", LMessage.MessageBoxType.Information);
                 tthaiNvu = ret.TTHAI_NVU;
                 SetEnabledAllControls(false);
-                CommonFunction.RefreshButton(Toolbar, DatabaseConstant.Action.XEM, tthaiNvu, mnuMain, DatabaseConstant.Function.KT_PHAN_LOAI_CT);
+                //CommonFunction.RefreshButton(Toolbar, DatabaseConstant.Action.XEM, tthaiNvu, mnuMain, DatabaseConstant.Function.KT_PHAN_LOAI_CT);
                 lblTrangThai.Text = BusinessConstant.layNgonNguNghiepVu(tthaiNvu);
                 txtNguoiCapNhat.Text = ret.NGUOI_CNHAT;
-                raddtNgayCNhat.Value = LDateTime.StringToDate(ret.NGAY_CNHAT, "yyyyMMdd");
+                txtNgayCNhat.Text = LDateTime.StringToDate(ret.NGAY_CNHAT, "yyyyMMdd").ToString();
             }
             else
             {
-                CommonFunction.ThongBaoKetQua(listResponseDetail);
+                //CommonFunction.ThongBaoKetQua(listResponseDetail);
             }
 
             // Yêu cầu Unlock bản ghi cần sửa
@@ -968,14 +1069,14 @@ namespace Presentation.WebClient.Modules.GDKT.PhanLoai
                 LMessage.ShowMessage("M.DungChung.ThoaiDuyetThanhCong", LMessage.MessageBoxType.Information);
                 tthaiNvu = ret.TTHAI_NVU;
                 SetEnabledAllControls(false);
-                CommonFunction.RefreshButton(Toolbar, DatabaseConstant.Action.XEM, tthaiNvu, mnuMain, DatabaseConstant.Function.KT_PHAN_LOAI_CT);
+                //CommonFunction.RefreshButton(Toolbar, DatabaseConstant.Action.XEM, tthaiNvu, mnuMain, DatabaseConstant.Function.KT_PHAN_LOAI_CT);
                 lblTrangThai.Text = BusinessConstant.layNgonNguNghiepVu(tthaiNvu);
                 txtNguoiCapNhat.Text = ret.NGUOI_CNHAT;
-                raddtNgayCNhat.Value = LDateTime.StringToDate(ret.NGAY_CNHAT, "yyyyMMdd");
+                txtNgayCNhat.Text = LDateTime.StringToDate(ret.NGAY_CNHAT, "yyyyMMdd").ToString();
             }
             else
             {
-                CommonFunction.ThongBaoKetQua(listResponseDetail);
+                //CommonFunction.ThongBaoKetQua(listResponseDetail);
             }
 
             // Yêu cầu Unlock bản ghi cần sửa
@@ -1001,14 +1102,14 @@ namespace Presentation.WebClient.Modules.GDKT.PhanLoai
                 LMessage.ShowMessage("M.DungChung.TuChoiDuyetThanhCong", LMessage.MessageBoxType.Information);
                 tthaiNvu = ret.TTHAI_NVU;
                 SetEnabledAllControls(false);
-                CommonFunction.RefreshButton(Toolbar, DatabaseConstant.Action.XEM, tthaiNvu, mnuMain, DatabaseConstant.Function.KT_PHAN_LOAI_CT);
+                //CommonFunction.RefreshButton(Toolbar, DatabaseConstant.Action.XEM, tthaiNvu, mnuMain, DatabaseConstant.Function.KT_PHAN_LOAI_CT);
                 lblTrangThai.Text = BusinessConstant.layNgonNguNghiepVu(tthaiNvu);
                 txtNguoiCapNhat.Text = ret.NGUOI_CNHAT;
-                raddtNgayCNhat.Value = LDateTime.StringToDate(ret.NGAY_CNHAT, "yyyyMMdd");
+                txtNgayCNhat.Text = LDateTime.StringToDate(ret.NGAY_CNHAT, "yyyyMMdd").ToString();
             }
             else
             {
-                CommonFunction.ThongBaoKetQua(listResponseDetail);
+                //CommonFunction.ThongBaoKetQua(listResponseDetail);
             }
 
             // Yêu cầu Unlock bản ghi cần sửa
@@ -1053,10 +1154,10 @@ namespace Presentation.WebClient.Modules.GDKT.PhanLoai
                     txtTenPLTK.Focus();
                     return false;
                 }
-                else if (raddtTuNgayApDung.Value == null)
+                else if (txtNgayHieuLuc.Text == null)
                 {
                     LMessage.ShowMessage("M.KeToan.PhanLoai.ucPhanLoaiCT.LoiNgayApDungTrong", LMessage.MessageBoxType.Warning);
-                    raddtTuNgayApDung.Focus();
+                    txtNgayHieuLuc.Focus();
                     return false;
                 }
                 else if (auTinhChat == null)
@@ -1065,10 +1166,10 @@ namespace Presentation.WebClient.Modules.GDKT.PhanLoai
                     cmbTinhChatTK.Focus();
                     return false;
                 }
-                else if (_idPhanLoai == -1 && Convert.ToDateTime(raddtTuNgayApDung.Value).ToString("yyyyMMdd").CompareTo(Presentation.Process.Common.ClientInformation.NgayLamViecHienTai) < 0)
+                else if (_idPhanLoai == -1 && Convert.ToDateTime(txtNgayHieuLuc.Text).ToString("yyyyMMdd").CompareTo(Presentation.Process.Common.ClientInformation.NgayLamViecHienTai) < 0)
                 {
                     LMessage.ShowMessage("M.KeToan.PhanLoai.ucPhanLoaiCT.LoiNgayApDungNhoHonNgayHienTai", LMessage.MessageBoxType.Warning);
-                    raddtTuNgayApDung.Focus();
+                    txtNgayHieuLuc.Focus();
                     return false;
                 }
             }
@@ -1086,7 +1187,6 @@ namespace Presentation.WebClient.Modules.GDKT.PhanLoai
 
         private void SetFormData()
         {
-            Mouse.OverrideCursor = Cursors.Wait;
             KeToanProcess process = new KeToanProcess();
             AutoComboBox au = new AutoComboBox();
             try
@@ -1094,9 +1194,7 @@ namespace Presentation.WebClient.Modules.GDKT.PhanLoai
                 DataTable dt = process.getThongTinMaPhanLoaiTheoID(_idPhanLoai);
                 if (dt != null && dt.Rows.Count > 0)
                 {
-
                     lblTrangThai.Text = BusinessConstant.layNgonNguNghiepVu(tthaiNvu);
-
                     //Thông tin tài khoản
                     txtMaPLTKCapTren.Text = dt.Rows[0]["MA_PLOAI_CHA"].ToString();
                     txtMaPLTKCapTren_LostFocus(null, null);
@@ -1110,49 +1208,66 @@ namespace Presentation.WebClient.Modules.GDKT.PhanLoai
                     {
                         _idKyHieuPLoai = -1;
                     }
-                    cmbKyHieu.SelectedIndex = lstSourceKyHieu.IndexOf(lstSourceKyHieu.FirstOrDefault(e => e.KeywordStrings.First().Equals(dt.Rows[0]["MA_KY_HIEU"].ToString())));
-                    raddtTuNgayApDung.Value = LDateTime.StringToDate(dt.Rows[0]["NGAY_ADUNG"].ToString(), "yyyyMMdd");
-                    cmbTinhChatTK.SelectedIndex = lstSourceTinhChatTK.IndexOf(lstSourceTinhChatTK.FirstOrDefault(e => e.KeywordStrings.First().Equals(dt.Rows[0]["MA_NHOM_PLOAI"].ToString())));
-                    cmbTinhChatGocTK.SelectedIndex = lstSourceTChatGoc.IndexOf(lstSourceTChatGoc.FirstOrDefault(e => e.KeywordStrings.First().Equals(dt.Rows[0]["MA_TCHAT_GOC"].ToString())));
+                    cmbKyHieu.SelectedIndex =
+                        lstSourceKyHieu.IndexOf(
+                            lstSourceKyHieu.FirstOrDefault(
+                                e => e.KeywordStrings.First().Equals(dt.Rows[0]["MA_KY_HIEU"].ToString())));
+                    txtNgayHieuLuc.Text =
+                        LDateTime.StringToDate(dt.Rows[0]["NGAY_ADUNG"].ToString(), "yyyyMMdd").ToString();
+                    cmbTinhChatTK.SelectedIndex =
+                        lstSourceTinhChatTK.IndexOf(
+                            lstSourceTinhChatTK.FirstOrDefault(
+                                e => e.KeywordStrings.First().Equals(dt.Rows[0]["MA_TCHAT_GOC"].ToString())));
+                    //cmbTinhChatGocTK.SelectedIndex = lstSourceTChatGoc.IndexOf(lstSourceTChatGoc.FirstOrDefault(e => e.KeywordStrings.First().Equals(dt.Rows[0]["MA_TCHAT_GOC"].ToString())));
                     string tinhChatBTru = BusinessConstant.CoKhong.CO.layGiaTri();
                     if (dt.Rows[0]["MA_TCHAT_LTINH"].ToString().Equals("KOBT"))
                         tinhChatBTru = BusinessConstant.CoKhong.CO.layGiaTri();
-                    if (dt.Rows[0]["MA_TCHAT_LTINH"] != DBNull.Value && dt.Rows[0]["MA_TCHAT_LTINH"].ToString().IsNullOrEmptyOrSpace())
-                        cmbTinhChatBTru.SelectedIndex = lstSourceTChatBTru.IndexOf(lstSourceTChatGoc.FirstOrDefault(e => e.KeywordStrings.First().Equals(tinhChatBTru)));
+                    if (dt.Rows[0]["MA_TCHAT_LTINH"] != DBNull.Value &&
+                        dt.Rows[0]["MA_TCHAT_LTINH"].ToString().IsNullOrEmptyOrSpace())
+                        cmbTinhChatTK.SelectedIndex =
+                            lstSourceTChatBTru.IndexOf(
+                                lstSourceTChatGoc.FirstOrDefault(e => e.KeywordStrings.First().Equals(tinhChatBTru)));
                     if (dt.Rows[0]["MA_TCHAT_CNO"].ToString().Equals("CO"))
                     {
-                        chkTheoDoiCongNo.IsChecked = true;
+                        chkTheoDoiCongNo.Checked = true;
+                        lblTheoDoiCongNo.Text = "Có";
                     }
                     else
                     {
-                        chkTheoDoiCongNo.IsChecked = false;
+                        chkTheoDoiCongNo.Checked = false;
+                        lblTheoDoiCongNo.Text = "Không";
                     }
 
-                    if (dt.Rows[0]["MA_NHOM_PLOAI"] != null && !LString.IsNullOrEmptyOrSpace(dt.Rows[0]["MA_NHOM_PLOAI"].ToString()))
+                    if (dt.Rows[0]["MA_NHOM_PLOAI"] != null &&
+                        !LString.IsNullOrEmptyOrSpace(dt.Rows[0]["MA_NHOM_PLOAI"].ToString()))
                     {
-                        cmbTinhChatTK.SelectedIndex = lstSourceTinhChatTK.IndexOf(lstSourceTinhChatTK.FirstOrDefault(e => e.KeywordStrings.First().Equals(dt.Rows[0]["MA_NHOM_PLOAI"].ToString())));
+                        cmbTinhChatTK.SelectedIndex =
+                            lstSourceTinhChatTK.IndexOf(
+                                lstSourceTinhChatTK.FirstOrDefault(
+                                    e => e.KeywordStrings.First().Equals(dt.Rows[0]["MA_NHOM_PLOAI"].ToString())));
                     }
 
                     //Thông tin kiểm soát
-                    txtTrangThai.Text = BusinessConstant.layNgonNguSuDung(dt.Rows[0]["TTHAI_BGHI"].ToString());
-                    raddtNgayNhap.Value = LDateTime.StringToDate(dt.Rows[0]["NGAY_NHAP"].ToString(), "yyyyMMdd");
+                    txtTrangThai.Text = dt.Rows[0]["TTHAI_BGHI"].ToString();
+                    txtNgayNhap.Text = LDateTime.StringToDate(dt.Rows[0]["NGAY_NHAP"].ToString(), "yyyyMMdd").ToString();
                     txtNguoiLap.Text = dt.Rows[0]["NGUOI_NHAP"].ToString();
                     if (LDateTime.IsDate(dt.Rows[0]["NGAY_CNHAT"].ToString(), "yyyyMMdd") == true)
-                        raddtNgayCNhat.Value = LDateTime.StringToDate(dt.Rows[0]["NGAY_CNHAT"].ToString(), "yyyyMMdd");
+                        txtNgayCNhat.Text =
+                            LDateTime.StringToDate(dt.Rows[0]["NGAY_CNHAT"].ToString(), "yyyyMMdd").ToString();
                     else
-                        raddtNgayCNhat.Value = null;
+                        txtNgayCNhat.Text = null;
                     txtNguoiCapNhat.Text = dt.Rows[0]["NGUOI_CNHAT"].ToString();
-
+                    SetEnabledAllControls(false);
+                }
+                else
+                {
+                    SetEnabledAllControls(true);
                 }
             }
             catch (Exception ex)
             {
                 LMessage.ShowMessage("M.DungChung.LoiChung", LMessage.MessageBoxType.Error);
                 LLogging.WriteLog(ex.TargetSite.Name, LLogging.LogType.ERR, ex);
-            }
-            finally
-            {
-                Mouse.OverrideCursor = Cursors.Arrow;
             }
         }
 
@@ -1164,8 +1279,8 @@ namespace Presentation.WebClient.Modules.GDKT.PhanLoai
             AutoCompleteEntry auThuNhap = au.GetEntryByDisplayName(lstSourceThuNhap, ref cmbLoaiTNCP);
             AutoCompleteEntry auTinhChat = au.GetEntryByDisplayName(lstSourceTinhChatTK, ref cmbTinhChatTK);
             AutoCompleteEntry auKyHieu = au.GetEntryByDisplayName(lstSourceKyHieu, ref cmbKyHieu);
-            AutoCompleteEntry auTinhChatGoc = au.GetEntryByDisplayName(lstSourceTChatGoc, ref cmbTinhChatGocTK);
-            AutoCompleteEntry auTinhChatBTru = au.GetEntryByDisplayName(lstSourceTChatBTru, ref cmbTinhChatBTru);
+            AutoCompleteEntry auTinhChatGoc = au.GetEntryByDisplayName(lstSourceTChatGoc, ref cmbTinhChatTK);
+            //AutoCompleteEntry auTinhChatBTru = au.GetEntryByDisplayName(lstSourceTChatBTru, ref cmbTinhChatBTru);
 
             #region KT_PLOAI
             if (_idPhanLoai != -1)
@@ -1175,7 +1290,7 @@ namespace Presentation.WebClient.Modules.GDKT.PhanLoai
 
             if (!LString.IsNullOrEmptyOrSpace(txtMaPLTKCapTren.Text))
             {
-                objPLoai.ID_PLOAI_CHA = Convert.ToInt32(txtMaPLTKCapTren.Tag);
+                objPLoai.ID_PLOAI_CHA = Convert.ToInt32(txtMaPLTKCapTren.Text);
                 objPLoai.MA_PLOAI_CHA = txtMaPLTKCapTren.Text;
             }
             else
@@ -1186,13 +1301,13 @@ namespace Presentation.WebClient.Modules.GDKT.PhanLoai
             objPLoai.ID_NHOM_PLOAI = Convert.ToInt32(auTinhChat.KeywordStrings[1]);
             objPLoai.MA_NHOM_PLOAI = auTinhChat.KeywordStrings[0];
             objPLoai.TEN_PLOAI = txtTenPLTK.Text;
-            objPLoai.NGAY_ADUNG = LDateTime.DateToString(Convert.ToDateTime(raddtTuNgayApDung.Value), "yyyyMMdd");
+            objPLoai.NGAY_ADUNG = LDateTime.DateToString(Convert.ToDateTime(txtNgayHieuLuc.Text), "yyyyMMdd");
             objPLoai.MA_NOI_NGOAI = auLoaiTK.KeywordStrings[0];
             objPLoai.MA_TCHAT_GOC = auTinhChatGoc.KeywordStrings[0];
             objPLoai.MA_TCHAT_LTINH = "";
             if (auTinhChat.KeywordStrings[0].Equals("LT"))
             {
-                if (auTinhChatBTru.KeywordStrings[0].Equals(BusinessConstant.CoKhong.CO.layGiaTri()))
+                if (cmbTinhChatTK.SelectedItem.Value.Equals(BusinessConstant.CoKhong.CO.layGiaTri()))
                     objPLoai.MA_TCHAT_LTINH = "COBT";
                 else
                     objPLoai.MA_TCHAT_LTINH = "KOBT";
@@ -1225,7 +1340,7 @@ namespace Presentation.WebClient.Modules.GDKT.PhanLoai
             }
             else
             {
-                objPLoai.NGAY_NHAP = Convert.ToDateTime(raddtNgayNhap.Value).ToString("yyyyMMdd");
+                objPLoai.NGAY_NHAP = Convert.ToDateTime(txtNgayNhap.Text).ToString("yyyyMMdd");
                 objPLoai.NGUOI_NHAP = txtNguoiLap.Text;
                 objPLoai.NGAY_CNHAT = Presentation.Process.Common.ClientInformation.NgayLamViecHienTai;
                 objPLoai.NGUOI_CNHAT = Presentation.Process.Common.ClientInformation.TenDangNhap;
@@ -1253,7 +1368,7 @@ namespace Presentation.WebClient.Modules.GDKT.PhanLoai
         private void ResetForm()
         {
             txtMaPLTKCapTren.Text = "";
-            txtMaPLTKCapTren.Tag = "";
+            txtMaPLTKCapTren.Text = "";
             lblTenPLTKCapTren.Text = "";
             txtMaPLTK.Text = "";
             txtTenPLTK.Text = "";
@@ -1261,7 +1376,7 @@ namespace Presentation.WebClient.Modules.GDKT.PhanLoai
             chkTheoDoiCongNo.Enabled = false;
             chkTheoDoiCongNo.Checked = true;
 
-            raddtTuNgayApDung.Value = LDateTime.StringToDate(ClientInformation.NgayLamViecHienTai, "yyyyMMdd"); ;
+            txtNgayHieuLuc.Text = LDateTime.StringToDate(ClientInformation.NgayLamViecHienTai, "yyyyMMdd").ToString();
 
             _idPhanLoai = -1;
             _idKyHieuPLoai = -1;
@@ -1270,15 +1385,15 @@ namespace Presentation.WebClient.Modules.GDKT.PhanLoai
             txtTrangThai.Text = "";
             txtNguoiLap.Text = "";
             txtNguoiCapNhat.Text = "";
-            raddtNgayNhap.Value = null;
-            raddtNgayCNhat.Value = null;
-            CommonFunction.RefreshButton(Toolbar, DatabaseConstant.Action.THEM, tthaiNvu, mnuMain, DatabaseConstant.Function.KT_PHAN_LOAI_CT);
+            txtNgayNhap.Text = "";
+            txtNgayCNhat.Text = null;
+            //CommonFunction.RefreshButton(Toolbar, DatabaseConstant.Action.THEM, tthaiNvu, mnuMain, DatabaseConstant.Function.KT_PHAN_LOAI_CT);
             SetEnabledAllControls(true);
         }
 
         #endregion
 
-        private void UserControl_Loaded(object sender, RoutedEventArgs e)
+        private void UserControl_Loaded(object sender, EventArgs e)
         {
             txtMaPLTKCapTren.Focus();
         }
@@ -1293,7 +1408,7 @@ namespace Presentation.WebClient.Modules.GDKT.PhanLoai
                 return false;
         }
 
-        private void btnMaPLTKCapTren_Click(object sender, RoutedEventArgs e)
+        public void btnMaPLTKCapTren_Click(object sender, EventArgs e)
         {
             Presentation.Process.KeToanProcess ketoanProcess = new Presentation.Process.KeToanProcess();
             try
@@ -1305,15 +1420,17 @@ namespace Presentation.WebClient.Modules.GDKT.PhanLoai
                 process.getPopupInformation(DatabaseConstant.DanhSachTruyVan.POPUP_KT_PLOAI.getValue(), lstDieuKien);
 
                 SimplePopupResponse simplePopupResponse = Presentation.Process.Common.ClientInformation.SimplePopup;
-
-                ucPopup popup = new ucPopup(false, simplePopupResponse, false);
-                popup.DuLieuTraVe = new ucPopup.LayDuLieu(LayDuLieuTuPopup);
-                Window win = new Window();
+                //string url = "Popup.aspx";
+                //string s = "window.open('" + url + "', 'popup_window', 'width=300,height=100,left=100,top=100,resizable=yes');";
+                //ScriptManager.RegisterStartupScript(this, GetType(), "Show Modal Popup", s, true);
+                //ucPopup popup = new ucPopup(false, simplePopupResponse, false);
+                //popup.DuLieuTraVe = new ucPopup.LayDuLieu(LayDuLieuTuPopup);
+                //Window win = new Window();
                 //win.Title = "Danh sách mã phân loại tài khoản";
-                win.Content = popup;
-                win.Title = LLanguage.SearchResourceByKey(simplePopupResponse.PopupTitle);
-                win.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-                win.ShowDialog();
+                //win.Content = popup;
+                //win.Title = LLanguage.SearchResourceByKey(simplePopupResponse.PopupTitle);
+                //win.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+                //win.ShowDialog();
                 if (lstPopup != null && lstPopup.Count > 0)
                 {
                     DataRow dr = lstPopup[0];
@@ -1322,7 +1439,7 @@ namespace Presentation.WebClient.Modules.GDKT.PhanLoai
                         LMessage.ShowMessage("M.KeToan.PhanLoai.ucPhanLoaiCT.LoiTonTaiTKCT", LMessage.MessageBoxType.Warning);
                         return;
                     }
-                    txtMaPLTKCapTren.Tag = dr[1].ToString();
+                    txtMaPLTKCapTren.Text = dr[1].ToString();
                     txtMaPLTKCapTren.Text = dr[2].ToString();
                     lblTenPLTKCapTren.Text = dr[3].ToString();
                     //Tao ma phan loai tai khoan
@@ -1347,7 +1464,7 @@ namespace Presentation.WebClient.Modules.GDKT.PhanLoai
                         if (dr[7] != null && !LString.IsNullOrEmptyOrSpace(dr[7].ToString()))
                         {
                             cmbLoaiTNCP.SelectedIndex = lstSourceThuNhap.IndexOf(lstSourceThuNhap.FirstOrDefault(f => f.KeywordStrings.First().Equals(dr[7].ToString())));
-                            cmbLoaiTNCP.Tag = cmbLoaiTNCP.SelectedIndex;
+                            cmbLoaiTNCP.SelectedIndex = cmbLoaiTNCP.SelectedIndex;
                             cmbLoaiTNCP.Enabled = false;
                             updateTNCP = false;
                         }
@@ -1358,7 +1475,7 @@ namespace Presentation.WebClient.Modules.GDKT.PhanLoai
                         cmbLoaiTNCP.SelectedIndex = -1;
                         lblRedLoaiTNChiPhi.Visible = false;
                         updateTNCP = false;
-                        cmbLoaiTNCP.Tag = lstSourceThuNhap.IndexOf(lstSourceThuNhap.FirstOrDefault(f => f.KeywordStrings.First().Equals(dr[7].ToString())));
+                        cmbLoaiTNCP.SelectedIndex = lstSourceThuNhap.IndexOf(lstSourceThuNhap.FirstOrDefault(f => f.KeywordStrings.First().Equals(dr[7].ToString())));
                     }
 
                     if (!dr[8].ToString().IsNullOrEmptyOrSpace())
@@ -1391,7 +1508,7 @@ namespace Presentation.WebClient.Modules.GDKT.PhanLoai
             }
         }
 
-        private void txtMaPLTKCapTren_LostFocus(object sender, RoutedEventArgs e)
+        private void txtMaPLTKCapTren_LostFocus(object sender, EventArgs e)
         {
             Presentation.Process.KeToanProcess ketoanProcess = new Presentation.Process.KeToanProcess();
             try
@@ -1406,7 +1523,7 @@ namespace Presentation.WebClient.Modules.GDKT.PhanLoai
                             LMessage.ShowMessage("M.KeToan.PhanLoai.ucPhanLoaiCT.LoiTonTaiTKCT", LMessage.MessageBoxType.Warning);
                             return;
                         }
-                        txtMaPLTKCapTren.Tag = dt.AsEnumerable().FirstOrDefault(f => f.Field<string>("MA_DVI_QLY").Equals(ClientInformation.MaDonVi)).Field<int>("ID").ToString();
+                        txtMaPLTKCapTren.Text = dt.AsEnumerable().FirstOrDefault(f => f.Field<string>("MA_DVI_QLY").Equals(ClientInformation.MaDonVi)).Field<int>("ID").ToString();
                         txtMaPLTKCapTren.Text = dt.AsEnumerable().FirstOrDefault(f => f.Field<string>("MA_DVI_QLY").Equals(ClientInformation.MaDonVi)).Field<string>("MA_PLOAI").ToString();
                         lblTenPLTKCapTren.Text = dt.AsEnumerable().FirstOrDefault(f => f.Field<string>("MA_DVI_QLY").Equals(ClientInformation.MaDonVi)).Field<string>("TEN_PLOAI").ToString();
                         //Kiem tra
@@ -1439,7 +1556,7 @@ namespace Presentation.WebClient.Modules.GDKT.PhanLoai
                             if (dt.Rows[0]["MA_TNHAP_CPHI"] != null && !LString.IsNullOrEmptyOrSpace(dt.Rows[0]["MA_TNHAP_CPHI"].ToString()))
                             {
                                 cmbLoaiTNCP.SelectedIndex = lstSourceThuNhap.IndexOf(lstSourceThuNhap.FirstOrDefault(f => f.KeywordStrings.First().Equals(dt.Rows[0]["MA_TNHAP_CPHI"].ToString())));
-                                cmbLoaiTNCP.Tag = cmbLoaiTNCP.SelectedIndex;
+                                cmbLoaiTNCP.SelectedIndex = cmbLoaiTNCP.SelectedIndex;
                                 cmbLoaiTNCP.Enabled = false;
                                 updateTNCP = false;
                             }
@@ -1450,13 +1567,13 @@ namespace Presentation.WebClient.Modules.GDKT.PhanLoai
                             cmbLoaiTNCP.SelectedIndex = -1;
                             lblRedLoaiTNChiPhi.Visible = false;
                             updateTNCP = false;
-                            cmbLoaiTNCP.Tag = lstSourceThuNhap.IndexOf(lstSourceThuNhap.FirstOrDefault(f => f.KeywordStrings.First().Equals(dt.Rows[0]["MA_TNHAP_CPHI"].ToString())));
+                            cmbLoaiTNCP.SelectedIndex = lstSourceThuNhap.IndexOf(lstSourceThuNhap.FirstOrDefault(f => f.KeywordStrings.First().Equals(dt.Rows[0]["MA_TNHAP_CPHI"].ToString())));
                         }
                     }
                     else
                     {
                         LMessage.ShowMessage("Không tồn tại mã phân loại tài khoản này", LMessage.MessageBoxType.Warning);
-                        txtMaPLTKCapTren.Tag = "";
+                        txtMaPLTKCapTren.Text = "";
                         txtMaPLTKCapTren.Text = "";
                         lblTenPLTKCapTren.Text = "";
                         txtMaPLTK.Text = "";
@@ -1465,7 +1582,7 @@ namespace Presentation.WebClient.Modules.GDKT.PhanLoai
                 }
                 else
                 {
-                    txtMaPLTKCapTren.Tag = "";
+                    txtMaPLTKCapTren.Text = "";
                     txtMaPLTKCapTren.Text = "";
                     lblTenPLTKCapTren.Text = "";
                     txtMaPLTK.Text = "";
@@ -1479,7 +1596,7 @@ namespace Presentation.WebClient.Modules.GDKT.PhanLoai
 
 
                     cmbLoaiTNCP.SelectedIndex = lstSourceThuNhap.IndexOf(lstSourceThuNhap.FirstOrDefault(f => f.KeywordStrings.First().Equals("KHAC")));
-                    cmbLoaiTNCP.Tag = null;
+                    //cmbLoaiTNCP.SelectedIndex = null;
                     cmbLoaiTNCP.Enabled = true;
                     updateTNCP = true;
                 }
@@ -1494,5 +1611,6 @@ namespace Presentation.WebClient.Modules.GDKT.PhanLoai
 
             }
         }
+
     }
 }

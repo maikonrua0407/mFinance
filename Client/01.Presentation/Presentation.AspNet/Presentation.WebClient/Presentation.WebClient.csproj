@@ -453,6 +453,7 @@
     <Content Include="Modules\GDKT\KetChuyen\ucKetChuyenDS.ascx" />
     <Content Include="Modules\GDKT\KiemSoat\ucKiemSoatCT.ascx" />
     <Content Include="Modules\GDKT\KiemSoat\ucKiemSoatDS.ascx" />
+    <Content Include="Modules\GDKT\PhanLoai\ucPhanLoaiCT.ascx" />
     <Content Include="Modules\GDKT\PhanLoai\ucPhanLoaiDS.ascx" />
     <Content Include="Modules\GDKT\PhieuChi\ucPhieuChiCT.ascx" />
     <Content Include="Modules\GDKT\PhieuChi\ucPhieuChiDS.ascx" />
@@ -989,6 +990,13 @@
     </Compile>
     <Compile Include="Modules\GDKT\KiemSoat\ucKiemSoatDS.ascx.designer.cs">
       <DependentUpon>ucKiemSoatDS.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\GDKT\PhanLoai\ucPhanLoaiCT.ascx.cs">
+      <DependentUpon>ucPhanLoaiCT.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\GDKT\PhanLoai\ucPhanLoaiCT.ascx.designer.cs">
+      <DependentUpon>ucPhanLoaiCT.ascx</DependentUpon>
     </Compile>
     <Compile Include="Modules\GDKT\PhanLoai\ucPhanLoaiDS.ascx.cs">
       <DependentUpon>ucPhanLoaiDS.ascx</DependentUpon>

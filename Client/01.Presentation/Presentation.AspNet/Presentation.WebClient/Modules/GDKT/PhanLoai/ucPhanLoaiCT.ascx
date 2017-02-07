@@ -25,7 +25,7 @@
             
          }
          
-        $('#<%=teldtNgayHieuLuc.ClientID%>').datepicker({ dateFormat: 'dd/mm/yy' });
+        $('#<%=txtNgayHieuLuc.ClientID%>').datepicker({ dateFormat: 'dd/mm/yy' });
     });
 
     function fndeletedetail()
@@ -38,34 +38,39 @@
         //        }       
     }
     function fnaction(strconfirm, action) {
-        if( validdata() )
-        {
-            getObj('<%=lblErr.ClientID %>').value=''
+        debugger;
+        if( validdata() ) {
+            getObj('<%=lblErr.ClientID %>').value = '';
                if (confirm(strconfirm)) {
-                   getObj('<%=cfaction.ClientID %>').value = action
-                getObj('mainForm').submit()
-            }
+                   getObj('<%=cfaction.ClientID %>').value = action;
+                   getObj('mainForm').submit();
+               }
         }
        
     }
+    $("#btnAdd").on("click", function () {
+        showpopup(linkpopup + "&ID=0", window.outerWidth - 120, window.outerHeight - 100);
+    });
+    function ViewMaPLTKCapTren() {
+        alert("view popup");
+    }
     function validdata()
     {
-        
         var thongbaotrong='<%=LanguageEngine.Instance().GetContent(LanguageType.TypeMessage, "M.DungChung.ThongBao.KhongDuocDeTrong") %>'
           
-        if ($('#<%=txtTenPhanLoai.ClientID %>').val()=='')
+        if ($('#<%=txtTenPLTK.ClientID %>').val()=='')
         {              
             getObj('<%=lblErr.ClientID %>').innerText=thongbaotrong.replace('{0}','Tên phân loại');  
               $("#dialog").dialog("open");             
-              $('#<%=txtTenPhanLoai.ClientID %>').focus();
+              $('#<%=txtTenPLTK.ClientID %>').focus();
               return false;
           }
 
-          else if ($('#<%=teldtNgayHieuLuc.ClientID %>').val()=='')
+          else if ($('#<%=txtNgayHieuLuc.ClientID %>').val()=='')
           {
               getObj('<%=lblErr.ClientID %>').innerText=thongbaotrong.replace('{0}','Ngày hiệu lực');  
               $("#dialog").dialog("open");   
-              $('<%=teldtNgayHieuLuc.ClientID %>').focus()
+              $('<%=txtNgayHieuLuc.ClientID %>').focus()
               return false;
           }
 
@@ -74,7 +79,7 @@
 }
 </script>
 <div id="dvDetail">
-    <input type="hidden" id="cfaction" value="0" runat="server" />
+    <input type="hidden" id="cfaction" value="" runat="server" />
     <input type="hidden" id="inpID" value="0" runat="server" />
     <input type="hidden" id="inpshowresult" value="0" runat="server" />
     <div id="tabs" style="height: auto">
@@ -82,15 +87,15 @@
             <table width="100%">
                 <tr style="height: 50px; vertical-align: text-top">
                     <td>
-                        <%--<input type="button" name="btnaction" disabled="disabled"  value="Thêm" id="Button1" class="clsButton  ic-add" />--%>
-                        <input type="button" name="btnaction" onclick="fnaction('Sửa dữ liệu?','edit')" value="Sửa" id="Button2" class="clsButton ic-edit" />
-                        <input type="button" onclick="fnaction('<%=LanguageEngine.Instance().GetContent(LanguageType.TypeMessage, "M.DungChung.HoiXoa")%>','delete')" name="btnaction" value="Xóa" id="Button1" class="clsButton ic-delete" />
-                        <input type="button" name="btnaction" onclick="fnaction('<%=LanguageEngine.Instance().GetContent(LanguageType.TypeMessage, "M.DungChung.HoiDuyet")%>','submit')" value="Trình duyệt" id="Button4" class="clsButton ic-approve" />
+                        <%--<input type="button" name="btnaction"  value="Thêm" id="btnAdd" class="clsButton ic-add" />--%>
+                        <input type="button" name="btnaction1" onclick="fnaction('Sửa dữ liệu?','edit')" value="Sửa" id="Button2" class="clsButton ic-edit" />
+                        <input type="button" name="btnaction2" onclick="fnaction('<%=LanguageEngine.Instance().GetContent(LanguageType.TypeMessage, "M.DungChung.HoiXoa")%>','delete')" value="Xóa" id="Button3" class="clsButton ic-delete" />
+                        <input type="button" name="btnaction3" onclick="fnaction('<%=LanguageEngine.Instance().GetContent(LanguageType.TypeMessage, "M.DungChung.HoiDuyet")%>','submit')" value="Trình duyệt" id="Button4" class="clsButton ic-approve" />
                         <%--<input type="submit" name="btnaction" runat="server" value="Lưu tạm" id="Submit5" class="clsButton ic-approve" />--%>
-                        <input type="button" name="btnaction" onclick="fnaction('<%=LanguageEngine.Instance().GetContent(LanguageType.TypeMessage, "M.DungChung.HoiDuyet")%>','approve')" value="Duyệt" id="btnApprove" class="clsButton ic-approve" />
-                        <input type="button" name="btnaction" onclick="fnaction('<%=LanguageEngine.Instance().GetContent(LanguageType.TypeMessage, "M.DungChung.HoiDuyet")%>','reject')" value="Từ chối" id="btnCancel" class="clsButton ic-cancel" />
-                        <input type="button" name="btnaction" onclick="fnaction('<%=LanguageEngine.Instance().GetContent(LanguageType.TypeMessage, "M.DungChung.HoiDuyet")%>','refuse')" value="Thoái duyệt" id="btnRefuse" class="clsButton ic-refuse" />
-                        <input type="submit" name="btnaction" runat="server" value="Trợ giúp" id="Submit8" class="clsButton ic-help" />
+                        <input type="button" name="btnaction4" onclick="fnaction('<%=LanguageEngine.Instance().GetContent(LanguageType.TypeMessage, "M.DungChung.HoiDuyet")%>','approve')" value="Duyệt" id="btnApprove" class="clsButton ic-approve" />
+                        <input type="button" name="btnaction5" onclick="fnaction('<%=LanguageEngine.Instance().GetContent(LanguageType.TypeMessage, "M.DungChung.HoiDuyet")%>','reject')" value="Từ chối" id="btnCancel" class="clsButton ic-cancel" />
+                        <input type="button" name="btnaction6" onclick="fnaction('<%=LanguageEngine.Instance().GetContent(LanguageType.TypeMessage, "M.DungChung.HoiDuyet")%>','refuse')" value="Thoái duyệt" id="btnRefuse" class="clsButton ic-refuse" />
+                        <input type="submit" name="btnaction7" runat="server" value="Trợ giúp" id="Submit8" class="clsButton ic-help" />
                         <input type="button" name="btnaction" value="Đóng" id="cmdClose" class="clsButton" />
                     </td>
                     <td align="right" style="width: 0%">
@@ -118,7 +123,8 @@
                         <td style="width: 20%">Mã PLTK cấp trên:</td>
                         <td style="width: 30%">
                             <asp:TextBox runat="server" ReadOnly="true" ID="txtMaPLTKCapTren" Width="82%"></asp:TextBox>
-                            <asp:Button ID="btnMaPLTKCapTren" runat="server" Text="F3" />
+                            <%--<asp:Button ID="btnMaPLTKCapTren" runat="server" Text="F3" OnClientClick="" />--%>
+                            <input type="button" name="btnViewMaPLTKCapTren" onclick="ViewMaPLTKCapTren()" value="View" id="btnViewMaPLTKCapTren" />
                         </td>
                         <td colspan="2">
                             <asp:Label ID="lblTenPLTKCapTren" runat="server"></asp:Label>
@@ -157,7 +163,7 @@
                             </asp:DropDownList></td>
                         <td>Theo dõi công nợ:</td>
                         <td>
-                            <asp:CheckBox ID="chkTheoDoiCongNo" runat="server" />
+                            <asp:CheckBox ID="chkTheoDoiCongNo" runat="server" /><asp:Label runat="server" ID="lblTheoDoiCongNo"></asp:Label>
                         </td>
                     </tr>
                     <tr>
@@ -168,16 +174,16 @@
                         </td>
                         <td>Ngày áp dụng: <font color="red">(*)</font></td>
                         <td>
-                            <asp:TextBox ID="teldtNgayHieuLuc" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="txtNgayHieuLuc" runat="server"></asp:TextBox>
                         </td>
                     </tr>
                 </table>
-                <asp:RegularExpressionValidator ID="Regularexpressionvalidator3" runat="server" ControlToValidate="teldtNgayHieuLuc"
+                <asp:RegularExpressionValidator ID="Regularexpressionvalidator3" runat="server" ControlToValidate="txtNgayHieuLuc"
                     ValidationExpression="^\d{1,2}/\d{1,2}/\d{4}$" Display="Dynamic">Kiểu ngày:dd/MM/yyyy</asp:RegularExpressionValidator>
             </asp:Panel>
         </div>
         <div id="tabs-ttks">
-            <asp:Panel ID="Panel1" Height="100%" runat="server" GroupingText="Thông tin kiểm soát" CssClass="TitlePanel">
+            <asp:Panel ID="grbThongTinKiemSoat" Height="100%" runat="server" GroupingText="Thông tin kiểm soát" CssClass="TitlePanel">
 
                 <table class="CsTable" style="width: 60%" cellpadding="8px" cellspacing="8px">
                     <tr>

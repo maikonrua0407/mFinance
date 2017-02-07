@@ -94,15 +94,6 @@ namespace Presentation.WebClient.Modules.GDKT.PhanLoai {
         protected global::System.Web.UI.WebControls.TextBox txtMaPLTKCapTren;
         
         /// <summary>
-        /// btnMaPLTKCapTren control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnMaPLTKCapTren;
-        
-        /// <summary>
         /// lblTenPLTKCapTren control.
         /// </summary>
         /// <remarks>
@@ -193,6 +184,15 @@ namespace Presentation.WebClient.Modules.GDKT.PhanLoai {
         protected global::System.Web.UI.WebControls.CheckBox chkTheoDoiCongNo;
         
         /// <summary>
+        /// lblTheoDoiCongNo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTheoDoiCongNo;
+        
+        /// <summary>
         /// cmbTinhChatTK control.
         /// </summary>
         /// <remarks>
@@ -202,13 +202,13 @@ namespace Presentation.WebClient.Modules.GDKT.PhanLoai {
         protected global::System.Web.UI.WebControls.DropDownList cmbTinhChatTK;
         
         /// <summary>
-        /// teldtNgayHieuLuc control.
+        /// txtNgayHieuLuc control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox teldtNgayHieuLuc;
+        protected global::System.Web.UI.WebControls.TextBox txtNgayHieuLuc;
         
         /// <summary>
         /// Regularexpressionvalidator3 control.
@@ -220,13 +220,13 @@ namespace Presentation.WebClient.Modules.GDKT.PhanLoai {
         protected global::System.Web.UI.WebControls.RegularExpressionValidator Regularexpressionvalidator3;
         
         /// <summary>
-        /// Panel1 control.
+        /// grbThongTinKiemSoat control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel Panel1;
+        protected global::System.Web.UI.WebControls.Panel grbThongTinKiemSoat;
         
         /// <summary>
         /// txtTrangThai control.
